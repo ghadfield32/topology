@@ -1,0 +1,12 @@
+{
+  "stage": 22,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "observed Iris features under constructed invertible coupling",
+  "observations": 150,
+  "roundtrip_max_abs_error": 4.440892098500626e-16,
+  "logdet_min": -0.1907192623181259,
+  "logdet_max": 0.19728007824199406,
+  "density_model_trained": false,
+  "unsupported": "Not a biological growth flow or preservation of Euclidean distances.",
+  "source_review_date": "2026-09-20"
+}

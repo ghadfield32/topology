@@ -1,0 +1,60 @@
+.................FFF                                                     [100%]
+=================================== FAILURES ===================================
+________ test_normal_setup_rejects_an_inherited_diagnostic_environment _________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-5/test_normal_setup_rejects_an_i0')
+
+    def test_normal_setup_rejects_an_inherited_diagnostic_environment(tmp_path):
+>       from shape_lab.runtime import assert_clean_setup_target
+E       ImportError: cannot import name 'assert_clean_setup_target' from 'shape_lab.runtime' (/mnt/data/v10_build/listening_to_shape_lab/src/shape_lab/runtime.py)
+
+tests/test_repository_v10.py:144: ImportError
+_________________ test_fingerprint_includes_tools_and_scripts __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-5/test_fingerprint_includes_tool0')
+
+    def test_fingerprint_includes_tools_and_scripts(tmp_path):
+        from shape_lab.runtime import fingerprint_inputs
+        (tmp_path/'tools').mkdir();(tmp_path/'scripts').mkdir()
+        (tmp_path/'tools/setup.py').write_text('x=1')
+        (tmp_path/'scripts/run.py').write_text('x=2')
+>       assert set(fingerprint_inputs(tmp_path)) == {'tools/setup.py','scripts/run.py'}
+E       AssertionError: assert set() == {'scripts/run...ols/setup.py'}
+E         
+E         Extra items in the right set:
+E         'tools/setup.py'
+E         'scripts/run.py'
+E         
+E         Full diff:
+E         + set()
+E         - {
+E         -     'scripts/run.py',
+E         -     'tools/setup.py',
+E         - }
+
+tests/test_repository_v10.py:161: AssertionError
+____________________ test_git_preserves_data_snapshot_bytes ____________________
+
+    def test_git_preserves_data_snapshot_bytes():
+        text=(ROOT/'.gitattributes').read_text()
+        for entry in ['data/** -text','sports_v8/data/** -text','sports_v9/data/** -text']:
+>           assert entry in text
+E           AssertionError: assert 'data/** -text' in '*.py text eol=lf\n*.sh text eol=lf\n*.toml text eol=lf\n*.yaml text eol=lf\n*.yml text eol=lf\n*.md text eol=lf\n*.ipynb text eol=lf\n*.json text eol=lf\n*.csv text eol=lf\n*.jsonl text eol=lf\n*.gz binary\n*.npz binary\n*.png binary\n'
+
+tests/test_repository_v10.py:166: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_repository_v10.py::test_normal_setup_rejects_an_inherited_diagnostic_environment - ImportError: cannot import name 'assert_clean_setup_target' from 'shape_lab.runtime' (/mnt/data/v10_build/listening_to_shape_lab/src/shape_lab/runtime.py)
+FAILED tests/test_repository_v10.py::test_fingerprint_includes_tools_and_scripts - AssertionError: assert set() == {'scripts/run...ols/setup.py'}
+  
+  Extra items in the right set:
+  'tools/setup.py'
+  'scripts/run.py'
+  
+  Full diff:
+  + set()
+  - {
+  -     'scripts/run.py',
+  -     'tools/setup.py',
+  - }
+FAILED tests/test_repository_v10.py::test_git_preserves_data_snapshot_bytes - AssertionError: assert 'data/** -text' in '*.py text eol=lf\n*.sh text eol=lf\n*.toml text eol=lf\n*.yaml text eol=lf\n*.yml text eol=lf\n*.md text eol=lf\n*.ipynb text eol=lf\n*.json text eol=lf\n*.csv text eol=lf\n*.jsonl text eol=lf\n*.gz binary\n*.npz binary\n*.png binary\n'
+3 failed, 17 passed in 0.11s

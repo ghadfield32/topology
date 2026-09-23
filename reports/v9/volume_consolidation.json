@@ -1,0 +1,56 @@
+{
+  "method": "whitespace-normalized blank-line-delimited paragraph comparison against retained source Markdown; semantic equivalence not assumed",
+  "retired_volumes": [
+    {
+      "path": "COMPLETE_COURSE_V2.md",
+      "original_bytes": 238985,
+      "original_sha256": "1bf7425deba1b2f34d9074cd88780420aeae81c172b84595ca46d5bab2176c0b",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V3.md",
+      "original_bytes": 309672,
+      "original_sha256": "393676b0bdce3874e57257403133a29d6bc0b67a3d9e4bdfa58521be6291980b",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V4.md",
+      "original_bytes": 488824,
+      "original_sha256": "3d438d0a71ed7e7238e7ca9b4421899013193080a74303c87f2c4c6166780441",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V5.md",
+      "original_bytes": 604236,
+      "original_sha256": "ae3fc14ef8be66befb683e49215d5966a6f227d1fcb706647eb92f4713c51bb5",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V6.md",
+      "original_bytes": 827472,
+      "original_sha256": "406121eef0c58d4545d5436035c91640155324fd39bcdbfc51e924e72825eef5",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V7.md",
+      "original_bytes": 1037771,
+      "original_sha256": "6ca2a5178c75d8095b9e45abc3382faaca3728a0167c7e765b3c6dfa88114532",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V8.md",
+      "original_bytes": 1124789,
+      "original_sha256": "ab981fa94898fb7bb0797bcfe3e5f38886624daac9019a9f6dfe7231d4715f5d",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COURSE_GUIDE.md",
+      "original_bytes": 112964,
+      "original_sha256": "1106a6198d1ab29a93d31ce107bd6563ea8173bd438a5ca712fbdb68f1a4f474",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    }
+  ],
+  "unmatched_count": 388,
+  "primary_lessons": 31,
+  "claim": "Required route has one primary lesson per stage. Optional repair/retrieval remains intentional."
+}

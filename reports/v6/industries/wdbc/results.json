@@ -1,0 +1,46 @@
+{
+  "validation": {
+    "logistic": {
+      "accuracy": 0.9824561403508771,
+      "balanced_accuracy": 0.9761904761904762
+    },
+    "majority": {
+      "accuracy": 0.631578947368421,
+      "balanced_accuracy": 0.5
+    },
+    "roc_auc": 0.9963624338624338,
+    "confusion_true_rows_pred_columns": [
+      [
+        72,
+        0
+      ],
+      [
+        2,
+        40
+      ]
+    ],
+    "n": 114
+  },
+  "test": {
+    "logistic": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0
+    },
+    "majority": {
+      "accuracy": 0.6228070175438597,
+      "balanced_accuracy": 0.5
+    },
+    "roc_auc": 1.0,
+    "confusion_true_rows_pred_columns": [
+      [
+        71,
+        0
+      ],
+      [
+        0,
+        43
+      ]
+    ],
+    "n": 114
+  }
+}

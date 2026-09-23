@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 17 guided session — Fit on anchors, evaluate elsewhere · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/17_session.md">sessions/17_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-17-guided-session--fit-on-anchors-evaluate-elsewhere">Stage 17 guided session — Fit on anchors, evaluate elsewhere</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/17_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/17_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/17_workbook.md.html">original workbook</a> and <a href="../notebooks/17_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real reference point arrangement; target transforms and held-out deformations are generated controls.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Distinguish rigid alignment from a similarity transform with scale.</li>
+<li>Separate fitting references from held-out evaluation points.</li>
+<li>Construct a negative control showing why fitted residual is optimistic.</li>
+<li>Explain why perfect synthetic-transform recovery does not validate physical scene scale.</li>
+</ol>
+<h2 id="what-alignment-is-allowed-to-change">What alignment is allowed to change</h2>
+<p>A rigid transformation rotates and translates. A similarity transformation additionally multiplies all lengths by one positive scale. In our row-vector convention it is <code>Y=s X R.T+t</code>. These models cannot correct arbitrary local warping or depth-dependent distortion. Selecting a more flexible model merely to reduce residuals can hide the very error you intended to measure.</p>
+<p>Correspondence is a separate problem. The least-squares fit assumes that each source row is paired with the correct target row. A good fitted transform does not verify the pairing, and this small function does not perform correspondence discovery or robust outlier removal.</p>
+<h2 id="work-an-exact-example-first">Work an exact example first</h2>
+<p>If target coordinates were constructed using scale two, a known rotation, and a translation, sufficient noncollinear paired anchors should recover those parameters up to numerical tolerance. Collinear anchors leave some rotations unconstrained; the implementation rejects them. This tests observability and algebra in a controlled case.</p>
+<p>The real stereo-reference points below serve as a nontrivial point arrangement. We deliberately transform them to create targets. The target coordinates are generated, not independent physical measurements. Perfect recovery verifies the fitting code on this control; it does not validate VGGT scale or the original camera calibration.</p>
+<h2 id="show-why-a-holdout-is-necessary">Show why a holdout is necessary</h2>
+<p>Choose every other selected point as fitting anchors. Leave the others out. Fit the transform to the anchors and evaluate residuals on held-out points. In the exact control both residuals should be near zero.</p>
+<p>Now add a local displacement to only the held-out targets and refit using the unchanged anchors. The training residual stays near zero while held-out residual increases. This deliberately simple negative control makes the logic visible: a fit can look excellent while unseen parts of a scene disagree. The perturbation is not claimed to reproduce a particular model's errors.</p>
+<h2 id="formulate-a-physical-validation-study">Formulate a physical validation study</h2>
+<p>For a real comparison, registration anchors and validation measurements must be genuinely separated. Record their identities, collection procedure, units, uncertainty, and visibility. Evaluate distances, orientation, reprojection, completeness, and failure modes appropriate to the task. Avoid describing an alignment to the same reference points as independent validation.</p>
+<p>Topology can summarize structure but does not repair metric scale. Two reconstructions can have similar topological descriptors and different lengths. A plausible point cloud is a proposal until the intended measurement claims are supported. This is the practical bridge from the mathematical invariance lessons to responsible learned-geometry evaluation.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Generate a known transformation of actual reference point locations. The targets are explicitly synthetic.</p>
+<pre><code class="language-python">from shape_lab.stereo import reference_sample, point_cloud
+from shape_lab.geometry import exp_so3, fit_similarity
+_, _, disparity, calibration = reference_sample()
+X, _ = point_cloud(disparity, calibration, stride=70)
+X = X[:45]
+true_scale = 1.7; true_R = exp_so3([.12,-.08,.05]); true_t = np.array([.2,-.1,.3])
+Y = true_scale*X@true_R.T + true_t
+anchor = np.arange(len(X)) % 2 == 0
+assert anchor.sum()&gt;=3 and (~anchor).sum()&gt;=3
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Fit only on anchors, then evaluate the rest.</p>
+<pre><code class="language-python">scale, rotation, translation = fit_similarity(X[anchor], Y[anchor])
+predicted = scale*X@rotation.T + translation
+clean_error = np.linalg.norm(predicted[~anchor]-Y[~anchor], axis=1)
+assert np.allclose(scale, true_scale)
+assert np.max(clean_error)&lt;1e-10
+print('clean held-out maximum:', clean_error.max())
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Change only held-out targets. The anchor fit cannot expose this local deformation.</p>
+<pre><code class="language-python">warped = Y.copy(); warped[~anchor] += [.03, 0., 0.]
+s, r, t = fit_similarity(X[anchor], warped[anchor])
+fit_prediction = s*X@r.T + t
+fit_error = np.linalg.norm(fit_prediction[anchor]-warped[anchor], axis=1)
+holdout_error = np.linalg.norm(fit_prediction[~anchor]-warped[~anchor], axis=1)
+assert fit_error.max()&lt;1e-10
+assert np.allclose(holdout_error, .03)
+result = {'anchors': int(anchor.sum()), 'held_out': int((~anchor).sum()),
+          'anchor_max_error': float(fit_error.max()), 'warped_holdout_mean_error': float(holdout_error.mean()),
+          'targets_are_generated': True, 'independent_physical_validation': False}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="17t1">17.T1</h3>
+<p>Can a global similarity transform correct arbitrary depth-dependent distortion?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>No. It has one scale, one rotation, and one translation. A locally varying deformation is outside that model even if some fitted anchors align well.</p>
+</details>
+<h3 id="17t2">17.T2</h3>
+<p>Why is evaluating the alignment on exactly its fitting anchors insufficient?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Optimization explicitly minimizes their residuals. Their agreement does not measure behavior at independent points or rule out overfitting, deformation elsewhere, or shared measurement errors.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/17_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

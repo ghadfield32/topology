@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 00 guided session — Read a measurement before calculating with it · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/00_session.md">sessions/00_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-00-guided-session--read-a-measurement-before-calculating-with-it">Stage 00 guided session — Read a measurement before calculating with it</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/00_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/00_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/00_workbook.md.html">original workbook</a> and <a href="../notebooks/00_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real Iris measurements; the three-number mean is an explicitly constructed arithmetic example.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Identify one observation, one measured feature, one label, and a source identifier.</li>
+<li>Explain the two axes of a table and the three axes of an image collection.</li>
+<li>Produce a small descriptive result with explicit units and a reproducible row selection.</li>
+<li>Distinguish executing a reference solution from demonstrating your own understanding.</li>
+</ol>
+<h2 id="begin-with-a-single-row">Begin with a single row</h2>
+<p>Imagine a notebook containing measurements of flowers. One row represents one recorded specimen. A column such as sepal length is a measurement, expressed in centimetres. A species name is a label. A row identifier tells us which record we used; it is not another measurement of the flower. Before making a graph, say what each of these means.</p>
+<p>The notation <code>X[i, j]</code> means: take row <code>i</code> and column <code>j</code> from an array named <code>X</code>. Python starts counting at zero, so <code>X[0, 1]</code> is in the first row and second column. A table with 150 observations and four measurements has shape <code>(150, 4)</code>. Its shape describes how numbers are arranged, not the physical shape of the flowers.</p>
+<p>Selecting measurement columns explicitly avoids a subtle error. If we put an arbitrary specimen number into a Euclidean distance calculation, renumbering the specimens changes the distances. If we put the species label into that calculation, observations may appear close partly because we supplied the answer. Neither is a neutral analysis of the measured features.</p>
+<h2 id="calculate-one-statistic-by-hand">Calculate one statistic by hand</h2>
+<p>For three lengths 2, 3, and 7 centimetres, the mean is <code>(2+3+7)/3 = 4</code> centimetres. The mean has the same unit as its inputs. The deviations are -2, -1, and 3 centimetres and sum to zero. This does not establish a distribution, a causal explanation, or representativeness of a population. It is a descriptive calculation on three records.</p>
+<p>Now consider two observations <code>[2, 1]</code> and <code>[5, 5]</code>, with both coordinates in centimetres. Their displacement is <code>[3, 4]</code> centimetres and Euclidean distance is <code>sqrt(3²+4²)=5</code> centimetres. We have made a choice: differences in these two measurements are being combined using the Euclidean rule. Later stages investigate that choice rather than treating it as the only definition of similarity.</p>
+<h2 id="read-a-program-as-a-small-argument">Read a program as a small argument</h2>
+<p>An import brings a named tool into the notebook. An assignment stores a value under a name. A function applies a rule to inputs and returns an output. An assertion states something that must hold for this particular run. <code>assert X.shape[1] == 4</code> checks that there are four selected measurement columns; it does not prove that every measurement was collected correctly.</p>
+<p>A result is easier to trust when you can identify its input records and the operation that produced it. Keep the specimen IDs next to your outputs even though they are excluded from the metric. When you change a selection, state the change before running the calculation. Avoid replacing real data with generated values just to obtain a prettier graph.</p>
+<h2 id="the-first-learning-record">The first learning record</h2>
+<p>Write a short answer containing your prediction, the observed output, and one correction to your prediction. A mismatch is useful information. The shipped course has no completed learner assessments, even though its reference notebooks have executed successfully. Your evidence starts with work you actually do, not with inheriting the author's outputs.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Load the bundled table. Select only columns whose names declare centimetres. The ID and labels stay available but do not enter X.</p>
+<pre><code class="language-python">from shape_lab.data import load_iris_data
+frame = load_iris_data()
+columns = [c for c in frame.columns if c.endswith('_cm')]
+X = frame[columns].to_numpy()
+print('table:', frame.shape, 'measurements:', X.shape)
+display(frame.head(3))
+assert X.shape == (150, 4)
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Verify a familiar mean manually, then calculate the corresponding descriptive summaries of the actual records.</p>
+<pre><code class="language-python">example_cm = np.array([2., 3., 7.])
+assert example_cm.mean() == 4
+summary = frame[columns].agg(['min', 'mean', 'max'])
+display(summary)
+result = {'rows': len(frame), 'measurement_columns': columns,
+          'units': 'centimetres', 'labels_used_as_features': False}
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>A simple plot lets you inspect individual measurements. It is not evidence that row order is time.</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+plt.figure(figsize=(7, 3.5))
+plt.plot(frame['sample_id'], frame['sepal_length_cm'], '.', markersize=4)
+plt.xlabel('Record ID (not time)'); plt.ylabel('Sepal length (cm)')
+plt.title('One measured feature in the bundled Iris table'); plt.tight_layout(); plt.show()
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="00t1">00.T1</h3>
+<p>Why is a 150 by 4 array not a statement that the underlying objects live on a four-dimensional manifold?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Array width counts selected features. Manifold dimension is a local structural property; neither dimension nor manifold assumptions follow from the table shape.</p>
+</details>
+<h3 id="00t2">00.T2</h3>
+<p>Would adding 1000 to every sample ID change your feature distances? Explain both the correct and incorrect implementations.</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Correct: IDs are excluded, so distances do not change. Adding a common constant to an incorrectly included ID column also preserves its pairwise differences; that test alone does not expose the mistake. Arbitrarily permuting or rescaling IDs can expose it. IDs remain invalid measurement coordinates even if one translation test passes.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/00_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,211 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Delayed retrieval: 39 new transfer questions · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../practice/retrieval.md">practice/retrieval.md</a> · Readable source notation; no online math renderer.</p><h1 id="delayed-retrieval-39-new-transfer-questions">Delayed retrieval: 39 new transfer questions</h1>
+<p>Try these with the lesson and reference code closed. The suggested review gaps (1, 3, 7, 14, 30 days) are a course-design convention, not a proven optimal schedule for every learner. A score must reflect your own work; seeing an answer is not recall. Three per stage provide a checkpoint, not exhaustive assessment.</p>
+<h2 id="stage-00">Stage 00</h2>
+<h3 id="00r1">00.R1</h3>
+<p>An image has 8 rows and 8 columns. Explain how it can be one observation with 64 features, or 64 observations with spatial information.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>The observation unit depends on the question. In classification one image is a row with 64 intensities. In a pixel analysis pixels may be observations with coordinates/intensity. State which relationships the representation preserves.</p>
+</details>
+<h3 id="00r2">00.R2</h3>
+<p>A notebook ran yesterday, but a fresh kernel gives NameError. What is your first reproducibility check?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Restart the kernel and run cells from the top. Look for a missing import/definition or reliance on out-of-order state. Do not claim that the saved outputs establish reproducibility.</p>
+</details>
+<h3 id="00r3">00.R3</h3>
+<p>What three things does a real-data picture fail to establish by itself?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Examples include correct computation, ground-truth topology, stability, statistical significance, and generalization. Give three and say what additional evidence each requires.</p>
+</details>
+<h2 id="stage-01">Stage 01</h2>
+<h3 id="01r1">01.R1</h3>
+<p>Compute the inverse image of [4,9] for x↦x² on R, then change the declared domain to nonnegative reals.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>On R it is [−3,−2]∪[2,3]; on the nonnegative domain only [2,3]. Inverse image does not require an inverse function.</p>
+</details>
+<h3 id="01r2">01.R2</h3>
+<p>Why does rank plus nullity equal the number of input coordinates rather than output coordinates?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>A basis of the kernel extends to a basis of the domain; the added basis images form a basis of the image. Thus dimension of the domain splits into nullity plus rank.</p>
+</details>
+<h3 id="01r3">01.R3</h3>
+<p>State which parts of proving a relation is an equivalence relation must be checked. Apply this to equal parity.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Reflexive, symmetric, transitive. Each integer has its own parity; equality of parity reverses; two equalities compose. The quotient has two classes, not a division of numbers.</p>
+</details>
+<h2 id="stage-02">Stage 02</h2>
+<h3 id="02r1">02.R1</h3>
+<p>Is d(x,y)=|x−y|² a metric? Use three explicit points.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>No. At 0,1,2 the distance from 0 to 2 is 4 while the sum through 1 is 2, violating the triangle inequality.</p>
+</details>
+<h3 id="02r2">02.R2</h3>
+<p>Why does the finite set of 100 samples from a circle have a discrete induced metric topology?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>For each sample choose an open radius smaller than its minimum distance to another distinct sample. Every singleton and hence every subset is open. The inferred loop belongs to a constructed model, not the raw finite topology.</p>
+</details>
+<h3 id="02r3">02.R3</h3>
+<p>Distinguish an open set in X from an open set in a subspace A⊆X using A=[0,1].</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>A subset of A is relatively open when it is A∩U for ambient-open U. For example [0,1/2) is relatively open in A but not open in R.</p>
+</details>
+<h2 id="stage-03">Stage 03</h2>
+<h3 id="03r1">03.R1</h3>
+<p>Give the missing condition in: a continuous bijection is a homeomorphism.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Its inverse must be continuous. A sufficient theorem is compact domain and Hausdorff codomain, but these are not part of the bare assertion.</p>
+</details>
+<h3 id="03r2">03.R2</h3>
+<p>Prove continuity of g∘f using open sets, without drawing a graph.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>For open O, (g∘f)⁻¹(O)=f⁻¹(g⁻¹(O)); successive continuity makes it open. Name the intermediate spaces.</p>
+</details>
+<h3 id="03r3">03.R3</h3>
+<p>Can projection be continuous while losing information? Explain the consequences for interpreting a 2D scatterplot.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Yes; projection is continuous but usually not injective. Distinct high-dimensional observations may coincide. Apparent 2D shape is not automatically the original topology or distance structure.</p>
+</details>
+<h2 id="stage-04">Stage 04</h2>
+<h3 id="04r1">04.R1</h3>
+<p>Explain why a deformation retraction is not generally a homeomorphism.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>It gives a homotopy equivalence but may collapse many points onto one, as annulus radial segments collapse onto the circle. A homeomorphism is bijective with continuous inverse.</p>
+</details>
+<h3 id="04r2">04.R2</h3>
+<p>Why are elements of the fundamental group not raw parameterized loops?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Elements are based loops modulo based homotopy. Concatenation is well-defined on these classes, and reparameterizations/homotopies give associativity and inverse relations on classes.</p>
+</details>
+<h3 id="04r3">04.R3</h3>
+<p>Does a digit classifier have to be invariant under all rotations because rotations form a group?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>No. A mathematical group action does not ensure label preservation. The scientific/task invariances must be justified; a rotation may change the written symbol or create an ambiguous image.</p>
+</details>
+<h2 id="stage-05">Stage 05</h2>
+<h3 id="05r1">05.R1</h3>
+<p>List every simplex in a filled triangle and then remove only the triangular face. What changes?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Three vertices, three edges, one face; after removing the face the boundary remains. Counts change from (3,3,1) to (3,3,0), Euler characteristic from 1 to 0, and a nonbounding one-cycle appears.</p>
+</details>
+<h3 id="05r2">05.R2</h3>
+<p>Four planar points generate a full abstract Rips simplex at a large scale. Why is that not a contradiction?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>The abstract simplex is determined by vertex subsets and has dimension three. Its geometric realization need not use the original planar coordinates as an affine simplex.</p>
+</details>
+<h3 id="05r3">05.R3</h3>
+<p>Two bright pixels touch only at a corner. Are they connected in this course's closed-square union?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Yes; they share a vertex. A four-neighbor pixel adjacency rule could answer differently. The image-to-space convention is part of the analysis, not an implementation detail.</p>
+</details>
+<h2 id="stage-06">Stage 06</h2>
+<h3 id="06r1">06.R1</h3>
+<p>Is every cycle a nonzero homology class? Explain with a filled triangle.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>No. The perimeter is a cycle but is also the boundary of the filled face, so its homology class is zero. H is cycles modulo boundaries.</p>
+</details>
+<h3 id="06r2">06.R2</h3>
+<p>Why must boundaries be contained in cycles for homology to be defined this way?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>The quotient needs the boundary space to be a subspace of cycles. ∂²=0 supplies that inclusion. State which chain dimensions the maps connect.</p>
+</details>
+<h3 id="06r3">06.R3</h3>
+<p>Your H1 code builds only vertices and edges. What kinds of classes can be wrong?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Cycles filled by triangles in the intended complex would be falsely retained. Correct H1 needs the boundary map from C2; in general Hk needs k+1-dimensional simplices that can kill k-cycles.</p>
+</details>
+<h2 id="stage-07">Stage 07</h2>
+<h3 id="07r1">07.R1</h3>
+<p>What is the difference between the Rips and Čech triangle conditions?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Rips requires all three pairwise distances below the edge threshold. Čech requires a common intersection of three balls at the declared radius. Pairwise overlap alone need not supply a common intersection.</p>
+</details>
+<h3 id="07r2">07.R2</h3>
+<p>An alpha diagram has coordinates in squared-radius units. Can you compare them directly with Rips edge lengths?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>No. Identify and transform parameter conventions before comparing coordinates; even matched units do not make different filtrations equal.</p>
+</details>
+<h3 id="07r3">07.R3</h3>
+<p>Why can sequential independent clusterings fail to be a filtration?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>A filtration requires nested objects with compatible inclusion maps. Recomputing clusters at each scale may split/reassign observations in ways that are not nested.</p>
+</details>
+<h2 id="stage-08">Stage 08</h2>
+<h3 id="08r1">08.R1</h3>
+<p>An interval is [2,5). At which of 1,2,4,5 is it alive? Explain the endpoint convention.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Alive at 2 and 4, not 1 or 5. Birth is included and death excluded. Counts at tied filtration values depend on the declared convention.</p>
+</details>
+<h3 id="08r2">08.R2</h3>
+<p>Why can two filtrations have identical Betti counts at each time yet different persistence?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Counts omit the maps tracking which classes continue. For example [0,3)+[1,2) and [0,2)+[1,3) have identical count curves but different interval pairings.</p>
+</details>
+<h3 id="08r3">08.R3</h3>
+<p>A bar reaches the maximum threshold your program computed. What may you conclude?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>It has not died in the computed filtration. It is not necessarily essential in a larger intended filtration. Separate computational truncation from a completed-domain essential class.</p>
+</details>
+<h2 id="stage-09">Stage 09</h2>
+<h3 id="09r1">09.R1</h3>
+<p>Trace the reduction of columns {0,1}, {1,2}, {0,2} over F₂.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>The first pivots at 1 and second at 2. The third XOR second becomes {0,1}, then XOR first becomes empty. Empty is a birth candidate; nonempty reduced columns pair their pivot row with the column.</p>
+</details>
+<h3 id="09r2">09.R2</h3>
+<p>Why must faces precede cofaces even when filtration values tie?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>The boundary must refer to already present generators. Time/dimension/vertex ordering supplies a compatible order. A different valid tie order may alter representatives but not positive-length interval multisets.</p>
+</details>
+<h3 id="09r3">09.R3</h3>
+<p>What three independent forms of evidence should support your implementation?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Exact hand-derived fixtures, mathematical invariants such as ∂²=0 or Euler–Poincaré, and external-library agreement under aligned conventions. Repeated tests using one buggy routine are not independent evidence.</p>
+</details>
+<h2 id="stage-10">Stage 10</h2>
+<h3 id="10r1">10.R1</h3>
+<p>Derive why a point (b,d) can be matched to the diagonal at cost (d−b)/2 in L∞.</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>For any t, d−b≤|d−t|+|t−b|≤2max(...). The midpoint t=(b+d)/2 attains the bound.</p>
+</details>
+<h3 id="10r2">10.R2</h3>
+<p>What must stay fixed before using the image experiment's uniform perturbation bound?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>The underlying domain/cell complex, correspondence, filtration construction, homology dimension, and field. The measured change is in function values. Altering segmentation or resolution requires another analysis.</p>
+</details>
+<h3 id="10r3">10.R3</h3>
+<p>A feature survives perturbation. Does that establish a biological mechanism or a statistically unusual signal?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>No. Stability is sensitivity to specified changes. Mechanistic meaning and significance require additional design, null models, independent observations and appropriate evidence.</p>
+</details>
+<h2 id="stage-11">Stage 11</h2>
+<h3 id="11r1">11.R1</h3>
+<p>Why must a scaler be fitted on training data rather than the concatenation of train and test?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Test statistics would inform the representation and contaminate the evaluation. Fit on training, transform validation/test unchanged; refit on train+validation only after selection when the protocol permits.</p>
+</details>
+<h3 id="11r2">11.R2</h3>
+<p>What choices affect a Mapper graph before any homology is computed?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Observation representation/metric, lens, cover intervals and overlap, local clustering and its parameters, and nerve construction. The graph is a parameter-dependent summary, not an automatic recovered truth.</p>
+</details>
+<h3 id="11r3">11.R3</h3>
+<p>A delay vector includes x(t+2τ), but your forecast is issued at t. What is wrong?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>That coordinate is unavailable at prediction time and leaks future information. Use an availability-aligned convention or move the forecast origin accordingly.</p>
+</details>
+<h2 id="stage-12">Stage 12</h2>
+<h3 id="12r1">12.R1</h3>
+<p>The supplied test labels and results are public in this archive. Is a new tuning experiment on this same test set an untouched evaluation?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>No. Reproducing known results is useful but does not create an unseen holdout. A new independent evaluation needs new reserved data or a clearly exploratory designation.</p>
+</details>
+<h3 id="12r2">12.R2</h3>
+<p>Pixels plus topology got four extra correct predictions. What must you inspect before a general improvement claim?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>Paired disagreements, uncertainty, split construction, dependence/grouping, tuning history, replication and operating cost. A four-count difference alone is not universal or statistically significant evidence.</p>
+</details>
+<h3 id="12r3">12.R3</h3>
+<p>What evidence is required before the course log says retained, and what does that status still not certify?</p>
+<details><summary>Answer criteria — reveal after attempting</summary>
+<p>A qualifying independent assessment and a qualifying delayed recall at least seven days later under the proposed policy. It records self-reported evidence, not externally graded mastery of the entire book or field.</p>
+</details>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

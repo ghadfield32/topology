@@ -1,0 +1,53 @@
+{
+  "profile": "physics",
+  "environment": {
+    "profile": "physics",
+    "python": "3.13.5",
+    "interpreter": "/opt/pyvenv/bin/python",
+    "distributions": {
+      "packaging": "25.0",
+      "jupyterlab": "4.5.3",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.8",
+      "scikit-learn": "1.8.0",
+      "nbclient": "0.10.4",
+      "nbformat": "5.10.4",
+      "ipykernel": "7.2.0",
+      "pytest": "9.0.2",
+      "mistune": "3.2.1",
+      "beautifulsoup4": "4.14.3",
+      "torch": "2.10.0+cpu"
+    },
+    "missing": [],
+    "incompatible": [],
+    "python_compatible": true,
+    "compatible": true,
+    "uv": "/opt/pyvenv/bin/uv",
+    "docker_cli": null,
+    "kubectl_cli": null,
+    "kind_cli": null,
+    "kubernetes_runtime_validated": false,
+    "lockfile_present": false,
+    "fresh_install_validated": false,
+    "notice": "Declared direct-package and Python compatibility only; not clean sync, a full dependency audit, or deployment evidence."
+  },
+  "status": "passed",
+  "returncode": 0,
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "--junitxml=/mnt/data/v12_evidence/nonroot_work4/acceptance/tests/junit.xml"
+  ],
+  "counts": {
+    "total": 751,
+    "skipped": 2,
+    "failures": 0,
+    "errors": 0,
+    "passed": 749
+  }
+}

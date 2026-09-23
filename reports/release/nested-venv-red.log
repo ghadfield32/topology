@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_explicit_reuse_records_nested_environment_paths _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_explicit_reuse_records_ne0')
+
+    def test_explicit_reuse_records_nested_environment_paths(tmp_path):
+>       from shape_lab.runtime import write_reuse_sites
+E       ImportError: cannot import name 'write_reuse_sites' from 'shape_lab.runtime' (/mnt/data/v10_build/listening_to_shape_lab/src/shape_lab/runtime.py)
+
+tests/test_repository_v10.py:134: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_repository_v10.py::test_explicit_reuse_records_nested_environment_paths - ImportError: cannot import name 'write_reuse_sites' from 'shape_lab.runtime' (/mnt/data/v10_build/listening_to_shape_lab/src/shape_lab/runtime.py)
+1 failed in 0.09s

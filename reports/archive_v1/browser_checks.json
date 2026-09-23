@@ -1,0 +1,19 @@
+{
+  "browser": "Chromium via Playwright, in-memory HTML rendering",
+  "checks": {
+    "home_stage_cards": 13,
+    "home_no_horizontal_overflow": true,
+    "notebook_08_saved_figures": 3,
+    "notebook_08_images_decoded": true,
+    "notebook_no_horizontal_overflow": true,
+    "practice_cards_filter_and_reveal": true,
+    "manual_progress_state_and_storage_failure_message": true,
+    "mobile_home_no_horizontal_overflow": true,
+    "mobile_lesson_no_horizontal_overflow": true
+  },
+  "console_errors": [],
+  "limitations": [
+    "Browser policy blocked both file:// and localhost navigation. Pages were rendered from provided HTML strings with the same local CSS inlined.",
+    "Local-file storage persistence and export-download behavior were not verified on a normal browser origin. The in-memory state and graceful storage-failure behavior were tested."
+  ]
+}

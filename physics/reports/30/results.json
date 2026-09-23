@@ -1,0 +1,61 @@
+{
+  "stage": 30,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "audit of executed analytic, manufactured, constructed and observed-data examples",
+  "upstream_reports": [
+    {
+      "stage": 21,
+      "data_kind": "analytic derivative validation plus observed static material data",
+      "report_sha256": "22ae0af43d266589b9399253d2603d5562a62b4fe77f0e73072326907d1388ec"
+    },
+    {
+      "stage": 22,
+      "data_kind": "observed Iris features under constructed invertible coupling",
+      "report_sha256": "3702cf0a51626d4f2e6f32629470229fa4a51447ed09e1f7234cc19cf8b67f81"
+    },
+    {
+      "stage": 23,
+      "data_kind": "manufactured unit oscillator derivative samples",
+      "report_sha256": "0af4edd4e54096bcb5fdd3704b23b8c235d7e33b0ee261cdba76d3ef3f15f932"
+    },
+    {
+      "stage": 24,
+      "data_kind": "manufactured integrator comparison plus observed time-series representation",
+      "report_sha256": "357ea03a124f0f47a6e8a355c65dfe76f48d0b4b1527065251f0fee8c9e4807e"
+    },
+    {
+      "stage": 25,
+      "data_kind": "constructed constraint operation on observed Iris features",
+      "report_sha256": "afe3cc1dda3bca8be97d84fbb32b31305757a93cf2b5d8e7b2920254612774ea"
+    },
+    {
+      "stage": 26,
+      "data_kind": "manufactured boundary-value problem; no observed PDE data",
+      "report_sha256": "ace7ad51859b9a3762fb91a46127f9f8770cd8784083d6f8cd21228054c98adc"
+    },
+    {
+      "stage": 27,
+      "data_kind": "analytic gradient and interface examples plus observed regression gradients",
+      "report_sha256": "9edfcce3cdb92dfcb356ff793d443dfc3e81652d137907f304ff747fd2dd8817"
+    },
+    {
+      "stage": 28,
+      "data_kind": "manufactured periodic Fourier heat family",
+      "report_sha256": "f35aaab70d41e5e446319ff51dc2ec4b5fbeff7a065d28e9ff61a84df1f1741f"
+    },
+    {
+      "stage": 29,
+      "data_kind": "manufactured differentiable dynamics plus constructed exchanges on real digit intensities",
+      "report_sha256": "808d2e010507b6e79fba8b1d3d2a72f2eebd4680a4c3bfa59b38dc501f813223"
+    }
+  ],
+  "observed_holdout_rows": 11,
+  "recomputed_measured_mae": 0.1526425675786994,
+  "all_31_stages_mastered": false,
+  "full_book_audited": false,
+  "VGGT_inference_executed": false,
+  "paper_scale_PINN_PIKAN_benchmarks_reproduced": false,
+  "independent_sports_validation": false,
+  "next_requirement": "Learner evidence plus a genuinely independent, scoped capstone. Do not tune on disclosed holdouts and claim a new test.",
+  "source_review_date": "2026-09-20"
+}

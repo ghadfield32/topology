@@ -1,0 +1,8 @@
+{
+  "item": "wine",
+  "source": "industry/learner/wine.ipynb",
+  "source_sha256": "b15ffe42409a982d0c23295b59f8430405a887314a52b4cc9be9ae97a1e0005d",
+  "lesson": "industry/lessons/wine.md",
+  "output": "/mnt/data/v12_evidence/wine_practice",
+  "assessment": "not_assessed"
+}

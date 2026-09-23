@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 04 — coding practice solutions · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../practice/04_solutions.md">practice/04_solutions.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-04--coding-practice-solutions">Stage 04 — coding practice solutions</h1>
+<p>Attempt the learner notebook first. The following code and checks are the canonical reference, with limited declared input assumptions.</p>
+<h2 id="04c1--compose-permutations">04.C1 — Compose permutations</h2>
+<p>Represent a permutation by p[i], the image of i. Return p after q: apply q first, then p.</p>
+<pre><code class="language-python">def compose(p,q):
+    return tuple(p[q[i]] for i in range(len(q)))
+</code></pre>
+<p>Function composition is associative but need not commute. Recording the convention prevents an apparent disagreement caused only by reversing the order of application.</p>
+<h3 id="visible-checks">Visible checks</h3>
+<pre><code class="language-python">r=(1,2,3,0);s=(0,3,2,1)
+assert compose(r,s)!=(compose(s,r))
+assert compose(r,(0,1,2,3))==r
+print("Rotation after reflection:",compose(r,s),"reverse:",compose(s,r))
+</code></pre>
+<h2 id="04c2--invert-a-permutation">04.C2 — Invert a permutation</h2>
+<p>For a valid permutation of 0..n-1 return the inverse tuple.</p>
+<pre><code class="language-python">def invert_permutation(p):
+    inverse=[0]*len(p)
+    for i,value in enumerate(p): inverse[value]=i
+    return tuple(inverse)
+</code></pre>
+<p>An inverse undoes the operation, not the numerical values stored in the representation. A rotation inverse is a rotation in the opposite direction.</p>
+<h3 id="visible-checks-1">Visible checks</h3>
+<pre><code class="language-python">p=(1,2,3,0);q=invert_permutation(p)
+assert tuple(p[q[i]] for i in range(4))==(0,1,2,3)
+assert q==(3,0,1,2)
+print("Inverse:",q)
+</code></pre>
+<h2 id="04c3--rotate-a-real-image-through-a-group-action">04.C3 — Rotate a real image through a group action</h2>
+<p>Return an image rotated k quarter-turns counterclockwise. Verify that four quarter-turns restore exactly the same array.</p>
+<pre><code class="language-python">def quarter_turn(image,k):
+    return np.rot90(np.asarray(image),k=k)
+</code></pre>
+<p>The array transformation is exact, but the class meaning need not be invariant: rotating handwriting can change its interpretation. Mathematical symmetry and a task-appropriate data augmentation are different claims.</p>
+<h3 id="visible-checks-2">Visible checks</h3>
+<pre><code class="language-python">image,sample_id=digit_example(6)
+assert np.array_equal(quarter_turn(image,4),image)
+assert np.array_equal(quarter_turn(quarter_turn(image,1),1),quarter_turn(image,2))
+print("C4 action checked on training image",sample_id)
+</code></pre>
+<h2 id="04c4--write-an-annulus-deformation">04.C4 — Write an annulus deformation</h2>
+<p>For a nonzero point x in an annulus around the origin, return H(x,t)=((1-t)+t/||x||)x for 0&lt;=t&lt;=1.</p>
+<pre><code class="language-python">def radial_homotopy(x,t):
+    x=np.asarray(x,dtype=float)
+    return ((1-t)+t/np.linalg.norm(x))*x
+</code></pre>
+<p>These checks illustrate endpoints and the fixed subspace. The continuous formula and its domain justify the deformation retraction; a finite set of successful tests cannot by itself prove continuity.</p>
+<h3 id="visible-checks-3">Visible checks</h3>
+<pre><code class="language-python">assert np.allclose(radial_homotopy([2,0],0),[2,0])
+assert np.allclose(radial_homotopy([2,0],1),[1,0])
+for t in np.linspace(0,1,7): assert np.allclose(radial_homotopy([0,1],t),[0,1])
+print("Start, end, and fixed-circle conditions checked")
+</code></pre>
+<h2 id="04c5--reduce-a-word-with-inverse-pairs">04.C5 — Reduce a word with inverse pairs</h2>
+<p>Use lowercase a,b and uppercase A,B for formal generators and inverses. Cancel adjacent inverse pairs until no more remain.</p>
+<pre><code class="language-python">def reduce_word(word):
+    stack=[]
+    for letter in word:
+        if stack and stack[-1].swapcase()==letter: stack.pop()
+        else: stack.append(letter)
+    return ''.join(stack)
+</code></pre>
+<p>This is a formal free-group word model. It shows why loop order can matter in spaces such as a figure-eight. It does not establish the fundamental group of every pictured shape.</p>
+<h3 id="visible-checks-4">Visible checks</h3>
+<pre><code class="language-python">assert reduce_word('abBA')==''
+assert reduce_word('abAB')=='abAB'
+assert reduce_word('aaA')=='a'
+print("A commutator does not cancel in the free-word model:",reduce_word('abAB'))
+</code></pre>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

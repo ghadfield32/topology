@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Start or continue the complete v5 course · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v5/START.md">docs/v5/START.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="start-or-continue-the-complete-v5-course">Start or continue the complete v5 course</h1>
+<h2 id="reading-without-installing-software">Reading without installing software</h2>
+<p>Extract the full ZIP into a new folder. Open <code>START_HERE.html</code>. Read Stage 00 if you are new; continue from your recorded stage if you already have independent evidence. The physics extension begins at Stage 21, not at the beginning of the course. Original stage numbers and earlier lessons remain intact.</p>
+<p>Every new stage includes a beginner lesson, worked lab with saved outputs, three independent coding exercises, six conceptual questions with separate answers, and three delayed-recall questions. The two new primers explain rates/equations and how to interpret physical guarantees. External papers and videos require internet; saved course pages and outputs do not.</p>
+<h2 id="python-setup-mac-or-linux">Python setup: Mac or Linux</h2>
+<p>Open Terminal inside the extracted <code>listening_to_shape_lab</code> folder:</p>
+<pre><code class="language-bash">python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e ".[notebooks,test,reader,physics]"
+python -m pytest -q -ra
+python -m jupyterlab
+</code></pre>
+<p>The new trained-model labs use PyTorch on CPU. No CUDA, GPU, cloud account, model weights or private data is required. The physics extra is optional for reading and NumPy exercises. Initial dependency installation requires network access or a local package cache; the datasets are already bundled. An installation of torch can be large. This build was tested with Python 3.13.5 and torch 2.10.0+cpu on Linux; Mac and Windows execution were not tested here. Do not interpret the allowed package range as testing every version.</p>
+<h2 id="windows-powershell">Windows PowerShell</h2>
+<pre><code class="language-powershell">py -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e ".[notebooks,test,reader,physics]"
+python -m pytest -q -ra
+python -m jupyterlab
+</code></pre>
+<p>If local policy prevents activation, use <code>.\.venv\Scripts\python.exe</code> directly instead of changing system-wide execution policy. Keep this learning environment separate from production environments.</p>
+<h2 id="a-new-learners-first-session">A new learner's first session</h2>
+<p>Open the preserved Stage 00 lesson and lab from the home page. Read the notation/Python primer when a symbol or operation is unfamiliar. Before running a cell, write your expected shape or result. After running, explain one discrepancy. Attempt <code>00.C1</code> without the answer open. Save your explanation in <code>my_work/00/answer.md</code>.</p>
+<p>Do not open Stage 23 and assume neural training is the prerequisite for understanding derivatives. The route is definitions and examples first, then implementation and assessment.</p>
+<h2 id="a-continuing-learners-next-session">A continuing learner's next session</h2>
+<pre><code class="language-bash">python scripts/study_v5.py next
+python scripts/study_v5.py stage 21
+python scripts/learn.py status
+python scripts/learn.py due
+python scripts/learn.py handoff
+</code></pre>
+<p>The default new record is <code>progress/learning_log_v5.json</code>. It has 31 unassessed stages. A fresh log does not mean you should discard an older one.</p>
+<h2 id="migrate-v2v3v4-work-without-overwriting-it">Migrate v2/v3/v4 work without overwriting it</h2>
+<p>Copy your <code>my_work/</code> evidence files into the same relative paths in the new project. Keep the old project as a backup. Migrate the old JSON record to a NEW filename:</p>
+<pre><code class="language-bash">python scripts/migrate_progress_v5.py \
+  --source /path/to/old-course/progress/learning_log_v3.json \
+  --destination progress/migrated_learning_log_v5.json
+
+python scripts/study_v5.py --log progress/migrated_learning_log_v5.json verify-evidence
+python scripts/study_v5.py --log progress/migrated_learning_log_v5.json next
+python scripts/learn.py --log progress/migrated_learning_log_v5.json status
+</code></pre>
+<p>v4 intentionally used the v3 filename/schema; that is accepted. Thirteen-stage v2 logs are accepted too. Existing attempts are copied, not rewritten; additional stages start unassessed. Migration refuses an existing destination. Browser-local checkboxes from earlier readers are separate and are not automatically converted into grades.</p>
+<p>Record an actual practice attempt only after creating your own evidence file:</p>
+<pre><code class="language-bash">python scripts/learn.py record --stage 21 --kind practice --score 60 \
+  --evidence my_work/21/answer.md --note "Derived the secant; need to revisit derivative noise."
+</code></pre>
+<p>The score above is a syntax example, not a recommended grade. Use your own actual result. Assessment and recall commands have explicit independence and critical-misconception flags; do not set them without justification. Records are self-reports, not automated proof checking. Review-date calculations do not create background notifications.</p>
+<h2 id="reproduce-reference-work">Reproduce reference work</h2>
+<pre><code class="language-bash">python scripts/run_physics.py
+python scripts/run_physics.py --stages 21 22 --kind lab
+python scripts/run_notebooks.py
+python scripts/run_practice_answers.py
+python scripts/run_consolidation.py
+python scripts/build_reader_v5.py
+</code></pre>
+<p>Each reference notebook gets a fresh kernel. The runners overwrite reference outputs, not learner files or learning records. Stage 30 reads the reports from 21–29, so run those first when rebuilding from scratch. Optional Ripser/GUDHI comparisons remain separate; do not count a skip as a pass.</p>
+<h2 id="evidence-you-should-produce-per-stage">Evidence you should produce per stage</h2>
+<p>A hand calculation, a working independent function, an unfamiliar conceptual answer, an explicit data-origin statement, a failure case, and a statement of what remains unsupported. Record the particular misconception to revisit rather than restarting the whole course. The <a href="COVERAGE.md.html">coverage map</a> distinguishes implemented teaching from full research reproduction.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

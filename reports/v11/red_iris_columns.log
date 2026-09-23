@@ -1,0 +1,12 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______ test_real_measurement_example_excludes_identity_and_label_columns _______
+
+    def test_real_measurement_example_excludes_identity_and_label_columns():
+>       from shape_lab.representation_experiments import IRIS_FEATURES
+E       ImportError: cannot import name 'IRIS_FEATURES' from 'shape_lab.representation_experiments' (/mnt/data/v11_build/listening_to_shape_lab/src/shape_lab/representation_experiments.py)
+
+tests/test_representations_v11.py:102: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_representations_v11.py::test_real_measurement_example_excludes_identity_and_label_columns - ImportError: cannot import name 'IRIS_FEATURES' from 'shape_lab.representation_experiments' (/mnt/data/v11_build/listening_to_shape_lab/src/shape_lab/representation_experiments.py)
+1 failed in 0.11s

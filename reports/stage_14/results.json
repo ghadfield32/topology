@@ -1,0 +1,10 @@
+{
+  "evidence": "known transforms applied to real reference-derived cloud",
+  "points": 860,
+  "roundtrip_max_m": 1.3517848686956847e-15,
+  "rotation_scipy_agreement": true,
+  "projection_pixel_error_max": 1.1368683772161603e-13,
+  "uniform_scale_projection_invariant": true,
+  "K_update_check": true,
+  "warning": "No pose inference, calibration fitting or VGGT inference performed here."
+}

@@ -1,0 +1,118 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dataset card: elnino · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../industry/cards/elnino.md">industry/cards/elnino.md</a> · Readable source notation; no online math renderer.</p><h1 id="dataset-card-elnino">Dataset card: elnino</h1>
+<h2 id="identity-and-evidence">Identity and evidence</h2>
+<p><strong>Title:</strong> Monthly climate records and delay representations</p>
+<p><strong>Sector:</strong> marine. <strong>Kind:</strong> observed historical data. <strong>Canonical snapshot:</strong> 61 rows.</p>
+<p><strong>Source attribution:</strong> <a href="https://www.statsmodels.org/stable/datasets/generated/elnino.html">NOAA NWS ERSST.V3B, Niño 1+2; historical statsmodels distribution.</a></p>
+<p><strong>Reuse basis:</strong> <a href="https://www.statsmodels.org/stable/datasets/generated/elnino.html">Public domain (dataset distributor statement)</a>.</p>
+<p><strong>Acquisition:</strong> offline export from installed package distribution; no invented records, using statsmodels 0.14.6. Primary documentation reviewed 2026-09-20. The current online documentation may describe a newer package release; the files and hashes here identify the actual distribution used.</p>
+<p><strong>Observation unit:</strong> One year with twelve monthly regional mean temperatures; the derived long view has one month per row.</p>
+<p><strong>Limitations:</strong> 61 years, 1950–2010, 732 monthly observations. Not an operational forecast or a simulated PDE field.</p>
+<h2 id="files-and-provenance">Files and provenance</h2>
+<p><a href="../../../data/industries/elnino/data.csv">Normalized CSV</a> · <a href="../../../data/industries/elnino/source_distribution.csv">Original package-distribution CSV</a> · <a href="../../../data/industries/elnino/metadata.json">Machine-readable metadata</a></p>
+<p>Normalized SHA-256: <code>8c15911802ce2973931db0c3d822ae6abe961bfa6bd507cae5eb400beeee9af7</code></p>
+<p>Original distribution SHA-256: <code>b647be00e0fd264be9764e317e6b963f35030014ecca2b21b204521716e463ad</code></p>
+<p>Changes: Preserved loaded values and row order; added zero-based row_id. Calendar fields cast to integers; CO2 datetime index exported as ISO date. Missing CO2 observations remain blank, never zero.</p>
+<p>Missing values by column: <code>{}</code>. An empty object means none are present, not that real-world measurement uncertainty is zero.</p>
+<h2 id="complete-column-dictionary">Complete column dictionary</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Role</th>
+<th>Units / encoding</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>row_id</code></td>
+<td>metadata</td>
+<td>source scale; see data card (not guessed)</td>
+<td>row id</td>
+</tr>
+<tr>
+<td><code>YEAR</code></td>
+<td>metadata</td>
+<td>source scale; see data card (not guessed)</td>
+<td>YEAR</td>
+</tr>
+<tr>
+<td><code>JAN</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for JAN.</td>
+</tr>
+<tr>
+<td><code>FEB</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for FEB.</td>
+</tr>
+<tr>
+<td><code>MAR</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for MAR.</td>
+</tr>
+<tr>
+<td><code>APR</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for APR.</td>
+</tr>
+<tr>
+<td><code>MAY</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for MAY.</td>
+</tr>
+<tr>
+<td><code>JUN</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for JUN.</td>
+</tr>
+<tr>
+<td><code>JUL</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for JUL.</td>
+</tr>
+<tr>
+<td><code>AUG</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for AUG.</td>
+</tr>
+<tr>
+<td><code>SEP</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for SEP.</td>
+</tr>
+<tr>
+<td><code>OCT</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for OCT.</td>
+</tr>
+<tr>
+<td><code>NOV</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for NOV.</td>
+</tr>
+<tr>
+<td><code>DEC</code></td>
+<td>response_or_signal</td>
+<td>degrees Celsius</td>
+<td>Regional monthly mean sea-surface temperature for DEC.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="evaluation-and-approved-learning-use">Evaluation and approved learning use</h2>
+<p>Read the <a href="../lessons/elnino.md.html">case lesson</a> before the <a href="../notebooks/elnino.ipynb.html">worked notebook</a>. The notebook persists its split, source identifiers, fitted transforms where applicable, predictions and metrics under <code>reports/v6/industries/elnino/</code>. Its test partition is already exposed in the reference outputs. New tuning requires a new protocol.</p>
+<p>The data are suitable for the stated teaching calculation, not certified clinical decisions, trading, process control, dam operations, operational climate forecasting or transport interventions. Scale, age and missing metadata limit claims independently of prediction accuracy.</p>
+<h2 id="rebuild-without-inventing-records">Rebuild without inventing records</h2>
+<p>Normal lessons read the bundled CSV. To intentionally recreate the snapshots install the recorded distributions using the optional <code>data-rebuild</code> extra, then run <code>python scripts/prepare_industry_data.py --replace</code>. This explicitly overwrites snapshots and requires rerunning every verification. The raw distribution copy allows comparison before and after normalization. No web download is represented as having succeeded.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

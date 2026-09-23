@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R03 — Anti-collapse objectives and gradient paths · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../representations/notebooks/r03.ipynb">representations/notebooks/r03.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="r03--anti-collapse-objectives-and-gradient-paths">R03 — Anti-collapse objectives and gradient paths</h1>
+<p>Read the single primary lesson before this lab. Predict each result. Numerical correctness is not independent mastery. See <code>representations/SOURCE_AUDIT.md</code> for provenance.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from pathlib import Path
+import sys, json
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+here = Path.cwd().resolve()
+ROOT = next((p for p in [here, *here.parents] if (p / &#x27;src/shape_lab&#x27;).is_dir()), None)
+if ROOT is None:
+    raise RuntimeError(&#x27;Open this notebook within the extracted course project.&#x27;)
+sys.path.insert(0, str(ROOT / &#x27;src&#x27;))
+from shape_lab import representations as r
+from shape_lab import representation_experiments as exp
+print(&#x27;Course source:&#x27;, ROOT)
+</code></pre><div class="output"><pre>Course source: /tmp/shape-course-q90rdcpz/course
+</pre></div></section><h2 id="the-exact-same-views-have-zero-agreement-error-even-when-constant">The exact same views have zero agreement error, even when constant.</h2>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>a=np.zeros((5,3)); b=np.zeros((5,3))
+assert np.mean((a-b)**2)==0
+print(&#x27;Zero agreement error is not evidence of informative features.&#x27;)</code></pre><div class="output"><pre>Zero agreement error is not evidence of informative features.
+</pre></div></section><h2 id="inspect-objective-controls-built-from-actual-training-images">Inspect objective controls built from actual training images.</h2>
+<section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>result=exp.mechanisms_lab()
+print(json.dumps(result,indent=2))
+assert result[&#x27;info_nce_same&#x27;] &lt; result[&#x27;info_nce_shuffled&#x27;]
+assert result[&#x27;zero_cloud_penalty&#x27;] &gt; 0
+assert result[&#x27;zero_cloud_gradient_norm&#x27;] == 0
+assert result[&#x27;stop_gradient_target_is_none&#x27;]</code></pre><div class="output"><pre>{
+  &quot;data&quot;: &quot;64 real training digit images, fixed random projections and manufactured perturbations&quot;,
+  &quot;agreement_same&quot;: 0.00038117991323442026,
+  &quot;agreement_different&quot;: 30.097293919693143,
+  &quot;vicreg_same&quot;: 33.25053640984614,
+  &quot;barlow_same&quot;: 0.01992710355773961,
+  &quot;info_nce_same&quot;: 3.433419644504835,
+  &quot;info_nce_shuffled&quot;: 5.4280279930539175,
+  &quot;zero_cloud_penalty&quot;: 13.085463046861499,
+  &quot;zero_cloud_gradient_norm&quot;: 0.0,
+  &quot;stop_gradient_online&quot;: -2.0,
+  &quot;stop_gradient_target_is_none&quot;: true,
+  &quot;ema_hand_example&quot;: 1.5,
+  &quot;interpretation&quot;: &quot;Separate objective scales are not a model ranking. A positive anti-collapse penalty does not ensure a nonzero gradient at every state.&quot;
+}
+</pre></div></section><h2 id="check-the-torch-gradient-against-finite-differences-rather-than-trusting-autodiff-usage-alone">Check the Torch gradient against finite differences, rather than trusting autodiff usage alone.</h2>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>import torch
+x=np.random.default_rng(5).normal(size=(8,3)); A=r.unit_directions(3,8,6)
+z=torch.tensor(x,dtype=torch.float64,requires_grad=True)
+loss=r.sigreg_torch(z,torch.tensor(A)); loss.backward()
+h=1e-5; plus=x.copy(); minus=x.copy(); plus[0,0]+=h; minus[0,0]-=h
+fd=(r.projected_gaussian_score(plus,A)-r.projected_gaussian_score(minus,A))/(2*h)
+print({&#x27;autodiff&#x27;:z.grad[0,0].item(),&#x27;finite_difference&#x27;:fd})
+assert np.isclose(z.grad[0,0].item(),fd,rtol=1e-5)</code></pre><div class="output"><pre>{&#x27;autodiff&#x27;: -0.16494917038757723, &#x27;finite_difference&#x27;: -0.16494917038922807}
+</pre></div></section><h2 id="your-evidence">Your evidence</h2>
+<p>Record: observation unit; assumptions; prediction; calculated result; difference from your prediction; and one unsupported conclusion. Attempt the separate learner notebook before opening the reference solutions.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,210 @@
+{
+  "observed_soccer_profiles": {
+    "n_profile_rows": 12,
+    "n_distinct_players": 8,
+    "features": [
+      "total_distance_full_all",
+      "total_metersperminute_full_all",
+      "sprint_distance_full_all"
+    ],
+    "train_rows": 6,
+    "test_rows": 6,
+    "train_ids": [
+      211,
+      218,
+      2759,
+      2858
+    ],
+    "test_ids": [
+      4322,
+      4792,
+      5468,
+      5521
+    ],
+    "train_geometry": {
+      "n": 6,
+      "dimension": 3,
+      "mean_norm": 1.6526241568913787e-15,
+      "mean_coordinate_std": 1.0954451150103321,
+      "covariance_identity_frobenius": 1.160302595620471,
+      "effective_rank": 2.6026230638999133
+    },
+    "held_geometry": {
+      "n": 6,
+      "dimension": 3,
+      "mean_norm": 0.34827049074147237,
+      "mean_coordinate_std": 1.3999159050290844,
+      "covariance_identity_frobenius": 3.462154671688518,
+      "effective_rank": 2.186416464429341
+    },
+    "scope": "Selected soccer aggregate rows, not tracking trajectories; no learned sports encoder or performance forecast."
+  },
+  "digits_ablation_models": [
+    {
+      "model": "raw_pixels",
+      "seed": 0,
+      "probe_C": 1.0,
+      "validation_accuracy": 0.9638888888888889,
+      "test_correct": 346,
+      "test_n": 360,
+      "test_accuracy": 0.9611111111111111,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 64,
+        "mean_norm": 3.2112810611724854,
+        "mean_coordinate_std": 0.23018351197107817,
+        "covariance_identity_frobenius": 7.502582438129667,
+        "effective_rank": 20.50904136779091
+      }
+    },
+    {
+      "model": "pca12",
+      "seed": 0,
+      "probe_C": 1.0,
+      "validation_accuracy": 0.9222222222222223,
+      "test_correct": 335,
+      "test_n": 360,
+      "test_accuracy": 0.9305555555555556,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 12,
+        "mean_norm": 1.520632224583096e-07,
+        "mean_coordinate_std": 0.5256703326066546,
+        "covariance_identity_frobenius": 2.503300047700825,
+        "effective_rank": 9.772061114490302
+      }
+    },
+    {
+      "model": "label_independent_gaussian",
+      "seed": 80,
+      "probe_C": 0.1,
+      "validation_accuracy": 0.10833333333333334,
+      "test_correct": 39,
+      "test_n": 360,
+      "test_accuracy": 0.10833333333333334,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 12,
+        "mean_norm": 0.07407198828687776,
+        "mean_coordinate_std": 0.996223332216283,
+        "covariance_identity_frobenius": 0.3913461501524178,
+        "effective_rank": 11.923549563540194
+      }
+    },
+    {
+      "model": "random_encoder",
+      "seed": 11,
+      "probe_C": 1.0,
+      "validation_accuracy": 0.7833333333333333,
+      "test_correct": 287,
+      "test_n": 360,
+      "test_accuracy": 0.7972222222222223,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 12,
+        "mean_norm": 0.358405739068985,
+        "mean_coordinate_std": 0.04667507982427948,
+        "covariance_identity_frobenius": 3.4563979811392396,
+        "effective_rank": 7.885716187922117
+      }
+    },
+    {
+      "model": "agreement_only",
+      "seed": 11,
+      "probe_C": 0.1,
+      "validation_accuracy": 0.48333333333333334,
+      "test_correct": 196,
+      "test_n": 360,
+      "test_accuracy": 0.5444444444444444,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 12,
+        "mean_norm": 0.2670612037181854,
+        "mean_coordinate_std": 0.0014594387293056634,
+        "covariance_identity_frobenius": 3.464094137898236,
+        "effective_rank": 9.884147338534905
+      }
+    },
+    {
+      "model": "agreement_sigreg",
+      "seed": 11,
+      "probe_C": 10.0,
+      "validation_accuracy": 0.8861111111111111,
+      "test_correct": 323,
+      "test_n": 360,
+      "test_accuracy": 0.8972222222222223,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 12,
+        "mean_norm": 0.3855379521846771,
+        "mean_coordinate_std": 1.0186915468213467,
+        "covariance_identity_frobenius": 4.995293253453377,
+        "effective_rank": 4.716825251193458
+      }
+    },
+    {
+      "model": "random_encoder",
+      "seed": 23,
+      "probe_C": 1.0,
+      "validation_accuracy": 0.8,
+      "test_correct": 289,
+      "test_n": 360,
+      "test_accuracy": 0.8027777777777778,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 12,
+        "mean_norm": 0.456413596868515,
+        "mean_coordinate_std": 0.04659920817885626,
+        "covariance_identity_frobenius": 3.4561920621393885,
+        "effective_rank": 7.191060502983178
+      }
+    },
+    {
+      "model": "agreement_only",
+      "seed": 23,
+      "probe_C": 0.1,
+      "validation_accuracy": 0.4666666666666667,
+      "test_correct": 190,
+      "test_n": 360,
+      "test_accuracy": 0.5277777777777778,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 12,
+        "mean_norm": 0.23546545207500458,
+        "mean_coordinate_std": 0.0014152586747225961,
+        "covariance_identity_frobenius": 3.4640945954929787,
+        "effective_rank": 9.607549116949778
+      }
+    },
+    {
+      "model": "agreement_sigreg",
+      "seed": 23,
+      "probe_C": 10.0,
+      "validation_accuracy": 0.8888888888888888,
+      "test_correct": 325,
+      "test_n": 360,
+      "test_accuracy": 0.9027777777777778,
+      "embedding_train": {
+        "n": 1077,
+        "dimension": 12,
+        "mean_norm": 0.3296172022819519,
+        "mean_coordinate_std": 0.9745158754243725,
+        "covariance_identity_frobenius": 4.946151820060736,
+        "effective_rank": 4.551107945898619
+      }
+    }
+  ],
+  "world_model_gate": {
+    "trained_sports_world_model": false,
+    "causal_video_forecasting_validated": false,
+    "requirements": [
+      "Independent athlete/session/match groups",
+      "Documented frame clocks and units",
+      "Past-only context with held-out future target",
+      "A persistence/linear dynamics baseline",
+      "Outcome-independent geometry validation",
+      "Data/weights license review"
+    ]
+  },
+  "interpretation": "The same diagnostics transfer between domains; fitted representations and scientific conclusions do not automatically transfer."
+}

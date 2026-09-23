@@ -1,0 +1,236 @@
+[
+  {
+    "id": "00.R1",
+    "stage": 0,
+    "question": "An image has 8 rows and 8 columns. Explain how it can be one observation with 64 features, or 64 observations with spatial information.",
+    "answer_criteria": "The observation unit depends on the question. In classification one image is a row with 64 intensities. In a pixel analysis pixels may be observations with coordinates/intensity. State which relationships the representation preserves."
+  },
+  {
+    "id": "00.R2",
+    "stage": 0,
+    "question": "A notebook ran yesterday, but a fresh kernel gives NameError. What is your first reproducibility check?",
+    "answer_criteria": "Restart the kernel and run cells from the top. Look for a missing import/definition or reliance on out-of-order state. Do not claim that the saved outputs establish reproducibility."
+  },
+  {
+    "id": "00.R3",
+    "stage": 0,
+    "question": "What three things does a real-data picture fail to establish by itself?",
+    "answer_criteria": "Examples include correct computation, ground-truth topology, stability, statistical significance, and generalization. Give three and say what additional evidence each requires."
+  },
+  {
+    "id": "01.R1",
+    "stage": 1,
+    "question": "Compute the inverse image of [4,9] for x↦x² on R, then change the declared domain to nonnegative reals.",
+    "answer_criteria": "On R it is [−3,−2]∪[2,3]; on the nonnegative domain only [2,3]. Inverse image does not require an inverse function."
+  },
+  {
+    "id": "01.R2",
+    "stage": 1,
+    "question": "Why does rank plus nullity equal the number of input coordinates rather than output coordinates?",
+    "answer_criteria": "A basis of the kernel extends to a basis of the domain; the added basis images form a basis of the image. Thus dimension of the domain splits into nullity plus rank."
+  },
+  {
+    "id": "01.R3",
+    "stage": 1,
+    "question": "State which parts of proving a relation is an equivalence relation must be checked. Apply this to equal parity.",
+    "answer_criteria": "Reflexive, symmetric, transitive. Each integer has its own parity; equality of parity reverses; two equalities compose. The quotient has two classes, not a division of numbers."
+  },
+  {
+    "id": "02.R1",
+    "stage": 2,
+    "question": "Is d(x,y)=|x−y|² a metric? Use three explicit points.",
+    "answer_criteria": "No. At 0,1,2 the distance from 0 to 2 is 4 while the sum through 1 is 2, violating the triangle inequality."
+  },
+  {
+    "id": "02.R2",
+    "stage": 2,
+    "question": "Why does the finite set of 100 samples from a circle have a discrete induced metric topology?",
+    "answer_criteria": "For each sample choose an open radius smaller than its minimum distance to another distinct sample. Every singleton and hence every subset is open. The inferred loop belongs to a constructed model, not the raw finite topology."
+  },
+  {
+    "id": "02.R3",
+    "stage": 2,
+    "question": "Distinguish an open set in X from an open set in a subspace A⊆X using A=[0,1].",
+    "answer_criteria": "A subset of A is relatively open when it is A∩U for ambient-open U. For example [0,1/2) is relatively open in A but not open in R."
+  },
+  {
+    "id": "03.R1",
+    "stage": 3,
+    "question": "Give the missing condition in: a continuous bijection is a homeomorphism.",
+    "answer_criteria": "Its inverse must be continuous. A sufficient theorem is compact domain and Hausdorff codomain, but these are not part of the bare assertion."
+  },
+  {
+    "id": "03.R2",
+    "stage": 3,
+    "question": "Prove continuity of g∘f using open sets, without drawing a graph.",
+    "answer_criteria": "For open O, (g∘f)⁻¹(O)=f⁻¹(g⁻¹(O)); successive continuity makes it open. Name the intermediate spaces."
+  },
+  {
+    "id": "03.R3",
+    "stage": 3,
+    "question": "Can projection be continuous while losing information? Explain the consequences for interpreting a 2D scatterplot.",
+    "answer_criteria": "Yes; projection is continuous but usually not injective. Distinct high-dimensional observations may coincide. Apparent 2D shape is not automatically the original topology or distance structure."
+  },
+  {
+    "id": "04.R1",
+    "stage": 4,
+    "question": "Explain why a deformation retraction is not generally a homeomorphism.",
+    "answer_criteria": "It gives a homotopy equivalence but may collapse many points onto one, as annulus radial segments collapse onto the circle. A homeomorphism is bijective with continuous inverse."
+  },
+  {
+    "id": "04.R2",
+    "stage": 4,
+    "question": "Why are elements of the fundamental group not raw parameterized loops?",
+    "answer_criteria": "Elements are based loops modulo based homotopy. Concatenation is well-defined on these classes, and reparameterizations/homotopies give associativity and inverse relations on classes."
+  },
+  {
+    "id": "04.R3",
+    "stage": 4,
+    "question": "Does a digit classifier have to be invariant under all rotations because rotations form a group?",
+    "answer_criteria": "No. A mathematical group action does not ensure label preservation. The scientific/task invariances must be justified; a rotation may change the written symbol or create an ambiguous image."
+  },
+  {
+    "id": "05.R1",
+    "stage": 5,
+    "question": "List every simplex in a filled triangle and then remove only the triangular face. What changes?",
+    "answer_criteria": "Three vertices, three edges, one face; after removing the face the boundary remains. Counts change from (3,3,1) to (3,3,0), Euler characteristic from 1 to 0, and a nonbounding one-cycle appears."
+  },
+  {
+    "id": "05.R2",
+    "stage": 5,
+    "question": "Four planar points generate a full abstract Rips simplex at a large scale. Why is that not a contradiction?",
+    "answer_criteria": "The abstract simplex is determined by vertex subsets and has dimension three. Its geometric realization need not use the original planar coordinates as an affine simplex."
+  },
+  {
+    "id": "05.R3",
+    "stage": 5,
+    "question": "Two bright pixels touch only at a corner. Are they connected in this course's closed-square union?",
+    "answer_criteria": "Yes; they share a vertex. A four-neighbor pixel adjacency rule could answer differently. The image-to-space convention is part of the analysis, not an implementation detail."
+  },
+  {
+    "id": "06.R1",
+    "stage": 6,
+    "question": "Is every cycle a nonzero homology class? Explain with a filled triangle.",
+    "answer_criteria": "No. The perimeter is a cycle but is also the boundary of the filled face, so its homology class is zero. H is cycles modulo boundaries."
+  },
+  {
+    "id": "06.R2",
+    "stage": 6,
+    "question": "Why must boundaries be contained in cycles for homology to be defined this way?",
+    "answer_criteria": "The quotient needs the boundary space to be a subspace of cycles. ∂²=0 supplies that inclusion. State which chain dimensions the maps connect."
+  },
+  {
+    "id": "06.R3",
+    "stage": 6,
+    "question": "Your H1 code builds only vertices and edges. What kinds of classes can be wrong?",
+    "answer_criteria": "Cycles filled by triangles in the intended complex would be falsely retained. Correct H1 needs the boundary map from C2; in general Hk needs k+1-dimensional simplices that can kill k-cycles."
+  },
+  {
+    "id": "07.R1",
+    "stage": 7,
+    "question": "What is the difference between the Rips and Čech triangle conditions?",
+    "answer_criteria": "Rips requires all three pairwise distances below the edge threshold. Čech requires a common intersection of three balls at the declared radius. Pairwise overlap alone need not supply a common intersection."
+  },
+  {
+    "id": "07.R2",
+    "stage": 7,
+    "question": "An alpha diagram has coordinates in squared-radius units. Can you compare them directly with Rips edge lengths?",
+    "answer_criteria": "No. Identify and transform parameter conventions before comparing coordinates; even matched units do not make different filtrations equal."
+  },
+  {
+    "id": "07.R3",
+    "stage": 7,
+    "question": "Why can sequential independent clusterings fail to be a filtration?",
+    "answer_criteria": "A filtration requires nested objects with compatible inclusion maps. Recomputing clusters at each scale may split/reassign observations in ways that are not nested."
+  },
+  {
+    "id": "08.R1",
+    "stage": 8,
+    "question": "An interval is [2,5). At which of 1,2,4,5 is it alive? Explain the endpoint convention.",
+    "answer_criteria": "Alive at 2 and 4, not 1 or 5. Birth is included and death excluded. Counts at tied filtration values depend on the declared convention."
+  },
+  {
+    "id": "08.R2",
+    "stage": 8,
+    "question": "Why can two filtrations have identical Betti counts at each time yet different persistence?",
+    "answer_criteria": "Counts omit the maps tracking which classes continue. For example [0,3)+[1,2) and [0,2)+[1,3) have identical count curves but different interval pairings."
+  },
+  {
+    "id": "08.R3",
+    "stage": 8,
+    "question": "A bar reaches the maximum threshold your program computed. What may you conclude?",
+    "answer_criteria": "It has not died in the computed filtration. It is not necessarily essential in a larger intended filtration. Separate computational truncation from a completed-domain essential class."
+  },
+  {
+    "id": "09.R1",
+    "stage": 9,
+    "question": "Trace the reduction of columns {0,1}, {1,2}, {0,2} over F₂.",
+    "answer_criteria": "The first pivots at 1 and second at 2. The third XOR second becomes {0,1}, then XOR first becomes empty. Empty is a birth candidate; nonempty reduced columns pair their pivot row with the column."
+  },
+  {
+    "id": "09.R2",
+    "stage": 9,
+    "question": "Why must faces precede cofaces even when filtration values tie?",
+    "answer_criteria": "The boundary must refer to already present generators. Time/dimension/vertex ordering supplies a compatible order. A different valid tie order may alter representatives but not positive-length interval multisets."
+  },
+  {
+    "id": "09.R3",
+    "stage": 9,
+    "question": "What three independent forms of evidence should support your implementation?",
+    "answer_criteria": "Exact hand-derived fixtures, mathematical invariants such as ∂²=0 or Euler–Poincaré, and external-library agreement under aligned conventions. Repeated tests using one buggy routine are not independent evidence."
+  },
+  {
+    "id": "10.R1",
+    "stage": 10,
+    "question": "Derive why a point (b,d) can be matched to the diagonal at cost (d−b)/2 in L∞.",
+    "answer_criteria": "For any t, d−b≤|d−t|+|t−b|≤2max(...). The midpoint t=(b+d)/2 attains the bound."
+  },
+  {
+    "id": "10.R2",
+    "stage": 10,
+    "question": "What must stay fixed before using the image experiment's uniform perturbation bound?",
+    "answer_criteria": "The underlying domain/cell complex, correspondence, filtration construction, homology dimension, and field. The measured change is in function values. Altering segmentation or resolution requires another analysis."
+  },
+  {
+    "id": "10.R3",
+    "stage": 10,
+    "question": "A feature survives perturbation. Does that establish a biological mechanism or a statistically unusual signal?",
+    "answer_criteria": "No. Stability is sensitivity to specified changes. Mechanistic meaning and significance require additional design, null models, independent observations and appropriate evidence."
+  },
+  {
+    "id": "11.R1",
+    "stage": 11,
+    "question": "Why must a scaler be fitted on training data rather than the concatenation of train and test?",
+    "answer_criteria": "Test statistics would inform the representation and contaminate the evaluation. Fit on training, transform validation/test unchanged; refit on train+validation only after selection when the protocol permits."
+  },
+  {
+    "id": "11.R2",
+    "stage": 11,
+    "question": "What choices affect a Mapper graph before any homology is computed?",
+    "answer_criteria": "Observation representation/metric, lens, cover intervals and overlap, local clustering and its parameters, and nerve construction. The graph is a parameter-dependent summary, not an automatic recovered truth."
+  },
+  {
+    "id": "11.R3",
+    "stage": 11,
+    "question": "A delay vector includes x(t+2τ), but your forecast is issued at t. What is wrong?",
+    "answer_criteria": "That coordinate is unavailable at prediction time and leaks future information. Use an availability-aligned convention or move the forecast origin accordingly."
+  },
+  {
+    "id": "12.R1",
+    "stage": 12,
+    "question": "The supplied test labels and results are public in this archive. Is a new tuning experiment on this same test set an untouched evaluation?",
+    "answer_criteria": "No. Reproducing known results is useful but does not create an unseen holdout. A new independent evaluation needs new reserved data or a clearly exploratory designation."
+  },
+  {
+    "id": "12.R2",
+    "stage": 12,
+    "question": "Pixels plus topology got four extra correct predictions. What must you inspect before a general improvement claim?",
+    "answer_criteria": "Paired disagreements, uncertainty, split construction, dependence/grouping, tuning history, replication and operating cost. A four-count difference alone is not universal or statistically significant evidence."
+  },
+  {
+    "id": "12.R3",
+    "stage": 12,
+    "question": "What evidence is required before the course log says retained, and what does that status still not certify?",
+    "answer_criteria": "A qualifying independent assessment and a qualifying delayed recall at least seven days later under the proposed policy. It records self-reported evidence, not externally graded mastery of the entire book or field."
+  }
+]

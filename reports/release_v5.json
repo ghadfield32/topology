@@ -1,0 +1,362 @@
+{
+  "status": "PASSED",
+  "stages": 31,
+  "reference_notebooks": 83,
+  "executed_reference_code_cells": 482,
+  "embedded_png_outputs": 55,
+  "learner_notebooks_intentionally_unexecuted": 31,
+  "coding_exercises": 119,
+  "concept_questions": 210,
+  "transfer_questions": 42,
+  "delayed_recall_questions": 93,
+  "primers": 8,
+  "observed_data_sources": 5,
+  "data_manifest_files_checked": [
+    "data/raw/iris.csv",
+    "data/raw/digits.npz",
+    "data/splits.json",
+    "data/stereo/motorcycle.npz",
+    "data/stereo/calibration.json",
+    "data/stereo/left.png",
+    "data/stereo/right.png",
+    "data/stereo/SCIKIT_IMAGE_LICENSE.txt",
+    "data/time_series/sunspots_yearly.csv",
+    "data/physics/hahn1_excerpt.csv"
+  ],
+  "learner_stages_assessed": 0,
+  "font_files": [],
+  "notebooks": {
+    "consolidation/00_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "3b171df9f884d89e6a65708ce2db5afcac65ee6b0b4b88142690cde2bd69dab7"
+    },
+    "consolidation/01_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "aa7025ef7c3541ff28fb1566138d375e84edd0ce79a566745b500319e19a60e8"
+    },
+    "consolidation/02_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "5f05ed7d49c19b418e1c4f40d1503c5eb30c5082a7a3402999143d4b02706265"
+    },
+    "consolidation/03_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "20e7effbde3e54c97c1e08cf7dab052c187e4a94436a5e8d31234a11b7b39812"
+    },
+    "consolidation/04_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "a2983f516d2e56ef3f602af0953f10dcd6ca408cdeb87649c5586b34dcb19710"
+    },
+    "consolidation/05_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "3b054b9f010093fab3dcd9d6346a6528aed13c4cb7fdf973534c31ce9a9bbbb9"
+    },
+    "consolidation/06_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "8db6a838724cf3f69536e7ed4c0231549afed933b116e2055d4efb9f8ec8d39c"
+    },
+    "consolidation/07_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "5abad9d74d0a3773e306c5fa2bd7675722802ea74d6af9b41743cdbabbfda85c"
+    },
+    "consolidation/08_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "3605fa7cc47cc64c88c3dbf7c40585934fe9bed35e0283d5249c3528b4299c64"
+    },
+    "consolidation/09_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "8c687ca0944e38c014519e56bc24cd26cea8c5faf7527ab70dd9b0f6f9e22efb"
+    },
+    "consolidation/10_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "08c558744b185ac967a098e4aa17ec47ac82ef1ef6680e43bc0933981748ac8d"
+    },
+    "consolidation/11_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "37a6702252e2e770bd60ce27d433e4911740defe8d1868f6b1ae878668a195fc"
+    },
+    "consolidation/12_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "0b8d22521e1d1c4fe952e6d6c18823d6b93c53f8f087883fd38f9bf5c08a1a5e"
+    },
+    "consolidation/13_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "09531ff3756881181c647f45f0e06ff7f21a043eb4ff5052345218f227e67688"
+    },
+    "consolidation/14_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "3d670a7c129f267147692367086cae6f72a7d3dfee94e93a2bef8261b938fcff"
+    },
+    "consolidation/15_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "99a72ca323d3108dde304418923bbfeb073236ce2cf653a60055fe8a28431b23"
+    },
+    "consolidation/16_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "cda123168d418a54d24cffa8a0a8bbf6e64571673984ace4606f94a31995e207"
+    },
+    "consolidation/17_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "5194ceb912f9122f19ed8b0eea2b469834a9ec7533f915bde05d58ffe5bd258f"
+    },
+    "consolidation/18_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "0f19c35cb486fef77a243e9c2964ab47a74ad0b423a863c64081b088dd8b8446"
+    },
+    "consolidation/19_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "e4dbf2110a6f65a69d839735d52a156a4532a0b31ebc343b8f4a0a423b8eba2a"
+    },
+    "consolidation/20_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "b2974d4762e128c6bbb38a9506a98bedea5b004c3dc8d44082b8bb23f9449b83"
+    },
+    "notebooks/00_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "3dfcc17924515cd1f49234c86194103d1e436bab8f996b7da3aa0fea4e1f469c"
+    },
+    "notebooks/01_lab.ipynb": {
+      "code_cells": 4,
+      "sha256": "ebf15af3e0061d7486d7111fbc1e8bf17cdcf9a184da40fc084e4b6f1bc4346c"
+    },
+    "notebooks/02_lab.ipynb": {
+      "code_cells": 4,
+      "sha256": "92723396e85d3e274991f946d0effaec3b659a66c3a758a08da690a244d305ee"
+    },
+    "notebooks/03_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "1de325c371efa31206ac0785b74ef53e0e19350fe9ae482a86bd4a746e6f28b5"
+    },
+    "notebooks/04_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "766037862bb9f349f50f09dff9afdc2e97bc5c2ca7446212361b98ea52cdc9e8"
+    },
+    "notebooks/05_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "386573289af15d07b43f328f244bc1b1a52d4591e2c4c737a41c0c64f3b88f58"
+    },
+    "notebooks/06_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "db7309784d13c4399cd427b069e83bfd3c8f82a3f45209eb8e6d6b8a0187274b"
+    },
+    "notebooks/07_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "ba367a45f91c3ee545907fae0f5a61aaed948066e275446f85cb2b03e210297d"
+    },
+    "notebooks/08_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "6d437284a3f5f68e9402a1510ee23bf7072546b3709b4da598b242cc9f0c9c8e"
+    },
+    "notebooks/09_lab.ipynb": {
+      "code_cells": 4,
+      "sha256": "30b62dcf51ce78cd005c8ec886b9db72e9582663fd3f752b52a5ed80c9ef3eb9"
+    },
+    "notebooks/10_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "629cf638c37a4d785471a2f96beb4de78137d80afbcbb50eee1d8a174a527ec7"
+    },
+    "notebooks/11_lab.ipynb": {
+      "code_cells": 5,
+      "sha256": "92bc6c7e5413d86514feeb8f83f3ac3e85e60c140e0cad3f81b5a787c4542b3d"
+    },
+    "notebooks/12_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "24457ea1e328bf5b29065ecfaa5e262d0deddb353acfdb415d7e6a8c4b1ec0e5"
+    },
+    "notebooks/13_lab.ipynb": {
+      "code_cells": 4,
+      "sha256": "1d3c2dfda8a4bb7e87338d1ea4dc2270e349b7ac5efe569c0a1554d04a0d2725"
+    },
+    "notebooks/14_lab.ipynb": {
+      "code_cells": 4,
+      "sha256": "ca97f0ba7fdcab5e23e4178a84dff29d94d8877ff3b61f99647c7678dd994d05"
+    },
+    "notebooks/15_lab.ipynb": {
+      "code_cells": 6,
+      "sha256": "3ec7694db5b35f46bcbf954c4771706ab9c05773885516010f9948454bbd2bc1"
+    },
+    "notebooks/16_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "679e4c27caaf6cb6ed90b0437ca0c5564b4da3ca413a0e34dc7110df0861e0cf"
+    },
+    "notebooks/17_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "b5c08618be899a68938875a1452114f0cd0ee4c4fd6ec9552a35f2160e9b70fd"
+    },
+    "notebooks/18_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "c05361b4182f4ae527e98ba2c00df3f585a31ca33c401a5cb3d7aa6187245e37"
+    },
+    "notebooks/19_lab.ipynb": {
+      "code_cells": 4,
+      "sha256": "0cfae1db73f3029922f13a7a8f5231681ca9a844093a2644a11ec82c6c5abd51"
+    },
+    "notebooks/20_lab.ipynb": {
+      "code_cells": 4,
+      "sha256": "f3b16dfc21c3f8f2ef0a38cd74e976866dba249721c3d6f218e5e8b4ca096d11"
+    },
+    "physics/notebooks/21_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "6bf08677143b267a2bedd29c0974747a6d9bb6c20f3e0ab3de36bffa92319011"
+    },
+    "physics/notebooks/22_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "1095adb3a6f83cfc45c10072a919d33c4635383c8e1ff26adf34698af500a662"
+    },
+    "physics/notebooks/23_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "983aba3f34ca6098427f500580fb477415cac067bb7fd998afb86f3ead30d6f7"
+    },
+    "physics/notebooks/24_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "c020ae8b849a321654bac6178a8dc0bc9593c9ff33c03195f169044bd3f65ef8"
+    },
+    "physics/notebooks/25_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "f67d23110cafcd2feb31bc67ae8183151875e4f7b3ce74d473d6514e768fc2cd"
+    },
+    "physics/notebooks/26_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "02a5e61d7bd87e7dad6f4263ff11790cb8caa3f38b3d32bb4f117aa48b6b5f2e"
+    },
+    "physics/notebooks/27_lab.ipynb": {
+      "code_cells": 4,
+      "sha256": "13db8894ab38206ecf45f22c5ff4e1fc80844d7914bbbf81d7873052ea8d0f12"
+    },
+    "physics/notebooks/28_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "d602260fefcc8e7befed324fe0734cdc0237e6aeba1173fb655566352d6508b5"
+    },
+    "physics/notebooks/29_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "135ec1aee4f35034dc6f18af4ebefdd20038002175d9b340f4de3f9edcb01053"
+    },
+    "physics/notebooks/30_lab.ipynb": {
+      "code_cells": 3,
+      "sha256": "a3a0df0bb0e9d3dd44016f8fe9d8c03ae0c496d73bca324dda63f48d41ac658c"
+    },
+    "physics/practice/answers/21_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "4869dbf8e80b773ac1d7e3ca8362ff5d28423151b399192a64610ef70db56f92"
+    },
+    "physics/practice/answers/22_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "87357070a95a908cadf92967a1f5dc9111bcb8c92de4ecdd309e09512dadbcf6"
+    },
+    "physics/practice/answers/23_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "08c5d098fa050f82bcae3f105cc526110f0dfa6e9a048a14ab8651eb5f1e89d1"
+    },
+    "physics/practice/answers/24_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "012b054c8a7e61ef0d1a8886c099c439d3cf2c8a249c0f0ca6b263b8400cf20c"
+    },
+    "physics/practice/answers/25_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "29f7b2cad9a8eb245c4c968584f8a4343e0e1fe71abc40ddf86c9a3b4ac6473f"
+    },
+    "physics/practice/answers/26_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "a0f5afab16caa5a72a6f917e196041283c07edb5209232079a8e80b34bc63864"
+    },
+    "physics/practice/answers/27_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "e71ad88ec2850586edcfa806dcec9887a80173ad705b706842e340fdcc4c90c6"
+    },
+    "physics/practice/answers/28_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "d4d03acc88bfd4ecdbf0d7b25edba4ab8d001fabddc83fa44517d9a75e224b40"
+    },
+    "physics/practice/answers/29_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "ced5f043bb887d71d6fe46df501d817d0c12cabd19b639b89979c0be469001bf"
+    },
+    "physics/practice/answers/30_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "ccca324ae8e6cab81b4083c798ddd4478181ae47cc9a97c65dd4033ead9b999a"
+    },
+    "practice/answers/00_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "8e4b71058cd1280e680b3cec82eebaa324093fab5e9af1d31669fcd5d0723264"
+    },
+    "practice/answers/01_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "ba782d11cfa5c23dd41976736491861e26a5811eaf882803d7dc8bd09101cec3"
+    },
+    "practice/answers/02_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "72bd8686d4a7088fbe81d8a5120deeeb5caa00386d9f469f61d5be9ce59742c6"
+    },
+    "practice/answers/03_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "2d23a680a5c970aeaac41b02943ff900141ce19eda55ffc60a6832fb26f7874b"
+    },
+    "practice/answers/04_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "2e2b3d1ae20422baae538a49c75d71228c1f2b3d39d7ded1d9697771ff094647"
+    },
+    "practice/answers/05_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "e68e6c5d906628bc2141f778df7f970232e7e10a5aab31378334a93e5e8c895e"
+    },
+    "practice/answers/06_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "e090945e73b4f0c8d32f9f6c362e715103169410169add49c4a3365396a6bb8f"
+    },
+    "practice/answers/07_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "aa62374f1dbdefed3aa6abe49e65b627873134223424c80958e9b458402acb3f"
+    },
+    "practice/answers/08_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "2ca09f94285ceb05b1a11c07c4446affcbc3232440f5df4b39466dc839f4642c"
+    },
+    "practice/answers/09_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "6baba9bc3855d1bf897ceb0bbced8ed0ac4d9a998ea75311a702a3ea364941b6"
+    },
+    "practice/answers/10_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "72521504b53d28f4dd0bcc7c01546e91f8d090494fe4da26df19709cb50cd5a7"
+    },
+    "practice/answers/11_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "9dcf2e928a02221f4ccf546fe994d072bff5645934eafa90d7a7d92b53c38eac"
+    },
+    "practice/answers/12_practice.ipynb": {
+      "code_cells": 11,
+      "sha256": "85916299f942cb8a5eec01070d9a74f889e59df4eeb864e7be36135090ff82da"
+    },
+    "practice/answers/13_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "521beeb1859b2ff2fdf5c3a29396d8f856dd6e4c74239ba7e24c09a63764ebde"
+    },
+    "practice/answers/14_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "7c72b2243e71627c7223629cf850867fcf1d06712f0f3a17cc0dd1fa06fce532"
+    },
+    "practice/answers/15_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "df722883fd389f1aa4d9d208649e172c08b9920dba0d69515ac6dca2bbfd28e8"
+    },
+    "practice/answers/16_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "34e82c00750486b73b5408db67e39e8d611e6c5206d92426397acdfa83ec9cad"
+    },
+    "practice/answers/17_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "bbdccf23003d7261d5ed3c0c74107a25e838036062e4e4a09d53a4688a9a4e58"
+    },
+    "practice/answers/18_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "d216f43f276662a7448b8aab0b0f2abe01547c6280256189770abe98d5b17bb0"
+    },
+    "practice/answers/19_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "3d48d6294b180e736a67fd810d1f62295c1eb987c2f1228c956d00bcd6c9ee6a"
+    },
+    "practice/answers/20_practice.ipynb": {
+      "code_cells": 7,
+      "sha256": "f285f387e5f41934072ca602a0f7e01aed899683a90530332ac77025a626adaf"
+    }
+  }
+}

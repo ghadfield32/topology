@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "html_files": 1987,
+  "local_targets": 29470,
+  "fragments": 648,
+  "errors": [],
+  "scope": "Static local file and fragment checks, not full browser navigation or remote URL uptime."
+}

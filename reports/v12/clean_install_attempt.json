@@ -1,0 +1,19 @@
+{
+  "profile": "physics",
+  "mode": "uv_resolved_install",
+  "fresh_dependency_install": false,
+  "commands": [
+    {
+      "argv": [
+        "/opt/pyvenv/bin/uv",
+        "lock"
+      ],
+      "returncode": 2,
+      "log": "00_command.log",
+      "timeout_seconds": 12
+    }
+  ],
+  "status": "blocked",
+  "venv_existed_before_setup": false,
+  "reason": "A required uv step did not complete. No fallback environment was silently selected."
+}

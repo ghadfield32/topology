@@ -1,0 +1,10 @@
+{
+  "reference_points": 110,
+  "rigid_round_trip_max_m": 1.1157603309187458e-15,
+  "projection_round_trip": "passed",
+  "depth_type": "optical-axis Z",
+  "independent_calibration_validated": false,
+  "stage": 14,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real calibrated stereo-reference points plus a hand-checkable pinhole control."
+}

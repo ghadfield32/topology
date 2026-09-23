@@ -1,0 +1,58 @@
+[
+  {
+    "id": "seeds",
+    "title": "Agriculture: shape features and topology",
+    "type": "industry",
+    "path": "applications_v7/seeds",
+    "reference_notebooks": [
+      "applications_v7/seeds/lab.ipynb",
+      "applications_v7/seeds/answers.ipynb"
+    ],
+    "learner_notebook": "applications_v7/seeds/learner.ipynb",
+    "coding_exercises": 4,
+    "concepts": 6,
+    "recall": 3
+  },
+  {
+    "id": "concrete_slump",
+    "title": "Materials: prediction intervals",
+    "type": "industry",
+    "path": "applications_v7/concrete_slump",
+    "reference_notebooks": [
+      "applications_v7/concrete_slump/lab.ipynb",
+      "applications_v7/concrete_slump/answers.ipynb"
+    ],
+    "learner_notebook": "applications_v7/concrete_slump/learner.ipynb",
+    "coding_exercises": 4,
+    "concepts": 6,
+    "recall": 3
+  },
+  {
+    "id": "leakage",
+    "title": "Methods: leakage and units",
+    "type": "methods",
+    "path": "methods_v7/leakage",
+    "reference_notebooks": [
+      "methods_v7/leakage/lab.ipynb",
+      "methods_v7/leakage/answers.ipynb"
+    ],
+    "learner_notebook": "methods_v7/leakage/learner.ipynb",
+    "coding_exercises": 4,
+    "concepts": 6,
+    "recall": 3
+  },
+  {
+    "id": "claims",
+    "title": "Methods: source claims and counterexamples",
+    "type": "methods",
+    "path": "methods_v7/claims",
+    "reference_notebooks": [
+      "methods_v7/claims/lab.ipynb",
+      "methods_v7/claims/answers.ipynb"
+    ],
+    "learner_notebook": "methods_v7/claims/learner.ipynb",
+    "coding_exercises": 4,
+    "concepts": 6,
+    "recall": 3
+  }
+]

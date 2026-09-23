@@ -1,0 +1,267 @@
+{
+  "version": "2.0.0",
+  "verified_at_utc": "2026-09-20T13:11:33.395114+00:00",
+  "content": {
+    "status": "PASSED",
+    "core_lessons": 13,
+    "beginner_workbooks": 13,
+    "foundation_primers": 4,
+    "conceptual_exercises": 102,
+    "coding_exercises": 65,
+    "retrieval_questions": 39,
+    "executed_reference_notebooks": 26,
+    "executed_reference_code_cells": 189,
+    "intentional_learner_notebooks": 13,
+    "unexecuted_learner_code_cells": 143,
+    "learner_stages_assessed": 0,
+    "full_book_verified": false
+  },
+  "tests": {
+    "passed": 171,
+    "skipped": 2,
+    "failed": 0,
+    "skips": [
+      "ripser missing",
+      "gudhi missing"
+    ]
+  },
+  "python": "3.13.5",
+  "platform": "Linux",
+  "worked_notebook_records": {
+    "core": {
+      "00": {
+        "status": "PASSED",
+        "code_cells": 5,
+        "seconds": 4.119,
+        "errors": 0
+      },
+      "01": {
+        "status": "PASSED",
+        "code_cells": 4,
+        "seconds": 1.952,
+        "errors": 0
+      },
+      "02": {
+        "status": "PASSED",
+        "code_cells": 4,
+        "seconds": 2.912,
+        "errors": 0
+      },
+      "03": {
+        "status": "PASSED",
+        "code_cells": 3,
+        "seconds": 2.373,
+        "errors": 0
+      },
+      "04": {
+        "status": "PASSED",
+        "code_cells": 3,
+        "seconds": 2.182,
+        "errors": 0
+      },
+      "05": {
+        "status": "PASSED",
+        "code_cells": 3,
+        "seconds": 2.088,
+        "errors": 0
+      },
+      "06": {
+        "status": "PASSED",
+        "code_cells": 3,
+        "seconds": 2.191,
+        "errors": 0
+      },
+      "07": {
+        "status": "PASSED",
+        "code_cells": 3,
+        "seconds": 2.261,
+        "errors": 0
+      },
+      "08": {
+        "status": "PASSED",
+        "code_cells": 3,
+        "seconds": 2.597,
+        "errors": 0
+      },
+      "09": {
+        "status": "PASSED",
+        "code_cells": 4,
+        "seconds": 2.157,
+        "errors": 0
+      },
+      "10": {
+        "status": "PASSED",
+        "code_cells": 3,
+        "seconds": 2.185,
+        "errors": 0
+      },
+      "11": {
+        "status": "PASSED",
+        "code_cells": 5,
+        "seconds": 4.825,
+        "errors": 0
+      },
+      "12": {
+        "status": "PASSED",
+        "code_cells": 3,
+        "seconds": 4.498,
+        "errors": 0
+      }
+    },
+    "reference_practice": {
+      "00": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.872
+      },
+      "01": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.62
+      },
+      "02": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.571
+      },
+      "03": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.536
+      },
+      "04": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.659
+      },
+      "05": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.685
+      },
+      "06": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.613
+      },
+      "07": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 2.02
+      },
+      "08": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.705
+      },
+      "09": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.755
+      },
+      "10": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.63
+      },
+      "11": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.682
+      },
+      "12": {
+        "status": "PASSED",
+        "role": "reference_answers",
+        "code_cells": 11,
+        "errors": 0,
+        "seconds": 1.707
+      }
+    }
+  },
+  "figures": 22,
+  "fixed_grid_H1_bound_checks": 20,
+  "reading_volume_words": 35837,
+  "clean_extracted_candidate_tests": "171 passed, 2 skipped",
+  "package_checks": {
+    "status": "PASSED",
+    "html_pages": 138,
+    "existing_local_link_targets_checked": 4861,
+    "external_links_not_retested": 25,
+    "stages_checked": 13,
+    "executed_notebook_code_cells": 46,
+    "exercise_solution_pairs": 102,
+    "broken_local_links": [],
+    "font_files": []
+  },
+  "browser_scope": "RENDER_CHECKS_PASSED_NAVIGATION_NOT_TESTED",
+  "capstone": {
+    "results": [
+      {
+        "representation": "pixels",
+        "test_accuracy": 0.9638888888888889,
+        "correct": 347,
+        "test_count": 360
+      },
+      {
+        "representation": "topology",
+        "test_accuracy": 0.4666666666666667,
+        "correct": 168,
+        "test_count": 360
+      },
+      {
+        "representation": "combined",
+        "test_accuracy": 0.975,
+        "correct": 351,
+        "test_count": 360
+      },
+      {
+        "representation": "majority_baseline",
+        "test_accuracy": 0.1,
+        "correct": 36,
+        "test_count": 360
+      }
+    ],
+    "selected_C": {
+      "pixels": 1.0,
+      "topology": 1.0,
+      "combined": 0.1
+    },
+    "development_count": 1437,
+    "test_count": 360,
+    "fingerprint": "2254dcaf13dc19ec4ef4d5757337771bbeacb246f1710a2b46bcc4ce362c12a7",
+    "claim": "Held-out image accuracy on the declared split; no unseen-writer or statistical-significance claim.",
+    "holdout_status_after_run": "exposed"
+  },
+  "limitations": [
+    "Actual book text not examined; 24 supplied-section audit remains pending.",
+    "No Mac or Windows execution and no clean network dependency-install verification.",
+    "Ripser/GUDHI comparisons and optional alpha demo were not executed.",
+    "Browser local navigation blocked by host policy; in-memory render checks only, plus static links.",
+    "No independently supervised learner assessment, formal proof-assistant check or independent code reviewer.",
+    "Existing handwriting demonstration holdout is exposed; no unseen-writer or significance claim."
+  ]
+}

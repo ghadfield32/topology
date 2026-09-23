@@ -1,0 +1,49 @@
+{
+  "scope": "In-memory HTML with the actual bundled stylesheet; not file/HTTP navigation or persistent browser storage.",
+  "navigation_attempt": "Local HTTP requests returned ERR_BLOCKED_BY_ADMINISTRATOR; full navigation was not tested.",
+  "pages": [
+    {
+      "path": "START_HERE.html",
+      "render_status": "PASSED",
+      "h1": "Understand shape.\nBuild it. Test it."
+    },
+    {
+      "path": "site/hubs/00.html",
+      "render_status": "PASSED",
+      "h1": "Stage 00 \u2014 Start here: how to learn, run, and question the results"
+    },
+    {
+      "path": "site/workbooks/06.html",
+      "render_status": "PASSED",
+      "h1": "Stage 06 workbook \u2014 Turn a loop into a kernel and a quotient"
+    },
+    {
+      "path": "site/practice/answers/09.html",
+      "render_status": "PASSED",
+      "h1": "Stage 09 \u2014 Reference coding solutions"
+    },
+    {
+      "path": "site/foundations/00_numbers_symbols_and_types.html",
+      "render_status": "PASSED",
+      "h1": "Foundation A \u2014 Read the mathematics before trying to remember it"
+    },
+    {
+      "path": "site/retrieval.html",
+      "render_status": "PASSED",
+      "h1": "Delayed retrieval: 39 new transfer questions"
+    },
+    {
+      "path": "site/docs/LEARNING_SYSTEM_V2.html",
+      "render_status": "PASSED",
+      "h1": "A learning system, not a folder of finished answers"
+    },
+    {
+      "path": "site/notebooks/12.html",
+      "render_status": "PASSED",
+      "h1": "Stage 12 \u2014 Capstone: reproduce, defend, transfer, and audit the book"
+    }
+  ],
+  "failures": [],
+  "mobile_page_has_document_overflow": false,
+  "status": "RENDER_CHECKS_PASSED_NAVIGATION_NOT_TESTED"
+}

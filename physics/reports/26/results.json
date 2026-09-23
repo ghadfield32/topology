@@ -1,0 +1,101 @@
+{
+  "stage": 26,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "manufactured boundary-value problem; no observed PDE data",
+  "seed": 5,
+  "steps": 500,
+  "collocation_interior": 63,
+  "evaluation_points": 257,
+  "relative_l2_error": 0.00013901344962062673,
+  "grid_residual_rmse": 0.038804127656505885,
+  "endpoint_max_error": 0.0,
+  "scope": "Grid diagnostics are not a uniform PDE-error certificate.",
+  "finite_difference_max_error_63_interior": 0.00020082180969560604,
+  "measured_regression": {
+    "source": "NIST Hahn1 first 56 observations",
+    "excerpt_sha256": "abcdeee10337f548d7072ce2284f6760e00cab3107bae472f1074efd9ab270b9",
+    "train_source_ids": [
+      1,
+      56,
+      10,
+      37,
+      17,
+      47,
+      15,
+      11,
+      26,
+      8,
+      18,
+      27,
+      9,
+      21,
+      50,
+      29,
+      32,
+      20,
+      53,
+      3,
+      55,
+      16,
+      54,
+      31,
+      49,
+      41,
+      2,
+      42,
+      38,
+      23,
+      35,
+      44,
+      34,
+      39
+    ],
+    "validation_source_ids": [
+      30,
+      7,
+      48,
+      24,
+      5,
+      45,
+      33,
+      14,
+      13,
+      25,
+      36
+    ],
+    "test_source_ids": [
+      12,
+      6,
+      4,
+      40,
+      46,
+      28,
+      43,
+      19,
+      52,
+      22,
+      51
+    ],
+    "training_temperature_mean": 298.5570588235294,
+    "training_temperature_std": 177.25973447971782,
+    "candidates": [
+      {
+        "degree": 1,
+        "validation_mae": 1.8274272085051317
+      },
+      {
+        "degree": 3,
+        "validation_mae": 0.5929025126945244
+      },
+      {
+        "degree": 5,
+        "validation_mae": 0.12545269463305908
+      }
+    ],
+    "selected_degree": 5,
+    "test_mae_source_response_scale": 0.15264256757869968,
+    "linear_baseline_test_mae": 1.932039948593957,
+    "note": "Within-excerpt educational split; replicate IDs unavailable, test now exposed. Not the NIST full-data certified benchmark."
+  },
+  "source_review_date": "2026-09-20"
+}

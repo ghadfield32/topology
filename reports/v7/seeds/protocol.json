@@ -1,0 +1,43 @@
+{
+  "seed": 17,
+  "features": [
+    "area",
+    "perimeter",
+    "compactness",
+    "kernel_length",
+    "kernel_width",
+    "asymmetry",
+    "groove_length"
+  ],
+  "split_sizes": {
+    "train": 126,
+    "validation": 42,
+    "test": 42
+  },
+  "models": "fixed C=1; same rows; no tuning",
+  "persistence_subset": "first 24 sorted training row indices",
+  "data_acquisition": "All numeric records transcribed from official plaintext returned by web retrieval. Whitespace normalized. Direct container download failed (DNS/network). No claim of provider-byte checksum verification.",
+  "split_audit": {
+    "row_disjoint": true,
+    "unit_disjoint": true,
+    "partition_sizes": {
+      "train": 126,
+      "validation": 42,
+      "test": 42
+    },
+    "pairs": {
+      "train|validation": {
+        "shared_rows": [],
+        "shared_units": []
+      },
+      "train|test": {
+        "shared_rows": [],
+        "shared_units": []
+      },
+      "validation|test": {
+        "shared_rows": [],
+        "shared_units": []
+      }
+    }
+  }
+}

@@ -1,0 +1,534 @@
+[
+  {
+    "path": "applications_v7/concrete_slump/answers.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "applications_v7/concrete_slump/lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "applications_v7/seeds/answers.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "applications_v7/seeds/lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/00_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/01_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/02_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/03_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/04_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/05_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/06_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/07_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/08_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/09_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/10_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/11_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/12_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/13_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/14_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/15_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/16_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/17_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/18_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/19_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "consolidation/20_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/answers/co2.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/answers/elnino.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/answers/grunfeld.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/answers/modechoice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/answers/nile.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/answers/stackloss.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/answers/wdbc.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/answers/wine.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/notebooks/co2.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/notebooks/elnino.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/notebooks/grunfeld.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/notebooks/modechoice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/notebooks/nile.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/notebooks/stackloss.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/notebooks/wdbc.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "industry/notebooks/wine.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "methods_v7/claims/answers.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "methods_v7/claims/lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "methods_v7/leakage/answers.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "methods_v7/leakage/lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/00_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/01_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/02_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/03_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/04_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/05_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/06_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/07_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/08_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/09_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/10_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/11_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/12_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/13_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/14_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/15_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/16_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/17_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/18_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/19_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "notebooks/20_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/21_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/22_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/23_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/24_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/25_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/26_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/27_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/28_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/29_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/notebooks/30_lab.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/21_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/22_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/23_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/24_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/25_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/26_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/27_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/28_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/29_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "physics/practice/answers/30_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/00_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/01_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/02_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/03_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/04_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/05_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/06_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/07_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/08_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/09_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/10_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/11_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/12_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/13_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/14_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/15_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/16_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/17_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/18_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/19_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "practice/answers/20_practice.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/notebooks/S00.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/notebooks/S01.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/notebooks/S02.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/notebooks/S03.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/notebooks/S04.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/notebooks/S05.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/notebooks/S06.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/solutions/S00.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/solutions/S01.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/solutions/S02.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/solutions/S03.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/solutions/S04.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/solutions/S05.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v8/solutions/S06.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v9/notebooks/acb_readiness.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "sports_v9/solutions/acb_readiness.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/notebooks/r01.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/answers/r01.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/notebooks/r02.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/answers/r02.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/notebooks/r03.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/answers/r03.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/notebooks/r04.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/answers/r04.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/notebooks/r05.ipynb",
+    "teaching_sources_unchanged": true
+  },
+  {
+    "path": "representations/answers/r05.ipynb",
+    "teaching_sources_unchanged": true
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "cech_triangle": [
+    {
+      "ball_radius": 0.45,
+      "betti": [
+        3,
+        0
+      ]
+    },
+    {
+      "ball_radius": 0.51,
+      "betti": [
+        1,
+        1
+      ]
+    },
+    {
+      "ball_radius": 0.6,
+      "betti": [
+        1,
+        0
+      ]
+    }
+  ],
+  "iris_ids": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    110,
+    120,
+    130,
+    140
+  ],
+  "rips_convention": "maximum edge length",
+  "max_simplex_dimension": 2,
+  "max_reported_homology": 1,
+  "threshold_results": [
+    {
+      "epsilon": 0.0,
+      "beta0": 15,
+      "beta1": 0
+    },
+    {
+      "epsilon": 0.8177126710612095,
+      "beta0": 5,
+      "beta1": 0
+    },
+    {
+      "epsilon": 1.5905973720586863,
+      "beta0": 2,
+      "beta1": 0
+    },
+    {
+      "epsilon": 2.6981417852432035,
+      "beta0": 1,
+      "beta1": 0
+    },
+    {
+      "epsilon": 3.5298725189445577,
+      "beta0": 1,
+      "beta1": 0
+    },
+    {
+      "epsilon": 4.8163581388419345,
+      "beta0": 1,
+      "beta1": 0
+    },
+    {
+      "epsilon": 5.643580423808984,
+      "beta0": 1,
+      "beta1": 0
+    }
+  ]
+}

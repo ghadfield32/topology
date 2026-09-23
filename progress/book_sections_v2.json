@@ -1,0 +1,218 @@
+[
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "What Does \"Close\" Mean?",
+    "proposed_course_stage": "02",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Good Maps Between Worlds",
+    "proposed_course_stage": "03",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Rules of Combination",
+    "proposed_course_stage": "01, 04",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Paths, Loops, and Holes",
+    "proposed_course_stage": "04, 06",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "From Loops to Surfaces",
+    "proposed_course_stage": "04, 05",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Counting Holes Without Paths",
+    "proposed_course_stage": "06",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Worlds That Change",
+    "proposed_course_stage": "07",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Remembering What Lasts",
+    "proposed_course_stage": "08–10",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Shapes from Data",
+    "proposed_course_stage": "07, 11",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Seeing Structure in the World",
+    "proposed_course_stage": "11, 12",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Learning to Listen",
+    "proposed_course_stage": "00, 12",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Listening to Shape",
+    "supplied_title": "Looking Beneath the Surface",
+    "proposed_course_stage": "01–06",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "The Mathematics Beneath the Ideas",
+    "supplied_title": "The Mathematics of Closeness",
+    "proposed_course_stage": "02",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "The Mathematics Beneath the Ideas",
+    "supplied_title": "Good Maps Between Worlds",
+    "proposed_course_stage": "03",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "The Mathematics Beneath the Ideas",
+    "supplied_title": "Actions, Combination, and Groups",
+    "proposed_course_stage": "04",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "The Mathematics Beneath the Ideas",
+    "supplied_title": "Paths, Loops, and Holes",
+    "proposed_course_stage": "04, 06",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "The Mathematics Beneath the Ideas",
+    "supplied_title": "Surfaces, Simplices, and Higher-Dimensional Shape",
+    "proposed_course_stage": "05, 06",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "The Mathematics Beneath the Ideas",
+    "supplied_title": "Homology, Betti Numbers, and the Shape of Information",
+    "proposed_course_stage": "06",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Topology Through Change and Data",
+    "supplied_title": "Filtrations and Persistent Homology",
+    "proposed_course_stage": "07–10",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Topology Through Change and Data",
+    "supplied_title": "Building Shape from Data",
+    "proposed_course_stage": "07, 11",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Topology Through Change and Data",
+    "supplied_title": "Topology in the Real World: Listening for Structure",
+    "proposed_course_stage": "10–12",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Topology Through Change and Data",
+    "supplied_title": "Continuing the Journey",
+    "proposed_course_stage": "12; proof/depth guide",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Closing material",
+    "supplied_title": "Epilogue",
+    "proposed_course_stage": "Actual text required",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  },
+  {
+    "part": "Closing material",
+    "supplied_title": "Appendix A. A Short Mathematical Toolbox",
+    "proposed_course_stage": "00, 01; foundation primers",
+    "source": "User-supplied table of contents",
+    "actual_book_text_reviewed": false,
+    "new_material_found": null,
+    "learner_evidence": null
+  }
+]

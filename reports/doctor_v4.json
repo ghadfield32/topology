@@ -1,0 +1,41 @@
+{
+  "python": "3.13.5",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "network_calls": 0,
+  "data": [
+    {
+      "file": "data/raw/iris.csv",
+      "status": "matches",
+      "sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f"
+    },
+    {
+      "file": "data/raw/digits.npz",
+      "status": "matches",
+      "sha256": "2642e38b91971a422addc7bfa3474649f0b69ad6736f1a9700079a57bfb8135a"
+    },
+    {
+      "file": "data/stereo/motorcycle.npz",
+      "status": "matches",
+      "sha256": "2ec813e33f86bcb4d1eb1bd90245f438b0841fd5b1ab9136a0132f0b28dfe469"
+    },
+    {
+      "file": "data/time_series/sunspots_yearly.csv",
+      "status": "matches",
+      "sha256": "7dac2f45399b4d3b335823db9884c4b6d7f79509f94aed6de20da6a431ae5900"
+    }
+  ],
+  "packages": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8",
+    "scikit-learn": "1.8.0",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.4",
+    "pytest": "9.0.2",
+    "ripser": null,
+    "gudhi": null
+  },
+  "core_ready": true,
+  "scope": "Presence and data-integrity checks only; run pytest for behavioral tests. Optional packages may be absent."
+}

@@ -1,0 +1,174 @@
+{
+  "id": "wine",
+  "sector": "food_chemistry",
+  "title": "Chemistry, scale and out-of-sample topological descriptors",
+  "provider": "sklearn",
+  "provider_version": "1.8.0",
+  "source_url": "https://archive.ics.uci.edu/dataset/109/wine",
+  "source_doi": "10.24432/C5PC7J",
+  "citation": "Aeberhard and Forina (1992), Wine, UCI Machine Learning Repository.",
+  "license": "CC BY 4.0",
+  "license_evidence_url": "https://archive.ics.uci.edu/dataset/109/wine",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "observation_unit": "One wine sample; cultivar is a category, not a quality score.",
+  "scope_limitations": "178 rows, 13 chemistry features, three cultivars. Different from Wine Quality (UCI 186).",
+  "rows": 178,
+  "columns": [
+    "row_id",
+    "alcohol",
+    "malic_acid",
+    "ash",
+    "alcalinity_of_ash",
+    "magnesium",
+    "total_phenols",
+    "flavanoids",
+    "nonflavanoid_phenols",
+    "proanthocyanins",
+    "color_intensity",
+    "hue",
+    "od280_od315_of_diluted_wines",
+    "proline",
+    "label"
+  ],
+  "label_map": {
+    "0": "class_0",
+    "1": "class_1",
+    "2": "class_2"
+  },
+  "data_kind": "observed",
+  "acquisition": "offline export from installed package distribution; no invented records",
+  "source_review_date": "2026-09-20",
+  "data_file": "data/industries/wine/data.csv",
+  "data_sha256": "2f6d6d39c2ba1898b9d254feb78ae575383fac1f9ed735c9aaa9308293568aac",
+  "source_file": "data/industries/wine/source_distribution.csv",
+  "source_sha256": "10e8a802908b34f86e5da8ce962f3c806694bc98450a18f61851af59f324bede",
+  "missing_by_column": {
+    "row_id": 0,
+    "alcohol": 0,
+    "malic_acid": 0,
+    "ash": 0,
+    "alcalinity_of_ash": 0,
+    "magnesium": 0,
+    "total_phenols": 0,
+    "flavanoids": 0,
+    "nonflavanoid_phenols": 0,
+    "proanthocyanins": 0,
+    "color_intensity": 0,
+    "hue": 0,
+    "od280_od315_of_diluted_wines": 0,
+    "proline": 0,
+    "label": 0
+  },
+  "transforms": [
+    "Preserved package data values and row order; added zero-based row_id.",
+    "Normalized CSV serialization; replaced spaces/slashes in sklearn feature names.",
+    "Provider label codes preserved and mapped explicitly; not original UCI IDs."
+  ],
+  "schema": [
+    {
+      "name": "row_id",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "row id"
+    },
+    {
+      "name": "alcohol",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: alcohol. Original source does not specify every unit."
+    },
+    {
+      "name": "malic_acid",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: malic acid. Original source does not specify every unit."
+    },
+    {
+      "name": "ash",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: ash. Original source does not specify every unit."
+    },
+    {
+      "name": "alcalinity_of_ash",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: alcalinity of ash. Original source does not specify every unit."
+    },
+    {
+      "name": "magnesium",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: magnesium. Original source does not specify every unit."
+    },
+    {
+      "name": "total_phenols",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: total phenols. Original source does not specify every unit."
+    },
+    {
+      "name": "flavanoids",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: flavanoids. Original source does not specify every unit."
+    },
+    {
+      "name": "nonflavanoid_phenols",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: nonflavanoid phenols. Original source does not specify every unit."
+    },
+    {
+      "name": "proanthocyanins",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: proanthocyanins. Original source does not specify every unit."
+    },
+    {
+      "name": "color_intensity",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: color intensity. Original source does not specify every unit."
+    },
+    {
+      "name": "hue",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: hue. Original source does not specify every unit."
+    },
+    {
+      "name": "od280_od315_of_diluted_wines",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: od280 od315 of diluted wines. Original source does not specify every unit."
+    },
+    {
+      "name": "proline",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "Chemistry measurement: proline. Original source does not specify every unit."
+    },
+    {
+      "name": "label",
+      "role": "response_or_signal",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "label"
+    }
+  ]
+}

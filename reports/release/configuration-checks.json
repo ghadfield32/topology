@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "pyproject TOML parsing",
+    "Compose YAML anchors and services",
+    "loopback published ports",
+    "GitHub workflow events and three native platforms",
+    "Docker verification command contract"
+  ],
+  "docker_compose_config_executed": false,
+  "docker_build_executed": false,
+  "ci_executed": false,
+  "scope": "Static checks; not deployment execution"
+}

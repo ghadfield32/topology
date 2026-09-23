@@ -1,0 +1,29 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________ test_copy_readonly_source_makes_only_workspace_writable ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-8/test_copy_readonly_source_make0')
+
+    def test_copy_readonly_source_makes_only_workspace_writable(tmp_path):
+        from shape_lab.course import copy_inputs
+        import stat
+        source=tmp_path/'source';source.mkdir();file=source/'lesson.txt';file.write_text('original')
+        file.chmod(0o444);source.chmod(0o555)
+        dest=tmp_path/'workspace'
+        try:
+            copy_inputs(source,dest)
+>           assert dest.stat().st_mode & stat.S_IWUSR
+E           AssertionError: assert (16749 & 128)
+E            +  where 16749 = os.stat_result(st_mode=16749, st_ino=1318042, st_dev=28, st_nlink=5, st_uid=0, st_gid=0, st_size=4096, st_atime=1790087669, st_mtime=1790087669, st_ctime=1790087669).st_mode
+E            +    where os.stat_result(st_mode=16749, st_ino=1318042, st_dev=28, st_nlink=5, st_uid=0, st_gid=0, st_size=4096, st_atime=1790087669, st_mtime=1790087669, st_ctime=1790087669) = stat()
+E            +      where stat = PosixPath('/tmp/pytest-of-root/pytest-8/test_copy_readonly_source_make0/workspace').stat
+E            +  and   128 = <module 'stat' (frozen)>.S_IWUSR
+
+tests/test_integration_v12.py:152: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_integration_v12.py::test_copy_readonly_source_makes_only_workspace_writable - AssertionError: assert (16749 & 128)
+ +  where 16749 = os.stat_result(st_mode=16749, st_ino=1318042, st_dev=28, st_nlink=5, st_uid=0, st_gid=0, st_size=4096, st_atime=1790087669, st_mtime=1790087669, st_ctime=1790087669).st_mode
+ +    where os.stat_result(st_mode=16749, st_ino=1318042, st_dev=28, st_nlink=5, st_uid=0, st_gid=0, st_size=4096, st_atime=1790087669, st_mtime=1790087669, st_ctime=1790087669) = stat()
+ +      where stat = PosixPath('/tmp/pytest-of-root/pytest-8/test_copy_readonly_source_make0/workspace').stat
+ +  and   128 = <module 'stat' (frozen)>.S_IWUSR
+1 failed, 50 deselected in 0.12s

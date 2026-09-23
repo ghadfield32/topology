@@ -1,0 +1,39 @@
+{
+  "fit_frames": [
+    110,
+    115,
+    120,
+    125,
+    130
+  ],
+  "later_frames": [
+    135,
+    140
+  ],
+  "fixed": {
+    "t0": 1.8333333333333333,
+    "z0": 3.275494460009308,
+    "v0": 3.8862771070102187,
+    "g": 9.81,
+    "residual_rmse_m": 0.017536917337837445,
+    "fit_rows": 5,
+    "fixed_gravity": true
+  },
+  "free": {
+    "t0": 1.8333333333333333,
+    "z0": 3.257689909227884,
+    "v0": 4.313586325764413,
+    "g": 12.373855312525205,
+    "residual_rmse_m": 0.009254298987190192,
+    "fit_rows": 5,
+    "fixed_gravity": false
+  },
+  "later_mae_m": {
+    "constant_height": 0.0446230812746351,
+    "fixed_gravity": 0.048812474188422605,
+    "free_quadratic": 0.04466141741406138
+  },
+  "g_with_doubled_clock": 3.0934638281313003,
+  "later_points_are_independent_athletes": false,
+  "release_label_known": false
+}

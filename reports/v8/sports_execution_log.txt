@@ -1,0 +1,28 @@
+1/14 sports_v8/notebooks/S00.ipynb
+passed
+2/14 sports_v8/notebooks/S01.ipynb
+passed
+3/14 sports_v8/notebooks/S02.ipynb
+passed
+4/14 sports_v8/notebooks/S03.ipynb
+passed
+5/14 sports_v8/notebooks/S04.ipynb
+passed
+6/14 sports_v8/notebooks/S05.ipynb
+passed
+7/14 sports_v8/notebooks/S06.ipynb
+passed
+8/14 sports_v8/solutions/S00.ipynb
+passed
+9/14 sports_v8/solutions/S01.ipynb
+passed
+10/14 sports_v8/solutions/S02.ipynb
+passed
+11/14 sports_v8/solutions/S03.ipynb
+passed
+12/14 sports_v8/solutions/S04.ipynb
+passed
+13/14 sports_v8/solutions/S05.ipynb
+passed
+14/14 sports_v8/solutions/S06.ipynb
+passed

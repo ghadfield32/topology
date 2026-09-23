@@ -1,0 +1,30 @@
+{
+  "browser": "system Chromium",
+  "navigation": "blocked_or_failed",
+  "render_checks": {
+    "stages": 31,
+    "title": "Learn shape.\nBuild understanding.",
+    "filter": "2 matching stages",
+    "mobile_overflow_px": 0,
+    "answers_revealed": true,
+    "images_loaded": [
+      {
+        "complete": true,
+        "width": 588
+      },
+      {
+        "complete": true,
+        "width": 388
+      }
+    ]
+  },
+  "http": {
+    "/START_HERE.html": 200,
+    "/reader/lessons/06_lesson.md.html": 200,
+    "/my_work/private.md": 403,
+    "/.git/config": 403,
+    "/progress/learning_log_v5.json": 403,
+    "/%2e%2e/.env": 403
+  },
+  "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:58735/START_HERE.html\nCall log:\n  - navigating to \"http://127.0.0.1:58735/START_HERE.html\", waiting until \"domcontentloaded\"\n"
+}

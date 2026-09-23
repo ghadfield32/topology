@@ -1,0 +1,8 @@
+{
+  "item": "r01",
+  "source": "representations/learner/r01.ipynb",
+  "source_sha256": "a3d6fc12b22e0f332dac477ec6e310a5020092efb47fe5fb46cfed63078c8625",
+  "lesson": "representations/lessons/R01.md",
+  "output": "/mnt/data/v11_evidence/git_practice_r01",
+  "assessment": "not_assessed"
+}

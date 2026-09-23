@@ -1,0 +1,218 @@
+[
+  {
+    "id": "seeds.Q1",
+    "kind": "concept",
+    "question": "What does one row represent, and what do its seven columns not contain?",
+    "answer": "One recorded kernel represented by extracted geometric features. The table does not include original X-ray images, acquisition dates, farm identity or an observed growth trajectory."
+  },
+  {
+    "id": "seeds.Q2",
+    "kind": "concept",
+    "question": "Why are two equal class-number differences not physical distances?",
+    "answer": "Class integers encode category identity; their numeric spacing is arbitrary. A relabeling changes the differences without changing the categories."
+  },
+  {
+    "id": "seeds.Q3",
+    "kind": "concept",
+    "question": "Calculate compactness for rectangles 2\u00d71 and 4\u00d71. Did their topology change?",
+    "answer": "The values are 2\u03c0/9 and 4\u03c0/25. Both filled rectangles remain disk-like; compactness is geometric, not a homeomorphism invariant."
+  },
+  {
+    "id": "seeds.Q4",
+    "kind": "concept",
+    "question": "Why must the scaler be fitted only on the declared training rows?",
+    "answer": "Otherwise parameters of the representation use held-out data. Training-only fitting defines an inductive protocol even though it does not solve missing batch information."
+  },
+  {
+    "id": "seeds.Q5",
+    "kind": "concept",
+    "question": "What space does H1 describe in the small Rips experiment?",
+    "answer": "A selected and standardized seven-feature point cloud. It is not direct evidence of a hole in a wheat kernel."
+  },
+  {
+    "id": "seeds.Q6",
+    "kind": "concept",
+    "question": "What additional data is required for a new-farm claim?",
+    "answer": "Farm/site and relevant batch/date identifiers, independently acquired new-site observations and a split matching the intended deployment, among other domain-specific requirements."
+  },
+  {
+    "id": "seeds.R1",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: What does one row represent, and what do its seven columns not contain?",
+    "answer": "One recorded kernel represented by extracted geometric features. The table does not include original X-ray images, acquisition dates, farm identity or an observed growth trajectory. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "seeds.R2",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: Calculate compactness for rectangles 2\u00d71 and 4\u00d71. Did their topology change?",
+    "answer": "The values are 2\u03c0/9 and 4\u03c0/25. Both filled rectangles remain disk-like; compactness is geometric, not a homeomorphism invariant. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "seeds.R3",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: What additional data is required for a new-farm claim?",
+    "answer": "Farm/site and relevant batch/date identifiers, independently acquired new-site observations and a split matching the intended deployment, among other domain-specific requirements. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "concrete_slump.Q1",
+    "kind": "concept",
+    "question": "Why exclude source_id, slump and flow from these predictors?",
+    "answer": "The ID is not a causal ingredient, and slump/flow are measured responses unavailable under the chosen pre-measurement task. Another task may use them only after documenting availability."
+  },
+  {
+    "id": "concrete_slump.Q2",
+    "kind": "concept",
+    "question": "For 25 calibration errors and \u03b1=0.1, which sorted value is used?",
+    "answer": "ceil(26\u00d70.9)=24, one-based: Python index 23. No interpolated quantile is used."
+  },
+  {
+    "id": "concrete_slump.Q3",
+    "kind": "concept",
+    "question": "Why might a small calibration set return an infinite radius?",
+    "answer": "The finite-sample corrected rank can be n+1 at an extreme target coverage. A finite maximum would not implement the chosen conservative rank rule."
+  },
+  {
+    "id": "concrete_slump.Q4",
+    "kind": "concept",
+    "question": "Does 90% nominal marginal coverage guarantee this particular recipe?",
+    "answer": "No. The guarantee averages over calibration and test sampling under its assumptions. It does not give pointwise conditional coverage for every recipe."
+  },
+  {
+    "id": "concrete_slump.Q5",
+    "kind": "concept",
+    "question": "Why is a wide interval potentially unhelpful even with high coverage?",
+    "answer": "Coverage alone can be achieved by nearly uninformative sets. Width in MPa and consequences of uncertainty must be reported too."
+  },
+  {
+    "id": "concrete_slump.Q6",
+    "kind": "concept",
+    "question": "Does a random row permutation prove exchangeability?",
+    "answer": "No. It does not erase dependence, collection shifts, or missing physical batch identities. The protocol is an educational within-collection study."
+  },
+  {
+    "id": "concrete_slump.R1",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: Why exclude source_id, slump and flow from these predictors?",
+    "answer": "The ID is not a causal ingredient, and slump/flow are measured responses unavailable under the chosen pre-measurement task. Another task may use them only after documenting availability. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "concrete_slump.R2",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: Why might a small calibration set return an infinite radius?",
+    "answer": "The finite-sample corrected rank can be n+1 at an extreme target coverage. A finite maximum would not implement the chosen conservative rank rule. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "concrete_slump.R3",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: Does a random row permutation prove exchangeability?",
+    "answer": "No. It does not erase dependence, collection shifts, or missing physical batch identities. The protocol is an educational within-collection study. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "leakage.Q1",
+    "kind": "concept",
+    "question": "How many observed kernels are there after making three copies of each row?",
+    "answer": "Still 210. The 630 software rows include constructed copies, not independent new observations."
+  },
+  {
+    "id": "leakage.Q2",
+    "kind": "concept",
+    "question": "Can row indices be disjoint while source kernels overlap?",
+    "answer": "Yes. Separate copies have different row indices but the same source ID; compare those identities explicitly."
+  },
+  {
+    "id": "leakage.Q3",
+    "kind": "concept",
+    "question": "Why can one-nearest-neighbor benefit strongly from duplicates?",
+    "answer": "An exact training copy is at distance zero from a test copy; this rewards memorization of the same evidence rather than transfer to a new kernel."
+  },
+  {
+    "id": "leakage.Q4",
+    "kind": "concept",
+    "question": "Why not repair the audit by generating unique IDs for every copy?",
+    "answer": "That changes the meaning of the unit key and conceals the problem. Unit identity must reflect the independent object under evaluation."
+  },
+  {
+    "id": "leakage.Q5",
+    "kind": "concept",
+    "question": "What remains invariant under a consistent positive column rescaling followed by training standardization?",
+    "answer": "For the same training rows, the standardized numerical arrays agree up to floating-point error. The statement does not extend to arbitrary nonlinear changes."
+  },
+  {
+    "id": "leakage.Q6",
+    "kind": "concept",
+    "question": "What group would matter for a deployment on previously unseen camera sessions?",
+    "answer": "Session identity and, as appropriate, participant/site identity and timing support. A row-only split cannot establish that independence."
+  },
+  {
+    "id": "leakage.R1",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: How many observed kernels are there after making three copies of each row?",
+    "answer": "Still 210. The 630 software rows include constructed copies, not independent new observations. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "leakage.R2",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: Why can one-nearest-neighbor benefit strongly from duplicates?",
+    "answer": "An exact training copy is at distance zero from a test copy; this rewards memorization of the same evidence rather than transfer to a new kernel. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "leakage.R3",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: What group would matter for a deployment on previously unseen camera sessions?",
+    "answer": "Session identity and, as appropriate, participant/site identity and timing support. A row-only split cannot establish that independence. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "claims.Q1",
+    "kind": "concept",
+    "question": "Compute the first symplectic Euler state and energy for the worked oscillator.",
+    "answer": "From (1,0), h=.2: p_new=-.2, q_new=.96, H_new=.4808, not .5."
+  },
+  {
+    "id": "claims.Q2",
+    "kind": "concept",
+    "question": "What does A.T J A=J establish here, and what does it not establish?",
+    "answer": "It establishes the canonical symplectic matrix condition for this linear update. It does not establish exact conservation of the chosen H for every step."
+  },
+  {
+    "id": "claims.Q3",
+    "kind": "concept",
+    "question": "Why does the sphere correction yield residual .5625?",
+    "answer": "At (2,0), the linearized correction subtracts (.75,0), leaving (1.25,0); 1.25\u00b2-1=.5625."
+  },
+  {
+    "id": "claims.Q4",
+    "kind": "concept",
+    "question": "Why is the sphere correction undefined at the origin?",
+    "answer": "The constraint Jacobian is zero and its required rank condition fails; there is no unique direction supplied by this formula."
+  },
+  {
+    "id": "claims.Q5",
+    "kind": "concept",
+    "question": "Can a direction decrease objectives with opposite gradients strictly to first order?",
+    "answer": "No. Requiring g\u00b7d>0 and -g\u00b7d>0 simultaneously is contradictory."
+  },
+  {
+    "id": "claims.Q6",
+    "kind": "concept",
+    "question": "Does the new lab reproduce Norm-PCGrad benchmark superiority?",
+    "answer": "No. It tests small operations and counterexamples. The paper\u2019s selected-domain benchmark results remain attributed external findings, not reproduced here."
+  },
+  {
+    "id": "claims.R1",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: Compute the first symplectic Euler state and energy for the worked oscillator.",
+    "answer": "From (1,0), h=.2: p_new=-.2, q_new=.96, H_new=.4808, not .5. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "claims.R2",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: Why does the sphere correction yield residual .5625?",
+    "answer": "At (2,0), the linearized correction subtracts (.75,0), leaving (1.25,0); 1.25\u00b2-1=.5625. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  },
+  {
+    "id": "claims.R3",
+    "kind": "recall",
+    "question": "Without reopening the lab, answer and invent one contrasting example: Does the new lab reproduce Norm-PCGrad benchmark superiority?",
+    "answer": "No. It tests small operations and counterexamples. The paper\u2019s selected-domain benchmark results remain attributed external findings, not reproduced here. A correct contrasting example must change a relevant assumption, not merely a numerical constant."
+  }
+]

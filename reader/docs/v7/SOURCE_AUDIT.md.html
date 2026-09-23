@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source audit — preserve claims, label extensions · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v7/SOURCE_AUDIT.md">docs/v7/SOURCE_AUDIT.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="source-audit--preserve-claims-label-extensions">Source audit — preserve claims, label extensions</h1>
+<h2 id="basis-of-the-course">Basis of the course</h2>
+<p>The original learning source proposes: understand the idea, state it precisely, calculate by hand, implement, test and explain limitations. The 31 retained stages and 31 new entry guides continue that organization. The book’s table of contents, not its complete text, supplied the initial scope. No chapter is marked as independently audited against unavailable full text.</p>
+<p>The supplied social-media posts and prior WMS integration note are retained as conceptual prompts through the existing source ledgers. We do not redistribute unrelated profile and messaging text. The additional calculations below are original educational extensions requested by the user, not text silently substituted for the source authors' arguments.</p>
+<table>
+<thead>
+<tr>
+<th>Supplied source</th>
+<th>What it asserts or proposes</th>
+<th>This course's separate treatment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PINN/PIKAN gradient-conflict post (supplied lines 65–81)</td>
+<td>Composite residual, boundary and interface objectives can conflict; Norm-PCGrad improves the authors' benchmarks.</td>
+<td>Preserve benchmark scope; retain Stage 27; add the exact opposite-gradient example, which is not a benchmark reproduction.</td>
+</tr>
+<tr>
+<td>Invariant-manifold/symplectic post (lines 67–84)</td>
+<td>Symplectic structure is presented as ensuring exact energy over arbitrary steps; one algebraic correction is presented as constraining updates to the manifold; major throughput claims are made.</td>
+<td>Attribute those claims; separately calculate the oscillator's energy change and a nonzero sphere residual. No GPU/HPC benchmark or climate validation is claimed.</td>
+</tr>
+<tr>
+<td>HNN/LNN comparison (lines 65–90)</td>
+<td>Learn mechanics through Hamiltonian or Lagrangian structure and a Legendre connection.</td>
+<td>Retain definitions and add explicit momentum/velocity arithmetic and regularity requirements. The trained LNN remains a restricted teaching model.</td>
+</tr>
+<tr>
+<td>Smooth-manifold/chart post (lines 67–100)</td>
+<td>Local coordinates, smooth transitions and vector-field-generated local diffeomorphisms.</td>
+<td>Retain its local framing; teach explicit chart round trips and finite-time flow domains. Numerical steps are not assumed to inherit exact-flow invertibility.</td>
+</tr>
+<tr>
+<td>WMS geometry/engineering/events note</td>
+<td>Geometry proposals need metric registration and holdouts; profiling and temporal evidence matter.</td>
+<td>Keep the existing modules and boundaries. Current v7 work changes the learning package, not WMS production code or automations.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="external-research-checked-for-the-new-addition">External research checked for the new addition</h2>
+<p>UCI Seeds and Concrete Slump metadata and their complete numeric endpoints were inspected. Both source cards specify the units provided, missing metadata, observation counts, licenses and DOI. Source transfer into the container used declared numeric transcription, not a claimed byte-identical download. See the data catalogue for the outstanding remote numeric comparison.</p>
+<p>The primary conformal reference is <a href="https://arxiv.org/abs/2107.07511">Angelopoulos and Bates, A Gentle Introduction to Conformal Prediction</a>. The new lab uses a direct finite-sample order statistic and an explicit infinite-radius case. Its guarantee requires a predictor fixed independently of exchangeable calibration/test scores. Marginal coverage is not guaranteed conditional coverage for every recipe. The article's empirical studies are not reproduced here.</p>
+<p>The gradient-conflict paper <a href="https://arxiv.org/abs/2609.14841">Tackling Failure Modes of PINNs and PIKANs Using Conflict-Free Gradients</a> remains a primary reading supporting attribution of the supplied post's research claims. The new opposite-gradient calculation does not establish that Norm-PCGrad wins or loses on its experimental benchmarks.</p>
+<p>For formal topology, the retained course uses the <a href="https://ti.inf.ethz.ch/ew/courses/TDA26/index.html">ETH 2026 TDA course</a>, Tinarrage, Morris and the linked deeper references. The entry guides are short original worked examples; they do not replace the formal proofs or claim author endorsement.</p>
+<h2 id="how-to-state-a-result-honestly">How to state a result honestly</h2>
+<p>“Source-reported” means an author made the claim in the identified source. “Analytically derived” means the shown argument establishes it under its explicit assumptions. “Executed” means the recorded implementation ran in this environment and produced the retained outputs. “Independently validated” would require appropriate separate evidence; ordinary regression tests and source hashes do not alone establish it.</p>
+<p>The v7 data experiments use observed kernel/mixture records; duplicate rows, rectangles, oscillator trajectories, attention arithmetic and sphere corrections are manufactured or analytic controls. They remain labeled that way. A plausible plot is not a proof of causality, calibrated scale, structural safety or domain transfer.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

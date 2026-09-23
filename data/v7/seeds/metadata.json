@@ -1,0 +1,69 @@
+{
+  "rows": 210,
+  "columns": [
+    "source_id",
+    "area",
+    "perimeter",
+    "compactness",
+    "kernel_length",
+    "kernel_width",
+    "asymmetry",
+    "groove_length",
+    "variety"
+  ],
+  "features": [
+    "area",
+    "perimeter",
+    "compactness",
+    "kernel_length",
+    "kernel_width",
+    "asymmetry",
+    "groove_length"
+  ],
+  "targets": [
+    "variety"
+  ],
+  "units": {
+    "area": "not specified in inspected UCI metadata",
+    "perimeter": "not specified in inspected UCI metadata",
+    "compactness": "dimensionless if A and P use consistent units",
+    "kernel_length": "not specified",
+    "kernel_width": "not specified",
+    "asymmetry": "definition/unit not specified",
+    "groove_length": "not specified",
+    "variety": "categorical label, not a magnitude"
+  },
+  "doi": "10.24432/C5H30K",
+  "citation": "Charytanowicz, Niewczas, Kulczycki, Kowalski and Lukasik (2010). Seeds. UCI Machine Learning Repository.",
+  "url": "https://archive.ics.uci.edu/dataset/236/seeds",
+  "raw_url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00236/seeds_dataset.txt",
+  "observation": "One wheat kernel described by seven extracted geometric measurements; original X-ray images are not bundled.",
+  "unknowns": [
+    "Field/plant/batch identifiers and acquisition dates unavailable in table",
+    "Physical area and length units not given in inspected repository entry",
+    "Cultivar integer mapping retained as 1,2,3; named varieties are Kama, Rosa and Canadian, but numeric-to-name mapping not independently verified"
+  ],
+  "limitations": [
+    "Balanced historical collection; does not estimate field prevalence",
+    "Classification is not disease diagnosis or yield forecasting",
+    "Compactness is derived geometry, not a topological invariant"
+  ],
+  "name": "seeds",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "retrieved": "2026-09-21",
+  "provenance_kind": "observed",
+  "acquisition": "All numeric records transcribed from official plaintext returned by web retrieval. Whitespace normalized. Direct container download failed (DNS/network). No claim of provider-byte checksum verification.",
+  "modifications": [
+    "Whitespace/column naming normalized",
+    "Generated 1-based source_id for Seeds only",
+    "No rows dropped or numerical values intentionally altered"
+  ],
+  "numeric_sha256": "ccbb02ab12d769438861e857d4d944c3a1f674cb5303690a0eedc861a19d4e10",
+  "numeric_columns_in_source": 8,
+  "remote_numeric_verification": "not executed in build environment",
+  "files_sha256": {
+    "data/v7/seeds/source_numeric.txt": "a446a4c7387482632a3d07318bc645d62e2ea148486cf30d0d6b3d55b53982c0",
+    "data/v7/seeds/table.csv": "9269dec683e9c29dd80f85603e425e3d9dd3939bc83945ef6aaf84c318f4274c"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "energy_before": 0.5,
+  "energy_after": 0.4808,
+  "symplectic_defect": 4.44089209850063e-19,
+  "first_projection_residual": 0.5625,
+  "iteration_residuals": [
+    0.5625,
+    0.05062499999999992,
+    0.0006098490481853958,
+    9.292229696811205e-08,
+    2.220446049250313e-15,
+    0.0
+  ],
+  "opposed_gradient_dot": -1.0,
+  "rectangle_compactness": [
+    0.6981317007977318,
+    0.5026548245743669
+  ],
+  "observed_source": "Seeds feature table; no dynamics measured",
+  "scope": "original analytic and numerical counterexamples, not empirical reproduction of supplied posts"
+}

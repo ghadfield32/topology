@@ -1,0 +1,764 @@
+{
+  "schema": 1,
+  "release": "12.0.0",
+  "stages": [
+    {
+      "id": "00",
+      "title": "Start here: how to learn, run, and question the results",
+      "track": "Shape and topology",
+      "prerequisites": [],
+      "lesson": "lessons/00_lesson.md",
+      "reference_lab": "notebooks/00_lab.ipynb",
+      "learner": "practice/learner/00_practice.ipynb",
+      "answers": "practice/answers/00_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/00/lesson.md",
+        "workbooks/00_workbook.md",
+        "sessions/00_session.md",
+        "consolidation/00_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S00.md",
+      "gate": "Explain what one row can and cannot establish.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "01",
+      "title": "Mathematical language, proofs, and linear algebra",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "00"
+      ],
+      "lesson": "lessons/01_lesson.md",
+      "reference_lab": "notebooks/01_lab.ipynb",
+      "learner": "practice/learner/01_practice.ipynb",
+      "answers": "practice/answers/01_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/01/lesson.md",
+        "workbooks/01_workbook.md",
+        "sessions/01_session.md",
+        "consolidation/01_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S00.md",
+      "gate": "Calculate the result by hand before using an array.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "02",
+      "title": "Closeness, metrics, neighborhoods, and topologies",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "01"
+      ],
+      "lesson": "lessons/02_lesson.md",
+      "reference_lab": "notebooks/02_lab.ipynb",
+      "learner": "practice/learner/02_practice.ipynb",
+      "answers": "practice/answers/02_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/02/lesson.md",
+        "workbooks/02_workbook.md",
+        "sessions/02_session.md",
+        "consolidation/02_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S03.md",
+      "gate": "State the metric, units and meaning of closeness.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "03",
+      "title": "Continuity, homeomorphisms, connectedness, and compactness",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "02"
+      ],
+      "lesson": "lessons/03_lesson.md",
+      "reference_lab": "notebooks/03_lab.ipynb",
+      "learner": "practice/learner/03_practice.ipynb",
+      "answers": "practice/answers/03_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/03/lesson.md",
+        "workbooks/03_workbook.md",
+        "sessions/03_session.md",
+        "consolidation/03_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S01.md",
+      "gate": "Give a map that loses information and explain which.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "04",
+      "title": "Groups, symmetries, paths, loops, and homotopy",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "03"
+      ],
+      "lesson": "lessons/04_lesson.md",
+      "reference_lab": "notebooks/04_lab.ipynb",
+      "learner": "practice/learner/04_practice.ipynb",
+      "answers": "practice/answers/04_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/04/lesson.md",
+        "workbooks/04_workbook.md",
+        "sessions/04_session.md",
+        "consolidation/04_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S01.md",
+      "gate": "Distinguish geometric invariance from label invariance.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "05",
+      "title": "Surfaces, simplices, triangulations, and pixel geometry",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "04"
+      ],
+      "lesson": "lessons/05_lesson.md",
+      "reference_lab": "notebooks/05_lab.ipynb",
+      "learner": "practice/learner/05_practice.ipynb",
+      "answers": "practice/answers/05_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/05/lesson.md",
+        "workbooks/05_workbook.md",
+        "sessions/05_session.md",
+        "consolidation/05_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S03.md",
+      "gate": "Explain when a three-cycle becomes a boundary.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "06",
+      "title": "Chains, boundaries, homology, and Betti numbers",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "05"
+      ],
+      "lesson": "lessons/06_lesson.md",
+      "reference_lab": "notebooks/06_lab.ipynb",
+      "learner": "practice/learner/06_practice.ipynb",
+      "answers": "practice/answers/06_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/06/lesson.md",
+        "workbooks/06_workbook.md",
+        "sessions/06_session.md",
+        "consolidation/06_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S03.md",
+      "gate": "Show boundary-of-boundary and a hand Betti calculation.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "07",
+      "title": "From data to shape: Rips, \u010cech, alpha, and filtrations",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "06"
+      ],
+      "lesson": "lessons/07_lesson.md",
+      "reference_lab": "notebooks/07_lab.ipynb",
+      "learner": "practice/learner/07_practice.ipynb",
+      "answers": "practice/answers/07_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/07/lesson.md",
+        "workbooks/07_workbook.md",
+        "sessions/07_session.md",
+        "consolidation/07_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S03.md",
+      "gate": "Distinguish filtration parameter from time index.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "08",
+      "title": "Persistent homology, persistence modules, and reading diagrams",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "07"
+      ],
+      "lesson": "lessons/08_lesson.md",
+      "reference_lab": "notebooks/08_lab.ipynb",
+      "learner": "practice/learner/08_practice.ipynb",
+      "answers": "practice/answers/08_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/08/lesson.md",
+        "workbooks/08_workbook.md",
+        "sessions/08_session.md",
+        "consolidation/08_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S03.md",
+      "gate": "Name birth, death and an unsupported interpretation.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "09",
+      "title": "Implement persistence, trace the algorithm, and test it independently",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "08"
+      ],
+      "lesson": "lessons/09_lesson.md",
+      "reference_lab": "notebooks/09_lab.ipynb",
+      "learner": "practice/learner/09_practice.ipynb",
+      "answers": "practice/answers/09_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/09/lesson.md",
+        "workbooks/09_workbook.md",
+        "sessions/09_session.md",
+        "consolidation/09_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S03.md",
+      "gate": "Compare exact controls; leave absent external packages as skips.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "10",
+      "title": "Stability, diagram distances, noise, and scientific uncertainty",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "09"
+      ],
+      "lesson": "lessons/10_lesson.md",
+      "reference_lab": "notebooks/10_lab.ipynb",
+      "learner": "practice/learner/10_practice.ipynb",
+      "answers": "practice/answers/10_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/10/lesson.md",
+        "workbooks/10_workbook.md",
+        "sessions/10_session.md",
+        "consolidation/10_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S04.md",
+      "gate": "List correspondence/metric assumptions behind the bound.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "11",
+      "title": "Useful representations, Mapper, time windows, and honest machine learning",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "10"
+      ],
+      "lesson": "lessons/11_lesson.md",
+      "reference_lab": "notebooks/11_lab.ipynb",
+      "learner": "practice/learner/11_practice.ipynb",
+      "answers": "practice/answers/11_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/11/lesson.md",
+        "workbooks/11_workbook.md",
+        "sessions/11_session.md",
+        "consolidation/11_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S05.md",
+      "gate": "Explain why a descriptor can add no predictive value.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "12",
+      "title": "Capstone: reproduce, defend, transfer, and audit the book",
+      "track": "Shape and topology",
+      "prerequisites": [
+        "11"
+      ],
+      "lesson": "lessons/12_lesson.md",
+      "reference_lab": "notebooks/12_lab.ipynb",
+      "learner": "practice/learner/12_practice.ipynb",
+      "answers": "practice/answers/12_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/12/lesson.md",
+        "workbooks/12_workbook.md",
+        "sessions/12_session.md",
+        "consolidation/12_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "Defend result and limitations without claiming tutorial replication is discovery.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "13",
+      "title": "From topology to smooth manifolds",
+      "track": "Spatial geometry",
+      "prerequisites": [
+        "01",
+        "03",
+        "04"
+      ],
+      "lesson": "lessons/13_lesson.md",
+      "reference_lab": "notebooks/13_lab.ipynb",
+      "learner": "practice/learner/13_practice.ipynb",
+      "answers": "practice/answers/13_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/13/lesson.md",
+        "workbooks/13_workbook.md",
+        "sessions/13_session.md",
+        "consolidation/13_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S01.md",
+      "gate": "Explain where the chart analogy ceases to apply.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "14",
+      "title": "Rotations, rigid transforms, and the camera model",
+      "track": "Spatial geometry",
+      "prerequisites": [
+        "13"
+      ],
+      "lesson": "lessons/14_lesson.md",
+      "reference_lab": "notebooks/14_lab.ipynb",
+      "learner": "practice/learner/14_practice.ipynb",
+      "answers": "practice/answers/14_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/14/lesson.md",
+        "workbooks/14_workbook.md",
+        "sessions/14_session.md",
+        "consolidation/14_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S01.md",
+      "gate": "Separate frame change, unit change and calibration.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "15",
+      "title": "Measured stereo, calibration, and uncertainty",
+      "track": "Spatial geometry",
+      "prerequisites": [
+        "14"
+      ],
+      "lesson": "lessons/15_lesson.md",
+      "reference_lab": "notebooks/15_lab.ipynb",
+      "learner": "practice/learner/15_practice.ipynb",
+      "answers": "practice/answers/15_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/15/lesson.md",
+        "workbooks/15_workbook.md",
+        "sessions/15_session.md",
+        "consolidation/15_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "State what the independent reference measures.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "16",
+      "title": "Attention and VGGT, from pixels to proposed geometry",
+      "track": "Spatial geometry",
+      "prerequisites": [
+        "15"
+      ],
+      "lesson": "lessons/16_lesson.md",
+      "reference_lab": "notebooks/16_lab.ipynb",
+      "learner": "practice/learner/16_practice.ipynb",
+      "answers": "practice/answers/16_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/16/lesson.md",
+        "workbooks/16_workbook.md",
+        "sessions/16_session.md",
+        "consolidation/16_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "Separate model prediction, registration and validation.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "17",
+      "title": "Register, validate, and ask topology the right question",
+      "track": "Spatial geometry",
+      "prerequisites": [
+        "16"
+      ],
+      "lesson": "lessons/17_lesson.md",
+      "reference_lab": "notebooks/17_lab.ipynb",
+      "learner": "practice/learner/17_practice.ipynb",
+      "answers": "practice/answers/17_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/17/lesson.md",
+        "workbooks/17_workbook.md",
+        "sessions/17_session.md",
+        "consolidation/17_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "Explain gauge freedom and independent metric checks.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "18",
+      "title": "Make the pipeline efficient without changing the evidence",
+      "track": "Spatial geometry",
+      "prerequisites": [
+        "17"
+      ],
+      "lesson": "lessons/18_lesson.md",
+      "reference_lab": "notebooks/18_lab.ipynb",
+      "learner": "practice/learner/18_practice.ipynb",
+      "answers": "practice/answers/18_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/18/lesson.md",
+        "workbooks/18_workbook.md",
+        "sessions/18_session.md",
+        "consolidation/18_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S04.md",
+      "gate": "Report sample age and reject unavailable evidence.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "19",
+      "title": "From geometry to cautious interaction hypotheses",
+      "track": "Spatial geometry",
+      "prerequisites": [
+        "18"
+      ],
+      "lesson": "lessons/19_lesson.md",
+      "reference_lab": "notebooks/19_lab.ipynb",
+      "learner": "practice/learner/19_practice.ipynb",
+      "answers": "practice/answers/19_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/19/lesson.md",
+        "workbooks/19_workbook.md",
+        "sessions/19_session.md",
+        "consolidation/19_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S04.md",
+      "gate": "Declare live versus offline availability.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "20",
+      "title": "Independent spatial capstone and continuing mastery",
+      "track": "Spatial geometry",
+      "prerequisites": [
+        "19"
+      ],
+      "lesson": "lessons/20_lesson.md",
+      "reference_lab": "notebooks/20_lab.ipynb",
+      "learner": "practice/learner/20_practice.ipynb",
+      "answers": "practice/answers/20_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/20/lesson.md",
+        "workbooks/20_workbook.md",
+        "sessions/20_session.md",
+        "consolidation/20_lab.ipynb"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "Produce a bounded, reproducible acceptance protocol.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "21",
+      "title": "Rates, equations, units and what data can identify",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "01",
+        "13"
+      ],
+      "lesson": "physics/lessons/21.md",
+      "reference_lab": "physics/notebooks/21_lab.ipynb",
+      "learner": "physics/practice/learner/21_practice.ipynb",
+      "answers": "physics/practice/answers/21_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/21/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S02.md",
+      "gate": "Detect metre/foot and second/frame mistakes.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "22",
+      "title": "Smooth flows, coordinate changes and invertible networks",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "21"
+      ],
+      "lesson": "physics/lessons/22.md",
+      "reference_lab": "physics/notebooks/22_lab.ipynb",
+      "learner": "physics/practice/learner/22_practice.ipynb",
+      "answers": "physics/practice/answers/22_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/22/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S04.md",
+      "gate": "Give an example where an interpolated path is not newly measured.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "23",
+      "title": "Mechanics, Hamiltonian networks and Lagrangian networks",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "22"
+      ],
+      "lesson": "physics/lessons/23.md",
+      "reference_lab": "physics/notebooks/23_lab.ipynb",
+      "learner": "physics/practice/learner/23_practice.ipynb",
+      "answers": "physics/practice/answers/23_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/23/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S02.md",
+      "gate": "State missing labels and dynamics assumptions for real sports transfer.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "24",
+      "title": "Symplectic integration, energy, phase and long rollouts",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "23"
+      ],
+      "lesson": "physics/lessons/24.md",
+      "reference_lab": "physics/notebooks/24_lab.ipynb",
+      "learner": "physics/practice/learner/24_practice.ipynb",
+      "answers": "physics/practice/answers/24_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/24/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S02.md",
+      "gate": "Distinguish model conservation from integrator properties.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "25",
+      "title": "Constraints, projections, retractions and rank failure",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "24"
+      ],
+      "lesson": "physics/lessons/25.md",
+      "reference_lab": "physics/notebooks/25_lab.ipynb",
+      "learner": "physics/practice/learner/25_practice.ipynb",
+      "answers": "physics/practice/answers/25_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/25/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "Identify which constraint was enforced and residual remaining.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "26",
+      "title": "Physics-informed learning and inverse problems",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "25"
+      ],
+      "lesson": "physics/lessons/26.md",
+      "reference_lab": "physics/notebooks/26_lab.ipynb",
+      "learner": "physics/practice/learner/26_practice.ipynb",
+      "answers": "physics/practice/answers/26_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/26/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S02.md",
+      "gate": "Show that low residual can coexist with wrong clock/scale.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "27",
+      "title": "Conflicting gradients, interfaces, separability and PIKANs",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "26"
+      ],
+      "lesson": "physics/lessons/27.md",
+      "reference_lab": "physics/notebooks/27_lab.ipynb",
+      "learner": "physics/practice/learner/27_practice.ipynb",
+      "answers": "physics/practice/answers/27_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/27/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "Keep source-author benchmark claims distinct from our tests.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "28",
+      "title": "Functions to functions: DeepONet, Fourier operators and baselines",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "27"
+      ],
+      "lesson": "physics/lessons/28.md",
+      "reference_lab": "physics/notebooks/28_lab.ipynb",
+      "learner": "physics/practice/learner/28_practice.ipynb",
+      "answers": "physics/practice/answers/28_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/28/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "Do not fit a field operator from unrelated aggregate rows.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "29",
+      "title": "Differentiable simulation, graph physics and attention constraints",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "28"
+      ],
+      "lesson": "physics/lessons/29.md",
+      "reference_lab": "physics/notebooks/29_lab.ipynb",
+      "learner": "physics/practice/learner/29_practice.ipynb",
+      "answers": "physics/practice/answers/29_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/29/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S02.md",
+      "gate": "Explain how wrong time scale can fit the same trajectory.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    },
+    {
+      "id": "30",
+      "title": "An independent world-model study: evidence before adoption",
+      "track": "Scientific machine learning",
+      "prerequisites": [
+        "29"
+      ],
+      "lesson": "physics/lessons/30.md",
+      "reference_lab": "physics/notebooks/30_lab.ipynb",
+      "learner": "physics/practice/learner/30_practice.ipynb",
+      "answers": "physics/practice/answers/30_practice.ipynb",
+      "optional_repair": [
+        "beginner_v7/30/lesson.md"
+      ],
+      "sports_connection": "sports_v8/lessons/S06.md",
+      "gate": "Make no adoption claim without matching validation evidence.",
+      "source_role": "Original course aligned to supplied outline; not the book text."
+    }
+  ],
+  "reference_notebooks": [
+    "applications_v7/concrete_slump/answers.ipynb",
+    "applications_v7/concrete_slump/lab.ipynb",
+    "applications_v7/seeds/answers.ipynb",
+    "applications_v7/seeds/lab.ipynb",
+    "consolidation/00_lab.ipynb",
+    "consolidation/01_lab.ipynb",
+    "consolidation/02_lab.ipynb",
+    "consolidation/03_lab.ipynb",
+    "consolidation/04_lab.ipynb",
+    "consolidation/05_lab.ipynb",
+    "consolidation/06_lab.ipynb",
+    "consolidation/07_lab.ipynb",
+    "consolidation/08_lab.ipynb",
+    "consolidation/09_lab.ipynb",
+    "consolidation/10_lab.ipynb",
+    "consolidation/11_lab.ipynb",
+    "consolidation/12_lab.ipynb",
+    "consolidation/13_lab.ipynb",
+    "consolidation/14_lab.ipynb",
+    "consolidation/15_lab.ipynb",
+    "consolidation/16_lab.ipynb",
+    "consolidation/17_lab.ipynb",
+    "consolidation/18_lab.ipynb",
+    "consolidation/19_lab.ipynb",
+    "consolidation/20_lab.ipynb",
+    "industry/answers/co2.ipynb",
+    "industry/answers/elnino.ipynb",
+    "industry/answers/grunfeld.ipynb",
+    "industry/answers/modechoice.ipynb",
+    "industry/answers/nile.ipynb",
+    "industry/answers/stackloss.ipynb",
+    "industry/answers/wdbc.ipynb",
+    "industry/answers/wine.ipynb",
+    "industry/notebooks/co2.ipynb",
+    "industry/notebooks/elnino.ipynb",
+    "industry/notebooks/grunfeld.ipynb",
+    "industry/notebooks/modechoice.ipynb",
+    "industry/notebooks/nile.ipynb",
+    "industry/notebooks/stackloss.ipynb",
+    "industry/notebooks/wdbc.ipynb",
+    "industry/notebooks/wine.ipynb",
+    "methods_v7/claims/answers.ipynb",
+    "methods_v7/claims/lab.ipynb",
+    "methods_v7/leakage/answers.ipynb",
+    "methods_v7/leakage/lab.ipynb",
+    "notebooks/00_lab.ipynb",
+    "notebooks/01_lab.ipynb",
+    "notebooks/02_lab.ipynb",
+    "notebooks/03_lab.ipynb",
+    "notebooks/04_lab.ipynb",
+    "notebooks/05_lab.ipynb",
+    "notebooks/06_lab.ipynb",
+    "notebooks/07_lab.ipynb",
+    "notebooks/08_lab.ipynb",
+    "notebooks/09_lab.ipynb",
+    "notebooks/10_lab.ipynb",
+    "notebooks/11_lab.ipynb",
+    "notebooks/12_lab.ipynb",
+    "notebooks/13_lab.ipynb",
+    "notebooks/14_lab.ipynb",
+    "notebooks/15_lab.ipynb",
+    "notebooks/16_lab.ipynb",
+    "notebooks/17_lab.ipynb",
+    "notebooks/18_lab.ipynb",
+    "notebooks/19_lab.ipynb",
+    "notebooks/20_lab.ipynb",
+    "physics/notebooks/21_lab.ipynb",
+    "physics/notebooks/22_lab.ipynb",
+    "physics/notebooks/23_lab.ipynb",
+    "physics/notebooks/24_lab.ipynb",
+    "physics/notebooks/25_lab.ipynb",
+    "physics/notebooks/26_lab.ipynb",
+    "physics/notebooks/27_lab.ipynb",
+    "physics/notebooks/28_lab.ipynb",
+    "physics/notebooks/29_lab.ipynb",
+    "physics/notebooks/30_lab.ipynb",
+    "physics/practice/answers/21_practice.ipynb",
+    "physics/practice/answers/22_practice.ipynb",
+    "physics/practice/answers/23_practice.ipynb",
+    "physics/practice/answers/24_practice.ipynb",
+    "physics/practice/answers/25_practice.ipynb",
+    "physics/practice/answers/26_practice.ipynb",
+    "physics/practice/answers/27_practice.ipynb",
+    "physics/practice/answers/28_practice.ipynb",
+    "physics/practice/answers/29_practice.ipynb",
+    "physics/practice/answers/30_practice.ipynb",
+    "practice/answers/00_practice.ipynb",
+    "practice/answers/01_practice.ipynb",
+    "practice/answers/02_practice.ipynb",
+    "practice/answers/03_practice.ipynb",
+    "practice/answers/04_practice.ipynb",
+    "practice/answers/05_practice.ipynb",
+    "practice/answers/06_practice.ipynb",
+    "practice/answers/07_practice.ipynb",
+    "practice/answers/08_practice.ipynb",
+    "practice/answers/09_practice.ipynb",
+    "practice/answers/10_practice.ipynb",
+    "practice/answers/11_practice.ipynb",
+    "practice/answers/12_practice.ipynb",
+    "practice/answers/13_practice.ipynb",
+    "practice/answers/14_practice.ipynb",
+    "practice/answers/15_practice.ipynb",
+    "practice/answers/16_practice.ipynb",
+    "practice/answers/17_practice.ipynb",
+    "practice/answers/18_practice.ipynb",
+    "practice/answers/19_practice.ipynb",
+    "practice/answers/20_practice.ipynb",
+    "sports_v8/notebooks/S00.ipynb",
+    "sports_v8/notebooks/S01.ipynb",
+    "sports_v8/notebooks/S02.ipynb",
+    "sports_v8/notebooks/S03.ipynb",
+    "sports_v8/notebooks/S04.ipynb",
+    "sports_v8/notebooks/S05.ipynb",
+    "sports_v8/notebooks/S06.ipynb",
+    "sports_v8/solutions/S00.ipynb",
+    "sports_v8/solutions/S01.ipynb",
+    "sports_v8/solutions/S02.ipynb",
+    "sports_v8/solutions/S03.ipynb",
+    "sports_v8/solutions/S04.ipynb",
+    "sports_v8/solutions/S05.ipynb",
+    "sports_v8/solutions/S06.ipynb",
+    "sports_v9/notebooks/acb_readiness.ipynb",
+    "sports_v9/solutions/acb_readiness.ipynb",
+    "representations/notebooks/r01.ipynb",
+    "representations/answers/r01.ipynb",
+    "representations/notebooks/r02.ipynb",
+    "representations/answers/r02.ipynb",
+    "representations/notebooks/r03.ipynb",
+    "representations/answers/r03.ipynb",
+    "representations/notebooks/r04.ipynb",
+    "representations/answers/r04.ipynb",
+    "representations/notebooks/r05.ipynb",
+    "representations/answers/r05.ipynb"
+  ],
+  "learner_status": "All items start unassessed; execution is not mastery."
+}

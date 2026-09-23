@@ -1,0 +1,161 @@
+{
+  "id": "elnino",
+  "sector": "marine",
+  "title": "Monthly climate records and delay representations",
+  "provider": "statsmodels",
+  "provider_version": "0.14.6",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/elnino.html",
+  "source_doi": null,
+  "citation": "NOAA NWS ERSST.V3B, Niño 1+2; historical statsmodels distribution.",
+  "license": "Public domain (dataset distributor statement)",
+  "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/elnino.html",
+  "license_url": "https://www.statsmodels.org/stable/datasets/generated/elnino.html",
+  "observation_unit": "One year with twelve monthly regional mean temperatures; the derived long view has one month per row.",
+  "scope_limitations": "61 years, 1950–2010, 732 monthly observations. Not an operational forecast or a simulated PDE field.",
+  "rows": 61,
+  "columns": [
+    "row_id",
+    "YEAR",
+    "JAN",
+    "FEB",
+    "MAR",
+    "APR",
+    "MAY",
+    "JUN",
+    "JUL",
+    "AUG",
+    "SEP",
+    "OCT",
+    "NOV",
+    "DEC"
+  ],
+  "label_map": {},
+  "data_kind": "observed",
+  "acquisition": "offline export from installed package distribution; no invented records",
+  "source_review_date": "2026-09-20",
+  "data_file": "data/industries/elnino/data.csv",
+  "data_sha256": "8c15911802ce2973931db0c3d822ae6abe961bfa6bd507cae5eb400beeee9af7",
+  "source_file": "data/industries/elnino/source_distribution.csv",
+  "source_sha256": "b647be00e0fd264be9764e317e6b963f35030014ecca2b21b204521716e463ad",
+  "missing_by_column": {
+    "row_id": 0,
+    "YEAR": 0,
+    "JAN": 0,
+    "FEB": 0,
+    "MAR": 0,
+    "APR": 0,
+    "MAY": 0,
+    "JUN": 0,
+    "JUL": 0,
+    "AUG": 0,
+    "SEP": 0,
+    "OCT": 0,
+    "NOV": 0,
+    "DEC": 0
+  },
+  "transforms": [
+    "Preserved loaded values and row order; added zero-based row_id.",
+    "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+    "Missing CO2 observations remain blank, never zero."
+  ],
+  "schema": [
+    {
+      "name": "row_id",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "row id"
+    },
+    {
+      "name": "YEAR",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "YEAR"
+    },
+    {
+      "name": "JAN",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for JAN."
+    },
+    {
+      "name": "FEB",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for FEB."
+    },
+    {
+      "name": "MAR",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for MAR."
+    },
+    {
+      "name": "APR",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for APR."
+    },
+    {
+      "name": "MAY",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for MAY."
+    },
+    {
+      "name": "JUN",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for JUN."
+    },
+    {
+      "name": "JUL",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for JUL."
+    },
+    {
+      "name": "AUG",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for AUG."
+    },
+    {
+      "name": "SEP",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for SEP."
+    },
+    {
+      "name": "OCT",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for OCT."
+    },
+    {
+      "name": "NOV",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for NOV."
+    },
+    {
+      "name": "DEC",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "degrees Celsius",
+      "description": "Regional monthly mean sea-surface temperature for DEC."
+    }
+  ]
+}

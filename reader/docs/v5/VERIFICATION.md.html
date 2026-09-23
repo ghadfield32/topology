@@ -1,0 +1,79 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Listening to Shape v5 — Verification and limitations · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v5/VERIFICATION.md">docs/v5/VERIFICATION.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="listening-to-shape-v5--verification-and-limitations">Listening to Shape v5 — Verification and limitations</h1>
+<p>This report describes this release, not a claim about learner mastery, the complete book, or production deployment. Historical v1–v4 reports remain available as historical records. The accompanying final-archive JSON records extraction and checksum checks on the delivered ZIP.</p>
+<h2 id="executed-software-checks">Executed software checks</h2>
+<p>The final integrated suite ran with <code>PYTHONPATH=src python -m pytest -q -ra</code>: <strong>366 passed, 2 skipped, 0 failed</strong>. The v4 baseline was independently rerun first: 296 passed and the same two skips. The 70 additional tests cover mathematical counterexamples, gradients, trained-model differentiation/shape contracts, observed-data provenance, migration, and all 30 new coding reference activities. Tests are not a mathematical proof of all algorithms.</p>
+<p>The skips are explicit: <code>tests/test_optional_libraries.py</code> could not import Ripser or GUDHI. No agreement with either external library is claimed. The current environment includes CPU PyTorch, so the new neural contracts ran rather than being skipped. In an environment without the optional physics dependencies, some tests may skip; compare the skip reasons, not just the exit code.</p>
+<h2 id="notebook-execution">Notebook execution</h2>
+<p>All <strong>83 reference notebooks</strong> ran successfully in fresh kernels, with <strong>482 executed code cells</strong>, no saved error outputs, and <strong>55 embedded PNG output images</strong>. There are 21 original labs, 21 original coding-answer notebooks, 21 consolidation notebooks, 10 new physics labs, and 10 new coding-answer notebooks. Their notebook bytes and code-cell counts are listed in <code>reports/release_v5.json</code>.</p>
+<p>The <strong>31 learner notebooks are intentionally unexecuted</strong> and include explicit unfinished assignment functions. They are not broken reference implementations and are not part of the reference-execution count. Opening their answers does not create an assessment. The fresh v5 log contains 31 stages and no attempts.</p>
+<p>During the legacy refresh, a source-version change correctly invalidated the fingerprint between Stage 11 selection and Stage 12 evaluation. Stage 12 refused the stale selection. The guard was retained; the relevant source files were frozen and Stages 11–20 rerun, followed by all answer and consolidation notebooks. The exposed digits holdout is still a demonstration, not a fresh confirmatory experiment. Details are in <code>docs/v5/BUILD_REVIEW.md</code>.</p>
+<h2 id="what-actually-trains">What actually trains</h2>
+<p>The new labs train a small scalar-Hamiltonian neural network, a restricted Lagrangian potential network with fixed unit kinetic term, a hard-boundary Poisson PINN, a DeepONet, and a small Fourier neural operator. These are CPU experiments on explicitly manufactured data. They do not reproduce the full original HNN, LNN, PINN, operator, or domain-decomposition papers. The LNN example is not a fully general velocity-dependent learned Lagrangian.</p>
+<p>A separate differentiable-simulation example fits one damping parameter through RK4 to a manufactured trajectory. Graph and attention examples are inspectable structural demonstrations, not trained physical simulators. Normalizing-flow coupling is implemented and inverted, but a density model is not trained. SPINN factor assembly is executed; a full SPINN/PIKAN training benchmark and SSBroyden reproduction are not.</p>
+<h2 id="numerical-examples-from-the-saved-results">Numerical examples from the saved results</h2>
+<table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Saved result</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Symplectic Euler, unit oscillator, h=0.2</td>
+<td>H changes from 0.5 to 0.4808 while the symplectic matrix check passes</td>
+<td>Exact discrete energy conservation</td>
+</tr>
+<tr>
+<td>One linearized sphere correction from (2,0)</td>
+<td>New point (1.25,0), constraint residual 0.5625</td>
+<td>An exact nonlinear projection in one step</td>
+</tr>
+<tr>
+<td>Hard-boundary Poisson PINN, 500 steps</td>
+<td>Relative solution L2 error about 0.000139 on the declared evaluation grid; endpoint error zero</td>
+<td>Correct solutions of arbitrary PDEs or continuous-domain error certification</td>
+</tr>
+<tr>
+<td>HNN, manufactured held-out derivatives</td>
+<td>MSE about 0.000184</td>
+<td>Measured physical Hamiltonian identification</td>
+</tr>
+<tr>
+<td>Restricted LNN, manufactured acceleration</td>
+<td>MSE about 0.0000837</td>
+<td>General constrained mechanics or empirical validation</td>
+</tr>
+<tr>
+<td>NIST excerpt regression</td>
+<td>Validation selects degree 5; 11-row test MAE 0.15264 in source response scale, linear baseline 1.93204</td>
+<td>The full NIST certified benchmark or independent material-study replication</td>
+</tr>
+<tr>
+<td>Periodic heat family, 32 held-out functions</td>
+<td>DeepONet MSE 0.04081; FNO 0.0003171; identity baseline 0.13509</td>
+<td>A general ranking, resolution transfer, or measured diffusion validation</td>
+</tr>
+<tr>
+<td>Differentiable damping fit</td>
+<td>True manufactured damping 0.15; fitted about 0.149993</td>
+<td>Damping inferred from actual physical sensors</td>
+</tr>
+</tbody>
+</table>
+<p>Seeds, array origins, selection/evaluation splits, iteration budgets, model sizes and qualifications are in <code>physics/reports/21</code> through <code>physics/reports/30</code>. Complex FNO tensor-element counts and real scalar degrees of freedom are reported separately. The heat target is generated by a known analytic solver, whose zero error by construction is not a new discovery.</p>
+<h2 id="data-integrity-and-source-interpretation">Data integrity and source interpretation</h2>
+<p>Five observed data sources are bundled: Iris, handwritten digits, a calibrated Middlebury stereo pair and reference disparity, the historical annual sunspot snapshot, and a 56-observation NIST Hahn1 excerpt. All declared data-file hashes pass. NIST's full source has 236 observations; this release transcribes observations 1–56 from the official source and does not compare excerpt residuals to its certified full-data result. Response values retain the source scale; an unspecified dimensional multiplier is not invented. These are static copper measurements, not a temperature-versus-time trajectory or measured PDE field.</p>
+<p>Generated oscillator, Poisson, heat and damped-trajectory data are labeled manufactured. Applying an analytic heat solver to a row of an observed digit image does not make the later heat field observed. The source audit preserves what the supplied posts asserted and separately labels our calculations, primary research checks and unresolved performance claims.</p>
+<p>The gradient paper was initially reviewed at v1; its 16 September 2026 v2 and Algorithm 1 were checked before delivery. The projected-row normalization remains the implemented operation. The source registry records both revisions. Full benchmark wins and hardware speed claims are not presented as reproduced results.</p>
+<h2 id="reader-checks">Reader checks</h2>
+<p>Chromium rendered the actual course HTML with its bundled CSS. The checks passed for 31 home-stage cards, search, filtering the 90 new question cards, answer reveal, embedded notebook images, and 390px viewport layout. There were no JavaScript page errors in these checks. Desktop and mobile screenshots are saved.</p>
+<p>Actual <code>file://</code> navigation was blocked by the execution environment with <code>ERR_BLOCKED_BY_ADMINISTRATOR</code>; the renderer used explicit HTML loading as its documented fallback. Thus full browser file navigation and browser-local persistence are <strong>not verified</strong>. A separate static check validates local file-link targets throughout the reader; exact counts appear in <code>reports/package_checks.json</code>. Static target existence is not a browser navigation test. External links were not all retested during this release.</p>
+<h2 id="reproducibility-limits">Reproducibility limits</h2>
+<p>Execution used Linux, Python 3.13.5 and torch 2.10.0+cpu. Exact installed versions are recorded in <code>reports/environment_v5.json</code>. macOS, Windows, GPU/CUDA, and all allowed dependency combinations were not tested. The optional trained VGGT runner and its preserved contracts do not constitute executed trained-model inference. No real sports-event, clinical, climate-scale, or independent physical-holdout validation is claimed.</p>
+<p>Initial dependency installation requires internet access or a suitable package cache; reading saved pages and using bundled data do not. Large external weights and third-party full books/papers are not redistributed. No font files are included.</p>
+<h2 id="completion-remains-evidence-based">Completion remains evidence-based</h2>
+<p>The package provides 31 learning sections, 8 primers, 119 coding activities, 210 conceptual questions, 42 transfer questions and 93 delayed-recall questions. These counts do not prove completeness of an entire research field. The actual book text remains unaudited. The coverage matrix states which ideas are taught, implemented, numerically checked, trained, or left as independent reproduction/deeper-proof obligations.</p>
+<p>Migration preserves declared attempts and evidence references, leaves added stages unassessed, and refuses an existing destination. The tools calculate review dates and produce a handoff; they do not automatically grade proofs, award mastery or send background reminders.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

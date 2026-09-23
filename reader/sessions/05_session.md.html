@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 05 guided session — Choose the object before counting its holes · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/05_session.md">sessions/05_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-05-guided-session--choose-the-object-before-counting-its-holes">Stage 05 guided session — Choose the object before counting its holes</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/05_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/05_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/05_workbook.md.html">original workbook</a> and <a href="../notebooks/05_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real training digit foreground; exact ring and diagonal-pair controls.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Distinguish closed-square pixel geometry from a graph of pixel centers.</li>
+<li>Count vertices, edges, and faces of a small cell complex.</li>
+<li>Explain why diagonal touching connects closed squares.</li>
+<li>Declare the intensity threshold before interpreting a real image.</li>
+</ol>
+<h2 id="start-with-one-pixel">Start with one pixel</h2>
+<p>A pixel can be modeled in several ways: a point at its center, a square region, or a vertex carrying a value in another complex. These choices are not equivalent descriptions. Our image model is the union of closed unit squares selected by an intensity rule. Closed means that the boundary belongs to the square. Two squares meeting only at one corner therefore intersect and their union is connected.</p>
+<p>In contrast, a graph connecting pixel centers only horizontally and vertically leaves a diagonal pair disconnected. That graph is a legitimate object; it is simply a different object. Before arguing that two programs disagree about topology, compare the objects and connectivity conventions they actually use.</p>
+<h2 id="count-a-two-square-example">Count a two-square example</h2>
+<p>One square has four vertices, four edges, and one face, so its Euler characteristic is <code>4−4+1=1</code>. Two squares sharing an entire edge have six distinct vertices, seven distinct edges, and two faces: <code>6−7+2=1</code>. Two squares meeting only at one corner have seven vertices, eight edges, and two faces: <code>7−8+2=1</code>. Both unions are connected and have no planar hole.</p>
+<p>Counting each square's four vertices separately would double-count shared pieces. A complex records shared faces by identity, not by coincident drawings. Our independent pixel checker therefore collects distinct vertex and edge keys before computing <code>V−E+F</code>.</p>
+<h2 id="put-a-hole-in-the-example">Put a hole in the example</h2>
+<p>Select all eight squares surrounding the middle square in a three-by-three grid, leaving the center unselected. The union is connected and encloses one missing square. It has 16 vertices, 24 edges, and 8 square faces, giving Euler characteristic zero. For this finite planar complex, H₂ is zero and <code>χ=β₀−β₁</code>; thus <code>β₁=1−0=1</code>.</p>
+<p>When we split each square into two triangles, we add a diagonal edge and replace one square face with two triangle faces. The change in <code>V−E+F</code> is <code>0−1+1=0</code>. More importantly, this subdivision preserves the underlying square region. We can use triangulated boundary matrices and compare them with direct square-cell counting.</p>
+<h2 id="now-threshold-a-real-image">Now threshold a real image</h2>
+<p>A threshold creates a binary selection from measured intensities. In the digit course, bright strokes enter first through <code>f=1−intensity/16</code>. Selecting intensities at least 8 is equivalent to selecting <code>f≤0.5</code>. Every term needs a declared convention: bright or dark first, strict or non-strict inequality, closed squares or center points, and whether the exterior is padded.</p>
+<p>The answer is topology of this chosen thresholded image model. It is not proof that every handwritten instance of the corresponding numeral has that topology. A low-resolution stroke can join diagonally or disappear at a threshold. Later persistence replaces a single arbitrary threshold with an entire changing family, but it does not remove the need to define that family.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Check three declared square-cell objects using connectivity and Euler counting, without boundary matrices.</p>
+<pre><code class="language-python">from shape_lab.audits import pixel_betti_oracle
+ring = np.ones((3, 3), dtype=bool); ring[1, 1] = False
+print('ring:', pixel_betti_oracle(ring))
+print('diagonal pair:', pixel_betti_oracle(np.eye(2, dtype=bool)))
+assert pixel_betti_oracle(ring) == (1, 1)
+assert pixel_betti_oracle(np.eye(2, dtype=bool)) == (1, 0)
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Construct the declared foreground from one real training digit.</p>
+<pre><code class="language-python">from shape_lab.data import digit_example
+image, sample_id = digit_example(8)
+threshold = 8
+foreground = image &gt;= threshold
+b0, b1 = pixel_betti_oracle(foreground)
+print('record:', sample_id, 'threshold:', threshold, 'Betti:', (b0, b1))
+import matplotlib.pyplot as plt
+plt.figure(figsize=(4, 4)); plt.imshow(foreground)
+plt.title('Declared closed-square foreground'); plt.axis('off'); plt.show()
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Record conventions next to the numeric answer.</p>
+<pre><code class="language-python">result = {'sample_id': sample_id, 'foreground_rule': 'intensity &gt;= 8',
+          'object': 'union of closed square cells', 'corner_touching_connected': True,
+          'betti': [b0, b1], 'claim': 'One thresholded image, not an ideal numeral.'}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="05t1">05.T1</h3>
+<p>For two diagonally touching selected pixels, why do a four-neighbor center graph and a closed-square union disagree about H0?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>The graph omits a connection, while the closed squares share a corner. They encode different spaces; neither output alone resolves which representation the application needs.</p>
+</details>
+<h3 id="05t2">05.T2</h3>
+<p>Why does adding an interior diagonal to triangulate a square leave Euler characteristic unchanged?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Vertices are unchanged, edges increase by one, and the one square face is replaced by two triangle faces, increasing face count by one. The changes cancel in V−E+F.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/05_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

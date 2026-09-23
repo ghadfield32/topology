@@ -1,0 +1,26 @@
+{
+  "local_sources": [
+    {
+      "id": "spl",
+      "ok": true,
+      "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc"
+    },
+    {
+      "id": "skillcorner",
+      "ok": true,
+      "sha256": "fe4096d511e4f8811f5c504f633767ef5848c91043369d5643e57165e34303a2"
+    }
+  ],
+  "registry_entries": 10,
+  "full_source_download_executed": false,
+  "tracking_fixture_is_manufactured": true,
+  "protocol": {
+    "question": "Does a topological movement descriptor add held-out information beyond conventional features for a specified available label?",
+    "decision_time": "Must be declared before feature extraction",
+    "independent_unit": "Athlete/session/trial, chosen to match use",
+    "baseline": "Conventional features with training-only preprocessing",
+    "test_policy": "Untouched source groups",
+    "rights_review_required": true,
+    "current_excerpt_sufficient_for_prediction": false
+  }
+}

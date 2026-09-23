@@ -1,0 +1,9 @@
+{
+  "dataset": "wine",
+  "seed": 20260920,
+  "data_sha256": "2f6d6d39c2ba1898b9d254feb78ae575383fac1f9ed735c9aaa9308293568aac",
+  "code_sha256": "bd09db4e9f52278d9c459a9b1c27ac2950f28441d113c387a3a9d52e9b260899",
+  "data_kind": "observed",
+  "evaluation": "fixed teaching experiment; displayed test outcomes are now exposed",
+  "external_validation": false
+}

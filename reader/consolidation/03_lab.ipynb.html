@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 03 consolidation — A continuous map can discard the information you need · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../consolidation/03_lab.ipynb">consolidation/03_lab.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="stage-03-consolidation--a-continuous-map-can-discard-the-information-you-need">Stage 03 consolidation — A continuous map can discard the information you need</h1>
+<p>Read <code>sessions/03_session.md</code> first. This is an executed reference, not an assessment of you.</p>
+<p><strong>Evidence:</strong> Exact finite topology plus a noninjective projection demonstrated on actual Iris records.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json
+import numpy as np
+
+ROOT = Path.cwd().resolve()
+while not (ROOT/&#x27;data/raw/iris.csv&#x27;).is_file():
+    if ROOT == ROOT.parent:
+        raise FileNotFoundError(&#x27;Start Jupyter in the extracted listening_to_shape_lab folder.&#x27;)
+    ROOT = ROOT.parent
+sys.path.insert(0, str(ROOT/&#x27;src&#x27;))
+</code></pre><div class="output"></div></section><h2 id="step-1">Step 1</h2>
+<p>Check a continuous bijection whose inverse is not continuous on the declared two-point topologies.</p>
+<p>Before running: write your expected result and name one way this check could fail.</p>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>from shape_lab.topology import powerset, is_continuous
+X = [0, 1]
+discrete = powerset(X); indiscrete = [set(), set(X)]
+identity = {0: 0, 1: 1}
+forward = is_continuous(X, discrete, X, indiscrete, identity)
+backward = is_continuous(X, indiscrete, X, discrete, identity)
+print(&#x27;forward continuous:&#x27;, forward, &#x27;inverse continuous:&#x27;, backward)
+assert forward and not backward</code></pre><div class="output"><pre>forward continuous: True inverse continuous: False
+</pre></div></section><h2 id="step-2">Step 2</h2>
+<p>Find actual measurement vectors that collide when only sepal length is retained.</p>
+<p>Before running: write your expected result and name one way this check could fail.</p>
+<section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>from shape_lab.data import load_iris_data
+frame = load_iris_data()
+columns = [c for c in frame if c.endswith(&#x27;_cm&#x27;)]
+pair = None
+for _, group in frame.groupby(&#x27;sepal_length_cm&#x27;):
+    unique = group.drop_duplicates(columns)
+    if len(unique) &gt;= 2:
+        pair = unique.iloc[:2]; break
+assert pair is not None
+display(pair[[&#x27;sample_id&#x27;] + columns])
+X = pair[columns].to_numpy()
+print(&#x27;full distance:&#x27;, np.linalg.norm(X[0]-X[1]))
+print(&#x27;projected distance:&#x27;, abs(X[0,0]-X[1,0]))</code></pre><div class="output"><div class="scroll"><div>
+
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>sample_id</th>
+<th>sepal_length_cm</th>
+<th>sepal_width_cm</th>
+<th>petal_length_cm</th>
+<th>petal_width_cm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>8</th>
+<td>8</td>
+<td>4.4</td>
+<td>2.9</td>
+<td>1.4</td>
+<td>0.2</td>
+</tr>
+<tr>
+<th>38</th>
+<td>38</td>
+<td>4.4</td>
+<td>3.0</td>
+<td>1.3</td>
+<td>0.2</td>
+</tr>
+</tbody>
+</table>
+</div></div><pre>full distance: 0.14142135623730948
+projected distance: 0.0
+</pre></div></section><h2 id="step-3">Step 3</h2>
+<p>Store the precise property demonstrated, not an exaggerated conclusion about the whole dataset.</p>
+<p>Before running: write your expected result and name one way this check could fail.</p>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>result = {&#x27;forward_continuous&#x27;: bool(forward), &#x27;inverse_continuous&#x27;: bool(backward),
+          &#x27;colliding_sample_ids&#x27;: pair.sample_id.astype(int).tolist(),
+          &#x27;claim&#x27;: &#x27;Declared projection is noninjective on this pair; no population-topology claim.&#x27;}</code></pre><div class="output"></div></section><h2 id="keep-execution-evidence-separate-from-learning-evidence">Keep execution evidence separate from learning evidence</h2>
+<p>The following saves this reference calculation. Write your own explanation in <code>my_work/</code>; no learner score is assigned.</p>
+<section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>result[&#x27;stage&#x27;] = 3
+result[&#x27;execution_role&#x27;] = &#x27;reference_consolidation&#x27;
+result[&#x27;data_role&#x27;] = &#x27;Exact finite topology plus a noninjective projection demonstrated on actual Iris records.&#x27;
+output = ROOT/&#x27;reports/consolidation_v4/03.json&#x27;
+output.parent.mkdir(parents=True, exist_ok=True)
+output.write_text(json.dumps(result, indent=2, allow_nan=False) + &#x27;\n&#x27;)
+print(&#x27;Saved reference result:&#x27;, output.relative_to(ROOT))
+</code></pre><div class="output"><pre>Saved reference result: reports/consolidation_v4/03.json
+</pre></div></section><a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

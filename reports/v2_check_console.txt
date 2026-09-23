@@ -1,0 +1,26 @@
+{
+  "status": "PASSED",
+  "html_pages": 138,
+  "existing_local_link_targets_checked": 4861,
+  "external_links_not_retested": 25,
+  "stages_checked": 13,
+  "executed_notebook_code_cells": 46,
+  "exercise_solution_pairs": 102,
+  "broken_local_links": [],
+  "font_files": []
+}
+{
+  "status": "PASSED",
+  "core_lessons": 13,
+  "beginner_workbooks": 13,
+  "foundation_primers": 4,
+  "conceptual_exercises": 102,
+  "coding_exercises": 65,
+  "retrieval_questions": 39,
+  "executed_reference_notebooks": 26,
+  "executed_reference_code_cells": 189,
+  "intentional_learner_notebooks": 13,
+  "unexecuted_learner_code_cells": 143,
+  "learner_stages_assessed": 0,
+  "full_book_verified": false
+}

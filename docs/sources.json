@@ -1,0 +1,104 @@
+[
+  {
+    "id": "R1",
+    "title": "Raphaël Tinarrage — Topological Data Analysis with Persistent Homology",
+    "url": "https://raphaeltinarrage.github.io/EMAp.html",
+    "note": "Primary teaching sequence, Lessons 0–11. Free lecture materials, videos and practical notebooks are linked from the course page."
+  },
+  {
+    "id": "R2",
+    "title": "ETH Zürich — Introduction to Topological Data Analysis, 2026",
+    "url": "https://ti.inf.ethz.ch/ew/courses/TDA26/index.html",
+    "note": "Formal reference. Mathematical foundations, homology, persistence, point-cloud complexes, distances/stability, Mapper and advanced extensions. The page lists discrete mathematics, algorithms/data structures and linear algebra prerequisites."
+  },
+  {
+    "id": "R3",
+    "title": "Sidney A. Morris — Topology Without Tears",
+    "url": "https://www.topologywithouttears.net/",
+    "note": "Free author-hosted topology book and accompanying proof/topology videos. Use for open sets, continuity, connectedness and compactness."
+  },
+  {
+    "id": "R4",
+    "title": "Richard Hammack — Book of Proof",
+    "url": "https://richardhammack.github.io/BookOfProof/",
+    "note": "Free author-hosted proof textbook. Use sets, logic, quantifiers, proof methods, relations and functions."
+  },
+  {
+    "id": "R5",
+    "title": "MIT OpenCourseWare — Gilbert Strang, Linear Algebra",
+    "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+    "note": "Free lectures, assignments and solutions. Focus on vector spaces, nullspaces, column spaces, rank, bases and linear maps."
+  },
+  {
+    "id": "R6",
+    "title": "Thomas W. Judson — Abstract Algebra: Theory and Applications",
+    "url": "https://judsonbooks.org/abstract-algebra-theory-and-applications/",
+    "note": "Author-hosted open textbook. Select basic groups, homomorphisms, group actions, vector spaces and fields; a full second algebra course is not a prerequisite here."
+  },
+  {
+    "id": "R7",
+    "title": "Allen Hatcher — Algebraic Topology",
+    "url": "https://pi.math.cornell.edu/~hatcher/AT/ATpage.html",
+    "note": "Author-hosted free electronic book subject to its stated terms. Use geometric preliminaries, fundamental-group introduction and homology. Linked only; not redistributed."
+  },
+  {
+    "id": "R8",
+    "title": "Frédéric Chazal and Bertrand Michel — An introduction to Topological Data Analysis",
+    "url": "https://arxiv.org/html/1710.04019v2",
+    "note": "Primary author paper connecting metric spaces, complexes, persistence, Mapper, stability and statistical interpretation. Read critically after the small exact examples."
+  },
+  {
+    "id": "R9",
+    "title": "scikit-learn — Common pitfalls and recommended practices",
+    "url": "https://scikit-learn.org/stable/common_pitfalls.html",
+    "note": "Primary library guidance on fitting transformations on training data and preventing evaluation leakage."
+  },
+  {
+    "id": "R10",
+    "title": "Ioannis Diamantis — The Shape of Data: Topology Meets Analytics",
+    "url": "https://arxiv.org/abs/2511.13503",
+    "note": "Free author paper for the final critique. The paper’s proposed stability index is not a replacement for algebraic stability or a statistical-significance argument."
+  },
+  {
+    "id": "D1",
+    "title": "UCI — Iris",
+    "url": "https://archive.ics.uci.edu/dataset/53/iris",
+    "note": "Dataset provenance and CC BY 4.0 license metadata. The included array is scikit-learn’s documented corrected variant."
+  },
+  {
+    "id": "D2",
+    "title": "UCI — Optical Recognition of Handwritten Digits",
+    "url": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits",
+    "note": "Dataset provenance and CC BY 4.0 metadata. Full UCI collection and original writer-separated split are distinct from this course’s subset and new image split."
+  },
+  {
+    "id": "D3",
+    "title": "scikit-learn — Bundled small datasets and their variants",
+    "url": "https://scikit-learn.org/stable/datasets/toy_dataset.html",
+    "note": "Confirms bundled real Iris and digits descriptions, 1,797 digit images, 8×8 values, original-test-set provenance, and the Iris corrections."
+  },
+  {
+    "id": "L1",
+    "title": "Ripser.py — ripser API reference",
+    "url": "https://ripser.scikit-tda.org/en/latest/reference/stubs/ripser.ripser.html",
+    "note": "Primary reference for points/distance matrices, maxdim, coefficient field, cutoff and returned diagrams. Optional package not installed in the build environment."
+  },
+  {
+    "id": "L2",
+    "title": "GUDHI — Rips and Delaunay/alpha manuals",
+    "url": "https://gudhi.inria.fr/python/latest/rips_complex_user.html",
+    "note": "Primary complex-construction reference. Alpha details: https://gudhi.inria.fr/python/latest/delaunay_complex_user.html . Default alpha values use squared-radius units. Optional library not executed in this build."
+  },
+  {
+    "id": "L3",
+    "title": "GUDHI — Cubical complex manual",
+    "url": "https://gudhi.inria.fr/python/latest/cubical_complex_user.html",
+    "note": "Primary reference for square/cubical input semantics. Our core uses its own explicit filtration-preserving triangle subdivision, not an unexecuted GUDHI call."
+  },
+  {
+    "id": "P1",
+    "title": "Python — An Informal Introduction to Python",
+    "url": "https://docs.python.org/3/tutorial/introduction.html",
+    "note": "Official introductory syntax reference: arithmetic, strings, indexing and lists. Live documentation may target a newer version than the tested Python 3.13.5 runtime."
+  }
+]

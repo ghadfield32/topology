@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "units": [
+    {
+      "id": "r01",
+      "title": "Distributions, moments, and whitening",
+      "lesson": "representations/lessons/R01.md",
+      "notebook": "representations/notebooks/r01.ipynb",
+      "learner": "representations/learner/r01.ipynb",
+      "answers": "representations/answers/r01.ipynb",
+      "prerequisites": [
+        "core 01",
+        "core 02"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r02",
+      "title": "Projections, characteristic functions, and SIGReg",
+      "lesson": "representations/lessons/R02.md",
+      "notebook": "representations/notebooks/r02.ipynb",
+      "learner": "representations/learner/r02.ipynb",
+      "answers": "representations/answers/r02.ipynb",
+      "prerequisites": [
+        "r01"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r03",
+      "title": "Anti-collapse objectives and gradient paths",
+      "lesson": "representations/lessons/R03.md",
+      "notebook": "representations/notebooks/r03.ipynb",
+      "learner": "representations/learner/r03.ipynb",
+      "answers": "representations/answers/r03.ipynb",
+      "prerequisites": [
+        "r02"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r04",
+      "title": "Train a representation and evaluate frozen probes",
+      "lesson": "representations/lessons/R04.md",
+      "notebook": "representations/notebooks/r04.ipynb",
+      "learner": "representations/learner/r04.ipynb",
+      "answers": "representations/answers/r04.ipynb",
+      "prerequisites": [
+        "r03"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r05",
+      "title": "Transfer diagnostics without inventing a sports world model",
+      "lesson": "representations/lessons/R05.md",
+      "notebook": "representations/notebooks/r05.ipynb",
+      "learner": "representations/learner/r05.ipynb",
+      "answers": "representations/answers/r05.ipynb",
+      "prerequisites": [
+        "r04"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    }
+  ],
+  "prerequisite_policy": "A parallel continuation; core stage identifiers and existing progress remain unchanged."
+}

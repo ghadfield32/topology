@@ -1,0 +1,19 @@
+{
+  "selected_frames": 12,
+  "selected_shots": 1,
+  "profile_rows": 12,
+  "distinct_player_ids": 8,
+  "local_integrity": [
+    {
+      "id": "spl",
+      "ok": true,
+      "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc"
+    },
+    {
+      "id": "skillcorner",
+      "ok": true,
+      "sha256": "fe4096d511e4f8811f5c504f633767ef5848c91043369d5643e57165e34303a2"
+    }
+  ],
+  "remote_source_equality_verified": false
+}

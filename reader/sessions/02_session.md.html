@@ -1,0 +1,68 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 02 guided session — Separate units, distance, and topology · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/02_session.md">sessions/02_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-02-guided-session--separate-units-distance-and-topology">Stage 02 guided session — Separate units, distance, and topology</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/02_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/02_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/02_workbook.md.html">original workbook</a> and <a href="../notebooks/02_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real Iris measurements, plus the exact counterexample 0,1,2.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Check the metric axioms on an explicit counterexample.</li>
+<li>Explain why positive coordinate rescaling preserves Euclidean-space topology but changes distance scale.</li>
+<li>Compare nearest observations before and after a declared feature rescaling.</li>
+<li>State the difference between distinct locations and distinct observation IDs.</li>
+</ol>
+<h2 id="distance-is-a-rule-not-a-picture">Distance is a rule, not a picture</h2>
+<p>A metric takes two points and returns a nonnegative number. It is zero exactly when the points are equal, symmetric in its arguments, and satisfies the triangle inequality. An open ball consists of points strictly closer than a chosen radius. Open sets in a metric space are sets around each of whose points some open ball fits inside the set.</p>
+<p>For real numbers 0, 1, and 2, squared distance gives <code>d(0,2)=4</code> but <code>d(0,1)+d(1,2)=2</code>. That violates the triangle inequality. Squared distances are useful in other algorithms, but usefulness does not make them a metric. In contrast, absolute distance gives equality in this example and satisfies the axiom in general.</p>
+<h2 id="change-a-unit-deliberately">Change a unit deliberately</h2>
+<p>Take coordinates <code>(length, width)</code> in centimetres. Multiplying only the first coordinate by ten gives <code>T(x,y)=(10x,y)</code>. This transformation is continuous and has continuous inverse <code>(u,v)→(u/10,v)</code>, so it is a homeomorphism of the plane. It preserves the Euclidean topology, but not numerical distances, round balls, or all nearest-neighbor relationships.</p>
+<p>The distinction becomes crucial for persistence. Topology studies qualitative properties of a specified space. A Rips filtration uses quantitative distances. A transformation can preserve the topology of the ambient space and still change a dataset's persistence diagram. You should never infer full persistence invariance from homeomorphism alone.</p>
+<h2 id="a-finite-sample-is-not-the-curve-it-resembles">A finite sample is not the curve it resembles</h2>
+<p>For a finite set of distinct points, fix one point and find the smallest positive distance to the others. A ball with smaller radius contains only the chosen point. Every singleton is therefore open in the induced topology, and every subset is a union of open singletons. This finite space is discrete.</p>
+<p>The claim does not mean a point-cloud analysis is useless. It means that recovering a continuous-looking structure requires an additional model, such as connecting nearby points and filling certain collections of connections. We will explicitly construct that model in Stage 07.</p>
+<p>Two separate records can have identical feature coordinates. Euclidean distance then vanishes between distinct record IDs. On the ID set this is a pseudometric, not a metric. Retaining both records may be important for provenance. Treating duplicate locations as one point may be appropriate for another question. State the choice instead of letting an implicit deduplication determine it.</p>
+<h2 id="make-the-computation-answer-your-question">Make the computation answer your question</h2>
+<p>In this notebook, select a small group of actual Iris records and rescale one feature. The scale change is intentional and not learned from test labels. Observe changed distances; do not demand that the nearest neighbor must change for every query. An invariant check and a sensitivity check answer different questions. A conclusion that depends on one arbitrary coordinate scale should be reported as such.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Show exactly why squared Euclidean distance fails one metric axiom.</p>
+<pre><code class="language-python">left = (0 - 2)**2
+right = (0 - 1)**2 + (1 - 2)**2
+print('squared-distance triangle inequality would require', left, '&lt;=', right)
+assert left &gt; right
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Select real measurements and compute pairwise distances with no labels in the feature array.</p>
+<pre><code class="language-python">from shape_lab.data import load_iris_data
+from scipy.spatial.distance import cdist
+frame = load_iris_data().iloc[::5].copy()
+columns = [c for c in frame if c.endswith('_cm')]
+X = frame[columns].to_numpy()
+D = cdist(X, X)
+Y = X.copy(); Y[:, 0] *= 10
+D_scaled = cdist(Y, Y)
+np.fill_diagonal(D, np.inf); np.fill_diagonal(D_scaled, np.inf)
+changed = np.argmin(D, axis=1) != np.argmin(D_scaled, axis=1)
+print('changed nearest-neighbor selections:', changed.sum(), 'of', len(X))
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>A translation is an isometry: it must preserve these Euclidean distances. Rescaling one coordinate is not.</p>
+<pre><code class="language-python">assert np.allclose(cdist(X + 100, X + 100), cdist(X, X))
+assert not np.allclose(cdist(Y, Y), cdist(X, X))
+result = {'records': len(X), 'rescaled_feature': columns[0], 'multiplier': 10,
+          'nearest_neighbor_changes': int(changed.sum()),
+          'translation_distance_check': 'passed'}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="02t1">02.T1</h3>
+<p>Does multiplying all distances by three preserve the filtration at the same numeric threshold?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>No. The same complex appears after multiplying the threshold by three. Persistence coordinates scale, while the ordering of simplex appearances is preserved.</p>
+</details>
+<h3 id="02t2">02.T2</h3>
+<p>A feature table has two identical rows with different IDs. Which axiom fails when Euclidean distance is declared a metric on IDs?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Identity of indiscernibles: distinct IDs have zero distance. It is a pseudometric on IDs, although Euclidean distance remains a metric on distinct feature locations.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/02_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

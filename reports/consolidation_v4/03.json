@@ -1,0 +1,12 @@
+{
+  "forward_continuous": true,
+  "inverse_continuous": false,
+  "colliding_sample_ids": [
+    8,
+    38
+  ],
+  "claim": "Declared projection is noninjective on this pair; no population-topology claim.",
+  "stage": 3,
+  "execution_role": "reference_consolidation",
+  "data_role": "Exact finite topology plus a noninjective projection demonstrated on actual Iris records."
+}

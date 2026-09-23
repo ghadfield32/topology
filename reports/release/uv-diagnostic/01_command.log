@@ -1,0 +1,6 @@
+Resolved 1 package in 2ms
+   Building listening-to-shape-lab @ file:///mnt/data/v10_build/listening_to_shape_lab
+      Built listening-to-shape-lab @ file:///mnt/data/v10_build/listening_to_shape_lab
+Prepared 1 package in 620ms
+Installed 1 package in 1ms
+ + listening-to-shape-lab==10.0.0 (from file:///mnt/data/v10_build/listening_to_shape_lab)

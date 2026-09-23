@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 06 guided session — Learn what coefficient fields reveal and forget · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/06_session.md">sessions/06_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-06-guided-session--learn-what-coefficient-fields-reveal-and-forget">Stage 06 guided session — Learn what coefficient fields reveal and forget</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/06_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/06_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/06_workbook.md.html">original workbook</a> and <a href="../notebooks/06_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real training digit threshold sweep; exact oriented simplicial and specified cellular-chain controls.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Construct an oriented integer boundary and check boundary-of-boundary.</li>
+<li>Calculate how a coefficient change affects a cellular boundary map.</li>
+<li>Independently verify image homology across multiple thresholds.</li>
+<li>Distinguish Betti numbers from full integer homology, including torsion.</li>
+</ol>
+<h2 id="revisit-the-triangle-with-signs">Revisit the triangle with signs</h2>
+<p>With increasing vertex order, the oriented boundary of <code>[0,1,2]</code> is <code>[1,2]−[0,2]+[0,1]</code>. Taking another boundary gives <code>(2−1)−(2−0)+(1−0)=0</code>. Every vertex cancels. The sign comes from the position of the removed vertex. Over F₂, minus one equals plus one, so the signed formula reduces to the binary rule you already used.</p>
+<p>This demonstrates why adding a prime-field rank routine alone is not enough to generalize binary homology. The boundary matrices must also use the correct orientation signs. A zero–one triangle matrix copied unchanged into F₃ generally loses the cancellation property.</p>
+<h2 id="work-a-coefficient-sensitive-example">Work a coefficient-sensitive example</h2>
+<p>The standard cellular description of the real projective plane has one cell in each of dimensions zero, one, and two. Its cellular boundary maps are <code>d₁=0</code> and <code>d₂=[2]</code>. This is a compact <em>cellular</em> description, not the simplicial triangle matrix from the earlier lab.</p>
+<p>Over F₂, the entry two becomes zero. Both boundary ranks vanish, so the Betti numbers are <code>(1,1,1)</code>. Over F₃, multiplication by two is invertible. The rank of d₂ is one, giving <code>(1,0,0)</code>. A coefficient change genuinely changes the answer because the question has changed.</p>
+<p>Over the integers, the one-dimensional cycles form Z and the boundaries form 2Z. Their quotient is Z/2Z: a nonzero class whose double is zero. This is torsion. It has no free integer rank, so a list of integer Betti numbers alone does not describe the full homology group. The two-dimensional integer kernel of multiplication by two is zero. We derive these facts directly from this specified cellular chain complex; we do not claim to have implemented a general integer homology solver.</p>
+<h2 id="check-a-real-image-two-ways">Check a real image two ways</h2>
+<p>For the declared closed-square image object, compute β₀ by walking the square-connectivity graph. Count distinct square vertices and edges to compute Euler characteristic. Because this is a finite planar square complex with no two-dimensional homology, infer <code>β₁=β₀−χ</code>. That route does not use persistence reduction or the simplicial rank function.</p>
+<p>Independently, triangulate the same thresholded square union and use the boundary matrices. Agreement over many thresholds is more informative than comparing two calls to the same routine under different names. It is still software evidence, not proof that the sensor captured every physical feature.</p>
+<h2 id="make-the-quotient-concrete">Make the quotient concrete</h2>
+<p>When a cycle is itself a boundary, it represents zero in homology. The chain has not vanished; the equivalence relation identifies its homology class with zero. Saying “the loop disappeared” is a shorthand for that algebraic statement. Keep the chain, cycle, boundary, and equivalence class separate in your own explanation.</p>
+<p>The proof atlas and external algebraic-topology reading provide the path to deeper theory. Complete the finite hand calculations first, then use the field-sensitive example to understand why more general coefficient systems require more than changing one library flag.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Compute the cellular projective-plane example directly in two prime fields. These are cellular matrices, not a new triangulation.</p>
+<pre><code class="language-python">from shape_lab.audits import rank_prime, oriented_boundary, pixel_betti_oracle
+cellular = {}
+for p in [2, 3]:
+    r2 = rank_prime([[2]], p)
+    cellular[p] = [1, 1-r2, 1-r2]
+print(cellular)
+assert cellular == {2: [1, 1, 1], 3: [1, 0, 0]}
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Check the oriented triangle identity over the integers before reducing to any field.</p>
+<pre><code class="language-python">from shape_lab.algebra import closure
+K = closure([(0, 1, 2)])
+d1 = oriented_boundary(K, 1); d2 = oriented_boundary(K, 2)
+print('d1:', d1); print('d2:', d2)
+assert np.all(d1 @ d2 == 0)
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Compare two distinct computational routes on a real digit at every integer intensity threshold.</p>
+<pre><code class="language-python">from shape_lab.data import digit_example
+from shape_lab.persistence import pixel_filtration
+from shape_lab.algebra import betti_numbers
+image, sample_id = digit_example(8)
+filtration = pixel_filtration(1-image/16.)
+rows = []
+for threshold in range(17):
+    chosen = [s for s, t in filtration if t &lt;= 1-threshold/16.]
+    by_chains = betti_numbers(chosen, 1)
+    by_cells = list(pixel_betti_oracle(image &gt;= threshold))
+    assert by_chains == by_cells
+    rows.append([threshold, *by_cells])
+import pandas as pd
+display(pd.DataFrame(rows, columns=['intensity threshold', 'beta0', 'beta1']))
+result = {'sample_id': sample_id, 'independent_threshold_comparisons': len(rows),
+          'all_agree': True, 'cellular_field_example': cellular}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="06t1">06.T1</h3>
+<p>Why must signed boundaries accompany an F3 rank routine?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>The integer boundary uses alternating orientation signs. Those signs remain distinct modulo three. Omitting them can make boundary-of-boundary nonzero, so the purported homology quotient need not be defined.</p>
+</details>
+<h3 id="06t2">06.T2</h3>
+<p>For the integer map Z→Z, n↦2n, what are its kernel and cokernel?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>The kernel is zero because 2n=0 implies n=0. The image is 2Z, and the cokernel is Z/2Z. The finite torsion quotient cannot be summarized by a positive free rank.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/06_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

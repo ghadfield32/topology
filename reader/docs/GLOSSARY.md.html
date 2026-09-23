@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Glossary and notation · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../docs/GLOSSARY.md">docs/GLOSSARY.md</a> · Readable source notation; no online math renderer.</p><h1 id="glossary-and-notation">Glossary and notation</h1>
+<p><strong>Observation.</strong> One item being measured; its definition can change between a point-cloud and a pixel analysis.</p>
+<p><strong>Feature.</strong> A measured or constructed value describing an observation.</p>
+<p><strong>Metric.</strong> A nonnegative, symmetric distance with identity of indiscernibles and the triangle inequality.</p>
+<p><strong>Pseudometric.</strong> A metric-like distance allowing distinct objects to have zero distance.</p>
+<p><strong>Open ball.</strong> Points whose distance from a center is strictly less than a positive radius.</p>
+<p><strong>Topology.</strong> A collection of open sets containing empty and whole sets and closed under arbitrary unions and finite intersections.</p>
+<p><strong>Basis.</strong> Open sets whose unions generate the topology; separately, in linear algebra, an independent spanning collection.</p>
+<p><strong>Subspace topology.</strong> Open sets formed by intersecting ambient open sets with the subset.</p>
+<p><strong>Continuous map.</strong> A function for which inverse images of open sets are open.</p>
+<p><strong>Homeomorphism.</strong> A bijective continuous map with continuous inverse.</p>
+<p><strong>Connected.</strong> Cannot be separated into two disjoint nonempty open parts.</p>
+<p><strong>Path-connected.</strong> Every pair of points can be joined by a continuous interval-valued path into the space.</p>
+<p><strong>Compact.</strong> Every open cover has a finite subcover.</p>
+<p><strong>Hausdorff.</strong> Distinct points have disjoint open neighborhoods.</p>
+<p><strong>Group.</strong> An associative operation with closure, identity and inverses.</p>
+<p><strong>Group action.</strong> A compatible way for group elements to transform another set.</p>
+<p><strong>Homotopy.</strong> A continuous family of maps parameterized by an interval, with specified endpoint maps.</p>
+<p><strong>Homotopy equivalence.</strong> Maps in both directions whose compositions are homotopic to identity maps.</p>
+<p><strong>Deformation retraction.</strong> A homotopy moving a space onto a subspace while fixing that subspace throughout.</p>
+<p><strong>Fundamental group.</strong> Based-loop homotopy classes under concatenation.</p>
+<p><strong>Surface.</strong> A locally two-dimensional manifold, with the declared boundary/separation/countability conditions.</p>
+<p><strong>Orientability.</strong> The ability to make local orientation choices consistently across a manifold.</p>
+<p><strong>Simplex.</strong> A vertex subset, geometrically realized as a filled vertex/edge/triangle/tetrahedron or higher analogue.</p>
+<p><strong>Simplicial complex.</strong> A collection of simplices closed under faces.</p>
+<p><strong>Chain.</strong> A formal linear combination of simplices of one dimension over specified coefficients.</p>
+<p><strong>Boundary map.</strong> The linear operator sending a simplex to its oriented or F₂ codimension-one faces.</p>
+<p><strong>Cycle.</strong> A chain whose boundary is zero.</p>
+<p><strong>Boundary.</strong> A chain in the image of the next-dimensional boundary map.</p>
+<p><strong>Homology.</strong> Cycles modulo boundaries, Hₖ=ker∂ₖ/im∂ₖ₊₁.</p>
+<p><strong>Betti number.</strong> Dimension of a homology vector space over a stated field.</p>
+<p><strong>Euler characteristic.</strong> Alternating finite cell/simplex count; equals the alternating Betti sum in the finite setting.</p>
+<p><strong>Filtration.</strong> A nested family of spaces/complexes indexed by an ordered parameter.</p>
+<p><strong>Rips complex.</strong> A simplex enters when all pairwise vertex distances meet the declared threshold.</p>
+<p><strong>Čech complex.</strong> A simplex records a common intersection of balls under the declared radius convention.</p>
+<p><strong>Alpha complex.</strong> A Delaunay/Voronoi-based construction related to unions of Euclidean balls; verify its filtration units.</p>
+<p><strong>Nerve.</strong> A complex recording nonempty common intersections of members of a cover.</p>
+<p><strong>Persistence module.</strong> Vector spaces with compatible linear maps indexed by the filtration parameter.</p>
+<p><strong>Barcode.</strong> A multiset of persistence intervals, not a unique list of physical object tracks.</p>
+<p><strong>Persistence diagram.</strong> A multiset of birth/death pairs, with explicit handling of essential intervals and the diagonal.</p>
+<p><strong>Essential interval.</strong> An interval not dying in the declared complete filtration; distinguish from survival of a computational cutoff.</p>
+<p><strong>Bottleneck distance.</strong> The minimum largest matching cost between diagrams, with diagonal matches and a stated norm.</p>
+<p><strong>Stability.</strong> Controlled change in a descriptor under a specified class of input perturbations and assumptions.</p>
+<p><strong>Persistence landscape.</strong> Ordered tent-height functions derived from finite persistence intervals.</p>
+<p><strong>Persistence image.</strong> Integrated weighted kernels over a fixed grid in transformed diagram coordinates.</p>
+<p><strong>Mapper.</strong> A cover-and-cluster construction linking nodes that share observations; a displayed graph may be only its 1-skeleton.</p>
+<p><strong>Reeb graph.</strong> Quotient identifying points within connected components of level sets of a function.</p>
+<p><strong>Leakage.</strong> Use of information unavailable in the intended prediction/evaluation setting.</p>
+<p><strong>Holdout exposure.</strong> Having viewed or used final-test results or examples in method design; it limits future independence claims.</p>
+<h2 id="reading-symbols">Reading symbols</h2>
+<p><code>∈</code> belongs to; <code>⊆</code> is a subset of; <code>∩</code> intersection; <code>∪</code> union; <code>∅</code> empty set; <code>∀</code> for every; <code>∃</code> there exists; <code>→</code> maps to; <code>ker</code> kernel; <code>im</code> image; <code>dim</code> dimension; <code>∂</code> boundary; <code>β</code> Betti number; <code>F₂</code> two-element field; <code>[b,d)</code> includes b but excludes d. The notation <code>f⁻¹(A)</code> can mean an inverse image even when no inverse function exists.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

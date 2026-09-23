@@ -1,0 +1,1085 @@
+{
+  "schema_version": 1,
+  "snapshot": "v6",
+  "datasets": [
+    {
+      "id": "wdbc",
+      "sector": "healthcare",
+      "title": "Cell-image measurements and honest classification",
+      "provider": "sklearn",
+      "provider_version": "1.8.0",
+      "source_url": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+      "source_doi": "10.24432/C5DW2B",
+      "citation": "Wolberg, Mangasarian, Street and Street (1993), Breast Cancer Wisconsin (Diagnostic), UCI.",
+      "license": "CC BY 4.0",
+      "license_evidence_url": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "observation_unit": "One digitized fine-needle-aspirate image summary. The scikit-learn snapshot does not retain original IDs.",
+      "scope_limitations": "569 rows; 30 features. Educational observational data, not clinical validation.",
+      "rows": 569,
+      "columns": [
+        "row_id",
+        "mean_radius",
+        "mean_texture",
+        "mean_perimeter",
+        "mean_area",
+        "mean_smoothness",
+        "mean_compactness",
+        "mean_concavity",
+        "mean_concave_points",
+        "mean_symmetry",
+        "mean_fractal_dimension",
+        "radius_error",
+        "texture_error",
+        "perimeter_error",
+        "area_error",
+        "smoothness_error",
+        "compactness_error",
+        "concavity_error",
+        "concave_points_error",
+        "symmetry_error",
+        "fractal_dimension_error",
+        "worst_radius",
+        "worst_texture",
+        "worst_perimeter",
+        "worst_area",
+        "worst_smoothness",
+        "worst_compactness",
+        "worst_concavity",
+        "worst_concave_points",
+        "worst_symmetry",
+        "worst_fractal_dimension",
+        "label"
+      ],
+      "label_map": {
+        "0": "malignant",
+        "1": "benign"
+      },
+      "data_kind": "observed",
+      "acquisition": "offline export from installed package distribution; no invented records",
+      "source_review_date": "2026-09-20",
+      "data_file": "data/industries/wdbc/data.csv",
+      "data_sha256": "67a1bb2aa650da2ba7c76b5f64e1a180e00f50dcb0e91a2650be35d6251116dd",
+      "source_file": "data/industries/wdbc/source_distribution.csv",
+      "source_sha256": "fed3eb72d0575ef6192293f5093c6e801b1476b577d0386bf4455504522172ed",
+      "missing_by_column": {
+        "row_id": 0,
+        "mean_radius": 0,
+        "mean_texture": 0,
+        "mean_perimeter": 0,
+        "mean_area": 0,
+        "mean_smoothness": 0,
+        "mean_compactness": 0,
+        "mean_concavity": 0,
+        "mean_concave_points": 0,
+        "mean_symmetry": 0,
+        "mean_fractal_dimension": 0,
+        "radius_error": 0,
+        "texture_error": 0,
+        "perimeter_error": 0,
+        "area_error": 0,
+        "smoothness_error": 0,
+        "compactness_error": 0,
+        "concavity_error": 0,
+        "concave_points_error": 0,
+        "symmetry_error": 0,
+        "fractal_dimension_error": 0,
+        "worst_radius": 0,
+        "worst_texture": 0,
+        "worst_perimeter": 0,
+        "worst_area": 0,
+        "worst_smoothness": 0,
+        "worst_compactness": 0,
+        "worst_concavity": 0,
+        "worst_concave_points": 0,
+        "worst_symmetry": 0,
+        "worst_fractal_dimension": 0,
+        "label": 0
+      },
+      "transforms": [
+        "Preserved package data values and row order; added zero-based row_id.",
+        "Normalized CSV serialization; replaced spaces/slashes in sklearn feature names.",
+        "Provider label codes preserved and mapped explicitly; not original UCI IDs."
+      ],
+      "schema": [
+        {
+          "name": "row_id",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "row id"
+        },
+        {
+          "name": "mean_radius",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean radius; not a raw medical image."
+        },
+        {
+          "name": "mean_texture",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean texture; not a raw medical image."
+        },
+        {
+          "name": "mean_perimeter",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean perimeter; not a raw medical image."
+        },
+        {
+          "name": "mean_area",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean area; not a raw medical image."
+        },
+        {
+          "name": "mean_smoothness",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean smoothness; not a raw medical image."
+        },
+        {
+          "name": "mean_compactness",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean compactness; not a raw medical image."
+        },
+        {
+          "name": "mean_concavity",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean concavity; not a raw medical image."
+        },
+        {
+          "name": "mean_concave_points",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean concave points; not a raw medical image."
+        },
+        {
+          "name": "mean_symmetry",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean symmetry; not a raw medical image."
+        },
+        {
+          "name": "mean_fractal_dimension",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear mean fractal dimension; not a raw medical image."
+        },
+        {
+          "name": "radius_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear radius error; not a raw medical image."
+        },
+        {
+          "name": "texture_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear texture error; not a raw medical image."
+        },
+        {
+          "name": "perimeter_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear perimeter error; not a raw medical image."
+        },
+        {
+          "name": "area_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear area error; not a raw medical image."
+        },
+        {
+          "name": "smoothness_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear smoothness error; not a raw medical image."
+        },
+        {
+          "name": "compactness_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear compactness error; not a raw medical image."
+        },
+        {
+          "name": "concavity_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear concavity error; not a raw medical image."
+        },
+        {
+          "name": "concave_points_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear concave points error; not a raw medical image."
+        },
+        {
+          "name": "symmetry_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear symmetry error; not a raw medical image."
+        },
+        {
+          "name": "fractal_dimension_error",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear fractal dimension error; not a raw medical image."
+        },
+        {
+          "name": "worst_radius",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst radius; not a raw medical image."
+        },
+        {
+          "name": "worst_texture",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst texture; not a raw medical image."
+        },
+        {
+          "name": "worst_perimeter",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst perimeter; not a raw medical image."
+        },
+        {
+          "name": "worst_area",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst area; not a raw medical image."
+        },
+        {
+          "name": "worst_smoothness",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst smoothness; not a raw medical image."
+        },
+        {
+          "name": "worst_compactness",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst compactness; not a raw medical image."
+        },
+        {
+          "name": "worst_concavity",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst concavity; not a raw medical image."
+        },
+        {
+          "name": "worst_concave_points",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst concave points; not a raw medical image."
+        },
+        {
+          "name": "worst_symmetry",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst symmetry; not a raw medical image."
+        },
+        {
+          "name": "worst_fractal_dimension",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source image/derived scale; physical calibration not specified in the cited summary",
+          "description": "Image-derived nuclear worst fractal dimension; not a raw medical image."
+        },
+        {
+          "name": "label",
+          "role": "response_or_signal",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "label"
+        }
+      ]
+    },
+    {
+      "id": "wine",
+      "sector": "food_chemistry",
+      "title": "Chemistry, scale and out-of-sample topological descriptors",
+      "provider": "sklearn",
+      "provider_version": "1.8.0",
+      "source_url": "https://archive.ics.uci.edu/dataset/109/wine",
+      "source_doi": "10.24432/C5PC7J",
+      "citation": "Aeberhard and Forina (1992), Wine, UCI Machine Learning Repository.",
+      "license": "CC BY 4.0",
+      "license_evidence_url": "https://archive.ics.uci.edu/dataset/109/wine",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "observation_unit": "One wine sample; cultivar is a category, not a quality score.",
+      "scope_limitations": "178 rows, 13 chemistry features, three cultivars. Different from Wine Quality (UCI 186).",
+      "rows": 178,
+      "columns": [
+        "row_id",
+        "alcohol",
+        "malic_acid",
+        "ash",
+        "alcalinity_of_ash",
+        "magnesium",
+        "total_phenols",
+        "flavanoids",
+        "nonflavanoid_phenols",
+        "proanthocyanins",
+        "color_intensity",
+        "hue",
+        "od280_od315_of_diluted_wines",
+        "proline",
+        "label"
+      ],
+      "label_map": {
+        "0": "class_0",
+        "1": "class_1",
+        "2": "class_2"
+      },
+      "data_kind": "observed",
+      "acquisition": "offline export from installed package distribution; no invented records",
+      "source_review_date": "2026-09-20",
+      "data_file": "data/industries/wine/data.csv",
+      "data_sha256": "2f6d6d39c2ba1898b9d254feb78ae575383fac1f9ed735c9aaa9308293568aac",
+      "source_file": "data/industries/wine/source_distribution.csv",
+      "source_sha256": "10e8a802908b34f86e5da8ce962f3c806694bc98450a18f61851af59f324bede",
+      "missing_by_column": {
+        "row_id": 0,
+        "alcohol": 0,
+        "malic_acid": 0,
+        "ash": 0,
+        "alcalinity_of_ash": 0,
+        "magnesium": 0,
+        "total_phenols": 0,
+        "flavanoids": 0,
+        "nonflavanoid_phenols": 0,
+        "proanthocyanins": 0,
+        "color_intensity": 0,
+        "hue": 0,
+        "od280_od315_of_diluted_wines": 0,
+        "proline": 0,
+        "label": 0
+      },
+      "transforms": [
+        "Preserved package data values and row order; added zero-based row_id.",
+        "Normalized CSV serialization; replaced spaces/slashes in sklearn feature names.",
+        "Provider label codes preserved and mapped explicitly; not original UCI IDs."
+      ],
+      "schema": [
+        {
+          "name": "row_id",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "row id"
+        },
+        {
+          "name": "alcohol",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: alcohol. Original source does not specify every unit."
+        },
+        {
+          "name": "malic_acid",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: malic acid. Original source does not specify every unit."
+        },
+        {
+          "name": "ash",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: ash. Original source does not specify every unit."
+        },
+        {
+          "name": "alcalinity_of_ash",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: alcalinity of ash. Original source does not specify every unit."
+        },
+        {
+          "name": "magnesium",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: magnesium. Original source does not specify every unit."
+        },
+        {
+          "name": "total_phenols",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: total phenols. Original source does not specify every unit."
+        },
+        {
+          "name": "flavanoids",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: flavanoids. Original source does not specify every unit."
+        },
+        {
+          "name": "nonflavanoid_phenols",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: nonflavanoid phenols. Original source does not specify every unit."
+        },
+        {
+          "name": "proanthocyanins",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: proanthocyanins. Original source does not specify every unit."
+        },
+        {
+          "name": "color_intensity",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: color intensity. Original source does not specify every unit."
+        },
+        {
+          "name": "hue",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: hue. Original source does not specify every unit."
+        },
+        {
+          "name": "od280_od315_of_diluted_wines",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: od280 od315 of diluted wines. Original source does not specify every unit."
+        },
+        {
+          "name": "proline",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "Chemistry measurement: proline. Original source does not specify every unit."
+        },
+        {
+          "name": "label",
+          "role": "response_or_signal",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "label"
+        }
+      ]
+    },
+    {
+      "id": "stackloss",
+      "sector": "manufacturing",
+      "title": "Small-sample process monitoring",
+      "provider": "statsmodels",
+      "provider_version": "0.14.6",
+      "source_url": "https://www.statsmodels.org/stable/datasets/generated/stackloss.html",
+      "source_doi": null,
+      "citation": "Brownlee (1965), Statistical Theory and Methodology in Science and Engineering; statsmodels distribution.",
+      "license": "Public domain (dataset distributor statement)",
+      "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/stackloss.html",
+      "license_url": "https://www.statsmodels.org/stable/datasets/generated/stackloss.html",
+      "observation_unit": "One operating-day measurement in the historical plant table; original timestamps are unavailable.",
+      "scope_limitations": "21 records. Cannot support a broad plant-deployment claim or certify a mechanistic model.",
+      "rows": 21,
+      "columns": [
+        "row_id",
+        "STACKLOSS",
+        "AIRFLOW",
+        "WATERTEMP",
+        "ACIDCONC"
+      ],
+      "label_map": {},
+      "data_kind": "observed",
+      "acquisition": "offline export from installed package distribution; no invented records",
+      "source_review_date": "2026-09-20",
+      "data_file": "data/industries/stackloss/data.csv",
+      "data_sha256": "6c1de720cdef48f9b5193459e4b584295f9b7fa2c042e70e1e65bbccbe362d60",
+      "source_file": "data/industries/stackloss/source_distribution.csv",
+      "source_sha256": "7395953d62eec7abab783ae9603ff82f091d04a4689780e455c239f0f5509f64",
+      "missing_by_column": {
+        "row_id": 0,
+        "STACKLOSS": 0,
+        "AIRFLOW": 0,
+        "WATERTEMP": 0,
+        "ACIDCONC": 0
+      },
+      "transforms": [
+        "Preserved loaded values and row order; added zero-based row_id.",
+        "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+        "Missing CO2 observations remain blank, never zero."
+      ],
+      "schema": [
+        {
+          "name": "row_id",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "row id"
+        },
+        {
+          "name": "STACKLOSS",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "10 × percent",
+          "description": "Ammonia escaping the absorption column on the source encoded scale."
+        },
+        {
+          "name": "AIRFLOW",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source process-rate scale",
+          "description": "Rate of plant operation; do not invent a flow unit."
+        },
+        {
+          "name": "WATERTEMP",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source temperature scale",
+          "description": "Cooling-water temperature; no calibrated unit is asserted here."
+        },
+        {
+          "name": "ACIDCONC",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "encoded concentration",
+          "description": "Source wording of offset/scaling is ambiguous; preserve encoded values, do not invert the transform."
+        }
+      ]
+    },
+    {
+      "id": "grunfeld",
+      "sector": "business",
+      "title": "Firm panels, timestamps and prediction availability",
+      "provider": "statsmodels",
+      "provider_version": "0.14.6",
+      "source_url": "https://www.statsmodels.org/stable/datasets/generated/grunfeld.html",
+      "source_doi": null,
+      "citation": "Grunfeld; 11-firm reconstruction documented by Kleiber and Zeileis (2008); statsmodels distribution.",
+      "license": "Public domain (dataset distributor statement)",
+      "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/grunfeld.html",
+      "license_url": "https://www.statsmodels.org/stable/datasets/generated/grunfeld.html",
+      "observation_unit": "One firm-year record. A repeated firm is not a new independent company.",
+      "scope_limitations": "220 rows; 11 firms, 1935–1954. Historical data, not investment advice or current-market evidence.",
+      "rows": 220,
+      "columns": [
+        "row_id",
+        "invest",
+        "value",
+        "capital",
+        "firm",
+        "year"
+      ],
+      "label_map": {},
+      "data_kind": "observed",
+      "acquisition": "offline export from installed package distribution; no invented records",
+      "source_review_date": "2026-09-20",
+      "data_file": "data/industries/grunfeld/data.csv",
+      "data_sha256": "69c2ae99098dbc3735e5a10d1855341ea3db6160b1c9890cc33236dca9914df6",
+      "source_file": "data/industries/grunfeld/source_distribution.csv",
+      "source_sha256": "6f6ca138e645eeee6ff3e54fe5b9b498f7ddb5c484237d2a8489c524b3c94098",
+      "missing_by_column": {
+        "row_id": 0,
+        "invest": 0,
+        "value": 0,
+        "capital": 0,
+        "firm": 0,
+        "year": 0
+      },
+      "transforms": [
+        "Preserved loaded values and row order; added zero-based row_id.",
+        "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+        "Missing CO2 observations remain blank, never zero."
+      ],
+      "schema": [
+        {
+          "name": "row_id",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "row id"
+        },
+        {
+          "name": "invest",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "1947-dollar source scale",
+          "description": "Gross investment; no additional millions multiplier is assumed."
+        },
+        {
+          "name": "value",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "1947-dollar source scale",
+          "description": "Year-end market value; not available at the beginning of that same year."
+        },
+        {
+          "name": "capital",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "1947-dollar source scale",
+          "description": "Stock of plant and equipment."
+        },
+        {
+          "name": "firm",
+          "role": "metadata",
+          "dtype": "object",
+          "units": "category",
+          "description": "Company identity; eleven labels."
+        },
+        {
+          "name": "year",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "calendar year",
+          "description": "1935–1954."
+        }
+      ]
+    },
+    {
+      "id": "co2",
+      "sector": "environment",
+      "title": "Missingness, past-only windows and seasonal shape",
+      "provider": "statsmodels",
+      "provider_version": "0.14.6",
+      "source_url": "https://www.statsmodels.org/stable/datasets/generated/co2.html",
+      "source_doi": null,
+      "citation": "Keeling and Whorf (2004), atmospheric CO2 series, CDIAC; historical statsmodels snapshot.",
+      "license": "Public domain (dataset distributor statement)",
+      "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/co2.html",
+      "license_url": "https://www.statsmodels.org/stable/datasets/generated/co2.html",
+      "observation_unit": "One weekly date slot, possibly missing a CO2 observation.",
+      "scope_limitations": "2284 slots, 2225 observed values and 59 missing. Snapshot covers 1958–2001, not current CO2.",
+      "rows": 2284,
+      "columns": [
+        "row_id",
+        "date",
+        "co2"
+      ],
+      "label_map": {},
+      "data_kind": "observed",
+      "acquisition": "offline export from installed package distribution; no invented records",
+      "source_review_date": "2026-09-20",
+      "data_file": "data/industries/co2/data.csv",
+      "data_sha256": "b67fef114ef5c027ad8b5e0aeae76525f218184df64bbf289a7d299a13c14277",
+      "source_file": "data/industries/co2/source_distribution.csv",
+      "source_sha256": "16695fa2786e53414e5a6b54767a3fdf5de99cfbc68617f69d1362d92776a92f",
+      "missing_by_column": {
+        "row_id": 0,
+        "date": 0,
+        "co2": 59
+      },
+      "transforms": [
+        "Preserved loaded values and row order; added zero-based row_id.",
+        "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+        "Missing CO2 observations remain blank, never zero."
+      ],
+      "schema": [
+        {
+          "name": "row_id",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "row id"
+        },
+        {
+          "name": "date",
+          "role": "metadata",
+          "dtype": "object",
+          "units": "ISO date",
+          "description": "Weekly calendar slot from the loaded index; no intraday timestamp asserted."
+        },
+        {
+          "name": "co2",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "ppmv",
+          "description": "Atmospheric CO2 concentration; blanks are missing."
+        }
+      ]
+    },
+    {
+      "id": "nile",
+      "sector": "water_infrastructure",
+      "title": "Retrospective change and forward evaluation",
+      "provider": "statsmodels",
+      "provider_version": "0.14.6",
+      "source_url": "https://www.statsmodels.org/stable/datasets/generated/nile.html",
+      "source_doi": null,
+      "citation": "Cobb (1978), The Problem of the Nile; statsmodels distribution.",
+      "license": "Public domain (dataset distributor statement)",
+      "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/nile.html",
+      "license_url": "https://www.statsmodels.org/stable/datasets/generated/nile.html",
+      "observation_unit": "One annual river-volume observation, not an instantaneous discharge-rate sample.",
+      "scope_limitations": "100 annual observations, 1871–1970. A detected change is not proof of its physical cause.",
+      "rows": 100,
+      "columns": [
+        "row_id",
+        "year",
+        "volume"
+      ],
+      "label_map": {},
+      "data_kind": "observed",
+      "acquisition": "offline export from installed package distribution; no invented records",
+      "source_review_date": "2026-09-20",
+      "data_file": "data/industries/nile/data.csv",
+      "data_sha256": "fa4813b7d95f16c78ca32a909e2de1979ed99959352e29850bcaab1dd8eab982",
+      "source_file": "data/industries/nile/source_distribution.csv",
+      "source_sha256": "88e97bea7249e5832a85e41aec6ce4b8f7b1b14aae930c8363da7f193286b598",
+      "missing_by_column": {
+        "row_id": 0,
+        "year": 0,
+        "volume": 0
+      },
+      "transforms": [
+        "Preserved loaded values and row order; added zero-based row_id.",
+        "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+        "Missing CO2 observations remain blank, never zero."
+      ],
+      "schema": [
+        {
+          "name": "row_id",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "row id"
+        },
+        {
+          "name": "year",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "calendar year",
+          "description": "1871–1970."
+        },
+        {
+          "name": "volume",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "10^8 m^3 per annual observation",
+          "description": "Annual recorded volume; do not label as cubic metres per second."
+        }
+      ]
+    },
+    {
+      "id": "elnino",
+      "sector": "marine",
+      "title": "Monthly climate records and delay representations",
+      "provider": "statsmodels",
+      "provider_version": "0.14.6",
+      "source_url": "https://www.statsmodels.org/stable/datasets/generated/elnino.html",
+      "source_doi": null,
+      "citation": "NOAA NWS ERSST.V3B, Niño 1+2; historical statsmodels distribution.",
+      "license": "Public domain (dataset distributor statement)",
+      "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/elnino.html",
+      "license_url": "https://www.statsmodels.org/stable/datasets/generated/elnino.html",
+      "observation_unit": "One year with twelve monthly regional mean temperatures; the derived long view has one month per row.",
+      "scope_limitations": "61 years, 1950–2010, 732 monthly observations. Not an operational forecast or a simulated PDE field.",
+      "rows": 61,
+      "columns": [
+        "row_id",
+        "YEAR",
+        "JAN",
+        "FEB",
+        "MAR",
+        "APR",
+        "MAY",
+        "JUN",
+        "JUL",
+        "AUG",
+        "SEP",
+        "OCT",
+        "NOV",
+        "DEC"
+      ],
+      "label_map": {},
+      "data_kind": "observed",
+      "acquisition": "offline export from installed package distribution; no invented records",
+      "source_review_date": "2026-09-20",
+      "data_file": "data/industries/elnino/data.csv",
+      "data_sha256": "8c15911802ce2973931db0c3d822ae6abe961bfa6bd507cae5eb400beeee9af7",
+      "source_file": "data/industries/elnino/source_distribution.csv",
+      "source_sha256": "b647be00e0fd264be9764e317e6b963f35030014ecca2b21b204521716e463ad",
+      "missing_by_column": {
+        "row_id": 0,
+        "YEAR": 0,
+        "JAN": 0,
+        "FEB": 0,
+        "MAR": 0,
+        "APR": 0,
+        "MAY": 0,
+        "JUN": 0,
+        "JUL": 0,
+        "AUG": 0,
+        "SEP": 0,
+        "OCT": 0,
+        "NOV": 0,
+        "DEC": 0
+      },
+      "transforms": [
+        "Preserved loaded values and row order; added zero-based row_id.",
+        "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+        "Missing CO2 observations remain blank, never zero."
+      ],
+      "schema": [
+        {
+          "name": "row_id",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "row id"
+        },
+        {
+          "name": "YEAR",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "YEAR"
+        },
+        {
+          "name": "JAN",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for JAN."
+        },
+        {
+          "name": "FEB",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for FEB."
+        },
+        {
+          "name": "MAR",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for MAR."
+        },
+        {
+          "name": "APR",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for APR."
+        },
+        {
+          "name": "MAY",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for MAY."
+        },
+        {
+          "name": "JUN",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for JUN."
+        },
+        {
+          "name": "JUL",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for JUL."
+        },
+        {
+          "name": "AUG",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for AUG."
+        },
+        {
+          "name": "SEP",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for SEP."
+        },
+        {
+          "name": "OCT",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for OCT."
+        },
+        {
+          "name": "NOV",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for NOV."
+        },
+        {
+          "name": "DEC",
+          "role": "response_or_signal",
+          "dtype": "float64",
+          "units": "degrees Celsius",
+          "description": "Regional monthly mean sea-surface temperature for DEC."
+        }
+      ]
+    },
+    {
+      "id": "modechoice",
+      "sector": "transportation",
+      "title": "Choice sets, group splits and fair baselines",
+      "provider": "statsmodels",
+      "provider_version": "0.14.6",
+      "source_url": "https://www.statsmodels.org/stable/datasets/generated/modechoice.html",
+      "source_doi": null,
+      "citation": "Greene and Hensher, 1987 intercity mode-choice sample documented in Greene (1997/2011); statsmodels distribution.",
+      "license": "Public domain (dataset distributor statement)",
+      "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/modechoice.html",
+      "license_url": "https://www.statsmodels.org/stable/datasets/generated/modechoice.html",
+      "observation_unit": "One alternative offered to one traveler. Four rows form one choice set.",
+      "scope_limitations": "840 alternatives, 210 travelers. Choice-based sampling oversamples some modes; not population market shares.",
+      "rows": 840,
+      "columns": [
+        "row_id",
+        "individual",
+        "mode",
+        "choice",
+        "ttme",
+        "invc",
+        "invt",
+        "gc",
+        "hinc",
+        "psize"
+      ],
+      "label_map": {},
+      "data_kind": "observed",
+      "acquisition": "offline export from installed package distribution; no invented records",
+      "source_review_date": "2026-09-20",
+      "data_file": "data/industries/modechoice/data.csv",
+      "data_sha256": "be6deb2170ab4c0b4a09319308ec6098a07a1f9ef4418380cfc7bcc6331c3556",
+      "source_file": "data/industries/modechoice/source_distribution.csv",
+      "source_sha256": "d2d72c1db440f8ffce01f58ed39fc1145569ec1703970dac1636c154fc01fd8e",
+      "missing_by_column": {
+        "row_id": 0,
+        "individual": 0,
+        "mode": 0,
+        "choice": 0,
+        "ttme": 0,
+        "invc": 0,
+        "invt": 0,
+        "gc": 0,
+        "hinc": 0,
+        "psize": 0
+      },
+      "transforms": [
+        "Preserved loaded values and row order; added zero-based row_id.",
+        "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+        "Missing CO2 observations remain blank, never zero."
+      ],
+      "schema": [
+        {
+          "name": "row_id",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "source scale; see data card (not guessed)",
+          "description": "row id"
+        },
+        {
+          "name": "individual",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "ID",
+          "description": "One traveler/choice-set identifier."
+        },
+        {
+          "name": "mode",
+          "role": "metadata",
+          "dtype": "int64",
+          "units": "category",
+          "description": "1 air; 2 train; 3 bus; 4 car."
+        },
+        {
+          "name": "choice",
+          "role": "response_or_signal",
+          "dtype": "int64",
+          "units": "binary",
+          "description": "One selected alternative per choice set."
+        },
+        {
+          "name": "ttme",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "minutes",
+          "description": "Terminal waiting time, zero for car."
+        },
+        {
+          "name": "invc",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source dollars",
+          "description": "In-vehicle monetary cost; not inflation-adjusted here."
+        },
+        {
+          "name": "invt",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "minutes",
+          "description": "In-vehicle travel time."
+        },
+        {
+          "name": "gc",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source dollars",
+          "description": "Generalized cost combining cost and time; excluded to avoid double-counting."
+        },
+        {
+          "name": "hinc",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "source thousands of dollars",
+          "description": "Household income."
+        },
+        {
+          "name": "psize",
+          "role": "feature",
+          "dtype": "float64",
+          "units": "persons",
+          "description": "Group size in the chosen mode; excluded because availability for prospective choice is uncertain."
+        }
+      ]
+    }
+  ]
+}

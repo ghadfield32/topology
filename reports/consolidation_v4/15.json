@@ -1,0 +1,12 @@
+{
+  "points": 25,
+  "perturbation_trials": 5000,
+  "disparity_sigma_px": 0.2,
+  "median_empirical_to_linear_sigma_ratio": 1.0006679564619725,
+  "calibration_fixed": true,
+  "noise_model": "synthetic independent Gaussian disparity noise",
+  "actual_matcher_uncertainty_established": false,
+  "stage": 15,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real stereo-reference disparities with generated local noise; no independent calibration-noise measurement."
+}

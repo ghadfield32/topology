@@ -1,0 +1,58 @@
+[
+  {
+    "path": "applications_v7/seeds/lab.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 1,
+    "seconds": 6.194
+  },
+  {
+    "path": "applications_v7/seeds/answers.ipynb",
+    "status": "passed",
+    "code_cells": 9,
+    "png_outputs": 0,
+    "seconds": 3.25
+  },
+  {
+    "path": "applications_v7/concrete_slump/lab.ipynb",
+    "status": "passed",
+    "code_cells": 6,
+    "png_outputs": 1,
+    "seconds": 5.664
+  },
+  {
+    "path": "applications_v7/concrete_slump/answers.ipynb",
+    "status": "passed",
+    "code_cells": 9,
+    "png_outputs": 0,
+    "seconds": 2.664
+  },
+  {
+    "path": "methods_v7/leakage/lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 1,
+    "seconds": 3.756
+  },
+  {
+    "path": "methods_v7/leakage/answers.ipynb",
+    "status": "passed",
+    "code_cells": 9,
+    "png_outputs": 0,
+    "seconds": 2.31
+  },
+  {
+    "path": "methods_v7/claims/lab.ipynb",
+    "status": "passed",
+    "code_cells": 6,
+    "png_outputs": 1,
+    "seconds": 2.72
+  },
+  {
+    "path": "methods_v7/claims/answers.ipynb",
+    "status": "passed",
+    "code_cells": 9,
+    "png_outputs": 0,
+    "seconds": 2.289
+  }
+]

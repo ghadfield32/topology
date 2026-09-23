@@ -1,0 +1,12 @@
+{
+  "evidence": "untrained attention equations applied to real image patches",
+  "tokens": 128,
+  "features_per_token": 64,
+  "within_frame_isolation_passed": true,
+  "cross_frame_output_change_norm": 7.403984752185559,
+  "VGGT_inference_executed": false,
+  "geometry_accuracy": null,
+  "tracking_accuracy": null,
+  "checkpoint": null,
+  "warning": "Attention weights are not correspondence probabilities or calibrated geometry confidence."
+}

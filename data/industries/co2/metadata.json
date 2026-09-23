@@ -1,0 +1,62 @@
+{
+  "id": "co2",
+  "sector": "environment",
+  "title": "Missingness, past-only windows and seasonal shape",
+  "provider": "statsmodels",
+  "provider_version": "0.14.6",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/co2.html",
+  "source_doi": null,
+  "citation": "Keeling and Whorf (2004), atmospheric CO2 series, CDIAC; historical statsmodels snapshot.",
+  "license": "Public domain (dataset distributor statement)",
+  "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/co2.html",
+  "license_url": "https://www.statsmodels.org/stable/datasets/generated/co2.html",
+  "observation_unit": "One weekly date slot, possibly missing a CO2 observation.",
+  "scope_limitations": "2284 slots, 2225 observed values and 59 missing. Snapshot covers 1958–2001, not current CO2.",
+  "rows": 2284,
+  "columns": [
+    "row_id",
+    "date",
+    "co2"
+  ],
+  "label_map": {},
+  "data_kind": "observed",
+  "acquisition": "offline export from installed package distribution; no invented records",
+  "source_review_date": "2026-09-20",
+  "data_file": "data/industries/co2/data.csv",
+  "data_sha256": "b67fef114ef5c027ad8b5e0aeae76525f218184df64bbf289a7d299a13c14277",
+  "source_file": "data/industries/co2/source_distribution.csv",
+  "source_sha256": "16695fa2786e53414e5a6b54767a3fdf5de99cfbc68617f69d1362d92776a92f",
+  "missing_by_column": {
+    "row_id": 0,
+    "date": 0,
+    "co2": 59
+  },
+  "transforms": [
+    "Preserved loaded values and row order; added zero-based row_id.",
+    "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+    "Missing CO2 observations remain blank, never zero."
+  ],
+  "schema": [
+    {
+      "name": "row_id",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "row id"
+    },
+    {
+      "name": "date",
+      "role": "metadata",
+      "dtype": "object",
+      "units": "ISO date",
+      "description": "Weekly calendar slot from the loaded index; no intraday timestamp asserted."
+    },
+    {
+      "name": "co2",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "ppmv",
+      "description": "Atmospheric CO2 concentration; blanks are missing."
+    }
+  ]
+}

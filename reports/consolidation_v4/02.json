@@ -1,0 +1,10 @@
+{
+  "records": 30,
+  "rescaled_feature": "sepal_length_cm",
+  "multiplier": 10,
+  "nearest_neighbor_changes": 12,
+  "translation_distance_check": "passed",
+  "stage": 2,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real Iris measurements, plus the exact counterexample 0,1,2."
+}

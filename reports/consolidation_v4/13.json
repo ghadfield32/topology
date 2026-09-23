@@ -1,0 +1,10 @@
+{
+  "direction_count": 40,
+  "chart_round_trip": "passed",
+  "tangent_orthogonality_max": 5.273559366969494e-16,
+  "range_retained": false,
+  "physical_scene_is_sphere_claimed": false,
+  "stage": 13,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real stereo-reference directions mapped onto a constructed unit sphere; not a spherical scene claim."
+}

@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "core_stages": 31,
+  "new_entry_guides": 31,
+  "entry_checks": 31,
+  "industry_cases": 10,
+  "new_methods_labs": 2,
+  "reference_notebooks": 107,
+  "reference_code_cells": 631,
+  "embedded_png_outputs": 74,
+  "learner_notebooks": 43,
+  "coding_exercises": 159,
+  "conceptual_questions": 266,
+  "delayed_recall_prompts": 129,
+  "earlier_transfer_questions": 42,
+  "additional_entry_questions": 31,
+  "primers": 10,
+  "observed_sources": 15,
+  "new_observed_rows": 313,
+  "optional_data_plans_not_executed": 10,
+  "html_pages": 1355,
+  "local_file_link_targets": 65631,
+  "broken_targets": [],
+  "font_files": [],
+  "preassessed_items": 0,
+  "limitations": [
+    "File targets checked; fragment-anchor semantics are not exhaustively audited.",
+    "External links were not all recrawled.",
+    "Hashes do not independently verify numerical transcription against provider bytes."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "models": {
+    "row_split": {
+      "test_rows": 189,
+      "test_units": 136,
+      "accuracy": 1.0,
+      "correct": 189,
+      "shared_units": 131
+    },
+    "unit_split": {
+      "test_rows": 189,
+      "test_units": 63,
+      "accuracy": 0.9523809523809523,
+      "correct": 180,
+      "shared_units": 0
+    }
+  },
+  "standardized_max_abs_difference": 2.220446049250313e-15,
+  "data_role": "observed Seeds vectors, each copied three times in software; NOT 630 observed kernels"
+}

@@ -1,0 +1,43 @@
+{
+  "stage": 24,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "manufactured integrator comparison plus observed time-series representation",
+  "one_step_energy": 0.4808,
+  "one_step_symplectic_defect": 4.44089209850063e-19,
+  "methods": [
+    {
+      "method": "exact",
+      "energy_max_abs_error": 2.2093438190040615e-14,
+      "final_state_error": 0.0,
+      "symplectic_defect": 9.162587281197119e-18
+    },
+    {
+      "method": "euler",
+      "energy_max_abs_error": 26.2620586041472,
+      "final_state_error": 6.3261687416442856,
+      "symplectic_defect": 0.014142135623730963
+    },
+    {
+      "method": "symplectic_euler",
+      "energy_max_abs_error": 0.026313157408584864,
+      "final_state_error": 0.05015085809068057,
+      "symplectic_defect": 5.551115123125788e-20
+    },
+    {
+      "method": "verlet",
+      "energy_max_abs_error": 0.0012499278017941706,
+      "final_state_error": 0.017316446361532727,
+      "symplectic_defect": 5.6633156632398275e-18
+    },
+    {
+      "method": "midpoint",
+      "energy_max_abs_error": 1.4876988529977098e-14,
+      "final_state_error": 0.033281886178879,
+      "symplectic_defect": 7.85157479092138e-18
+    }
+  ],
+  "solar_delay_points": 308,
+  "manufactured_circle_longest_H1": 1.4709984231287732,
+  "unsupported": "A loop is not a canonical state, measured energy, or proof of correct phase.",
+  "source_review_date": "2026-09-20"
+}

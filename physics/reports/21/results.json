@@ -1,0 +1,16 @@
+{
+  "stage": 21,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "analytic derivative validation plus observed static material data",
+  "observed_rows": 56,
+  "excerpt_sha256": "abcdeee10337f548d7072ce2284f6760e00cab3107bae472f1074efd9ab270b9",
+  "first_secant_response_per_K": 0.09183477425552353,
+  "centered_difference_errors": [
+    0.004286203188420434,
+    0.0010731594251268683,
+    0.0002683904853413299,
+    6.710391205544397e-05
+  ],
+  "unsupported": "No measured time derivatives or thermal diffusivity inferred.",
+  "source_review_date": "2026-09-20"
+}

@@ -1,0 +1,9 @@
+{
+  "sample_id": 0,
+  "real_matrix_rank": 6,
+  "binary_matrix_rank": 5,
+  "interpretation": "Rank of the intensity matrix; NOT image homology.",
+  "stage": 1,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real training digit intensities plus an exact, constructed three-by-three matrix."
+}

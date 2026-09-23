@@ -1,0 +1,64 @@
+# Listening to Shape v5 — Verification and limitations
+
+This report describes this release, not a claim about learner mastery, the complete book, or production deployment. Historical v1–v4 reports remain available as historical records. The accompanying final-archive JSON records extraction and checksum checks on the delivered ZIP.
+
+## Executed software checks
+
+The final integrated suite ran with `PYTHONPATH=src python -m pytest -q -ra`: **366 passed, 2 skipped, 0 failed**. The v4 baseline was independently rerun first: 296 passed and the same two skips. The 70 additional tests cover mathematical counterexamples, gradients, trained-model differentiation/shape contracts, observed-data provenance, migration, and all 30 new coding reference activities. Tests are not a mathematical proof of all algorithms.
+
+The skips are explicit: `tests/test_optional_libraries.py` could not import Ripser or GUDHI. No agreement with either external library is claimed. The current environment includes CPU PyTorch, so the new neural contracts ran rather than being skipped. In an environment without the optional physics dependencies, some tests may skip; compare the skip reasons, not just the exit code.
+
+## Notebook execution
+
+All **83 reference notebooks** ran successfully in fresh kernels, with **482 executed code cells**, no saved error outputs, and **55 embedded PNG output images**. There are 21 original labs, 21 original coding-answer notebooks, 21 consolidation notebooks, 10 new physics labs, and 10 new coding-answer notebooks. Their notebook bytes and code-cell counts are listed in `reports/release_v5.json`.
+
+The **31 learner notebooks are intentionally unexecuted** and include explicit unfinished assignment functions. They are not broken reference implementations and are not part of the reference-execution count. Opening their answers does not create an assessment. The fresh v5 log contains 31 stages and no attempts.
+
+During the legacy refresh, a source-version change correctly invalidated the fingerprint between Stage 11 selection and Stage 12 evaluation. Stage 12 refused the stale selection. The guard was retained; the relevant source files were frozen and Stages 11–20 rerun, followed by all answer and consolidation notebooks. The exposed digits holdout is still a demonstration, not a fresh confirmatory experiment. Details are in `docs/v5/BUILD_REVIEW.md`.
+
+## What actually trains
+
+The new labs train a small scalar-Hamiltonian neural network, a restricted Lagrangian potential network with fixed unit kinetic term, a hard-boundary Poisson PINN, a DeepONet, and a small Fourier neural operator. These are CPU experiments on explicitly manufactured data. They do not reproduce the full original HNN, LNN, PINN, operator, or domain-decomposition papers. The LNN example is not a fully general velocity-dependent learned Lagrangian.
+
+A separate differentiable-simulation example fits one damping parameter through RK4 to a manufactured trajectory. Graph and attention examples are inspectable structural demonstrations, not trained physical simulators. Normalizing-flow coupling is implemented and inverted, but a density model is not trained. SPINN factor assembly is executed; a full SPINN/PIKAN training benchmark and SSBroyden reproduction are not.
+
+## Numerical examples from the saved results
+
+| Experiment | Saved result | What it does not establish |
+|---|---|---|
+| Symplectic Euler, unit oscillator, h=0.2 | H changes from 0.5 to 0.4808 while the symplectic matrix check passes | Exact discrete energy conservation |
+| One linearized sphere correction from (2,0) | New point (1.25,0), constraint residual 0.5625 | An exact nonlinear projection in one step |
+| Hard-boundary Poisson PINN, 500 steps | Relative solution L2 error about 0.000139 on the declared evaluation grid; endpoint error zero | Correct solutions of arbitrary PDEs or continuous-domain error certification |
+| HNN, manufactured held-out derivatives | MSE about 0.000184 | Measured physical Hamiltonian identification |
+| Restricted LNN, manufactured acceleration | MSE about 0.0000837 | General constrained mechanics or empirical validation |
+| NIST excerpt regression | Validation selects degree 5; 11-row test MAE 0.15264 in source response scale, linear baseline 1.93204 | The full NIST certified benchmark or independent material-study replication |
+| Periodic heat family, 32 held-out functions | DeepONet MSE 0.04081; FNO 0.0003171; identity baseline 0.13509 | A general ranking, resolution transfer, or measured diffusion validation |
+| Differentiable damping fit | True manufactured damping 0.15; fitted about 0.149993 | Damping inferred from actual physical sensors |
+
+Seeds, array origins, selection/evaluation splits, iteration budgets, model sizes and qualifications are in `physics/reports/21` through `physics/reports/30`. Complex FNO tensor-element counts and real scalar degrees of freedom are reported separately. The heat target is generated by a known analytic solver, whose zero error by construction is not a new discovery.
+
+## Data integrity and source interpretation
+
+Five observed data sources are bundled: Iris, handwritten digits, a calibrated Middlebury stereo pair and reference disparity, the historical annual sunspot snapshot, and a 56-observation NIST Hahn1 excerpt. All declared data-file hashes pass. NIST's full source has 236 observations; this release transcribes observations 1–56 from the official source and does not compare excerpt residuals to its certified full-data result. Response values retain the source scale; an unspecified dimensional multiplier is not invented. These are static copper measurements, not a temperature-versus-time trajectory or measured PDE field.
+
+Generated oscillator, Poisson, heat and damped-trajectory data are labeled manufactured. Applying an analytic heat solver to a row of an observed digit image does not make the later heat field observed. The source audit preserves what the supplied posts asserted and separately labels our calculations, primary research checks and unresolved performance claims.
+
+The gradient paper was initially reviewed at v1; its 16 September 2026 v2 and Algorithm 1 were checked before delivery. The projected-row normalization remains the implemented operation. The source registry records both revisions. Full benchmark wins and hardware speed claims are not presented as reproduced results.
+
+## Reader checks
+
+Chromium rendered the actual course HTML with its bundled CSS. The checks passed for 31 home-stage cards, search, filtering the 90 new question cards, answer reveal, embedded notebook images, and 390px viewport layout. There were no JavaScript page errors in these checks. Desktop and mobile screenshots are saved.
+
+Actual `file://` navigation was blocked by the execution environment with `ERR_BLOCKED_BY_ADMINISTRATOR`; the renderer used explicit HTML loading as its documented fallback. Thus full browser file navigation and browser-local persistence are **not verified**. A separate static check validates local file-link targets throughout the reader; exact counts appear in `reports/package_checks.json`. Static target existence is not a browser navigation test. External links were not all retested during this release.
+
+## Reproducibility limits
+
+Execution used Linux, Python 3.13.5 and torch 2.10.0+cpu. Exact installed versions are recorded in `reports/environment_v5.json`. macOS, Windows, GPU/CUDA, and all allowed dependency combinations were not tested. The optional trained VGGT runner and its preserved contracts do not constitute executed trained-model inference. No real sports-event, clinical, climate-scale, or independent physical-holdout validation is claimed.
+
+Initial dependency installation requires internet access or a suitable package cache; reading saved pages and using bundled data do not. Large external weights and third-party full books/papers are not redistributed. No font files are included.
+
+## Completion remains evidence-based
+
+The package provides 31 learning sections, 8 primers, 119 coding activities, 210 conceptual questions, 42 transfer questions and 93 delayed-recall questions. These counts do not prove completeness of an entire research field. The actual book text remains unaudited. The coverage matrix states which ideas are taught, implemented, numerically checked, trained, or left as independent reproduction/deeper-proof obligations.
+
+Migration preserves declared attempts and evidence references, leaves added stages unassessed, and refuses an existing destination. The tools calculate review dates and produce a handoff; they do not automatically grade proofs, award mastery or send background reminders.

@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The complete v7 dataset catalogue · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v7/DATA_CATALOG.md">docs/v7/DATA_CATALOG.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="the-complete-v7-dataset-catalogue">The complete v7 dataset catalogue</h1>
+<h2 id="included-observations-versus-manufactured-controls">Included observations versus manufactured controls</h2>
+<p>The combined package retains all 13 earlier observed sources and adds two full small UCI numeric tables. There are now <strong>15 included observed sources</strong>, used in ten industry cases plus the original stages. Two additional methods labs create controlled copies or analytic counterexamples; they are not additional observed datasets.</p>
+<p>The 13 earlier sources were retained, and their reference notebooks were re-executed in this build. Their historical acquisition records and license statements remain in their original cards. This version does not claim to have independently re-acquired every earlier dataset from its provider. The new official UCI metadata and numeric endpoints were inspected separately.</p>
+<table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Included source</th>
+<th>Unit of observation and useful lesson</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Botanical measurements</td>
+<td>Iris, 150 rows</td>
+<td>One flower measurement record; data shape, distances and basic representations.</td>
+</tr>
+<tr>
+<td>Handwriting</td>
+<td>Digits, 1,797 8×8 images</td>
+<td>One image, not a known independent writer; pixels, topology and representation comparisons.</td>
+</tr>
+<tr>
+<td>Computer vision</td>
+<td>Calibrated Middlebury stereo pair with reference disparity</td>
+<td>Matched images/pixels with stated calibration; reference-derived geometry and uncertainty.</td>
+</tr>
+<tr>
+<td>Historical solar activity</td>
+<td>Annual sunspot snapshot, 309 years</td>
+<td>One annual value; delay coordinates and temporal availability.</td>
+</tr>
+<tr>
+<td>Materials metrology</td>
+<td>NIST Hahn1 thermal-expansion excerpt, 56 observations</td>
+<td>One selected measurement from a larger source; units, inverse questions and limitations.</td>
+</tr>
+<tr>
+<td>Healthcare</td>
+<td>WDBC, 569 records</td>
+<td>Extracted image measurements, not source scans or clinical validation.</td>
+</tr>
+<tr>
+<td>Food chemistry</td>
+<td>Wine, 178 records</td>
+<td>One wine sample, three cultivars; chemical geometry and TDA features.</td>
+</tr>
+<tr>
+<td>Manufacturing</td>
+<td>Stackloss, 21 records</td>
+<td>One historical operating-day observation; tiny-sample regression.</td>
+</tr>
+<tr>
+<td>Business/econometrics</td>
+<td>Grunfeld, 220 firm-years</td>
+<td>Repeated firms; lagging and temporal panel evaluation.</td>
+</tr>
+<tr>
+<td>Environment</td>
+<td>CO2, 2,284 weekly slots</td>
+<td>Includes 59 missing values; not 2,284 observed readings.</td>
+</tr>
+<tr>
+<td>Water infrastructure</td>
+<td>Nile, 100 annual records</td>
+<td>Annual volume convention, not instantaneous discharge.</td>
+</tr>
+<tr>
+<td>Marine climate</td>
+<td>Niño 1+2, 61 wide yearly rows</td>
+<td>Twelve monthly values per row; calendar and anomaly handling.</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>Mode Choice, 840 alternatives for 210 travelers</td>
+<td>Four alternatives form one choice set; grouped evaluation.</td>
+</tr>
+<tr>
+<td>Agriculture — new</td>
+<td>Seeds, 210 kernels</td>
+<td>Seven X-ray-extracted geometric measurements; geometric feature versus topology.</td>
+</tr>
+<tr>
+<td>Construction materials — new</td>
+<td>Concrete Slump Test, 103 mixtures</td>
+<td>Seven ingredient quantities and three measured responses; prediction intervals.</td>
+</tr>
+</tbody>
+</table>
+<p>Do not add these row counts and call the sum a number of independent people or experiments. The rows represent different entities, time aggregation and repeated units. Historical snapshots also do not become contemporary monitoring data because a notebook was rerun today.</p>
+<h2 id="new-agriculture-source-seeds">New agriculture source: Seeds</h2>
+<p><a href="https://archive.ics.uci.edu/dataset/236/seeds">UCI record</a> · DOI <strong>10.24432/C5H30K</strong>. Citation: Charytanowicz, Niewczas, Kulczycki, Kowalski and Lukasik (2010), <em>Seeds</em>, UCI Machine Learning Repository. UCI lists CC BY 4.0. The dataset contains 70 kernels from each of three varieties and seven extracted measurements: area, perimeter, compactness, kernel length, width, asymmetry and groove length. Integer targets are retained as 1,2,3; the numeric-to-named-variety mapping is not independently verified here.</p>
+<p>The inspected metadata does not specify physical area/length units or a full asymmetry definition. Those gaps remain explicit. Compactness is given by 4πA/P²; it is a derived geometric feature, not a topological invariant. The original X-ray images, farm identities and acquisition dates are not in the supplied table.</p>
+<p>Files: <code>data/v7/seeds/source_numeric.txt</code>, <code>table.csv</code> and <code>metadata.json</code>. The normalized table adds a 1-based <code>source_id</code>; it excludes that ID and the label from model features. No rows are deliberately dropped. The lab saves a stratified 126/42/42 split and descriptive persistence for a fixed training subset. It does not claim new-farm validation or a predictive TDA improvement.</p>
+<h2 id="new-construction-source-concrete-slump-test">New construction source: Concrete Slump Test</h2>
+<p><a href="https://archive.ics.uci.edu/dataset/182/concrete+slump+test">UCI record</a> · DOI <strong>10.24432/C5FG7D</strong>. Citation: Yeh (2007), <em>Concrete Slump Test</em>, UCI Machine Learning Repository. UCI lists CC BY 4.0. Inputs are cement, slag, fly ash, water, superplasticizer, coarse aggregate and fine aggregate, recorded as kg in one cubic metre. Responses are slump and flow in cm and 28-day compressive strength in MPa.</p>
+<p>This is the 103-record Slump Test source, not the separate 1,030-record compressive-strength source. UCI describes 78 initially collected and 25 later records, but authenticated dates and batch identities are not supplied. The demonstration predicts strength using ingredients only and does not infer a verified chronological split from row IDs.</p>
+<p>Files: <code>data/v7/concrete_slump/source_numeric.csv</code>, <code>table.csv</code> and <code>metadata.json</code>. The provider row IDs are preserved. The fixed protocol assigns 52 rows to fitting, 25 to error calibration and 26 to testing. Its interval result is an empirical teaching experiment, not engineering certification or a per-recipe safety guarantee.</p>
+<h2 id="acquisition-transparency-and-reproducibility">Acquisition transparency and reproducibility</h2>
+<p>The container could not download provider files directly because network/DNS access failed. All numeric records of the two new tables were instead <strong>transcribed from complete official plaintext retrieved through the web tool</strong>, with whitespace/column naming normalized. No rows or values were intentionally changed. This route is explicitly recorded rather than called a byte-identical source download. Row counts, shapes, class counts, endpoints, finite values and local integrity are checked; those checks alone cannot rule out every transcription error.</p>
+<p>Local SHA-256 values identify the bundled source-text representations and normalized CSV files. A separate canonical numeric fingerprint preserves decimal values and row/column order while ignoring whitespace and equivalent decimal notation. It does not include column names, so schema semantics must be checked separately. Neither fingerprint is an independently obtained provider checksum.</p>
+<p>For an independently connected environment, the opt-in verifier retrieves the exact official numeric endpoint, compares ordered canonical numeric values, fails clearly on mismatch, and never overwrites your files:</p>
+<pre><code class="language-bash">python scripts/verify_v7_remote.py seeds
+python scripts/verify_v7_remote.py concrete_slump
+</code></pre>
+<p>That remote comparison was <strong>not executed in this build</strong>. It is a reproducible outstanding check, not a green badge.</p>
+<h2 id="attribution-and-reuse">Attribution and reuse</h2>
+<p>Both new sources are attributed to their UCI creators and linked to <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Normalization and generated IDs are disclosed. Existing data licenses remain source-specific; the course code license does not override them. The full lesson sources and raw social-media pages were not redistributed as textbooks or scraped personal-profile records.</p>
+<h2 id="larger-next-steps-are-still-optional">Larger next steps are still optional</h2>
+<p>The <a href="../v6/OPTIONAL_DATA.md.html">retained optional acquisition guide</a> covers Wine Quality, Concrete Compressive Strength, Airfoil Self-Noise, Bike Sharing, Appliances Energy Prediction, smartphone activity recognition, PTB-XL, The Well, SPL Open Data and OpenBiomechanics. Those ten collections are not newly acquired or executed here. Some are simulation sources; some have noncommercial or domain-specific restrictions. Check the exact data/weight license and evaluation identities before use.</p>
+<p>For all earlier schemas, units, hashes and license details, use the <a href="../v6/DATA_CATALOG.md.html">v6 catalogue and cards</a>, <a href="../../data/README.md.html">original data description</a>, <a href="../../data/stereo/README.md.html">stereo card</a>, <a href="../../data/time_series/README.md.html">time-series card</a>, and <a href="../v5/SOURCE_AUDIT.md.html">v5 scientific-ML source audit</a>. Undefined fields remain undefined; neither unit conversion nor a physics model is guessed from a convenient column name.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

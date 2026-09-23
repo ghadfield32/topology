@@ -1,0 +1,146 @@
+[
+  {
+    "id": "13.R1",
+    "stage": 13,
+    "question": "Explain why one normalized direction cannot recover the original 3D point.",
+    "answer_criteria": "All positive multiples of a point yield the same direction. Range was discarded."
+  },
+  {
+    "id": "13.R2",
+    "stage": 13,
+    "question": "Derive p\u00b7v=0 for a curve on a unit sphere.",
+    "answer_criteria": "Differentiate p(t)\u00b7p(t)=1, obtaining 2p\u00b7p\u2032=0."
+  },
+  {
+    "id": "13.R3",
+    "stage": 13,
+    "question": "What fails at the excluded stereographic pole?",
+    "answer_criteria": "The chosen chart denominator vanishes; the space itself remains well-defined and another chart works."
+  },
+  {
+    "id": "14.R1",
+    "stage": 14,
+    "question": "Why is -t generally not the camera center for Xc=RXw+t?",
+    "answer_criteria": "Set Xc=0 and solve C=-R\u1d40t."
+  },
+  {
+    "id": "14.R2",
+    "stage": 14,
+    "question": "What makes a reflection different from a proper rotation?",
+    "answer_criteria": "Both may be orthogonal, but a reflection has determinant -1, not +1."
+  },
+  {
+    "id": "14.R3",
+    "stage": 14,
+    "question": "Name three things pixel coordinates alone do not encode.",
+    "answer_criteria": "Camera-axis depth, physical scale, and the raw-to-processed pixel mapping or camera calibration; acceptable alternatives must be explained."
+  },
+  {
+    "id": "15.R1",
+    "stage": 15,
+    "question": "Derive the sign of doffs in rectified disparity.",
+    "answer_criteria": "d=uL-uR=fB/Z+cxL-cxR=fB/Z-doffs, so Z=fB/(d+doffs)."
+  },
+  {
+    "id": "15.R2",
+    "stage": 15,
+    "question": "Why report both median and mean disparity error?",
+    "answer_criteria": "The median reflects a typical magnitude; a heavy error tail may make the mean much larger. Neither replaces coverage."
+  },
+  {
+    "id": "15.R3",
+    "stage": 15,
+    "question": "How can asynchronous horizontal motion pass an epipolar check?",
+    "answer_criteria": "The same image row may be preserved while the differing-time horizontal position alters disparity and inferred depth."
+  },
+  {
+    "id": "16.R1",
+    "stage": 16,
+    "question": "What did the toy attention experiment verify?",
+    "answer_criteria": "Within-frame masking and subsequent cross-frame information flow on real patches, not learned reconstruction."
+  },
+  {
+    "id": "16.R2",
+    "stage": 16,
+    "question": "What additional evidence turns an image track into a metric 3D trajectory?",
+    "answer_criteria": "Valid depth or triangulation, coordinate/frame/scale registration, timing, identity, visibility and independent validation."
+  },
+  {
+    "id": "16.R3",
+    "stage": 16,
+    "question": "Why must original VGGT and Omega not share an assumed interface?",
+    "answer_criteria": "They have different architectures, code paths, checkpoints and APIs; read and pin each exact implementation."
+  },
+  {
+    "id": "17.R1",
+    "stage": 17,
+    "question": "What does a tiny anchor residual fail to establish?",
+    "answer_criteria": "Correctness away from fitted anchors, metric accuracy on independent landmarks, or generalization to new scenes."
+  },
+  {
+    "id": "17.R2",
+    "stage": 17,
+    "question": "Why does a factor-of-two cloud scale move persistence coordinates?",
+    "answer_criteria": "Rips birth/death thresholds are distances; uniform scale multiplies pairwise distances and filtration coordinates."
+  },
+  {
+    "id": "17.R3",
+    "stage": 17,
+    "question": "Why is a TDA shape summary not a calibration certificate?",
+    "answer_criteria": "It loses information and may be invariant to changes such as rigid pose or insensitive to particular geometric errors."
+  },
+  {
+    "id": "18.R1",
+    "stage": 18,
+    "question": "What does synchronized GPU timing measure that an unsynchronized host timer may miss?",
+    "answer_criteria": "Completion of queued device work at the declared boundaries rather than launch submission time alone."
+  },
+  {
+    "id": "18.R2",
+    "stage": 18,
+    "question": "What happens when average single-worker service time exceeds frame interarrival time?",
+    "answer_criteria": "In an indefinitely continuing lossless FIFO setting, backlog and age grow rather than reaching a stable finite queue."
+  },
+  {
+    "id": "18.R3",
+    "stage": 18,
+    "question": "Why is a point-cloud message not always a packed Nx3 float array?",
+    "answer_criteria": "Field types, offsets, padding, row stride and endianness can vary and must be respected."
+  },
+  {
+    "id": "19.R1",
+    "stage": 19,
+    "question": "Distinguish event onset and decision availability.",
+    "answer_criteria": "Onset is the estimated event time; a causal decision becomes available only after enough supporting observations arrive."
+  },
+  {
+    "id": "19.R2",
+    "stage": 19,
+    "question": "Why reset evidence across an occlusion?",
+    "answer_criteria": "Missing observations cannot be silently used as direct support; any continued hypothesis needs an explicit prediction/uncertainty policy."
+  },
+  {
+    "id": "19.R3",
+    "stage": 19,
+    "question": "Why is a passing proximity-and-motion test not proof of contact?",
+    "answer_criteria": "Objects can approach and separate without touching; contact needs independent evidence and appropriate labels."
+  },
+  {
+    "id": "20.R1",
+    "stage": 20,
+    "question": "What survives a course upgrade?",
+    "answer_criteria": "Learner answers, notebooks, source data, attempt history, evidence paths/hashes and explicit unresolved gaps\u2014not automatic new-stage passes."
+  },
+  {
+    "id": "20.R2",
+    "stage": 20,
+    "question": "What information must accompany a model-derived cloud?",
+    "answer_criteria": "Input/source IDs and hashes, preprocessing, exact checkpoint/code revision, units and frame, confidence semantics, timestamp policy and validation status."
+  },
+  {
+    "id": "20.R3",
+    "stage": 20,
+    "question": "What distinguishes a reproduced demonstration from an independent project?",
+    "answer_criteria": "The independent question, parameter choices and suitable held-out evidence were not taken from the already exposed worked answers."
+  }
+]

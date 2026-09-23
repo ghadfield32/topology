@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "units": {
+    "r01": {
+      "status": "not_assessed",
+      "attempts": []
+    },
+    "r02": {
+      "status": "not_assessed",
+      "attempts": []
+    },
+    "r03": {
+      "status": "not_assessed",
+      "attempts": []
+    },
+    "r04": {
+      "status": "not_assessed",
+      "attempts": []
+    },
+    "r05": {
+      "status": "not_assessed",
+      "attempts": []
+    }
+  },
+  "scope": "Self-recorded evidence, not automatic grading."
+}

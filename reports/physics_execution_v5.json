@@ -1,0 +1,122 @@
+{
+  "21_lab": {
+    "status": "PASSED",
+    "seconds": 4.328,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "21_answers": {
+    "status": "PASSED",
+    "seconds": 1.45,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "22_lab": {
+    "status": "PASSED",
+    "seconds": 2.136,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "22_answers": {
+    "status": "PASSED",
+    "seconds": 1.612,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "23_lab": {
+    "status": "PASSED",
+    "seconds": 6.166,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "23_answers": {
+    "status": "PASSED",
+    "seconds": 1.434,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "24_lab": {
+    "status": "PASSED",
+    "seconds": 2.577,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "24_answers": {
+    "status": "PASSED",
+    "seconds": 1.578,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "25_lab": {
+    "status": "PASSED",
+    "seconds": 2.372,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "25_answers": {
+    "status": "PASSED",
+    "seconds": 1.518,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "26_lab": {
+    "status": "PASSED",
+    "seconds": 5.127,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "26_answers": {
+    "status": "PASSED",
+    "seconds": 1.526,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "27_lab": {
+    "status": "PASSED",
+    "seconds": 2.176,
+    "code_cells": 4,
+    "errors": 0
+  },
+  "27_answers": {
+    "status": "PASSED",
+    "seconds": 1.823,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "28_lab": {
+    "status": "PASSED",
+    "seconds": 6.565,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "28_answers": {
+    "status": "PASSED",
+    "seconds": 1.798,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "29_lab": {
+    "status": "PASSED",
+    "seconds": 8.02,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "29_answers": {
+    "status": "PASSED",
+    "seconds": 1.66,
+    "code_cells": 7,
+    "errors": 0
+  },
+  "30_lab": {
+    "status": "PASSED",
+    "seconds": 2.022,
+    "code_cells": 3,
+    "errors": 0
+  },
+  "30_answers": {
+    "status": "PASSED",
+    "seconds": 1.521,
+    "code_cells": 7,
+    "errors": 0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "rows": 150,
+  "measurement_columns": [
+    "sepal_length_cm",
+    "sepal_width_cm",
+    "petal_length_cm",
+    "petal_width_cm"
+  ],
+  "units": "centimetres",
+  "labels_used_as_features": false,
+  "stage": 0,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real Iris measurements; the three-number mean is an explicitly constructed arithmetic example."
+}

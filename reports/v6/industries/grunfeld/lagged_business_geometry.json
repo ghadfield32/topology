@@ -1,0 +1,154 @@
+{
+  "points": 28,
+  "coefficient_field": 2,
+  "edge_convention": "distance <= epsilon",
+  "finite_bars": [
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.005080413218291335
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.00837581392269823
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.012869930263651285
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.04143764835649124
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.07481812015586166
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.12309602062402958
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.13318798369452534
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.14404352212350338
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.18086189793503882
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.1835659397047694
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.18468984017868664
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.23700297609547682
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.3759271385853485
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.40783599433105383
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.4121973394925901
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.4243415310343145
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.5389573291059369
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.5428521452084084
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.5782322526379848
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.7028173129506986
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.8659527514386794
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.0019301645690266
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.0568397815845059
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.2567031906529889
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.5019481187930053
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 2.028110869931794
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 2.1578235861392314
+    },
+    {
+      "dimension": 1,
+      "birth": 1.2289746467519946,
+      "death": 1.529316341983752
+    },
+    {
+      "dimension": 1,
+      "birth": 2.348193219413684,
+      "death": 2.398931039463089
+    }
+  ],
+  "essential_h0": 1,
+  "role": "exploratory descriptor, not significance"
+}

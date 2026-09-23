@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Data card: selected SkillCorner physical profiles · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v8/cards/skillcorner.md">sports_v8/cards/skillcorner.md</a> · Readable source notation; no online math renderer.</p><h1 id="data-card-selected-skillcorner-physical-profiles">Data card: selected SkillCorner physical profiles</h1>
+<p><strong>Status:</strong> observed-source, provider-derived season aggregate features; numeric
+transcription of selected official CSV columns. Not raw GPS, full tracking,
+per-player medical assessment or simultaneous pitch positions.</p>
+<p><strong>Provider:</strong> SkillCorner; open-data collaboration with PySport.
+<strong>Collection/aggregation period:</strong> AUS A-League 2024/2025. <strong>Checked:</strong> 2026-09-21.
+No exact release date for this CSV is asserted. The source has changed over time;
+the recorded Git blob pins the version inspected rather than assuming <code>master</code>
+will remain unchanged.</p>
+<p><strong>Included:</strong> first 12 data rows, 8 distinct player IDs, 12 selected columns
+including added one-based <code>source_row</code>. Names and birthdates were not copied.
+Numbers preserve the source's displayed precision. This is an ordered convenience
+subset, not a representative league sample or held-out recruitment benchmark.</p>
+<p>The README calls these player-season aggregates. The rows inspected additionally
+separate player positions; preserve player/team/season/position and source row.
+Repeated IDs matter for splitting. Never call twelve rows twelve independent
+players or treat player_id as a numeric predictor.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source_row</td>
+<td>added 1-based original data-row number, excluding header</td>
+</tr>
+<tr>
+<td>player_id/team_id/season_id</td>
+<td>categorical provider identifiers</td>
+</tr>
+<tr>
+<td>position_group</td>
+<td>provider position category</td>
+</tr>
+<tr>
+<td>minutes_full_all</td>
+<td>published minutes summary, NOT accumulated full-season minutes</td>
+</tr>
+<tr>
+<td>count_match</td>
+<td>qualifying match-performance count associated with the record</td>
+</tr>
+<tr>
+<td>total_distance_full_all</td>
+<td>published distance summary in metres, NOT a season total</td>
+</tr>
+<tr>
+<td>total_metersperminute_full_all</td>
+<td>provider metres/minute summary</td>
+</tr>
+<tr>
+<td>running/hsr/sprint_distance_full_all</td>
+<td>published distances in speed regimes</td>
+</tr>
+</tbody>
+</table>
+<p>The README says performances above 60 minutes are included. The current physical
+glossary defines male speed bands for running 15–20 km/h, HSR 20–25 km/h, and
+sprinting above 25 km/h. Those thresholds define categories; they do not make the
+CSV a timestamped running-speed series. Exact aggregation weighting and deployment
+version should be confirmed before interpreting sums or ratios as operational
+performance metrics. Our lab uses published values descriptively and does not
+invent a season-total interpretation. Rounded ratios need not match exactly.</p>
+<p><strong>Study protocol:</strong> choose three distance-category features. Inspect raw and
+standardized descriptive Rips diagrams. Separately show player-disjoint partition
+indices and training-only scaling. No supervised sports model is fitted or scored.
+No diagram is labeled a tactical formation.</p>
+<p><strong>Rights:</strong> source repository carries the MIT license, copied to
+<code>../data/LICENSE_SKILLCORNER.txt</code>. Credit SkillCorner/PySport. That does not by
+itself license unrelated video or other providers' model weights.</p>
+<p><strong>Integrity and acquisition:</strong> manually transcribed official connector output;
+Git blob <code>b80308d7662c8923dc82e0721e0b6f17df827d2e</code>. Full source equality was not
+executed. Local SHA256 and the selection rule are in the manifest. The verifier
+checks source revision and selected original columns against a full CSV.</p>
+<p><strong>Not included:</strong> match-level XY tracks, dynamic events, pose, or full season
+aggregate tables. The XY adapter is only schema-tested with constructed fixtures.
+The full tracking URL exposed a Git LFS pointer in this environment, not the
+97,091,519-byte tracking payload.</p>
+<p><strong>Sources:</strong></p>
+<ul>
+<li><a href="https://github.com/SkillCorner/opendata">https://github.com/SkillCorner/opendata</a></li>
+<li><a href="https://raw.githubusercontent.com/SkillCorner/opendata/master/data/aggregates/aus1league_physicalaggregates_20242025.csv">https://raw.githubusercontent.com/SkillCorner/opendata/master/data/aggregates/aus1league_physicalaggregates_20242025.csv</a></li>
+<li><a href="https://skillcorner.crunch.help/en/glossaries/physical-data-glossary">https://skillcorner.crunch.help/en/glossaries/physical-data-glossary</a></li>
+<li><a href="https://raw.githubusercontent.com/SkillCorner/opendata/master/LICENSE">https://raw.githubusercontent.com/SkillCorner/opendata/master/LICENSE</a></li>
+</ul>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

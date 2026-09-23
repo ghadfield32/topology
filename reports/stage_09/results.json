@@ -1,0 +1,64 @@
+{
+  "selected_ids": [
+    0,
+    7,
+    14,
+    21,
+    28,
+    35,
+    42,
+    49,
+    56,
+    63,
+    70,
+    77,
+    84,
+    91,
+    98,
+    105,
+    112,
+    119,
+    126,
+    133,
+    140,
+    147
+  ],
+  "positive_merge_count": 21,
+  "independent_H0_agreement": true,
+  "direct_betti_checks": [
+    {
+      "threshold": 0.6200676800912214,
+      "direct": [
+        7,
+        0
+      ],
+      "barcode": [
+        7,
+        0
+      ]
+    },
+    {
+      "threshold": 1.2871925357744851,
+      "direct": [
+        4,
+        0
+      ],
+      "barcode": [
+        4,
+        0
+      ]
+    },
+    {
+      "threshold": 3.62048637504877,
+      "direct": [
+        1,
+        0
+      ],
+      "barcode": [
+        1,
+        0
+      ]
+    }
+  ],
+  "ripser_gudhi_status": "See optional_library_checks.json; not assumed passed."
+}

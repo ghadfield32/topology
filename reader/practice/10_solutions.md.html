@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 10 — coding practice solutions · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../practice/10_solutions.md">practice/10_solutions.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-10--coding-practice-solutions">Stage 10 — coding practice solutions</h1>
+<p>Attempt the learner notebook first. The following code and checks are the canonical reference, with limited declared input assumptions.</p>
+<h2 id="10c1--measure-a-uniform-perturbation">10.C1 — Measure a uniform perturbation</h2>
+<p>For equally shaped finite arrays f,g return their maximum absolute entry difference.</p>
+<pre><code class="language-python">def sup_difference(f,g):
+    return float(np.max(np.abs(np.asarray(f)-np.asarray(g))))
+</code></pre>
+<p>The fixed-domain sublevel-set stability bound uses the uniform norm. Replacing it by a mean absolute error can make an invalid bound look much smaller.</p>
+<h3 id="visible-checks">Visible checks</h3>
+<pre><code class="language-python">assert np.isclose(sup_difference([0,.5],[.1,.45]),.1)
+image,sample_id=digit_example(0);f=1-image/16
+noise=np.random.default_rng(10).uniform(-.03,.03,size=f.shape)
+g=np.clip(f+noise,0,1)
+assert sup_difference(f,g)&lt;=.03+1e-12
+print("Measured uniform image change:",sup_difference(f,g))
+</code></pre>
+<h2 id="10c2--distance-from-a-point-to-the-diagonal">10.C2 — Distance from a point to the diagonal</h2>
+<p>For a finite birth&lt;=death pair return its L-infinity distance to the diagonal.</p>
+<pre><code class="language-python">def diagonal_cost(birth,death):
+    return (death-birth)/2
+</code></pre>
+<p>Matching to the diagonal represents leaving a feature unmatched to any off-diagonal feature. The factor one-half is essential.</p>
+<h3 id="visible-checks-1">Visible checks</h3>
+<pre><code class="language-python">assert diagonal_cost(1,5)==2
+assert diagonal_cost(3,3)==0
+print("A lifetime-four feature costs two to match to the diagonal")
+</code></pre>
+<h2 id="10c3--solve-the-one-point-bottleneck-problem">10.C3 — Solve the one-point bottleneck problem</h2>
+<p>For two finite diagram points a and b, compare matching them to each other with matching both separately to the diagonal.</p>
+<pre><code class="language-python">def one_point_bottleneck(a,b):
+    a=np.asarray(a,dtype=float);b=np.asarray(b,dtype=float)
+    direct=float(np.max(abs(a-b)))
+    separate=max((a[1]-a[0])/2,(b[1]-b[0])/2)
+    return min(direct,separate)
+</code></pre>
+<p>For larger diagrams, greedy nearest-neighbor pairing is not generally sufficient. The core implementation solves a thresholded perfect-matching problem instead.</p>
+<h3 id="visible-checks-2">Visible checks</h3>
+<pre><code class="language-python">assert one_point_bottleneck([0,2],[5,7])==1
+for a,b in [([0,2],[.1,2.2]),([0,1],[3,5])]:
+    assert np.isclose(one_point_bottleneck(a,b),finite_bottleneck([a],[b]))
+print("Direct and diagonal alternatives checked")
+</code></pre>
+<h2 id="10c4--check-fixed-grid-stability-on-real-data">10.C4 — Check fixed-grid stability on real data</h2>
+<p>For one image and a same-shape finite perturbation of its entrance array, return measured bottleneck H1 distance and uniform input difference.</p>
+<pre><code class="language-python">def image_stability_pair(image,perturbation):
+    f=1-np.asarray(image,dtype=float)/16
+    g=np.clip(f+perturbation,0,1)
+    D=diagram(persistent_homology(pixel_filtration(f)),1,finite_only=True)
+    E=diagram(persistent_homology(pixel_filtration(g)),1,finite_only=True)
+    return finite_bottleneck(D,E),float(np.max(abs(f-g)))
+</code></pre>
+<p>This is an empirical check of an applicable mathematical bound, not a statistical significance test. Arbitrary cropping or registration changes are not covered by this exact experiment.</p>
+<h3 id="visible-checks-3">Visible checks</h3>
+<pre><code class="language-python">image,sample_id=digit_example(8)
+noise=np.random.default_rng(104).uniform(-.04,.04,size=image.shape)
+bound_distance,uniform=image_stability_pair(image,noise)
+assert bound_distance&lt;=uniform+1e-10
+print("Training image",sample_id,"diagram distance",bound_distance,"uniform change",uniform)
+</code></pre>
+<h2 id="10c5--separate-a-bound-from-a-discovery">10.C5 — Separate a bound from a discovery</h2>
+<p>Return whether all measured distances satisfy their paired nonnegative bounds within tolerance. This function checks inequalities only.</p>
+<pre><code class="language-python">def bounds_hold(distances,bounds,tolerance=1e-10):
+    return bool(np.all(np.asarray(distances)&lt;=np.asarray(bounds)+tolerance))
+</code></pre>
+<p>Even a perfectly stable descriptor can be irrelevant to a task. To claim usefulness, specify a task, comparators, data-generating assumptions, and evaluation that were not chosen after seeing the result.</p>
+<h3 id="visible-checks-4">Visible checks</h3>
+<pre><code class="language-python">assert bounds_hold([.01,.03],[.02,.04])
+assert not bounds_hold([.05],[.01])
+print("A passed bound is not automatically biological or predictive evidence")
+</code></pre>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,272 @@
+{
+  "schema": 1,
+  "experiments": [
+    {
+      "id": "wdbc",
+      "title": "Healthcare image-summary classification",
+      "notebook": "industry/notebooks/wdbc.ipynb",
+      "lesson": "industry/lessons/wdbc.md",
+      "data_status": "Bundled observed historical snapshot",
+      "scope": "Teaching split and analysis; not domain deployment validation.",
+      "learner": "industry/learner/wdbc.ipynb",
+      "answers": "industry/answers/wdbc.ipynb"
+    },
+    {
+      "id": "wine",
+      "title": "Food chemistry and topology",
+      "notebook": "industry/notebooks/wine.ipynb",
+      "lesson": "industry/lessons/wine.md",
+      "data_status": "Bundled observed historical snapshot",
+      "scope": "Teaching split and analysis; not domain deployment validation.",
+      "learner": "industry/learner/wine.ipynb",
+      "answers": "industry/answers/wine.ipynb"
+    },
+    {
+      "id": "stackloss",
+      "title": "Manufacturing regression",
+      "notebook": "industry/notebooks/stackloss.ipynb",
+      "lesson": "industry/lessons/stackloss.md",
+      "data_status": "Bundled observed historical snapshot",
+      "scope": "Teaching split and analysis; not domain deployment validation.",
+      "learner": "industry/learner/stackloss.ipynb",
+      "answers": "industry/answers/stackloss.ipynb"
+    },
+    {
+      "id": "grunfeld",
+      "title": "Firm-year panel measurements",
+      "notebook": "industry/notebooks/grunfeld.ipynb",
+      "lesson": "industry/lessons/grunfeld.md",
+      "data_status": "Bundled observed historical snapshot",
+      "scope": "Teaching split and analysis; not domain deployment validation.",
+      "learner": "industry/learner/grunfeld.ipynb",
+      "answers": "industry/answers/grunfeld.ipynb"
+    },
+    {
+      "id": "co2",
+      "title": "Atmospheric observations and windows",
+      "notebook": "industry/notebooks/co2.ipynb",
+      "lesson": "industry/lessons/co2.md",
+      "data_status": "Bundled observed historical snapshot",
+      "scope": "Teaching split and analysis; not domain deployment validation.",
+      "learner": "industry/learner/co2.ipynb",
+      "answers": "industry/answers/co2.ipynb"
+    },
+    {
+      "id": "nile",
+      "title": "Water-infrastructure time series",
+      "notebook": "industry/notebooks/nile.ipynb",
+      "lesson": "industry/lessons/nile.md",
+      "data_status": "Bundled observed historical snapshot",
+      "scope": "Teaching split and analysis; not domain deployment validation.",
+      "learner": "industry/learner/nile.ipynb",
+      "answers": "industry/answers/nile.ipynb"
+    },
+    {
+      "id": "elnino",
+      "title": "Marine climate",
+      "notebook": "industry/notebooks/elnino.ipynb",
+      "lesson": "industry/lessons/elnino.md",
+      "data_status": "Bundled observed historical snapshot",
+      "scope": "Teaching split and analysis; not domain deployment validation.",
+      "learner": "industry/learner/elnino.ipynb",
+      "answers": "industry/answers/elnino.ipynb"
+    },
+    {
+      "id": "modechoice",
+      "title": "Traveler-level choice sets",
+      "notebook": "industry/notebooks/modechoice.ipynb",
+      "lesson": "industry/lessons/modechoice.md",
+      "data_status": "Bundled observed historical snapshot",
+      "scope": "Teaching split and analysis; not domain deployment validation.",
+      "learner": "industry/learner/modechoice.ipynb",
+      "answers": "industry/answers/modechoice.ipynb"
+    },
+    {
+      "id": "seeds",
+      "title": "Agriculture feature-space geometry",
+      "notebook": "applications_v7/seeds/lab.ipynb",
+      "lesson": "applications_v7/seeds/lesson.md",
+      "data_status": "Bundled observed table transcribed from source text",
+      "scope": "Selected provider transcription; independent upstream byte comparison remains pending.",
+      "learner": "applications_v7/seeds/learner.ipynb",
+      "answers": "applications_v7/seeds/answers.ipynb"
+    },
+    {
+      "id": "concrete_slump",
+      "title": "Materials measurements and intervals",
+      "notebook": "applications_v7/concrete_slump/lab.ipynb",
+      "lesson": "applications_v7/concrete_slump/lesson.md",
+      "data_status": "Bundled observed table transcribed from source text",
+      "scope": "Selected provider transcription; independent upstream byte comparison remains pending.",
+      "learner": "applications_v7/concrete_slump/learner.ipynb",
+      "answers": "applications_v7/concrete_slump/answers.ipynb"
+    },
+    {
+      "id": "leakage",
+      "title": "Identity leakage controls",
+      "notebook": "methods_v7/leakage/lab.ipynb",
+      "lesson": "methods_v7/leakage/lesson.md",
+      "data_status": "Constructed control; not a new observed dataset",
+      "scope": "Exposes a failure mechanism, not population benefit.",
+      "learner": "methods_v7/leakage/learner.ipynb",
+      "answers": "methods_v7/leakage/answers.ipynb"
+    },
+    {
+      "id": "claims",
+      "title": "Physical-claim counterexamples",
+      "notebook": "methods_v7/claims/lab.ipynb",
+      "lesson": "methods_v7/claims/lesson.md",
+      "data_status": "Constructed control; not a new observed dataset",
+      "scope": "Exposes a failure mechanism, not population benefit.",
+      "learner": "methods_v7/claims/learner.ipynb",
+      "answers": "methods_v7/claims/answers.ipynb"
+    },
+    {
+      "id": "s00",
+      "title": "Sports observations and units",
+      "notebook": "sports_v8/notebooks/S00.ipynb",
+      "lesson": "sports_v8/lessons/S00.md",
+      "data_status": "Selected SPL/SkillCorner excerpts and labeled controls",
+      "scope": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "learner": "sports_v8/practice/S00.ipynb",
+      "answers": "sports_v8/solutions/S00.ipynb"
+    },
+    {
+      "id": "s01",
+      "title": "Landmark angles and velocity",
+      "notebook": "sports_v8/notebooks/S01.ipynb",
+      "lesson": "sports_v8/lessons/S01.md",
+      "data_status": "Selected SPL/SkillCorner excerpts and labeled controls",
+      "scope": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "learner": "sports_v8/practice/S01.ipynb",
+      "answers": "sports_v8/solutions/S01.ipynb"
+    },
+    {
+      "id": "s02",
+      "title": "Ball-flight model adequacy",
+      "notebook": "sports_v8/notebooks/S02.ipynb",
+      "lesson": "sports_v8/lessons/S02.md",
+      "data_status": "Selected SPL/SkillCorner excerpts and labeled controls",
+      "scope": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "learner": "sports_v8/practice/S02.ipynb",
+      "answers": "sports_v8/solutions/S02.ipynb"
+    },
+    {
+      "id": "s03",
+      "title": "Soccer profile topology",
+      "notebook": "sports_v8/notebooks/S03.ipynb",
+      "lesson": "sports_v8/lessons/S03.md",
+      "data_status": "Selected SPL/SkillCorner excerpts and labeled controls",
+      "scope": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "learner": "sports_v8/practice/S03.ipynb",
+      "answers": "sports_v8/solutions/S03.ipynb"
+    },
+    {
+      "id": "s04",
+      "title": "Timing and uncertainty",
+      "notebook": "sports_v8/notebooks/S04.ipynb",
+      "lesson": "sports_v8/lessons/S04.md",
+      "data_status": "Selected SPL/SkillCorner excerpts and labeled controls",
+      "scope": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "learner": "sports_v8/practice/S04.ipynb",
+      "answers": "sports_v8/solutions/S04.ipynb"
+    },
+    {
+      "id": "s05",
+      "title": "Athlete-group evaluation",
+      "notebook": "sports_v8/notebooks/S05.ipynb",
+      "lesson": "sports_v8/lessons/S05.md",
+      "data_status": "Selected SPL/SkillCorner excerpts and labeled controls",
+      "scope": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "learner": "sports_v8/practice/S05.ipynb",
+      "answers": "sports_v8/solutions/S05.ipynb"
+    },
+    {
+      "id": "s06",
+      "title": "Independent sports investigation",
+      "notebook": "sports_v8/notebooks/S06.ipynb",
+      "lesson": "sports_v8/lessons/S06.md",
+      "data_status": "Selected SPL/SkillCorner excerpts and labeled controls",
+      "scope": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "learner": "sports_v8/practice/S06.ipynb",
+      "answers": "sports_v8/solutions/S06.ipynb"
+    },
+    {
+      "id": "acb",
+      "title": "ACB 2025\u201326 source and identity readiness",
+      "notebook": "sports_v9/notebooks/acb_readiness.ipynb",
+      "lesson": "sports_v9/lesson.md",
+      "data_status": "Bundled 10-game metadata with recorded source blob hash",
+      "scope": "No full ACB tracking, events or season aggregates in this case.",
+      "learner": "sports_v9/practice/acb_readiness.ipynb",
+      "answers": "sports_v9/solutions/acb_readiness.ipynb"
+    },
+    {
+      "id": "r01",
+      "title": "Distributions, moments, and whitening",
+      "lesson": "representations/lessons/R01.md",
+      "notebook": "representations/notebooks/r01.ipynb",
+      "learner": "representations/learner/r01.ipynb",
+      "answers": "representations/answers/r01.ipynb",
+      "prerequisites": [
+        "core 01",
+        "core 02"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r02",
+      "title": "Projections, characteristic functions, and SIGReg",
+      "lesson": "representations/lessons/R02.md",
+      "notebook": "representations/notebooks/r02.ipynb",
+      "learner": "representations/learner/r02.ipynb",
+      "answers": "representations/answers/r02.ipynb",
+      "prerequisites": [
+        "r01"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r03",
+      "title": "Anti-collapse objectives and gradient paths",
+      "lesson": "representations/lessons/R03.md",
+      "notebook": "representations/notebooks/r03.ipynb",
+      "learner": "representations/learner/r03.ipynb",
+      "answers": "representations/answers/r03.ipynb",
+      "prerequisites": [
+        "r02"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r04",
+      "title": "Train a representation and evaluate frozen probes",
+      "lesson": "representations/lessons/R04.md",
+      "notebook": "representations/notebooks/r04.ipynb",
+      "learner": "representations/learner/r04.ipynb",
+      "answers": "representations/answers/r04.ipynb",
+      "prerequisites": [
+        "r03"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r05",
+      "title": "Transfer diagnostics without inventing a sports world model",
+      "lesson": "representations/lessons/R05.md",
+      "notebook": "representations/notebooks/r05.ipynb",
+      "learner": "representations/learner/r05.ipynb",
+      "answers": "representations/answers/r05.ipynb",
+      "prerequisites": [
+        "r04"
+      ],
+      "data_status": "Bundled observed measurements/images or sports profile excerpt plus explicitly labeled manufactured controls",
+      "scope": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    }
+  ],
+  "release": "12.0.0"
+}

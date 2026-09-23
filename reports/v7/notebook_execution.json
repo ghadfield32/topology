@@ -1,0 +1,751 @@
+[
+  {
+    "path": "notebooks/00_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 2,
+    "seconds": 4.284
+  },
+  {
+    "path": "notebooks/01_lab.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "seconds": 3.415
+  },
+  {
+    "path": "notebooks/02_lab.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "seconds": 5.219
+  },
+  {
+    "path": "notebooks/03_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 4.052
+  },
+  {
+    "path": "notebooks/04_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 2,
+    "seconds": 3.14
+  },
+  {
+    "path": "notebooks/05_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 3.173
+  },
+  {
+    "path": "notebooks/06_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 2.761
+  },
+  {
+    "path": "notebooks/07_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 2.776
+  },
+  {
+    "path": "notebooks/08_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 3,
+    "seconds": 2.93
+  },
+  {
+    "path": "notebooks/09_lab.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "seconds": 2.891
+  },
+  {
+    "path": "notebooks/10_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 2.766
+  },
+  {
+    "path": "notebooks/11_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 3,
+    "seconds": 8.224
+  },
+  {
+    "path": "notebooks/12_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 3,
+    "seconds": 4.575
+  },
+  {
+    "path": "notebooks/13_lab.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 3,
+    "seconds": 3.568
+  },
+  {
+    "path": "notebooks/14_lab.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "seconds": 2.589
+  },
+  {
+    "path": "notebooks/15_lab.ipynb",
+    "status": "passed",
+    "code_cells": 6,
+    "png_outputs": 5,
+    "seconds": 4.011
+  },
+  {
+    "path": "notebooks/16_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 2,
+    "seconds": 2.834
+  },
+  {
+    "path": "notebooks/17_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 2,
+    "seconds": 3.153
+  },
+  {
+    "path": "notebooks/18_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 2,
+    "seconds": 2.845
+  },
+  {
+    "path": "notebooks/19_lab.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "seconds": 2.398
+  },
+  {
+    "path": "notebooks/20_lab.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "seconds": 2.631
+  },
+  {
+    "path": "practice/answers/00_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.362
+  },
+  {
+    "path": "practice/answers/01_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.212
+  },
+  {
+    "path": "practice/answers/02_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.257
+  },
+  {
+    "path": "practice/answers/03_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.311
+  },
+  {
+    "path": "practice/answers/04_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.413
+  },
+  {
+    "path": "practice/answers/05_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 5.021
+  },
+  {
+    "path": "practice/answers/06_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.628
+  },
+  {
+    "path": "practice/answers/07_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.175
+  },
+  {
+    "path": "practice/answers/08_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.039
+  },
+  {
+    "path": "practice/answers/09_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.159
+  },
+  {
+    "path": "practice/answers/10_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.364
+  },
+  {
+    "path": "practice/answers/11_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.392
+  },
+  {
+    "path": "practice/answers/12_practice.ipynb",
+    "status": "passed",
+    "code_cells": 11,
+    "png_outputs": 0,
+    "seconds": 2.086
+  },
+  {
+    "path": "practice/answers/13_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.994
+  },
+  {
+    "path": "practice/answers/14_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.805
+  },
+  {
+    "path": "practice/answers/15_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.854
+  },
+  {
+    "path": "practice/answers/16_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.955
+  },
+  {
+    "path": "practice/answers/17_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.093
+  },
+  {
+    "path": "practice/answers/18_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.096
+  },
+  {
+    "path": "practice/answers/19_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.138
+  },
+  {
+    "path": "practice/answers/20_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.286
+  },
+  {
+    "path": "consolidation/00_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 1,
+    "seconds": 2.133
+  },
+  {
+    "path": "consolidation/01_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.517
+  },
+  {
+    "path": "consolidation/02_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.309
+  },
+  {
+    "path": "consolidation/03_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.015
+  },
+  {
+    "path": "consolidation/04_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 1,
+    "seconds": 1.976
+  },
+  {
+    "path": "consolidation/05_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 1,
+    "seconds": 2.695
+  },
+  {
+    "path": "consolidation/06_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.626
+  },
+  {
+    "path": "consolidation/07_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.197
+  },
+  {
+    "path": "consolidation/08_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.791
+  },
+  {
+    "path": "consolidation/09_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.718
+  },
+  {
+    "path": "consolidation/10_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.619
+  },
+  {
+    "path": "consolidation/11_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 3.067
+  },
+  {
+    "path": "consolidation/12_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.891
+  },
+  {
+    "path": "consolidation/13_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.064
+  },
+  {
+    "path": "consolidation/14_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.071
+  },
+  {
+    "path": "consolidation/15_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.149
+  },
+  {
+    "path": "consolidation/16_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.266
+  },
+  {
+    "path": "consolidation/17_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.188
+  },
+  {
+    "path": "consolidation/18_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 1.953
+  },
+  {
+    "path": "consolidation/19_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.159
+  },
+  {
+    "path": "consolidation/20_lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "seconds": 2.85
+  },
+  {
+    "path": "physics/notebooks/21_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 2,
+    "seconds": 2.834
+  },
+  {
+    "path": "physics/notebooks/22_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 2.169
+  },
+  {
+    "path": "physics/notebooks/23_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 7.021
+  },
+  {
+    "path": "physics/notebooks/24_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 2,
+    "seconds": 2.682
+  },
+  {
+    "path": "physics/notebooks/25_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 2,
+    "seconds": 2.866
+  },
+  {
+    "path": "physics/notebooks/26_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 4.955
+  },
+  {
+    "path": "physics/notebooks/27_lab.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "seconds": 2.16
+  },
+  {
+    "path": "physics/notebooks/28_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 2,
+    "seconds": 7.024
+  },
+  {
+    "path": "physics/notebooks/29_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 7.809
+  },
+  {
+    "path": "physics/notebooks/30_lab.ipynb",
+    "status": "passed",
+    "code_cells": 3,
+    "png_outputs": 1,
+    "seconds": 2.462
+  },
+  {
+    "path": "physics/practice/answers/21_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.975
+  },
+  {
+    "path": "physics/practice/answers/22_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.24
+  },
+  {
+    "path": "physics/practice/answers/23_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.041
+  },
+  {
+    "path": "physics/practice/answers/24_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.219
+  },
+  {
+    "path": "physics/practice/answers/25_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.063
+  },
+  {
+    "path": "physics/practice/answers/26_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.954
+  },
+  {
+    "path": "physics/practice/answers/27_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.996
+  },
+  {
+    "path": "physics/practice/answers/28_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.908
+  },
+  {
+    "path": "physics/practice/answers/29_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.091
+  },
+  {
+    "path": "physics/practice/answers/30_practice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.233
+  },
+  {
+    "path": "industry/notebooks/co2.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 2,
+    "seconds": 3.459
+  },
+  {
+    "path": "industry/notebooks/elnino.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 2,
+    "seconds": 3.49
+  },
+  {
+    "path": "industry/notebooks/grunfeld.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 2,
+    "seconds": 3.434
+  },
+  {
+    "path": "industry/notebooks/modechoice.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 2,
+    "seconds": 3.599
+  },
+  {
+    "path": "industry/notebooks/nile.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 2,
+    "seconds": 3.682
+  },
+  {
+    "path": "industry/notebooks/stackloss.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 2,
+    "seconds": 3.479
+  },
+  {
+    "path": "industry/notebooks/wdbc.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 2,
+    "seconds": 3.507
+  },
+  {
+    "path": "industry/notebooks/wine.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 1,
+    "seconds": 3.327
+  },
+  {
+    "path": "industry/answers/co2.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.974
+  },
+  {
+    "path": "industry/answers/elnino.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.024
+  },
+  {
+    "path": "industry/answers/grunfeld.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.997
+  },
+  {
+    "path": "industry/answers/modechoice.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.158
+  },
+  {
+    "path": "industry/answers/nile.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.059
+  },
+  {
+    "path": "industry/answers/stackloss.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.142
+  },
+  {
+    "path": "industry/answers/wdbc.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 1.924
+  },
+  {
+    "path": "industry/answers/wine.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "seconds": 2.024
+  },
+  {
+    "path": "applications_v7/seeds/lab.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 1,
+    "seconds": 6.194
+  },
+  {
+    "path": "applications_v7/seeds/answers.ipynb",
+    "status": "passed",
+    "code_cells": 9,
+    "png_outputs": 0,
+    "seconds": 3.25
+  },
+  {
+    "path": "applications_v7/concrete_slump/lab.ipynb",
+    "status": "passed",
+    "code_cells": 6,
+    "png_outputs": 1,
+    "seconds": 5.664
+  },
+  {
+    "path": "applications_v7/concrete_slump/answers.ipynb",
+    "status": "passed",
+    "code_cells": 9,
+    "png_outputs": 0,
+    "seconds": 2.664
+  },
+  {
+    "path": "methods_v7/leakage/lab.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 1,
+    "seconds": 3.756
+  },
+  {
+    "path": "methods_v7/leakage/answers.ipynb",
+    "status": "passed",
+    "code_cells": 9,
+    "png_outputs": 0,
+    "seconds": 2.31
+  },
+  {
+    "path": "methods_v7/claims/lab.ipynb",
+    "status": "passed",
+    "code_cells": 6,
+    "png_outputs": 1,
+    "seconds": 2.72
+  },
+  {
+    "path": "methods_v7/claims/answers.ipynb",
+    "status": "passed",
+    "code_cells": 9,
+    "png_outputs": 0,
+    "seconds": 2.289
+  }
+]

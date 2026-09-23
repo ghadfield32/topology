@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 04 guided session — Symmetry preserves some things, not everything · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/04_session.md">sessions/04_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-04-guided-session--symmetry-preserves-some-things-not-everything">Stage 04 guided session — Symmetry preserves some things, not everything</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/04_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/04_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/04_workbook.md.html">original workbook</a> and <a href="../notebooks/04_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real digit under exact array transformations; constructed matrices and annulus radii.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Calculate a rotation and reflection and show that their order can matter.</li>
+<li>Distinguish a group action from a label-preserving data augmentation assumption.</li>
+<li>Explain homotopy using an annulus and a circle.</li>
+<li>Identify what prevents a proposed deformation from being well defined.</li>
+</ol>
+<h2 id="combination-needs-rules">Combination needs rules</h2>
+<p>A group is a set with an associative operation, an identity, and an inverse for every element. Rotations and reflections of a square provide a small example. Applying two symmetries in succession is the operation. Doing nothing is the identity. Undoing a symmetry gives its inverse. The transformation must map the square to itself; an arbitrary stretch is not one of these square symmetries.</p>
+<p>Take the quarter-turn <code>R(x,y)=(-y,x)</code> and reflection <code>F(x,y)=(-x,y)</code>. Applied to <code>(1,0)</code>, first F then R gives <code>(0,-1)</code>. First R then F gives <code>(0,1)</code>. Thus <code>RF</code> and <code>FR</code> differ. “Group” does not mean “commutative.” When composing camera transformations later, the same attention to order will matter.</p>
+<h2 id="an-image-operation-is-not-a-scientific-guarantee">An image operation is not a scientific guarantee</h2>
+<p>Rotating an 8 by 8 array through 90 degrees permutes its entries. Its intensity sum and histogram remain unchanged. Four such rotations return the original array. These are exact properties of the array operation. The semantic label need not be unchanged. Rotating a digit can make it ambiguous or resemble a different symbol. A mathematical group action is not, by itself, a justification for applying label-preserving augmentation in machine learning.</p>
+<h2 id="deformation-is-a-continuous-family-of-maps">Deformation is a continuous family of maps</h2>
+<p>For an annulus <code>1 ≤ ||x|| ≤ 2</code>, define <code>H(x,t)=((1-t)+t/||x||)x</code> for <code>0≤t≤1</code>. At time zero this is x. At time one it lies on the unit circle. If x already lies on that circle, it stays fixed. Its radius is <code>(1-t)||x||+t</code>, which stays between one and two. Hence this is a deformation retraction of the annulus onto its inner circle.</p>
+<p>The same formula cannot retract the entire disk onto its boundary: it is undefined at x=0. Simply ignoring that point would change the domain, not fix the argument. This is a useful habit: locate the exact obstruction to a tempting formula rather than saying it “looks wrong.”</p>
+<p>A loop is a path whose endpoints agree. Homotopy classes of based loops, with concatenation, form the fundamental group. On the circle, winding number records the integer number of turns. Homology later makes certain questions easier to compute by passing to algebraic summaries, but it does not preserve every distinction present in the fundamental group.</p>
+<h2 id="what-to-show-before-advancing">What to show before advancing</h2>
+<p>Calculate the two transformation orders by hand. Explain the domain restriction in the annulus formula. Then examine the real digit under array rotations. State separately which numerical properties are unchanged and which semantic conclusions are unsupported. This prepares you to evaluate both mathematical invariance and domain-specific assumptions.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Use two explicit matrices to demonstrate noncommutativity.</p>
+<pre><code class="language-python">R90 = np.array([[0, -1], [1, 0]])
+F = np.array([[-1, 0], [0, 1]])
+p = np.array([1, 0])
+print('R F p:', R90 @ F @ p, 'F R p:', F @ R90 @ p)
+assert not np.array_equal(R90 @ F, F @ R90)
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Apply the array action to a real digit. Preserve numerical invariants without assuming the label remains valid.</p>
+<pre><code class="language-python">from shape_lab.data import digit_example
+image, sample_id = digit_example(6)
+rotated = np.rot90(image)
+assert np.array_equal(np.rot90(image, 4), image)
+assert image.sum() == rotated.sum()
+assert np.array_equal(np.sort(image.ravel()), np.sort(rotated.ravel()))
+import matplotlib.pyplot as plt
+plt.figure(figsize=(4, 4)); plt.imshow(rotated)
+plt.title('Rotated real digit: label invariance is not assumed'); plt.axis('off'); plt.show()
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Numerically check the annulus radius formula for selected points; the text supplies the all-points argument.</p>
+<pre><code class="language-python">radii = np.array([1., 1.5, 2.])
+for t in [0., .25, .5, 1.]:
+    moved = (1-t)*radii + t
+    assert np.all((moved &gt;= 1) &amp; (moved &lt;= 2))
+result = {'sample_id': sample_id, 'rotation_order_test': 'passed',
+          'label_preservation_claimed': False, 'annulus_check': 'selected radii; proof in text'}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="04t1">04.T1</h3>
+<p>Does norm preservation guarantee that two transformations commute?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>No. Rotations and reflections can preserve norms while their composition order changes the result. The displayed R and F supply an explicit counterexample.</p>
+</details>
+<h3 id="04t2">04.T2</h3>
+<p>Why cannot the radial formula retract a full disk onto its circle boundary?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>It divides by ||x|| and is undefined at the center. A valid deformation must be continuous and defined at every point of the stated domain for every time.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/04_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

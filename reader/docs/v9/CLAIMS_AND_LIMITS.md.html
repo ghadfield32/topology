@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source statements, mathematical tests and remaining limits · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v9/CLAIMS_AND_LIMITS.md">docs/v9/CLAIMS_AND_LIMITS.md</a> · Readable source notation; no online math renderer.</p><h1 id="source-statements-mathematical-tests-and-remaining-limits">Source statements, mathematical tests and remaining limits</h1>
+<p>The supplied posts remain attributed source material. This edition does not silently turn promotional statements into proven facts. The author-written lessons are explanatory additions; the numerical reports document actual course experiments, not full-paper reproductions.</p>
+<table>
+<thead>
+<tr>
+<th>Supplied concept</th>
+<th>Source framing</th>
+<th>Canonical treatment</th>
+<th>What this does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PINN/PIKAN failures</td>
+<td>Conflicting residual, boundary and interface gradients; Norm-PCGrad benchmark claims</td>
+<td><a href="../../physics/lessons/27.md.html">Stage 27</a>, gradient examples and interface controls</td>
+<td>Full 2D/3D benchmark reproduction, universal conflict-free descent or measured negligible overhead.</td>
+</tr>
+<tr>
+<td>Symplectic structure</td>
+<td>Post claims exact arbitrary-step energy conservation and eliminated drift</td>
+<td><a href="../../physics/lessons/24.md.html">Stage 24</a>, separate symplectic, energy and state errors</td>
+<td>That preserving one geometric property preserves every physical quantity.</td>
+</tr>
+<tr>
+<td>Manifold projection</td>
+<td>Post describes one algebraic correction as returning to the physical manifold</td>
+<td><a href="../../physics/lessons/25.md.html">Stage 25</a>, nonlinear residual and iteration checks</td>
+<td>One Newton-like correction being exact for a general nonlinear constraint.</td>
+</tr>
+<tr>
+<td>HNNs and LNNs</td>
+<td>Different mechanics formulations related through the Legendre transform</td>
+<td><a href="../../physics/lessons/23.md.html">Stage 23</a>, regularity assumptions and restricted teaching networks</td>
+<td>A general LNN benchmark or physical validity outside the modeled regime.</td>
+</tr>
+<tr>
+<td>Charts and flows</td>
+<td>Local coordinates, smooth transitions and local diffeomorphisms</td>
+<td><a href="../../lessons/13_lesson.md.html">13</a> and <a href="../../physics/lessons/22.md.html">22</a>, explicit map/inverse tests</td>
+<td>A camera image being an invertible chart of an entire 3D scene.</td>
+</tr>
+<tr>
+<td>VGGT and successors</td>
+<td>Learned geometry proposed from RGB input</td>
+<td><a href="../../lessons/16_lesson.md.html">16</a>, architecture and output contracts</td>
+<td>Trained VGGT inference, metrically calibrated output, or independently validated fast sports motion.</td>
+</tr>
+<tr>
+<td>ROS2/point-cloud speed</td>
+<td>Source reports throughput and conversion improvements</td>
+<td><a href="../../lessons/18_lesson.md.html">18</a>, CPU profiling and timing boundaries</td>
+<td>Reproduction of the post's GPU hardware or latency benchmark.</td>
+</tr>
+<tr>
+<td>Human–object interactions</td>
+<td>Prototype combines pose, tracks and temporal reasoning</td>
+<td><a href="../../lessons/19_lesson.md.html">19</a>, timing and negative controls</td>
+<td>Proximity proving contact, or independent basketball event precision/recall.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="a-concrete-distinction">A concrete distinction</h2>
+<p>For a unit-mass oscillator with H=(q²+p²)/2, a kick-then-drift symplectic Euler step from (1,0) with h=0.2 gives p=-0.2 and q=0.96. Its energy is (0.96²+0.2²)/2=0.4808, not 0.5. This is our worked counterexample to a general arbitrary-step exact-energy assertion, not a quotation from the supplied post.</p>
+<p>The existing mathematical treatment and source audit are preserved in <a href="../v5/SOURCE_AUDIT.md.html">the v5 audit</a>, <a href="../SOURCES_V3.md.html">geometry source references</a>, and <a href="../v8/SOURCE_AUDIT.md.html">v8 sports audit</a>. Source links are dated; mutable websites can change after review.</p>
+<h2 id="verification-boundaries">Verification boundaries</h2>
+<p>A hash verifies identity of bytes relative to the stated expected value. It does not verify the scientific truth of measurements. A notebook run verifies that those code cells executed under the recorded environment. A mathematical theorem requires its hypotheses and proof, not merely many passing numeric checks. An optional acquisition plan is not a downloaded payload.</p>
+<p>The original book's complete text has not been inspected. <a href="../BOOK_TOC_AUDIT_V2.md.html">The book audit</a> remains open. Major theorems and advanced directions are explicitly identified in <a href="../DEEPENING_PROOFS.md.html">proof deepening</a>. Do not mark them complete from file counts.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

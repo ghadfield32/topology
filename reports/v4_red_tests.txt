@@ -1,0 +1,382 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                                        [100%]
+=================================== FAILURES ===================================
+_____________________ test_pixel_ring_and_diagonal_contact _____________________
+
+    def test_pixel_ring_and_diagonal_contact():
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:9: ModuleNotFoundError
+________________ test_pixel_oracle_agrees_with_chain_algebra[0] ________________
+
+seed = 0
+
+    @pytest.mark.parametrize('seed',range(8))
+    def test_pixel_oracle_agrees_with_chain_algebra(seed):
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:18: ModuleNotFoundError
+________________ test_pixel_oracle_agrees_with_chain_algebra[1] ________________
+
+seed = 1
+
+    @pytest.mark.parametrize('seed',range(8))
+    def test_pixel_oracle_agrees_with_chain_algebra(seed):
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:18: ModuleNotFoundError
+________________ test_pixel_oracle_agrees_with_chain_algebra[2] ________________
+
+seed = 2
+
+    @pytest.mark.parametrize('seed',range(8))
+    def test_pixel_oracle_agrees_with_chain_algebra(seed):
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:18: ModuleNotFoundError
+________________ test_pixel_oracle_agrees_with_chain_algebra[3] ________________
+
+seed = 3
+
+    @pytest.mark.parametrize('seed',range(8))
+    def test_pixel_oracle_agrees_with_chain_algebra(seed):
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:18: ModuleNotFoundError
+________________ test_pixel_oracle_agrees_with_chain_algebra[4] ________________
+
+seed = 4
+
+    @pytest.mark.parametrize('seed',range(8))
+    def test_pixel_oracle_agrees_with_chain_algebra(seed):
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:18: ModuleNotFoundError
+________________ test_pixel_oracle_agrees_with_chain_algebra[5] ________________
+
+seed = 5
+
+    @pytest.mark.parametrize('seed',range(8))
+    def test_pixel_oracle_agrees_with_chain_algebra(seed):
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:18: ModuleNotFoundError
+________________ test_pixel_oracle_agrees_with_chain_algebra[6] ________________
+
+seed = 6
+
+    @pytest.mark.parametrize('seed',range(8))
+    def test_pixel_oracle_agrees_with_chain_algebra(seed):
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:18: ModuleNotFoundError
+________________ test_pixel_oracle_agrees_with_chain_algebra[7] ________________
+
+seed = 7
+
+    @pytest.mark.parametrize('seed',range(8))
+    def test_pixel_oracle_agrees_with_chain_algebra(seed):
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:18: ModuleNotFoundError
+___________________ test_rank_prime_and_signed_boundaries[2] ___________________
+
+p = 2
+
+    @pytest.mark.parametrize('p',[2,3,5,7])
+    def test_rank_prime_and_signed_boundaries(p):
+>       from shape_lab.audits import rank_prime, oriented_boundary
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:29: ModuleNotFoundError
+___________________ test_rank_prime_and_signed_boundaries[3] ___________________
+
+p = 3
+
+    @pytest.mark.parametrize('p',[2,3,5,7])
+    def test_rank_prime_and_signed_boundaries(p):
+>       from shape_lab.audits import rank_prime, oriented_boundary
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:29: ModuleNotFoundError
+___________________ test_rank_prime_and_signed_boundaries[5] ___________________
+
+p = 5
+
+    @pytest.mark.parametrize('p',[2,3,5,7])
+    def test_rank_prime_and_signed_boundaries(p):
+>       from shape_lab.audits import rank_prime, oriented_boundary
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:29: ModuleNotFoundError
+___________________ test_rank_prime_and_signed_boundaries[7] ___________________
+
+p = 7
+
+    @pytest.mark.parametrize('p',[2,3,5,7])
+    def test_rank_prime_and_signed_boundaries(p):
+>       from shape_lab.audits import rank_prime, oriented_boundary
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:29: ModuleNotFoundError
+__________________________ test_nonprime_rejected[1] ___________________________
+
+p = 1
+
+    @pytest.mark.parametrize('p',[1,4,9,15,2.5,True])
+    def test_nonprime_rejected(p):
+>       from shape_lab.audits import rank_prime
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:42: ModuleNotFoundError
+__________________________ test_nonprime_rejected[4] ___________________________
+
+p = 4
+
+    @pytest.mark.parametrize('p',[1,4,9,15,2.5,True])
+    def test_nonprime_rejected(p):
+>       from shape_lab.audits import rank_prime
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:42: ModuleNotFoundError
+__________________________ test_nonprime_rejected[9] ___________________________
+
+p = 9
+
+    @pytest.mark.parametrize('p',[1,4,9,15,2.5,True])
+    def test_nonprime_rejected(p):
+>       from shape_lab.audits import rank_prime
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:42: ModuleNotFoundError
+__________________________ test_nonprime_rejected[15] __________________________
+
+p = 15
+
+    @pytest.mark.parametrize('p',[1,4,9,15,2.5,True])
+    def test_nonprime_rejected(p):
+>       from shape_lab.audits import rank_prime
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:42: ModuleNotFoundError
+_________________________ test_nonprime_rejected[2.5] __________________________
+
+p = 2.5
+
+    @pytest.mark.parametrize('p',[1,4,9,15,2.5,True])
+    def test_nonprime_rejected(p):
+>       from shape_lab.audits import rank_prime
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:42: ModuleNotFoundError
+_________________________ test_nonprime_rejected[True] _________________________
+
+p = True
+
+    @pytest.mark.parametrize('p',[1,4,9,15,2.5,True])
+    def test_nonprime_rejected(p):
+>       from shape_lab.audits import rank_prime
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:42: ModuleNotFoundError
+_____________________ test_h0_prim_matches_persistence[x0] _____________________
+
+x = array([[0., 0.],
+       [1., 0.],
+       [1., 1.],
+       [0., 1.]])
+
+    @pytest.mark.parametrize('x',[
+     np.array([[0.,0.],[1.,0.],[1.,1.],[0.,1.]]),
+     np.array([[0.,0.],[0.,0.],[1.,0.]]),
+     np.array([[1.,2.]]),
+     np.random.default_rng(17).normal(size=(12,3))])
+    def test_h0_prim_matches_persistence(x):
+>       from shape_lab.audits import h0_merge_times
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:51: ModuleNotFoundError
+_____________________ test_h0_prim_matches_persistence[x1] _____________________
+
+x = array([[0., 0.],
+       [0., 0.],
+       [1., 0.]])
+
+    @pytest.mark.parametrize('x',[
+     np.array([[0.,0.],[1.,0.],[1.,1.],[0.,1.]]),
+     np.array([[0.,0.],[0.,0.],[1.,0.]]),
+     np.array([[1.,2.]]),
+     np.random.default_rng(17).normal(size=(12,3))])
+    def test_h0_prim_matches_persistence(x):
+>       from shape_lab.audits import h0_merge_times
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:51: ModuleNotFoundError
+_____________________ test_h0_prim_matches_persistence[x2] _____________________
+
+x = array([[1., 2.]])
+
+    @pytest.mark.parametrize('x',[
+     np.array([[0.,0.],[1.,0.],[1.,1.],[0.,1.]]),
+     np.array([[0.,0.],[0.,0.],[1.,0.]]),
+     np.array([[1.,2.]]),
+     np.random.default_rng(17).normal(size=(12,3))])
+    def test_h0_prim_matches_persistence(x):
+>       from shape_lab.audits import h0_merge_times
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:51: ModuleNotFoundError
+_____________________ test_h0_prim_matches_persistence[x3] _____________________
+
+x = array([[ 1.10126245,  0.33843128, -0.53997152],
+       [-1.26024186, -1.89462127,  0.01863829],
+       [-0.8105671 , -...7497737, -2.08154285],
+       [-1.27611242,  0.56485124,  1.79601251],
+       [-0.23541505, -0.39107735,  0.17390146]])
+
+    @pytest.mark.parametrize('x',[
+     np.array([[0.,0.],[1.,0.],[1.,1.],[0.,1.]]),
+     np.array([[0.,0.],[0.,0.],[1.,0.]]),
+     np.array([[1.,2.]]),
+     np.random.default_rng(17).normal(size=(12,3))])
+    def test_h0_prim_matches_persistence(x):
+>       from shape_lab.audits import h0_merge_times
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:51: ModuleNotFoundError
+_________________________ test_bad_points_rejected[x0] _________________________
+
+x = []
+
+    @pytest.mark.parametrize('x',[[],[[np.nan,0]],[[1,np.inf]],[[1],[2,3]]])
+    def test_bad_points_rejected(x):
+>       from shape_lab.audits import h0_merge_times
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:60: ModuleNotFoundError
+_________________________ test_bad_points_rejected[x1] _________________________
+
+x = [[nan, 0]]
+
+    @pytest.mark.parametrize('x',[[],[[np.nan,0]],[[1,np.inf]],[[1],[2,3]]])
+    def test_bad_points_rejected(x):
+>       from shape_lab.audits import h0_merge_times
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:60: ModuleNotFoundError
+_________________________ test_bad_points_rejected[x2] _________________________
+
+x = [[1, inf]]
+
+    @pytest.mark.parametrize('x',[[],[[np.nan,0]],[[1,np.inf]],[[1],[2,3]]])
+    def test_bad_points_rejected(x):
+>       from shape_lab.audits import h0_merge_times
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:60: ModuleNotFoundError
+_________________________ test_bad_points_rejected[x3] _________________________
+
+x = [[1], [2, 3]]
+
+    @pytest.mark.parametrize('x',[[],[[np.nan,0]],[[1,np.inf]],[[1],[2,3]]])
+    def test_bad_points_rejected(x):
+>       from shape_lab.audits import h0_merge_times
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:60: ModuleNotFoundError
+_____________ test_paired_prediction_discordance_and_no_difference _____________
+
+    def test_paired_prediction_discordance_and_no_difference():
+>       from shape_lab.audits import paired_accuracy_audit
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:65: ModuleNotFoundError
+_________________________ test_paired_bad_input[args0] _________________________
+
+args = ([0], [], [0])
+
+    @pytest.mark.parametrize('args',[( [0],[],[0]),([],[],[]),([0],[np.nan],[0])])
+    def test_paired_bad_input(args):
+>       from shape_lab.audits import paired_accuracy_audit
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:77: ModuleNotFoundError
+_________________________ test_paired_bad_input[args1] _________________________
+
+args = ([], [], [])
+
+    @pytest.mark.parametrize('args',[( [0],[],[0]),([],[],[]),([0],[np.nan],[0])])
+    def test_paired_bad_input(args):
+>       from shape_lab.audits import paired_accuracy_audit
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:77: ModuleNotFoundError
+_________________________ test_paired_bad_input[args2] _________________________
+
+args = ([0], [nan], [0])
+
+    @pytest.mark.parametrize('args',[( [0],[],[0]),([],[],[]),([0],[np.nan],[0])])
+    def test_paired_bad_input(args):
+>       from shape_lab.audits import paired_accuracy_audit
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:77: ModuleNotFoundError
+___________ test_evidence_audit_checks_missing_modified_and_escaping ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_evidence_audit_checks_mis0')
+
+    def test_evidence_audit_checks_missing_modified_and_escaping(tmp_path):
+>       from shape_lab.audits import verify_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:82: ModuleNotFoundError
+___________________ test_boolean_pixel_contract_is_explicit ____________________
+
+    def test_boolean_pixel_contract_is_explicit():
+>       from shape_lab.audits import pixel_betti_oracle
+E       ModuleNotFoundError: No module named 'shape_lab.audits'
+
+tests/test_audits_v4.py:97: ModuleNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_audits_v4.py::test_pixel_ring_and_diagonal_contact - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_pixel_oracle_agrees_with_chain_algebra[0] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_pixel_oracle_agrees_with_chain_algebra[1] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_pixel_oracle_agrees_with_chain_algebra[2] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_pixel_oracle_agrees_with_chain_algebra[3] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_pixel_oracle_agrees_with_chain_algebra[4] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_pixel_oracle_agrees_with_chain_algebra[5] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_pixel_oracle_agrees_with_chain_algebra[6] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_pixel_oracle_agrees_with_chain_algebra[7] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_rank_prime_and_signed_boundaries[2] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_rank_prime_and_signed_boundaries[3] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_rank_prime_and_signed_boundaries[5] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_rank_prime_and_signed_boundaries[7] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_nonprime_rejected[1] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_nonprime_rejected[4] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_nonprime_rejected[9] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_nonprime_rejected[15] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_nonprime_rejected[2.5] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_nonprime_rejected[True] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_h0_prim_matches_persistence[x0] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_h0_prim_matches_persistence[x1] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_h0_prim_matches_persistence[x2] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_h0_prim_matches_persistence[x3] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_bad_points_rejected[x0] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_bad_points_rejected[x1] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_bad_points_rejected[x2] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_bad_points_rejected[x3] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_paired_prediction_discordance_and_no_difference - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_paired_bad_input[args0] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_paired_bad_input[args1] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_paired_bad_input[args2] - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_evidence_audit_checks_missing_modified_and_escaping - ModuleNotFoundError: No module named 'shape_lab.audits'
+FAILED tests/test_audits_v4.py::test_boolean_pixel_contract_is_explicit - ModuleNotFoundError: No module named 'shape_lab.audits'
+33 failed in 0.16s

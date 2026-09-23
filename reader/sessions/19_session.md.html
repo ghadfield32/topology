@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 19 guided session — Do not let future observations leak into an event decision · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/19_session.md">sessions/19_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-19-guided-session--do-not-let-future-observations-leak-into-an-event-decision">Stage 19 guided session — Do not let future observations leak into an event decision</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/19_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/19_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/19_workbook.md.html">original workbook</a> and <a href="../notebooks/19_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real historical annual observations for causal timing; no human-contact or scientific solar-event ground truth.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Distinguish event onset, confirmation time, and observation availability.</li>
+<li>Construct a past-only confirmation rule on a real dated series.</li>
+<li>Check that extending the future does not revise already-issued decisions.</li>
+<li>Separate a threshold-rule output from validated human–object interaction labels.</li>
+</ol>
+<h2 id="an-event-label-needs-a-definition">An event label needs a definition</h2>
+<p>A temporal rule is not meaningful until its conditions, input units, and timestamp conventions are explicit. “Release” could refer to physical loss of contact, a visually annotated frame, or a distance threshold. Those are not interchangeable. The existing hand–ball example remains a synthetic hypothesis test; no real contact annotations are bundled.</p>
+<p>This supplement uses a real historical annual sunspot series to teach the timing logic without claiming to validate basketball events. We define an intentionally simple rule: after at least two consecutive high values, confirm a high episode. The threshold is declared for the exercise, not optimized to represent a scientific solar event.</p>
+<h2 id="separate-onset-from-the-decision">Separate onset from the decision</h2>
+<p>If high values occur in years 1901 and 1902, an online two-observation confirmation can issue its decision when the 1902 value is available. It can report an onset hypothesis of 1901, but it cannot honestly claim to have known in 1901 that the run would continue. Backdating onset is not the same as backdating knowledge.</p>
+<p>Annual data simplify the clock. A real operating system would also need publication or sensor-arrival timestamps. The historic year alone does not establish when the measurement became available. This notebook assigns availability at the annual sample boundary as an explicit teaching convention.</p>
+<h2 id="check-causality-with-prefixes">Check causality with prefixes</h2>
+<p>Run the rule on the first k observations. Then run it on the whole series. Restrict the full-series decisions to those issued by time k. They should match the prefix output. A centered smoother or retrospective labeling rule may violate this test because it can use later observations to change an earlier decision.</p>
+<p>The test validates past-only behavior of the particular rule. It does not validate event accuracy. To measure accuracy, we would need independently defined reference events and a matching rule specifying time tolerance, one-to-one matching, and handling of missing observations.</p>
+<h2 id="transfer-the-distinction-to-basketball">Transfer the distinction to basketball</h2>
+<p>A distance-only hand–ball rule should output a separation candidate, not certified contact or possession. Missing visibility must not silently become a confidently observed trajectory. Identity changes, camera synchronization, occlusion, fast motion, and false near-passes need labeled evaluation. Onset error and decision delay should both be reported; a rule can locate an onset retrospectively while deciding too late for an online application.</p>
+<p>The historical series gives genuine timestamps for learning code. It is not a substitute sports benchmark. This boundary lets us practice the full causal mechanism now while leaving real event validation as an explicit requirement rather than inventing ground truth.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Read real annual observations. The threshold is a declared teaching rule, not a scientific event definition.</p>
+<pre><code class="language-python">import pandas as pd
+series = pd.read_csv(ROOT/'data/time_series/sunspots_yearly.csv')
+years = series.YEAR.to_numpy(dtype=int)
+values = series.SUNACTIVITY.to_numpy()
+threshold = 80.
+assert np.all(np.diff(years)==1)
+print('historical range:', years[0], years[-1])
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Confirm once per high episode using only observations already available. Retain both onset and decision year.</p>
+<pre><code class="language-python">def confirm_high_episodes(years, values, threshold=80., run_length=2):
+    run = 0; emitted = False; out = []
+    for year, value in zip(years, values):
+        if np.isfinite(value) and value &gt;= threshold:
+            run += 1
+            if run &gt;= run_length and not emitted:
+                out.append({'onset_year': int(year-run+1), 'decision_year': int(year)})
+                emitted = True
+        else:
+            run = 0; emitted = False
+    return out
+all_decisions = confirm_high_episodes(years, values)
+print(all_decisions[:8])
+assert all(e['decision_year'] &gt; e['onset_year'] for e in all_decisions)
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Run prefix checks to ensure future samples cannot alter decisions already issued.</p>
+<pre><code class="language-python">for count in [60, 120, 180, 240, len(years)]:
+    prefix = confirm_high_episodes(years[:count], values[:count])
+    already_issued = [e for e in all_decisions if e['decision_year'] &lt;= int(years[count-1])]
+    assert prefix == already_issued
+result = {'real_time_series': 'historical yearly sunspot activity 1700-2008',
+          'threshold': threshold, 'confirming_observations': 2,
+          'episodes': len(all_decisions), 'prefix_checks': 5,
+          'availability_assumption': 'annual sample boundary; actual publication times not supplied',
+          'independent_event_accuracy_measured': False, 'basketball_events_validated': False}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="19t1">19.T1</h3>
+<p>Can a confirmed event have an onset earlier than its decision timestamp?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Yes. The onset is a hypothesis about when the event began; confirmation may require later observations. The system must preserve the later decision time rather than pretending knowledge was available at onset.</p>
+</details>
+<h3 id="19t2">19.T2</h3>
+<p>Does passing prefix consistency establish event precision and recall?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>No. It establishes a past-only property of the implemented rule on the tested sequences. Precision and recall require independent reference labels and an explicit matching protocol.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/19_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

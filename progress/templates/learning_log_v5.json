@@ -1,0 +1,100 @@
+{
+  "schema_version": 5,
+  "course_version": "5.0.0",
+  "scope": "Self-reported learning evidence; not accreditation or automated proof checking.",
+  "stages": {
+    "00": {
+      "attempts": []
+    },
+    "01": {
+      "attempts": []
+    },
+    "02": {
+      "attempts": []
+    },
+    "03": {
+      "attempts": []
+    },
+    "04": {
+      "attempts": []
+    },
+    "05": {
+      "attempts": []
+    },
+    "06": {
+      "attempts": []
+    },
+    "07": {
+      "attempts": []
+    },
+    "08": {
+      "attempts": []
+    },
+    "09": {
+      "attempts": []
+    },
+    "10": {
+      "attempts": []
+    },
+    "11": {
+      "attempts": []
+    },
+    "12": {
+      "attempts": []
+    },
+    "13": {
+      "attempts": []
+    },
+    "14": {
+      "attempts": []
+    },
+    "15": {
+      "attempts": []
+    },
+    "16": {
+      "attempts": []
+    },
+    "17": {
+      "attempts": []
+    },
+    "18": {
+      "attempts": []
+    },
+    "19": {
+      "attempts": []
+    },
+    "20": {
+      "attempts": []
+    },
+    "21": {
+      "attempts": []
+    },
+    "22": {
+      "attempts": []
+    },
+    "23": {
+      "attempts": []
+    },
+    "24": {
+      "attempts": []
+    },
+    "25": {
+      "attempts": []
+    },
+    "26": {
+      "attempts": []
+    },
+    "27": {
+      "attempts": []
+    },
+    "28": {
+      "attempts": []
+    },
+    "29": {
+      "attempts": []
+    },
+    "30": {
+      "attempts": []
+    }
+  }
+}

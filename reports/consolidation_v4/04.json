@@ -1,0 +1,9 @@
+{
+  "sample_id": 16,
+  "rotation_order_test": "passed",
+  "label_preservation_claimed": false,
+  "annulus_check": "selected radii; proof in text",
+  "stage": 4,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real digit under exact array transformations; constructed matrices and annulus radii."
+}

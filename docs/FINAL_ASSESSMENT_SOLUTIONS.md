@@ -1,0 +1,22 @@
+# Final assessment — worked answers and grading notes
+
+1. Solve 0<x²−1≤3, giving 1<x²≤4 and hence [-2,-1)∪(1,2]. The inner endpoints are excluded; the outer endpoints are included.
+2. There exists ε>0 such that for every δ>0, there exists a pair of inputs at distance less than δ whose output distance is at least ε. This negates the uniform continuity-style quantifier statement as written.
+3. Identity from a two-point discrete space to the two-point indiscrete space is continuous and bijective. Its inverse fails because a target singleton is open in the discrete topology but its inverse image is not open in the indiscrete topology.
+4. Distinct finite metric observations have open singleton neighborhoods, hence a discrete topology. A continuous-looking shape is a generating-object hypothesis or a scale-dependent constructed complex, not automatically the topology of the finite observations themselves.
+5. Over F₂, equations are x+y+z=0 and y+z=0, so x=0 and y=z. Kernel is span{(0,1,1)}; nullity one. The first two columns are independent, so image is all F₂², rank two.
+6. Every codimension-two face appears exactly twice in a simplex's iterated boundary, through the two possible orders of deleting the missing vertices. Over F₂ equal contributions cancel; with oriented boundaries the two signs are opposite.
+7. Connectedness gives β₀=1 and rank∂₁=6−1=5. Therefore β₁=8−5=3 and Euler characteristic=6−8=−2=1−3.
+8. Add the ∂₂ map. Its image can turn existing 1-cycles into boundaries. β₁ becomes 8−rank∂₁−rank∂₂; connectivity is not decreased by adding faces. Whether the rank grows depends on the attaching cycles, not just the number of faces.
+9. Tetrahedron boundary: [1,0,1]. Filled tetrahedron: [1,0,0] in the first three dimensions (and zero H₃). The solid 3-simplex makes the 2-cycle a boundary.
+10. Scaling the unit square by two scales distances. H₀ has three [0,2) intervals and one [0,∞). H₁ has [2,2√2). State F₂, ordinary homology, maximum-edge Rips parameter and sufficient 2-simplices.
+11. Any cutoff between two and 2√2 leaves the perimeter cycle unpaired in the supplied complex. It would die at 2√2 in the full distance filtration, so “infinite” means surviving the cutoff here.
+12. Lifetime is four; best diagonal cost is half, so two. The diagonal match is at (3,3).
+13. For two filtration functions on the same finite complex differing by at most δ on every simplex, f-sublevels at t lie in g-sublevels at t+δ and conversely. The finite constructible module stability theorem then bounds bottleneck distance by δ with consistent essential-bar handling. Inclusion alone is not the whole matching theorem.
+14. An example is a stable loop caused by a fixed sensor mask or a preprocessing operation that removes a central region. Small noise may leave it stable while it reflects the pipeline rather than the claimed phenomenon. Explain the scientific target and a suitable control rather than offering only the word “bias.”
+15. Hold out the units matching deployment (athletes for unseen-athlete claims; sessions for session transfer), form windows within partitions, timestamp each feature at its latest required observation, fit learned scaling and representations on training data, choose on validation, and freeze a final holdout. Include ground-truth and calibration provenance.
+16. Digits uses fixed intensity sublevels f=1−I/16 on closed squares, filtration-preserving triangulation, ordinary F₂ H₀/H₁, 20 summaries with documented essential-bar policy, and train-only learned scaling. The new per-image split lacks writer IDs and is not the original full UCI train/test experiment.
+17. State actual scores and scope, retain all baselines, explain costs and limitations, and do not retrofit the test. New independent data or a justified untouched evaluation would be needed after modifying the method in response to the exposed test.
+18. Use an exact example such as the square or triangle, plus a real-data report with original IDs and reproducible configuration. Identify precisely which assertions ran. A missing package gives no evidence of cross-library agreement, even when all core tests pass.
+
+Award full points for correct reasoning and explicit assumptions, not matching wording. Treat wrong field arithmetic, missing killing cofaces, essential/truncated confusion, test leakage, fabricated validation and unqualified scientific claims as critical errors requiring remediation.

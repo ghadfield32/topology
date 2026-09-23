@@ -1,0 +1,22 @@
+{
+  "stage": 25,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "constructed constraint operation on observed Iris features",
+  "one_step_result": [
+    1.25,
+    0.0
+  ],
+  "one_step_constraint_residual": 0.5625,
+  "iterative_residuals": [
+    3.0,
+    0.5625,
+    0.05062499999999992,
+    0.0006098490481853958,
+    9.292229696811205e-08,
+    2.220446049250313e-15
+  ],
+  "observed_rows": 150,
+  "normalized_max_constraint_error": 4.440892098500626e-16,
+  "unsupported": "Not a geodesic solver, symplectic constrained integrator, or biological conservation test.",
+  "source_review_date": "2026-09-20"
+}

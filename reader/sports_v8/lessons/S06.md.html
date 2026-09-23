@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S06 — From worked examples to an independent sports study · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v8/lessons/S06.md">sports_v8/lessons/S06.md</a> · Readable source notation; no online math renderer.</p><h1 id="s06--from-worked-examples-to-an-independent-sports-study">S06 — From worked examples to an independent sports study</h1>
+<h2 id="your-destination">Your destination</h2>
+<p>Choose an appropriate current sports dataset, explain its observation model,
+acquire only a bounded slice after reviewing rights, and complete a defensible
+study. “Modern” describes methods and releases; it does not make every dataset
+suitable or more accurate. The registry was checked on 2026-09-21 and is not an
+exhaustive claim about every release in the world.</p>
+<h2 id="four-questions-before-downloading">Four questions before downloading</h2>
+<p><strong>What is measured?</strong> Video pixels, marker trajectories, markerless estimates,
+provider-derived events and simulator states are different evidence. A rendered
+depth map has exact simulator geometry but does not measure a real athlete.</p>
+<p><strong>What is the independent unit?</strong> A player, trial, session, match, camera pair or
+venue may matter. Multi-view images of the same event must not be split across
+partitions as though they were unrelated photographs.</p>
+<p><strong>What do I want to infer?</strong> A track ID, on-ground player position, airborne ball
+height, movement class, release event and injury risk require different labels.
+A dataset with pose labels but no outcomes cannot test an outcome classifier.</p>
+<p><strong>What is actually licensed?</strong> A freely reachable URL is not a general commercial
+license. Verify code, data, model weights, derivative conditions, participant
+consent and the intended application. Keep separate storage for restricted data.</p>
+<h2 id="a-bounded-selection-route">A bounded selection route</h2>
+<p>For interpretable basketball biomechanics, start with the recent SPL release and
+its documentation. For 3x3 video identity and tracking, examine TrackID3x3. For
+wearable/video alignment, inspect BasketHAR's 2026 paper and hosting. For multiview
+mobile capture, MUVS is relevant; for user-generated multi-object tracking, UVY is
+a different dataset with a different purpose. For soccer, SkillCorner separates
+season aggregates, XY tracks and pose, while SoccerTrack v2 and SoccerNet GSR
+support specific annotated reconstruction tasks. For baseball, consult current
+OpenBiomechanics documentation rather than an old pre-July-2026 clone recipe.</p>
+<p>The full catalogue explains access, dates, units, limitations, baseline, split
+and output for each. Only the two small sports excerpts have been bundled and
+executed here. No downloaded videos, full tracks, wearables or baseball datasets
+are implied by a catalogue entry. BASKET-Multiview is deliberately marked synthetic.</p>
+<h2 id="your-minimum-viable-independent-experiment">Your minimum viable independent experiment</h2>
+<p>Pick ONE question. For example: “Do topological descriptors of movement windows
+add information to conventional features for this specific available label?”
+Start with enough independent trials/people to design a real evaluation; our
+single basketball trial is not that experiment.</p>
+<p>Create a protocol with the input contract, target, cutoff, groups, preprocessing,
+baseline, proposed descriptor, and acceptance criteria. Do not define success as
+“topology must win.” Define success as a reproducible, appropriately evaluated
+answer with documented limitations. Set aside independently grouped test data
+before inspecting its outcomes. Store exact source revisions and exclusions.</p>
+<p>First reproduce a simple baseline. Inspect a few raw observations against their
+metadata and labels. Next implement one descriptor and test exact controls.
+Finally compare on identical test units. Report the result, computational cost,
+coverage and the conditions under which it fails. Changing one component at a
+time makes the comparison interpretable; adding every modern architecture at once
+makes it harder to learn why the result occurred.</p>
+<h2 id="a-full-deliverable-not-just-a-notebook">A full deliverable, not just a notebook</h2>
+<p>Your independent folder should contain: a protocol written before evaluation;
+a data manifest and dictionary; acquisition instructions; environment versions;
+source-level split assignments; tests; a notebook with outputs; prediction or
+reconstruction files; a short interpretation; and a list of open questions.
+Private raw video need not be copied into the report. Use consent and access
+controls appropriate to the people and setting.</p>
+<p>When learning with this chat, bring the protocol, failing test or one bounded
+result table—not thousands of unrelated logs. We can review the definition,
+calculation, implementation and interpretation separately. The evidence record
+should distinguish “read”, “solved with help”, “independently demonstrated” and
+“retained after a delay”. A green program run is not a passing oral explanation.</p>
+<h2 id="capstone-review-rubric">Capstone review rubric</h2>
+<p>State all units and frames. Explain where every label comes from. Demonstrate a
+known-answer mathematical test and one deliberately failing case. Show that
+preprocessing and parameter selection do not inspect held-out outcomes. Explain
+whether the claimed accuracy is relative to human labels, provider estimates,
+independent physical measurements or simulator truth. Report rejected/missing
+samples as well as accepted ones. Check rights before proposing a deployment.</p>
+<p>For a geometry study, use fit references and different validation references;
+check scale and timing, not only reprojection. For an event study, count false
+releases and timing errors on independently labeled clips, including near-contact
+negatives. For a dynamic model, compare long-rollout state and phase error with
+energy and constraints separately. These requirements connect the earlier source
+posts to an auditable experiment without adopting their claims uncritically.</p>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li>Name one modern dataset suitable for mobile multiview data and one suited to
+wearable alignment. Why are their annotations not interchangeable?</li>
+<li>Why should a simulated basketball dataset remain useful but separate from
+measured calibration evidence?</li>
+<li>A full source download has a different Git hash from the record. What happens?</li>
+<li>What makes a course complete for its agreed scope without claiming all
+mathematics or all possible applications have been exhausted?</li>
+</ol>
+<h2 id="worked-answers">Worked answers</h2>
+<ol>
+<li>MUVS and BasketHAR respectively. Camera selection/synchronized viewpoints and
+activity-related multimodal signals support different targets and evaluations;
+verify actual release labels before designing the study.</li>
+<li>Known simulator geometry enables exact checks and controlled variations, but
+rendering/domain assumptions do not validate real camera or athlete measurements.</li>
+<li>The verifier stops. Inspect whether the upstream revision changed or the bytes
+are incorrect; create a new audited manifest only after reviewing the difference.</li>
+<li>Demonstrated competence on the agreed concepts, independent work, retained
+understanding and explicit remaining proof/book/application obligations. More
+files alone do not establish that outcome.</li>
+</ol>
+<h2 id="delayed-recall-and-completion">Delayed recall and completion</h2>
+<p>Without notes, explain why the newest dataset need not be the right first dataset.
+Write a one-page independent protocol and defend two ways your result could be
+wrong. The final core-book audit and specialized proofs remain visible in the
+retained course. Finish this path by demonstrating understanding, not by resetting
+your progress when a new archive version arrives.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

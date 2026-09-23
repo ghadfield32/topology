@@ -1,0 +1,89 @@
+{
+  "id": "grunfeld",
+  "sector": "business",
+  "title": "Firm panels, timestamps and prediction availability",
+  "provider": "statsmodels",
+  "provider_version": "0.14.6",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/grunfeld.html",
+  "source_doi": null,
+  "citation": "Grunfeld; 11-firm reconstruction documented by Kleiber and Zeileis (2008); statsmodels distribution.",
+  "license": "Public domain (dataset distributor statement)",
+  "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/grunfeld.html",
+  "license_url": "https://www.statsmodels.org/stable/datasets/generated/grunfeld.html",
+  "observation_unit": "One firm-year record. A repeated firm is not a new independent company.",
+  "scope_limitations": "220 rows; 11 firms, 1935–1954. Historical data, not investment advice or current-market evidence.",
+  "rows": 220,
+  "columns": [
+    "row_id",
+    "invest",
+    "value",
+    "capital",
+    "firm",
+    "year"
+  ],
+  "label_map": {},
+  "data_kind": "observed",
+  "acquisition": "offline export from installed package distribution; no invented records",
+  "source_review_date": "2026-09-20",
+  "data_file": "data/industries/grunfeld/data.csv",
+  "data_sha256": "69c2ae99098dbc3735e5a10d1855341ea3db6160b1c9890cc33236dca9914df6",
+  "source_file": "data/industries/grunfeld/source_distribution.csv",
+  "source_sha256": "6f6ca138e645eeee6ff3e54fe5b9b498f7ddb5c484237d2a8489c524b3c94098",
+  "missing_by_column": {
+    "row_id": 0,
+    "invest": 0,
+    "value": 0,
+    "capital": 0,
+    "firm": 0,
+    "year": 0
+  },
+  "transforms": [
+    "Preserved loaded values and row order; added zero-based row_id.",
+    "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+    "Missing CO2 observations remain blank, never zero."
+  ],
+  "schema": [
+    {
+      "name": "row_id",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "row id"
+    },
+    {
+      "name": "invest",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "1947-dollar source scale",
+      "description": "Gross investment; no additional millions multiplier is assumed."
+    },
+    {
+      "name": "value",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "1947-dollar source scale",
+      "description": "Year-end market value; not available at the beginning of that same year."
+    },
+    {
+      "name": "capital",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "1947-dollar source scale",
+      "description": "Stock of plant and equipment."
+    },
+    {
+      "name": "firm",
+      "role": "metadata",
+      "dtype": "object",
+      "units": "category",
+      "description": "Company identity; eleven labels."
+    },
+    {
+      "name": "year",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "calendar year",
+      "description": "1935–1954."
+    }
+  ]
+}

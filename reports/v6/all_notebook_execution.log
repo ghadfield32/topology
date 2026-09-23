@@ -1,0 +1,198 @@
+1/99 notebooks/00_lab.ipynb
+{'path': 'notebooks/00_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 2, 'seconds': 2.461}
+2/99 notebooks/01_lab.ipynb
+{'path': 'notebooks/01_lab.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 1, 'seconds': 1.961}
+3/99 notebooks/02_lab.ipynb
+{'path': 'notebooks/02_lab.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 1, 'seconds': 2.849}
+4/99 notebooks/03_lab.ipynb
+{'path': 'notebooks/03_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 2.288}
+5/99 notebooks/04_lab.ipynb
+{'path': 'notebooks/04_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 2, 'seconds': 2.279}
+6/99 notebooks/05_lab.ipynb
+{'path': 'notebooks/05_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 2.218}
+7/99 notebooks/06_lab.ipynb
+{'path': 'notebooks/06_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 2.189}
+8/99 notebooks/07_lab.ipynb
+{'path': 'notebooks/07_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 2.359}
+9/99 notebooks/08_lab.ipynb
+{'path': 'notebooks/08_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 3, 'seconds': 2.503}
+10/99 notebooks/09_lab.ipynb
+{'path': 'notebooks/09_lab.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 1, 'seconds': 2.267}
+11/99 notebooks/10_lab.ipynb
+{'path': 'notebooks/10_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 2.283}
+12/99 notebooks/11_lab.ipynb
+{'path': 'notebooks/11_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 3, 'seconds': 7.231}
+13/99 notebooks/12_lab.ipynb
+{'path': 'notebooks/12_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 3, 'seconds': 4.556}
+14/99 notebooks/13_lab.ipynb
+{'path': 'notebooks/13_lab.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 3, 'seconds': 2.61}
+15/99 notebooks/14_lab.ipynb
+{'path': 'notebooks/14_lab.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 1, 'seconds': 2.159}
+16/99 notebooks/15_lab.ipynb
+{'path': 'notebooks/15_lab.ipynb', 'status': 'passed', 'code_cells': 6, 'png_outputs': 5, 'seconds': 3.483}
+17/99 notebooks/16_lab.ipynb
+{'path': 'notebooks/16_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 2, 'seconds': 2.524}
+18/99 notebooks/17_lab.ipynb
+{'path': 'notebooks/17_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 2, 'seconds': 2.547}
+19/99 notebooks/18_lab.ipynb
+{'path': 'notebooks/18_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 2, 'seconds': 2.316}
+20/99 notebooks/19_lab.ipynb
+{'path': 'notebooks/19_lab.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 1, 'seconds': 2.005}
+21/99 notebooks/20_lab.ipynb
+{'path': 'notebooks/20_lab.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 1, 'seconds': 1.997}
+22/99 practice/answers/00_practice.ipynb
+{'path': 'practice/answers/00_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.65}
+23/99 practice/answers/01_practice.ipynb
+{'path': 'practice/answers/01_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.651}
+24/99 practice/answers/02_practice.ipynb
+{'path': 'practice/answers/02_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.702}
+25/99 practice/answers/03_practice.ipynb
+{'path': 'practice/answers/03_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.555}
+26/99 practice/answers/04_practice.ipynb
+{'path': 'practice/answers/04_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.532}
+27/99 practice/answers/05_practice.ipynb
+{'path': 'practice/answers/05_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.632}
+28/99 practice/answers/06_practice.ipynb
+{'path': 'practice/answers/06_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.58}
+29/99 practice/answers/07_practice.ipynb
+{'path': 'practice/answers/07_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.622}
+30/99 practice/answers/08_practice.ipynb
+{'path': 'practice/answers/08_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.59}
+31/99 practice/answers/09_practice.ipynb
+{'path': 'practice/answers/09_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.661}
+32/99 practice/answers/10_practice.ipynb
+{'path': 'practice/answers/10_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.65}
+33/99 practice/answers/11_practice.ipynb
+{'path': 'practice/answers/11_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.569}
+34/99 practice/answers/12_practice.ipynb
+{'path': 'practice/answers/12_practice.ipynb', 'status': 'passed', 'code_cells': 11, 'png_outputs': 0, 'seconds': 1.768}
+35/99 practice/answers/13_practice.ipynb
+{'path': 'practice/answers/13_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.444}
+36/99 practice/answers/14_practice.ipynb
+{'path': 'practice/answers/14_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.474}
+37/99 practice/answers/15_practice.ipynb
+{'path': 'practice/answers/15_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.496}
+38/99 practice/answers/16_practice.ipynb
+{'path': 'practice/answers/16_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.461}
+39/99 practice/answers/17_practice.ipynb
+{'path': 'practice/answers/17_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.445}
+40/99 practice/answers/18_practice.ipynb
+{'path': 'practice/answers/18_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.516}
+41/99 practice/answers/19_practice.ipynb
+{'path': 'practice/answers/19_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.445}
+42/99 practice/answers/20_practice.ipynb
+{'path': 'practice/answers/20_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.379}
+43/99 consolidation/00_lab.ipynb
+{'path': 'consolidation/00_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 1, 'seconds': 1.818}
+44/99 consolidation/01_lab.ipynb
+{'path': 'consolidation/01_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.994}
+45/99 consolidation/02_lab.ipynb
+{'path': 'consolidation/02_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.731}
+46/99 consolidation/03_lab.ipynb
+{'path': 'consolidation/03_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.553}
+47/99 consolidation/04_lab.ipynb
+{'path': 'consolidation/04_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 1, 'seconds': 1.853}
+48/99 consolidation/05_lab.ipynb
+{'path': 'consolidation/05_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 1, 'seconds': 2.289}
+49/99 consolidation/06_lab.ipynb
+{'path': 'consolidation/06_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.992}
+50/99 consolidation/07_lab.ipynb
+{'path': 'consolidation/07_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.715}
+51/99 consolidation/08_lab.ipynb
+{'path': 'consolidation/08_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 2.026}
+52/99 consolidation/09_lab.ipynb
+{'path': 'consolidation/09_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.981}
+53/99 consolidation/10_lab.ipynb
+{'path': 'consolidation/10_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.676}
+54/99 consolidation/11_lab.ipynb
+{'path': 'consolidation/11_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 2.234}
+55/99 consolidation/12_lab.ipynb
+{'path': 'consolidation/12_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 2.0}
+56/99 consolidation/13_lab.ipynb
+{'path': 'consolidation/13_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.451}
+57/99 consolidation/14_lab.ipynb
+{'path': 'consolidation/14_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.395}
+58/99 consolidation/15_lab.ipynb
+{'path': 'consolidation/15_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.596}
+59/99 consolidation/16_lab.ipynb
+{'path': 'consolidation/16_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.592}
+60/99 consolidation/17_lab.ipynb
+{'path': 'consolidation/17_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.502}
+61/99 consolidation/18_lab.ipynb
+{'path': 'consolidation/18_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.514}
+62/99 consolidation/19_lab.ipynb
+{'path': 'consolidation/19_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.415}
+63/99 consolidation/20_lab.ipynb
+{'path': 'consolidation/20_lab.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 0, 'seconds': 1.97}
+64/99 physics/notebooks/21_lab.ipynb
+{'path': 'physics/notebooks/21_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 2, 'seconds': 2.51}
+65/99 physics/notebooks/22_lab.ipynb
+{'path': 'physics/notebooks/22_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 1.951}
+66/99 physics/notebooks/23_lab.ipynb
+{'path': 'physics/notebooks/23_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 5.883}
+67/99 physics/notebooks/24_lab.ipynb
+{'path': 'physics/notebooks/24_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 2, 'seconds': 2.484}
+68/99 physics/notebooks/25_lab.ipynb
+{'path': 'physics/notebooks/25_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 2, 'seconds': 2.465}
+69/99 physics/notebooks/26_lab.ipynb
+{'path': 'physics/notebooks/26_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 5.141}
+70/99 physics/notebooks/27_lab.ipynb
+{'path': 'physics/notebooks/27_lab.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 1, 'seconds': 2.017}
+71/99 physics/notebooks/28_lab.ipynb
+{'path': 'physics/notebooks/28_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 2, 'seconds': 5.928}
+72/99 physics/notebooks/29_lab.ipynb
+{'path': 'physics/notebooks/29_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 6.447}
+73/99 physics/notebooks/30_lab.ipynb
+{'path': 'physics/notebooks/30_lab.ipynb', 'status': 'passed', 'code_cells': 3, 'png_outputs': 1, 'seconds': 1.905}
+74/99 physics/practice/answers/21_practice.ipynb
+{'path': 'physics/practice/answers/21_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.646}
+75/99 physics/practice/answers/22_practice.ipynb
+{'path': 'physics/practice/answers/22_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.532}
+76/99 physics/practice/answers/23_practice.ipynb
+{'path': 'physics/practice/answers/23_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.464}
+77/99 physics/practice/answers/24_practice.ipynb
+{'path': 'physics/practice/answers/24_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.562}
+78/99 physics/practice/answers/25_practice.ipynb
+{'path': 'physics/practice/answers/25_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.42}
+79/99 physics/practice/answers/26_practice.ipynb
+{'path': 'physics/practice/answers/26_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.406}
+80/99 physics/practice/answers/27_practice.ipynb
+{'path': 'physics/practice/answers/27_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.487}
+81/99 physics/practice/answers/28_practice.ipynb
+{'path': 'physics/practice/answers/28_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.529}
+82/99 physics/practice/answers/29_practice.ipynb
+{'path': 'physics/practice/answers/29_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.58}
+83/99 physics/practice/answers/30_practice.ipynb
+{'path': 'physics/practice/answers/30_practice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.462}
+84/99 industry/notebooks/co2.ipynb
+{'path': 'industry/notebooks/co2.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 2, 'seconds': 3.046}
+85/99 industry/notebooks/elnino.ipynb
+{'path': 'industry/notebooks/elnino.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 2, 'seconds': 3.049}
+86/99 industry/notebooks/grunfeld.ipynb
+{'path': 'industry/notebooks/grunfeld.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 2, 'seconds': 3.094}
+87/99 industry/notebooks/modechoice.ipynb
+{'path': 'industry/notebooks/modechoice.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 2, 'seconds': 3.243}
+88/99 industry/notebooks/nile.ipynb
+{'path': 'industry/notebooks/nile.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 2, 'seconds': 3.176}
+89/99 industry/notebooks/stackloss.ipynb
+{'path': 'industry/notebooks/stackloss.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 2, 'seconds': 2.914}
+90/99 industry/notebooks/wdbc.ipynb
+{'path': 'industry/notebooks/wdbc.ipynb', 'status': 'passed', 'code_cells': 4, 'png_outputs': 2, 'seconds': 3.159}
+91/99 industry/notebooks/wine.ipynb
+{'path': 'industry/notebooks/wine.ipynb', 'status': 'passed', 'code_cells': 5, 'png_outputs': 1, 'seconds': 2.853}
+92/99 industry/answers/co2.ipynb
+{'path': 'industry/answers/co2.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.506}
+93/99 industry/answers/elnino.ipynb
+{'path': 'industry/answers/elnino.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.461}
+94/99 industry/answers/grunfeld.ipynb
+{'path': 'industry/answers/grunfeld.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.42}
+95/99 industry/answers/modechoice.ipynb
+{'path': 'industry/answers/modechoice.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.448}
+96/99 industry/answers/nile.ipynb
+{'path': 'industry/answers/nile.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.543}
+97/99 industry/answers/stackloss.ipynb
+{'path': 'industry/answers/stackloss.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.661}
+98/99 industry/answers/wdbc.ipynb
+{'path': 'industry/answers/wdbc.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.438}
+99/99 industry/answers/wine.ipynb
+{'path': 'industry/answers/wine.ipynb', 'status': 'passed', 'code_cells': 7, 'png_outputs': 0, 'seconds': 1.489}

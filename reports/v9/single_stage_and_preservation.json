@@ -1,0 +1,61 @@
+{
+  "single_stage_returncode": 0,
+  "source_notebooks_data_progress_unchanged": true,
+  "files_checked": 237,
+  "repeat_destination_returncode": 2,
+  "repeat_refused": true,
+  "existing_manifest_unchanged": true,
+  "stdout": "1/1 passed notebooks/00_lab.ipynb\n",
+  "refusal": "NOT COMPLETED: Output already exists; choose a new run directory.\n",
+  "execution": {
+    "mode": "fresh_input_workspace_and_fresh_kernels",
+    "required_prior_reports_copied": false,
+    "learner_assessment": "not_assessed",
+    "order": [
+      "notebooks/00_lab.ipynb"
+    ],
+    "records": [
+      {
+        "path": "notebooks/00_lab.ipynb",
+        "source_sha256": "569121aa971ea162cf7251ea64410b7a1d240f2c636ec3dfa6358a788478d3f1",
+        "status": "passed",
+        "code_cells": 5,
+        "png_outputs": 2,
+        "seconds": 10.154
+      }
+    ],
+    "environment": {
+      "python": "3.13.5",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+      "required": {
+        "numpy": "2.3.5",
+        "scipy": "1.17.0",
+        "pandas": "2.2.3",
+        "matplotlib": "3.10.8",
+        "scikit-learn": "1.8.0",
+        "nbclient": "0.10.4",
+        "nbformat": "5.10.4",
+        "ipykernel": "7.2.0"
+      },
+      "optional": {
+        "ripser": {
+          "version": null,
+          "status": "not_installed_not_tested"
+        },
+        "gudhi": {
+          "version": null,
+          "status": "not_installed_not_tested"
+        },
+        "torch": {
+          "version": "2.10.0+cpu",
+          "status": "available_not_tested"
+        }
+      },
+      "stages": 31,
+      "network_calls": 0,
+      "learner_assessment": "not_assessed"
+    },
+    "passed": 1,
+    "failed": 0
+  }
+}

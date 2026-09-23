@@ -1,0 +1,1092 @@
+[
+  {
+    "stage": 0,
+    "focus": "Read a measurement before calculating with it",
+    "outcomes": [
+      "Identify one observation, one measured feature, one label, and a source identifier.",
+      "Explain the two axes of a table and the three axes of an image collection.",
+      "Produce a small descriptive result with explicit units and a reproducible row selection.",
+      "Distinguish executing a reference solution from demonstrating your own understanding."
+    ],
+    "explanation": "## Begin with a single row\nImagine a notebook containing measurements of flowers. One row represents one recorded specimen. A column such as sepal length is a measurement, expressed in centimetres. A species name is a label. A row identifier tells us which record we used; it is not another measurement of the flower. Before making a graph, say what each of these means.\n\nThe notation `X[i, j]` means: take row `i` and column `j` from an array named `X`. Python starts counting at zero, so `X[0, 1]` is in the first row and second column. A table with 150 observations and four measurements has shape `(150, 4)`. Its shape describes how numbers are arranged, not the physical shape of the flowers.\n\nSelecting measurement columns explicitly avoids a subtle error. If we put an arbitrary specimen number into a Euclidean distance calculation, renumbering the specimens changes the distances. If we put the species label into that calculation, observations may appear close partly because we supplied the answer. Neither is a neutral analysis of the measured features.\n\n## Calculate one statistic by hand\nFor three lengths 2, 3, and 7 centimetres, the mean is `(2+3+7)/3 = 4` centimetres. The mean has the same unit as its inputs. The deviations are -2, -1, and 3 centimetres and sum to zero. This does not establish a distribution, a causal explanation, or representativeness of a population. It is a descriptive calculation on three records.\n\nNow consider two observations `[2, 1]` and `[5, 5]`, with both coordinates in centimetres. Their displacement is `[3, 4]` centimetres and Euclidean distance is `sqrt(3²+4²)=5` centimetres. We have made a choice: differences in these two measurements are being combined using the Euclidean rule. Later stages investigate that choice rather than treating it as the only definition of similarity.\n\n## Read a program as a small argument\nAn import brings a named tool into the notebook. An assignment stores a value under a name. A function applies a rule to inputs and returns an output. An assertion states something that must hold for this particular run. `assert X.shape[1] == 4` checks that there are four selected measurement columns; it does not prove that every measurement was collected correctly.\n\nA result is easier to trust when you can identify its input records and the operation that produced it. Keep the specimen IDs next to your outputs even though they are excluded from the metric. When you change a selection, state the change before running the calculation. Avoid replacing real data with generated values just to obtain a prettier graph.\n\n## The first learning record\nWrite a short answer containing your prediction, the observed output, and one correction to your prediction. A mismatch is useful information. The shipped course has no completed learner assessments, even though its reference notebooks have executed successfully. Your evidence starts with work you actually do, not with inheriting the author's outputs.",
+    "steps": [
+      {
+        "explain": "Load the bundled table. Select only columns whose names declare centimetres. The ID and labels stay available but do not enter X.",
+        "code": "from shape_lab.data import load_iris_data\nframe = load_iris_data()\ncolumns = [c for c in frame.columns if c.endswith('_cm')]\nX = frame[columns].to_numpy()\nprint('table:', frame.shape, 'measurements:', X.shape)\ndisplay(frame.head(3))\nassert X.shape == (150, 4)"
+      },
+      {
+        "explain": "Verify a familiar mean manually, then calculate the corresponding descriptive summaries of the actual records.",
+        "code": "example_cm = np.array([2., 3., 7.])\nassert example_cm.mean() == 4\nsummary = frame[columns].agg(['min', 'mean', 'max'])\ndisplay(summary)\nresult = {'rows': len(frame), 'measurement_columns': columns,\n          'units': 'centimetres', 'labels_used_as_features': False}"
+      },
+      {
+        "explain": "A simple plot lets you inspect individual measurements. It is not evidence that row order is time.",
+        "code": "import matplotlib.pyplot as plt\nplt.figure(figsize=(7, 3.5))\nplt.plot(frame['sample_id'], frame['sepal_length_cm'], '.', markersize=4)\nplt.xlabel('Record ID (not time)'); plt.ylabel('Sepal length (cm)')\nplt.title('One measured feature in the bundled Iris table'); plt.tight_layout(); plt.show()"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "00.T1",
+        "question": "Why is a 150 by 4 array not a statement that the underlying objects live on a four-dimensional manifold?",
+        "answer": "Array width counts selected features. Manifold dimension is a local structural property; neither dimension nor manifold assumptions follow from the table shape."
+      },
+      {
+        "id": "00.T2",
+        "question": "Would adding 1000 to every sample ID change your feature distances? Explain both the correct and incorrect implementations.",
+        "answer": "Correct: IDs are excluded, so distances do not change. Adding a common constant to an incorrectly included ID column also preserves its pairwise differences; that test alone does not expose the mistake. Arbitrarily permuting or rescaling IDs can expose it. IDs remain invalid measurement coordinates even if one translation test passes."
+      }
+    ],
+    "data_role": "Real Iris measurements; the three-number mean is an explicitly constructed arithmetic example.",
+    "prerequisites": [],
+    "title": "Start here: how to learn, run, and question the results",
+    "paths": {
+      "lesson": "lessons/00_lesson.md",
+      "workbook": "workbooks/00_workbook.md",
+      "guided_session": "sessions/00_session.md",
+      "worked_lab": "notebooks/00_lab.ipynb",
+      "consolidation": "consolidation/00_lab.ipynb",
+      "independent_code": "practice/learner/00_practice.ipynb",
+      "answers": "practice/answers/00_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/00_response.md"
+    }
+  },
+  {
+    "stage": 1,
+    "focus": "Why the arithmetic system changes the answer",
+    "outcomes": [
+      "Translate a small matrix into a system of equations.",
+      "Perform a row operation and explain why it preserves the solution set.",
+      "Compare rank over the real numbers and over a prime field.",
+      "Distinguish a numerical calculation on an image from a topological invariant."
+    ],
+    "explanation": "## A matrix is a rule for combining coordinates\nA vector is an ordered list of numbers. A matrix can describe a linear rule: multiply each input coordinate by its column and add the resulting columns. The kernel consists of inputs sent to zero. The image consists of all outputs the rule can produce. Rank is the dimension of that image. Rank–nullity says that input dimension equals kernel dimension plus image dimension.\n\nThe words “dimension” and “zero” refer to a specified arithmetic system. Over the real numbers, two is nonzero and division by two is allowed. In the field F₂, there are only two elements, 0 and 1; `1+1=0`. Subtraction and addition therefore coincide. This is exact arithmetic, not an approximation to real arithmetic.\n\n## Work a complete example\nConsider the three columns `(1,1,0)`, `(1,0,1)`, and `(0,1,1)`. Over F₂ their sum is zero because every coordinate has two ones. The first two are independent: neither is zero and neither equals the other. Consequently the binary rank is two and the kernel has dimension one. The all-ones input is the nonzero kernel vector.\n\nOver the real numbers, the sum is `(2,2,2)`, not zero. The matrix determinant is -2, so its real rank is three. A software call that computes real-valued rank can therefore be completely correct and still answer the wrong question for a binary homology calculation.\n\nFor F₃, arithmetic is modulo three. Two has inverse two because `2×2=4`, which leaves remainder one on division by three. Row reduction must multiply a pivot row by the inverse of its pivot before eliminating other entries. In a prime field every nonzero element has an inverse. Modulo four, two does not, so a general “modulo any integer” implementation cannot pretend that the result is a field.\n\n## What a row operation proves\nSwapping two equations does not change their simultaneous solutions. Multiplying one equation by a nonzero field element is reversible. Adding a multiple of one equation to another is reversible. Those facts justify elimination. The algorithm is not correct because its output looks triangular; it is correct because each allowed transformation preserves the relevant linear relations.\n\nThe real digit image used below is simply a matrix of intensities. Its matrix rank can change with a coefficient convention, but that rank is not the number of loops in the digit. Homology will require a boundary map constructed from a complex. We practice exact arithmetic now so that this additional construction is intelligible later.\n\n## Know when to return to a primer\nIf matrix multiplication feels unfamiliar, calculate one column combination before running anything. If the proof uses a word such as “independent,” write its definition and test a two-vector example. The efficient route is not to skip the missing definition; it is to repair precisely that definition and then return to the current argument.",
+    "steps": [
+      {
+        "explain": "Construct the three-column example and compare its ranks using two explicitly different arithmetic systems.",
+        "code": "from shape_lab.audits import rank_prime\nA = np.array([[1, 1, 0], [1, 0, 1], [0, 1, 1]])\nprint('real rank:', np.linalg.matrix_rank(A))\nprint('rank over F2:', rank_prime(A, 2))\nprint('rank over F3:', rank_prime(A, 3))\nassert (np.linalg.matrix_rank(A), rank_prime(A, 2), rank_prime(A, 3)) == (3, 2, 3)"
+      },
+      {
+        "explain": "Check the kernel claim directly. The same stored integers are interpreted in two different ways.",
+        "code": "v = np.ones(3, dtype=int)\nprint('A v over integers:', A @ v)\nprint('A v modulo 2:', (A @ v) % 2)\nassert np.all((A @ v) % 2 == 0)\nassert not np.all(A @ v == 0)"
+      },
+      {
+        "explain": "Use a real digit as an arithmetic object without calling its image-matrix rank a hole count.",
+        "code": "from shape_lab.data import digit_example\nimage, sample_id = digit_example(0)\nresult = {'sample_id': sample_id, 'real_matrix_rank': int(np.linalg.matrix_rank(image)),\n          'binary_matrix_rank': rank_prime(image, 2),\n          'interpretation': 'Rank of the intensity matrix; NOT image homology.'}\nprint(result)"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "01.T1",
+        "question": "For A=[2], calculate kernel dimension over F2 and F3.",
+        "answer": "The map F2→F2 is zero, so its kernel has dimension one. Over F3 multiplication by two is invertible, so the kernel is zero-dimensional."
+      },
+      {
+        "id": "01.T2",
+        "question": "Why is a real-valued SVD threshold irrelevant to the exact F2 rank of a zero–one matrix?",
+        "answer": "SVD approximates real singular values. Binary rank is a question about linear relations in a different field and uses exact modular arithmetic, not a floating-point tolerance."
+      }
+    ],
+    "data_role": "Real training digit intensities plus an exact, constructed three-by-three matrix.",
+    "prerequisites": [
+      0
+    ],
+    "title": "Mathematical language, proofs, and linear algebra",
+    "paths": {
+      "lesson": "lessons/01_lesson.md",
+      "workbook": "workbooks/01_workbook.md",
+      "guided_session": "sessions/01_session.md",
+      "worked_lab": "notebooks/01_lab.ipynb",
+      "consolidation": "consolidation/01_lab.ipynb",
+      "independent_code": "practice/learner/01_practice.ipynb",
+      "answers": "practice/answers/01_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/01_response.md"
+    }
+  },
+  {
+    "stage": 2,
+    "focus": "Separate units, distance, and topology",
+    "outcomes": [
+      "Check the metric axioms on an explicit counterexample.",
+      "Explain why positive coordinate rescaling preserves Euclidean-space topology but changes distance scale.",
+      "Compare nearest observations before and after a declared feature rescaling.",
+      "State the difference between distinct locations and distinct observation IDs."
+    ],
+    "explanation": "## Distance is a rule, not a picture\nA metric takes two points and returns a nonnegative number. It is zero exactly when the points are equal, symmetric in its arguments, and satisfies the triangle inequality. An open ball consists of points strictly closer than a chosen radius. Open sets in a metric space are sets around each of whose points some open ball fits inside the set.\n\nFor real numbers 0, 1, and 2, squared distance gives `d(0,2)=4` but `d(0,1)+d(1,2)=2`. That violates the triangle inequality. Squared distances are useful in other algorithms, but usefulness does not make them a metric. In contrast, absolute distance gives equality in this example and satisfies the axiom in general.\n\n## Change a unit deliberately\nTake coordinates `(length, width)` in centimetres. Multiplying only the first coordinate by ten gives `T(x,y)=(10x,y)`. This transformation is continuous and has continuous inverse `(u,v)→(u/10,v)`, so it is a homeomorphism of the plane. It preserves the Euclidean topology, but not numerical distances, round balls, or all nearest-neighbor relationships.\n\nThe distinction becomes crucial for persistence. Topology studies qualitative properties of a specified space. A Rips filtration uses quantitative distances. A transformation can preserve the topology of the ambient space and still change a dataset's persistence diagram. You should never infer full persistence invariance from homeomorphism alone.\n\n## A finite sample is not the curve it resembles\nFor a finite set of distinct points, fix one point and find the smallest positive distance to the others. A ball with smaller radius contains only the chosen point. Every singleton is therefore open in the induced topology, and every subset is a union of open singletons. This finite space is discrete.\n\nThe claim does not mean a point-cloud analysis is useless. It means that recovering a continuous-looking structure requires an additional model, such as connecting nearby points and filling certain collections of connections. We will explicitly construct that model in Stage 07.\n\nTwo separate records can have identical feature coordinates. Euclidean distance then vanishes between distinct record IDs. On the ID set this is a pseudometric, not a metric. Retaining both records may be important for provenance. Treating duplicate locations as one point may be appropriate for another question. State the choice instead of letting an implicit deduplication determine it.\n\n## Make the computation answer your question\nIn this notebook, select a small group of actual Iris records and rescale one feature. The scale change is intentional and not learned from test labels. Observe changed distances; do not demand that the nearest neighbor must change for every query. An invariant check and a sensitivity check answer different questions. A conclusion that depends on one arbitrary coordinate scale should be reported as such.",
+    "steps": [
+      {
+        "explain": "Show exactly why squared Euclidean distance fails one metric axiom.",
+        "code": "left = (0 - 2)**2\nright = (0 - 1)**2 + (1 - 2)**2\nprint('squared-distance triangle inequality would require', left, '<=', right)\nassert left > right"
+      },
+      {
+        "explain": "Select real measurements and compute pairwise distances with no labels in the feature array.",
+        "code": "from shape_lab.data import load_iris_data\nfrom scipy.spatial.distance import cdist\nframe = load_iris_data().iloc[::5].copy()\ncolumns = [c for c in frame if c.endswith('_cm')]\nX = frame[columns].to_numpy()\nD = cdist(X, X)\nY = X.copy(); Y[:, 0] *= 10\nD_scaled = cdist(Y, Y)\nnp.fill_diagonal(D, np.inf); np.fill_diagonal(D_scaled, np.inf)\nchanged = np.argmin(D, axis=1) != np.argmin(D_scaled, axis=1)\nprint('changed nearest-neighbor selections:', changed.sum(), 'of', len(X))"
+      },
+      {
+        "explain": "A translation is an isometry: it must preserve these Euclidean distances. Rescaling one coordinate is not.",
+        "code": "assert np.allclose(cdist(X + 100, X + 100), cdist(X, X))\nassert not np.allclose(cdist(Y, Y), cdist(X, X))\nresult = {'records': len(X), 'rescaled_feature': columns[0], 'multiplier': 10,\n          'nearest_neighbor_changes': int(changed.sum()),\n          'translation_distance_check': 'passed'}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "02.T1",
+        "question": "Does multiplying all distances by three preserve the filtration at the same numeric threshold?",
+        "answer": "No. The same complex appears after multiplying the threshold by three. Persistence coordinates scale, while the ordering of simplex appearances is preserved."
+      },
+      {
+        "id": "02.T2",
+        "question": "A feature table has two identical rows with different IDs. Which axiom fails when Euclidean distance is declared a metric on IDs?",
+        "answer": "Identity of indiscernibles: distinct IDs have zero distance. It is a pseudometric on IDs, although Euclidean distance remains a metric on distinct feature locations."
+      }
+    ],
+    "data_role": "Real Iris measurements, plus the exact counterexample 0,1,2.",
+    "prerequisites": [
+      1
+    ],
+    "title": "Closeness, metrics, neighborhoods, and topologies",
+    "paths": {
+      "lesson": "lessons/02_lesson.md",
+      "workbook": "workbooks/02_workbook.md",
+      "guided_session": "sessions/02_session.md",
+      "worked_lab": "notebooks/02_lab.ipynb",
+      "consolidation": "consolidation/02_lab.ipynb",
+      "independent_code": "practice/learner/02_practice.ipynb",
+      "answers": "practice/answers/02_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/02_response.md"
+    }
+  },
+  {
+    "stage": 3,
+    "focus": "A continuous map can discard the information you need",
+    "outcomes": [
+      "Use inverse images, rather than pictures alone, to define continuity.",
+      "Distinguish a continuous bijection from a homeomorphism.",
+      "Construct a projection that sends different inputs to the same output.",
+      "Explain why a finite numerical check cannot prove an infinite-space theorem."
+    ],
+    "explanation": "## Maps have a domain and a codomain\nA function assigns one output to each input in its domain. A continuous map respects the declared topologies: the inverse image of every open codomain set must be open in the domain. “Inverse image” does not require an inverse function. For `f(x)=x²`, the inverse image of `(1,4)` is `(-2,-1) ∪ (1,2)` even though the function is not one-to-one on the real line.\n\nA homeomorphism is a bijection for which both the map and its inverse are continuous. The word “both” cannot be dropped. Give the same two-element set the discrete topology in the domain and the indiscrete topology in the codomain. The identity is a continuous bijection: the only codomain opens are empty and the whole set. Its inverse is not continuous because a singleton is open on one side but not the other.\n\n## Work a loss-of-information example\nProjection `P(x,y)=x` is continuous. Points `(2,1)` and `(2,9)` both map to 2. No function of the projected value alone can recover which original point was used. This is not a small numerical error; the map has discarded information. A linearly projected representation can still be useful, but it is not automatically topologically equivalent to the original object.\n\nThe real-data experiment drops three of the four Iris measurements. Records with the same first coordinate can collapse together even when their full measurement vectors differ. We search for such a pair and display it. The example illustrates noninjectivity. It does not establish the entire topology of the distribution from which flowers were sampled.\n\n## Compactness is about every open cover\nAn open cover is a collection of open sets whose union contains the space. Compactness means that every such cover has a finite subcollection still covering it. This definition includes an “every,” so checking a handful of covers cannot prove it in an infinite space. In finite spaces compactness is automatic: select at most one covering set for each point.\n\nFor a compact space X and a Hausdorff space Y, a continuous bijection `f:X→Y` is a homeomorphism. The proof route is: closed subsets of X are compact; their continuous images are compact; compact subsets of a Hausdorff space are closed; consequently f maps closed sets to closed sets, which makes its inverse continuous. The main lesson and proof atlas develop these steps. Do not replace this reasoning with a plot of a smooth-looking curve.\n\n## What the machine can establish here\nThe finite topology checker exhaustively evaluates the relevant sets for its tiny finite inputs. That is a complete check for those declared finite examples. The projection calculation is an exact counterexample to injectivity. Neither is a numerical proof of all theorems about arbitrary spaces. Learning to match the strength of evidence to the statement is part of learning mathematics.",
+    "steps": [
+      {
+        "explain": "Check a continuous bijection whose inverse is not continuous on the declared two-point topologies.",
+        "code": "from shape_lab.topology import powerset, is_continuous\nX = [0, 1]\ndiscrete = powerset(X); indiscrete = [set(), set(X)]\nidentity = {0: 0, 1: 1}\nforward = is_continuous(X, discrete, X, indiscrete, identity)\nbackward = is_continuous(X, indiscrete, X, discrete, identity)\nprint('forward continuous:', forward, 'inverse continuous:', backward)\nassert forward and not backward"
+      },
+      {
+        "explain": "Find actual measurement vectors that collide when only sepal length is retained.",
+        "code": "from shape_lab.data import load_iris_data\nframe = load_iris_data()\ncolumns = [c for c in frame if c.endswith('_cm')]\npair = None\nfor _, group in frame.groupby('sepal_length_cm'):\n    unique = group.drop_duplicates(columns)\n    if len(unique) >= 2:\n        pair = unique.iloc[:2]; break\nassert pair is not None\ndisplay(pair[['sample_id'] + columns])\nX = pair[columns].to_numpy()\nprint('full distance:', np.linalg.norm(X[0]-X[1]))\nprint('projected distance:', abs(X[0,0]-X[1,0]))"
+      },
+      {
+        "explain": "Store the precise property demonstrated, not an exaggerated conclusion about the whole dataset.",
+        "code": "result = {'forward_continuous': bool(forward), 'inverse_continuous': bool(backward),\n          'colliding_sample_ids': pair.sample_id.astype(int).tolist(),\n          'claim': 'Declared projection is noninjective on this pair; no population-topology claim.'}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "03.T1",
+        "question": "Why does P(x,y)=x have an inverse image operation even though it has no two-sided inverse?",
+        "answer": "The inverse image of a set collects every input whose output lies in that set; this is defined for any function. A two-sided inverse requires bijectivity."
+      },
+      {
+        "id": "03.T2",
+        "question": "Does a successful exhaustive finite-space check prove the analogous statement for all compact spaces?",
+        "answer": "No. It verifies the enumerated finite example. An arbitrary-space statement needs its hypotheses and a general argument; infinite quantifiers are not exhausted by the finite test."
+      }
+    ],
+    "data_role": "Exact finite topology plus a noninjective projection demonstrated on actual Iris records.",
+    "prerequisites": [
+      2
+    ],
+    "title": "Continuity, homeomorphisms, connectedness, and compactness",
+    "paths": {
+      "lesson": "lessons/03_lesson.md",
+      "workbook": "workbooks/03_workbook.md",
+      "guided_session": "sessions/03_session.md",
+      "worked_lab": "notebooks/03_lab.ipynb",
+      "consolidation": "consolidation/03_lab.ipynb",
+      "independent_code": "practice/learner/03_practice.ipynb",
+      "answers": "practice/answers/03_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/03_response.md"
+    }
+  },
+  {
+    "stage": 4,
+    "focus": "Symmetry preserves some things, not everything",
+    "outcomes": [
+      "Calculate a rotation and reflection and show that their order can matter.",
+      "Distinguish a group action from a label-preserving data augmentation assumption.",
+      "Explain homotopy using an annulus and a circle.",
+      "Identify what prevents a proposed deformation from being well defined."
+    ],
+    "explanation": "## Combination needs rules\nA group is a set with an associative operation, an identity, and an inverse for every element. Rotations and reflections of a square provide a small example. Applying two symmetries in succession is the operation. Doing nothing is the identity. Undoing a symmetry gives its inverse. The transformation must map the square to itself; an arbitrary stretch is not one of these square symmetries.\n\nTake the quarter-turn `R(x,y)=(-y,x)` and reflection `F(x,y)=(-x,y)`. Applied to `(1,0)`, first F then R gives `(0,-1)`. First R then F gives `(0,1)`. Thus `RF` and `FR` differ. “Group” does not mean “commutative.” When composing camera transformations later, the same attention to order will matter.\n\n## An image operation is not a scientific guarantee\nRotating an 8 by 8 array through 90 degrees permutes its entries. Its intensity sum and histogram remain unchanged. Four such rotations return the original array. These are exact properties of the array operation. The semantic label need not be unchanged. Rotating a digit can make it ambiguous or resemble a different symbol. A mathematical group action is not, by itself, a justification for applying label-preserving augmentation in machine learning.\n\n## Deformation is a continuous family of maps\nFor an annulus `1 ≤ ||x|| ≤ 2`, define `H(x,t)=((1-t)+t/||x||)x` for `0≤t≤1`. At time zero this is x. At time one it lies on the unit circle. If x already lies on that circle, it stays fixed. Its radius is `(1-t)||x||+t`, which stays between one and two. Hence this is a deformation retraction of the annulus onto its inner circle.\n\nThe same formula cannot retract the entire disk onto its boundary: it is undefined at x=0. Simply ignoring that point would change the domain, not fix the argument. This is a useful habit: locate the exact obstruction to a tempting formula rather than saying it “looks wrong.”\n\nA loop is a path whose endpoints agree. Homotopy classes of based loops, with concatenation, form the fundamental group. On the circle, winding number records the integer number of turns. Homology later makes certain questions easier to compute by passing to algebraic summaries, but it does not preserve every distinction present in the fundamental group.\n\n## What to show before advancing\nCalculate the two transformation orders by hand. Explain the domain restriction in the annulus formula. Then examine the real digit under array rotations. State separately which numerical properties are unchanged and which semantic conclusions are unsupported. This prepares you to evaluate both mathematical invariance and domain-specific assumptions.",
+    "steps": [
+      {
+        "explain": "Use two explicit matrices to demonstrate noncommutativity.",
+        "code": "R90 = np.array([[0, -1], [1, 0]])\nF = np.array([[-1, 0], [0, 1]])\np = np.array([1, 0])\nprint('R F p:', R90 @ F @ p, 'F R p:', F @ R90 @ p)\nassert not np.array_equal(R90 @ F, F @ R90)"
+      },
+      {
+        "explain": "Apply the array action to a real digit. Preserve numerical invariants without assuming the label remains valid.",
+        "code": "from shape_lab.data import digit_example\nimage, sample_id = digit_example(6)\nrotated = np.rot90(image)\nassert np.array_equal(np.rot90(image, 4), image)\nassert image.sum() == rotated.sum()\nassert np.array_equal(np.sort(image.ravel()), np.sort(rotated.ravel()))\nimport matplotlib.pyplot as plt\nplt.figure(figsize=(4, 4)); plt.imshow(rotated)\nplt.title('Rotated real digit: label invariance is not assumed'); plt.axis('off'); plt.show()"
+      },
+      {
+        "explain": "Numerically check the annulus radius formula for selected points; the text supplies the all-points argument.",
+        "code": "radii = np.array([1., 1.5, 2.])\nfor t in [0., .25, .5, 1.]:\n    moved = (1-t)*radii + t\n    assert np.all((moved >= 1) & (moved <= 2))\nresult = {'sample_id': sample_id, 'rotation_order_test': 'passed',\n          'label_preservation_claimed': False, 'annulus_check': 'selected radii; proof in text'}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "04.T1",
+        "question": "Does norm preservation guarantee that two transformations commute?",
+        "answer": "No. Rotations and reflections can preserve norms while their composition order changes the result. The displayed R and F supply an explicit counterexample."
+      },
+      {
+        "id": "04.T2",
+        "question": "Why cannot the radial formula retract a full disk onto its circle boundary?",
+        "answer": "It divides by ||x|| and is undefined at the center. A valid deformation must be continuous and defined at every point of the stated domain for every time."
+      }
+    ],
+    "data_role": "Real digit under exact array transformations; constructed matrices and annulus radii.",
+    "prerequisites": [
+      3
+    ],
+    "title": "Groups, symmetries, paths, loops, and homotopy",
+    "paths": {
+      "lesson": "lessons/04_lesson.md",
+      "workbook": "workbooks/04_workbook.md",
+      "guided_session": "sessions/04_session.md",
+      "worked_lab": "notebooks/04_lab.ipynb",
+      "consolidation": "consolidation/04_lab.ipynb",
+      "independent_code": "practice/learner/04_practice.ipynb",
+      "answers": "practice/answers/04_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/04_response.md"
+    }
+  },
+  {
+    "stage": 5,
+    "focus": "Choose the object before counting its holes",
+    "outcomes": [
+      "Distinguish closed-square pixel geometry from a graph of pixel centers.",
+      "Count vertices, edges, and faces of a small cell complex.",
+      "Explain why diagonal touching connects closed squares.",
+      "Declare the intensity threshold before interpreting a real image."
+    ],
+    "explanation": "## Start with one pixel\nA pixel can be modeled in several ways: a point at its center, a square region, or a vertex carrying a value in another complex. These choices are not equivalent descriptions. Our image model is the union of closed unit squares selected by an intensity rule. Closed means that the boundary belongs to the square. Two squares meeting only at one corner therefore intersect and their union is connected.\n\nIn contrast, a graph connecting pixel centers only horizontally and vertically leaves a diagonal pair disconnected. That graph is a legitimate object; it is simply a different object. Before arguing that two programs disagree about topology, compare the objects and connectivity conventions they actually use.\n\n## Count a two-square example\nOne square has four vertices, four edges, and one face, so its Euler characteristic is `4−4+1=1`. Two squares sharing an entire edge have six distinct vertices, seven distinct edges, and two faces: `6−7+2=1`. Two squares meeting only at one corner have seven vertices, eight edges, and two faces: `7−8+2=1`. Both unions are connected and have no planar hole.\n\nCounting each square's four vertices separately would double-count shared pieces. A complex records shared faces by identity, not by coincident drawings. Our independent pixel checker therefore collects distinct vertex and edge keys before computing `V−E+F`.\n\n## Put a hole in the example\nSelect all eight squares surrounding the middle square in a three-by-three grid, leaving the center unselected. The union is connected and encloses one missing square. It has 16 vertices, 24 edges, and 8 square faces, giving Euler characteristic zero. For this finite planar complex, H₂ is zero and `χ=β₀−β₁`; thus `β₁=1−0=1`.\n\nWhen we split each square into two triangles, we add a diagonal edge and replace one square face with two triangle faces. The change in `V−E+F` is `0−1+1=0`. More importantly, this subdivision preserves the underlying square region. We can use triangulated boundary matrices and compare them with direct square-cell counting.\n\n## Now threshold a real image\nA threshold creates a binary selection from measured intensities. In the digit course, bright strokes enter first through `f=1−intensity/16`. Selecting intensities at least 8 is equivalent to selecting `f≤0.5`. Every term needs a declared convention: bright or dark first, strict or non-strict inequality, closed squares or center points, and whether the exterior is padded.\n\nThe answer is topology of this chosen thresholded image model. It is not proof that every handwritten instance of the corresponding numeral has that topology. A low-resolution stroke can join diagonally or disappear at a threshold. Later persistence replaces a single arbitrary threshold with an entire changing family, but it does not remove the need to define that family.",
+    "steps": [
+      {
+        "explain": "Check three declared square-cell objects using connectivity and Euler counting, without boundary matrices.",
+        "code": "from shape_lab.audits import pixel_betti_oracle\nring = np.ones((3, 3), dtype=bool); ring[1, 1] = False\nprint('ring:', pixel_betti_oracle(ring))\nprint('diagonal pair:', pixel_betti_oracle(np.eye(2, dtype=bool)))\nassert pixel_betti_oracle(ring) == (1, 1)\nassert pixel_betti_oracle(np.eye(2, dtype=bool)) == (1, 0)"
+      },
+      {
+        "explain": "Construct the declared foreground from one real training digit.",
+        "code": "from shape_lab.data import digit_example\nimage, sample_id = digit_example(8)\nthreshold = 8\nforeground = image >= threshold\nb0, b1 = pixel_betti_oracle(foreground)\nprint('record:', sample_id, 'threshold:', threshold, 'Betti:', (b0, b1))\nimport matplotlib.pyplot as plt\nplt.figure(figsize=(4, 4)); plt.imshow(foreground)\nplt.title('Declared closed-square foreground'); plt.axis('off'); plt.show()"
+      },
+      {
+        "explain": "Record conventions next to the numeric answer.",
+        "code": "result = {'sample_id': sample_id, 'foreground_rule': 'intensity >= 8',\n          'object': 'union of closed square cells', 'corner_touching_connected': True,\n          'betti': [b0, b1], 'claim': 'One thresholded image, not an ideal numeral.'}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "05.T1",
+        "question": "For two diagonally touching selected pixels, why do a four-neighbor center graph and a closed-square union disagree about H0?",
+        "answer": "The graph omits a connection, while the closed squares share a corner. They encode different spaces; neither output alone resolves which representation the application needs."
+      },
+      {
+        "id": "05.T2",
+        "question": "Why does adding an interior diagonal to triangulate a square leave Euler characteristic unchanged?",
+        "answer": "Vertices are unchanged, edges increase by one, and the one square face is replaced by two triangle faces, increasing face count by one. The changes cancel in V−E+F."
+      }
+    ],
+    "data_role": "Real training digit foreground; exact ring and diagonal-pair controls.",
+    "prerequisites": [
+      4
+    ],
+    "title": "Surfaces, simplices, triangulations, and pixel geometry",
+    "paths": {
+      "lesson": "lessons/05_lesson.md",
+      "workbook": "workbooks/05_workbook.md",
+      "guided_session": "sessions/05_session.md",
+      "worked_lab": "notebooks/05_lab.ipynb",
+      "consolidation": "consolidation/05_lab.ipynb",
+      "independent_code": "practice/learner/05_practice.ipynb",
+      "answers": "practice/answers/05_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/05_response.md"
+    }
+  },
+  {
+    "stage": 6,
+    "focus": "Learn what coefficient fields reveal and forget",
+    "outcomes": [
+      "Construct an oriented integer boundary and check boundary-of-boundary.",
+      "Calculate how a coefficient change affects a cellular boundary map.",
+      "Independently verify image homology across multiple thresholds.",
+      "Distinguish Betti numbers from full integer homology, including torsion."
+    ],
+    "explanation": "## Revisit the triangle with signs\nWith increasing vertex order, the oriented boundary of `[0,1,2]` is `[1,2]−[0,2]+[0,1]`. Taking another boundary gives `(2−1)−(2−0)+(1−0)=0`. Every vertex cancels. The sign comes from the position of the removed vertex. Over F₂, minus one equals plus one, so the signed formula reduces to the binary rule you already used.\n\nThis demonstrates why adding a prime-field rank routine alone is not enough to generalize binary homology. The boundary matrices must also use the correct orientation signs. A zero–one triangle matrix copied unchanged into F₃ generally loses the cancellation property.\n\n## Work a coefficient-sensitive example\nThe standard cellular description of the real projective plane has one cell in each of dimensions zero, one, and two. Its cellular boundary maps are `d₁=0` and `d₂=[2]`. This is a compact *cellular* description, not the simplicial triangle matrix from the earlier lab.\n\nOver F₂, the entry two becomes zero. Both boundary ranks vanish, so the Betti numbers are `(1,1,1)`. Over F₃, multiplication by two is invertible. The rank of d₂ is one, giving `(1,0,0)`. A coefficient change genuinely changes the answer because the question has changed.\n\nOver the integers, the one-dimensional cycles form Z and the boundaries form 2Z. Their quotient is Z/2Z: a nonzero class whose double is zero. This is torsion. It has no free integer rank, so a list of integer Betti numbers alone does not describe the full homology group. The two-dimensional integer kernel of multiplication by two is zero. We derive these facts directly from this specified cellular chain complex; we do not claim to have implemented a general integer homology solver.\n\n## Check a real image two ways\nFor the declared closed-square image object, compute β₀ by walking the square-connectivity graph. Count distinct square vertices and edges to compute Euler characteristic. Because this is a finite planar square complex with no two-dimensional homology, infer `β₁=β₀−χ`. That route does not use persistence reduction or the simplicial rank function.\n\nIndependently, triangulate the same thresholded square union and use the boundary matrices. Agreement over many thresholds is more informative than comparing two calls to the same routine under different names. It is still software evidence, not proof that the sensor captured every physical feature.\n\n## Make the quotient concrete\nWhen a cycle is itself a boundary, it represents zero in homology. The chain has not vanished; the equivalence relation identifies its homology class with zero. Saying “the loop disappeared” is a shorthand for that algebraic statement. Keep the chain, cycle, boundary, and equivalence class separate in your own explanation.\n\nThe proof atlas and external algebraic-topology reading provide the path to deeper theory. Complete the finite hand calculations first, then use the field-sensitive example to understand why more general coefficient systems require more than changing one library flag.",
+    "steps": [
+      {
+        "explain": "Compute the cellular projective-plane example directly in two prime fields. These are cellular matrices, not a new triangulation.",
+        "code": "from shape_lab.audits import rank_prime, oriented_boundary, pixel_betti_oracle\ncellular = {}\nfor p in [2, 3]:\n    r2 = rank_prime([[2]], p)\n    cellular[p] = [1, 1-r2, 1-r2]\nprint(cellular)\nassert cellular == {2: [1, 1, 1], 3: [1, 0, 0]}"
+      },
+      {
+        "explain": "Check the oriented triangle identity over the integers before reducing to any field.",
+        "code": "from shape_lab.algebra import closure\nK = closure([(0, 1, 2)])\nd1 = oriented_boundary(K, 1); d2 = oriented_boundary(K, 2)\nprint('d1:', d1); print('d2:', d2)\nassert np.all(d1 @ d2 == 0)"
+      },
+      {
+        "explain": "Compare two distinct computational routes on a real digit at every integer intensity threshold.",
+        "code": "from shape_lab.data import digit_example\nfrom shape_lab.persistence import pixel_filtration\nfrom shape_lab.algebra import betti_numbers\nimage, sample_id = digit_example(8)\nfiltration = pixel_filtration(1-image/16.)\nrows = []\nfor threshold in range(17):\n    chosen = [s for s, t in filtration if t <= 1-threshold/16.]\n    by_chains = betti_numbers(chosen, 1)\n    by_cells = list(pixel_betti_oracle(image >= threshold))\n    assert by_chains == by_cells\n    rows.append([threshold, *by_cells])\nimport pandas as pd\ndisplay(pd.DataFrame(rows, columns=['intensity threshold', 'beta0', 'beta1']))\nresult = {'sample_id': sample_id, 'independent_threshold_comparisons': len(rows),\n          'all_agree': True, 'cellular_field_example': cellular}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "06.T1",
+        "question": "Why must signed boundaries accompany an F3 rank routine?",
+        "answer": "The integer boundary uses alternating orientation signs. Those signs remain distinct modulo three. Omitting them can make boundary-of-boundary nonzero, so the purported homology quotient need not be defined."
+      },
+      {
+        "id": "06.T2",
+        "question": "For the integer map Z→Z, n↦2n, what are its kernel and cokernel?",
+        "answer": "The kernel is zero because 2n=0 implies n=0. The image is 2Z, and the cokernel is Z/2Z. The finite torsion quotient cannot be summarized by a positive free rank."
+      }
+    ],
+    "data_role": "Real training digit threshold sweep; exact oriented simplicial and specified cellular-chain controls.",
+    "prerequisites": [
+      5
+    ],
+    "title": "Chains, boundaries, homology, and Betti numbers",
+    "paths": {
+      "lesson": "lessons/06_lesson.md",
+      "workbook": "workbooks/06_workbook.md",
+      "guided_session": "sessions/06_session.md",
+      "worked_lab": "notebooks/06_lab.ipynb",
+      "consolidation": "consolidation/06_lab.ipynb",
+      "independent_code": "practice/learner/06_practice.ipynb",
+      "answers": "practice/answers/06_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/06_response.md"
+    }
+  },
+  {
+    "stage": 7,
+    "focus": "Understand why the same points give different complexes",
+    "outcomes": [
+      "Derive edge and face entry times from a declared filtration convention.",
+      "Explain pairwise overlap versus a common intersection.",
+      "Build a small Rips filtration and verify that faces appear no later than cofaces.",
+      "Use a real point cloud without treating its label columns as geometry."
+    ],
+    "explanation": "## Connect first, then decide what is filled\nAt a fixed Rips threshold ε, join every pair of observations separated by at most ε. A collection of vertices forms a simplex when every pair in the collection satisfies that rule. Three connected vertices therefore bring a filled triangle, not merely its three-edge outline. Four mutually connected vertices bring a tetrahedron when that dimension is included.\n\nThe filtration value of a simplex is its largest pairwise distance. A face cannot have a larger diameter than the simplex containing it, so the face necessarily appears no later. This monotonicity is the property that lets homology map consistently from one stage to the next.\n\n## Compare an equilateral triangle\nUse three points forming an equilateral triangle of side one. In the edge-length Rips convention, all three edges and the filled triangle appear at ε=1. There is no positive-length one-dimensional persistence interval from the outline: the filling arrives at the same time.\n\nFor a Čech complex constructed from radius-r balls, pairwise intersections begin at r=1/2. A common intersection of all three balls begins at the circumradius r=1/√3. Thus a Čech loop exists between those values, under the corresponding closed-ball convention. Pairwise intersection is not the same as a common intersection. Comparing the raw numbers one and one-half without explaining edge-length versus ball-radius conventions confuses two scales.\n\nThis example is about an explicit finite construction. A nerve theorem can connect a suitable cover to its union, but its hypotheses matter. A graph drawn on arbitrary data does not inherit such a theorem merely because it resembles overlapping circles.\n\n## Read the real-data filtration\nChoose a small number of Iris observations with their four measurements. For each threshold, count vertices, edges, and triangles and compute the requested homology. Use the same points at every threshold. If the point sample itself changes, you no longer have the simple nested filtration that this calculation assumes.\n\nA larger threshold never removes simplices, but it can both create and destroy homology classes. An edge might join components or create a cycle. A triangle can fill a cycle. Counting more edges therefore does not imply more persistent loops.\n\nThe educational enumerator is intentionally small. Combinations grow quickly even when the coordinate dimension is modest. Computing H1 requires triangles; computing H2 requires tetrahedra that can kill two-dimensional cycles. Later production libraries improve efficiency, but they do not eliminate these mathematical requirements.",
+    "steps": [
+      {
+        "explain": "Calculate the two geometric scales before asking any library for a persistence diagram.",
+        "code": "edge_rips = 1.\ncech_pair_radius = .5\ncech_triple_radius = 1/np.sqrt(3)\nprint('Rips edge scale:', edge_rips)\nprint('Cech radii:', cech_pair_radius, cech_triple_radius)\nassert cech_triple_radius > cech_pair_radius"
+      },
+      {
+        "explain": "Build a filtration from actual measurements. The stored tuple records each simplex and its entry value.",
+        "code": "from shape_lab.data import load_iris_data\nfrom shape_lab.persistence import rips_filtration\nfrom shape_lab.algebra import betti_numbers\nframe = load_iris_data().iloc[::15]\nX = frame[[c for c in frame if c.endswith('_cm')]].to_numpy()\nfiltration = rips_filtration(X, max_homology=1)\nvalues = dict(filtration)\nfrom itertools import combinations\nfor simplex, value in filtration:\n    if len(simplex)>1:\n        assert all(values[face] <= value for face in combinations(simplex, len(simplex)-1))\nprint('records:', len(X), 'stored simplices:', len(filtration))"
+      },
+      {
+        "explain": "Compare several nested complexes. Their simplex counts are monotone; their Betti numbers need not be.",
+        "code": "scales = [0., .5, 1., 2., 5., 10.]\nrows = []\nfor scale in scales:\n    K = [s for s,t in filtration if t <= scale]\n    rows.append([scale, len(K), *betti_numbers(K, 1)])\nimport pandas as pd\ndisplay(pd.DataFrame(rows, columns=['edge threshold (cm)', 'simplices', 'beta0', 'beta1']))\nassert np.all(np.diff([row[1] for row in rows]) >= 0)\nresult = {'sample_ids': frame.sample_id.astype(int).tolist(), 'filtration_rows': rows,\n          'scale_convention': 'maximum pairwise Euclidean edge length in selected cm features'}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "07.T1",
+        "question": "Can a Rips filtration on an equilateral three-point cloud have a positive-length H1 bar?",
+        "answer": "Not in the full clique construction under the stated edge-length convention: the triangle enters with its edges. A graph-only construction can retain the loop, but it is a different complex."
+      },
+      {
+        "id": "07.T2",
+        "question": "Why do we need (k+1)-simplices when computing Hk?",
+        "answer": "They contribute the image of the next boundary map and can make k-cycles into boundaries. Omitting them may report classes that would be filled in the intended complex."
+      }
+    ],
+    "data_role": "Real Iris point sample; exact equilateral-triangle scale derivation.",
+    "prerequisites": [
+      6
+    ],
+    "title": "From data to shape: Rips, Čech, alpha, and filtrations",
+    "paths": {
+      "lesson": "lessons/07_lesson.md",
+      "workbook": "workbooks/07_workbook.md",
+      "guided_session": "sessions/07_session.md",
+      "worked_lab": "notebooks/07_lab.ipynb",
+      "consolidation": "consolidation/07_lab.ipynb",
+      "independent_code": "practice/learner/07_practice.ipynb",
+      "answers": "practice/answers/07_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/07_response.md"
+    }
+  },
+  {
+    "stage": 8,
+    "focus": "Read a barcode as a history, not a collection of scores",
+    "outcomes": [
+      "Derive the square filtration and its positive-length interval.",
+      "Explain half-open interval endpoints and zero-length bars.",
+      "Cross-check barcode Betti counts against thresholded real images.",
+      "Distinguish an unpaired class in a truncated filtration from a globally essential class."
+    ],
+    "explanation": "## Follow one square through scale\nPlace points at `(0,0)`, `(1,0)`, `(1,1)`, and `(0,1)`. At scale zero there are four vertices. At scale one, the four side edges enter. Three of those edge additions merge components; the remaining edge closes a loop. No triangle is present yet because every triangle needs one diagonal of length √2.\n\nAt √2 the diagonals and their associated higher-dimensional simplices enter. The loop is filled. The positive-length H1 interval is therefore `[1,√2)`. At its birth it is present. At its death it is no longer present. Using a closed interval at both ends would count a class after it has died.\n\nThe finite H0 bars record three component merges at one; one component survives. Equal-time simplex choices can change a reduction algorithm's intermediate pairings, but the interval multiset of this filtration should not depend on an arbitrary legal tie ordering.\n\n## A diagram retains birth and death\nA diagram point `(b,d)` stores when a class appears and disappears. Its vertical distance above the diagonal is related to lifetime, but a diagram is not just a histogram of lifetimes. Two classes with the same duration can occur at different scales. Essential or truncated classes require a stated convention rather than silently inserting an enormous finite number.\n\nIf you stop the square filtration at 1.2, its loop is unpaired at the end. That does not mean the loop would survive every possible future scale. The full square example already tells us it dies at √2. Report the computed maximum scale next to any unpaired interval.\n\n## Connect the barcode to an actual image\nFor a digit, use `f=1−intensity/16` on closed pixels and include pixels when `f≤t`. A persistence barcode implies a Betti count at each threshold: count intervals satisfying `birth≤t<death`. Calculate the same count directly from the selected square cells. Agreement links the temporal-looking interval representation to the underlying image geometry.\n\nFiltration scale is not time in this experiment. Nothing physically moves while we vary an intensity threshold. Terms such as “birth” and “death” describe changes in the mathematical filtration. This distinction prevents an easy mistake when later applying similar notation to real sequences.\n\nExplain the first threshold at which the measured digit acquires a loop, and then the threshold at which it fills. A result for this specific discretized image is not a claim about every symbol with the same label.",
+    "steps": [
+      {
+        "explain": "Recover the exact square interval with the course implementation.",
+        "code": "from shape_lab.persistence import rips_filtration, persistent_homology, diagram, pixel_filtration\nsquare = np.array([[0.,0.],[1.,0.],[1.,1.],[0.,1.]])\nbars = persistent_homology(rips_filtration(square))\nh1 = diagram(bars, 1)\nprint(h1)\nassert np.allclose(h1, [[1., np.sqrt(2)]])"
+      },
+      {
+        "explain": "Read barcode counts at declared thresholds on a real digit and compare with the direct square-cell oracle.",
+        "code": "from shape_lab.data import digit_example\nfrom shape_lab.audits import pixel_betti_oracle\nimage, sample_id = digit_example(0)\nf = 1-image/16.\nbars = persistent_homology(pixel_filtration(f))\ncounts = []\nfor t in [0., .25, .5, .75, 1.]:\n    predicted = [sum(b.dim==k and b.birth<=t<b.death for b in bars) for k in [0,1]]\n    direct = list(pixel_betti_oracle(f<=t))\n    assert predicted == direct\n    counts.append([t, *direct])\nprint(counts)"
+      },
+      {
+        "explain": "Stop the square early to demonstrate an infinite endpoint caused by truncation.",
+        "code": "truncated = diagram(persistent_homology(rips_filtration(square, max_edge=1.2)), 1)\nassert len(truncated)==1 and np.isinf(truncated[0,1])\nresult = {'sample_id': sample_id, 'image_counts': counts,\n          'square_complete_h1': h1.tolist(), 'truncated_square_h1_survives_end': True,\n          'truncated_max_edge': 1.2, 'global_essential_claim': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "08.T1",
+        "question": "At t=√2, should the square H1 bar [1,√2) count toward beta1?",
+        "answer": "No. The interval is half-open; the death event has occurred. The filled complex at that scale has no H1 class from the square outline."
+      },
+      {
+        "id": "08.T2",
+        "question": "Why can equal lifetimes describe different information?",
+        "answer": "Intervals [1,2) and [10,11) both last one unit but occupy different scales. A lifetime-only summary discards their positions in the filtration."
+      }
+    ],
+    "data_role": "Real digit intensity filtration and an exact complete/truncated square control.",
+    "prerequisites": [
+      7
+    ],
+    "title": "Persistent homology, persistence modules, and reading diagrams",
+    "paths": {
+      "lesson": "lessons/08_lesson.md",
+      "workbook": "workbooks/08_workbook.md",
+      "guided_session": "sessions/08_session.md",
+      "worked_lab": "notebooks/08_lab.ipynb",
+      "consolidation": "consolidation/08_lab.ipynb",
+      "independent_code": "practice/learner/08_practice.ipynb",
+      "answers": "practice/answers/08_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/08_response.md"
+    }
+  },
+  {
+    "stage": 9,
+    "focus": "Verify persistence without trusting the same algorithm twice",
+    "outcomes": [
+      "Explain what a boundary-column pivot represents.",
+      "Relate finite H0 death times to spanning-tree edge weights.",
+      "Handle duplicate observations and zero-length intervals explicitly.",
+      "State the dimension and scope actually checked by an independent oracle."
+    ],
+    "explanation": "## Reduction is cancellation of a shared boundary term\nIn the binary boundary matrix, each column contains the indices of faces occurring in a simplex's boundary. The pivot of a nonzero reduced column is its largest remaining row. When two columns share that pivot, add one to the other modulo two. The shared row cancels. Continue until the column is zero or has a pivot not owned by an earlier column.\n\nThe algorithm requires a filtration-compatible ordering: faces precede cofaces, including at equal entry values. A zero reduced column indicates a birth; a pivot pairing identifies which earlier class the column kills. To understand this, trace a triangle by hand before inspecting a large matrix.\n\n## H0 admits another route\nBegin with every point in its own component. Add edges in increasing distance order. An edge joining different components merges them; an edge within a component does not. The selected merge edges form a minimum spanning tree for a connected complete weighted graph. Consequently their weights are the finite H0 death times when vertices are born at zero.\n\nOur independent check uses dense Prim construction. It builds the tree by repeatedly connecting the cheapest point outside the current tree. It does not form simplices or reduce a homology boundary matrix. Agreement therefore tests a distinct path through the mathematics.\n\nA spanning tree on n labeled points uses n−1 edges. Duplicate coordinates can give zero-length edges. The default persistent-homology report omits bars with exactly zero persistence, while the tree still contains those zero-weight merges. Filter only the zero weights when matching that reporting policy; do not silently remove the duplicated record from the source table.\n\n## Use the real data and an adversarial control\nOn a small Iris point sample, compare the sorted positive tree weights with finite H0 death values. Then insert a duplicate point and repeat. Finally permute the point order. The merge-edge identities may change under ties, but the multiset of death times must match for the same metric filtration.\n\nThis check covers H0, not H1. It also does not verify the accuracy of the measured input coordinates. The image-oracle tests, exact square tests, oriented boundary identities, and optional external libraries cover complementary pieces. Good verification combines checks with different failure modes instead of presenting one successful comparison as proof of an entire system.\n\nSciPy's sparse-graph convention treats zero as no edge in an ordinary dense adjacency matrix. That can erase genuine zero-distance relationships. Our small direct implementation avoids relying on that convention for duplicate coordinates. The source ledger links SciPy's documentation so you can inspect that boundary when choosing a different implementation.",
+    "steps": [
+      {
+        "explain": "Compare the spanning-tree calculation and boundary reduction on a small real cloud.",
+        "code": "from shape_lab.data import load_iris_data\nfrom shape_lab.audits import h0_merge_times\nfrom shape_lab.persistence import rips_filtration, persistent_homology, diagram\nframe = load_iris_data().iloc[::10]\nX = frame[[c for c in frame if c.endswith('_cm')]].to_numpy()\ntree = h0_merge_times(X)\nbars = diagram(persistent_homology(rips_filtration(X, max_homology=0)), 0, finite_only=True)\nassert np.allclose(tree[tree>0], np.sort(bars[:,1]))\nprint('finite positive H0 deaths:', np.sort(bars[:,1]))"
+      },
+      {
+        "explain": "Insert a duplicate observation. Its zero-weight merge is retained by the tree but excluded by the positive-bar policy.",
+        "code": "duplicated = np.vstack([X, X[0]])\nweights = h0_merge_times(duplicated)\nassert len(weights)==len(duplicated)-1 and np.any(weights==0)\nother = diagram(persistent_homology(rips_filtration(duplicated, max_homology=0)), 0, finite_only=True)\nassert np.allclose(weights[weights>0], np.sort(other[:,1]))"
+      },
+      {
+        "explain": "Permutation should preserve the multiset of merge weights, including ties and zero merges.",
+        "code": "permutation = np.random.default_rng(19).permutation(len(duplicated))\nassert np.allclose(h0_merge_times(duplicated[permutation]), weights)\nresult = {'original_records': len(X), 'with_duplicate': len(duplicated),\n          'h0_tree_reduction_agreement': True, 'zero_weight_merges': int(np.sum(weights==0)),\n          'h1_independently_verified_by_this_test': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "09.T1",
+        "question": "Does matching all H0 bars establish correctness of H1 persistence?",
+        "answer": "No. H0 concerns connected-component merges. H1 involves cycles and filling by triangles; it needs its own controls and comparisons."
+      },
+      {
+        "id": "09.T2",
+        "question": "Why may tree edges differ while the persistence comparison still passes?",
+        "answer": "Tied edge lengths can permit multiple valid spanning trees. The finite death-time multiset, not the selected edge identities, is the invariant being compared."
+      }
+    ],
+    "data_role": "Real Iris cloud with a deliberately duplicated observation and a deterministic permutation control.",
+    "prerequisites": [
+      8
+    ],
+    "title": "Implement persistence, trace the algorithm, and test it independently",
+    "paths": {
+      "lesson": "lessons/09_lesson.md",
+      "workbook": "workbooks/09_workbook.md",
+      "guided_session": "sessions/09_session.md",
+      "worked_lab": "notebooks/09_lab.ipynb",
+      "consolidation": "consolidation/09_lab.ipynb",
+      "independent_code": "practice/learner/09_practice.ipynb",
+      "answers": "practice/answers/09_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/09_response.md"
+    }
+  },
+  {
+    "stage": 10,
+    "focus": "A stability bound is not a discovery certificate",
+    "outcomes": [
+      "State the fixed-domain filtration assumptions behind the tested bound.",
+      "Explain why a diagram point can match to the diagonal.",
+      "Compute a bounded image perturbation and its diagram distance.",
+      "Distinguish deterministic stability, statistical uncertainty, and scientific meaning."
+    ],
+    "explanation": "## Three questions, three kinds of evidence\nA deterministic stability bound asks how much a mathematical output can change under a bounded change in its input. A statistical statement asks how uncertain an estimate is under a sampling or noise model. A scientific interpretation asks whether the measured structure answers a substantive question. One does not automatically establish the others.\n\nFor our finite fixed pixel complex, let f and g be two scalar-valued filtrations constructed on the same grid. If their scalar values differ by at most δ, each f sublevel set lies in the corresponding g sublevel set shifted by δ, and conversely. Under the finite persistence setup this leads to a bottleneck bound of at most δ. The primary stability reading supplies the general theorem; the notebook tests this declared finite application.\n\n## Why diagonal matching matters\nA finite diagram point `(b,d)` can be matched to a diagonal point `(t,t)`. Under maximum-coordinate distance, the smallest possible cost is `(d−b)/2`, achieved at the midpoint t. This allows short intervals to disappear at a controlled cost. Forcing every off-diagonal point to match another off-diagonal point would fail when one diagram has an extra small feature.\n\nFor a bar `[2,6)`, the diagonal cost is two. This is not the full lifetime four. Derive the midpoint by balancing `t−b` and `d−t`; the larger error is smallest when they agree.\n\n## Perturb actual image values\nSelect a real training digit and construct f using the fixed intensity convention. Add generated bounded noise with a recorded random seed. The noise is a synthetic intervention on real observations, not a second physical measurement of the same handwriting. Compute the actual maximum absolute change, not just the requested nominal bound.\n\nComplete the pixel filtration so finite H1 intervals really die within the supplied scalar range. Our finite diagram-distance routine rejects infinite endpoints. Never remove them without reporting what comparison remains. This notebook compares H1, for which the finite full rectangular image complex has no surviving loop.\n\n## Interpret success conservatively\nA passing numerical bound checks that this experiment is consistent with the theorem and implementation. It does not identify which loops are meaningful, estimate the camera noise distribution, or prove that a long interval is an important physical structure. A structured artifact can be stable. A meaningful rare feature can be short under a poorly chosen metric.\n\nAn outlier or a crop can change the point set or domain rather than merely perturbing a scalar on the same fixed complex. Do not reuse this inequality without checking the relevant construction and hypotheses. State a failure as a failed assumption or failed implementation test, not as an inconvenience to hide.",
+    "steps": [
+      {
+        "explain": "Calculate the distance of one interval to the diagonal exactly.",
+        "code": "from shape_lab.persistence import finite_bottleneck, pixel_filtration, persistent_homology, diagram\ncost = finite_bottleneck([[2., 6.]], np.empty((0,2)))\nprint('diagonal cost:', cost)\nassert cost == 2."
+      },
+      {
+        "explain": "Perturb a real digit on the same fixed grid, then compare completed H1 diagrams.",
+        "code": "from shape_lab.data import digit_example\nimage, sample_id = digit_example(8)\nf = 1-image/16.\nrng = np.random.default_rng(1004)\nrows = []\nfor nominal in [.01, .03, .08]:\n    g = f + rng.uniform(-nominal, nominal, size=f.shape)\n    a = diagram(persistent_homology(pixel_filtration(f)), 1)\n    b = diagram(persistent_homology(pixel_filtration(g)), 1)\n    delta = float(np.max(np.abs(f-g)))\n    observed = finite_bottleneck(a, b)\n    assert observed <= delta + 1e-10\n    rows.append([nominal, delta, observed])\nprint('nominal bound, actual scalar change, bottleneck:', rows)"
+      },
+      {
+        "explain": "Keep the scope of the check attached to its result.",
+        "code": "result = {'sample_id': sample_id, 'comparisons': rows,\n          'same_fixed_pixel_grid': True, 'homology_dimension': 1,\n          'noise_is_synthetic': True, 'scientific_significance_established': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "10.T1",
+        "question": "A short diagram bar vanishes after a perturbation. Why can this still satisfy stability?",
+        "answer": "The bar can be matched to the diagonal at half its lifetime in maximum norm. Stability controls an optimal matching, not preservation of every bar as an individually named object."
+      },
+      {
+        "id": "10.T2",
+        "question": "Does a long-lived stable interval imply a scientifically meaningful mechanism?",
+        "answer": "No. Stability controls changes under a specified perturbation model. Meaning requires appropriate measurement choices, null or comparison models, and task-specific evidence."
+      }
+    ],
+    "data_role": "Real training image plus explicitly generated bounded perturbations; not repeated sensor observations.",
+    "prerequisites": [
+      9
+    ],
+    "title": "Stability, diagram distances, noise, and scientific uncertainty",
+    "paths": {
+      "lesson": "lessons/10_lesson.md",
+      "workbook": "workbooks/10_workbook.md",
+      "guided_session": "sessions/10_session.md",
+      "worked_lab": "notebooks/10_lab.ipynb",
+      "consolidation": "consolidation/10_lab.ipynb",
+      "independent_code": "practice/learner/10_practice.ipynb",
+      "answers": "practice/answers/10_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/10_response.md"
+    }
+  },
+  {
+    "stage": 11,
+    "focus": "Build a feature pipeline without seeing the answer",
+    "outcomes": [
+      "Distinguish fixed per-observation transformations from dataset-fitted preprocessing.",
+      "Apply training-only scaling and identify where validation data may be used.",
+      "Construct lagged features with their correct availability dates.",
+      "Separate topological representation design from proof of predictive value."
+    ],
+    "explanation": "## A representation is part of the model\nA persistence diagram is not immediately a fixed-width feature vector. We can summarize counts, lifetimes, Betti curves, landscapes, or persistence images. Each choice retains some information and discards some. A count of intervals, for example, does not retain their positions. A discretized representation adds grid and bandwidth choices.\n\nSome transformations are fixed before looking at the dataset. Dividing an image's intensities by its documented maximum is a declared per-image conversion. Other transformations estimate parameters from data: a StandardScaler estimates feature means and variances. For predictive evaluation, fit those parameters on the training partition and apply the resulting rule unchanged to validation or test observations.\n\nA scikit-learn Pipeline can keep fitted transformations inside a cross-validation procedure. It cannot protect against leakage that occurred before the pipeline, a wrongly defined split, or features containing future information. Tools enforce only the boundaries their inputs actually preserve.\n\n## Work a time-availability example\nFor observations x₀,x₁,x₂,…, a backward-looking three-value feature available at time t is `(x[t−2],x[t−1],x[t])`. A forward window `(x[t],x[t+1],x[t+2])` is not available at time t. It can be used at t+2, provided its timestamp is assigned accordingly. The array values can be identical while their interpretation is causally wrong.\n\nThe new bundled historical sunspot series supplies real, dated annual observations. We use it to practice delay-coordinate construction and availability—not to assert a perfect low-dimensional dynamical system or forecast solar activity. The vintage ends in 2008 and is not a current operational feed. No new parameter choices are selected on future test labels.\n\n## Inspect a real fitted transformation\nUse the existing training and validation digit splits. Fit pixel scaling on training rows only. Check that the fitted means equal training means. Transform validation rows without refitting. The transformed validation mean is not required to be zero: demanding that would tempt you to normalize the validation set separately and change the coordinate system.\n\nThen form the historical lag windows and attach the last included year. Avoid calling a row an independent sample just because it occupies a separate line: adjacent windows overlap. A downstream statistical evaluation must respect that dependence.\n\nThe original Stage 11 lab compares actual predictive baselines. This supplement repairs two common prerequisites—fitted preprocessing and information availability—so that a promising score is not accepted before its construction is understood.",
+    "steps": [
+      {
+        "explain": "Fit a transformation only on the training digit pixels.",
+        "code": "from shape_lab.data import load_digit_data\nfrom sklearn.preprocessing import StandardScaler\ntrain, _, _ = load_digit_data('train')\nvalid, _, _ = load_digit_data('validation')\nX_train = train.reshape(len(train), -1)\nX_valid = valid.reshape(len(valid), -1)\nscaler = StandardScaler().fit(X_train)\nassert np.allclose(scaler.mean_, X_train.mean(axis=0))\nZ_valid = scaler.transform(X_valid)\nprint('training rows:', len(train), 'validation rows:', len(valid))\nprint('mean absolute validation-feature mean:', np.abs(Z_valid.mean(0)).mean())"
+      },
+      {
+        "explain": "Build windows from a real historical time series and attach the last included year.",
+        "code": "import pandas as pd\nfrom shape_lab.features import delay_embedding\nseries = pd.read_csv(ROOT/'data/time_series/sunspots_yearly.csv')\nvalues = series.SUNACTIVITY.to_numpy()\nwindows = delay_embedding(values, dimension=3, lag=1)\navailable_year = series.YEAR.to_numpy()[2:]\nassert len(windows)==len(available_year)\nassert np.array_equal(windows[0], values[:3])\ndisplay(pd.DataFrame({'available_year': available_year[:5],\n                      'older': windows[:5,0], 'previous': windows[:5,1], 'current': windows[:5,2]}))"
+      },
+      {
+        "explain": "Record that this is feature construction, not an independently evaluated forecasting model.",
+        "code": "result = {'scaler_fit_rows': len(train), 'validation_transform_rows': len(valid),\n          'time_series_window_count': len(windows), 'first_available_year': int(available_year[0]),\n          'forecast_validation_performed': False, 'adjacent_windows_independent': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "11.T1",
+        "question": "Must a validation partition transformed by a training-fitted StandardScaler have zero mean?",
+        "answer": "No. Only the fitted training distribution is centered according to its estimated means. Re-centering validation independently changes the fitted transformation and can hide distribution shift."
+      },
+      {
+        "id": "11.T2",
+        "question": "A forward window begins in 1900 and ends in 1902. When can it first be used by a past-only prediction system?",
+        "answer": "At the availability time of the last included observation, not 1900. The example attaches year 1902, while real systems would also need publication or sensor arrival times."
+      }
+    ],
+    "data_role": "Real train/validation digit pixels and the bundled historical annual sunspot series; no new forecast claim.",
+    "prerequisites": [
+      10
+    ],
+    "title": "Useful representations, Mapper, time windows, and honest machine learning",
+    "paths": {
+      "lesson": "lessons/11_lesson.md",
+      "workbook": "workbooks/11_workbook.md",
+      "guided_session": "sessions/11_session.md",
+      "worked_lab": "notebooks/11_lab.ipynb",
+      "consolidation": "consolidation/11_lab.ipynb",
+      "independent_code": "practice/learner/11_practice.ipynb",
+      "answers": "practice/answers/11_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/11_response.md"
+    }
+  },
+  {
+    "stage": 12,
+    "focus": "Interpret a small improvement with paired evidence",
+    "outcomes": [
+      "Construct the paired correctness table for two models on the same observations.",
+      "Distinguish percentage points, counts, and conditional inferential quantities.",
+      "Calculate an exploratory exact discordance test and paired bootstrap interval.",
+      "Explain why reanalyzing an exposed holdout cannot create a fresh confirmatory test."
+    ],
+    "explanation": "## Begin with the actual disagreement pattern\nSuppose two models classify the same observations. Every record belongs to one of four groups: both correct, only A correct, only B correct, or both wrong. The difference in accuracy is `(B-only − A-only)/n`. The two total accuracies do not tell you this whole pattern.\n\nThe preserved handwriting experiment reports 347 correct pixel-only predictions and 351 correct combined predictions on 360 images. The net change is four. Reading its sample-level predictions reveals seven newly correct outcomes and three newly incorrect ones. This is more informative than saying that the combined system is simply better on four images.\n\n## Derive the conditional test\nUnder the null hypothesis that the two directions of discordance are equally likely, and under suitable independent sampling, the number of B-only outcomes among the discordant records follows a binomial distribution with success probability one-half. Condition on the observed number of disagreements. For seven B-only and three A-only outcomes, the two-sided exact binomial calculation gives 0.34375.\n\nThis is not the probability that the null hypothesis is true. It is a tail calculation under the stated null and sampling assumptions. It does not establish no effect, and it does not supply a correction for repeatedly trying representations on an exposed test partition.\n\n## Resample the paired differences\nFor each image define a difference: +1 when B alone is correct, -1 when A alone is correct, and 0 otherwise. A paired bootstrap resamples these image-level differences and recalculates their average. Resampling the two models independently would discard the pairing and answer a different uncertainty question.\n\nThe supplied percentile interval is conditional on the fixed fitted predictions and the assumed image-level resampling unit. It does not include all uncertainty from model selection or retraining. The dataset lacks writer identifiers, so independent-writer inference is unavailable. A future sports dataset with multiple clips per person or session would require a grouping-aware design rather than treating every frame as independent.\n\n## Keep the experiment's status honest\nThese predictions were already exposed in v3. The new calculation is an exploratory audit of that worked example, not a new blinded experiment. Its value is pedagogical: understand uncertainty, pairing, units, and what was actually gained or lost.\n\nA rigorous next study would specify the feature pipeline, model-selection procedure, independent sampling unit, primary metric, and uncertainty method before evaluating a genuinely new holdout. A statistically interesting output would still need practical relevance and domain-specific failure analysis. The independent capstone asks you to articulate those choices rather than chase a threshold such as p<0.05.",
+    "steps": [
+      {
+        "explain": "Read the actual saved predictions. Row IDs must be unique so each image contributes one paired outcome.",
+        "code": "import pandas as pd\nfrom shape_lab.audits import paired_accuracy_audit\npredictions = pd.read_csv(ROOT/'reports/stage_12/test_predictions.csv')\nassert predictions.sample_id.is_unique\nreport = paired_accuracy_audit(predictions.true_label, predictions.pixels, predictions.combined,\n                               resamples=4000, seed=2026)\nprint(json.dumps(report, indent=2))"
+      },
+      {
+        "explain": "Derive the net improvement from the discordant counts, not from rounded percentages.",
+        "code": "net = report['b_only_correct'] - report['a_only_correct']\nassert net == 4\nassert np.isclose(net/report['sample_count'], report['difference_b_minus_a'])\nprint('newly correct:', report['b_only_correct'], 'newly wrong:', report['a_only_correct'])\nprint('difference (percentage points):', 100*report['difference_b_minus_a'])\nprint('exploratory interval (percentage points):', 100*np.array(report['paired_percentile_interval']))"
+      },
+      {
+        "explain": "Save the status and assumptions with the numbers. A p-value is not a proof of either equality or superiority.",
+        "code": "assert report['a_only_correct']==3 and report['b_only_correct']==7\nassert report['exact_discordance_pvalue']==.34375\nresult = report\nresult['models'] = ['pixels', 'combined']\nresult['new_confirmatory_holdout'] = False"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "12.T1",
+        "question": "Two model comparisons have the same net gain of four. Must their paired uncertainty calculations agree?",
+        "answer": "No. Four gains and zero losses differ from 54 gains and 50 losses. Their discordance totals, conditional test distributions, and paired resampling distributions differ."
+      },
+      {
+        "id": "12.T2",
+        "question": "What would make a future follow-up confirmatory rather than another reanalysis of this example?",
+        "answer": "Freeze the study choices before inspecting genuinely new evaluation data, use a defensible sampling and split unit, and report the declared metrics and uncertainty without selecting a favorable outcome after the fact."
+      }
+    ],
+    "data_role": "Actual saved handwriting predictions from an already-exposed image-level holdout; exploratory analysis only.",
+    "prerequisites": [
+      11
+    ],
+    "title": "Capstone: reproduce, defend, transfer, and audit the book",
+    "paths": {
+      "lesson": "lessons/12_lesson.md",
+      "workbook": "workbooks/12_workbook.md",
+      "guided_session": "sessions/12_session.md",
+      "worked_lab": "notebooks/12_lab.ipynb",
+      "consolidation": "consolidation/12_lab.ipynb",
+      "independent_code": "practice/learner/12_practice.ipynb",
+      "answers": "practice/answers/12_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/12_response.md"
+    }
+  },
+  {
+    "stage": 13,
+    "focus": "A chart changes coordinates, not the underlying point",
+    "outcomes": [
+      "Write the domain restriction of a stereographic chart.",
+      "Check that chart-to-space-to-chart returns the same point.",
+      "Construct a tangent vector by removing its radial component.",
+      "Explain why normalizing scene points does not prove a spherical physical scene."
+    ],
+    "explanation": "## What local coordinates buy us\nA smooth manifold is locally modeled by ordinary Euclidean coordinates, with smoothly compatible transitions where coordinate patches overlap. A chart maps a patch of the manifold to an open subset of coordinate space. It is not merely any feature extractor: invertibility on the patch and compatibility with the chosen structure matter.\n\nFor the unit sphere, stereographic projection from the north pole sends `(x,y,z)` to `(x/(1−z), y/(1−z))`. The north pole is excluded because the denominator is zero. A south-pole chart covers the other missing point. One formula need not work everywhere for the manifold to be well defined.\n\n## Derive a chart transition\nIf a north-chart coordinate is u=(a,b) and `q=a²+b²`, the reconstructed sphere point is `(2a/(q+1), 2b/(q+1), (q−1)/(q+1))`. Applying the south chart gives `(a/q,b/q)`. This transition excludes q=0, corresponding to the point absent from the overlap. It maps different numerical coordinates to the same sphere point.\n\nThe denominator is not an annoying coding detail. It specifies the domain on which the mathematical statement is valid. Near a chart's excluded pole, coordinates can become large even though neighboring sphere points remain nearby in three-dimensional space. Coordinate conditioning and physical proximity are not identical.\n\n## Tangent directions satisfy a constraint\nThe sphere satisfies `p·p=1`. Differentiate along a curve p(t): `2p·p'=0`. Therefore a tangent velocity v at p is orthogonal to p. Starting with any vector a, remove its radial component: `v=a−(a·p)p`. Then `p·v=0` for a unit p. This is an exact derivation, not a rule inferred from a scatter plot.\n\n## Use real scene data without inventing a manifold claim\nThe stereo reference supplies reconstructed scene points under its documented calibration. Normalize selected nonzero vectors to unit length; this constructs their directions on the sphere. It deliberately discards range. The experiment tests coordinate changes for those directions, not whether the original scene itself is a sphere or a smooth two-dimensional manifold everywhere.\n\nA camera image also discards depth along viewing rays. It is not generally an invertible chart of an entire three-dimensional scene. This distinction prevents the useful chart analogy from turning into an incorrect reconstruction argument. The next stage develops projection and unprojection with explicit depth and coordinate-frame conventions.",
+    "steps": [
+      {
+        "explain": "Convert real reference scene points into unit directions, explicitly discarding range.",
+        "code": "from shape_lab.stereo import reference_sample, point_cloud\nfrom shape_lab.geometry import sphere_chart, sphere_unchart\n_, _, disparity, calibration = reference_sample()\npoints, rc = point_cloud(disparity, calibration, stride=50)\np = points/np.linalg.norm(points, axis=1, keepdims=True)\np = p[np.abs(p[:,2]) < .99][:40]\nassert len(p)>3\nprint('unit directions:', len(p))"
+      },
+      {
+        "explain": "Use both charts and recover the same sphere point.",
+        "code": "north = sphere_chart(p, 'north'); south = sphere_chart(p, 'south')\nassert np.allclose(sphere_unchart(north, 'north'), p)\nassert np.allclose(sphere_unchart(south, 'south'), p)\nq = np.sum(north*north, axis=1)\nassert np.allclose(north/q[:,None], south)\nprint('maximum round-trip error:', np.max(np.abs(sphere_unchart(north, 'north')-p)))"
+      },
+      {
+        "explain": "Project arbitrary vectors onto the tangent planes and verify their radial component vanishes.",
+        "code": "a = np.random.default_rng(1304).normal(size=p.shape)\nv = a - np.sum(a*p, axis=1)[:,None]*p\nresidual = float(np.max(np.abs(np.sum(p*v, axis=1))))\nassert residual < 1e-12\nresult = {'direction_count': len(p), 'chart_round_trip': 'passed',\n          'tangent_orthogonality_max': residual, 'range_retained': False,\n          'physical_scene_is_sphere_claimed': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "13.T1",
+        "question": "Why does a normalized point cloud lying on S2 not prove that the original scene lay on a sphere?",
+        "answer": "Normalization constructs unit directions and removes each point’s range. It maps many different physical points on a ray to the same direction."
+      },
+      {
+        "id": "13.T2",
+        "question": "Show that v=a−(a·p)p is tangent at a unit p.",
+        "answer": "Take the dot product with p: p·v=p·a−(a·p)(p·p)=0 because p·p=1. This matches the derivative of the sphere constraint."
+      }
+    ],
+    "data_role": "Real stereo-reference directions mapped onto a constructed unit sphere; not a spherical scene claim.",
+    "prerequisites": [
+      12
+    ],
+    "title": "From topology to smooth manifolds",
+    "paths": {
+      "lesson": "lessons/13_lesson.md",
+      "workbook": "workbooks/13_workbook.md",
+      "guided_session": "sessions/13_session.md",
+      "worked_lab": "notebooks/13_lab.ipynb",
+      "consolidation": "consolidation/13_lab.ipynb",
+      "independent_code": "practice/learner/13_practice.ipynb",
+      "answers": "practice/answers/13_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/13_response.md"
+    }
+  },
+  {
+    "stage": 14,
+    "focus": "Make camera equations reversible only when the information exists",
+    "outcomes": [
+      "Name the source and destination frame of a rigid transformation.",
+      "Distinguish optical-axis depth from radial distance.",
+      "Project and unproject real reference points using the same calibration.",
+      "Explain why a round-trip check is not independent measurement validation."
+    ],
+    "explanation": "## Coordinates belong to a frame\nThe same physical point has different coordinates in different frames. Write a rigid transformation as `p_B=R_BA p_A+t_BA`. The subscripts name where coordinates come from and where they go. With column vectors, composition is `T_CA=T_CB T_BA`: the rightmost transform acts first. Point tables in our NumPy implementation use row vectors, so the equivalent batch operation is `X @ R.T + t`.\n\nA rotation must satisfy `R.T R=I` and determinant +1. Orthogonality alone allows reflections with determinant -1. A general matrix with nine freely fitted entries is not automatically a rotation. The course's rotation functions check these constraints rather than interpreting every three-by-three array as an orientation.\n\n## Work one pinhole example\nFor a point `(X,Y,Z)` in the camera frame, with Z>0, the undistorted pinhole rule is `u=fx X/Z+cx` and `v=fy Y/Z+cy`. Let fx=fy=1000 pixels, principal point `(320,240)`, and point `(0.2,0.1,2)` metres. Its pixel is `(420,290)`.\n\nThe point `(0.4,0.2,4)` projects to the same pixel. Projection has lost range. With Z=2 supplied, unprojection returns the first point. With Z=4 supplied, it returns the second. The radial distance of the first point is `sqrt(0.2²+0.1²+2²)`, which is slightly larger than Z. Confusing radial range with optical-axis depth creates a systematic error away from the image center.\n\n## Test what should be reversible\nA rigid transform has an inverse: rotation transpose and translated origin `−R.T t`. Apply a transform and its inverse to real reference points and check their recovery. Then project those points and unproject with the same supplied Z. The coordinates should return within numerical tolerance.\n\nThese are consistency tests using the same assumptions in both directions. A wrong focal length used consistently can still make a project/unproject round trip pass. Independent calibration requires information not constructed by the same equations, such as appropriately separated measured landmarks or known held-out distances.\n\nThe real stereo pair is already rectified. These tests do not model lens distortion, rolling shutter, unsynchronized motion, or unknown camera calibration. Those are separate problems and the optional model workflow does not erase them. Always state which camera model, length unit, pixel convention, and timestamp apply before interpreting a reconstruction.",
+    "steps": [
+      {
+        "explain": "Use a hand-checkable pinhole example to expose ambiguity along one ray.",
+        "code": "from shape_lab.geometry import project, unproject, exp_so3, make_transform, transform_points, inverse_transform\nK = np.array([[1000.,0,320],[0,1000,240],[0,0,1.]])\npair = np.array([[.2,.1,2.],[.4,.2,4.]])\nuv, z = project(pair, K)\nassert np.allclose(uv, [[420,290],[420,290]])\nassert np.allclose(unproject(uv, z, K), pair)\nprint('same pixels, different depths:', uv, z)"
+      },
+      {
+        "explain": "Run the same consistency checks on a sample from the real stereo reference.",
+        "code": "from shape_lab.stereo import reference_sample, point_cloud\n_, _, disparity, calibration = reference_sample()\nX, rc = point_cloud(disparity, calibration, stride=60)\nuv, z = project(X, calibration['K_left'])\nassert np.allclose(uv, rc[:,::-1])\nassert np.allclose(unproject(uv, z, calibration['K_left']), X)\nT = make_transform(exp_so3([.1,-.2,.05]), [.3,.2,-.1])\nrestored = transform_points(inverse_transform(T), transform_points(T, X))\nassert np.allclose(restored, X)"
+      },
+      {
+        "explain": "Report the numerical residual and the limits of the claim.",
+        "code": "result = {'reference_points': len(X),\n          'rigid_round_trip_max_m': float(np.max(np.linalg.norm(restored-X, axis=1))),\n          'projection_round_trip': 'passed', 'depth_type': 'optical-axis Z',\n          'independent_calibration_validated': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "14.T1",
+        "question": "Can a wrong intrinsic matrix pass a project/unproject round trip?",
+        "answer": "Yes. Using the same invertible but incorrect matrix in both directions can cancel the error algebraically. Independent physical calibration needs separate evidence."
+      },
+      {
+        "id": "14.T2",
+        "question": "What distinguishes a reflection matrix from a proper rotation when both satisfy R.T R=I?",
+        "answer": "Their determinants: a proper rotation has +1; a reflection-type orthogonal transform has -1 and reverses orientation."
+      }
+    ],
+    "data_role": "Real calibrated stereo-reference points plus a hand-checkable pinhole control.",
+    "prerequisites": [
+      13
+    ],
+    "title": "Rotations, rigid transforms, and the camera model",
+    "paths": {
+      "lesson": "lessons/14_lesson.md",
+      "workbook": "workbooks/14_workbook.md",
+      "guided_session": "sessions/14_session.md",
+      "worked_lab": "notebooks/14_lab.ipynb",
+      "consolidation": "consolidation/14_lab.ipynb",
+      "independent_code": "practice/learner/14_practice.ipynb",
+      "answers": "practice/answers/14_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/14_response.md"
+    }
+  },
+  {
+    "stage": 15,
+    "focus": "Turn disparity error into a physical uncertainty calculation",
+    "outcomes": [
+      "Derive the principal-point offset in rectified stereo.",
+      "Carry pixels and metres through the depth formula.",
+      "Compare a first-order uncertainty calculation with controlled numerical perturbations.",
+      "State which uncertainties a supplied-reference experiment cannot measure."
+    ],
+    "explanation": "## Derive the denominator instead of memorizing it\nFor rectified cameras, let the right camera center be B to the right of the left center. A point has horizontal coordinates X and X−B in the two camera frames. Its pixels are `u_L=fX/Z+cx_L` and `u_R=f(X−B)/Z+cx_R`. Subtracting gives disparity `d=u_L−u_R=fB/Z+cx_L−cx_R`.\n\nDefine `doffs=cx_R−cx_L`. Then `d+doffs=fB/Z`, so `Z=fB/(d+doffs)`. The offset's sign follows from the chosen disparity definition. Reversing one without the other is not a cosmetic convention change.\n\nWith f in pixels, disparity and offset in pixels, and B in metres, depth is in metres. The original Middlebury calibration reports baseline in millimetres; the package's calibration explicitly converts it. A plausible point cloud does not reveal a factor-of-1000 unit error by itself.\n\n## Work a sensitivity example\nFor f=1000 pixels, B=0.1 metres, corrected disparity 50 pixels, depth is two metres. Holding calibration fixed, `dZ/dd=−fB/(d+doffs)²`, which here is -0.04 metres per pixel. A small disparity standard deviation of 0.5 pixels gives a first-order depth standard deviation of about 0.02 metres.\n\nThis linear approximation is local. It worsens near a small denominator, and it does not turn a confidence score into a calibrated probability. A complete uncertainty calculation may include calibration, correspondence errors, distortion, and correlations. Gross matching failures are not adequately represented by tiny Gaussian noise around the correct match.\n\n## Use the actual reference carefully\nSelect valid disparities from the real stereo reference. Add small generated Gaussian perturbations with a fixed seed, compute resulting depths, and compare empirical spread with the derivative approximation. This tests the propagation calculation under the imposed noise model.\n\nIt is not an empirical measurement of the actual stereo matcher's noise distribution. The original Stage 15 lab separately compares a simple image-based matcher with the supplied reference and reports its large failures. Keep those two experiments distinct: reference perturbation studies sensitivity; matcher evaluation measures a particular algorithm against available reference data.\n\nA practical reconstruction report should show error distributions, eligible coverage, failures, units, and independent holdouts. A low reprojection error alone can coexist with wrong scale or weakly constrained depth. State what is observed, what is supplied, what is estimated, and what is imposed by an experimental control.",
+    "steps": [
+      {
+        "explain": "Select finite reference disparities and compute the local derivative with explicit units.",
+        "code": "from shape_lab.stereo import reference_sample, depth_from_disparity\n_, _, reference, calibration = reference_sample()\nsamples = reference[::80, ::80].ravel()\nsamples = samples[np.isfinite(samples)][:25]\nf = calibration['focal_px']; B = calibration['baseline_m']; offset = calibration['doffs_px']\nsigma_px = .2\nexpected_sigma_m = f*B/(samples+offset)**2 * sigma_px\nassert len(samples)>5\nprint('first reference depths:', depth_from_disparity(samples, f, B, offset)[:5])"
+      },
+      {
+        "explain": "Generate only the declared perturbation, not replacement reference truth.",
+        "code": "rng = np.random.default_rng(1504)\nperturbed = samples[None,:] + rng.normal(0, sigma_px, size=(5000,len(samples)))\ndepths = depth_from_disparity(perturbed, f, B, offset)\nmeasured_sigma_m = np.std(depths, axis=0, ddof=1)\nratio = measured_sigma_m/expected_sigma_m\nprint('empirical / first-order standard deviation:', ratio)\nassert np.all(np.abs(ratio-1)<.06)"
+      },
+      {
+        "explain": "Store what is fixed and what is random so the numerical agreement cannot be mistaken for complete sensor uncertainty.",
+        "code": "result = {'points': len(samples), 'perturbation_trials': len(perturbed),\n          'disparity_sigma_px': sigma_px, 'median_empirical_to_linear_sigma_ratio': float(np.median(ratio)),\n          'calibration_fixed': True, 'noise_model': 'synthetic independent Gaussian disparity noise',\n          'actual_matcher_uncertainty_established': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "15.T1",
+        "question": "If the baseline is multiplied by 1000 but disparity and focal length are unchanged, what happens to reconstructed depth?",
+        "answer": "Depth is multiplied by 1000. The unit of depth follows the baseline; this error can preserve relative shape while ruining metric scale."
+      },
+      {
+        "id": "15.T2",
+        "question": "Why does a local Gaussian perturbation experiment not characterize gross correspondence failures?",
+        "answer": "It perturbs values near a reference match under an imposed distribution. Incorrect matches can have large, structured, non-Gaussian errors and require direct algorithm evaluation."
+      }
+    ],
+    "data_role": "Real stereo-reference disparities with generated local noise; no independent calibration-noise measurement.",
+    "prerequisites": [
+      14
+    ],
+    "title": "Measured stereo, calibration, and uncertainty",
+    "paths": {
+      "lesson": "lessons/15_lesson.md",
+      "workbook": "workbooks/15_workbook.md",
+      "guided_session": "sessions/15_session.md",
+      "worked_lab": "notebooks/15_lab.ipynb",
+      "consolidation": "consolidation/15_lab.ipynb",
+      "independent_code": "practice/learner/15_practice.ipynb",
+      "answers": "practice/answers/15_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/15_response.md"
+    }
+  },
+  {
+    "stage": 16,
+    "focus": "Attention moves information; training gives it task meaning",
+    "outcomes": [
+      "Identify query, key, and value shapes in scaled dot-product attention.",
+      "Explain why each attention row sums to one.",
+      "Check a controlled attention calculation on patches from a real image.",
+      "Distinguish an attention example, a model-output contract, and actual trained VGGT inference."
+    ],
+    "explanation": "## Read one attention row\nQueries ask which inputs should contribute to an output. Keys provide values used in comparison. Values provide the information to combine. For Q with N rows, K with M rows, and matching feature width d, the score matrix `Q K.T / sqrt(d)` has shape N by M. Apply a row-wise softmax to turn each allowed score row into nonnegative weights summing to one. Multiply those weights by V to obtain N output rows.\n\nThe scaling and softmax define a computation. They do not establish that the scores represent physical correspondence or calibrated probability. Those interpretations need training, architecture choices, data, and independent evaluation.\n\n## A hand-checkable special case\nIf one query is the zero vector and all keys are allowed, every score in that row is zero. Softmax assigns weight 1/M to each key. The output is therefore the arithmetic mean of the values. If every value row is the same vector c, any valid attention weights produce c. These cases test the implementation without requiring learned weights.\n\nSubtracting a row's largest score before exponentiation changes neither the normalized weights nor their interpretation. It reduces overflow risk. A row with every key masked out has no defined probability distribution; the implementation rejects it rather than returning silent NaNs.\n\n## Connect to the geometry model without impersonating it\nVGGT's within-frame and across-frame attention motivates why information can move between views. Our notebook only flattens patches from a real stereo image and applies an untrained attention calculation. It does not use a trained image encoder, pretrained weights, positional embeddings, or geometry prediction heads. Real image input does not turn a toy attention operator into VGGT.\n\nThe optional runner belongs after the camera and validation foundations. Its outputs require shape, finiteness, coordinate, scale, preprocessing, and provenance checks. Passing those contracts does not establish reconstruction accuracy. A 2D track must not be relabeled as a measured 3D trajectory.\n\nThe v3 model-source discussion is preserved with its original review date. This revision adds teaching and arithmetic checks, not a new benchmark claim or a fresh verification of every later model release. Model weights and licenses must be checked for the exact artifact actually used. No trained VGGT execution is included in the shipped evidence.",
+    "steps": [
+      {
+        "explain": "Extract actual image patches; these are raw flattened pixels, not trained embeddings.",
+        "code": "from shape_lab.stereo import reference_sample\nfrom shape_lab.attention import patch_tokens, attention\nleft, _, _, _ = reference_sample()\ntokens, rc = patch_tokens(left[:32,:32], patch_size=8)\ntokens = tokens/255.\nprint('patch tokens:', tokens.shape, 'locations:', rc.shape)"
+      },
+      {
+        "explain": "A zero query must average the values. Check this directly.",
+        "code": "query = np.zeros((1,tokens.shape[1]))\noutput, weights = attention(query, tokens, tokens)\nassert np.allclose(weights, 1/len(tokens))\nassert np.allclose(output[0], tokens.mean(axis=0))\nprint('attention weight sum:', weights.sum())"
+      },
+      {
+        "explain": "For arbitrary allowed weights, constant values must remain constant.",
+        "code": "Q = tokens[:3]; K = tokens\nV = np.tile([2., -1., .5], (len(K),1))\nout, w = attention(Q, K, V)\nassert np.allclose(w.sum(axis=1), 1.)\nassert np.allclose(out, [2., -1., .5])\nresult = {'real_image_patch_count': len(tokens), 'zero_query_mean_check': 'passed',\n          'constant_value_check': 'passed', 'trained_embeddings_used': False,\n          'VGGT_inference_executed': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "16.T1",
+        "question": "Why does a softmax row summing to one not make it a calibrated correspondence-confidence distribution?",
+        "answer": "Normalization is a mathematical property of the operator. Calibration concerns agreement between predicted probabilities and real outcomes under evaluation, which this untrained example does not establish."
+      },
+      {
+        "id": "16.T2",
+        "question": "If every value is c, can attention produce a different vector under valid normalized weights?",
+        "answer": "No. The weighted sum is c times the sum of weights, hence c. An output differing from c would expose an implementation or numerical problem under the stated conditions."
+      }
+    ],
+    "data_role": "Real stereo-image patches processed by an explicitly untrained attention operator; no VGGT predictions.",
+    "prerequisites": [
+      15
+    ],
+    "title": "Attention and VGGT, from pixels to proposed geometry",
+    "paths": {
+      "lesson": "lessons/16_lesson.md",
+      "workbook": "workbooks/16_workbook.md",
+      "guided_session": "sessions/16_session.md",
+      "worked_lab": "notebooks/16_lab.ipynb",
+      "consolidation": "consolidation/16_lab.ipynb",
+      "independent_code": "practice/learner/16_practice.ipynb",
+      "answers": "practice/answers/16_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/16_response.md"
+    }
+  },
+  {
+    "stage": 17,
+    "focus": "Fit on anchors, evaluate elsewhere",
+    "outcomes": [
+      "Distinguish rigid alignment from a similarity transform with scale.",
+      "Separate fitting references from held-out evaluation points.",
+      "Construct a negative control showing why fitted residual is optimistic.",
+      "Explain why perfect synthetic-transform recovery does not validate physical scene scale."
+    ],
+    "explanation": "## What alignment is allowed to change\nA rigid transformation rotates and translates. A similarity transformation additionally multiplies all lengths by one positive scale. In our row-vector convention it is `Y=s X R.T+t`. These models cannot correct arbitrary local warping or depth-dependent distortion. Selecting a more flexible model merely to reduce residuals can hide the very error you intended to measure.\n\nCorrespondence is a separate problem. The least-squares fit assumes that each source row is paired with the correct target row. A good fitted transform does not verify the pairing, and this small function does not perform correspondence discovery or robust outlier removal.\n\n## Work an exact example first\nIf target coordinates were constructed using scale two, a known rotation, and a translation, sufficient noncollinear paired anchors should recover those parameters up to numerical tolerance. Collinear anchors leave some rotations unconstrained; the implementation rejects them. This tests observability and algebra in a controlled case.\n\nThe real stereo-reference points below serve as a nontrivial point arrangement. We deliberately transform them to create targets. The target coordinates are generated, not independent physical measurements. Perfect recovery verifies the fitting code on this control; it does not validate VGGT scale or the original camera calibration.\n\n## Show why a holdout is necessary\nChoose every other selected point as fitting anchors. Leave the others out. Fit the transform to the anchors and evaluate residuals on held-out points. In the exact control both residuals should be near zero.\n\nNow add a local displacement to only the held-out targets and refit using the unchanged anchors. The training residual stays near zero while held-out residual increases. This deliberately simple negative control makes the logic visible: a fit can look excellent while unseen parts of a scene disagree. The perturbation is not claimed to reproduce a particular model's errors.\n\n## Formulate a physical validation study\nFor a real comparison, registration anchors and validation measurements must be genuinely separated. Record their identities, collection procedure, units, uncertainty, and visibility. Evaluate distances, orientation, reprojection, completeness, and failure modes appropriate to the task. Avoid describing an alignment to the same reference points as independent validation.\n\nTopology can summarize structure but does not repair metric scale. Two reconstructions can have similar topological descriptors and different lengths. A plausible point cloud is a proposal until the intended measurement claims are supported. This is the practical bridge from the mathematical invariance lessons to responsible learned-geometry evaluation.",
+    "steps": [
+      {
+        "explain": "Generate a known transformation of actual reference point locations. The targets are explicitly synthetic.",
+        "code": "from shape_lab.stereo import reference_sample, point_cloud\nfrom shape_lab.geometry import exp_so3, fit_similarity\n_, _, disparity, calibration = reference_sample()\nX, _ = point_cloud(disparity, calibration, stride=70)\nX = X[:45]\ntrue_scale = 1.7; true_R = exp_so3([.12,-.08,.05]); true_t = np.array([.2,-.1,.3])\nY = true_scale*X@true_R.T + true_t\nanchor = np.arange(len(X)) % 2 == 0\nassert anchor.sum()>=3 and (~anchor).sum()>=3"
+      },
+      {
+        "explain": "Fit only on anchors, then evaluate the rest.",
+        "code": "scale, rotation, translation = fit_similarity(X[anchor], Y[anchor])\npredicted = scale*X@rotation.T + translation\nclean_error = np.linalg.norm(predicted[~anchor]-Y[~anchor], axis=1)\nassert np.allclose(scale, true_scale)\nassert np.max(clean_error)<1e-10\nprint('clean held-out maximum:', clean_error.max())"
+      },
+      {
+        "explain": "Change only held-out targets. The anchor fit cannot expose this local deformation.",
+        "code": "warped = Y.copy(); warped[~anchor] += [.03, 0., 0.]\ns, r, t = fit_similarity(X[anchor], warped[anchor])\nfit_prediction = s*X@r.T + t\nfit_error = np.linalg.norm(fit_prediction[anchor]-warped[anchor], axis=1)\nholdout_error = np.linalg.norm(fit_prediction[~anchor]-warped[~anchor], axis=1)\nassert fit_error.max()<1e-10\nassert np.allclose(holdout_error, .03)\nresult = {'anchors': int(anchor.sum()), 'held_out': int((~anchor).sum()),\n          'anchor_max_error': float(fit_error.max()), 'warped_holdout_mean_error': float(holdout_error.mean()),\n          'targets_are_generated': True, 'independent_physical_validation': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "17.T1",
+        "question": "Can a global similarity transform correct arbitrary depth-dependent distortion?",
+        "answer": "No. It has one scale, one rotation, and one translation. A locally varying deformation is outside that model even if some fitted anchors align well."
+      },
+      {
+        "id": "17.T2",
+        "question": "Why is evaluating the alignment on exactly its fitting anchors insufficient?",
+        "answer": "Optimization explicitly minimizes their residuals. Their agreement does not measure behavior at independent points or rule out overfitting, deformation elsewhere, or shared measurement errors."
+      }
+    ],
+    "data_role": "Real reference point arrangement; target transforms and held-out deformations are generated controls.",
+    "prerequisites": [
+      16
+    ],
+    "title": "Register, validate, and ask topology the right question",
+    "paths": {
+      "lesson": "lessons/17_lesson.md",
+      "workbook": "workbooks/17_workbook.md",
+      "guided_session": "sessions/17_session.md",
+      "worked_lab": "notebooks/17_lab.ipynb",
+      "consolidation": "consolidation/17_lab.ipynb",
+      "independent_code": "practice/learner/17_practice.ipynb",
+      "answers": "practice/answers/17_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/17_response.md"
+    }
+  },
+  {
+    "stage": 18,
+    "focus": "Separate throughput from how old the answer is",
+    "outcomes": [
+      "Preserve numerical outputs while changing an implementation.",
+      "Distinguish measured code duration from simulated queue latency.",
+      "Derive queue growth when service is slower than arrival.",
+      "Report warm-up, work units, and timing boundaries."
+    ],
+    "explanation": "## Time the path you actually claim\nThroughput is completed work per unit time. Latency is elapsed time for a particular item between named boundaries. Result age is how old the source observation is when its result is used or displayed. A pipeline can have high throughput and still show stale results because work waits in a queue or because batches delay individual observations.\n\nBefore timing anything, specify the work item: an image, a frame pair, a point table, or a batch. Specify whether timing includes capture, decode, preprocessing, transfer, model execution, synchronization, serialization, and display. A CPU array operation is not a benchmark of the entire video pipeline.\n\n## Preserve the answer before optimizing it\nThe real stereo reference generates a point table. Apply one rigid transform using a Python loop and using matrix operations. Compare the resulting coordinates first. Timing a faster but incorrect transformation is not an optimization of the same calculation.\n\nWarm each implementation, then time several repetitions and record the median. The exact numbers depend on hardware, runtime, process contention, and array size. This small benchmark is illustrative. It does not establish performance on your Mac, Windows desktop, GPU, or ROS2 pipeline.\n\n## Derive a queue example\nSuppose observations arrive every 0.02 seconds but each takes 0.03 seconds to process on one FIFO server. The first item finishes at 0.03 seconds with latency 0.03. The second arrives at 0.02, waits until 0.03, and finishes at 0.06 with latency 0.04. Each item adds another 0.01 seconds of backlog. By the hundredth item, latency is 1.02 seconds.\n\nThis is a constructed deterministic simulation, not a measured camera benchmark. It explains why a model's isolated service time is insufficient to assess a live system. Dropping work, replacing stale queued items, parallel processing, or lowering the incoming rate are different policies with different completeness and ordering consequences. They should not be silently exchanged in a benchmark.\n\n## Carry the evidence forward\nA timing report should name the input size, repetitions, warm-up, clock, device, and boundary. A latency report should retain observation timestamps and report queue age and drops as well as summary percentiles. Optimizations should be compared on the same numerical and temporal contract.\n\nThe original performance sources motivate profiling; their reported measurements are not results of this course. This notebook records only the small CPU transformation it executes and the FIFO example it simulates. Keeping those labels separate is part of learning accurate systems engineering.",
+    "steps": [
+      {
+        "explain": "Compare two implementations on a point table derived from real reference data.",
+        "code": "from shape_lab.stereo import reference_sample, point_cloud\nfrom shape_lab.geometry import exp_so3\nfrom time import perf_counter\n_, _, disparity, calibration = reference_sample()\nX, _ = point_cloud(disparity, calibration, stride=20)\nrotation = exp_so3([.1,.2,.3]); translation = np.array([.2,0.,-.1])\ndef loop_transform():\n    return np.array([rotation @ p + translation for p in X])\ndef array_transform():\n    return X @ rotation.T + translation\nassert np.allclose(loop_transform(), array_transform())"
+      },
+      {
+        "explain": "Measure only the CPU coordinate transformation, with warm-up and repeated runs.",
+        "code": "loop_transform(); array_transform()\ntimings = {}\nfor name, operation in [('loop', loop_transform), ('array', array_transform)]:\n    durations = []\n    for _ in range(7):\n        start = perf_counter(); operation(); durations.append(perf_counter()-start)\n    timings[name] = float(np.median(durations))\nprint('median CPU seconds:', timings)"
+      },
+      {
+        "explain": "A separate FIFO simulation demonstrates backlog. It is not relabeled as measured latency.",
+        "code": "from shape_lab.temporal import fifo_latencies\narrival = np.arange(100)*.02\nlatency = fifo_latencies(arrival, np.full(100,.03))\nassert np.isclose(latency[0], .03)\nassert np.isclose(latency[-1], 1.02)\nresult = {'points': len(X), 'median_cpu_transform_seconds': timings,\n          'timing_boundary': 'in-memory CPU transform only',\n          'simulated_first_latency_s': float(latency[0]), 'simulated_last_latency_s': float(latency[-1]),\n          'end_to_end_camera_latency_measured': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "18.T1",
+        "question": "How can a system with acceptable per-item inference time still display old results?",
+        "answer": "Queue wait, batching, transfer, decode, serialization, or display delay can dominate source-to-result age. Service time is only one portion of the path."
+      },
+      {
+        "id": "18.T2",
+        "question": "What must be checked before calling a vectorized implementation a valid optimization?",
+        "answer": "It must preserve the intended numerical result, shapes, units, ordering and relevant metadata. Timings must then use comparable inputs and declared boundaries."
+      }
+    ],
+    "data_role": "Real reference point table for measured CPU operations; separate deterministic FIFO simulation.",
+    "prerequisites": [
+      17
+    ],
+    "title": "Make the pipeline efficient without changing the evidence",
+    "paths": {
+      "lesson": "lessons/18_lesson.md",
+      "workbook": "workbooks/18_workbook.md",
+      "guided_session": "sessions/18_session.md",
+      "worked_lab": "notebooks/18_lab.ipynb",
+      "consolidation": "consolidation/18_lab.ipynb",
+      "independent_code": "practice/learner/18_practice.ipynb",
+      "answers": "practice/answers/18_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/18_response.md"
+    }
+  },
+  {
+    "stage": 19,
+    "focus": "Do not let future observations leak into an event decision",
+    "outcomes": [
+      "Distinguish event onset, confirmation time, and observation availability.",
+      "Construct a past-only confirmation rule on a real dated series.",
+      "Check that extending the future does not revise already-issued decisions.",
+      "Separate a threshold-rule output from validated human–object interaction labels."
+    ],
+    "explanation": "## An event label needs a definition\nA temporal rule is not meaningful until its conditions, input units, and timestamp conventions are explicit. “Release” could refer to physical loss of contact, a visually annotated frame, or a distance threshold. Those are not interchangeable. The existing hand–ball example remains a synthetic hypothesis test; no real contact annotations are bundled.\n\nThis supplement uses a real historical annual sunspot series to teach the timing logic without claiming to validate basketball events. We define an intentionally simple rule: after at least two consecutive high values, confirm a high episode. The threshold is declared for the exercise, not optimized to represent a scientific solar event.\n\n## Separate onset from the decision\nIf high values occur in years 1901 and 1902, an online two-observation confirmation can issue its decision when the 1902 value is available. It can report an onset hypothesis of 1901, but it cannot honestly claim to have known in 1901 that the run would continue. Backdating onset is not the same as backdating knowledge.\n\nAnnual data simplify the clock. A real operating system would also need publication or sensor-arrival timestamps. The historic year alone does not establish when the measurement became available. This notebook assigns availability at the annual sample boundary as an explicit teaching convention.\n\n## Check causality with prefixes\nRun the rule on the first k observations. Then run it on the whole series. Restrict the full-series decisions to those issued by time k. They should match the prefix output. A centered smoother or retrospective labeling rule may violate this test because it can use later observations to change an earlier decision.\n\nThe test validates past-only behavior of the particular rule. It does not validate event accuracy. To measure accuracy, we would need independently defined reference events and a matching rule specifying time tolerance, one-to-one matching, and handling of missing observations.\n\n## Transfer the distinction to basketball\nA distance-only hand–ball rule should output a separation candidate, not certified contact or possession. Missing visibility must not silently become a confidently observed trajectory. Identity changes, camera synchronization, occlusion, fast motion, and false near-passes need labeled evaluation. Onset error and decision delay should both be reported; a rule can locate an onset retrospectively while deciding too late for an online application.\n\nThe historical series gives genuine timestamps for learning code. It is not a substitute sports benchmark. This boundary lets us practice the full causal mechanism now while leaving real event validation as an explicit requirement rather than inventing ground truth.",
+    "steps": [
+      {
+        "explain": "Read real annual observations. The threshold is a declared teaching rule, not a scientific event definition.",
+        "code": "import pandas as pd\nseries = pd.read_csv(ROOT/'data/time_series/sunspots_yearly.csv')\nyears = series.YEAR.to_numpy(dtype=int)\nvalues = series.SUNACTIVITY.to_numpy()\nthreshold = 80.\nassert np.all(np.diff(years)==1)\nprint('historical range:', years[0], years[-1])"
+      },
+      {
+        "explain": "Confirm once per high episode using only observations already available. Retain both onset and decision year.",
+        "code": "def confirm_high_episodes(years, values, threshold=80., run_length=2):\n    run = 0; emitted = False; out = []\n    for year, value in zip(years, values):\n        if np.isfinite(value) and value >= threshold:\n            run += 1\n            if run >= run_length and not emitted:\n                out.append({'onset_year': int(year-run+1), 'decision_year': int(year)})\n                emitted = True\n        else:\n            run = 0; emitted = False\n    return out\nall_decisions = confirm_high_episodes(years, values)\nprint(all_decisions[:8])\nassert all(e['decision_year'] > e['onset_year'] for e in all_decisions)"
+      },
+      {
+        "explain": "Run prefix checks to ensure future samples cannot alter decisions already issued.",
+        "code": "for count in [60, 120, 180, 240, len(years)]:\n    prefix = confirm_high_episodes(years[:count], values[:count])\n    already_issued = [e for e in all_decisions if e['decision_year'] <= int(years[count-1])]\n    assert prefix == already_issued\nresult = {'real_time_series': 'historical yearly sunspot activity 1700-2008',\n          'threshold': threshold, 'confirming_observations': 2,\n          'episodes': len(all_decisions), 'prefix_checks': 5,\n          'availability_assumption': 'annual sample boundary; actual publication times not supplied',\n          'independent_event_accuracy_measured': False, 'basketball_events_validated': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "19.T1",
+        "question": "Can a confirmed event have an onset earlier than its decision timestamp?",
+        "answer": "Yes. The onset is a hypothesis about when the event began; confirmation may require later observations. The system must preserve the later decision time rather than pretending knowledge was available at onset."
+      },
+      {
+        "id": "19.T2",
+        "question": "Does passing prefix consistency establish event precision and recall?",
+        "answer": "No. It establishes a past-only property of the implemented rule on the tested sequences. Precision and recall require independent reference labels and an explicit matching protocol."
+      }
+    ],
+    "data_role": "Real historical annual observations for causal timing; no human-contact or scientific solar-event ground truth.",
+    "prerequisites": [
+      18
+    ],
+    "title": "From geometry to cautious interaction hypotheses",
+    "paths": {
+      "lesson": "lessons/19_lesson.md",
+      "workbook": "workbooks/19_workbook.md",
+      "guided_session": "sessions/19_session.md",
+      "worked_lab": "notebooks/19_lab.ipynb",
+      "consolidation": "consolidation/19_lab.ipynb",
+      "independent_code": "practice/learner/19_practice.ipynb",
+      "answers": "practice/answers/19_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/19_response.md"
+    }
+  },
+  {
+    "stage": 20,
+    "focus": "Turn a completed course into a reproducible next investigation",
+    "outcomes": [
+      "Assemble the chain from question through measurement, representation, computation and claim.",
+      "Audit the presence and integrity of execution evidence without equating it with mastery.",
+      "Identify what a new independent dataset must provide for the intended claim.",
+      "Use a finite completion contract while leaving advanced topics and the actual-book audit explicit."
+    ],
+    "explanation": "## Start with the claim you want to make\nA useful capstone begins with a question narrow enough to test. For example: does a chosen topological representation improve a declared prediction task over a specified baseline on independent sessions? Or: after fitting scale and pose on anchor measurements, how accurate are reconstructed distances at different held-out locations? Those questions require different data and evaluation procedures.\n\nWrite the observation unit first. An image is not a person, a frame is not an independent session, and a reference-generated coordinate is not a new physical measurement. Define units, identifiers, timestamps, and missing-data treatment before building features. List which quantities are measured, fitted, assumed, or generated for a control.\n\n## Build a reproducible claim chain\nA report should connect the question to the source records, transformations, mathematical object, parameters, code revision, test evidence, numerical results, and interpretation. If one link changes, downstream results may need rerunning. Hashes can detect byte changes; they cannot tell you whether the content is true. A semantic change may require an experiment even when a software test still passes.\n\nThe v4 evidence verifier reads the existing progress log and checks whether each referenced answer file still matches its recorded hash. Missing, changed, or outside-folder paths are reported separately. It does not rewrite the history, score your proof, or treat a modified answer as dishonest. Revision is normal; save a new dated answer and record a new attempt when appropriate.\n\n## Complete the foundation without endless restarting\nThe course's core scope is the agreed introductory topology and TDA path, plus the applied geometry continuation. The included lessons, original exercises, coding practice, consolidation sessions, proofs, and capstone cover that declared scope at explicitly stated levels. Reading a page is not the same as independently proving its statements or applying them to new data.\n\nUse the objective matrix to find a specific missing capability. Repair that prerequisite, solve a fresh transfer problem, and continue. Do not restart Stage 00 merely because you encountered a difficult theorem later. Likewise, do not add a new modeling architecture to avoid an unresolved measurement or algebra gap.\n\n## What remains an honest next step\nThe actual book has not been compared page by page with this course. Its audit remains unassessed. Trained VGGT inference, independent physical camera validation, real basketball event accuracy, and later advanced mathematics are separate obligations. Their absence does not invalidate the tested introductory exercises; it limits which claims those exercises support.\n\nThe notebook assembles the preceding consolidation evidence and names the boundaries. Your independent capstone must add your own question, data, analysis, and defense rather than republishing the reference outputs as personal mastery. Finish with a failure analysis and a concrete next experiment that could change your conclusion. That is a foundation capable of continued learning rather than an archive that only grows.",
+    "steps": [
+      {
+        "explain": "Inspect the real dataset manifests and prior experiment evidence available in this package.",
+        "code": "from hashlib import sha256\npaths = [ROOT/'data/raw/iris.csv', ROOT/'data/raw/digits.npz',\n         ROOT/'data/stereo/motorcycle.npz', ROOT/'data/time_series/sunspots_yearly.csv']\ninventory = [{'path': str(p.relative_to(ROOT)), 'bytes': p.stat().st_size,\n              'sha256': sha256(p.read_bytes()).hexdigest()} for p in paths]\nprint(json.dumps(inventory, indent=2))\nassert len(inventory)==4"
+      },
+      {
+        "explain": "Check the preceding consolidation reports exist. These certify reference execution only.",
+        "code": "folder = ROOT/'reports/consolidation_v4'\ncompleted = []\nfor stage in range(20):\n    path = folder/f'{stage:02d}.json'\n    if not path.is_file():\n        raise FileNotFoundError(f'Run or restore the preceding reference notebook for Stage {stage:02d}.')\n    report = json.loads(path.read_text())\n    assert report['execution_role']=='reference_consolidation'\n    completed.append(stage)\nprint('preceding reference sessions:', completed)"
+      },
+      {
+        "explain": "Audit the unchanged learner-log format and leave unestablished claims false.",
+        "code": "from shape_lab.learning import read_log\nfrom shape_lab.audits import verify_evidence\nlog = read_log(ROOT/'progress/learning_log_v3.json')\naudit = verify_evidence(log, ROOT)\nresult = {'bundled_real_datasets': 4, 'preceding_reference_sessions': len(completed),\n          'learner_evidence_records_checked': len(audit), 'evidence_audit': audit,\n          'learner_mastery_inferred_from_reference_runs': False,\n          'full_book_text_audited': False, 'VGGT_inference_executed': False,\n          'independent_physical_validation': False, 'real_basketball_event_validation': False}"
+      }
+    ],
+    "transfer": [
+      {
+        "id": "20.T1",
+        "question": "A file checksum matches the saved learning record. What does that establish, and what does it not establish?",
+        "answer": "It establishes byte identity with the recorded artifact, assuming the log itself is trusted. It does not establish mathematical correctness, independence of the attempt, understanding, or retention."
+      },
+      {
+        "id": "20.T2",
+        "question": "What is a productive response to discovering that a capstone result depends heavily on one arbitrary scale?",
+        "answer": "Report the sensitivity, revisit the measurement and metric rationale, and design a controlled comparison or new validation protocol. Do not silently choose the scale giving the most attractive result."
+      }
+    ],
+    "data_role": "Actual bundled dataset bytes and executed reference reports; learner and deployment claims remain separate.",
+    "prerequisites": [
+      19
+    ],
+    "title": "Independent spatial capstone and continuing mastery",
+    "paths": {
+      "lesson": "lessons/20_lesson.md",
+      "workbook": "workbooks/20_workbook.md",
+      "guided_session": "sessions/20_session.md",
+      "worked_lab": "notebooks/20_lab.ipynb",
+      "consolidation": "consolidation/20_lab.ipynb",
+      "independent_code": "practice/learner/20_practice.ipynb",
+      "answers": "practice/answers/20_practice.ipynb",
+      "evidence_template": "curriculum/response_templates/20_response.md"
+    }
+  }
+]

@@ -1,0 +1,40 @@
+{
+  "real_data": "Middlebury motorcycle via scikit-image",
+  "sample_count": 480,
+  "matcher": "integer SAD, radius=3, max_disparity=128, fixed grid",
+  "disparity": {
+    "eligible": 441,
+    "evaluated": 441,
+    "coverage": 1.0,
+    "mean_absolute_error_px": 6.628794520890632,
+    "median_absolute_error_px": 0.49462890625,
+    "bad_fraction": 0.31065759637188206,
+    "bad_threshold_px": 2.0
+  },
+  "depth_mae_m": 0.26291384316518346,
+  "omitted_offset_median_relative_error": 0.760290608540679,
+  "triangulation_reference_formula_max_difference_m": 3.384705673477702e-14,
+  "synthetic_intrinsics_holdout_rmse_px": 0.04085150176852518,
+  "synthetic_depth_sd_formula_m": 0.004629134204800132,
+  "synthetic_depth_sd_monte_carlo_m": 0.004608676096045744,
+  "synthetic_sync_offsets_s": [
+    0.0,
+    0.002,
+    0.005,
+    0.01,
+    0.02
+  ],
+  "synthetic_sync_errors_m": [
+    9.053594779595603e-16,
+    0.04736817174646646,
+    0.12129314666767055,
+    0.25280756849680586,
+    0.5521438518782102
+  ],
+  "limitations": [
+    "Single exposed static scene; not a general benchmark",
+    "No occlusion or subpixel refinement",
+    "Reference-derived formula agreement is a consistency check, not independent metric truth",
+    "Synthetic calibration has known camera-frame coordinates"
+  ]
+}

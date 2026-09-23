@@ -1,0 +1,62 @@
+{
+  "version": "2.0.0",
+  "scope": "Current summary; original report preserved in archive_v1",
+  "counts": {
+    "status": "PASSED",
+    "core_lessons": 13,
+    "beginner_workbooks": 13,
+    "foundation_primers": 4,
+    "conceptual_exercises": 102,
+    "coding_exercises": 65,
+    "retrieval_questions": 39,
+    "executed_reference_notebooks": 26,
+    "executed_reference_code_cells": 189,
+    "intentional_learner_notebooks": 13,
+    "unexecuted_learner_code_cells": 143,
+    "learner_stages_assessed": 0,
+    "full_book_verified": false,
+    "saved_png_figures": 22,
+    "tests_passed": 171,
+    "tests_skipped": 2,
+    "tests_failed": 0
+  },
+  "capstone": {
+    "results": [
+      {
+        "representation": "pixels",
+        "test_accuracy": 0.9638888888888889,
+        "correct": 347,
+        "test_count": 360
+      },
+      {
+        "representation": "topology",
+        "test_accuracy": 0.4666666666666667,
+        "correct": 168,
+        "test_count": 360
+      },
+      {
+        "representation": "combined",
+        "test_accuracy": 0.975,
+        "correct": 351,
+        "test_count": 360
+      },
+      {
+        "representation": "majority_baseline",
+        "test_accuracy": 0.1,
+        "correct": 36,
+        "test_count": 360
+      }
+    ],
+    "selected_C": {
+      "pixels": 1.0,
+      "topology": 1.0,
+      "combined": 0.1
+    },
+    "development_count": 1437,
+    "test_count": 360,
+    "fingerprint": "2254dcaf13dc19ec4ef4d5757337771bbeacb246f1710a2b46bcc4ce362c12a7",
+    "claim": "Held-out image accuracy on the declared split; no unseen-writer or statistical-significance claim.",
+    "holdout_status_after_run": "exposed"
+  },
+  "details": "v2_release.json"
+}

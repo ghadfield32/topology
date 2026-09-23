@@ -1,0 +1,51 @@
+........................................................................ [ 11%]
+................................................FF...................... [ 23%]
+........................................................................ [ 35%]
+........................................................................ [ 47%]
+............................................................ss.......... [ 59%]
+........................................................................ [ 71%]
+........................................................................ [ 82%]
+........................................................................ [ 94%]
+................................                                         [100%]
+=================================== FAILURES ===================================
+______________________ test_canonical_catalog_is_present _______________________
+
+    def test_canonical_catalog_is_present():
+>       assert (ROOT/'curriculum/catalog.json').is_file(), 'One canonical course manifest is required.'
+E       AssertionError: One canonical course manifest is required.
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'curriculum/catalog.json').is_file
+
+tests/test_course_v9.py:6: AssertionError
+__________________________ test_course_api_is_present __________________________
+
+    def test_course_api_is_present():
+>       assert (ROOT/'src/shape_lab/course.py').is_file(), 'Safe isolated lesson execution is required.'
+E       AssertionError: Safe isolated lesson execution is required.
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'src/shape_lab/course.py').is_file
+
+tests/test_course_v9.py:8: AssertionError
+============================= slowest 8 durations ==============================
+2.61s call     tests/test_study_v4.py::test_stage_navigation_has_local_targets[6]
+2.44s call     tests/test_study_v4.py::test_doctor_checks_bundled_data_not_network
+2.41s call     tests/test_study_v4.py::test_stage_navigation_has_local_targets[20]
+2.40s call     tests/test_study_v4.py::test_stage_navigation_has_local_targets[0]
+2.31s call     tests/test_study_v4.py::test_stage_navigation_has_local_targets[12]
+2.29s call     tests/test_study_v4.py::test_invalid_stage_fails_cleanly
+2.26s call     tests/test_study_v4.py::test_empty_evidence_is_not_certified
+2.20s call     tests/test_study_v4.py::test_next_starts_at_zero_without_modifying_log
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_optional_libraries.py:14: could not import 'ripser': No module named 'ripser'
+SKIPPED [1] tests/test_optional_libraries.py:20: could not import 'gudhi': No module named 'gudhi'
+FAILED tests/test_course_v9.py::test_canonical_catalog_is_present - AssertionError: One canonical course manifest is required.
+assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'curriculum/catalog.json').is_file
+FAILED tests/test_course_v9.py::test_course_api_is_present - AssertionError: Safe isolated lesson execution is required.
+assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'src/shape_lab/course.py').is_file
+2 failed, 604 passed, 2 skipped in 32.39s

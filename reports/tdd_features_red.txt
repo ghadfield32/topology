@@ -1,0 +1,127 @@
+FFFFFFF                                                                  [100%]
+=================================== FAILURES ===================================
+________________________ test_features_empty_are_finite ________________________
+
+    def test_features_empty_are_finite():
+>       f=persistence_features([])
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_features.py:7: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([],), kwargs = {}
+
+>   def persistence_features(*args,**kwargs): raise NotImplementedError('feature summaries')
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: feature summaries
+
+src/shape_lab/features.py:1: NotImplementedError
+_________________ test_features_essential_not_in_lifetime_sum __________________
+
+    def test_features_essential_not_in_lifetime_sum():
+        b=[Interval(0,0,float('inf'),(0,),None)]
+>       f=persistence_features(b)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_features.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([Interval(dim=0, birth=0, death=inf, birth_simplex=(0,), death_simplex=None)],)
+kwargs = {}
+
+>   def persistence_features(*args,**kwargs): raise NotImplementedError('feature summaries')
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: feature summaries
+
+src/shape_lab/features.py:1: NotImplementedError
+__________________________ test_landscape_single_tent __________________________
+
+    def test_landscape_single_tent():
+>       assert np.array_equal(persistence_landscape([[0,2]],np.array([0,1,2]),1),[[0,1,0]])
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_features.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[0, 2]], array([0, 1, 2]), 1), kwargs = {}
+
+>   def persistence_landscape(*args,**kwargs): raise NotImplementedError('landscape')
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: landscape
+
+src/shape_lab/features.py:2: NotImplementedError
+______________________ test_landscape_second_level_empty _______________________
+
+    def test_landscape_second_level_empty():
+>       assert np.array_equal(persistence_landscape([[0,2]],np.array([0,1,2]),2)[1],[0,0,0])
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_features.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[0, 2]], array([0, 1, 2]), 2), kwargs = {}
+
+>   def persistence_landscape(*args,**kwargs): raise NotImplementedError('landscape')
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: landscape
+
+src/shape_lab/features.py:2: NotImplementedError
+_______________________________ test_image_mass ________________________________
+
+    def test_image_mass():
+        edges=np.linspace(-10,10,11)
+>       image=persistence_image([[0,2]],edges,edges,.1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_features.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[0, 2]], array([-10.,  -8.,  -6.,  -4.,  -2.,   0.,   2.,   4.,   6.,   8.,  10.]), array([-10.,  -8.,  -6.,  -4.,  -2.,   0.,   2.,   4.,   6.,   8.,  10.]), 0.1)
+kwargs = {}
+
+>   def persistence_image(*args,**kwargs): raise NotImplementedError('persistence image')
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: persistence image
+
+src/shape_lab/features.py:3: NotImplementedError
+_________________________ test_delay_embedding_values __________________________
+
+    def test_delay_embedding_values():
+>       assert np.array_equal(delay_embedding(np.arange(6),3,2),[[0,2,4],[1,3,5]])
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_features.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([0, 1, 2, 3, 4, 5]), 3, 2), kwargs = {}
+
+>   def delay_embedding(*args,**kwargs): raise NotImplementedError('delay embedding')
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: delay embedding
+
+src/shape_lab/features.py:4: NotImplementedError
+___________________ test_delay_embedding_rejects_short_input ___________________
+
+    def test_delay_embedding_rejects_short_input():
+>       with pytest.raises(ValueError): delay_embedding(np.arange(3),3,2)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_features.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([0, 1, 2]), 3, 2), kwargs = {}
+
+>   def delay_embedding(*args,**kwargs): raise NotImplementedError('delay embedding')
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: delay embedding
+
+src/shape_lab/features.py:4: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_features.py::test_features_empty_are_finite - NotImplementedError: feature summaries
+FAILED tests/test_features.py::test_features_essential_not_in_lifetime_sum - NotImplementedError: feature summaries
+FAILED tests/test_features.py::test_landscape_single_tent - NotImplementedError: landscape
+FAILED tests/test_features.py::test_landscape_second_level_empty - NotImplementedError: landscape
+FAILED tests/test_features.py::test_image_mass - NotImplementedError: persistence image
+FAILED tests/test_features.py::test_delay_embedding_values - NotImplementedError: delay embedding
+FAILED tests/test_features.py::test_delay_embedding_rejects_short_input - NotImplementedError: delay embedding
+7 failed in 0.22s

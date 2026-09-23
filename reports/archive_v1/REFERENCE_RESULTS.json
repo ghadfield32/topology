@@ -1,0 +1,408 @@
+{
+  "counts": {
+    "stages": 13,
+    "original_exercises": 102,
+    "worked_solutions": 102,
+    "executed_notebooks": 13,
+    "executed_code_cells": 46,
+    "saved_png_figures": 21,
+    "tests_passed": 79,
+    "tests_skipped": 2,
+    "tests_failed": 0,
+    "original_main_lesson_words": 11233
+  },
+  "notebook_checks": [
+    {
+      "stage": 0,
+      "code_cells": 5,
+      "outputs": 5,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 1,
+      "code_cells": 4,
+      "outputs": 5,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 2,
+      "code_cells": 4,
+      "outputs": 4,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 3,
+      "code_cells": 3,
+      "outputs": 4,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 4,
+      "code_cells": 3,
+      "outputs": 4,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 5,
+      "code_cells": 3,
+      "outputs": 4,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 6,
+      "code_cells": 3,
+      "outputs": 4,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 7,
+      "code_cells": 3,
+      "outputs": 4,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 8,
+      "code_cells": 3,
+      "outputs": 7,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 9,
+      "code_cells": 4,
+      "outputs": 4,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 10,
+      "code_cells": 3,
+      "outputs": 4,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 11,
+      "code_cells": 5,
+      "outputs": 9,
+      "status": "executed_without_errors"
+    },
+    {
+      "stage": 12,
+      "code_cells": 3,
+      "outputs": 7,
+      "status": "executed_without_errors"
+    }
+  ],
+  "notebook_execution": {
+    "00": {
+      "status": "PASSED",
+      "code_cells": 5,
+      "seconds": 2.413,
+      "errors": 0
+    },
+    "01": {
+      "status": "PASSED",
+      "code_cells": 4,
+      "seconds": 1.942,
+      "errors": 0
+    },
+    "02": {
+      "status": "PASSED",
+      "code_cells": 4,
+      "seconds": 2.562,
+      "errors": 0
+    },
+    "03": {
+      "status": "PASSED",
+      "code_cells": 3,
+      "seconds": 2.172,
+      "errors": 0
+    },
+    "04": {
+      "status": "PASSED",
+      "code_cells": 3,
+      "seconds": 2.093,
+      "errors": 0
+    },
+    "05": {
+      "status": "PASSED",
+      "code_cells": 3,
+      "seconds": 2.118,
+      "errors": 0
+    },
+    "06": {
+      "status": "PASSED",
+      "code_cells": 3,
+      "seconds": 2.206,
+      "errors": 0
+    },
+    "07": {
+      "status": "PASSED",
+      "code_cells": 3,
+      "seconds": 2.379,
+      "errors": 0
+    },
+    "08": {
+      "status": "PASSED",
+      "code_cells": 3,
+      "seconds": 2.41,
+      "errors": 0
+    },
+    "09": {
+      "status": "PASSED",
+      "code_cells": 4,
+      "seconds": 2.036,
+      "errors": 0
+    },
+    "10": {
+      "status": "PASSED",
+      "code_cells": 3,
+      "seconds": 2.314,
+      "errors": 0
+    },
+    "11": {
+      "status": "PASSED",
+      "code_cells": 5,
+      "seconds": 3.458,
+      "errors": 0
+    },
+    "12": {
+      "status": "PASSED",
+      "code_cells": 3,
+      "seconds": 4.0,
+      "errors": 0
+    }
+  },
+  "optional_library_checks": {
+    "ripser": {
+      "status": "NOT_RUN",
+      "reason": "Optional dependency unavailable."
+    },
+    "gudhi": {
+      "status": "NOT_RUN",
+      "reason": "Optional dependency unavailable."
+    }
+  },
+  "stability_checks": {
+    "checks": [
+      {
+        "sample_id": 0,
+        "requested_amplitude": 0.01,
+        "actual_sup_change": 0.009867711930734435,
+        "H1_bottleneck": 0.0008775012204563226,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 0,
+        "requested_amplitude": 0.03,
+        "actual_sup_change": 0.028805065015135356,
+        "H1_bottleneck": 0.008583482632734007,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 0,
+        "requested_amplitude": 0.07,
+        "actual_sup_change": 0.06948757090614666,
+        "H1_bottleneck": 0.04406009447091619,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 0,
+        "requested_amplitude": 0.12,
+        "actual_sup_change": 0.11508806823526196,
+        "H1_bottleneck": 0.06302935645352736,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 1,
+        "requested_amplitude": 0.01,
+        "actual_sup_change": 0.00990917150472792,
+        "H1_bottleneck": 0.0023773216460855062,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 1,
+        "requested_amplitude": 0.03,
+        "actual_sup_change": 0.029652885676609952,
+        "H1_bottleneck": 0.0030595212205150046,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 1,
+        "requested_amplitude": 0.07,
+        "actual_sup_change": 0.06995874573853578,
+        "H1_bottleneck": 0.0071811266059125245,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 1,
+        "requested_amplitude": 0.12,
+        "actual_sup_change": 0.11911821958239358,
+        "H1_bottleneck": 0.032934576186076425,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 2,
+        "requested_amplitude": 0.01,
+        "actual_sup_change": 0.009922573513272304,
+        "H1_bottleneck": 0.009770461533778085,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 2,
+        "requested_amplitude": 0.03,
+        "actual_sup_change": 0.029746405286741717,
+        "H1_bottleneck": 0.027746899882291287,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 2,
+        "requested_amplitude": 0.07,
+        "actual_sup_change": 0.06856605453670667,
+        "H1_bottleneck": 0.02486032572056418,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 2,
+        "requested_amplitude": 0.12,
+        "actual_sup_change": 0.11927579441698422,
+        "H1_bottleneck": 0.0985749878590817,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 4,
+        "requested_amplitude": 0.01,
+        "actual_sup_change": 0.009886686817538903,
+        "H1_bottleneck": 0.009503806421493732,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 4,
+        "requested_amplitude": 0.03,
+        "actual_sup_change": 0.028290927102118668,
+        "H1_bottleneck": 0.027103115412431822,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 4,
+        "requested_amplitude": 0.07,
+        "actual_sup_change": 0.06914841407482841,
+        "H1_bottleneck": 0.04691942107010627,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 4,
+        "requested_amplitude": 0.12,
+        "actual_sup_change": 0.11520725071017468,
+        "H1_bottleneck": 0.07066530249020064,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 7,
+        "requested_amplitude": 0.01,
+        "actual_sup_change": 0.009664404398388282,
+        "H1_bottleneck": 0.007731577147319979,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 7,
+        "requested_amplitude": 0.03,
+        "actual_sup_change": 0.02986582420408168,
+        "H1_bottleneck": 0.01493291210204084,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 7,
+        "requested_amplitude": 0.07,
+        "actual_sup_change": 0.06952018074116784,
+        "H1_bottleneck": 0.032851603711154254,
+        "bound_passed": true
+      },
+      {
+        "sample_id": 7,
+        "requested_amplitude": 0.12,
+        "actual_sup_change": 0.10990770728396904,
+        "H1_bottleneck": 0.07692322863289958,
+        "bound_passed": true
+      }
+    ],
+    "check_count": 20,
+    "claim": "Bounded fixed-grid H1 sensitivity only; no unseen-writer or significance claim."
+  },
+  "capstone": {
+    "results": [
+      {
+        "representation": "pixels",
+        "test_accuracy": 0.9638888888888889,
+        "correct": 347,
+        "test_count": 360
+      },
+      {
+        "representation": "topology",
+        "test_accuracy": 0.4666666666666667,
+        "correct": 168,
+        "test_count": 360
+      },
+      {
+        "representation": "combined",
+        "test_accuracy": 0.975,
+        "correct": 351,
+        "test_count": 360
+      },
+      {
+        "representation": "majority_baseline",
+        "test_accuracy": 0.1,
+        "correct": 36,
+        "test_count": 360
+      }
+    ],
+    "selected_C": {
+      "pixels": 1.0,
+      "topology": 1.0,
+      "combined": 0.1
+    },
+    "development_count": 1437,
+    "test_count": 360,
+    "fingerprint": "6fb99c5ae71da56237c0ef29c199c7e71bff343cdc856c0baf039bb27292f2f9",
+    "claim": "Held-out image accuracy on the declared split; no unseen-writer or statistical-significance claim.",
+    "holdout_status_after_run": "exposed"
+  },
+  "limitations": [
+    "External Ripser/GUDHI checks not run: packages unavailable.",
+    "macOS and Windows not executed; installation instructions supplied.",
+    "Full book text not inspected; chapter-complete equivalence unverified.",
+    "No independent reviewer; mathematical derivations and executable checks are supplied.",
+    "Digits split is image-level; no writer IDs and no unseen-writer claims.",
+    "Already displayed capstone holdout is exposed; reruns are reproductions.",
+    "Software execution does not assess learner mastery."
+  ],
+  "package_checks": {
+    "status": "PASSED",
+    "html_pages": 59,
+    "existing_local_link_targets_checked": 1766,
+    "external_links_not_retested": 24,
+    "stages_checked": 13,
+    "executed_notebook_code_cells": 46,
+    "exercise_solution_pairs": 102,
+    "broken_local_links": [],
+    "font_files": []
+  },
+  "browser_checks": {
+    "browser": "Chromium via Playwright, in-memory HTML rendering",
+    "checks": {
+      "home_stage_cards": 13,
+      "home_no_horizontal_overflow": true,
+      "notebook_08_saved_figures": 3,
+      "notebook_08_images_decoded": true,
+      "notebook_no_horizontal_overflow": true,
+      "practice_cards_filter_and_reveal": true,
+      "manual_progress_state_and_storage_failure_message": true,
+      "mobile_home_no_horizontal_overflow": true,
+      "mobile_lesson_no_horizontal_overflow": true
+    },
+    "console_errors": [],
+    "limitations": [
+      "Browser policy blocked both file:// and localhost navigation. Pages were rendered from provided HTML strings with the same local CSS inlined.",
+      "Local-file storage persistence and export-download behavior were not verified on a normal browser origin. The in-memory state and graceful storage-failure behavior were tested."
+    ]
+  },
+  "release_note": "Final release includes refreshed successful notebook outputs and the final passing core test report; optional crosschecks remain unexecuted."
+}

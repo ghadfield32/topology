@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "origin": "Locally installed scikit-image data, not generated photographs",
+  "download_during_build": false,
+  "shape_left": [
+    500,
+    741,
+    3
+  ],
+  "shape_right": [
+    500,
+    741,
+    3
+  ],
+  "shape_disparity": [
+    500,
+    741
+  ],
+  "reference_finite_pixels": 343274,
+  "files": {
+    "motorcycle.npz": "2ec813e33f86bcb4d1eb1bd90245f438b0841fd5b1ab9136a0132f0b28dfe469",
+    "calibration.json": "a7a891043f15e04614a15712d158dc5727a80cc32951ff9d0610f30ac2bd55c5",
+    "left.png": "8d645c6ca405cc3cb9a991b0fb5a964571bf8183f88cd8ffcde59706a30a76c2",
+    "right.png": "009ee402204b3c54ebd714f739b6394e9455d9d33a9dcdab58ef4ec5bee4c43a",
+    "SCIKIT_IMAGE_LICENSE.txt": "611d3207504dcb4a808df209d2e7c9b4f2e89fe690f84735c0d548160966b527"
+  },
+  "reference_status": "Provided benchmark disparity; no uncertainty map bundled. 3D coordinates derived from it are not independently measured holdout coordinates.",
+  "partition": "One static scene, demonstration-only; no unseen-scene or model benchmark claim."
+}

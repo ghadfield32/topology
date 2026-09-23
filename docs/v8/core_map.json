@@ -1,0 +1,281 @@
+[
+  {
+    "stage": 0,
+    "topic": "Observation units",
+    "sports_task": "Count frames, trials, athletes and repeated player profiles separately.",
+    "industry_connection": "Healthcare: image-summary rows versus patient IDs.",
+    "gate": "Explain what one row can and cannot establish.",
+    "sports_section": "S00",
+    "core_lesson": "beginner_v7/00/lesson.md"
+  },
+  {
+    "stage": 1,
+    "topic": "Functions and linear algebra",
+    "sports_task": "Convert units and derive one least-squares design row.",
+    "industry_connection": "Manufacturing: process features and fitted coefficients.",
+    "gate": "Calculate the result by hand before using an array.",
+    "sports_section": "S00",
+    "core_lesson": "beginner_v7/01/lesson.md"
+  },
+  {
+    "stage": 2,
+    "topic": "Metrics",
+    "sports_task": "Compare physical metres with standardized profile-feature distance.",
+    "industry_connection": "Wine chemistry: selected variables and scaling.",
+    "gate": "State the metric, units and meaning of closeness.",
+    "sports_section": "S03",
+    "core_lesson": "beginner_v7/02/lesson.md"
+  },
+  {
+    "stage": 3,
+    "topic": "Continuity and maps",
+    "sports_task": "Contrast rigid transforms with noninvertible image projection.",
+    "industry_connection": "Stereo: pixels versus multiple points on a viewing ray.",
+    "gate": "Give a map that loses information and explain which.",
+    "sports_section": "S01",
+    "core_lesson": "beginner_v7/03/lesson.md"
+  },
+  {
+    "stage": 4,
+    "topic": "Groups and homotopy",
+    "sports_task": "Test a rotation of coordinates without changing landmark angle.",
+    "industry_connection": "Digit images: rotations and changed class meaning.",
+    "gate": "Distinguish geometric invariance from label invariance.",
+    "sports_section": "S01",
+    "core_lesson": "beginner_v7/04/lesson.md"
+  },
+  {
+    "stage": 5,
+    "topic": "Simplices and surfaces",
+    "sports_task": "Build a small profile Rips complex; distinguish triangles from graph cycles.",
+    "industry_connection": "Image pixels: filled cells versus outlines.",
+    "gate": "Explain when a three-cycle becomes a boundary.",
+    "sports_section": "S03",
+    "core_lesson": "beginner_v7/05/lesson.md"
+  },
+  {
+    "stage": 6,
+    "topic": "Homology",
+    "sports_task": "Compute a tiny square control before profile homology.",
+    "industry_connection": "Material/chemical feature clouds: same algebra, different interpretation.",
+    "gate": "Show boundary-of-boundary and a hand Betti calculation.",
+    "sports_section": "S03",
+    "core_lesson": "beginner_v7/06/lesson.md"
+  },
+  {
+    "stage": 7,
+    "topic": "Filtrations",
+    "sports_task": "Declare edge thresholds and missing-player policy.",
+    "industry_connection": "Climate delay clouds: scale is not chronology.",
+    "gate": "Distinguish filtration parameter from time index.",
+    "sports_section": "S03",
+    "core_lesson": "beginner_v7/07/lesson.md"
+  },
+  {
+    "stage": 8,
+    "topic": "Persistence",
+    "sports_task": "Read a square bar then descriptive profile bars.",
+    "industry_connection": "Image persistence: features of a chosen filtration.",
+    "gate": "Name birth, death and an unsupported interpretation.",
+    "sports_section": "S03",
+    "core_lesson": "beginner_v7/08/lesson.md"
+  },
+  {
+    "stage": 9,
+    "topic": "Persistence algorithms",
+    "sports_task": "Reuse tested F2 reduction and report simplex dimension.",
+    "industry_connection": "All small point-cloud examples.",
+    "gate": "Compare exact controls; leave absent external packages as skips.",
+    "sports_section": "S03",
+    "core_lesson": "beginner_v7/09/lesson.md"
+  },
+  {
+    "stage": 10,
+    "topic": "Stability",
+    "sports_task": "Derive 2-delta pair-distance bound and perturb a real profile cloud artificially.",
+    "industry_connection": "Measurement pipelines: sensitivity versus statistical uncertainty.",
+    "gate": "List correspondence/metric assumptions behind the bound.",
+    "sports_section": "S04",
+    "core_lesson": "beginner_v7/10/lesson.md"
+  },
+  {
+    "stage": 11,
+    "topic": "Representations",
+    "sports_task": "Fit transformations on training groups only.",
+    "industry_connection": "Healthcare/food classification: retain identical evaluation units.",
+    "gate": "Explain why a descriptor can add no predictive value.",
+    "sports_section": "S05",
+    "core_lesson": "beginner_v7/11/lesson.md"
+  },
+  {
+    "stage": 12,
+    "topic": "Independent capstone",
+    "sports_task": "Write a target/cutoff/group/baseline protocol before full sports acquisition.",
+    "industry_connection": "Any industry: new independent question and evaluation.",
+    "gate": "Defend result and limitations without claiming tutorial replication is discovery.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/12/lesson.md"
+  },
+  {
+    "stage": 13,
+    "topic": "Manifolds",
+    "sports_task": "Relate local coordinate charts to motion representation, not to a whole 3D image inverse.",
+    "industry_connection": "Manufacturing reconstruction: local parameters and global ambiguity.",
+    "gate": "Explain where the chart analogy ceases to apply.",
+    "sports_section": "S01",
+    "core_lesson": "beginner_v7/13/lesson.md"
+  },
+  {
+    "stage": 14,
+    "topic": "Rotations and cameras",
+    "sports_task": "Audit frame labels, metre conversion and transform composition.",
+    "industry_connection": "Calibrated stereo: independent distances.",
+    "gate": "Separate frame change, unit change and calibration.",
+    "sports_section": "S01",
+    "core_lesson": "beginner_v7/14/lesson.md"
+  },
+  {
+    "stage": 15,
+    "topic": "Measured stereo",
+    "sports_task": "Choose external sports video only when appropriate geometry references exist.",
+    "industry_connection": "Middlebury reference disparity: retained measured-source exercise.",
+    "gate": "State what the independent reference measures.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/15/lesson.md"
+  },
+  {
+    "stage": 16,
+    "topic": "Attention/VGGT",
+    "sports_task": "Keep predicted sports geometry as a candidate, not ground truth.",
+    "industry_connection": "Robotics scenes: predicted depth and scale ambiguity.",
+    "gate": "Separate model prediction, registration and validation.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/16/lesson.md"
+  },
+  {
+    "stage": 17,
+    "topic": "Registration",
+    "sports_task": "Fit alignment on one reference set, evaluate on another.",
+    "industry_connection": "Inspection/metrology: validation references not fit residuals.",
+    "gate": "Explain gauge freedom and independent metric checks.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/17/lesson.md"
+  },
+  {
+    "stage": 18,
+    "topic": "Runtime",
+    "sports_task": "Distinguish 60 fps capture, retained sample rate and display delay.",
+    "industry_connection": "Sensor monitoring: freshness versus throughput.",
+    "gate": "Report sample age and reject unavailable evidence.",
+    "sports_section": "S04",
+    "core_lesson": "beginner_v7/18/lesson.md"
+  },
+  {
+    "stage": 19,
+    "topic": "Temporal events",
+    "sports_task": "Keep release/contact hypotheses distinct from proximity.",
+    "industry_connection": "Human-object manipulation: hard negatives and visibility.",
+    "gate": "Declare live versus offline availability.",
+    "sports_section": "S04",
+    "core_lesson": "beginner_v7/19/lesson.md"
+  },
+  {
+    "stage": 20,
+    "topic": "Spatial capstone",
+    "sports_task": "Choose one measured-scene or tracking benchmark with source terms.",
+    "industry_connection": "Any multiview reconstruction: no raw-video license inference.",
+    "gate": "Produce a bounded, reproducible acceptance protocol.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/20/lesson.md"
+  },
+  {
+    "stage": 21,
+    "topic": "Dynamics and units",
+    "sports_task": "Derive height and velocity units from the flight equation.",
+    "industry_connection": "Thermal response: model form and observation units.",
+    "gate": "Detect metre/foot and second/frame mistakes.",
+    "sports_section": "S02",
+    "core_lesson": "beginner_v7/21/lesson.md"
+  },
+  {
+    "stage": 22,
+    "topic": "Flows",
+    "sports_task": "Distinguish continuous model trajectories from sparse samples and held values.",
+    "industry_connection": "Process dynamics: exact flow versus numerical update.",
+    "gate": "Give an example where an interpolated path is not newly measured.",
+    "sports_section": "S04",
+    "core_lesson": "beginner_v7/22/lesson.md"
+  },
+  {
+    "stage": 23,
+    "topic": "HNN/LNN",
+    "sports_task": "Use a conventional parabola before proposing a structured neural dynamics model.",
+    "industry_connection": "Manufactured mechanics: retained trained small HNN/LNN labs.",
+    "gate": "State missing labels and dynamics assumptions for real sports transfer.",
+    "sports_section": "S02",
+    "core_lesson": "beginner_v7/23/lesson.md"
+  },
+  {
+    "stage": 24,
+    "topic": "Symplectic integration",
+    "sports_task": "Do not equate structured updates with exact energy in ball flight.",
+    "industry_connection": "Oscillators: retained exact counterexamples.",
+    "gate": "Distinguish model conservation from integrator properties.",
+    "sports_section": "S02",
+    "core_lesson": "beginner_v7/24/lesson.md"
+  },
+  {
+    "stage": 25,
+    "topic": "Constraints",
+    "sports_task": "Explain why a plausible pose projection does not validate measurements.",
+    "industry_connection": "Mechanical constraints: affine versus nonlinear corrections.",
+    "gate": "Identify which constraint was enforced and residual remaining.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/25/lesson.md"
+  },
+  {
+    "stage": 26,
+    "topic": "PINNs",
+    "sports_task": "Compare fixed-gravity regression and free curvature before a physics loss.",
+    "industry_connection": "Poisson equation: retained PINN versus analytical/FD control.",
+    "gate": "Show that low residual can coexist with wrong clock/scale.",
+    "sports_section": "S02",
+    "core_lesson": "beginner_v7/26/lesson.md"
+  },
+  {
+    "stage": 27,
+    "topic": "Gradient conflicts",
+    "sports_task": "Treat multiple sports losses and labels as separate constraints, not automatically compatible.",
+    "industry_connection": "Domain-decomposed PDEs: retained gradient conflict lesson.",
+    "gate": "Keep source-author benchmark claims distinct from our tests.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/27/lesson.md"
+  },
+  {
+    "stage": 28,
+    "topic": "Neural operators",
+    "sports_task": "Recognize which sports data are trajectories, functions or sparse summaries.",
+    "industry_connection": "Heat operators: retained DeepONet/FNO teaching controls.",
+    "gate": "Do not fit a field operator from unrelated aggregate rows.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/28/lesson.md"
+  },
+  {
+    "stage": 29,
+    "topic": "Differentiable simulation",
+    "sports_task": "Separate gradient correctness from parameter identifiability.",
+    "industry_connection": "Damped dynamics: retained simulator gradient check.",
+    "gate": "Explain how wrong time scale can fit the same trajectory.",
+    "sports_section": "S02",
+    "core_lesson": "beginner_v7/29/lesson.md"
+  },
+  {
+    "stage": 30,
+    "topic": "Scientific evidence",
+    "sports_task": "Audit dataset/model/code licenses, sources, splits and test exposure.",
+    "industry_connection": "Cross-industry independent studies.",
+    "gate": "Make no adoption claim without matching validation evidence.",
+    "sports_section": "S06",
+    "core_lesson": "beginner_v7/30/lesson.md"
+  }
+]

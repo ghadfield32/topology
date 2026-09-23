@@ -1,0 +1,37 @@
+{
+  "sample_id": 8,
+  "coefficients": "F2",
+  "homology": "ordinary",
+  "threshold_results": [
+    {
+      "threshold": 0,
+      "beta0": 3,
+      "beta1": 0,
+      "euler": 3
+    },
+    {
+      "threshold": 0.25,
+      "beta0": 1,
+      "beta1": 1,
+      "euler": 0
+    },
+    {
+      "threshold": 0.5,
+      "beta0": 1,
+      "beta1": 2,
+      "euler": -1
+    },
+    {
+      "threshold": 0.75,
+      "beta0": 1,
+      "beta1": 2,
+      "euler": -1
+    },
+    {
+      "threshold": 1.0,
+      "beta0": 1,
+      "beta1": 0,
+      "euler": 1
+    }
+  ]
+}

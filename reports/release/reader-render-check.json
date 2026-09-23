@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "checks": [
+    "render31stagecards",
+    "searchfilter",
+    "mobilelayout",
+    "answerreveal",
+    "embeddedfigure"
+  ],
+  "method": "set_content of actual generated HTML with identical CSS inlined; not navigation",
+  "navigation": "blocked by browser administrator policy",
+  "http_server": "urllib localhost GET passed before browser navigation attempt",
+  "docker_involved": false
+}

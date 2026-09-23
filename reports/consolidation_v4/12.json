@@ -1,0 +1,28 @@
+{
+  "sample_count": 360,
+  "accuracy_a": 0.9638888888888889,
+  "accuracy_b": 0.975,
+  "difference_b_minus_a": 0.011111111111111112,
+  "a_only_correct": 3,
+  "b_only_correct": 7,
+  "both_correct": 344,
+  "both_wrong": 6,
+  "exact_discordance_pvalue": 0.34375,
+  "paired_percentile_interval": [
+    -0.005555555555555556,
+    0.027777777777777776
+  ],
+  "resamples": 4000,
+  "seed": 2026,
+  "confidence_level": 0.95,
+  "status": "exploratory_on_exposed_predictions",
+  "limitations": "Image-level independence assumed, not established; no writer IDs; no fresh holdout or selection correction. Interval conditions on fixed fitted predictions.",
+  "models": [
+    "pixels",
+    "combined"
+  ],
+  "new_confirmatory_holdout": false,
+  "stage": 12,
+  "execution_role": "reference_consolidation",
+  "data_role": "Actual saved handwriting predictions from an already-exposed image-level holdout; exploratory analysis only."
+}

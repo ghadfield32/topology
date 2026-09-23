@@ -1,0 +1,16 @@
+{
+  "core_stages": 31,
+  "sports_sections": 7,
+  "new_worked_notebooks": 7,
+  "new_answer_notebooks": 7,
+  "new_learner_notebooks": 7,
+  "new_coding_exercises": 21,
+  "new_concept_questions": 28,
+  "source_registry_entries": 10,
+  "retained_observed_sources": 15,
+  "new_observed_source_excerpts": 2,
+  "reference_notebooks": 121,
+  "reference_code_cells": 710,
+  "reference_png_outputs": 80,
+  "fresh_reference_execution_all_passed": true
+}

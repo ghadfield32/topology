@@ -1,0 +1,10 @@
+{
+  "ripser": {
+    "status": "NOT_RUN",
+    "reason": "Optional dependency unavailable."
+  },
+  "gudhi": {
+    "status": "NOT_RUN",
+    "reason": "Optional dependency unavailable."
+  }
+}

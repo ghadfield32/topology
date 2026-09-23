@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Verification — Listening to Shape Learning System 2.0 · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../docs/VERIFICATION.md">docs/VERIFICATION.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="verification--listening-to-shape-learning-system-20">Verification — Listening to Shape Learning System 2.0</h1>
+<p>Verified in the local Linux Python 3.13.5 environment on September 20, 2026. These checks describe this release, not universal correctness or learner mastery. Original version-1 records are preserved under <code>reports/archive_v1/</code>.</p>
+<h2 id="freshly-executed-evidence">Freshly executed evidence</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full test suite</td>
+<td><strong>171 passed; 2 optional skips; 0 failures</strong></td>
+</tr>
+<tr>
+<td>Original worked notebooks</td>
+<td><strong>13/13 successfully rerun</strong>, fresh kernel per notebook</td>
+</tr>
+<tr>
+<td>New reference-answer notebooks</td>
+<td><strong>13/13 executed</strong>, fresh kernel per notebook</td>
+</tr>
+<tr>
+<td>Executed reference code cells</td>
+<td><strong>189</strong>, no saved error outputs</td>
+</tr>
+<tr>
+<td>Learner notebook templates</td>
+<td><strong>13</strong>, with 65 explicit unfinished coding assignments; not counted as passed</td>
+</tr>
+<tr>
+<td>Reference coding activity checks</td>
+<td><strong>65/65</strong>, also exercised in the test suite</td>
+</tr>
+<tr>
+<td>Fixed-grid finite H1 perturbation checks</td>
+<td><strong>20/20</strong> satisfied their stated numerical bound</td>
+</tr>
+<tr>
+<td>Saved analytical figures</td>
+<td><strong>22</strong>: 21 core lab figures and one seeded real-CSV diagram</td>
+</tr>
+<tr>
+<td>Separate extracted candidate suite</td>
+<td><strong>171 passed; 2 optional skips</strong></td>
+</tr>
+<tr>
+<td>Stage/content/schema checks</td>
+<td>Passed for all 13 stages</td>
+</tr>
+<tr>
+<td>Learner stages pre-assessed</td>
+<td><strong>0</strong></td>
+</tr>
+<tr>
+<td>Actual book sections audited</td>
+<td><strong>0</strong>; 24 supplied section titles have a pending audit inventory</td>
+</tr>
+</tbody>
+</table>
+<p>Test logs: <code>reports/pytest.txt</code>, <code>reports/pytest.xml</code>, <code>reports/extracted_copy_tests.txt</code>. Notebook records: <code>reports/notebook_execution.json</code>, <code>reports/practice_execution.json</code>. Current content inventory: <code>reports/v2_content_checks.json</code>. Combined machine-readable report: <code>reports/v2_release.json</code>.</p>
+<p>The first large notebook batch exceeded a host tool time limit while beginning Stage 11. That kernel was interrupted; Stage 11 and Stage 12 were then rerun successfully in a separate batch. The final records reflect successful executions, not an ignored failure. The educational starter functions intentionally raise NotImplementedError until completed; the ordinary test suite permits learners to edit them.</p>
+<h2 id="reader-and-package-checks">Reader and package checks</h2>
+<p>The static checker inspected <strong>138 HTML pages and 4,861 local link targets</strong>, with no broken file targets. It verifies target files, not every in-document anchor or external website. No font files are distributed.</p>
+<p>Eight representative documents were rendered in Chromium using their actual HTML and bundled stylesheet loaded in memory. The home, stage hub, homology workbook, coding answers, notation table, recall page, learning guide and capstone rendered successfully. Details expansion and a mobile-width home layout were checked; no document-level horizontal overflow was observed on that mobile home view.</p>
+<p><strong>Browser limit:</strong> this environment blocked local HTTP navigation with <code>ERR_BLOCKED_BY_ADMINISTRATOR</code>. The in-memory check does not establish file-origin navigation, downloadable-link behavior, or persistent browser storage. Static file links were checked independently. The legacy browser scratchpad is not the durable v2 log; it does not synchronize with the CLI. See <code>reports/browser_checks.json</code>.</p>
+<p>The ZIP is distributed with <code>MANIFEST.sha256</code> for its included files. Final archive integrity and checksum verification are performed after packaging; those checks establish byte consistency, not authorship or mathematical truth.</p>
+<h2 id="optional-comparisons-that-are-not-passed">Optional comparisons that are NOT passed</h2>
+<p>Ripser and GUDHI were not installed. An installation attempt did not obtain available distributions in this environment. Both comparison tests are skipped and the optional alpha-complex demonstration remains unexecuted. Run the README's optional commands locally to complete this independent-validation gate. The core calculations have hand-derived fixtures, invariants and other checks, but those are not a substitute claim of agreement with these libraries.</p>
+<h2 id="reproduced-real-data-result">Reproduced real-data result</h2>
+<p>The already-declared 360-image demonstration test split gives:</p>
+<table>
+<thead>
+<tr>
+<th>Representation</th>
+<th style="text-align:right">Correct</th>
+<th style="text-align:right">Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pixels</td>
+<td style="text-align:right">347/360</td>
+<td style="text-align:right">96.39%</td>
+</tr>
+<tr>
+<td>Topology descriptors</td>
+<td style="text-align:right">168/360</td>
+<td style="text-align:right">46.67%</td>
+</tr>
+<tr>
+<td>Pixels + topology</td>
+<td style="text-align:right">351/360</td>
+<td style="text-align:right">97.50%</td>
+</tr>
+<tr>
+<td>Majority label</td>
+<td style="text-align:right">36/360</td>
+<td style="text-align:right">10.00%</td>
+</tr>
+</tbody>
+</table>
+<p>The four-image difference between combined and pixel features is not asserted statistically significant. Writer identifiers are absent, so this is not an unseen-writer evaluation. Test labels and results are now exposed; rerunning is reproduction, not a new independent test. Predictions, chosen regularization settings and experiment contract are saved under <code>reports/stage_12/</code>.</p>
+<p>The own-CSV example uses 20 seed-selected Iris rows with explicit measurement columns and Euclidean units. Its report records source hash, sample positions, field, simplex dimension and diagrams. It is exploratory only; no population-topology recovery or predictive improvement is claimed.</p>
+<h2 id="scope-and-reproducibility-limits">Scope and reproducibility limits</h2>
+<p>The archive contains original instruction aligned to the supplied topic outline. It is not the actual book, not endorsed by the author, and not exhaustive coverage of all topology. The proof atlas distinguishes complete elementary arguments from substantial theorems whose full proofs remain deeper-reading obligations. No proof assistant or independent human reviewer certified these explanations.</p>
+<p>The numerical environment and 99 installed dependency records are saved in <code>reports/environment.json</code> and <code>reports/tested_dependency_snapshot.txt</code>. Direct dependencies are pinned. This is not a cross-platform lockfile or a clean internet-install test. Windows and macOS instructions are supplied, but only Linux execution was tested. The included small examples do not require GPU code.</p>
+<p>The learning log stores self-reported grades, dates and evidence hashes. Its rules separate practice, independent demonstration and delayed recall. It does not automatically judge mathematical correctness, schedule notifications, or certify permanent retention. All distributed learner histories remain empty.</p>
+<h2 id="reproduce-the-checks">Reproduce the checks</h2>
+<p>From the extracted course root, after installing the documented environment:</p>
+<pre><code class="language-bash">python -m pytest -q -ra
+python scripts/run_notebooks.py
+python scripts/run_practice_answers.py
+python scripts/build_reader_v2.py
+python scripts/check_package.py
+</code></pre>
+<p><code>python scripts/check_release_v2.py</code> is a <strong>shipping-state check</strong>, not an everyday learner command: it expects untouched templates and an empty distributed log. Once you begin your own work, that release-only check should no longer claim pristine learner state. Ordinary pytest and package checks remain the normal software checks.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

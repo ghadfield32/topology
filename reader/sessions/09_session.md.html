@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 09 guided session — Verify persistence without trusting the same algorithm twice · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/09_session.md">sessions/09_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-09-guided-session--verify-persistence-without-trusting-the-same-algorithm-twice">Stage 09 guided session — Verify persistence without trusting the same algorithm twice</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/09_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/09_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/09_workbook.md.html">original workbook</a> and <a href="../notebooks/09_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real Iris cloud with a deliberately duplicated observation and a deterministic permutation control.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Explain what a boundary-column pivot represents.</li>
+<li>Relate finite H0 death times to spanning-tree edge weights.</li>
+<li>Handle duplicate observations and zero-length intervals explicitly.</li>
+<li>State the dimension and scope actually checked by an independent oracle.</li>
+</ol>
+<h2 id="reduction-is-cancellation-of-a-shared-boundary-term">Reduction is cancellation of a shared boundary term</h2>
+<p>In the binary boundary matrix, each column contains the indices of faces occurring in a simplex's boundary. The pivot of a nonzero reduced column is its largest remaining row. When two columns share that pivot, add one to the other modulo two. The shared row cancels. Continue until the column is zero or has a pivot not owned by an earlier column.</p>
+<p>The algorithm requires a filtration-compatible ordering: faces precede cofaces, including at equal entry values. A zero reduced column indicates a birth; a pivot pairing identifies which earlier class the column kills. To understand this, trace a triangle by hand before inspecting a large matrix.</p>
+<h2 id="h0-admits-another-route">H0 admits another route</h2>
+<p>Begin with every point in its own component. Add edges in increasing distance order. An edge joining different components merges them; an edge within a component does not. The selected merge edges form a minimum spanning tree for a connected complete weighted graph. Consequently their weights are the finite H0 death times when vertices are born at zero.</p>
+<p>Our independent check uses dense Prim construction. It builds the tree by repeatedly connecting the cheapest point outside the current tree. It does not form simplices or reduce a homology boundary matrix. Agreement therefore tests a distinct path through the mathematics.</p>
+<p>A spanning tree on n labeled points uses n−1 edges. Duplicate coordinates can give zero-length edges. The default persistent-homology report omits bars with exactly zero persistence, while the tree still contains those zero-weight merges. Filter only the zero weights when matching that reporting policy; do not silently remove the duplicated record from the source table.</p>
+<h2 id="use-the-real-data-and-an-adversarial-control">Use the real data and an adversarial control</h2>
+<p>On a small Iris point sample, compare the sorted positive tree weights with finite H0 death values. Then insert a duplicate point and repeat. Finally permute the point order. The merge-edge identities may change under ties, but the multiset of death times must match for the same metric filtration.</p>
+<p>This check covers H0, not H1. It also does not verify the accuracy of the measured input coordinates. The image-oracle tests, exact square tests, oriented boundary identities, and optional external libraries cover complementary pieces. Good verification combines checks with different failure modes instead of presenting one successful comparison as proof of an entire system.</p>
+<p>SciPy's sparse-graph convention treats zero as no edge in an ordinary dense adjacency matrix. That can erase genuine zero-distance relationships. Our small direct implementation avoids relying on that convention for duplicate coordinates. The source ledger links SciPy's documentation so you can inspect that boundary when choosing a different implementation.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Compare the spanning-tree calculation and boundary reduction on a small real cloud.</p>
+<pre><code class="language-python">from shape_lab.data import load_iris_data
+from shape_lab.audits import h0_merge_times
+from shape_lab.persistence import rips_filtration, persistent_homology, diagram
+frame = load_iris_data().iloc[::10]
+X = frame[[c for c in frame if c.endswith('_cm')]].to_numpy()
+tree = h0_merge_times(X)
+bars = diagram(persistent_homology(rips_filtration(X, max_homology=0)), 0, finite_only=True)
+assert np.allclose(tree[tree&gt;0], np.sort(bars[:,1]))
+print('finite positive H0 deaths:', np.sort(bars[:,1]))
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Insert a duplicate observation. Its zero-weight merge is retained by the tree but excluded by the positive-bar policy.</p>
+<pre><code class="language-python">duplicated = np.vstack([X, X[0]])
+weights = h0_merge_times(duplicated)
+assert len(weights)==len(duplicated)-1 and np.any(weights==0)
+other = diagram(persistent_homology(rips_filtration(duplicated, max_homology=0)), 0, finite_only=True)
+assert np.allclose(weights[weights&gt;0], np.sort(other[:,1]))
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Permutation should preserve the multiset of merge weights, including ties and zero merges.</p>
+<pre><code class="language-python">permutation = np.random.default_rng(19).permutation(len(duplicated))
+assert np.allclose(h0_merge_times(duplicated[permutation]), weights)
+result = {'original_records': len(X), 'with_duplicate': len(duplicated),
+          'h0_tree_reduction_agreement': True, 'zero_weight_merges': int(np.sum(weights==0)),
+          'h1_independently_verified_by_this_test': False}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="09t1">09.T1</h3>
+<p>Does matching all H0 bars establish correctness of H1 persistence?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>No. H0 concerns connected-component merges. H1 involves cycles and filling by triangles; it needs its own controls and comparisons.</p>
+</details>
+<h3 id="09t2">09.T2</h3>
+<p>Why may tree edges differ while the persistence comparison still passes?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Tied edge lengths can permit multiple valid spanning trees. The finite death-time multiset, not the selected edge identities, is the invariant being compared.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/09_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

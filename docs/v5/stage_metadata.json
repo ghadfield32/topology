@@ -1,0 +1,502 @@
+[
+  {
+    "stage": 21,
+    "title": "Rates, equations, units and what data can identify",
+    "prerequisites": "Stages 01, 10 and the rates primer. Review matrices and the chain rule; no prior mechanics is assumed.",
+    "data_role": "Observed NIST copper measurements; manufactured cosine derivative checks. Temperature is not a time axis.",
+    "questions": [
+      [
+        "Why is the first-column ordering not enough to define a time axis?",
+        "Ordering is a data operation. An axis is time only if its measurement definition establishes time; the NIST predictor is temperature in kelvin."
+      ],
+      [
+        "Derive the centered-difference leading order for a smooth function.",
+        "Subtract Taylor expansions at ±h; even powers cancel and division by 2h leaves f′+h²f‴/6+O(h⁴), with sufficient smoothness."
+      ],
+      [
+        "Which part of m and k can the unit mass-spring acceleration identify?",
+        "The equation depends on k/m. Without another measurement, scaling both by the same positive factor leaves the trajectory unchanged."
+      ],
+      [
+        "Give a zero-residual but wrong-answer example.",
+        "For u″=0, any affine function has zero interior residual. If the intended problem has u(0)=0 and u(1)=1, u=0 has zero interior residual but the wrong right boundary."
+      ],
+      [
+        "What is the NIST excerpt suitable for and unsuitable for?",
+        "Suitable: exploring static response versus temperature and held-out regression. Unsuitable: measured time integration, diffusivity identification, or replication of full-data certified statistics."
+      ],
+      [
+        "What happens if observation noise stays fixed while difference spacing shrinks?",
+        "Noise in the numerator is divided by a smaller spacing, so derivative variance can increase even as smooth truncation bias decreases."
+      ]
+    ],
+    "recall": [
+      [
+        "What are state, residual and identifiability?",
+        "A state contains modeled predictive information; a residual measures violation of an equation; identifiability distinguishes parameter choices from observations."
+      ],
+      [
+        "When is halving h useful?",
+        "When smooth truncation error dominates and the assumed finite-difference expansion is valid; not automatically with noisy data or roundoff."
+      ],
+      [
+        "What quantity is missing from the copper table for an ODE trajectory?",
+        "A time-resolved state and relevant forcing/initial conditions; temperature-indexed response is not such a trajectory."
+      ]
+    ],
+    "lesson": "physics/lessons/21.md",
+    "lab": "physics/notebooks/21_lab.ipynb",
+    "learner": "physics/practice/learner/21_practice.ipynb",
+    "answers": "physics/practice/answers/21_practice.ipynb"
+  },
+  {
+    "stage": 22,
+    "title": "Smooth flows, coordinate changes and invertible networks",
+    "prerequisites": "Stage 13 and Stage 21; remember the difference between a function and its inverse.",
+    "data_role": "Measured Iris feature pairs transformed by a chosen invertible map; the flow itself is a mathematical construction.",
+    "questions": [
+      [
+        "Why is x³ not a diffeomorphism of the usual smooth real line?",
+        "The map is smooth and bijective, but its cube-root inverse is not differentiable at zero."
+      ],
+      [
+        "For x0=2, can the flow of x′=x² be evaluated at t=1 along its original solution?",
+        "No. Its maximal forward solution blows up at t=0.5; the algebraic fraction beyond that is not a continuation through the singularity."
+      ],
+      [
+        "Write the inverse affine coupling.",
+        "Keep the first coordinate x, then use (y_new-0.5 sin x)*exp(-0.2 tanh x)."
+      ],
+      [
+        "Derive the log determinant of the coupling.",
+        "The Jacobian is triangular with diagonal (1,exp(s(x))); log absolute determinant is s(x)."
+      ],
+      [
+        "Does a good round trip on Iris establish a biological flow?",
+        "No. It establishes an implementation property of a constructed transformation of measured features."
+      ],
+      [
+        "Does an invertible nonlinear transformation preserve a Euclidean persistence diagram exactly?",
+        "Not generally. It may alter distances and therefore the scale at which simplices enter."
+      ]
+    ],
+    "recall": [
+      [
+        "What extra assumption turns local flow into all-time flow?",
+        "A suitable completeness condition; smoothness alone is insufficient."
+      ],
+      [
+        "Why does normalization not have an ambient inverse?",
+        "All positive radial multiples map to the same unit vector."
+      ],
+      [
+        "What sign accompanies log determinant in the transformed density?",
+        "Subtract log abs det DF when expressing log p_Y(F(x)) from log p_X(x)."
+      ]
+    ],
+    "lesson": "physics/lessons/22.md",
+    "lab": "physics/notebooks/22_lab.ipynb",
+    "learner": "physics/practice/learner/22_practice.ipynb",
+    "answers": "physics/practice/answers/22_practice.ipynb"
+  },
+  {
+    "stage": 23,
+    "title": "Mechanics, Hamiltonian networks and Lagrangian networks",
+    "prerequisites": "Stages 01, 13, 21 and the neural-network paragraph in Primer 07.",
+    "data_role": "Manufactured oscillator derivative data for training; observed copper data used to examine what is and is not identifiable.",
+    "questions": [
+      [
+        "With m=2 and v=3, what is p?",
+        "For L=m v²/2-V(q), p=m v=6. This relation is model-specific."
+      ],
+      [
+        "Derive H for the quadratic spring Lagrangian.",
+        "Use v=p/m in pv-(m v²/2-kq²/2) to obtain p²/(2m)+kq²/2."
+      ],
+      [
+        "What condition allows the regular LNN acceleration formula?",
+        "Invertibility of the velocity Hessian; in one coordinate L_vv must be nonzero."
+      ],
+      [
+        "Which constant cannot derivative supervision identify in H?",
+        "Any additive constant; its derivative is zero."
+      ],
+      [
+        "Why can conserved learned H still describe wrong dynamics?",
+        "Many different scalar functions generate Hamiltonian dynamics. Structure alone does not identify the measured system or eliminate model error."
+      ],
+      [
+        "What is deliberately restricted in the trained LNN?",
+        "Unit kinetic term v²/2 is fixed. Only a one-coordinate potential network is learned; a general velocity-dependent L is not trained."
+      ]
+    ],
+    "recall": [
+      [
+        "Explain canonical momentum without saying it is always velocity.",
+        "It is partial L/partial velocity; m*v only in the stated elementary kinetic model."
+      ],
+      [
+        "What is conserved by the exact autonomous HNN flow?",
+        "The learned H, under its differentiability/canonical assumptions; not automatically measured energy or its discrete approximation."
+      ],
+      [
+        "What is the damping energy balance?",
+        "H′=-gamma*p² for the unit oscillator, so energy decreases for positive damping away from zero velocity."
+      ]
+    ],
+    "lesson": "physics/lessons/23.md",
+    "lab": "physics/notebooks/23_lab.ipynb",
+    "learner": "physics/practice/learner/23_practice.ipynb",
+    "answers": "physics/practice/answers/23_practice.ipynb"
+  },
+  {
+    "stage": 24,
+    "title": "Symplectic integration, energy, phase and long rollouts",
+    "prerequisites": "Stages 14 and 23; matrix multiplication and determinant checks.",
+    "data_role": "Manufactured oscillator trajectories with exact reference; a measured sunspot delay cloud used as a negative control against invented energy claims.",
+    "questions": [
+      [
+        "Compute one symplectic Euler step from (1,0), h=0.2.",
+        "p_new=-0.2; q_new=0.96; energy=0.4808, different from 0.5."
+      ],
+      [
+        "What exactly does M^T J M=J establish?",
+        "Preservation of the canonical symplectic form by that linear update, not exact conservation of an arbitrary Hamiltonian."
+      ],
+      [
+        "Why is determinant one insufficient in four dimensions?",
+        "Volume preservation is weaker. diag(2,0.5,1,1) preserves total determinant but scales canonical q/p pair areas incorrectly."
+      ],
+      [
+        "Can exact energy coexist with phase error?",
+        "Yes. Implicit midpoint preserves the oscillator quadratic energy but advances by 2 atan(h/2), not the exact angle h."
+      ],
+      [
+        "Why hold the horizon fixed when testing convergence?",
+        "Otherwise changes in total simulated duration confound step-size error comparisons."
+      ],
+      [
+        "Does a sunspot delay-loop radius represent energy?",
+        "Not without a justified model, canonical state mapping and physical units; the supplied time series does not establish those."
+      ]
+    ],
+    "recall": [
+      [
+        "Name three independent rollout diagnostics.",
+        "Energy deviation, phase/state error and symplectic defect; also horizon, coverage and runtime."
+      ],
+      [
+        "Does symplectic mean every step size is stable?",
+        "No. Even the elementary oscillator has stability restrictions."
+      ],
+      [
+        "What is the exact continuous Hamiltonian conservation argument?",
+        "For autonomous differentiable H, grad H transposed times skew J times grad H is zero along its exact generated flow."
+      ]
+    ],
+    "lesson": "physics/lessons/24.md",
+    "lab": "physics/notebooks/24_lab.ipynb",
+    "learner": "physics/practice/learner/24_practice.ipynb",
+    "answers": "physics/practice/answers/24_practice.ipynb"
+  },
+  {
+    "stage": 25,
+    "title": "Constraints, projections, retractions and rank failure",
+    "prerequisites": "Stages 13, 14, 23 and 24; review kernels, rank and tangent spaces.",
+    "data_role": "Measured Iris vectors subjected to an explicitly chosen unit-sphere normalization; exact and nonlinear constraint counterexamples.",
+    "questions": [
+      [
+        "For z=(2,0), calculate one unit-circle correction and the remaining residual.",
+        "A=[4,0], C=3, correction=(-0.75,0); result (1.25,0), residual 0.5625."
+      ],
+      [
+        "When is the linear correction exact?",
+        "For an affine constraint with a full-row-rank A in exact arithmetic; floating-point residual still needs checking."
+      ],
+      [
+        "Why reject the sphere origin?",
+        "The constraint Jacobian is zero and a unique radial projection direction is absent."
+      ],
+      [
+        "What is required of v in the sphere retraction?",
+        "q is a unit point and v is tangent, so q dot v=0."
+      ],
+      [
+        "Does unit norm of the normalized Iris data verify a biological law?",
+        "No. It verifies a selected preprocessing constraint, which deliberately removes radial information."
+      ],
+      [
+        "Why is a generic projection not a symplectic integrator?",
+        "It can discard dimensions or alter canonical pair relationships; it lacks the derived mechanical update and constraint-force treatment."
+      ]
+    ],
+    "recall": [
+      [
+        "What symbol do we use for the constraint Jacobian?",
+        "A=DC, distinct from canonical symplectic J."
+      ],
+      [
+        "Name three projection failure checks.",
+        "Constraint compatibility, Jacobian rank/conditioning, and residual/iteration convergence; also correction size."
+      ],
+      [
+        "Does feasibility imply correct motion?",
+        "No; speed, phase, energy balance, momentum, forcing and measured correspondence still need evaluation."
+      ]
+    ],
+    "lesson": "physics/lessons/25.md",
+    "lab": "physics/notebooks/25_lab.ipynb",
+    "learner": "physics/practice/learner/25_practice.ipynb",
+    "answers": "physics/practice/answers/25_practice.ipynb"
+  },
+  {
+    "stage": 26,
+    "title": "Physics-informed learning and inverse problems",
+    "prerequisites": "Stages 21–25; derivatives, matrix solves, loss and training/evaluation splits.",
+    "data_role": "Actual residual-trained network on a manufactured Poisson problem; separate measured NIST response-regression exercise.",
+    "questions": [
+      [
+        "Verify the manufactured Poisson solution.",
+        "u=sin(pi*x) has u″=-pi² sin(pi*x), so -u″ equals the forcing and both endpoints vanish."
+      ],
+      [
+        "Which condition does x(1-x)N(x) enforce exactly?",
+        "The two homogeneous Dirichlet endpoint values, for finite N. It does not enforce the differential equation everywhere."
+      ],
+      [
+        "Why is create_graph needed for residual training through derivatives?",
+        "Training parameters must influence derivatives, so the differentiation computation itself must remain differentiable for backpropagation."
+      ],
+      [
+        "What information can a low training residual fail to provide?",
+        "Boundary correctness, off-grid error, parameter identifiability, measurement fit, and empirical generalization."
+      ],
+      [
+        "If x=L*x_hat and u=U*u_hat, how does u″ scale?",
+        "u″=(U/L²)*d²u_hat/dx_hat². Leaving out the factor changes physical units and residual weights."
+      ],
+      [
+        "Why not compare the NIST excerpt SSE with the published certified full-data SSE?",
+        "The observation count, selection and possibly model differ; the official certificate concerns the original 236-row specified benchmark."
+      ]
+    ],
+    "recall": [
+      [
+        "What is a collocation point?",
+        "A location at which a differential residual is evaluated, not necessarily a measured example."
+      ],
+      [
+        "What baseline should precede a neural PDE claim here?",
+        "The analytic solution and the ordinary finite-difference solve."
+      ],
+      [
+        "Does a hard boundary ansatz prove a correct PDE solution?",
+        "No. Boundary feasibility and interior solution accuracy remain distinct."
+      ]
+    ],
+    "lesson": "physics/lessons/26.md",
+    "lab": "physics/notebooks/26_lab.ipynb",
+    "learner": "physics/practice/learner/26_practice.ipynb",
+    "answers": "physics/practice/answers/26_practice.ipynb"
+  },
+  {
+    "stage": 27,
+    "title": "Conflicting gradients, interfaces, separability and PIKANs",
+    "prerequisites": "Stages 21 and 26; inner products, gradients and simple linear regression.",
+    "data_role": "Exact gradient examples and manufactured subdomain seams; opposing objectives derived from observed NIST regression groups.",
+    "questions": [
+      [
+        "What sign of g_i dot d predicts local improvement under theta-eta*d?",
+        "Positive, with a sufficiently small step and appropriate smoothness. The actual finite-step loss still needs checking."
+      ],
+      [
+        "What is normalized in the supplied Norm-PCGrad implementation?",
+        "Each row after its sequence of projections, before summing; vanishing rows contribute zero under the declared convention."
+      ],
+      [
+        "Prove that exact opposing nonzero gradients have no strict common descent.",
+        "Their inner products with any d are negatives of each other, so they cannot both be positive."
+      ],
+      [
+        "Why inspect sequential multi-gradient outputs rather than trust a label?",
+        "Later projections can change earlier alignments and the order matters; actual dot products disclose remaining conflict."
+      ],
+      [
+        "Calculate the interface jump for the two Poisson functions.",
+        "At x=0.5 the added right term is 0.1; its derivative is -0.2, so value and slope/flux matching fail despite zero interior residuals."
+      ],
+      [
+        "Does a separable network make a dense nx-by-ny output linear in grid length?",
+        "No. Axis evaluations may be reduced, but materializing all dense entries requires quadratic storage/work in equal grid sizes."
+      ]
+    ],
+    "recall": [
+      [
+        "Distinguish architecture, loss and optimizer.",
+        "Architecture defines the function class; the loss encodes desired agreement; the optimizer changes parameters to reduce that objective."
+      ],
+      [
+        "Does least-squares ConFIG compatibility decide every possible common-descent question?",
+        "No. It diagnoses the specified equal-alignment system; other directional feasibility is a separate question."
+      ],
+      [
+        "Which published experiments did we reproduce?",
+        "None of the full XPINN/SPINN/PIKAN benchmark suite. We ran explicit vector, interface and factorization teaching experiments."
+      ]
+    ],
+    "lesson": "physics/lessons/27.md",
+    "lab": "physics/notebooks/27_lab.ipynb",
+    "learner": "physics/practice/learner/27_practice.ipynb",
+    "answers": "physics/practice/answers/27_practice.ipynb"
+  },
+  {
+    "stage": 28,
+    "title": "Functions to functions: DeepONet, Fourier operators and baselines",
+    "prerequisites": "Stages 07, 11, 16, 21 and 26; review vectors, Fourier modes and validation splits.",
+    "data_role": "Manufactured periodic heat-function family for actual training; a measured digit row used as an input to a constructed smoothing operator.",
+    "questions": [
+      [
+        "How does a function-to-function task differ from scalar regression?",
+        "The input represents an entire field/function and the output another field/function; sampled arrays are discretizations of those objects."
+      ],
+      [
+        "What happens to the zero Fourier mode in periodic heat evolution?",
+        "Its multiplier is one, so the discrete mean is preserved."
+      ],
+      [
+        "What are the branch and trunk roles?",
+        "The branch encodes fixed input sensors into coefficients/features; the trunk maps output coordinates into features; their inner product predicts the field."
+      ],
+      [
+        "Why is the heat FFT reference not an FNO?",
+        "Its multiplier is known and fixed from the differential equation. An FNO has learned spectral weights and is trained on a mapping."
+      ],
+      [
+        "Why split whole input functions?",
+        "Grid points from one function share latent information; pointwise splitting can leak the same function across evaluation roles."
+      ],
+      [
+        "Does the real digit smoothing example validate physical heat diffusion?",
+        "No. It uses measured pixel intensities as inputs to a constructed mathematical operator, not measured later temperatures."
+      ]
+    ],
+    "recall": [
+      [
+        "What defines a new operator task here?",
+        "Changing input-field distribution, parameters, domain/boundary conditions, output time or observation process can change the task."
+      ],
+      [
+        "What exactly did our checkpoint selection use?",
+        "Validation-function error, not test-function error."
+      ],
+      [
+        "Why retain the analytic baseline?",
+        "The family has a known solution operator; a neural comparison without it would hide the easiest reliable solution."
+      ]
+    ],
+    "lesson": "physics/lessons/28.md",
+    "lab": "physics/notebooks/28_lab.ipynb",
+    "learner": "physics/practice/learner/28_practice.ipynb",
+    "answers": "physics/practice/answers/28_practice.ipynb"
+  },
+  {
+    "stage": 29,
+    "title": "Differentiable simulation, graph physics and attention constraints",
+    "prerequisites": "Stages 16, 18, 21–28; derivatives of composed functions and causal timing.",
+    "data_role": "Differentiable manufactured oscillator simulation; a graph built from an observed digit image; explicit attention and force counterexamples.",
+    "questions": [
+      [
+        "What derivative does backpropagation through RK4 compute?",
+        "The derivative of the implemented finite-step RK4 computation. Agreement with the exact continuous sensitivity requires separate convergence checks."
+      ],
+      [
+        "Why is positive damping not the same as a correct physical model?",
+        "Other coefficients, forcing, observation mapping and initial conditions can be wrong; positivity enforces only one chosen restriction."
+      ],
+      [
+        "Derive zero net internal force for the pair update.",
+        "Each edge contributes F_ij and -F_ij exactly once, so its contributions cancel in the total sum."
+      ],
+      [
+        "Does zero total force imply correct acceleration for unequal masses?",
+        "No. Acceleration requires dividing each force by the corresponding mass and accounting for external terms."
+      ],
+      [
+        "What additional attention condition preserves arbitrary global sums?",
+        "Column sums must also be one; row sums alone preserve constant fields, not arbitrary totals."
+      ],
+      [
+        "What is not implemented under the physics-informed transformer heading?",
+        "No PINNsFormer paper benchmark or production transformer dynamics model is trained. The implemented experiment concerns attention and explicit conservation checks."
+      ]
+    ],
+    "recall": [
+      [
+        "What three checks accompany a differentiable simulation?",
+        "Numerical convergence, gradient verification and empirical validation against appropriately measured data."
+      ],
+      [
+        "Why can mean correction be insufficient?",
+        "It enforces one sum but may violate positivity, locality, energy, or other constraints."
+      ],
+      [
+        "What separates our graph example from a trained simulator?",
+        "The pair law is fixed and algebraically inspected; a learned graph model and its empirical evaluation are additional work."
+      ]
+    ],
+    "lesson": "physics/lessons/29.md",
+    "lab": "physics/notebooks/29_lab.ipynb",
+    "learner": "physics/practice/learner/29_practice.ipynb",
+    "answers": "physics/practice/answers/29_practice.ipynb"
+  },
+  {
+    "stage": 30,
+    "title": "An independent world-model study: evidence before adoption",
+    "prerequisites": "All earlier selected-track stages; no need to restart stages already independently demonstrated.",
+    "data_role": "An evidence audit of every new executed lab, plus a fully specified real-data regression protocol. Sports/clinical/climate validation remains a separate project.",
+    "questions": [
+      [
+        "What makes a capstone question testable?",
+        "A defined prediction/measurement target, independent unit, available inputs, comparison method, evaluation protocol and decision criterion."
+      ],
+      [
+        "How do you avoid turning repeated example analysis into a new test?",
+        "Treat disclosed outcomes as exposed and obtain or preregister genuinely independent data/evaluation units before new confirmatory claims."
+      ],
+      [
+        "Can the copper data validate learned ball dynamics?",
+        "No. It is a static material-response dataset with a different observation process and target."
+      ],
+      [
+        "What information must travel with inferred sports states?",
+        "Source identities, timestamps, coordinate frame and units, observation/inference status, uncertainty, model/version and supporting evidence."
+      ],
+      [
+        "What is an acceptable negative result?",
+        "A result that fails a preregistered accuracy, uncertainty, runtime or incremental-value requirement; document it and retain the baseline rather than relabeling failure."
+      ],
+      [
+        "What remains beyond this archive?",
+        "The actual-book text audit, independent learner assessment, measured sports/clinical/climate validation, trained VGGT runs, and paper-scale reproductions explicitly marked as further work."
+      ]
+    ],
+    "recall": [
+      [
+        "Name the four evidence levels we keep distinct.",
+        "Algebraic/analytic checks, manufactured numerical validation, observed-data evaluation and deployment validation."
+      ],
+      [
+        "What should a source audit preserve?",
+        "The source claim, its assumptions, the independent check, supported inference and remaining limitations."
+      ],
+      [
+        "What is the next task after a failed mastery check?",
+        "Repair the specific misconception and produce new evidence; do not restart unrelated completed stages or mark it passed automatically."
+      ]
+    ],
+    "lesson": "physics/lessons/30.md",
+    "lab": "physics/notebooks/30_lab.ipynb",
+    "learner": "physics/practice/learner/30_practice.ipynb",
+    "answers": "physics/practice/answers/30_practice.ipynb"
+  }
+]

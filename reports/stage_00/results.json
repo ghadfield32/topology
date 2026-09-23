@@ -1,0 +1,10 @@
+{
+  "iris_rows": 150,
+  "training_digit_shape": [
+    1077,
+    8,
+    8
+  ],
+  "first_training_id": 0,
+  "claim": "Data loading and plotting only; no topology inferred."
+}

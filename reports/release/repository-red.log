@@ -1,0 +1,271 @@
+FFFFFF.FFFFFFFFF                                                         [100%]
+=================================== FAILURES ===================================
+__________________________ test_runtime_module_exists __________________________
+
+    def test_runtime_module_exists():
+>       assert (ROOT / 'src/shape_lab/runtime.py').is_file(), 'Explicit kernel/runtime provenance is required.'
+E       AssertionError: Explicit kernel/runtime provenance is required.
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/mnt/data/v10_build/listening_to_shape_lab') / 'src/shape_lab/runtime.py').is_file
+
+tests/test_repository_v10.py:12: AssertionError
+__________________________ test_runner_module_exists ___________________________
+
+    def test_runner_module_exists():
+>       assert (ROOT / 'src/shape_lab/release.py').is_file(), 'Release evidence must distinguish unavailable checks.'
+E       AssertionError: Release evidence must distinguish unavailable checks.
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/mnt/data/v10_build/listening_to_shape_lab') / 'src/shape_lab/release.py').is_file
+
+tests/test_repository_v10.py:15: AssertionError
+_____________________ test_kernel_spec_uses_active_python ______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_kernel_spec_uses_active_p0')
+
+    def test_kernel_spec_uses_active_python(tmp_path):
+>       from shape_lab.runtime import write_kernel_spec
+E       ModuleNotFoundError: No module named 'shape_lab.runtime'
+
+tests/test_repository_v10.py:18: ModuleNotFoundError
+______________ test_runtime_probe_checks_executable_and_workspace ______________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_runtime_probe_checks_exec0')
+
+    def test_runtime_probe_checks_executable_and_workspace(tmp_path):
+>       from shape_lab.runtime import validate_kernel_provenance
+E       ModuleNotFoundError: No module named 'shape_lab.runtime'
+
+tests/test_repository_v10.py:26: ModuleNotFoundError
+________________ test_copy_excludes_secrets_and_build_products _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_copy_excludes_secrets_and0')
+
+    def test_copy_excludes_secrets_and_build_products(tmp_path):
+        from shape_lab.course import copy_inputs
+        source = tmp_path/'source'; source.mkdir()
+        for name in ['.env', '.env.local', 'token.pem']:
+            (source/name).write_text('private')
+        for name in ['dist', '.uv-cache', 'node_modules']:
+            p=source/name; p.mkdir(); (p/'private.txt').write_text('private')
+        (source/'.env.example').write_text('EXAMPLE=not-a-secret')
+        (source/'lesson.md').write_text('keep')
+        copy_inputs(source,tmp_path/'copy')
+        target=tmp_path/'copy'
+        assert (target/'lesson.md').exists()
+        assert (target/'.env.example').exists()
+        for name in ['.env','.env.local','token.pem','dist','.uv-cache','node_modules']:
+>           assert not (target/name).exists(), name
+E           AssertionError: .env
+E           assert not True
+E            +  where True = exists()
+E            +    where exists = (PosixPath('/tmp/pytest-of-root/pytest-1/test_copy_excludes_secrets_and0/copy') / '.env').exists
+
+tests/test_repository_v10.py:49: AssertionError
+______________________ test_copy_rejects_external_symlink ______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_copy_rejects_external_sym0')
+
+    @pytest.mark.skipif(os.name == 'nt', reason='POSIX symlink creation control')
+    def test_copy_rejects_external_symlink(tmp_path):
+        from shape_lab.course import copy_inputs
+        source=tmp_path/'source'; source.mkdir(); outside=tmp_path/'outside.txt'; outside.write_text('private')
+        (source/'escape.txt').symlink_to(outside)
+>       with pytest.raises(ValueError, match='symlink'):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_repository_v10.py:56: Failed
+__________________ test_fingerprint_tracks_inputs_not_outputs __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_fingerprint_tracks_inputs0')
+
+    def test_fingerprint_tracks_inputs_not_outputs(tmp_path):
+>       from shape_lab.runtime import fingerprint_inputs
+E       ModuleNotFoundError: No module named 'shape_lab.runtime'
+
+tests/test_repository_v10.py:67: ModuleNotFoundError
+_________________ test_profile_full_is_strict_not_silent_skip __________________
+
+    def test_profile_full_is_strict_not_silent_skip():
+>       from shape_lab.release import required_distributions
+E       ModuleNotFoundError: No module named 'shape_lab.release'
+
+tests/test_repository_v10.py:79: ModuleNotFoundError
+______________________ test_dataset_catalog_paths_resolve ______________________
+
+    def test_dataset_catalog_paths_resolve():
+        p=ROOT/'curriculum/experiments.json'
+>       assert p.is_file()
+E       AssertionError: assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/v10_build/listening_to_shape_lab/curriculum/experiments.json').is_file
+
+tests/test_repository_v10.py:86: AssertionError
+______________________ test_no_unsubstantiated_lock_claim ______________________
+
+    def test_no_unsubstantiated_lock_claim():
+        p=ROOT/'docs/release/ENVIRONMENT_STATUS.json'
+>       assert p.is_file()
+E       AssertionError: assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/v10_build/listening_to_shape_lab/docs/release/ENVIRONMENT_STATUS.json').is_file
+
+tests/test_repository_v10.py:97: AssertionError
+_________________________ test_deployment_assets_exist _________________________
+
+    def test_deployment_assets_exist():
+        for name in ['Dockerfile','compose.yaml','.dockerignore','.gitignore','.python-version',
+                     '.github/workflows/course-ci.yml','tools/bootstrap.py','tools/docker_verify.py','course.py']:
+>           assert (ROOT/name).is_file(), name
+E           AssertionError: Dockerfile
+E           assert False
+E            +  where False = is_file()
+E            +    where is_file = (PosixPath('/mnt/data/v10_build/listening_to_shape_lab') / 'Dockerfile').is_file
+
+tests/test_repository_v10.py:106: AssertionError
+_______________ test_docker_uses_locked_sync_and_no_auth_bypass ________________
+
+    def test_docker_uses_locked_sync_and_no_auth_bypass():
+>       text=(ROOT/'Dockerfile').read_text()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_repository_v10.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/mnt/data/v10_build/listening_to_shape_lab/Dockerfile')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/v10_build/listening_to_shape_lab/Dockerfile'
+
+/usr/lib/python3.13/pathlib/_local.py:539: FileNotFoundError
+___________________ test_git_excludes_secrets_work_and_venvs ___________________
+
+    def test_git_excludes_secrets_work_and_venvs():
+>       text=(ROOT/'.gitignore').read_text()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_repository_v10.py:117: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/mnt/data/v10_build/listening_to_shape_lab/.gitignore')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/v10_build/listening_to_shape_lab/.gitignore'
+
+/usr/lib/python3.13/pathlib/_local.py:539: FileNotFoundError
+______________ test_python_floor_matches_supported_course_version ______________
+
+    def test_python_floor_matches_supported_course_version():
+        import tomllib
+        obj=tomllib.loads((ROOT/'pyproject.toml').read_text())
+>       assert obj['project']['requires-python'] == '>=3.13,<3.14'
+E       AssertionError: assert '>=3.11' == '>=3.13,<3.14'
+E         
+E         - >=3.13,<3.14
+E         + >=3.11
+
+tests/test_repository_v10.py:124: AssertionError
+________ test_bootstrap_has_explicit_offline_reuse_not_false_isolation _________
+
+    def test_bootstrap_has_explicit_offline_reuse_not_false_isolation():
+>       text=(ROOT/'tools/bootstrap.py').read_text()
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_repository_v10.py:128: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = PosixPath('/mnt/data/v10_build/listening_to_shape_lab/tools/bootstrap.py')
+mode = 'r', buffering = -1, encoding = 'utf-8', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/v10_build/listening_to_shape_lab/tools/bootstrap.py'
+
+/usr/lib/python3.13/pathlib/_local.py:539: FileNotFoundError
+=========================== short test summary info ============================
+FAILED tests/test_repository_v10.py::test_runtime_module_exists - AssertionError: Explicit kernel/runtime provenance is required.
+assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/v10_build/listening_to_shape_lab') / 'src/shape_lab/runtime.py').is_file
+FAILED tests/test_repository_v10.py::test_runner_module_exists - AssertionError: Release evidence must distinguish unavailable checks.
+assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/v10_build/listening_to_shape_lab') / 'src/shape_lab/release.py').is_file
+FAILED tests/test_repository_v10.py::test_kernel_spec_uses_active_python - ModuleNotFoundError: No module named 'shape_lab.runtime'
+FAILED tests/test_repository_v10.py::test_runtime_probe_checks_executable_and_workspace - ModuleNotFoundError: No module named 'shape_lab.runtime'
+FAILED tests/test_repository_v10.py::test_copy_excludes_secrets_and_build_products - AssertionError: .env
+assert not True
+ +  where True = exists()
+ +    where exists = (PosixPath('/tmp/pytest-of-root/pytest-1/test_copy_excludes_secrets_and0/copy') / '.env').exists
+FAILED tests/test_repository_v10.py::test_copy_rejects_external_symlink - Failed: DID NOT RAISE <class 'ValueError'>
+FAILED tests/test_repository_v10.py::test_fingerprint_tracks_inputs_not_outputs - ModuleNotFoundError: No module named 'shape_lab.runtime'
+FAILED tests/test_repository_v10.py::test_profile_full_is_strict_not_silent_skip - ModuleNotFoundError: No module named 'shape_lab.release'
+FAILED tests/test_repository_v10.py::test_dataset_catalog_paths_resolve - AssertionError: assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/v10_build/listening_to_shape_lab/curriculum/experiments.json').is_file
+FAILED tests/test_repository_v10.py::test_no_unsubstantiated_lock_claim - AssertionError: assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/v10_build/listening_to_shape_lab/docs/release/ENVIRONMENT_STATUS.json').is_file
+FAILED tests/test_repository_v10.py::test_deployment_assets_exist - AssertionError: Dockerfile
+assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/v10_build/listening_to_shape_lab') / 'Dockerfile').is_file
+FAILED tests/test_repository_v10.py::test_docker_uses_locked_sync_and_no_auth_bypass - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/v10_build/listening_to_shape_lab/Dockerfile'
+FAILED tests/test_repository_v10.py::test_git_excludes_secrets_work_and_venvs - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/v10_build/listening_to_shape_lab/.gitignore'
+FAILED tests/test_repository_v10.py::test_python_floor_matches_supported_course_version - AssertionError: assert '>=3.11' == '>=3.13,<3.14'
+  
+  - >=3.13,<3.14
+  + >=3.11
+FAILED tests/test_repository_v10.py::test_bootstrap_has_explicit_offline_reuse_not_false_isolation - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/v10_build/listening_to_shape_lab/tools/bootstrap.py'
+15 failed, 1 passed in 0.17s

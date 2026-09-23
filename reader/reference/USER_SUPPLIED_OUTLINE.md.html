@@ -1,0 +1,499 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1. What we are working toward · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../reference/USER_SUPPLIED_OUTLINE.md">reference/USER_SUPPLIED_OUTLINE.md</a> · Readable source notation; no online math renderer.</p><p>Geoff, let’s turn this into a <strong>complete, mastery-based course that we work through here</strong>, rather than a collection of books and videos.</p>
+<p>The structure will be:</p>
+<p><strong>Understand the idea → state it precisely → work an example by hand → implement it → test it → explain its limitations.</strong></p>
+<p>Your attached outline already gives us the right broad progression—topology, algebraic topology, and topological data analysis—and identifies understanding, proofs, computation, interpretation, and application as the completion criteria. We will preserve that structure while making the assignments and assessment much more explicit.</p>
+<p>One scope clarification: <strong>this is a curriculum for the topics in the supplied table of contents, not a claim that I have examined the complete book.</strong> The listing you provided says March 2027; I could not independently recheck the publisher’s page today. When you have the actual text, the final step will be a chapter-by-chapter coverage audit.</p>
+<h1 id="1-what-we-are-working-toward">1. What we are working toward</h1>
+<p>By the end, you should be able to take an unfamiliar dataset and explain:</p>
+<blockquote>
+<p>“Here is what an observation represents, why this distance makes sense, how I constructed a mathematical representation of shape, what its persistent features mean, which conclusions are supported, and whether the approach adds anything beyond simpler methods.”</p>
+</blockquote>
+<p>You should also be able to calculate the underlying mathematics on small examples without relying on a library.</p>
+<p>I recommend a <strong>24-week core plan at approximately 8–10 hours per week</strong>, giving a planning budget of 192–240 hours. That is my proposed workload, not a guarantee about learning speed. Strong prerequisite performance can shorten the beginning; difficult proofs or implementation problems can extend a unit.</p>
+<p><strong>Progress is determined by demonstrated understanding, not the calendar.</strong></p>
+<h2 id="how-the-course-maps-to-the-book">How the course maps to the book</h2>
+<p>This mapping is based on the chapter titles you supplied.</p>
+<table>
+<thead>
+<tr>
+<th>Book materialWhere we cover it</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Appendix A: mathematical toolbox</td>
+<td>Unit 1, with targeted refreshers later</td>
+</tr>
+<tr>
+<td>Closeness, good maps, combination, paths, loops, deformation</td>
+<td>Units 2–4</td>
+</tr>
+<tr>
+<td>Surfaces, simplices, homology, Betti numbers</td>
+<td>Units 5–6</td>
+</tr>
+<tr>
+<td>Changing spaces, filtrations, persistence, barcodes, diagrams</td>
+<td>Units 7–9</td>
+</tr>
+<tr>
+<td>Shape from data and reliability of inferred structure</td>
+<td>Units 7 and 10</td>
+</tr>
+<tr>
+<td>Seeing structure, real-world applications, continuing the journey</td>
+<td>Units 11–12</td>
+</tr>
+</tbody>
+</table>
+<p>Mapper, machine-learning evaluation, and the software-testing requirements below are <strong>applied extensions I am adding</strong>. They are useful for your goals, but I am not claiming that the book develops each of them in the same detail.</p>
+<hr/>
+<h1 id="2-the-resource-system-one-main-course-one-rigorous-reference">2. The resource system: one main course, one rigorous reference</h1>
+<p>We should not attempt to read every resource in the attachment cover to cover.</p>
+<p>Use this small core:</p>
+<table>
+<thead>
+<tr>
+<th>RoleFree resourceHow we will use it</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary teaching sequence</strong></td>
+<td>Raphaël Tinarrage, <em>Topological Data Analysis with Persistent Homology</em></td>
+<td>Lessons 0–11, selected exercises, and the accompanying notebooks. The course provides videos and corrections for its programming tutorials. (<a href="https://raphaeltinarrage.github.io/EMAp.html" title="EMAp Summer Course">Raphaël Tinarrage</a>)</td>
+</tr>
+<tr>
+<td><strong>Formal reference and assessment</strong></td>
+<td>ETH Zürich, <em>Introduction to Topological Data Analysis</em>, 2026</td>
+<td>Mathematical definitions, proofs, algorithms, and chapter-end oral-exam questions. Its notes cover topology through persistence, point-cloud complexes, stability, Mapper, and applications. (<a href="https://ti.inf.ethz.ch/ew/courses/TDA26/index.html" title="TDA 2026 (Theory of Combinatorial Algorithms, ETH Zürich)">Theoretical Computer Science Institute</a>)</td>
+</tr>
+<tr>
+<td><strong>Topology clarification</strong></td>
+<td>Sidney Morris, <em>Topology Without Tears</em></td>
+<td>Extra explanations and exercises when open sets, continuity, or proof-writing need more practice. The author also provides accompanying videos. (<a href="https://www.topologywithouttears.net/" title="Topology Without Tears by Sidney A. Morris. Topology book and Videos on Pure Mathematics, Topology and Writing Proofs supplementing the book">Topology Without Tears</a>)</td>
+</tr>
+<tr>
+<td><strong>First computational tool</strong></td>
+<td>Ripser.py</td>
+<td>Small point-cloud persistence experiments and comparison against your own implementation. Its documentation includes interactive examples. (<a href="https://ripser.scikit-tda.org/en/latest/" title="Setup — Ripser.py 0.6.15 documentation">Ripser</a>)</td>
+</tr>
+<tr>
+<td><strong>Broader computational tool</strong></td>
+<td>GUDHI</td>
+<td>Explicit complexes, alternative filtrations, cubical data, diagram distances, and machine-learning representations. (<a href="https://gudhi.inria.fr/python/latest/index.html" title="GUDHI Python modules documentation — gudhi v3.13.0 documentation">GUDHI library</a>)</td>
+</tr>
+</tbody>
+</table>
+<p>Use <strong>Hammack, MIT linear algebra, Judson, and Hatcher only where assigned below</strong>.</p>
+<p>An important correction to the earlier outline: ETH lists <strong>discrete mathematics, algorithms and data structures, and linear algebra</strong> as prerequisites—not just linear algebra. We will check those foundations explicitly rather than discovering gaps during persistent-homology algorithms. (<a href="https://ti.inf.ethz.ch/ew/courses/TDA26/index.html" title="TDA 2026 (Theory of Combinatorial Algorithms, ETH Zürich)">Theoretical Computer Science Institute</a>)</p>
+<hr/>
+<h1 id="3-how-every-unit-will-work-in-this-chat">3. How every unit will work in this chat</h1>
+<p>Each unit will have the same learning cycle.</p>
+<table>
+<thead>
+<tr>
+<th>StepWhat happens hereYour evidence of understanding</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intuition</strong></td>
+<td>We introduce the problem and compare examples and counterexamples.</td>
+<td>Explain the concept in your own words.</td>
+</tr>
+<tr>
+<td><strong>Formalization</strong></td>
+<td>We introduce definitions, notation, and assumptions.</td>
+<td>State the definition and identify a nonexample.</td>
+</tr>
+<tr>
+<td><strong>Reasoning</strong></td>
+<td>We work through a proof or hand calculation.</td>
+<td>Complete a related problem independently.</td>
+</tr>
+<tr>
+<td><strong>Computation</strong></td>
+<td>We translate the concept into a small Python experiment.</td>
+<td>Produce the expected output and explain it.</td>
+</tr>
+<tr>
+<td><strong>Critique</strong></td>
+<td>We deliberately change assumptions, data, or parameters.</td>
+<td>Explain what changes, what should not change, and why.</td>
+</tr>
+<tr>
+<td><strong>Assessment</strong></td>
+<td>You solve unfamiliar questions without following the worked example.</td>
+<td>Pass the unit’s mastery check.</td>
+</tr>
+</tbody>
+</table>
+<p>For a typical week, budget roughly two hours for reading or video, three for exercises and proofs, two for computation, and one for retrieval practice and corrections.</p>
+<p><strong>We will not treat generated code as verified merely because it looks plausible.</strong> Execution results, test outputs, mathematical arguments, and interpretations will be recorded separately.</p>
+<p>A proof with an unresolved step stays unresolved. A notebook that runs but gives an unexplained answer is not yet a passed assignment.</p>
+<hr/>
+<h1 id="4-the-full-learning-path">4. The full learning path</h1>
+<h2 id="unit-1--mathematical-language-and-computational-foundations">Unit 1 — Mathematical language and computational foundations</h2>
+<p><strong>Weeks 1–2</strong></p>
+<h3 id="what-to-learn">What to learn</h3>
+<p>Start with sets, functions, images and inverse images, relations, equivalence classes, quantifiers, and proof techniques. Then review vector spaces, bases, linear maps, kernels, images, rank, and nullity.</p>
+<p>For algorithms, review graphs, connected components, sorting, and basic time and memory complexity.</p>
+<p>Use selected sections of Hammack’s <em>Book of Proof</em>: sets and logic; direct proof, contradiction, and counterexamples; relations; and functions. The official site provides the free text and its chapter contents. Use MIT’s linear algebra course for any gaps in matrix reasoning. (<a href="https://richardhammack.github.io/BookOfProof/" title="Book of Proof">Richard Hammack</a>)</p>
+<h3 id="what-you-will-do">What you will do</h3>
+<p>Write short proofs about sets and functions. Calculate kernels and images of small matrices by hand, then verify them numerically. Explain the difference between showing several examples and proving a universal statement.</p>
+<p>Create a small learning workspace with separate places for notes, exercises, notebooks, tests, and results. Use one isolated Python environment; record and lock working dependency versions after the first successful smoke test.</p>
+<h3 id="completion-gate">Completion gate</h3>
+<p>You can explain what a quotient does—grouping objects considered equivalent—and why the distinction between a kernel and an image will matter later.</p>
+<p>You can also recognize an invalid argument even when its conclusion happens to be true.</p>
+<p><strong>Do not spend weeks relearning Python. This unit is about mathematical reasoning.</strong></p>
+<hr/>
+<h2 id="unit-2--distance-neighborhoods-and-topological-spaces">Unit 2 — Distance, neighborhoods, and topological spaces</h2>
+<p><strong>Weeks 3–4</strong></p>
+<h3 id="what-to-learn-1">What to learn</h3>
+<p>Study metrics, open balls, neighborhoods, open and closed sets, topology axioms, bases, and subspace topology.</p>
+<p>The central question is:</p>
+<blockquote>
+<p>“Which information comes from numerical distances, and which information only depends on the resulting notion of neighborhood?”</p>
+</blockquote>
+<p>Read Tinarrage Lesson 1, working its assigned Exercises 4 and 5. Use Morris for reinforcement.</p>
+<h3 id="what-you-will-do-1">What you will do</h3>
+<p>Compare Euclidean, Manhattan, and maximum-distance neighborhoods. Construct several different topologies on a small finite set.</p>
+<p>Prove that squared Euclidean distance is not generally a metric. Prove that a finite set of distinct points, with its usual induced metric topology, is discrete.</p>
+<p>That second exercise addresses an important TDA distinction: a sampled circle is a finite set of observations; the continuous-looking shape is something we construct or infer from those observations. The point-cloud-to-complex step is therefore substantive, not cosmetic. (<a href="https://arxiv.org/html/1710.04019v2" title="An introduction to Topological Data Analysis: fundamental and practical aspects for data scientists">arXiv</a>)</p>
+<h3 id="completion-gate-1">Completion gate</h3>
+<p>You can distinguish a dataset, its metric, its topology, and an inferred underlying shape.</p>
+<p>You can explain why a set can be open and closed simultaneously, and why “open” depends on the ambient space.</p>
+<hr/>
+<h2 id="unit-3--continuity-good-maps-connectedness-and-compactness">Unit 3 — Continuity, good maps, connectedness, and compactness</h2>
+<p><strong>Weeks 5–6</strong></p>
+<h3 id="what-to-learn-2">What to learn</h3>
+<p>Study continuity through inverse images of open sets, continuous bijections, homeomorphisms, connectedness, path-connectedness, compactness, and the Hausdorff property.</p>
+<p>A <strong>homeomorphism</strong> requires a continuous bijection with a continuous inverse. Merely being continuous and bijective is not enough in general. These distinctions belong to the mathematical foundations developed in the ETH notes.</p>
+<p>Read Tinarrage Lesson 2 and complete its assigned Exercises 8 and 11. Use Morris for the additional point-set topology topics.</p>
+<h3 id="what-you-will-do-2">What you will do</h3>
+<p>Prove that compositions of continuous maps are continuous. Construct a homeomorphism between two suitable intervals. Explore why identifying endpoints changes an interval into a different space.</p>
+<p>Work through the theorem that a continuous bijection from a compact space to a Hausdorff space is a homeomorphism, identifying where each assumption is used.</p>
+<h3 id="completion-gate-2">Completion gate</h3>
+<p>Given two spaces and a proposed map, you can say exactly what must be checked.</p>
+<p>You can distinguish:</p>
+<p><strong>distance-preserving equivalence, topological equivalence, and the weaker deformation-based equivalence introduced next.</strong></p>
+<hr/>
+<h2 id="unit-4--groups-actions-paths-loops-and-homotopy">Unit 4 — Groups, actions, paths, loops, and homotopy</h2>
+<p><strong>Weeks 7–8</strong></p>
+<h3 id="what-to-learn-3">What to learn</h3>
+<p>Study group operations, identity, inverses, subgroups, homomorphisms, and simple group actions. Then connect these ideas to paths, loops, homotopies, deformation retracts, homotopy equivalence, and the fundamental group.</p>
+<p>Use selected group-theory material from Judson, Tinarrage Lesson 3, and the introductory portions of Hatcher’s Chapters 0 and 1. Judson’s text is openly available, and Hatcher provides free individual chapters. (<a href="https://judsonbooks.org/abstract-algebra-theory-and-applications/" title="Abstract Algebra: Theory and Applications – Judson Books">Judson Books</a>)</p>
+<h3 id="what-you-will-do-3">What you will do</h3>
+<p>Model rotations and reflections of a square as operations. Determine which operations commute.</p>
+<p>Construct a deformation of an annulus onto a circle. Explain why a disk can contract to a point but a circle cannot.</p>
+<p>Study how loop concatenation becomes a group operation after passing to the appropriate homotopy classes. Work through winding-number examples rather than treating “loops form a group” as a slogan.</p>
+<h3 id="completion-gate-3">Completion gate</h3>
+<p>You can distinguish <strong>homeomorphism from homotopy equivalence</strong> using examples.</p>
+<p>You can explain why counting visible holes is not enough to prove that two arbitrary spaces are homeomorphic.</p>
+<p><strong>Depth boundary:</strong> covering-space theory and a full treatment of van Kampen’s theorem are extensions, not prerequisites for finishing the core TDA course.</p>
+<hr/>
+<h2 id="unit-5--surfaces-and-the-combinatorial-language-of-shape">Unit 5 — Surfaces and the combinatorial language of shape</h2>
+<p><strong>Weeks 9–10</strong></p>
+<h3 id="what-to-learn-4">What to learn</h3>
+<p>Study surfaces, boundary, orientability, genus, polygon identifications, triangulations, simplices, and simplicial complexes.</p>
+<p>Distinguish a geometric realization from an abstract complex: coordinates describe one realization, while the abstract complex records which collections of vertices form simplices. The face and intersection requirements are essential to the definition.</p>
+<p>Read Tinarrage Lesson 4 and work its assigned Exercises 20 and 25.</p>
+<h3 id="what-you-will-do-4">What you will do</h3>
+<p>Represent an interval, triangle boundary, filled triangle, tetrahedron boundary, and filled tetrahedron as collections of simplices.</p>
+<p>Write a small validator that checks whether all required faces are present.</p>
+<p>For surfaces, compare a sphere, torus, cylinder, and Möbius strip. Learn how boundary and orientability distinguish examples that informal “hole counting” can confuse.</p>
+<h3 id="completion-gate-4">Completion gate</h3>
+<p>You can explain the difference between:</p>
+<ul>
+<li>A triangular loop and a filled triangle.</li>
+<li>A tetrahedron’s surface and its filled interior.</li>
+<li>A graph and its clique complex.</li>
+</ul>
+<p>These distinctions must appear correctly in both your drawings and your data structures.</p>
+<hr/>
+<h2 id="unit-6--chains-boundaries-homology-and-betti-numbers">Unit 6 — Chains, boundaries, homology, and Betti numbers</h2>
+<p><strong>Weeks 11–12</strong></p>
+<h3 id="what-to-learn-5">What to learn</h3>
+<p>This is the algebraic center of the course.</p>
+<p>Learn chain groups, boundary maps, cycles, boundaries, quotient spaces, homology, and Betti numbers. Begin with coefficients in <code>\mathbb F_2</code>, the field with two elements.</p>
+<p>The essential relationships are</p>
+<pre><code class="language-math">Z_k=\ker \partial_k,\qquad B_k=\operatorname{im}\partial_{k+1},
+</code></pre>
+<pre><code class="language-math">H_k=Z_k/B_k,\qquad \beta_k=\dim_{\mathbb F}H_k.
+</code></pre>
+<p>For finite complexes over a field,</p>
+<pre><code class="language-math">\beta_k = \dim C_k-\operatorname{rank}(\partial_k) -\operatorname{rank}(\partial_{k+1}).
+</code></pre>
+<p>The quotient is valid because a boundary is always a cycle: <code>\partial_k\partial_{k+1}=0</code>.</p>
+<h3 id="what-you-will-do-5">What you will do</h3>
+<p>Use Tinarrage Lessons 5–6 and their assigned exercises. Build boundary matrices and implement elimination over <code>\mathbb F_2</code>.</p>
+<p>Work through this small example completely:</p>
+<p><strong>Triangle boundary:</strong> three edges, with boundary-map rank two, produce one independent one-dimensional homology class.</p>
+<p><strong>Filled triangle:</strong> adding the triangular face makes that cycle a boundary, so its <code>H_1</code> class disappears.</p>
+<h3 id="completion-gate-5">Completion gate</h3>
+<p>You can prove that boundary-of-boundary is zero and compute small homology examples without a library.</p>
+<p>You must also explain why ordinary real-valued matrix rank cannot automatically replace rank over <code>\mathbb F_2</code>.</p>
+<p>A correction to the earlier intuitive description: Betti numbers measure dimensions of homology groups. “Enclosed voids” is a useful picture in some settings, not the general definition of <code>\beta_2</code>.</p>
+<hr/>
+<h2 id="unit-7--building-shape-from-data-and-constructing-filtrations">Unit 7 — Building shape from data and constructing filtrations</h2>
+<p><strong>Weeks 13–14</strong></p>
+<h3 id="what-to-learn-6">What to learn</h3>
+<p>Study proximity graphs, Vietoris–Rips complexes, Čech complexes, Delaunay/alpha constructions, covers and nerves, and filtrations.</p>
+<p>We will use the explicit Rips convention</p>
+<pre><code class="language-math">\sigma\in\mathrm{VR}_{\epsilon}(X) \quad\Longleftrightarrow\quad d(x_i,x_j)\leq\epsilon \text{ for every pair of vertices in }\sigma.
+</code></pre>
+<p>For Čech complexes, membership depends on a common intersection of the relevant balls—not merely pairwise overlap. These constructions and their relationships are developed in ETH Chapter 5.</p>
+<h3 id="what-you-will-do-6">What you will do</h3>
+<p>Generate small synthetic datasets: separated clusters, a circle, a disk, and a figure-eight. Construct complexes at several thresholds and predict their homology before computing it.</p>
+<p>Use Tinarrage Lessons 7–8 and the associated tutorial. Compare a Rips construction with an alpha construction on a small Euclidean dataset.</p>
+<p>Keep scale conventions explicit: GUDHI’s default alpha filtration uses squared-radius values, so its raw filtration coordinates should not be compared blindly with edge-distance thresholds. (<a href="https://gudhi.inria.fr/python/latest/delaunay_complex_user.html" title="Delaunay complex user manual — gudhi v3.13.0 documentation">GUDHI library</a>)</p>
+<h3 id="completion-gate-6">Completion gate</h3>
+<p>You can defend why a particular complex is appropriate and state the assumptions behind an inference from the complex to an underlying shape.</p>
+<p>You can distinguish <strong>distance scale, function threshold, and chronological time</strong> as different possible filtration parameters.</p>
+<hr/>
+<h2 id="unit-8--persistent-homology-barcodes-and-diagrams">Unit 8 — Persistent homology, barcodes, and diagrams</h2>
+<p><strong>Weeks 15–16</strong></p>
+<h3 id="what-to-learn-7">What to learn</h3>
+<p>Study inclusion-induced maps, persistence modules, birth and death, persistence intervals, barcodes, diagrams, multiplicities, and essential classes.</p>
+<p>The central object is not just a sequence of hole counts. It includes maps:</p>
+<pre><code class="language-math">H_k(K_0)\longrightarrow H_k(K_1) \longrightarrow H_k(K_2)\longrightarrow\cdots.
+</code></pre>
+<p>Those maps tell us which classes survive between stages. Persistent homology records more than separate Betti numbers at each threshold.</p>
+<p>Use Tinarrage Lesson 9 and its assigned Exercise 52.</p>
+<h3 id="what-you-will-do-7">What you will do</h3>
+<p>Construct a filtration by hand. Draw its barcode and convert that barcode into a diagram. Work backward from a diagram to statements about which features are present at specified scales.</p>
+<p>Use a square as an exact test case. For four vertices of a unit square under our Rips convention, the perimeter loop exists for</p>
+<pre><code class="language-math">1\leq\epsilon&lt;\sqrt 2.
+</code></pre>
+<p>At <code>\sqrt2</code>, the diagonals and higher simplices enter and the loop is filled. Derive this directly from the pairwise distances and simplex rule.</p>
+<h3 id="completion-gate-7">Completion gate</h3>
+<p>You can interpret every interval in a small example.</p>
+<p>You can also explain why an interval reaching the end of a truncated computation does <strong>not</strong> prove that the feature would survive all larger scales.</p>
+<hr/>
+<h2 id="unit-9--implementing-persistent-homology-and-checking-correctness">Unit 9 — Implementing persistent homology and checking correctness</h2>
+<p><strong>Weeks 17–18</strong></p>
+<h3 id="what-to-learn-8">What to learn</h3>
+<p>Study filtration-compatible simplex ordering, boundary-matrix construction, column reduction, pivots, persistence pairing, and union-find for <code>H_0</code>.</p>
+<p>Use ETH’s algorithm section and Tinarrage’s practical persistence tutorial. ETH explicitly describes ordering equal-time simplices by dimension before performing matrix reduction.</p>
+<h3 id="what-you-will-build">What you will build</h3>
+<p>Implement a deliberately small educational pipeline:</p>
+<p><strong>point cloud → distances → Rips simplices → ordered filtration → boundary matrix → reduction → persistence intervals.</strong></p>
+<p>Begin with hand-checkable examples. Then compare against Ripser and GUDHI.</p>
+<p>Do not optimize prematurely. The purpose of this implementation is understanding and testability, not competing with established libraries.</p>
+<h3 id="completion-gate-8">Completion gate</h3>
+<p>Your implementation agrees with hand-derived results and the libraries after aligning coefficient fields, filtration conventions, dimensions, truncation, and zero-length-interval policies.</p>
+<p>Keep the output of a library’s representative <strong>cocycle</strong> distinct from an automatically recovered geometric loop; Ripser documents representative cochains as a separate computational output. (<a href="https://ripser.scikit-tda.org/en/latest/" title="Setup — Ripser.py 0.6.15 documentation">Ripser</a>)</p>
+<p><strong>This unit is not passed merely because one noisy circle produces a plausible diagram.</strong></p>
+<hr/>
+<h2 id="unit-10--stability-noise-uncertainty-and-justified-interpretation">Unit 10 — Stability, noise, uncertainty, and justified interpretation</h2>
+<p><strong>Weeks 19–20</strong></p>
+<h3 id="what-to-learn-9">What to learn</h3>
+<p>Study bottleneck distance, Wasserstein distance, matching to the diagonal, interleavings, sampling effects, outliers, and statistical uncertainty.</p>
+<p>A central stability statement compares tame sublevel-set filtrations on the same suitable space:</p>
+<pre><code class="language-math">d_B\bigl(\mathrm{Dgm}_k(f),\mathrm{Dgm}_k(g)\bigr) \leq \|f-g\|_\infty.
+</code></pre>
+<p>We will state the hypotheses and explain the result before studying its proof structure. We will not apply it indiscriminately to unrelated metrics or arbitrary preprocessing pipelines.</p>
+<h3 id="what-you-will-do-8">What you will do</h3>
+<p>Use Tinarrage Lesson 10 and Exercise 53. Perturb controlled datasets using coordinate noise, missing samples, outliers, and changes in sampling density.</p>
+<p>Separate three questions:</p>
+<p><strong>Did the computation work? Is the descriptor stable? Is the detected structure scientifically meaningful?</strong></p>
+<p>Read the statistical sections of Chazal and Michel’s introduction. Their treatment separates deterministic stability from statistical questions such as significance, uncertainty, and robustness. (<a href="https://arxiv.org/html/1710.04019v2" title="An introduction to Topological Data Analysis: fundamental and practical aspects for data scientists">arXiv</a>)</p>
+<h3 id="completion-gate-9">Completion gate</h3>
+<p>You can explain why a long-lived feature is a candidate for investigation—not automatic proof of a meaningful mechanism.</p>
+<p>You can design a suitable comparison or null experiment and identify what uncertainty remains.</p>
+<hr/>
+<h2 id="unit-11--turning-topology-into-useful-analysis">Unit 11 — Turning topology into useful analysis</h2>
+<p><strong>Weeks 21–22</strong></p>
+<p>This is where we connect the mathematics to your Python and machine-learning background.</p>
+<h3 id="what-to-learn-10">What to learn</h3>
+<p>Study diagram summaries, Betti curves, persistence landscapes, persistence images, and model-ready representations. GUDHI provides several such representations and interfaces for combining them with machine-learning workflows. (<a href="https://gudhi.inria.fr/python/latest/representations.html" title="Representations manual — gudhi v3.13.0 documentation">GUDHI library</a>)</p>
+<p>Also learn the basic Reeb-graph and Mapper constructions: a chosen function or “lens,” a cover of its range, clustering within preimages, and connections induced by overlap. These are covered in ETH Chapter 7.</p>
+<h3 id="what-you-will-do-9">What you will do</h3>
+<p>Choose one primary lab and one short comparison.</p>
+<p>For the primary lab, compare a conventional feature baseline, topological features alone, and their combination.</p>
+<p>For the comparison, use either a Mapper parameter-sensitivity experiment, a cubical-complex image example, or a delay-coordinate time-series example. GUDHI supports cubical complexes and time-series embedding utilities. (<a href="https://gudhi.inria.fr/python/latest/index.html" title="GUDHI Python modules documentation — gudhi v3.13.0 documentation">GUDHI library</a>)</p>
+<h3 id="completion-gate-10">Completion gate</h3>
+<p>You can explain exactly what the topological features add—or report that they add nothing useful.</p>
+<p>For our evaluation protocol, preprocessing and parameter selection stay inside the appropriate training procedure. Split by the real independent unit: person, session, recording, or time period as appropriate.</p>
+<p><strong>A visually interesting graph is not, by itself, a successful analysis.</strong></p>
+<hr/>
+<h2 id="unit-12--independent-capstone-and-book-reconciliation">Unit 12 — Independent capstone and book reconciliation</h2>
+<p><strong>Weeks 23–24</strong></p>
+<h3 id="what-you-will-do-10">What you will do</h3>
+<p>Choose a new dataset or a substantially new problem formulation. State the research question before exploring persistence diagrams.</p>
+<p>Prepare a short report that covers the observation unit, metric, preprocessing, complex, filtration, coefficients, homology dimensions, software versions, validation, sensitivity analysis, and conclusion.</p>
+<p>Then defend the analysis in an oral-style discussion here. Questions should include:</p>
+<blockquote>
+<p>Why this metric? What could produce the same pattern? Which assumptions matter? What would falsify your interpretation? Would you still recommend the method after accounting for its cost?</p>
+</blockquote>
+<h3 id="author-specific-reading">Author-specific reading</h3>
+<p>At this stage, read Diamantis’s freely available <em>The Shape of Data: Topology Meets Analytics</em>. It presents applied examples and introduces a proposed Topological Stability Index derived from persistence lifetimes. Treat it as a paper to examine critically, not as a substitute for the formal stability theory or statistical validation. (<a href="https://arxiv.org/abs/2511.13503" title="[2511.13503] The Shape of Data: Topology Meets Analytics. A Practical Introduction to Topological Analytics and the Stability Index (TSI) in Business">arXiv</a>)</p>
+<h3 id="completion-gate-11">Completion gate</h3>
+<p>You can reproduce the analysis, defend its choices, and clearly distinguish results from speculation.</p>
+<p>Once the actual book is available, compare each chapter against your completed work. Any unfamiliar definition, example, argument, or application becomes a specific remaining assignment rather than an assumed pass.</p>
+<hr/>
+<h1 id="5-the-practical-test-suite-we-should-build">5. The practical test suite we should build</h1>
+<p>The attachment correctly recommends implementing the mathematics before relying entirely on libraries. We will retain that project but make its correctness requirements more demanding.</p>
+<h2 id="mathematical-checks">Mathematical checks</h2>
+<p>Every constructed complex must contain its required faces. Every boundary-matrix pair must satisfy</p>
+<pre><code class="language-math">\partial_k\partial_{k+1}=0.
+</code></pre>
+<p>Calculated Betti numbers must be nonnegative and agree with hand-derived examples. For finite complexes, the alternating simplex count must agree with the alternating Betti-number sum. These follow from the finite chain-complex framework developed in the homology material.</p>
+<h2 id="implementation-checks">Implementation checks</h2>
+<p>Our proposed test suite should include disconnected points, a tree, an unfilled triangle, a filled triangle, the square filtration, a tetrahedron boundary, and a filled tetrahedron.</p>
+<p>It should also include deliberate failure cases: missing faces, invalid ordering, duplicate observations, inconsistent distance inputs, and insufficient maximum simplex dimension.</p>
+<p>For an <code>H_k</code> computation, we must account for <code>(k+1)</code>-simplices that can kill <code>k</code>-dimensional classes. A graph-only calculation is not automatically a correct Rips <code>H_1</code> calculation because a Rips complex includes cliques as higher-dimensional simplices. (<a href="https://gudhi.inria.fr/python/latest/rips_complex_user.html" title="Rips complex user manual — gudhi v3.13.0 documentation">GUDHI library</a>)</p>
+<h2 id="invariance-and-sensitivity-checks">Invariance and sensitivity checks</h2>
+<p>Reordering observations should not change the mathematical result. Translating or rotating a Euclidean point cloud preserves pairwise distances, so it should preserve its distance-based filtration. Uniform rescaling should rescale filtration coordinates under our distance convention.</p>
+<p>By contrast, an arbitrary shape deformation can preserve topology while changing distances and therefore changing persistence coordinates. Deriving that distinction will be one of your test explanations.</p>
+<p><strong>Library agreement is one source of evidence. Hand calculations and mathematical identities are independent sources. We want all three.</strong></p>
+<hr/>
+<h1 id="6-how-we-will-connect-this-to-your-work">6. How we will connect this to your work</h1>
+<p>I recommend <strong>one controlled synthetic project before one sports or computer-vision project</strong>. That prevents application complexity from hiding gaps in the mathematics.</p>
+<p>For a later sports project, a suitable research question could be:</p>
+<blockquote>
+<p>“Do topological descriptors of movement windows add reproducible information beyond ordinary kinematic features?”</p>
+</blockquote>
+<p>We would first define each observation—such as a vector of joint angles or a motion window—and specify which transformations should count as irrelevant. Then we would test whether the chosen representation behaves accordingly.</p>
+<p>For a computer-vision project, we could investigate how controlled occlusion or reconstruction defects change descriptors of a surface or point cloud.</p>
+<p>These are <strong>proposed experiments, not established benefits for your system</strong>. The capstone must be allowed to conclude that TDA is unhelpful for the selected task.</p>
+<p>Keep this learning work separate from production initially. There is no need to modify the WMS pipeline to understand boundary matrices or persistence reduction.</p>
+<hr/>
+<h1 id="7-how-we-will-decide-that-you-have-completed-the-course">7. How we will decide that you have completed the course</h1>
+<p>We will use the following proposed assessment standard. It is a learning rubric, not a claim of formal accreditation.</p>
+<table>
+<thead>
+<tr>
+<th>AreaRequired evidence</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Definitions and intuition</strong></td>
+<td>Explain the central terms accurately and supply examples and counterexamples.</td>
+</tr>
+<tr>
+<td><strong>Mathematical reasoning</strong></td>
+<td>Complete foundational proofs and hand calculations, with assumptions stated.</td>
+</tr>
+<tr>
+<td><strong>Algorithms</strong></td>
+<td>Perform a small persistence reduction manually and explain your implementation.</td>
+</tr>
+<tr>
+<td><strong>Software correctness</strong></td>
+<td>Pass the agreed tests and reproduce results in established libraries.</td>
+</tr>
+<tr>
+<td><strong>Interpretation</strong></td>
+<td>Distinguish topology, metric structure, stability, statistical evidence, and application meaning.</td>
+</tr>
+<tr>
+<td><strong>Independent work</strong></td>
+<td>Complete and defend the capstone without copying a tutorial’s choices.</td>
+</tr>
+<tr>
+<td><strong>Retention</strong></td>
+<td>Solve new cumulative problems after a delay, not only immediately after instruction.</td>
+</tr>
+<tr>
+<td><strong>Book coverage</strong></td>
+<td>Audit the actual text and close any remaining topic-specific gaps.</td>
+</tr>
+</tbody>
+</table>
+<p>For ordinary unit quizzes, I propose <strong>85% as an initial progression threshold</strong>, with every critical conceptual error corrected before proceeding. A high average does not compensate for believing that every cycle is a nontrivial homology class or that every persistent feature is meaningful.</p>
+<p>We should also include a delayed reassessment about a week after each major unit.</p>
+<h2 id="proof-depth-will-be-explicit">Proof depth will be explicit</h2>
+<p>Not every theorem needs the same treatment.</p>
+<p>For elementary results—continuity composition, metric examples, boundary-of-boundary—you should produce the proof.</p>
+<p>For major results—interval decomposition, stability, and the nerve theorem—you should state a correct version, explain its assumptions and proof strategy, and recognize valid and invalid applications. Full proofs can become additional assignments as your mathematical comfort develops.</p>
+<p>Advanced topics such as cohomology rings, spectral sequences, comprehensive manifold classification, and multiparameter-persistence theory are <strong>a subsequent course</strong>, not hidden requirements for completing this one.</p>
+<hr/>
+<h1 id="8-keeping-the-learning-organized-here">8. Keeping the learning organized here</h1>
+<p>At the end of each unit, we should produce a short progress record containing:</p>
+<p><strong>Current unit; completed readings; solved problems; verified notebooks; assessment result; unresolved misconceptions; next assignment.</strong></p>
+<p>“Read,” “attempted,” “corrected with help,” and “solved independently” should remain different statuses.</p>
+<p>This record will also provide a reliable handoff to a new chat. We should preserve the actual evidence rather than depend on a vague statement such as “we already covered homology.”</p>
+<p>For the book audit, use four statuses:</p>
+<table>
+<thead>
+<tr>
+<th>StatusMeaning</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Introduced</strong></td>
+<td>You have encountered the concept.</td>
+</tr>
+<tr>
+<td><strong>Practiced</strong></td>
+<td>You have completed guided work.</td>
+</tr>
+<tr>
+<td><strong>Independently demonstrated</strong></td>
+<td>You can solve unfamiliar problems using it.</td>
+</tr>
+<tr>
+<td><strong>Retained</strong></td>
+<td>You can still do so on a delayed assessment.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>“Complete” will mean that every agreed core outcome has evidence behind it and no unresolved critical gaps remain.</strong></p>
+<hr/>
+<h1 id="9-your-starting-point-a-diagnostic-not-more-setup">9. Your starting point: a diagnostic, not more setup</h1>
+<p>Before assigning the first readings, we should identify what you already know. These questions are placement questions; not knowing the topology ones yet is expected.</p>
+<table>
+<thead>
+<tr>
+<th>QuestionWhat it checks</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>For <code>f(x)=x^2</code>, what is <code>f^{-1}((1,4))</code>?</td>
+<td>Inverse images and set reasoning</td>
+</tr>
+<tr>
+<td>What is the negation of “every element has property <code>P</code>”?</td>
+<td>Quantifiers</td>
+</tr>
+<tr>
+<td>Explain kernel, image, rank, and nullity without using software.</td>
+<td>Linear-algebra foundations</td>
+</tr>
+<tr>
+<td>Show that “having the same remainder modulo 3” is an equivalence relation.</td>
+<td>Proof and equivalence classes</td>
+</tr>
+<tr>
+<td>Does <code>d(x,y)=(x-y)^2</code> define a metric on <code>\mathbb R</code>? Justify your answer.</td>
+<td>Definitions and counterexamples</td>
+</tr>
+<tr>
+<td>Why might a triangular outline and a filled triangle have different mathematical structure?</td>
+<td>Initial shape intuition</td>
+</tr>
+<tr>
+<td>What should happen to a Euclidean distance matrix when all observations are translated by the same vector?</td>
+<td>Invariance reasoning</td>
+</tr>
+<tr>
+<td>A program produces a long persistence bar. What else would you need before calling it a meaningful discovery?</td>
+<td>Scientific interpretation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Start by answering these in your own words, marking anything unfamiliar as “not yet.” We will use the results to begin Unit 1 at the right level, then work through the course one assessed lesson at a time.</strong></p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

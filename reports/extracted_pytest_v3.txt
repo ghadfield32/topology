@@ -1,0 +1,8 @@
+........................................................................ [ 30%]
+...............................................................ss....... [ 61%]
+........................................................................ [ 92%]
+.................                                                        [100%]
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_optional_libraries.py:14: could not import 'ripser': No module named 'ripser'
+SKIPPED [1] tests/test_optional_libraries.py:20: could not import 'gudhi': No module named 'gudhi'
+231 passed, 2 skipped in 2.57s

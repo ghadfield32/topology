@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Data and evidence map — v4 · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../docs/EVIDENCE_MAP_V4.md">docs/EVIDENCE_MAP_V4.md</a> · Readable source notation; no online math renderer.</p><h1 id="data-and-evidence-map--v4">Data and evidence map — v4</h1>
+<p>“Real data in every stage” does not mean that every mathematical claim is an empirical discovery. Some stages use real observations to illustrate a concept and exact or generated controls to test it. The role is recorded in every consolidation report.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Input and evidence role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00</td>
+<td>Real Iris measurements; the three-number mean is an explicitly constructed arithmetic example.</td>
+</tr>
+<tr>
+<td>01</td>
+<td>Real training digit intensities plus an exact, constructed three-by-three matrix.</td>
+</tr>
+<tr>
+<td>02</td>
+<td>Real Iris measurements, plus the exact counterexample 0,1,2.</td>
+</tr>
+<tr>
+<td>03</td>
+<td>Exact finite topology plus a noninjective projection demonstrated on actual Iris records.</td>
+</tr>
+<tr>
+<td>04</td>
+<td>Real digit under exact array transformations; constructed matrices and annulus radii.</td>
+</tr>
+<tr>
+<td>05</td>
+<td>Real training digit foreground; exact ring and diagonal-pair controls.</td>
+</tr>
+<tr>
+<td>06</td>
+<td>Real training digit threshold sweep; exact oriented simplicial and specified cellular-chain controls.</td>
+</tr>
+<tr>
+<td>07</td>
+<td>Real Iris point sample; exact equilateral-triangle scale derivation.</td>
+</tr>
+<tr>
+<td>08</td>
+<td>Real digit intensity filtration and an exact complete/truncated square control.</td>
+</tr>
+<tr>
+<td>09</td>
+<td>Real Iris cloud with a deliberately duplicated observation and a deterministic permutation control.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Real training image plus explicitly generated bounded perturbations; not repeated sensor observations.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Real train/validation digit pixels and the bundled historical annual sunspot series; no new forecast claim.</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Actual saved handwriting predictions from an already-exposed image-level holdout; exploratory analysis only.</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Real stereo-reference directions mapped onto a constructed unit sphere; not a spherical scene claim.</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Real calibrated stereo-reference points plus a hand-checkable pinhole control.</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Real stereo-reference disparities with generated local noise; no independent calibration-noise measurement.</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Real stereo-image patches processed by an explicitly untrained attention operator; no VGGT predictions.</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Real reference point arrangement; target transforms and held-out deformations are generated controls.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Real reference point table for measured CPU operations; separate deterministic FIFO simulation.</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Real historical annual observations for causal timing; no human-contact or scientific solar-event ground truth.</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Actual bundled dataset bytes and executed reference reports; learner and deployment claims remain separate.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="four-bundled-datasets">Four bundled datasets</h2>
+<p>Iris is a corrected scikit-learn measurement snapshot; labels and identifiers are excluded from selected measurement metrics. Digit images are a scikit-learn snapshot without writer identifiers; the declared image-level test partition is exposed. Stereo images and reference disparity are one Middlebury scene as bundled by scikit-image, not a new multi-scene model benchmark. The sunspot series is a historical annual statsmodels export, not latest solar measurements or a labeled event dataset.</p>
+<h2 id="limits-on-cross-stage-transfer">Limits on cross-stage transfer</h2>
+<p>A successful round trip verifies consistency of the formulas being used. It does not show that camera calibration was measured correctly. Known transforms applied to real point arrangements generate synthetic targets. Threshold episodes on a real time series are defined by our teaching rule; they are not independent ground-truth annotations. A stable descriptor can be consistently unhelpful. These distinctions travel with the notebook outputs.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

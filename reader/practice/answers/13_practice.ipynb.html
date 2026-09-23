@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 13 — Reference coding solutions · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../practice/answers/13_practice.ipynb">practice/answers/13_practice.ipynb</a> · Readable source notation; no online math renderer.</p><h1>Reference answers</h1><p>Attempt the independent work first.</p><details><summary>Reveal worked answers and outputs</summary><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="stage-13--reference-coding-solutions">Stage 13 — Reference coding solutions</h1>
+<p>Three exercises. Read the lesson and workbook first. Learner functions intentionally raise <code>NotImplementedError</code> until you write them. Reference execution is not your assessment.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys
+import numpy as np
+ROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / &quot;src/shape_lab&quot;).is_dir())
+if str(ROOT/&quot;src&quot;) not in sys.path:sys.path.insert(0,str(ROOT/&quot;src&quot;))
+</code></pre><div class="output"></div></section><h2 id="13c1--north_chart">13.C1 — <code>north_chart</code></h2>
+<p>Map an N×3 array of unit sphere points to the north-pole stereographic chart. Reject the excluded pole and points off the sphere.</p>
+<p><strong>Before coding:</strong> work a small example on paper.</p>
+<p><strong>Hint:</strong> Use the denominator 1-z separately for each row.</p>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>def north_chart(points):
+    p=np.asarray(points,float)
+    if p.ndim!=2 or p.shape[1]!=3 or not np.isfinite(p).all() or not np.allclose(np.linalg.norm(p,axis=1),1,atol=1e-8,rtol=0):
+        raise ValueError(&quot;Expected finite unit sphere rows.&quot;)
+    den=1-p[:,2]
+    if np.any(den&lt;=1e-12):raise ValueError(&quot;North pole excluded or too close.&quot;)
+    return p[:,:2]/den[:,None]</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>assert np.allclose(north_chart([[1,0,0],[0,0,-1]]),[[1,0],[0,0]])
+from shape_lab.stereo import reference_sample,point_cloud
+_,_,d,c=reference_sample();X,rc=point_cloud(d,c,stride=45);r=X/np.linalg.norm(X,axis=1,keepdims=True)
+actual=north_chart(r)
+assert actual.shape==(len(r),2)
+assert np.isfinite(actual).all()
+try:north_chart([[0,0,1]])
+except ValueError:pass
+else:raise AssertionError(&quot;The excluded pole must be rejected.&quot;)
+print(&quot;13.C1: checks passed&quot;)</code></pre><div class="output"><pre>13.C1: checks passed
+</pre></div></section><p><strong>Why this works and where it stops:</strong> Division creates chart coordinates, not physical metres. The denominator guard is a numerical conditioning policy, not a modification of the mathematical sphere.</p>
+<h2 id="13c2--inverse_north">13.C2 — <code>inverse_north</code></h2>
+<p>Invert the north-pole chart for finite N×2 coordinates.</p>
+<p><strong>Before coding:</strong> work a small example on paper.</p>
+<p><strong>Hint:</strong> Write q=a²+b². The third coordinate is (q-1)/(q+1).</p>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>def inverse_north(coordinates):
+    a=np.asarray(coordinates,float)
+    if a.ndim!=2 or a.shape[1]!=2 or not np.isfinite(a).all():raise ValueError(&quot;Expected finite N by 2 coordinates.&quot;)
+    q=np.sum(a*a,axis=1)
+    return np.column_stack([2*a[:,0]/(1+q),2*a[:,1]/(1+q),(q-1)/(q+1)])</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>a=np.array([[0.,0.],[1.,0.],[.3,-.8]])
+p=inverse_north(a)
+assert np.allclose(np.linalg.norm(p,axis=1),1)
+assert np.allclose(p[:,:2]/(1-p[:,2,None]),a)
+print(&quot;13.C2: checks passed&quot;)</code></pre><div class="output"><pre>13.C2: checks passed
+</pre></div></section><p><strong>Why this works and where it stops:</strong> Substitute the result into the forward map. The inverse has no finite coordinate for the excluded north pole.</p>
+<h2 id="13c3--tangent_projection">13.C3 — <code>tangent_projection</code></h2>
+<p>Project a 3D vector onto the tangent plane at a unit sphere point. Validate the unit point.</p>
+<p><strong>Before coding:</strong> work a small example on paper.</p>
+<p><strong>Hint:</strong> Remove the component parallel to p.</p>
+<section class="cell"><p class="cell-label">Code · execution 7</p><pre><code>def tangent_projection(point, vector):
+    p=np.asarray(point,float);v=np.asarray(vector,float)
+    if p.shape!=(3,) or v.shape!=(3,) or not np.isfinite(p).all() or not np.isfinite(v).all() or not np.isclose(p@p,1):raise ValueError(&quot;Unit point and finite 3-vector required.&quot;)
+    return v-p*(p@v)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 8</p><pre><code>p=np.array([1.,2.,3.]);p/=np.linalg.norm(p)
+v=tangent_projection(p,[.2,-.1,.5])
+assert abs(p@v)&lt;1e-12
+assert np.allclose(tangent_projection(p,v),v)
+assert np.allclose(tangent_projection(p,p),0)
+print(&quot;13.C3: checks passed&quot;)</code></pre><div class="output"><pre>13.C3: checks passed
+</pre></div></section><p><strong>Why this works and where it stops:</strong> The projection is (I-ppᵀ)v. It is tangent but adding it directly to p generally leaves the sphere unless followed by an appropriate curve or retraction.</p>
+</details><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

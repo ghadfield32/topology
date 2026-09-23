@@ -1,0 +1,40 @@
+{
+  "seed": 20260920,
+  "sklearn_version": "1.8.0",
+  "iris": {
+    "rows": 150,
+    "features": 4,
+    "source_variant": "scikit-learn corrected Iris snapshot; not byte-identical to all UCI variants"
+  },
+  "digits": {
+    "rows": 1797,
+    "shape": [
+      8,
+      8
+    ],
+    "range": [
+      0,
+      16
+    ],
+    "source_variant": "scikit-learn copy of UCI original test set; new per-image learning split; writer IDs unavailable"
+  },
+  "split_sizes": {
+    "train": 1077,
+    "validation": 360,
+    "test": 360
+  },
+  "files": {
+    "data/raw/iris.csv": {
+      "sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f",
+      "bytes": 4676
+    },
+    "data/raw/digits.npz": {
+      "sha256": "2642e38b91971a422addc7bfa3474649f0b69ad6736f1a9700079a57bfb8135a",
+      "bytes": 48351
+    },
+    "data/splits.json": {
+      "sha256": "895b1092a9813d596166337e29caf7f0a5d9c7352445c5067b67ff984b8f86bd",
+      "bytes": 16917
+    }
+  }
+}

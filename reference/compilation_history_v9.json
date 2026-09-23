@@ -1,0 +1,3491 @@
+{
+  "method": "whitespace-normalized blank-line-delimited paragraph comparison against retained source Markdown; semantic equivalence not assumed",
+  "retired_volumes": [
+    {
+      "path": "COMPLETE_COURSE_V2.md",
+      "original_bytes": 238985,
+      "original_sha256": "1bf7425deba1b2f34d9074cd88780420aeae81c172b84595ca46d5bab2176c0b",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V3.md",
+      "original_bytes": 309672,
+      "original_sha256": "393676b0bdce3874e57257403133a29d6bc0b67a3d9e4bdfa58521be6291980b",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V4.md",
+      "original_bytes": 488824,
+      "original_sha256": "3d438d0a71ed7e7238e7ca9b4421899013193080a74303c87f2c4c6166780441",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V5.md",
+      "original_bytes": 604236,
+      "original_sha256": "ae3fc14ef8be66befb683e49215d5966a6f227d1fcb706647eb92f4713c51bb5",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V6.md",
+      "original_bytes": 827472,
+      "original_sha256": "406121eef0c58d4545d5436035c91640155324fd39bcdbfc51e924e72825eef5",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V7.md",
+      "original_bytes": 1037771,
+      "original_sha256": "6ca2a5178c75d8095b9e45abc3382faaca3728a0167c7e765b3c6dfa88114532",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COMPLETE_COURSE_V8.md",
+      "original_bytes": 1124789,
+      "original_sha256": "ab981fa94898fb7bb0797bcfe3e5f38886624daac9019a9f6dfe7231d4715f5d",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    },
+    {
+      "path": "COURSE_GUIDE.md",
+      "original_bytes": 112964,
+      "original_sha256": "1106a6198d1ab29a93d31ce107bd6563ea8173bd438a5ca712fbdb68f1a4f474",
+      "action": "replace cumulative duplicate volume with canonical pointer"
+    }
+  ],
+  "unmatched_unique_passages": [
+    {
+      "text": "# Listening to Shape — Complete Learning System 2.0",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "An original companion to the supplied topic outline, not the actual book. Use `START_HERE.html` for stage hubs, code practice, recall and saved outputs. This volume combines the teaching prose; code assignments and worked solutions remain separate. Local links below are relative to the course root.",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "# Getting started",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/START_YOUR_FIRST_SESSION.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "# How the learning system works",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/LEARNING_SYSTEM_V2.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "# 00_numbers_symbols_and_types",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `foundations/00_numbers_symbols_and_types.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Primary follow-up:** R4 in [Sources](docs/SOURCES.md), especially sets, functions, and logic. The examples on this page are original course examples, not excerpts from that book.",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# 01_python_from_zero",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `foundations/01_python_from_zero.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Primary follow-up:** the official Python tutorial, source P1 in [Sources](docs/SOURCES.md). Its current online version can differ from the pinned build interpreter. The package records its actual tested versions separately.",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# 02_proof_workshop",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `foundations/02_proof_workshop.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Primary follow-up:** R4 and R3 in [Sources](docs/SOURCES.md). Further original worked proofs appear in [Proof atlas](docs/PROOF_ATLAS.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# 03_linear_algebra_workshop",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `foundations/03_linear_algebra_workshop.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Primary follow-up:** R5 for linear maps, bases, and rank; R6 for fields and vector spaces; R1/R2 for chains and homology. See [Sources](docs/SOURCES.md). All matrices and derivations above are original worked course examples.",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 00 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/00_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Create your learner record in `progress/learner_progress.json`. Leave all stages unmastered initially. Record both what you did independently and what you needed help with. When continuing here, paste your stage number, answers, and any error traceback rather than saying only that it did not work.",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COURSE_GUIDE.md"
+      ]
+    },
+    {
+      "text": "# Stage 00 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/00_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/00_lesson.md) · [Worked lab](notebooks/00_lab.ipynb) · [Your coding notebook](practice/learner/00_practice.ipynb) · [Reference coding solutions](practice/00_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 01 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/01_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 01 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/01_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/01_lesson.md) · [Worked lab](notebooks/01_lab.ipynb) · [Your coding notebook](practice/learner/01_practice.ipynb) · [Reference coding solutions](practice/01_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 02 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/02_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 02 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/02_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/02_lesson.md) · [Worked lab](notebooks/02_lab.ipynb) · [Your coding notebook](practice/learner/02_practice.ipynb) · [Reference coding solutions](practice/02_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 03 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/03_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 03 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/03_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/03_lesson.md) · [Worked lab](notebooks/03_lab.ipynb) · [Your coding notebook](practice/learner/03_practice.ipynb) · [Reference coding solutions](practice/03_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 04 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/04_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 04 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/04_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/04_lesson.md) · [Worked lab](notebooks/04_lab.ipynb) · [Your coding notebook](practice/learner/04_practice.ipynb) · [Reference coding solutions](practice/04_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 05 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/05_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 05 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/05_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/05_lesson.md) · [Worked lab](notebooks/05_lab.ipynb) · [Your coding notebook](practice/learner/05_practice.ipynb) · [Reference coding solutions](practice/05_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 06 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/06_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 06 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/06_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/06_lesson.md) · [Worked lab](notebooks/06_lab.ipynb) · [Your coding notebook](practice/learner/06_practice.ipynb) · [Reference coding solutions](practice/06_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 07 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/07_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 07 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/07_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/07_lesson.md) · [Worked lab](notebooks/07_lab.ipynb) · [Your coding notebook](practice/learner/07_practice.ipynb) · [Reference coding solutions](practice/07_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 08 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/08_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 08 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/08_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/08_lesson.md) · [Worked lab](notebooks/08_lab.ipynb) · [Your coding notebook](practice/learner/08_practice.ipynb) · [Reference coding solutions](practice/08_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 09 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/09_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 09 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/09_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/09_lesson.md) · [Worked lab](notebooks/09_lab.ipynb) · [Your coding notebook](practice/learner/09_practice.ipynb) · [Reference coding solutions](practice/09_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 10 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/10_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 10 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/10_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/10_lesson.md) · [Worked lab](notebooks/10_lab.ipynb) · [Your coding notebook](practice/learner/10_practice.ipynb) · [Reference coding solutions](practice/10_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 11 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/11_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 11 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/11_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/11_lesson.md) · [Worked lab](notebooks/11_lab.ipynb) · [Your coding notebook](practice/learner/11_practice.ipynb) · [Reference coding solutions](practice/11_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 12 core",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/12_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Stage 12 deeper workbook",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/12_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Next files:** [Core lesson](lessons/12_lesson.md) · [Worked lab](notebooks/12_lab.ipynb) · [Your coding notebook](practice/learner/12_practice.ipynb) · [Reference coding solutions](practice/12_solutions.md) · [Retrieval prompts](practice/retrieval.md).",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Proof atlas",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/PROOF_ATLAS.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "These arguments are original explanations, not excerpts from the book. Definitions and standard results align with the references in [Sources](docs/SOURCES.md), especially Hammack (R4), Morris (R3), Hatcher (R7), Tinarrage (R1), ETH (R2), and Chazal–Michel (R8). A program checks cases; a proof establishes a stated conclusion from stated hypotheses.",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "After mastery of the core, study integer coefficients and torsion; the cellular chain complex; fundamental groups and covering spaces; homology/cohomology duality; geometric inference under sampling assumptions; statistical inference for persistence; and only then multiparameter persistence or learned topological representations. These are substantive extensions. A short archive should not certify them after a vocabulary paragraph. Use [DEEPENING_PROOFS.md](docs/DEEPENING_PROOFS.md) and the actual-book audit to record unfinished obligations rather than concealing them.",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Independent capstone",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/CAPSTONE_PROTOCOL.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Your own data",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/BRING_YOUR_OWN_DATA.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "# Final assessment",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/FINAL_ASSESSMENT.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "# Book section audit",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/BOOK_TOC_AUDIT_V2.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "# Sources",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/SOURCES.md`",
+      "sources": [
+        "COMPLETE_COURSE_V2.md"
+      ]
+    },
+    {
+      "text": "# Listening to Shape — complete reading volume, version 3",
+      "sources": [
+        "COMPLETE_COURSE_V3.md"
+      ]
+    },
+    {
+      "text": "Original beginner-first companion: topology and persistence followed by an applied geometry continuation. This is not the actual book text. Use START_HERE.html for linked code and saved outputs. Conceptual/coding solutions remain in their separate files so you can attempt exercises first.",
+      "sources": [
+        "COMPLETE_COURSE_V3.md"
+      ]
+    },
+    {
+      "text": "## Reading order",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Six primers → core stages 00–12 → applied geometry stages 13–20 → proof atlases → independent-project protocol and continuing learning. Start with Stage 00 and open primers as needed; you do not need to memorize every primer before the first lab.",
+      "sources": [
+        "COMPLETE_COURSE_V3.md"
+      ]
+    },
+    {
+      "text": "Source section: `foundations/04_calculus_for_geometry.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `foundations/05_measurement_uncertainty_and_evidence.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/13_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/13_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/14_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/14_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/15_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/15_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/16_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/16_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/17_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/17_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/18_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/18_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/19_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/19_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `lessons/20_lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `workbooks/20_workbook.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/GEOMETRY_PROOF_ATLAS_V3.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/LEARNING_SYSTEM_V3.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/INDEPENDENT_SPATIAL_CAPSTONE_V3.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md",
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/SOURCES_V3.md`",
+      "sources": [
+        "COMPLETE_COURSE_V3.md"
+      ]
+    },
+    {
+      "text": "# Listening to Shape — complete reading volume, version 4",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Original beginner-first course and geometry continuation. This is not the actual book text. The full ZIP contains notebooks, data, solutions, tests and the linked reader; this volume collects the explanations. Source links and local paths work from the extracted course directory.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Start Stage 00 and open the six primers as needed. Each stage then presents its lesson, workbook and guided consolidation session together. Finish with proof obligations, glossary, independent capstone and coverage/evidence guides. Worked transfer answers are hidden in details blocks in the HTML reader; attempt the question before opening them.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "The new additions deepen the same 21 stages. Existing knowledge and logged evidence need not be discarded. Learning completion is based on demonstrated outcomes, not reading length or automatic code execution.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/00_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/00_lesson.md), then use this explanation before the [consolidation notebook](consolidation/00_lab.ipynb). The [original workbook](workbooks/00_workbook.md) and [worked lab](notebooks/00_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/00_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**References:** The original stage's reading assignments remain authoritative for that stage. See [the core source ledger](docs/SOURCES.md), [the geometry source ledger](docs/SOURCES_V3.md), and [the v4 source and scope ledger](docs/SOURCES_V4.md). The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/01_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/01_lesson.md), then use this explanation before the [consolidation notebook](consolidation/01_lab.ipynb). The [original workbook](workbooks/01_workbook.md) and [worked lab](notebooks/01_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/01_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/02_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/02_lesson.md), then use this explanation before the [consolidation notebook](consolidation/02_lab.ipynb). The [original workbook](workbooks/02_workbook.md) and [worked lab](notebooks/02_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/02_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/03_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/03_lesson.md), then use this explanation before the [consolidation notebook](consolidation/03_lab.ipynb). The [original workbook](workbooks/03_workbook.md) and [worked lab](notebooks/03_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/03_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/04_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/04_lesson.md), then use this explanation before the [consolidation notebook](consolidation/04_lab.ipynb). The [original workbook](workbooks/04_workbook.md) and [worked lab](notebooks/04_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/04_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/05_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/05_lesson.md), then use this explanation before the [consolidation notebook](consolidation/05_lab.ipynb). The [original workbook](workbooks/05_workbook.md) and [worked lab](notebooks/05_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/05_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/06_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/06_lesson.md), then use this explanation before the [consolidation notebook](consolidation/06_lab.ipynb). The [original workbook](workbooks/06_workbook.md) and [worked lab](notebooks/06_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/06_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/07_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/07_lesson.md), then use this explanation before the [consolidation notebook](consolidation/07_lab.ipynb). The [original workbook](workbooks/07_workbook.md) and [worked lab](notebooks/07_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/07_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/08_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/08_lesson.md), then use this explanation before the [consolidation notebook](consolidation/08_lab.ipynb). The [original workbook](workbooks/08_workbook.md) and [worked lab](notebooks/08_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/08_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/09_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/09_lesson.md), then use this explanation before the [consolidation notebook](consolidation/09_lab.ipynb). The [original workbook](workbooks/09_workbook.md) and [worked lab](notebooks/09_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/09_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/10_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/10_lesson.md), then use this explanation before the [consolidation notebook](consolidation/10_lab.ipynb). The [original workbook](workbooks/10_workbook.md) and [worked lab](notebooks/10_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/10_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/11_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/11_lesson.md), then use this explanation before the [consolidation notebook](consolidation/11_lab.ipynb). The [original workbook](workbooks/11_workbook.md) and [worked lab](notebooks/11_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/11_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/12_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/12_lesson.md), then use this explanation before the [consolidation notebook](consolidation/12_lab.ipynb). The [original workbook](workbooks/12_workbook.md) and [worked lab](notebooks/12_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/12_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Readings: G01, G02. See the [source ledger](docs/SOURCES_V3.md) for checked links, evidence status and source differences.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/13_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/13_lesson.md), then use this explanation before the [consolidation notebook](consolidation/13_lab.ipynb). The [original workbook](workbooks/13_workbook.md) and [worked lab](notebooks/13_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/13_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Readings: G02, G03, G04, G05, G06, G07. See the [source ledger](docs/SOURCES_V3.md) for checked links, evidence status and source differences.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/14_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/14_lesson.md), then use this explanation before the [consolidation notebook](consolidation/14_lab.ipynb). The [original workbook](workbooks/14_workbook.md) and [worked lab](notebooks/14_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/14_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Readings: D04, D05, G06, G07. See the [source ledger](docs/SOURCES_V3.md) for checked links, evidence status and source differences.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/15_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/15_lesson.md), then use this explanation before the [consolidation notebook](consolidation/15_lab.ipynb). The [original workbook](workbooks/15_workbook.md) and [worked lab](notebooks/15_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/15_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Readings: V01, V02, V03, V04, V05, V06. See the [source ledger](docs/SOURCES_V3.md) for checked links, evidence status and source differences.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/16_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/16_lesson.md), then use this explanation before the [consolidation notebook](consolidation/16_lab.ipynb). The [original workbook](workbooks/16_workbook.md) and [worked lab](notebooks/16_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/16_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Readings: G06, D04, T01. See the [source ledger](docs/SOURCES_V3.md) for checked links, evidence status and source differences.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/17_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/17_lesson.md), then use this explanation before the [consolidation notebook](consolidation/17_lab.ipynb). The [original workbook](workbooks/17_workbook.md) and [worked lab](notebooks/17_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/17_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Readings: S01, S02. See the [source ledger](docs/SOURCES_V3.md) for checked links, evidence status and source differences.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/18_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/18_lesson.md), then use this explanation before the [consolidation notebook](consolidation/18_lab.ipynb). The [original workbook](workbooks/18_workbook.md) and [worked lab](notebooks/18_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/18_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Readings: U01, S01. See the [source ledger](docs/SOURCES_V3.md) for checked links, evidence status and source differences.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/19_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/19_lesson.md), then use this explanation before the [consolidation notebook](consolidation/19_lab.ipynb). The [original workbook](workbooks/19_workbook.md) and [worked lab](notebooks/19_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/19_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Readings: U01, T01, V04. See the [source ledger](docs/SOURCES_V3.md) for checked links, evidence status and source differences.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `sessions/20_session.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "**Read first:** [Stage lesson](lessons/20_lesson.md), then use this explanation before the [consolidation notebook](consolidation/20_lab.ipynb). The [original workbook](workbooks/20_workbook.md) and [worked lab](notebooks/20_lab.ipynb) remain available. Repair earlier concepts only where needed; do not restart the whole course.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Copy [the response template](my_work/templates/20_response.md) to a new dated file in `my_work/`. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "This supplements the original [proof atlas](docs/PROOF_ATLAS.md). Numerical tests support implementation correctness; the arguments below establish exact identities under their assumptions.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/DEEPENING_PROOFS.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/GLOSSARY.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/GLOSSARY_V3.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Definitions align with the primary resources identified in [Sources v3](docs/SOURCES_V3.md); the source ledger separates mathematical background from model-specific conventions.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/COMPLETION_SYSTEM_V4.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "The [84-outcome coverage map](docs/COVERAGE_V4.md) is the working definition of scope. Each stage has four specific outcomes. Outcomes are teaching targets; the shipped map does not contain evidence that the learner has met them. The actual full-book audit and major-theorem proof obligations remain separate.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/COVERAGE_V4.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "All 21 stages are preserved. These are original curriculum targets, not checked learner achievements. See [the learning policy](docs/COMPLETION_SYSTEM_V4.md).",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/00_session.md) · [Reference lab](notebooks/00_lab.ipynb) · [Consolidation](consolidation/00_lab.ipynb) · [Learner code](practice/learner/00_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/01_session.md) · [Reference lab](notebooks/01_lab.ipynb) · [Consolidation](consolidation/01_lab.ipynb) · [Learner code](practice/learner/01_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/02_session.md) · [Reference lab](notebooks/02_lab.ipynb) · [Consolidation](consolidation/02_lab.ipynb) · [Learner code](practice/learner/02_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/03_session.md) · [Reference lab](notebooks/03_lab.ipynb) · [Consolidation](consolidation/03_lab.ipynb) · [Learner code](practice/learner/03_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/04_session.md) · [Reference lab](notebooks/04_lab.ipynb) · [Consolidation](consolidation/04_lab.ipynb) · [Learner code](practice/learner/04_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/05_session.md) · [Reference lab](notebooks/05_lab.ipynb) · [Consolidation](consolidation/05_lab.ipynb) · [Learner code](practice/learner/05_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/06_session.md) · [Reference lab](notebooks/06_lab.ipynb) · [Consolidation](consolidation/06_lab.ipynb) · [Learner code](practice/learner/06_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/07_session.md) · [Reference lab](notebooks/07_lab.ipynb) · [Consolidation](consolidation/07_lab.ipynb) · [Learner code](practice/learner/07_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/08_session.md) · [Reference lab](notebooks/08_lab.ipynb) · [Consolidation](consolidation/08_lab.ipynb) · [Learner code](practice/learner/08_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/09_session.md) · [Reference lab](notebooks/09_lab.ipynb) · [Consolidation](consolidation/09_lab.ipynb) · [Learner code](practice/learner/09_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/10_session.md) · [Reference lab](notebooks/10_lab.ipynb) · [Consolidation](consolidation/10_lab.ipynb) · [Learner code](practice/learner/10_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/11_session.md) · [Reference lab](notebooks/11_lab.ipynb) · [Consolidation](consolidation/11_lab.ipynb) · [Learner code](practice/learner/11_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/12_session.md) · [Reference lab](notebooks/12_lab.ipynb) · [Consolidation](consolidation/12_lab.ipynb) · [Learner code](practice/learner/12_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/13_session.md) · [Reference lab](notebooks/13_lab.ipynb) · [Consolidation](consolidation/13_lab.ipynb) · [Learner code](practice/learner/13_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/14_session.md) · [Reference lab](notebooks/14_lab.ipynb) · [Consolidation](consolidation/14_lab.ipynb) · [Learner code](practice/learner/14_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/15_session.md) · [Reference lab](notebooks/15_lab.ipynb) · [Consolidation](consolidation/15_lab.ipynb) · [Learner code](practice/learner/15_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/16_session.md) · [Reference lab](notebooks/16_lab.ipynb) · [Consolidation](consolidation/16_lab.ipynb) · [Learner code](practice/learner/16_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/17_session.md) · [Reference lab](notebooks/17_lab.ipynb) · [Consolidation](consolidation/17_lab.ipynb) · [Learner code](practice/learner/17_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/18_session.md) · [Reference lab](notebooks/18_lab.ipynb) · [Consolidation](consolidation/18_lab.ipynb) · [Learner code](practice/learner/18_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/19_session.md) · [Reference lab](notebooks/19_lab.ipynb) · [Consolidation](consolidation/19_lab.ipynb) · [Learner code](practice/learner/19_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "[Guided session](sessions/20_session.md) · [Reference lab](notebooks/20_lab.ipynb) · [Consolidation](consolidation/20_lab.ipynb) · [Learner code](practice/learner/20_practice.ipynb)",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/EVIDENCE_MAP_V4.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/SOURCES_V4.md`",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Checked on September 20, 2026. These are original teaching supplements to the supplied learning plan, not quotations or an endorsed version of the book. The main topology and geometry references remain in [core sources](docs/SOURCES.md) and [v3 geometry sources](docs/SOURCES_V3.md). Existing source-check dates are historical, not silently promoted to a fresh review.",
+      "sources": [
+        "COMPLETE_COURSE_V4.md",
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Listening to Shape — Complete Reading v5",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "This combined reading preserves the full v4 material and adds the v5 physics track. Historical version headings inside the preserved volume are not current verification claims. Use START_HERE.html for the staged reading route and docs/v5/VERIFICATION.md for this release. Reading this volume alone does not complete the independent assignments.",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: COMPLETE_COURSE_V4.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: foundations/07_physics_from_zero.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: foundations/08_structure_is_not_truth.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/21.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/22.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/23.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/24.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/25.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/26.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/27.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/28.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/29.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/lessons/30.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/21.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/22.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/23.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/24.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/25.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/26.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/27.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/28.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/29.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: physics/solutions/30.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: docs/v5/CONCEPT_GLOSSARY.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: docs/v5/SOURCE_AUDIT.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: docs/v5/COVERAGE.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "<!-- Source: docs/v5/SOURCES.md -->",
+      "sources": [
+        "COMPLETE_COURSE_V5.md",
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Listening to Shape — Complete Reading v6",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "This is the full prior reading volume plus the cross-industry continuation. Historical headings inside the retained volume identify earlier material, not current verification. Use START_HERE.html for navigation and docs/v6/VERIFICATION.md for current status. This volume does not replace notebooks, independent exercises or the actual-book audit.",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "## New material first",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Begin with the current start guide and data primer below; the full prior foundations and stage lessons follow. Industry cases and stage-transfer guides come after that retained course. Work one case alongside the relevant core concepts rather than treating all optional datasets as prerequisites.",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/START.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/BEGINNER_DATA_PRIMER.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Retained core course and earlier continuations",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/DATA_CATALOG.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/STAGE_MAP.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/lessons/co2.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/lessons/elnino.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/lessons/grunfeld.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/lessons/modechoice.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/lessons/nile.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/lessons/stackloss.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/lessons/wdbc.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/lessons/wine.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/00.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/01.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/02.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/03.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/04.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/05.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/06.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/07.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/08.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/09.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/10.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/11.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/12.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/13.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/14.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/15.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/16.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/17.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/18.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/19.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/20.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/21.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/22.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/23.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/24.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/25.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/26.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/27.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/28.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/29.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/stage_guides/30.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/cards/co2.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/cards/elnino.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/cards/grunfeld.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/cards/modechoice.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/cards/nile.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/cards/stackloss.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/cards/wdbc.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/cards/wine.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/answers/co2.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/answers/elnino.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/answers/grunfeld.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/answers/modechoice.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/answers/nile.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/answers/stackloss.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/answers/wdbc.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `industry/answers/wine.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/OPTIONAL_DATA.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/SOURCE_AUDIT.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/COVERAGE.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/REPRODUCE.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Source section: `docs/v6/VERIFICATION.md`",
+      "sources": [
+        "COMPLETE_COURSE_V6.md",
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Listening to Shape — complete reading volume v7",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "This combined volume retains v6 and adds the v7 beginner entry lessons and evidence laboratories. The offline reader is the canonical navigable route; the ZIP contains every source lesson and executable notebook. Links inside retained sections may be relative to their original source location.",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Version 7: entry lessons and evidence practice",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `docs/v7/START.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `docs/v7/UNCERTAINTY_PRIMER.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `docs/v7/LEARNING_ROUTE.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/00/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/01/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/02/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/03/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/04/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/05/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/06/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/07/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/08/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/09/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/10/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/11/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/12/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/13/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/14/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/15/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/16/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/17/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/18/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/19/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/20/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/21/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/22/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/23/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/24/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/25/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/26/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/27/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/28/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/29/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `beginner_v7/30/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `applications_v7/seeds/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `applications_v7/seeds/questions.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `applications_v7/seeds/solutions.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `applications_v7/concrete_slump/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `applications_v7/concrete_slump/questions.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `applications_v7/concrete_slump/solutions.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `methods_v7/leakage/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `methods_v7/leakage/questions.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `methods_v7/leakage/solutions.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `methods_v7/claims/lesson.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `methods_v7/claims/questions.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `methods_v7/claims/solutions.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `docs/v7/DATA_CATALOG.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `docs/v7/SOURCE_AUDIT.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\nSource file: `docs/v7/COVERAGE.md`",
+      "sources": [
+        "COMPLETE_COURSE_V7.md",
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Listening to Shape — Complete course v8",
+      "sources": [
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "Full retained v7 course plus the v8 sports continuation. The HTML entry point gives the staged learning route. Earlier version labels below are retained historical content, not current verification counts.",
+      "sources": [
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "---\n# V8 sports continuation",
+      "sources": [
+        "COMPLETE_COURSE_V8.md"
+      ]
+    },
+    {
+      "text": "# Listening to Shape — Complete Course Guide",
+      "sources": [
+        "COURSE_GUIDE.md"
+      ]
+    },
+    {
+      "text": "Original beginner-first companion to the supplied introductory learning scope. See README.md for execution and docs/SOURCES.md for references. The actual book text has not been audited.",
+      "sources": [
+        "COURSE_GUIDE.md"
+      ]
+    }
+  ],
+  "unmatched_count": 388,
+  "primary_lessons": 31,
+  "claim": "Required route has one primary lesson per stage. Optional repair/retrieval remains intentional."
+}

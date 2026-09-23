@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 08 — Reference coding solutions · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../practice/answers/08_practice.ipynb">practice/answers/08_practice.ipynb</a> · Readable source notation; no online math renderer.</p><h1>Reference answers</h1><p>Attempt the independent work first.</p><details><summary>Reveal worked answers and outputs</summary><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="stage-08--reference-coding-solutions">Stage 08 — Reference coding solutions</h1>
+<p>These are instructor reference implementations, not evidence of your independent mastery. Run after attempting your own version. All examples use explicit small inputs and the declared dataset partitions.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json
+from itertools import combinations
+import numpy as np
+import pandas as pd
+ROOT=next((p for p in [Path.cwd(),*Path.cwd().parents] if (p/&#x27;data/manifest.json&#x27;).exists() and (p/&#x27;src/shape_lab&#x27;).exists()),None)
+if ROOT is None: raise RuntimeError(&#x27;Open this notebook inside the extracted course folder.&#x27;)
+sys.path.insert(0,str(ROOT/&#x27;src&#x27;))
+from shape_lab.data import load_iris_data,load_digit_data,digit_example
+from shape_lab.algebra import closure,validate_complex,rank_mod2,boundary_matrix,betti_numbers
+from shape_lab.topology import component_labels
+from shape_lab.persistence import ordered_filtration,rips_filtration,reduce_boundary,persistent_homology,diagram,pixel_filtration,finite_bottleneck
+print(&#x27;Working inside&#x27;,ROOT.name,&#x27;— no network data downloads.&#x27;)</code></pre><div class="output"><pre>Working inside course — no network data downloads.
+</pre></div></section><h2 id="08c1--read-a-half-open-barcode">08.C1 — Read a half-open barcode</h2>
+<p>Given pairs (birth,death), count intervals alive at t using birth&lt;=t&lt;death. Infinity is allowed.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>The left endpoint is included; the right endpoint is excluded.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>def alive_count(pairs,t):
+    return sum(b&lt;=t&lt;d for b,d in pairs)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>pairs=[(0,1),(1,2),(0,np.inf)]
+assert alive_count(pairs,0)==2 and alive_count(pairs,1)==2 and alive_count(pairs,2)==1
+print(&quot;Endpoint convention checked at exact births and deaths&quot;)</code></pre><div class="output"><pre>Endpoint convention checked at exact births and deaths
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> Checking only thresholds between events can hide an endpoint-convention bug. Exact endpoints are essential in mathematical tests.</p>
+<h2 id="08c2--summarize-finite-lifetimes">08.C2 — Summarize finite lifetimes</h2>
+<p>Return the sum of lifetimes of finite intervals. Do not replace infinity by an arbitrary large number.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Test finiteness of death before subtracting birth.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>def finite_lifetime_sum(pairs):
+    return sum(d-b for b,d in pairs if np.isfinite(d))</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>assert finite_lifetime_sum([(1,3),(0,np.inf),(.5,.5)])==2
+assert finite_lifetime_sum([])==0
+print(&quot;Essential interval excluded from finite lifetime sum&quot;)</code></pre><div class="output"><pre>Essential interval excluded from finite lifetime sum
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> Exclusion is a declared representation choice, not a statement that surviving components are unimportant. Preserve their information separately, such as through Betti counts.</p>
+<h2 id="08c3--read-the-rank-invariant">08.C3 — Read the rank invariant</h2>
+<p>For s&lt;=t, return the number of intervals born by s and surviving after t.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>A feature born after s cannot contribute to a map starting at s.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 7</p><pre><code>def barcode_rank(pairs,s,t):
+    return sum(b&lt;=s and t&lt;d for b,d in pairs)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 8</p><pre><code>pairs=[(0,2),(1,3),(0,np.inf)]
+assert barcode_rank(pairs,0,2)==1
+assert barcode_rank(pairs,1,2)==2
+assert barcode_rank(pairs,1,1)==3
+print(&quot;Two-scale survival differs from counting each snapshot independently&quot;)</code></pre><div class="output"><pre>Two-scale survival differs from counting each snapshot independently
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> This counts the rank of the homology map under interval decomposition. It tests identity through the filtration, not only the number of classes present at a single threshold.</p>
+<h2 id="08c4--recover-the-exact-square-interval">08.C4 — Recover the exact square interval</h2>
+<p>Compute the finite H1 diagram of the four unit-square corners using the core implementation. Return a two-column array.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Predict the result from side and diagonal lengths before calling any function.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 9</p><pre><code>def square_diagram():
+    X=np.array([[0,0],[1,0],[1,1],[0,1]],float)
+    return diagram(persistent_homology(rips_filtration(X)),1,finite_only=True)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 10</p><pre><code>D=square_diagram()
+assert D.shape==(1,2) and np.allclose(D,[[1,np.sqrt(2)]])
+print(&quot;Square H1 interval:&quot;,D)</code></pre><div class="output"><pre>Square H1 interval: [[1.         1.41421356]]
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> The loop appears when all four sides are present and dies when clique triangles fill it. Computing through triangles is enough to determine H1 deaths.</p>
+<h2 id="08c5--inspect-a-real-image-persistence-diagram">08.C5 — Inspect a real image persistence diagram</h2>
+<p>Return finite H1 birth/death pairs for a given supplied digit image, using f=1-intensity/16.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Use the same pixel object and entrance convention as the threshold lesson.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 11</p><pre><code>def digit_h1_diagram(image):
+    f=pixel_filtration(1-np.asarray(image,dtype=float)/16)
+    return diagram(persistent_homology(f),1,finite_only=True)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 12</p><pre><code>image,sample_id=digit_example(8);D=digit_h1_diagram(image)
+assert D.shape[1]==2 and np.all(D[:,1]&gt;D[:,0])
+assert np.all(D&gt;=0) and np.all(D&lt;=1)
+print(&quot;Training image&quot;,sample_id,&quot;finite H1 diagram:&quot;,D)</code></pre><div class="output"><pre>Training image 8 finite H1 diagram: [[0.1875 0.9375]
+ [0.375  1.    ]]
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> No H1 class is essential after every square of the rectangular image has entered. That justifies using the completed finite H1 diagram here, not removing infinite bars indiscriminately in every application.</p>
+</details><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

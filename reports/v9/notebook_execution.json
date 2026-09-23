@@ -1,0 +1,1149 @@
+{
+  "mode": "fresh_input_workspace_and_fresh_kernels",
+  "required_prior_reports_copied": false,
+  "learner_assessment": "not_assessed",
+  "order": [
+    "applications_v7/concrete_slump/answers.ipynb",
+    "applications_v7/concrete_slump/lab.ipynb",
+    "applications_v7/seeds/answers.ipynb",
+    "applications_v7/seeds/lab.ipynb",
+    "consolidation/00_lab.ipynb",
+    "consolidation/01_lab.ipynb",
+    "consolidation/02_lab.ipynb",
+    "consolidation/03_lab.ipynb",
+    "consolidation/04_lab.ipynb",
+    "consolidation/05_lab.ipynb",
+    "consolidation/06_lab.ipynb",
+    "consolidation/07_lab.ipynb",
+    "consolidation/08_lab.ipynb",
+    "consolidation/09_lab.ipynb",
+    "consolidation/10_lab.ipynb",
+    "consolidation/11_lab.ipynb",
+    "notebooks/11_lab.ipynb",
+    "notebooks/12_lab.ipynb",
+    "consolidation/12_lab.ipynb",
+    "consolidation/13_lab.ipynb",
+    "consolidation/14_lab.ipynb",
+    "consolidation/15_lab.ipynb",
+    "consolidation/16_lab.ipynb",
+    "consolidation/17_lab.ipynb",
+    "consolidation/18_lab.ipynb",
+    "consolidation/19_lab.ipynb",
+    "consolidation/20_lab.ipynb",
+    "industry/answers/co2.ipynb",
+    "industry/answers/elnino.ipynb",
+    "industry/answers/grunfeld.ipynb",
+    "industry/answers/modechoice.ipynb",
+    "industry/answers/nile.ipynb",
+    "industry/answers/stackloss.ipynb",
+    "industry/answers/wdbc.ipynb",
+    "industry/answers/wine.ipynb",
+    "industry/notebooks/co2.ipynb",
+    "industry/notebooks/elnino.ipynb",
+    "industry/notebooks/grunfeld.ipynb",
+    "industry/notebooks/modechoice.ipynb",
+    "industry/notebooks/nile.ipynb",
+    "industry/notebooks/stackloss.ipynb",
+    "industry/notebooks/wdbc.ipynb",
+    "industry/notebooks/wine.ipynb",
+    "methods_v7/claims/answers.ipynb",
+    "methods_v7/claims/lab.ipynb",
+    "methods_v7/leakage/answers.ipynb",
+    "methods_v7/leakage/lab.ipynb",
+    "notebooks/00_lab.ipynb",
+    "notebooks/01_lab.ipynb",
+    "notebooks/02_lab.ipynb",
+    "notebooks/03_lab.ipynb",
+    "notebooks/04_lab.ipynb",
+    "notebooks/05_lab.ipynb",
+    "notebooks/06_lab.ipynb",
+    "notebooks/07_lab.ipynb",
+    "notebooks/08_lab.ipynb",
+    "notebooks/09_lab.ipynb",
+    "notebooks/10_lab.ipynb",
+    "notebooks/13_lab.ipynb",
+    "notebooks/14_lab.ipynb",
+    "notebooks/15_lab.ipynb",
+    "notebooks/16_lab.ipynb",
+    "notebooks/17_lab.ipynb",
+    "notebooks/18_lab.ipynb",
+    "notebooks/19_lab.ipynb",
+    "notebooks/20_lab.ipynb",
+    "physics/notebooks/21_lab.ipynb",
+    "physics/notebooks/22_lab.ipynb",
+    "physics/notebooks/23_lab.ipynb",
+    "physics/notebooks/24_lab.ipynb",
+    "physics/notebooks/25_lab.ipynb",
+    "physics/notebooks/26_lab.ipynb",
+    "physics/notebooks/27_lab.ipynb",
+    "physics/notebooks/28_lab.ipynb",
+    "physics/notebooks/29_lab.ipynb",
+    "physics/notebooks/30_lab.ipynb",
+    "physics/practice/answers/21_practice.ipynb",
+    "physics/practice/answers/22_practice.ipynb",
+    "physics/practice/answers/23_practice.ipynb",
+    "physics/practice/answers/24_practice.ipynb",
+    "physics/practice/answers/25_practice.ipynb",
+    "physics/practice/answers/26_practice.ipynb",
+    "physics/practice/answers/27_practice.ipynb",
+    "physics/practice/answers/28_practice.ipynb",
+    "physics/practice/answers/29_practice.ipynb",
+    "physics/practice/answers/30_practice.ipynb",
+    "practice/answers/00_practice.ipynb",
+    "practice/answers/01_practice.ipynb",
+    "practice/answers/02_practice.ipynb",
+    "practice/answers/03_practice.ipynb",
+    "practice/answers/04_practice.ipynb",
+    "practice/answers/05_practice.ipynb",
+    "practice/answers/06_practice.ipynb",
+    "practice/answers/07_practice.ipynb",
+    "practice/answers/08_practice.ipynb",
+    "practice/answers/09_practice.ipynb",
+    "practice/answers/10_practice.ipynb",
+    "practice/answers/11_practice.ipynb",
+    "practice/answers/12_practice.ipynb",
+    "practice/answers/13_practice.ipynb",
+    "practice/answers/14_practice.ipynb",
+    "practice/answers/15_practice.ipynb",
+    "practice/answers/16_practice.ipynb",
+    "practice/answers/17_practice.ipynb",
+    "practice/answers/18_practice.ipynb",
+    "practice/answers/19_practice.ipynb",
+    "practice/answers/20_practice.ipynb",
+    "sports_v8/notebooks/S00.ipynb",
+    "sports_v8/notebooks/S01.ipynb",
+    "sports_v8/notebooks/S02.ipynb",
+    "sports_v8/notebooks/S03.ipynb",
+    "sports_v8/notebooks/S04.ipynb",
+    "sports_v8/notebooks/S05.ipynb",
+    "sports_v8/notebooks/S06.ipynb",
+    "sports_v8/solutions/S00.ipynb",
+    "sports_v8/solutions/S01.ipynb",
+    "sports_v8/solutions/S02.ipynb",
+    "sports_v8/solutions/S03.ipynb",
+    "sports_v8/solutions/S04.ipynb",
+    "sports_v8/solutions/S05.ipynb",
+    "sports_v8/solutions/S06.ipynb",
+    "sports_v9/notebooks/acb_readiness.ipynb",
+    "sports_v9/solutions/acb_readiness.ipynb"
+  ],
+  "records": [
+    {
+      "path": "applications_v7/seeds/answers.ipynb",
+      "source_sha256": "2bcf78ff01c55ad536e41e8f341a056f26173725572a8291e541fb7c66348574",
+      "status": "passed",
+      "code_cells": 9,
+      "png_outputs": 0,
+      "seconds": 5.498
+    },
+    {
+      "path": "applications_v7/concrete_slump/answers.ipynb",
+      "source_sha256": "1e1bc794cd5d014914d2ef5bd0c0f4fcbf90c4f1c147e5c2b0d75a5219ead47c",
+      "status": "passed",
+      "code_cells": 9,
+      "png_outputs": 0,
+      "seconds": 6.402
+    },
+    {
+      "path": "applications_v7/concrete_slump/lab.ipynb",
+      "source_sha256": "9cedfb5694d0190462c7681e7011a7b0fb8a661cd5734ea915e7396ab57d728a",
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 1,
+      "seconds": 9.197
+    },
+    {
+      "path": "applications_v7/seeds/lab.ipynb",
+      "source_sha256": "830337d540fb7eab2b3c1fa8b354ce4eecde20c5b42fd5cacfc982113e884388",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 1,
+      "seconds": 10.285
+    },
+    {
+      "path": "consolidation/00_lab.ipynb",
+      "source_sha256": "7c7330f0b3566d6375632f5a4d6e16e202439007c0905d2e569bbf2e69452141",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 5.724
+    },
+    {
+      "path": "consolidation/01_lab.ipynb",
+      "source_sha256": "2d26d6eb218b66c44fbf0a0715943116a3a2e6df16e84a0ad4611084ed96ccaa",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 6.265
+    },
+    {
+      "path": "consolidation/02_lab.ipynb",
+      "source_sha256": "21dcf42f96ff9c15b5fdb2bbba61000728390ecea566c7fc0e996585ffbbcfae",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 5.224
+    },
+    {
+      "path": "consolidation/03_lab.ipynb",
+      "source_sha256": "2c0e80f1fcb68aa065ddf62017b21430b914a3ac57845797c61a6c94bec66628",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 5.256
+    },
+    {
+      "path": "consolidation/04_lab.ipynb",
+      "source_sha256": "c0718df9970661d7a8092ebb98b38d812684b02ab6869fca30f3553e591fb02f",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 5.012
+    },
+    {
+      "path": "consolidation/05_lab.ipynb",
+      "source_sha256": "9e08effce91fa9d6493aaf57352bc61268cd0567c8cf0b5d72922fd4e0038f00",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 5.964
+    },
+    {
+      "path": "consolidation/07_lab.ipynb",
+      "source_sha256": "f48caa5e557b897bab798a45f07f2928770d120c0044bc47b5b9a24f1df62e3e",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 5.337
+    },
+    {
+      "path": "consolidation/08_lab.ipynb",
+      "source_sha256": "167d93c4dfd4a0e47f4ecad15e44573d6bccc69fe22f974789f17f56200f01c4",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 5.983
+    },
+    {
+      "path": "consolidation/06_lab.ipynb",
+      "source_sha256": "25ab010b1650812be5cbfdddc043f13906ede2c3f1f6961b2957ed4f934458cf",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 9.062
+    },
+    {
+      "path": "consolidation/10_lab.ipynb",
+      "source_sha256": "5893de18bcbf7321ec6eeae2f7b61ae99994ded82d7253d12d1d2e8a06d0dc1e",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 4.022
+    },
+    {
+      "path": "consolidation/09_lab.ipynb",
+      "source_sha256": "59cdb0969e8fa0da0640ad26eaebec1568310751c00a052dcf5a40c881f05fb6",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 5.9
+    },
+    {
+      "path": "consolidation/11_lab.ipynb",
+      "source_sha256": "46e33368acb5a1a9113be3d164f8dcde54a38e890167dd377758a36625f5d0d4",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 6.716
+    },
+    {
+      "path": "consolidation/13_lab.ipynb",
+      "source_sha256": "dc3d7baf393aa1db7e3a1c955aa2dc51aa2226e2f6af254e65ac204a26ab360b",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 4.848
+    },
+    {
+      "path": "consolidation/14_lab.ipynb",
+      "source_sha256": "9e5fe118a3565599984a6c6de96cd3c009ed84433b62428b6b20b011cd3efcfe",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 5.126
+    },
+    {
+      "path": "consolidation/15_lab.ipynb",
+      "source_sha256": "23bacdfb823702f93cfce1146cffa4c921b455c4aeaed6d247a94b87d8ca02bd",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 4.792
+    },
+    {
+      "path": "consolidation/16_lab.ipynb",
+      "source_sha256": "7e1450ac7aaa0bced9f8c8997944f0d6b5d9ae9ece430d673fea3e5652be6348",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 4.868
+    },
+    {
+      "path": "consolidation/17_lab.ipynb",
+      "source_sha256": "7337986768866dca1da54d1cf9c3c7fea6dd80e8735ddacdeeb91e59801b0327",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 4.864
+    },
+    {
+      "path": "consolidation/18_lab.ipynb",
+      "source_sha256": "e3d375144d66e55ea400ddba19d3a37a09ef6a41b560cd06eac5efb7eb930bfa",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 4.63
+    },
+    {
+      "path": "consolidation/19_lab.ipynb",
+      "source_sha256": "9b7d67c2217548e88d081b1111535f90848d17c9a28950a53c8ebaf16c253350",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 4.564
+    },
+    {
+      "path": "industry/answers/co2.ipynb",
+      "source_sha256": "8629e80d7c2ee96a6565979078d5000d9bced893fc3b44fe0f0341c67475ecd8",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.626
+    },
+    {
+      "path": "industry/answers/elnino.ipynb",
+      "source_sha256": "594787c738afebfebb7687ed358dbcab663ab486b4beb944efd66fe47687dbe7",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.572
+    },
+    {
+      "path": "notebooks/11_lab.ipynb",
+      "source_sha256": "01a6bd67cc5b68af4f460ddbad0b7d6db0513c1d1ffdb196484451dc09625f4d",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 3,
+      "seconds": 19.543
+    },
+    {
+      "path": "industry/answers/grunfeld.ipynb",
+      "source_sha256": "dd766e89197c4951ea6fbcf74097221f15cd025d4659b66ec4406f36a43b0018",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.669
+    },
+    {
+      "path": "industry/answers/nile.ipynb",
+      "source_sha256": "faf61fc3f1bf7beb3618a777b91d5766bf58c36ddad731904c45f6731645632e",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 3.994
+    },
+    {
+      "path": "industry/answers/modechoice.ipynb",
+      "source_sha256": "b646f1fd89ee1ba50605f4f480747f337cca0fe6381e6c101c63742b36cfe95b",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 7.047
+    },
+    {
+      "path": "industry/answers/stackloss.ipynb",
+      "source_sha256": "04b6dac13bbf19f872de481b1168477f68c6a7da041af19e6c8a21c61c7a1ad1",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 5.002
+    },
+    {
+      "path": "industry/answers/wdbc.ipynb",
+      "source_sha256": "6e88c2f29f5aba3d5f5796407eb32213adf18ffd2002ca480b67cf6a50d76220",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 5.78
+    },
+    {
+      "path": "industry/answers/wine.ipynb",
+      "source_sha256": "5e26373cc91691cdcbcb5c1873a39cfe227ca5adfcece048ef53adaddc01e1e7",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 6.023
+    },
+    {
+      "path": "notebooks/12_lab.ipynb",
+      "source_sha256": "50231d26bdd08d8c0f5904efb130db84fabf57808e1006386b0366113791f0a7",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 3,
+      "seconds": 15.021
+    },
+    {
+      "path": "industry/notebooks/co2.ipynb",
+      "source_sha256": "6a30fa7a10daaebb7aa4c7aaada890d2e82d3e7b51c857070ac603bca279a576",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 13.69
+    },
+    {
+      "path": "industry/notebooks/elnino.ipynb",
+      "source_sha256": "365ca98f13f1f20918864e1aa0ffeeee740bc015a0e1a05240f06376ad6dacd2",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 10.451
+    },
+    {
+      "path": "consolidation/12_lab.ipynb",
+      "source_sha256": "ff982e90fe09b95fda0675f04d5c5fcca7d0432d52d7a6a9f215ed5311aee491",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 6.791
+    },
+    {
+      "path": "industry/notebooks/grunfeld.ipynb",
+      "source_sha256": "0ab9ae21136ac47af08406d8c3e9945e970f3ea16bee07495dfe03b3178a278e",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 13.817
+    },
+    {
+      "path": "industry/notebooks/modechoice.ipynb",
+      "source_sha256": "9d6cd475169cfd242357c4afef688ee73cce8058b1c2ead5032a59bedcad0c57",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 12.243
+    },
+    {
+      "path": "industry/notebooks/nile.ipynb",
+      "source_sha256": "e4c7613a85c9912065b52e2dbe64372903ba8b534c277516eb9df9ffc3aa4d35",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 12.827
+    },
+    {
+      "path": "industry/notebooks/stackloss.ipynb",
+      "source_sha256": "0325c3da5b7e3175d65b1ad79b1fb7b032442bd8993bf46fc5a025c358a2100f",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 8.68
+    },
+    {
+      "path": "consolidation/20_lab.ipynb",
+      "source_sha256": "02b4bfbb294cd476a37e124bf3b372703937afbb693b4241893136d2239f742f",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 11.063
+    },
+    {
+      "path": "methods_v7/claims/answers.ipynb",
+      "source_sha256": "fe2f6c042c13f3d579196f951110a0a497cef5cd6268b887c3407b2729467479",
+      "status": "passed",
+      "code_cells": 9,
+      "png_outputs": 0,
+      "seconds": 4.044
+    },
+    {
+      "path": "industry/notebooks/wdbc.ipynb",
+      "source_sha256": "2d68ab4b12c33cffd05407b2e42ee2771f0ba45ca61a5766d3cbcf2819692cdc",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 7.336
+    },
+    {
+      "path": "methods_v7/claims/lab.ipynb",
+      "source_sha256": "f26b9dd5a8f65789b4839ec047412a0b8f4fc2119f762e620d7eb644b04e9ecf",
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 1,
+      "seconds": 6.143
+    },
+    {
+      "path": "methods_v7/leakage/answers.ipynb",
+      "source_sha256": "267d40d8faf4ce7445e1b5f0544333b30912550f64da03b349ced5e59cdcd592",
+      "status": "passed",
+      "code_cells": 9,
+      "png_outputs": 0,
+      "seconds": 4.358
+    },
+    {
+      "path": "industry/notebooks/wine.ipynb",
+      "source_sha256": "964218b927ea69a2daeef28e5ead2c7f41f103c5d3f28ff68dd8e52075cd73b6",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 8.719
+    },
+    {
+      "path": "notebooks/00_lab.ipynb",
+      "source_sha256": "569121aa971ea162cf7251ea64410b7a1d240f2c636ec3dfa6358a788478d3f1",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 6.029
+    },
+    {
+      "path": "notebooks/01_lab.ipynb",
+      "source_sha256": "d7639a151078280d105c28c2bc8c43b426728b2944820aac79d66868faf9589b",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 4.958
+    },
+    {
+      "path": "methods_v7/leakage/lab.ipynb",
+      "source_sha256": "d5ab22be9d4502a314a3e859cb550f781f279050b43a05969df8e9b407e64198",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 7.767
+    },
+    {
+      "path": "notebooks/02_lab.ipynb",
+      "source_sha256": "f80b8a2cb720c26ac097b361bf3539cbbb613614e598c714c4e264d49bed52a3",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 9.08
+    },
+    {
+      "path": "notebooks/05_lab.ipynb",
+      "source_sha256": "70c5b52c77879d26ee0a7e4cc2080bed5e4d27690a1b18e590fa1ec592ae373c",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 7.446
+    },
+    {
+      "path": "notebooks/03_lab.ipynb",
+      "source_sha256": "c8c7a59fd98c4b45409b67a8ce7694af5728ef5d1db967da9292db211675dc5d",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 9.473
+    },
+    {
+      "path": "notebooks/04_lab.ipynb",
+      "source_sha256": "98785e81b3ba275b09c7f64a5760e9256723cd122e282a6eb56a23202a2a5395",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 2,
+      "seconds": 10.066
+    },
+    {
+      "path": "notebooks/06_lab.ipynb",
+      "source_sha256": "8faba0029e2fa9da8ab46e1e0bc0c0d31d90cd329086a2b8b0135b5fb16ece9a",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 8.923
+    },
+    {
+      "path": "notebooks/08_lab.ipynb",
+      "source_sha256": "0ed475a299b2d6154ae3cf0de59e85f6282fb5aab650ee2bdb6c357a551d8380",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 3,
+      "seconds": 8.581
+    },
+    {
+      "path": "notebooks/07_lab.ipynb",
+      "source_sha256": "0cc0a15482b21eaa59ada8b7f4f78f0e7a30192c1e6e17c55fa9775bc6b74866",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 9.537
+    },
+    {
+      "path": "notebooks/09_lab.ipynb",
+      "source_sha256": "0f7e0794fd90cb197c7900124fc74e6a76d008d625642e3e14c3a81ce1db6576",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 9.511
+    },
+    {
+      "path": "notebooks/10_lab.ipynb",
+      "source_sha256": "afc3847562df27aeac355d2a39c0d6fde445d21234d8a454b2b8fed6d36305c5",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 6.794
+    },
+    {
+      "path": "notebooks/14_lab.ipynb",
+      "source_sha256": "cdeee825d7849acf85d8cac9d16e200c49ac7ad128851939509bc5793d90da20",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 6.376
+    },
+    {
+      "path": "notebooks/13_lab.ipynb",
+      "source_sha256": "d0c2c52efd6a58b5b4cd5187a056433918a5cabdd65339643b1c57a331b195e1",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 3,
+      "seconds": 7.345
+    },
+    {
+      "path": "notebooks/16_lab.ipynb",
+      "source_sha256": "f8d99abca586232cc1b810fc5e8478ad11deb19a8e93e901d84c5ea46e5c6ecc",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 2,
+      "seconds": 6.459
+    },
+    {
+      "path": "notebooks/15_lab.ipynb",
+      "source_sha256": "67ddc2129c995d8b853eaa652217596d238b8dfda05e91a1dc843a085f9cfa75",
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 5,
+      "seconds": 9.317
+    },
+    {
+      "path": "notebooks/18_lab.ipynb",
+      "source_sha256": "c8ce3ab0b33756a9546f6efa91ffc861bb976ace342100f85f6f8e331702d20c",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 2,
+      "seconds": 6.271
+    },
+    {
+      "path": "notebooks/19_lab.ipynb",
+      "source_sha256": "c038d3ddb22162a7011781e8fcd59d961634e07a31f716c76b0d32ab37503b83",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 5.333
+    },
+    {
+      "path": "notebooks/17_lab.ipynb",
+      "source_sha256": "1b553cfee53461c2806875ad6949b3f7ef11918fc969ff1ad2bafe93577d9f66",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 2,
+      "seconds": 10.034
+    },
+    {
+      "path": "physics/notebooks/21_lab.ipynb",
+      "source_sha256": "eb89c5253859465e45240ced6142b87ef5d3adb00eea32b657a673d00a752ce0",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 2,
+      "seconds": 6.899
+    },
+    {
+      "path": "physics/notebooks/22_lab.ipynb",
+      "source_sha256": "131cba3d4b69dac0d4ca33bb9992e987aaf5db21e65438cdf682b8467124611e",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 5.806
+    },
+    {
+      "path": "notebooks/20_lab.ipynb",
+      "source_sha256": "c911ce54f8b1540062bcd4e8d124cb722311a5a9d40e0c9a4e5030551c3782b1",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 5.451
+    },
+    {
+      "path": "physics/notebooks/24_lab.ipynb",
+      "source_sha256": "ab1adbab0995250022396015b15679a94e0967ef278624fda4b72e80b822d8d6",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 2,
+      "seconds": 8.61
+    },
+    {
+      "path": "physics/notebooks/25_lab.ipynb",
+      "source_sha256": "9f7f14254bf2b48d3bccc1deb5321130da61d82f967b348fde7360a5a8d9e7ca",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 2,
+      "seconds": 9.079
+    },
+    {
+      "path": "physics/notebooks/23_lab.ipynb",
+      "source_sha256": "c7749b60a1bc98d954af70ee622d1dd73f920b276acb0f7c02f5cf405fa7b9c8",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 19.078
+    },
+    {
+      "path": "physics/notebooks/27_lab.ipynb",
+      "source_sha256": "6c6261bfd3ac723c8d5550033f2c62336063dc5937b6ea64201aa22c87bbecea",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 8.695
+    },
+    {
+      "path": "physics/practice/answers/21_practice.ipynb",
+      "source_sha256": "32a1b987a1dab3c411a5d25587e162a3849a80cec60aff190c06ba77ae0ed180",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.001
+    },
+    {
+      "path": "physics/notebooks/26_lab.ipynb",
+      "source_sha256": "b7206e57cba81a2033016dadca2921af708ad569836a453c07f74a7468e80739",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 21.095
+    },
+    {
+      "path": "physics/practice/answers/22_practice.ipynb",
+      "source_sha256": "280ef17f6c5c9665b8a07f7aa5c2dc1843e48536546cfd2e0a198561bc5c4589",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 3.926
+    },
+    {
+      "path": "physics/notebooks/28_lab.ipynb",
+      "source_sha256": "29df1db70096baee18179ea5a5fa2972394d73e96b975783c7893a80fec7d054",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 2,
+      "seconds": 16.428
+    },
+    {
+      "path": "physics/practice/answers/24_practice.ipynb",
+      "source_sha256": "30b7c2c30bd4697e3394b49f384b4eef3eebd184a86c10ae6dc89daf960afa3d",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 5.047
+    },
+    {
+      "path": "physics/practice/answers/25_practice.ipynb",
+      "source_sha256": "c32691968dcdcf171a337b5cc20217a6902eb585102e19c51cb8afecd311a3c2",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 3.79
+    },
+    {
+      "path": "physics/practice/answers/23_practice.ipynb",
+      "source_sha256": "9ed0845fc4a380e201de304eda71294fc73fc6b3b2bf859c1c87a8b3ce58f41e",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 7.047
+    },
+    {
+      "path": "physics/notebooks/29_lab.ipynb",
+      "source_sha256": "76095ed5b5f59ad218020bd57b3b9182f528febc9978975cc2deebb006d550ff",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 17.878
+    },
+    {
+      "path": "physics/practice/answers/27_practice.ipynb",
+      "source_sha256": "190546de6bc4f7f827333215e0f0392f781513f1e4004ff83a04b20df9a5fb57",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 3.899
+    },
+    {
+      "path": "physics/practice/answers/26_practice.ipynb",
+      "source_sha256": "3a906534094e0b53a2d60a4bee68512b1280afb17f1aef5017d1481b124163af",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.074
+    },
+    {
+      "path": "physics/practice/answers/28_practice.ipynb",
+      "source_sha256": "3a11c77aeb514ddfda9a9b78e7957cff0a980374f08ec0b3b574ea2371cb80e7",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.756
+    },
+    {
+      "path": "physics/notebooks/30_lab.ipynb",
+      "source_sha256": "997ec13f292b0e19cc55d1f76789fa4280558c4680256e5407b3bbdc3ac431a7",
+      "status": "passed",
+      "code_cells": 3,
+      "png_outputs": 1,
+      "seconds": 4.287
+    },
+    {
+      "path": "physics/practice/answers/30_practice.ipynb",
+      "source_sha256": "441e14ddda73aaf3d0ef2e435caf2c986029940962be0bf2a4e0ae6de67503ce",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.132
+    },
+    {
+      "path": "physics/practice/answers/29_practice.ipynb",
+      "source_sha256": "389de5c07ab31ab5612abd7a45cb77effc3660d137996abb7eab35192e0b174e",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.768
+    },
+    {
+      "path": "practice/answers/00_practice.ipynb",
+      "source_sha256": "d48a0781be941574dc922c0d91fc3bf8d98ed0a19f6de54fd03679ed05b6155c",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 4.479
+    },
+    {
+      "path": "practice/answers/02_practice.ipynb",
+      "source_sha256": "b0fa1d04f882af2b3b550b8051fd1ceab90a372116b61b879d2029ef1ea30dff",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 4.779
+    },
+    {
+      "path": "practice/answers/01_practice.ipynb",
+      "source_sha256": "c36f92cdadab5007c1c8d09dcf7d2134c9a96e0f0151c2cb66600f57c5312597",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 6.041
+    },
+    {
+      "path": "practice/answers/03_practice.ipynb",
+      "source_sha256": "357151809d82aec5f2ab9e86b5a9691ae1f60502d1707f883787be0ff835a32b",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 4.896
+    },
+    {
+      "path": "practice/answers/04_practice.ipynb",
+      "source_sha256": "53f94e8007f2aa3c488988fb55d32ad8536fd15f9e69f73ec71c0a88bdb7863d",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 4.242
+    },
+    {
+      "path": "practice/answers/05_practice.ipynb",
+      "source_sha256": "9fd4ac02b945aef3f7f141b20a441f870b29ad30c5662492cdc3870a87c82d79",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 5.504
+    },
+    {
+      "path": "practice/answers/07_practice.ipynb",
+      "source_sha256": "acdde9e3a65835e3cb85cb0fe2557ac3e4935e59b75fb17df59daa5917d56672",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 5.624
+    },
+    {
+      "path": "practice/answers/06_practice.ipynb",
+      "source_sha256": "ef2dc2e3bd998bf1069509f8047197c198acaea8cc3e06283460709d093798f1",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 6.322
+    },
+    {
+      "path": "practice/answers/08_practice.ipynb",
+      "source_sha256": "d40c938eed7dcec65ab353b5377a79c8a2d96074714bc469c5301c3c96bb538e",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 5.451
+    },
+    {
+      "path": "practice/answers/09_practice.ipynb",
+      "source_sha256": "00b3885037f95522c404b6911149e2ebf1551c8c434e50d4af5642fb0c4ca436",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 4.718
+    },
+    {
+      "path": "practice/answers/10_practice.ipynb",
+      "source_sha256": "108ed353357576528bc4b8d53ec723aa8d5a89730ed6374f9d6c3ff490fa9b75",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 4.981
+    },
+    {
+      "path": "practice/answers/11_practice.ipynb",
+      "source_sha256": "5ff7adfc13237f03d167018ab3711b60c381e7bf1860ef8893a4dc283ab5ad0d",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 5.252
+    },
+    {
+      "path": "practice/answers/12_practice.ipynb",
+      "source_sha256": "4c0d4dcb8eeb4eaa47bced393c232014838c82303989cb1ea52c733aa266cbe2",
+      "status": "passed",
+      "code_cells": 11,
+      "png_outputs": 0,
+      "seconds": 5.474
+    },
+    {
+      "path": "practice/answers/13_practice.ipynb",
+      "source_sha256": "df5289d248b3282396d59fb815037baa67752adb682722dea3f525c37600b1ce",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.85
+    },
+    {
+      "path": "practice/answers/14_practice.ipynb",
+      "source_sha256": "8583703068d90c04c349938ab0755a314bed8b91ba0945c2734fed0c8d644912",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 5.715
+    },
+    {
+      "path": "practice/answers/15_practice.ipynb",
+      "source_sha256": "19d09d547cc523b7e990ab39ef18432e42086cc6d9698d02f8aaa383b745049e",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 9.033
+    },
+    {
+      "path": "practice/answers/16_practice.ipynb",
+      "source_sha256": "5f8fd2f011f283979843b620d26493f35c74932ff35bcc365b1173e25e54454a",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 8.05
+    },
+    {
+      "path": "practice/answers/17_practice.ipynb",
+      "source_sha256": "2cb11563c3805b94fa356565c730e17f01560e8088f7d7bd0e71dd676138cc54",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 6.054
+    },
+    {
+      "path": "practice/answers/18_practice.ipynb",
+      "source_sha256": "d6f84c28556170d746b035f02ba38d75841269342e9f70d5389a40b6f0f873c0",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 4.764
+    },
+    {
+      "path": "practice/answers/20_practice.ipynb",
+      "source_sha256": "396a998316d505c1ab5bea7fafd34f8f28637dca2c09d33a9e5b6a6479bd83a1",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 5.442
+    },
+    {
+      "path": "practice/answers/19_practice.ipynb",
+      "source_sha256": "440cc01305799195fb490e01f854b985399d09d1fddd61c9035a7343f249f45d",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 8.036
+    },
+    {
+      "path": "sports_v8/notebooks/S01.ipynb",
+      "source_sha256": "7df725e8bc75cb390a29165092cb13e12822dfcd0c63514ab7781a8618e9f488",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 7.281
+    },
+    {
+      "path": "sports_v8/notebooks/S00.ipynb",
+      "source_sha256": "058b73d3f073723a7d2fe7038a64f8210506e0ab4e71e65132a19518cffb7480",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 11.017
+    },
+    {
+      "path": "sports_v8/notebooks/S03.ipynb",
+      "source_sha256": "9a4bdc2f120901675a40d6629a55f98738313036621e3861cce729ef2ea09b16",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 11.948
+    },
+    {
+      "path": "sports_v8/notebooks/S02.ipynb",
+      "source_sha256": "51357ee5417e5d96aad5febb9e24f51e31dc33ac97507053705a42f4581636bd",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 14.163
+    },
+    {
+      "path": "sports_v8/notebooks/S04.ipynb",
+      "source_sha256": "64db7f2b1cb61d3fef95c38fd5621afc0c2f2c0ee363817c3f93d7f450bd9980",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 12.07
+    },
+    {
+      "path": "sports_v8/notebooks/S05.ipynb",
+      "source_sha256": "f757f0f5d3ed20e876439f2f927d916a2b755dff40dc3d6f734ec0e391ca2c4b",
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 0,
+      "seconds": 10.139
+    },
+    {
+      "path": "sports_v8/notebooks/S06.ipynb",
+      "source_sha256": "4acf756078da89df23a4d3404eada317d17156772562d8569a58d94e3e764822",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 10.052
+    },
+    {
+      "path": "sports_v8/solutions/S00.ipynb",
+      "source_sha256": "6419bbe1184fbba52d9f3a3648ba56fee5ef9069f6f18ee74a5908ce36e12def",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 10.052
+    },
+    {
+      "path": "sports_v8/solutions/S01.ipynb",
+      "source_sha256": "100dae8b3e45b165819426b817ae84b6baa3e615beedf0336460c5da17c6b0c7",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 9.965
+    },
+    {
+      "path": "sports_v8/solutions/S02.ipynb",
+      "source_sha256": "897f992231c38ccb642a6ccf0dbfe2642d61ada63305fa7bfa099c4a2624c8ab",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 9.059
+    },
+    {
+      "path": "sports_v8/solutions/S06.ipynb",
+      "source_sha256": "2c9fb49b704f97949fe5f5676c55d38c4311549b972dfba2cabf87b73c59ec6e",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 5.28
+    },
+    {
+      "path": "sports_v8/solutions/S03.ipynb",
+      "source_sha256": "63f278b5a65a3669d5145f6f8855e9ea8fadcfc68e738e5cbf482c4a1df09be3",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 6.28
+    },
+    {
+      "path": "sports_v8/solutions/S04.ipynb",
+      "source_sha256": "005aff008909e0fd2fdbf242c24ba4c9f413d8dac20aacf7a84cbe6e9508b2df",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 6.385
+    },
+    {
+      "path": "sports_v8/solutions/S05.ipynb",
+      "source_sha256": "0bd30fda0e58f12e3e505b522bf98478c3e148991588e1ab11576ba43bb11fd9",
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 0,
+      "seconds": 7.346
+    },
+    {
+      "path": "sports_v9/solutions/acb_readiness.ipynb",
+      "source_sha256": "0c211c04903d48c6be63dd6fd5278d4527367c1c7fca20003c389ddbe8839c75",
+      "status": "passed",
+      "code_cells": 9,
+      "png_outputs": 0,
+      "seconds": 4.727
+    },
+    {
+      "path": "sports_v9/notebooks/acb_readiness.ipynb",
+      "source_sha256": "2eb789d47e04b6b21e3d17a7a1aa51164d66e65e1ea7016c53244f1d22e1671b",
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 6.051
+    }
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "required": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.8",
+      "scikit-learn": "1.8.0",
+      "nbclient": "0.10.4",
+      "nbformat": "5.10.4",
+      "ipykernel": "7.2.0"
+    },
+    "optional": {
+      "ripser": {
+        "version": null,
+        "status": "not_installed_not_tested"
+      },
+      "gudhi": {
+        "version": null,
+        "status": "not_installed_not_tested"
+      },
+      "torch": {
+        "version": "2.10.0+cpu",
+        "status": "available_not_tested"
+      }
+    },
+    "stages": 31,
+    "network_calls": 0,
+    "learner_assessment": "not_assessed"
+  },
+  "passed": 123,
+  "failed": 0
+}

@@ -1,0 +1,19 @@
+{
+  "evidence": "real reference-derived viewing directions plus mathematical transforms",
+  "points": 1092,
+  "roundtrip_max_error": 2.3551386880256624e-16,
+  "transition_max_error": 5.689893001203927e-16,
+  "tangency_error": 3.7409322952042026e-11,
+  "steps": [
+    0.1,
+    0.05,
+    0.025,
+    0.0125
+  ],
+  "linearization_errors": [
+    0.003921541924241095,
+    0.0009832338152499507,
+    0.0002461212189845659,
+    6.15666572124124e-05
+  ]
+}

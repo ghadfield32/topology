@@ -1,0 +1,39 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_all_catalog_reference_inputs_are_fingerprinted ______________
+
+    def test_all_catalog_reference_inputs_are_fingerprinted():
+        from shape_lab.runtime import fingerprint_inputs
+        paths=set(fingerprint_inputs(ROOT))
+        refs=set(json.loads((ROOT/'curriculum/catalog.json').read_text())['reference_notebooks'])
+>       assert refs <= paths
+E       AssertionError: assert {'application...b.ipynb', ...} <= {'.python-ver...sson.md', ...}
+E         
+E         Extra items in the left set:
+E         'physics/practice/answers/25_practice.ipynb'
+E         'physics/practice/answers/27_practice.ipynb'
+E         'physics/practice/answers/26_practice.ipynb'
+E         'physics/practice/answers/22_practice.ipynb'
+E         'physics/practice/answers/23_practice.ipynb'
+E         'physics/practice/answers/29_practice.ipynb'
+E         'physics/practice/answers/21_practice.ipynb'
+E         'physics/practice/answers/30_practice.ipynb'
+E         'physics/practice/answers/24_practice.ipynb'
+E         'physics/practice/answers/28_practice.ipynb'
+
+tests/test_repository_v10.py:181: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_repository_v10.py::test_all_catalog_reference_inputs_are_fingerprinted - AssertionError: assert {'application...b.ipynb', ...} <= {'.python-ver...sson.md', ...}
+  
+  Extra items in the left set:
+  'physics/practice/answers/25_practice.ipynb'
+  'physics/practice/answers/27_practice.ipynb'
+  'physics/practice/answers/26_practice.ipynb'
+  'physics/practice/answers/22_practice.ipynb'
+  'physics/practice/answers/23_practice.ipynb'
+  'physics/practice/answers/29_practice.ipynb'
+  'physics/practice/answers/21_practice.ipynb'
+  'physics/practice/answers/30_practice.ipynb'
+  'physics/practice/answers/24_practice.ipynb'
+  'physics/practice/answers/28_practice.ipynb'
+1 failed in 0.11s

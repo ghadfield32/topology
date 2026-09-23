@@ -1,0 +1,194 @@
+[
+  {
+    "id": "wdbc.Q1",
+    "case": "wdbc",
+    "question": "Explain why `label == 0` means positive malignancy in this loader but is not a universal label convention.",
+    "answer": "Read the explicit label map; our binary teaching target intentionally maps malignant to one."
+  },
+  {
+    "id": "wdbc.Q2",
+    "case": "wdbc",
+    "question": "Draw a confusion matrix for an always-benign classifier and calculate both ordinary and balanced accuracy.",
+    "answer": "Balanced accuracy averages the two recalls; ordinary accuracy weights classes by their sample counts."
+  },
+  {
+    "id": "wdbc.Q3",
+    "case": "wdbc",
+    "question": "Identify the absent identifiers that prevent verifying a hospital-level or patient-level holdout.",
+    "answer": "The snapshot lacks original patient and site identifiers, so a random row split cannot establish either separation."
+  },
+  {
+    "id": "wdbc.Q4",
+    "case": "wdbc",
+    "question": "Explain why a cohort persistence diagram is not one diagnosis per row.",
+    "answer": "The filtration is constructed from many observations and a selected metric; no individual clinical mechanism follows from it."
+  },
+  {
+    "id": "wine.Q1",
+    "case": "wine",
+    "question": "Why is cultivar not an ordinal quality target?",
+    "answer": "The categories label origins/cultivars, not a numeric quality scale."
+  },
+  {
+    "id": "wine.Q2",
+    "case": "wine",
+    "question": "Why are reference rows excluded from supervised fitting rows in this comparison?",
+    "answer": "It avoids giving training queries a self-reference advantage absent for unseen queries; all models use the same supervised rows."
+  },
+  {
+    "id": "wine.Q3",
+    "case": "wine",
+    "question": "Which six descriptor entries should change under uniform scale multiplication?",
+    "answer": "H0 mean/std/max and H1 maximum/total lifetime scale; the H1 count stays unchanged away from numerical tolerance issues."
+  },
+  {
+    "id": "wine.Q4",
+    "case": "wine",
+    "question": "What new evidence is needed before saying topology improves wine analysis generally?",
+    "answer": "Independent data and a locked selection procedure, with uncertainty and suitable baselines; one exposed split is insufficient."
+  },
+  {
+    "id": "stackloss.Q1",
+    "case": "stackloss",
+    "question": "Why must the holdout be described as source-order rather than a verified operational-time split?",
+    "answer": "No original timestamps are provided to validate the presumed order."
+  },
+  {
+    "id": "stackloss.Q2",
+    "case": "stackloss",
+    "question": "What changes when scaling is refit in each leave-one-out training fold?",
+    "answer": "The omitted row no longer helps determine feature means/scales, so the experiment respects the held-out information boundary."
+  },
+  {
+    "id": "stackloss.Q3",
+    "case": "stackloss",
+    "question": "Why can a PINN with a wrong boundary condition still produce low training error?",
+    "answer": "A numerical training fit is not proof that its imposed equations and boundary conditions describe the real plant."
+  },
+  {
+    "id": "stackloss.Q4",
+    "case": "stackloss",
+    "question": "List four observations needed for an independently testable plant conservation model.",
+    "answer": "Examples include calibrated flow rates, concentrations, temperature units, storage changes, timestamps and actuator/operating conditions."
+  },
+  {
+    "id": "grunfeld.Q1",
+    "case": "grunfeld",
+    "question": "Why is a shift within firm necessary?",
+    "answer": "It preserves entity continuity and avoids crossing from one company to the next."
+  },
+  {
+    "id": "grunfeld.Q2",
+    "case": "grunfeld",
+    "question": "Why is same-year year-end value unavailable for a start-of-year forecast?",
+    "answer": "Its measurement time is after the decision boundary; a lagged record is a simplified but clearer information set."
+  },
+  {
+    "id": "grunfeld.Q3",
+    "case": "grunfeld",
+    "question": "What does a known-firm future-year test not establish?",
+    "answer": "It does not establish performance on previously unseen firms or modern economic conditions."
+  },
+  {
+    "id": "grunfeld.Q4",
+    "case": "grunfeld",
+    "question": "Does a capital coefficient identify the causal effect of buying equipment?",
+    "answer": "No; selection, omitted causes and simultaneous decisions are not removed by ordinary predictive regression."
+  },
+  {
+    "id": "co2.Q1",
+    "case": "co2",
+    "question": "Why does dropping missing rows distort a fixed weekly lag?",
+    "answer": "Adjacent remaining rows may no longer be seven days apart."
+  },
+  {
+    "id": "co2.Q2",
+    "case": "co2",
+    "question": "What is the target index for length three, end index two, horizon two?",
+    "answer": "Four; only positions zero through two are predictors."
+  },
+  {
+    "id": "co2.Q3",
+    "case": "co2",
+    "question": "How does observed-history one-step testing differ from free-running rollout?",
+    "answer": "Observed-history uses actual prior readings as they arrive; free running feeds predictions back and compounds errors."
+  },
+  {
+    "id": "co2.Q4",
+    "case": "co2",
+    "question": "Why is a seasonal-looking loop not proof of a reconstructed atmospheric attractor?",
+    "answer": "The embedding, sampling, noise, forcing and mathematical recovery assumptions need independent justification."
+  },
+  {
+    "id": "nile.Q1",
+    "case": "nile",
+    "question": "Why is the two-mean search retrospective?",
+    "answer": "It uses observations on both sides of candidate changes within the fitted period."
+  },
+  {
+    "id": "nile.Q2",
+    "case": "nile",
+    "question": "How does annual volume differ from instantaneous discharge?",
+    "answer": "One is an integral amount over a year; the other is a rate at a time."
+  },
+  {
+    "id": "nile.Q3",
+    "case": "nile",
+    "question": "Why must the change point be selected without reading the future evaluation years?",
+    "answer": "Otherwise future outcomes influence the fitted regime description and contaminate the declared prediction task."
+  },
+  {
+    "id": "nile.Q4",
+    "case": "nile",
+    "question": "Which missing quantities prevent this one series from specifying a full hydrology PDE?",
+    "answer": "Spatial boundaries, forcing, inflows/outflows, storage, calibrated parameters and subannual observations are examples."
+  },
+  {
+    "id": "elnino.Q1",
+    "case": "elnino",
+    "question": "Why must the reference period accompany an anomaly value?",
+    "answer": "Subtracting a different fitted baseline changes the anomaly without changing the original measurement."
+  },
+  {
+    "id": "elnino.Q2",
+    "case": "elnino",
+    "question": "Why is alphabetical month ordering wrong?",
+    "answer": "Calendar order is a semantic property, not the alphabetic order of names."
+  },
+  {
+    "id": "elnino.Q3",
+    "case": "elnino",
+    "question": "Can the same 732 values become independent PDE solutions just by creating windows?",
+    "answer": "No; overlapping transformations do not create independent simulation initial conditions or solution fields."
+  },
+  {
+    "id": "elnino.Q4",
+    "case": "elnino",
+    "question": "Why must we compare last value and monthly climatology before more complicated models?",
+    "answer": "They encode strong simple persistence/seasonality structure; complexity alone is not evidence of useful prediction."
+  },
+  {
+    "id": "modechoice.Q1",
+    "case": "modechoice",
+    "question": "Why do 840 records not imply 840 independent decisions?",
+    "answer": "Four alternatives describe the same decision made by each of 210 people."
+  },
+  {
+    "id": "modechoice.Q2",
+    "case": "modechoice",
+    "question": "Why exclude `choice` and the potentially post-choice `psize` from features?",
+    "answer": "The first is the target; the second is tied to the chosen mode and has questionable pre-decision availability."
+  },
+  {
+    "id": "modechoice.Q3",
+    "case": "modechoice",
+    "question": "How can probabilities sum to one and still be uncalibrated for a population?",
+    "answer": "Normalization is an algebraic property, not evidence that a selected sample represents the intended population."
+  },
+  {
+    "id": "modechoice.Q4",
+    "case": "modechoice",
+    "question": "What is analogous to traveler grouping in sports and healthcare?",
+    "answer": "Repeated shots from athletes, records from patients, and observations within sessions must be grouped according to the generalization claim."
+  }
+]

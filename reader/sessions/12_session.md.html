@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 12 guided session — Interpret a small improvement with paired evidence · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/12_session.md">sessions/12_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-12-guided-session--interpret-a-small-improvement-with-paired-evidence">Stage 12 guided session — Interpret a small improvement with paired evidence</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/12_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/12_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/12_workbook.md.html">original workbook</a> and <a href="../notebooks/12_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Actual saved handwriting predictions from an already-exposed image-level holdout; exploratory analysis only.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Construct the paired correctness table for two models on the same observations.</li>
+<li>Distinguish percentage points, counts, and conditional inferential quantities.</li>
+<li>Calculate an exploratory exact discordance test and paired bootstrap interval.</li>
+<li>Explain why reanalyzing an exposed holdout cannot create a fresh confirmatory test.</li>
+</ol>
+<h2 id="begin-with-the-actual-disagreement-pattern">Begin with the actual disagreement pattern</h2>
+<p>Suppose two models classify the same observations. Every record belongs to one of four groups: both correct, only A correct, only B correct, or both wrong. The difference in accuracy is <code>(B-only − A-only)/n</code>. The two total accuracies do not tell you this whole pattern.</p>
+<p>The preserved handwriting experiment reports 347 correct pixel-only predictions and 351 correct combined predictions on 360 images. The net change is four. Reading its sample-level predictions reveals seven newly correct outcomes and three newly incorrect ones. This is more informative than saying that the combined system is simply better on four images.</p>
+<h2 id="derive-the-conditional-test">Derive the conditional test</h2>
+<p>Under the null hypothesis that the two directions of discordance are equally likely, and under suitable independent sampling, the number of B-only outcomes among the discordant records follows a binomial distribution with success probability one-half. Condition on the observed number of disagreements. For seven B-only and three A-only outcomes, the two-sided exact binomial calculation gives 0.34375.</p>
+<p>This is not the probability that the null hypothesis is true. It is a tail calculation under the stated null and sampling assumptions. It does not establish no effect, and it does not supply a correction for repeatedly trying representations on an exposed test partition.</p>
+<h2 id="resample-the-paired-differences">Resample the paired differences</h2>
+<p>For each image define a difference: +1 when B alone is correct, -1 when A alone is correct, and 0 otherwise. A paired bootstrap resamples these image-level differences and recalculates their average. Resampling the two models independently would discard the pairing and answer a different uncertainty question.</p>
+<p>The supplied percentile interval is conditional on the fixed fitted predictions and the assumed image-level resampling unit. It does not include all uncertainty from model selection or retraining. The dataset lacks writer identifiers, so independent-writer inference is unavailable. A future sports dataset with multiple clips per person or session would require a grouping-aware design rather than treating every frame as independent.</p>
+<h2 id="keep-the-experiments-status-honest">Keep the experiment's status honest</h2>
+<p>These predictions were already exposed in v3. The new calculation is an exploratory audit of that worked example, not a new blinded experiment. Its value is pedagogical: understand uncertainty, pairing, units, and what was actually gained or lost.</p>
+<p>A rigorous next study would specify the feature pipeline, model-selection procedure, independent sampling unit, primary metric, and uncertainty method before evaluating a genuinely new holdout. A statistically interesting output would still need practical relevance and domain-specific failure analysis. The independent capstone asks you to articulate those choices rather than chase a threshold such as p&lt;0.05.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Read the actual saved predictions. Row IDs must be unique so each image contributes one paired outcome.</p>
+<pre><code class="language-python">import pandas as pd
+from shape_lab.audits import paired_accuracy_audit
+predictions = pd.read_csv(ROOT/'reports/stage_12/test_predictions.csv')
+assert predictions.sample_id.is_unique
+report = paired_accuracy_audit(predictions.true_label, predictions.pixels, predictions.combined,
+                               resamples=4000, seed=2026)
+print(json.dumps(report, indent=2))
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Derive the net improvement from the discordant counts, not from rounded percentages.</p>
+<pre><code class="language-python">net = report['b_only_correct'] - report['a_only_correct']
+assert net == 4
+assert np.isclose(net/report['sample_count'], report['difference_b_minus_a'])
+print('newly correct:', report['b_only_correct'], 'newly wrong:', report['a_only_correct'])
+print('difference (percentage points):', 100*report['difference_b_minus_a'])
+print('exploratory interval (percentage points):', 100*np.array(report['paired_percentile_interval']))
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Save the status and assumptions with the numbers. A p-value is not a proof of either equality or superiority.</p>
+<pre><code class="language-python">assert report['a_only_correct']==3 and report['b_only_correct']==7
+assert report['exact_discordance_pvalue']==.34375
+result = report
+result['models'] = ['pixels', 'combined']
+result['new_confirmatory_holdout'] = False
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="12t1">12.T1</h3>
+<p>Two model comparisons have the same net gain of four. Must their paired uncertainty calculations agree?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>No. Four gains and zero losses differ from 54 gains and 50 losses. Their discordance totals, conditional test distributions, and paired resampling distributions differ.</p>
+</details>
+<h3 id="12t2">12.T2</h3>
+<p>What would make a future follow-up confirmatory rather than another reanalysis of this example?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Freeze the study choices before inspecting genuinely new evaluation data, use a defensible sampling and split unit, and report the declared metrics and uncertainty without selecting a favorable outcome after the fact.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/12_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

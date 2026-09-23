@@ -1,0 +1,18 @@
+{
+  "features": [
+    "lag_invest",
+    "lag_value",
+    "lag_capital"
+  ],
+  "mean": [
+    103.29370454545455,
+    955.625727272727,
+    153.5729166666667
+  ],
+  "scale": [
+    149.7087939468193,
+    1268.219482780569,
+    127.15038886456351
+  ],
+  "predictor_availability": "previous annual record assumed available; publication timestamps absent"
+}

@@ -1,0 +1,50 @@
+{
+  "release": "7.0.0",
+  "review_date": "2026-09-21",
+  "kind": "complete combined course, not a patch",
+  "counts": {
+    "core_stages": 31,
+    "new_entry_guides": 31,
+    "entry_checks": 31,
+    "industry_cases": 10,
+    "new_methods_labs": 2,
+    "reference_notebooks": 107,
+    "reference_code_cells": 631,
+    "embedded_png_outputs": 74,
+    "learner_notebooks": 43,
+    "coding_exercises": 159,
+    "conceptual_questions": 266,
+    "delayed_recall_prompts": 129,
+    "earlier_transfer_questions": 42,
+    "additional_entry_questions": 31,
+    "primers": 10,
+    "observed_sources": 15,
+    "new_observed_rows": 313,
+    "optional_data_plans_not_executed": 10,
+    "html_pages": 1355,
+    "local_file_link_targets": 65631,
+    "preassessed_items": 0
+  },
+  "tests": {
+    "passed": 538,
+    "skipped": 2,
+    "failed": 0,
+    "skips": [
+      "ripser",
+      "gudhi"
+    ]
+  },
+  "book_text_audited": false,
+  "trained_vggt_executed": false,
+  "independent_physical_validation": false,
+  "full_paper_benchmarks_reproduced": false,
+  "independent_new_source_remote_comparison": false,
+  "new_source_acquisition": "Declared transcription of full official web-retrieved numeric tables; local checks, not provider-byte validation",
+  "entry_point": "START_HERE.html",
+  "checksum_manifest": "MANIFEST.sha256",
+  "core_progress_file": "progress/learning_log_v5.json",
+  "industry_progress_file": "progress/industry_log_v6.json",
+  "extension_checklist": "progress/v7_extension_checklist.json",
+  "fresh_archive_check": "See accompanying external final archive report",
+  "files_in_archive": 2452
+}

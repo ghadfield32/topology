@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_progress_initialization_preserves_existing_work _____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-7/test_progress_initialization_p0')
+
+    def test_progress_initialization_preserves_existing_work(tmp_path):
+>       from shape_lab.runtime import initialize_progress
+E       ImportError: cannot import name 'initialize_progress' from 'shape_lab.runtime' (/mnt/data/v10_build/listening_to_shape_lab/src/shape_lab/runtime.py)
+
+tests/test_repository_v10.py:169: ImportError
+=========================== short test summary info ============================
+FAILED tests/test_repository_v10.py::test_progress_initialization_preserves_existing_work - ImportError: cannot import name 'initialize_progress' from 'shape_lab.runtime' (/mnt/data/v10_build/listening_to_shape_lab/src/shape_lab/runtime.py)
+1 failed in 0.09s

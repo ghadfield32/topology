@@ -1,0 +1,312 @@
+[
+  {
+    "stage": "00",
+    "title": "Start here: how to learn, run, and question the results",
+    "primary_lesson": "lessons/00_lesson.md",
+    "primary_notebook": "notebooks/00_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Explain what one row can and cannot establish.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "01",
+    "title": "Mathematical language, proofs, and linear algebra",
+    "primary_lesson": "lessons/01_lesson.md",
+    "primary_notebook": "notebooks/01_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Calculate the result by hand before using an array.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "02",
+    "title": "Closeness, metrics, neighborhoods, and topologies",
+    "primary_lesson": "lessons/02_lesson.md",
+    "primary_notebook": "notebooks/02_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "State the metric, units and meaning of closeness.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "03",
+    "title": "Continuity, homeomorphisms, connectedness, and compactness",
+    "primary_lesson": "lessons/03_lesson.md",
+    "primary_notebook": "notebooks/03_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Give a map that loses information and explain which.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "04",
+    "title": "Groups, symmetries, paths, loops, and homotopy",
+    "primary_lesson": "lessons/04_lesson.md",
+    "primary_notebook": "notebooks/04_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Distinguish geometric invariance from label invariance.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "05",
+    "title": "Surfaces, simplices, triangulations, and pixel geometry",
+    "primary_lesson": "lessons/05_lesson.md",
+    "primary_notebook": "notebooks/05_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Explain when a three-cycle becomes a boundary.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "06",
+    "title": "Chains, boundaries, homology, and Betti numbers",
+    "primary_lesson": "lessons/06_lesson.md",
+    "primary_notebook": "notebooks/06_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Show boundary-of-boundary and a hand Betti calculation.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "07",
+    "title": "From data to shape: Rips, \u010cech, alpha, and filtrations",
+    "primary_lesson": "lessons/07_lesson.md",
+    "primary_notebook": "notebooks/07_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Distinguish filtration parameter from time index.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "08",
+    "title": "Persistent homology, persistence modules, and reading diagrams",
+    "primary_lesson": "lessons/08_lesson.md",
+    "primary_notebook": "notebooks/08_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Name birth, death and an unsupported interpretation.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "09",
+    "title": "Implement persistence, trace the algorithm, and test it independently",
+    "primary_lesson": "lessons/09_lesson.md",
+    "primary_notebook": "notebooks/09_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Compare exact controls; leave absent external packages as skips.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "10",
+    "title": "Stability, diagram distances, noise, and scientific uncertainty",
+    "primary_lesson": "lessons/10_lesson.md",
+    "primary_notebook": "notebooks/10_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "List correspondence/metric assumptions behind the bound.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "11",
+    "title": "Useful representations, Mapper, time windows, and honest machine learning",
+    "primary_lesson": "lessons/11_lesson.md",
+    "primary_notebook": "notebooks/11_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Explain why a descriptor can add no predictive value.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "12",
+    "title": "Capstone: reproduce, defend, transfer, and audit the book",
+    "primary_lesson": "lessons/12_lesson.md",
+    "primary_notebook": "notebooks/12_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Defend result and limitations without claiming tutorial replication is discovery.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "13",
+    "title": "From topology to smooth manifolds",
+    "primary_lesson": "lessons/13_lesson.md",
+    "primary_notebook": "notebooks/13_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Explain where the chart analogy ceases to apply.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "14",
+    "title": "Rotations, rigid transforms, and the camera model",
+    "primary_lesson": "lessons/14_lesson.md",
+    "primary_notebook": "notebooks/14_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Separate frame change, unit change and calibration.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "15",
+    "title": "Measured stereo, calibration, and uncertainty",
+    "primary_lesson": "lessons/15_lesson.md",
+    "primary_notebook": "notebooks/15_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "State what the independent reference measures.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "16",
+    "title": "Attention and VGGT, from pixels to proposed geometry",
+    "primary_lesson": "lessons/16_lesson.md",
+    "primary_notebook": "notebooks/16_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Separate model prediction, registration and validation.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "17",
+    "title": "Register, validate, and ask topology the right question",
+    "primary_lesson": "lessons/17_lesson.md",
+    "primary_notebook": "notebooks/17_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Explain gauge freedom and independent metric checks.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "18",
+    "title": "Make the pipeline efficient without changing the evidence",
+    "primary_lesson": "lessons/18_lesson.md",
+    "primary_notebook": "notebooks/18_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Report sample age and reject unavailable evidence.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "19",
+    "title": "From geometry to cautious interaction hypotheses",
+    "primary_lesson": "lessons/19_lesson.md",
+    "primary_notebook": "notebooks/19_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Declare live versus offline availability.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "20",
+    "title": "Independent spatial capstone and continuing mastery",
+    "primary_lesson": "lessons/20_lesson.md",
+    "primary_notebook": "notebooks/20_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Produce a bounded, reproducible acceptance protocol.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "21",
+    "title": "Rates, equations, units and what data can identify",
+    "primary_lesson": "physics/lessons/21.md",
+    "primary_notebook": "physics/notebooks/21_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Detect metre/foot and second/frame mistakes.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "22",
+    "title": "Smooth flows, coordinate changes and invertible networks",
+    "primary_lesson": "physics/lessons/22.md",
+    "primary_notebook": "physics/notebooks/22_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Give an example where an interpolated path is not newly measured.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "23",
+    "title": "Mechanics, Hamiltonian networks and Lagrangian networks",
+    "primary_lesson": "physics/lessons/23.md",
+    "primary_notebook": "physics/notebooks/23_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "State missing labels and dynamics assumptions for real sports transfer.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "24",
+    "title": "Symplectic integration, energy, phase and long rollouts",
+    "primary_lesson": "physics/lessons/24.md",
+    "primary_notebook": "physics/notebooks/24_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Distinguish model conservation from integrator properties.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "25",
+    "title": "Constraints, projections, retractions and rank failure",
+    "primary_lesson": "physics/lessons/25.md",
+    "primary_notebook": "physics/notebooks/25_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Identify which constraint was enforced and residual remaining.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "26",
+    "title": "Physics-informed learning and inverse problems",
+    "primary_lesson": "physics/lessons/26.md",
+    "primary_notebook": "physics/notebooks/26_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Show that low residual can coexist with wrong clock/scale.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "27",
+    "title": "Conflicting gradients, interfaces, separability and PIKANs",
+    "primary_lesson": "physics/lessons/27.md",
+    "primary_notebook": "physics/notebooks/27_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Keep source-author benchmark claims distinct from our tests.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "28",
+    "title": "Functions to functions: DeepONet, Fourier operators and baselines",
+    "primary_lesson": "physics/lessons/28.md",
+    "primary_notebook": "physics/notebooks/28_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Do not fit a field operator from unrelated aggregate rows.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "29",
+    "title": "Differentiable simulation, graph physics and attention constraints",
+    "primary_lesson": "physics/lessons/29.md",
+    "primary_notebook": "physics/notebooks/29_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Explain how wrong time scale can fit the same trajectory.",
+    "learner_status": "not_assessed"
+  },
+  {
+    "stage": "30",
+    "title": "An independent world-model study: evidence before adoption",
+    "primary_lesson": "physics/lessons/30.md",
+    "primary_notebook": "physics/notebooks/30_lab.ipynb",
+    "reference_status": "passed",
+    "entry_check_returncode": 0,
+    "learner_gate": "Make no adoption claim without matching validation evidence.",
+    "learner_status": "not_assessed"
+  }
+]

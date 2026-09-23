@@ -1,0 +1,46 @@
+{
+  "release": "6.0.0",
+  "review_date": "2026-09-20",
+  "kind": "complete combined course, not a patch",
+  "base_archive_sha256": "bea03a6db5ce869e1916d6b071486b54d50c69cc67a3249341bcea98abb0a82f",
+  "counts": {
+    "core_stages": 31,
+    "industry_cases": 8,
+    "reference_notebooks": 99,
+    "reference_code_cells": 571,
+    "embedded_png_outputs": 70,
+    "learner_notebooks": 39,
+    "new_coding_exercises": 24,
+    "total_coding_exercises": 143,
+    "new_conceptual_questions": 32,
+    "total_conceptual_questions": 242,
+    "existing_transfer_questions": 42,
+    "total_delayed_recall_prompts": 117,
+    "primers": 9,
+    "included_observed_sources": 13,
+    "new_normalized_rows": 4273,
+    "optional_data_plans_not_executed": 10,
+    "html_pages": 846,
+    "local_file_link_targets": 39216,
+    "preassessed_core_or_industry_items": 0
+  },
+  "tests": {
+    "passed": 432,
+    "skipped": 2,
+    "failed": 0,
+    "skips": [
+      "ripser",
+      "gudhi"
+    ]
+  },
+  "book_text_audited": false,
+  "trained_vggt_executed": false,
+  "optional_industry_datasets_acquired": false,
+  "independent_physical_validation": false,
+  "full_paper_benchmarks_reproduced": false,
+  "checksum_manifest": "MANIFEST.sha256",
+  "entry_point": "START_HERE.html",
+  "core_progress_file": "progress/learning_log_v5.json",
+  "industry_progress_file": "progress/industry_log_v6.json",
+  "files_in_archive": 1760
+}

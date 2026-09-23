@@ -1,0 +1,52 @@
+{
+  "profile": "physics",
+  "mode": "reuse_installed_not_independent",
+  "fresh_dependency_install": false,
+  "commands": [
+    {
+      "argv": [
+        "/opt/pyvenv/bin/uv",
+        "venv",
+        "--offline",
+        "--system-site-packages",
+        "--python",
+        "/opt/pyvenv/bin/python",
+        "/mnt/data/v10_build/listening_to_shape_lab/.venv"
+      ],
+      "returncode": 0,
+      "log": "00_command.log"
+    },
+    {
+      "argv": [
+        "/opt/pyvenv/bin/uv",
+        "pip",
+        "install",
+        "--offline",
+        "--no-deps",
+        "--no-build-isolation",
+        "--python",
+        "/mnt/data/v10_build/listening_to_shape_lab/.venv/bin/python",
+        "-e",
+        "."
+      ],
+      "returncode": 0,
+      "log": "01_command.log"
+    },
+    {
+      "argv": [
+        "/mnt/data/v10_build/listening_to_shape_lab/.venv/bin/python",
+        "/mnt/data/v10_build/listening_to_shape_lab/course.py",
+        "verify",
+        "--profile",
+        "physics"
+      ],
+      "returncode": 0,
+      "log": "02_command.log"
+    }
+  ],
+  "status": "passed",
+  "inherited_site_paths": [
+    "/opt/pyvenv/lib/python3.13/site-packages"
+  ],
+  "notice": "This setup check is separate from unit tests, notebook execution and Docker verification."
+}

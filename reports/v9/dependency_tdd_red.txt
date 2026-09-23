@@ -1,0 +1,16 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________________ test_reader_extra_contains_its_html_parser __________________
+
+    def test_reader_extra_contains_its_html_parser():
+        import tomllib
+        data=tomllib.loads((ROOT/'pyproject.toml').read_text())
+>       assert any(x.startswith('beautifulsoup4') for x in data['project']['optional-dependencies']['reader'])
+E       assert False
+E        +  where False = any(<generator object test_reader_extra_contains_its_html_parser.<locals>.<genexpr> at 0x7f652fcf0380>)
+
+tests/test_course_v9.py:127: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_course_v9.py::test_reader_extra_contains_its_html_parser - assert False
+ +  where False = any(<generator object test_reader_extra_contains_its_html_parser.<locals>.<genexpr> at 0x7f652fcf0380>)
+1 failed in 0.32s

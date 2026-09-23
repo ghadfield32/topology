@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "representation": "pixels",
+      "test_accuracy": 0.9638888888888889,
+      "correct": 347,
+      "test_count": 360
+    },
+    {
+      "representation": "topology",
+      "test_accuracy": 0.4666666666666667,
+      "correct": 168,
+      "test_count": 360
+    },
+    {
+      "representation": "combined",
+      "test_accuracy": 0.975,
+      "correct": 351,
+      "test_count": 360
+    },
+    {
+      "representation": "majority_baseline",
+      "test_accuracy": 0.1,
+      "correct": 36,
+      "test_count": 360
+    }
+  ],
+  "selected_C": {
+    "pixels": 1.0,
+    "topology": 1.0,
+    "combined": 0.1
+  },
+  "development_count": 1437,
+  "test_count": 360,
+  "fingerprint": "fb3302d94ba88f6f7cbe598ba8d277518e6c56cea8f4e94fbee506cc7661f663",
+  "claim": "Held-out image accuracy on the declared split; no unseen-writer or statistical-significance claim.",
+  "holdout_status_after_run": "exposed"
+}

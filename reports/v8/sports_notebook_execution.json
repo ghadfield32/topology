@@ -1,0 +1,100 @@
+[
+  {
+    "path": "sports_v8/notebooks/S00.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "elapsed_seconds": 3.373
+  },
+  {
+    "path": "sports_v8/notebooks/S01.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "elapsed_seconds": 2.83
+  },
+  {
+    "path": "sports_v8/notebooks/S02.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 1,
+    "elapsed_seconds": 2.715
+  },
+  {
+    "path": "sports_v8/notebooks/S03.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 2,
+    "elapsed_seconds": 2.741
+  },
+  {
+    "path": "sports_v8/notebooks/S04.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 1,
+    "elapsed_seconds": 2.721
+  },
+  {
+    "path": "sports_v8/notebooks/S05.ipynb",
+    "status": "passed",
+    "code_cells": 4,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.439
+  },
+  {
+    "path": "sports_v8/notebooks/S06.ipynb",
+    "status": "passed",
+    "code_cells": 5,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.232
+  },
+  {
+    "path": "sports_v8/solutions/S00.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.323
+  },
+  {
+    "path": "sports_v8/solutions/S01.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.347
+  },
+  {
+    "path": "sports_v8/solutions/S02.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.317
+  },
+  {
+    "path": "sports_v8/solutions/S03.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.254
+  },
+  {
+    "path": "sports_v8/solutions/S04.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.237
+  },
+  {
+    "path": "sports_v8/solutions/S05.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.269
+  },
+  {
+    "path": "sports_v8/solutions/S06.ipynb",
+    "status": "passed",
+    "code_cells": 7,
+    "png_outputs": 0,
+    "elapsed_seconds": 2.261
+  }
+]

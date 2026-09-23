@@ -1,0 +1,375 @@
+[
+  {
+    "stage": 0,
+    "title": "Start here: how to learn, run, and question the results",
+    "track": "topology_core",
+    "core": "lessons/00_lesson.md",
+    "workbook": "workbooks/00_workbook.md",
+    "lab": "notebooks/00_lab.ipynb",
+    "practice": "practice/learner/00_practice.ipynb",
+    "reference_answers": "practice/answers/00_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 6,
+    "readings": [
+      "D3",
+      "R1"
+    ]
+  },
+  {
+    "stage": 1,
+    "title": "Mathematical language, proofs, and linear algebra",
+    "track": "topology_core",
+    "core": "lessons/01_lesson.md",
+    "workbook": "workbooks/01_workbook.md",
+    "lab": "notebooks/01_lab.ipynb",
+    "practice": "practice/learner/01_practice.ipynb",
+    "reference_answers": "practice/answers/01_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R4",
+      "R5",
+      "D1",
+      "D3"
+    ]
+  },
+  {
+    "stage": 2,
+    "title": "Closeness, metrics, neighborhoods, and topologies",
+    "track": "topology_core",
+    "core": "lessons/02_lesson.md",
+    "workbook": "workbooks/02_workbook.md",
+    "lab": "notebooks/02_lab.ipynb",
+    "practice": "practice/learner/02_practice.ipynb",
+    "reference_answers": "practice/answers/02_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R1",
+      "R2",
+      "R3",
+      "D1",
+      "D3"
+    ]
+  },
+  {
+    "stage": 3,
+    "title": "Continuity, homeomorphisms, connectedness, and compactness",
+    "track": "topology_core",
+    "core": "lessons/03_lesson.md",
+    "workbook": "workbooks/03_workbook.md",
+    "lab": "notebooks/03_lab.ipynb",
+    "practice": "practice/learner/03_practice.ipynb",
+    "reference_answers": "practice/answers/03_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R1",
+      "R2",
+      "R3"
+    ]
+  },
+  {
+    "stage": 4,
+    "title": "Groups, symmetries, paths, loops, and homotopy",
+    "track": "topology_core",
+    "core": "lessons/04_lesson.md",
+    "workbook": "workbooks/04_workbook.md",
+    "lab": "notebooks/04_lab.ipynb",
+    "practice": "practice/learner/04_practice.ipynb",
+    "reference_answers": "practice/answers/04_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R1",
+      "R6",
+      "R7"
+    ]
+  },
+  {
+    "stage": 5,
+    "title": "Surfaces, simplices, triangulations, and pixel geometry",
+    "track": "topology_core",
+    "core": "lessons/05_lesson.md",
+    "workbook": "workbooks/05_workbook.md",
+    "lab": "notebooks/05_lab.ipynb",
+    "practice": "practice/learner/05_practice.ipynb",
+    "reference_answers": "practice/answers/05_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R1",
+      "R2",
+      "R7",
+      "L3"
+    ]
+  },
+  {
+    "stage": 6,
+    "title": "Chains, boundaries, homology, and Betti numbers",
+    "track": "topology_core",
+    "core": "lessons/06_lesson.md",
+    "workbook": "workbooks/06_workbook.md",
+    "lab": "notebooks/06_lab.ipynb",
+    "practice": "practice/learner/06_practice.ipynb",
+    "reference_answers": "practice/answers/06_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R1",
+      "R2",
+      "R7"
+    ]
+  },
+  {
+    "stage": 7,
+    "title": "From data to shape: Rips, \u010cech, alpha, and filtrations",
+    "track": "topology_core",
+    "core": "lessons/07_lesson.md",
+    "workbook": "workbooks/07_workbook.md",
+    "lab": "notebooks/07_lab.ipynb",
+    "practice": "practice/learner/07_practice.ipynb",
+    "reference_answers": "practice/answers/07_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R1",
+      "R2",
+      "R8",
+      "L1",
+      "L2"
+    ]
+  },
+  {
+    "stage": 8,
+    "title": "Persistent homology, persistence modules, and reading diagrams",
+    "track": "topology_core",
+    "core": "lessons/08_lesson.md",
+    "workbook": "workbooks/08_workbook.md",
+    "lab": "notebooks/08_lab.ipynb",
+    "practice": "practice/learner/08_practice.ipynb",
+    "reference_answers": "practice/answers/08_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R1",
+      "R2",
+      "R8",
+      "L1",
+      "L3"
+    ]
+  },
+  {
+    "stage": 9,
+    "title": "Implement persistence, trace the algorithm, and test it independently",
+    "track": "topology_core",
+    "core": "lessons/09_lesson.md",
+    "workbook": "workbooks/09_workbook.md",
+    "lab": "notebooks/09_lab.ipynb",
+    "practice": "practice/learner/09_practice.ipynb",
+    "reference_answers": "practice/answers/09_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R1",
+      "R2",
+      "L1",
+      "L2"
+    ]
+  },
+  {
+    "stage": 10,
+    "title": "Stability, diagram distances, noise, and scientific uncertainty",
+    "track": "topology_core",
+    "core": "lessons/10_lesson.md",
+    "workbook": "workbooks/10_workbook.md",
+    "lab": "notebooks/10_lab.ipynb",
+    "practice": "practice/learner/10_practice.ipynb",
+    "reference_answers": "practice/answers/10_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R2",
+      "R8",
+      "L3",
+      "R9"
+    ]
+  },
+  {
+    "stage": 11,
+    "title": "Useful representations, Mapper, time windows, and honest machine learning",
+    "track": "topology_core",
+    "core": "lessons/11_lesson.md",
+    "workbook": "workbooks/11_workbook.md",
+    "lab": "notebooks/11_lab.ipynb",
+    "practice": "practice/learner/11_practice.ipynb",
+    "reference_answers": "practice/answers/11_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "R2",
+      "R8",
+      "R9",
+      "D3"
+    ]
+  },
+  {
+    "stage": 12,
+    "title": "Capstone: reproduce, defend, transfer, and audit the book",
+    "track": "topology_core",
+    "core": "lessons/12_lesson.md",
+    "workbook": "workbooks/12_workbook.md",
+    "lab": "notebooks/12_lab.ipynb",
+    "practice": "practice/learner/12_practice.ipynb",
+    "reference_answers": "practice/answers/12_practice.ipynb",
+    "coding_exercises": 5,
+    "conceptual_exercises": 8,
+    "readings": [
+      "D1",
+      "D2",
+      "D3",
+      "R9",
+      "R10"
+    ]
+  },
+  {
+    "stage": 13,
+    "title": "From topology to smooth manifolds",
+    "track": "applied_geometry",
+    "core": "lessons/13_lesson.md",
+    "workbook": "workbooks/13_workbook.md",
+    "lab": "notebooks/13_lab.ipynb",
+    "practice": "practice/learner/13_practice.ipynb",
+    "reference_answers": "practice/answers/13_practice.ipynb",
+    "coding_exercises": 3,
+    "conceptual_exercises": 6,
+    "readings": [
+      "G01",
+      "G02"
+    ]
+  },
+  {
+    "stage": 14,
+    "title": "Rotations, rigid transforms, and the camera model",
+    "track": "applied_geometry",
+    "core": "lessons/14_lesson.md",
+    "workbook": "workbooks/14_workbook.md",
+    "lab": "notebooks/14_lab.ipynb",
+    "practice": "practice/learner/14_practice.ipynb",
+    "reference_answers": "practice/answers/14_practice.ipynb",
+    "coding_exercises": 3,
+    "conceptual_exercises": 6,
+    "readings": [
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G06",
+      "G07"
+    ]
+  },
+  {
+    "stage": 15,
+    "title": "Measured stereo, calibration, and uncertainty",
+    "track": "applied_geometry",
+    "core": "lessons/15_lesson.md",
+    "workbook": "workbooks/15_workbook.md",
+    "lab": "notebooks/15_lab.ipynb",
+    "practice": "practice/learner/15_practice.ipynb",
+    "reference_answers": "practice/answers/15_practice.ipynb",
+    "coding_exercises": 3,
+    "conceptual_exercises": 6,
+    "readings": [
+      "D04",
+      "D05",
+      "G06",
+      "G07"
+    ]
+  },
+  {
+    "stage": 16,
+    "title": "Attention and VGGT, from pixels to proposed geometry",
+    "track": "applied_geometry",
+    "core": "lessons/16_lesson.md",
+    "workbook": "workbooks/16_workbook.md",
+    "lab": "notebooks/16_lab.ipynb",
+    "practice": "practice/learner/16_practice.ipynb",
+    "reference_answers": "practice/answers/16_practice.ipynb",
+    "coding_exercises": 3,
+    "conceptual_exercises": 6,
+    "readings": [
+      "V01",
+      "V02",
+      "V03",
+      "V04",
+      "V05",
+      "V06"
+    ]
+  },
+  {
+    "stage": 17,
+    "title": "Register, validate, and ask topology the right question",
+    "track": "applied_geometry",
+    "core": "lessons/17_lesson.md",
+    "workbook": "workbooks/17_workbook.md",
+    "lab": "notebooks/17_lab.ipynb",
+    "practice": "practice/learner/17_practice.ipynb",
+    "reference_answers": "practice/answers/17_practice.ipynb",
+    "coding_exercises": 3,
+    "conceptual_exercises": 6,
+    "readings": [
+      "G06",
+      "D04",
+      "T01"
+    ]
+  },
+  {
+    "stage": 18,
+    "title": "Make the pipeline efficient without changing the evidence",
+    "track": "applied_geometry",
+    "core": "lessons/18_lesson.md",
+    "workbook": "workbooks/18_workbook.md",
+    "lab": "notebooks/18_lab.ipynb",
+    "practice": "practice/learner/18_practice.ipynb",
+    "reference_answers": "practice/answers/18_practice.ipynb",
+    "coding_exercises": 3,
+    "conceptual_exercises": 6,
+    "readings": [
+      "S01",
+      "S02"
+    ]
+  },
+  {
+    "stage": 19,
+    "title": "From geometry to cautious interaction hypotheses",
+    "track": "applied_geometry",
+    "core": "lessons/19_lesson.md",
+    "workbook": "workbooks/19_workbook.md",
+    "lab": "notebooks/19_lab.ipynb",
+    "practice": "practice/learner/19_practice.ipynb",
+    "reference_answers": "practice/answers/19_practice.ipynb",
+    "coding_exercises": 3,
+    "conceptual_exercises": 6,
+    "readings": [
+      "U01",
+      "S01"
+    ]
+  },
+  {
+    "stage": 20,
+    "title": "Independent spatial capstone and continuing mastery",
+    "track": "applied_geometry",
+    "core": "lessons/20_lesson.md",
+    "workbook": "workbooks/20_workbook.md",
+    "lab": "notebooks/20_lab.ipynb",
+    "practice": "practice/learner/20_practice.ipynb",
+    "reference_answers": "practice/answers/20_practice.ipynb",
+    "coding_exercises": 3,
+    "conceptual_exercises": 6,
+    "readings": [
+      "U01",
+      "T01",
+      "V04"
+    ]
+  }
+]

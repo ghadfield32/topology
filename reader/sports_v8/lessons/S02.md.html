@@ -1,0 +1,90 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S02 — A flight model is a hypothesis to test · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v8/lessons/S02.md">sports_v8/lessons/S02.md</a> · Readable source notation; no online math renderer.</p><h1 id="s02--a-flight-model-is-a-hypothesis-to-test">S02 — A flight model is a hypothesis to test</h1>
+<h2 id="your-destination">Your destination</h2>
+<p>Fit a transparent vertical-motion model, compare fitting residuals with later
+points, and explain why a plausible parabola does not validate a reconstruction.
+Core Stage 21 introduces rates; Stages 23–26 distinguish physical equations,
+integration schemes and learned models. We deliberately begin with least squares.</p>
+<h2 id="derive-the-model-before-training-anything">Derive the model before training anything</h2>
+<p>Assume vertical acceleration is constant and equals -g, with upward positive.
+Integrating once gives <code>v(t)=v0-g*t</code>; integrating again gives
+<code>z(t)=z0+v0*t-g*t²/2</code>. Three parameters appear if g is unknown; two if g is fixed.
+Set time zero at the first fitting observation to improve numerical conditioning.
+The parameter v0 is velocity at this chosen reference time, not necessarily release
+velocity. A change in origin of time changes its interpretation.</p>
+<p>For z0=2 m, v0=4 m/s, g=9.81 m/s² and t=0.2 s, height is
+<code>2 + 0.8 - 0.1962 = 2.6038 m</code>. The value 9.81 is our conventional illustrative
+near-Earth assumption; it is not a measured acceleration of this athlete's ball.</p>
+<p>Write the free fit as <code>z = a + b*u + c*u²</code>. Each row of the design matrix is
+<code>[1,u,u²]</code>. Least squares selects coefficients minimizing the sum of squared
+height residuals. Then <code>g_fit=-2*c</code>. The fitted curvature can absorb tracking
+error, time error, unmodelled forces, collisions or a bad window. Calling it an
+estimate of physical gravity without qualification would hide these alternatives.</p>
+<h2 id="the-explicit-observed-data-window">The explicit observed-data window</h2>
+<p>We select frames 110,115,120,125,130 for fitting. We examine 135 and 140 as later
+points of the same shot. These choices are documented, visible demonstration
+choices—not a preregistered independent athlete experiment. The provider warns
+that the ball can be noisy near entry to and exit from the capture volume.</p>
+<p>The calculation compares three transparent alternatives:</p>
+<ol>
+<li>Constant height at the last fitting observation.</li>
+<li>Fixed-gravity parabola with fitted height and velocity.</li>
+<li>Free quadratic with fitted curvature as well.</li>
+</ol>
+<p>The free fit can improve fit error simply because it has more flexibility. The
+later-point error is informative but only concerns two selected values in one
+trial. It does not establish population performance, a release detector, or a
+measurement-system calibration.</p>
+<p>The notebook saves coefficients, fitting row IDs, evaluation row IDs, residuals,
+and height predictions. It also evaluates sensitivity to a wrong sampling rate.
+These outputs are more useful than one smooth curve with no experiment record.</p>
+<h2 id="timing-and-unit-counterexamples">Timing and unit counterexamples</h2>
+<p>If all times are multiplied by c while positions stay unchanged, the same
+quadratic path can be fitted with velocity divided by c and acceleration divided
+by c². Low residuals alone cannot identify the true clock scale. Likewise, using
+feet as if they were metres scales all coefficients by approximately 3.28.
+A model may fit the wrong physical quantities almost perfectly.</p>
+<p>When source values leave the capture volume, do not extend the model across a
+catch, bounce or uncertain tracking segment and call it one uninterrupted flight.
+We intentionally keep frames 180 and 210 as visible examples of the broader
+record, but do not include them in our short fitting window.</p>
+<h2 id="how-this-connects-to-hnns-pinns-and-world-models">How this connects to HNNs, PINNs and world models</h2>
+<p>A Hamiltonian neural network represents a structured vector field, and a PINN
+penalizes differential-equation residuals. Neither method supplies missing
+measurement metadata. A model trained on markerless estimates learns through
+those estimates and their selection process. It needs conventional baselines,
+independent trials and a justified observation-noise model.</p>
+<p>The supplied HNN/LNN learning source frames the sequence as data, learned
+physical structure, derived dynamics and prediction. We retain that pathway in
+the earlier course. This lab adds an original adequacy check; it does not claim
+to reproduce the source's networks or validate their application to free throws.</p>
+<h2 id="hands-on-sequence">Hands-on sequence</h2>
+<p>First run the manufactured exact trajectory: its known coefficients should be
+recovered to numerical precision. Next run the selected observed points. Then
+change the fitting window, clock and model class one at a time. Keep a table
+with the changed assumption, fitted coefficients, later errors and explanation.
+Never modify the saved source excerpt to make the fit improve.</p>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li>Why are at least three distinct time values necessary for an unconstrained
+quadratic fit? What does having exactly three points fail to test?</li>
+<li>A wrong clock doubles every elapsed time. What happens to fitted g?</li>
+<li>Why is a two-point continuation check different from an unseen-athlete test?</li>
+<li>What additional evidence would support an actual release-speed claim?</li>
+</ol>
+<h2 id="worked-answers">Worked answers</h2>
+<ol>
+<li>Three coefficients require three independent design columns. Exactly three
+points can interpolate a quadratic with zero residual, leaving no redundancy to
+examine lack of fit. More points do not automatically make the assumptions true.</li>
+<li>The fitted coefficient becomes g/4, while the geometric parabola can still fit.</li>
+<li>The same athlete, session, shot and measurement system are shared. A broader
+claim needs independent trials and grouping that matches the intended use.</li>
+<li>Independently annotated release timing, validated coordinates and timebase,
+appropriate post-release observations, uncertainty, and held-out physical checks.
+A named parameter in a polynomial is not that evidence.</li>
+</ol>
+<h2 id="mastery-gate">Mastery gate</h2>
+<p>Explain the columns of the design matrix, every parameter's units, the time
+origin and the meaning of each residual. Delayed recall: give an example where
+excellent fit error is compatible with incorrect metres or seconds.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

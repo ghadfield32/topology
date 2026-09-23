@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Methods: leakage and units — independent coding · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../methods_v7/leakage/learner.ipynb">methods_v7/leakage/learner.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><h1 id="methods-leakage-and-units--independent-coding">Methods: leakage and units — independent coding</h1>
+<p>Four small assignments. Try the learner version first. Reading a reference answer is not independent completion. All checks are illustrative tests, not a guarantee for every input.</p>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json
+ROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / &#x27;src/shape_lab&#x27;).is_dir())
+if str(ROOT / &#x27;src&#x27;) not in sys.path: sys.path.insert(0, str(ROOT / &#x27;src&#x27;))
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from shape_lab.evidence_v7 import load_snapshot, conformal_rank, conformal_radius, coverage, overlap_report
+from shape_lab.display import show_and_save, save_json
+</code></pre><div class="output"></div></section><h2 id="leakagec1--shared_rows">leakage.C1 — <code>shared_rows</code></h2>
+<p>Return sorted row-index overlap.</p>
+<p>Predict one result by hand before running the check.</p>
+<details><summary>Hint</summary>Set intersection answers row overlap only.</details>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>def shared_rows(left,right):
+    # Your independent implementation goes here.
+    raise NotImplementedError(&quot;Learning exercise leakage.C1&quot;)
+</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>assert shared_rows([0,2],[1,3]) == []</code></pre><div class="output"></div></section><h2 id="leakagec2--shared_units">leakage.C2 — <code>shared_units</code></h2>
+<p>Return sorted shared unit IDs for two groups of rows.</p>
+<p>Predict one result by hand before running the check.</p>
+<details><summary>Hint</summary>Resolve rows to source units before intersecting.</details>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>def shared_units(left,right,units):
+    # Your independent implementation goes here.
+    raise NotImplementedError(&quot;Learning exercise leakage.C2&quot;)
+</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>assert shared_units([0,2],[1,3],[&#x27;A&#x27;,&#x27;A&#x27;,&#x27;B&#x27;,&#x27;B&#x27;]) == [&#x27;A&#x27;,&#x27;B&#x27;]</code></pre><div class="output"></div></section><h2 id="leakagec3--partition_by_units">leakage.C3 — <code>partition_by_units</code></h2>
+<p>Return row indices in selected units and in all remaining units.</p>
+<p>Predict one result by hand before running the check.</p>
+<details><summary>Hint</summary>Build a membership mask; keep all copies together.</details>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>def partition_by_units(units,selected):
+    # Your independent implementation goes here.
+    raise NotImplementedError(&quot;Learning exercise leakage.C3&quot;)
+</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>a,b=partition_by_units([&#x27;a&#x27;,&#x27;b&#x27;,&#x27;a&#x27;,&#x27;c&#x27;],[&#x27;a&#x27;])
+assert a.tolist()==[0,2] and b.tolist()==[1,3]</code></pre><div class="output"></div></section><h2 id="leakagec4--apply_scaler">leakage.C4 — <code>apply_scaler</code></h2>
+<p>Apply previously fitted feature centers and positive scales.</p>
+<p>Predict one result by hand before running the check.</p>
+<details><summary>Hint</summary>Broadcast feature-wise arrays; do not fit anything inside this function.</details>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>def apply_scaler(x,center,scale):
+    # Your independent implementation goes here.
+    raise NotImplementedError(&quot;Learning exercise leakage.C4&quot;)
+</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>assert np.allclose(apply_scaler([[6,2]],[2,2],[2,1]),[[2,0]])</code></pre><div class="output"></div></section><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

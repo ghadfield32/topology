@@ -1,0 +1,35 @@
+# Environments and installed package products
+.venv/
+venv/
+.uv-cache/
+.uv-python/
+.local-bin/
+*.egg-info/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+node_modules/
+build/
+dist/
+# Private runtime files: never commit credentials or local evidence by accident
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+my_work/
+progress/*log*.json
+# Optional large datasets / model artifacts are deliberately not vendored
+external_data/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+.DS_Store
+Thumbs.db
+Listening_to_Shape_Learning_System_v12.zip
+# uv.lock IS intended to be committed after real resolution succeeds.

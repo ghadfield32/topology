@@ -1,0 +1,99 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>v8 verification and interpretation limits · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v8/VERIFICATION.md">docs/v8/VERIFICATION.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="v8-verification-and-interpretation-limits">v8 verification and interpretation limits</h1>
+<h2 id="freshly-executed-in-this-build">Freshly executed in this build</h2>
+<p>The inherited v7 preflight returned 538 passed and 2 optional-library skips.
+After the sports extension, the full suite returned <strong>604 passed, 2 skipped,
+zero failed</strong>. The 66 new tests cover calculations, data contracts, invalid inputs,
+source comparisons on fixtures, safe acquisition entry conditions, lessons,
+notebook syntax and preservation of all 31 core stages.</p>
+<p><strong>All 121 reference notebooks were rerun in fresh kernels</strong>, including 107
+retained notebooks and 14 new sports notebooks. Learner assignment notebooks
+were excluded deliberately. The execution manifests list every path, status,
+code-cell count, PNG count and elapsed time. The first sports run used a
+non-interactive backend without embedded images; inline rendering was explicitly
+activated and the new notebooks were rerun. No reference errors were retained.</p>
+<p>Exact-control checks include length conversion, landmark angle invariance,
+nonuniform frame timing, missing/gap withholding, exact quadratic recovery,
+clock-scale ambiguity, Rips square bars, matched-cloud perturbations, player-group
+splits and training-only preprocessing. These do not validate the underlying
+sports measurement systems. They check the stated calculations and contracts.</p>
+<h2 id="new-observed-source-example-fit-does-not-prove-physical-correctness">New observed-source example: fit does not prove physical correctness</h2>
+<p>Five selected SPL frames (110–130 in five-frame increments) fit the example;
+135 and 140 are later values of the same selected shot. The fitted free-curvature
+parameter is approximately 12.3739 m/s². It is not certified physical gravity.
+Fitting RMSE is about 0.00925 m for the free quadratic and 0.01754 m for the
+fixed-9.81 assumption. Later-point mean absolute errors are approximately:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align:right">Later-point MAE (m)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Last fitted height</td>
+<td style="text-align:right">0.0446231</td>
+</tr>
+<tr>
+<td>Fixed-gravity parabola</td>
+<td style="text-align:right">0.0488125</td>
+</tr>
+<tr>
+<td>Free quadratic</td>
+<td style="text-align:right">0.0446614</td>
+</tr>
+</tbody>
+</table>
+<p>The free model fits better but does not outperform the simple constant-height
+baseline on these two selected later points. The points are near the selected
+arc's top, and the evaluation is small, same-shot and exposed. It is not an
+athlete-generalization or independent measurement benchmark. Doubling the time
+scale divides the fitted acceleration parameter by four while preserving fit.
+Detailed settings and results are saved in <code>reports/v8/sports/S02.json</code>.</p>
+<h2 id="explicit-non-completions">Explicit non-completions</h2>
+<p>Ripser and GUDHI are unavailable and their two comparisons are skipped, not
+passed. The full original sports files were not downloaded; selected numeric
+excerpts were transcribed from official text. Local hash checks cannot establish
+remote numeric equality. Optional source verifiers were checked on fixtures and
+CLI rejection paths, not successful live downloads. Full videos, wearable records,
+baseball data, SkillCorner tracks/pose and the ten-entry catalogue's full studies
+were not executed. No predictive sports accuracy, trained VGGT, real-time camera
+system, injury prediction or professional deployment is claimed.</p>
+<p>The runtime is Linux/Python 3.13.5 with CPU libraries. Mac, Windows, CUDA and Apple
+GPU execution were not tested. The optional readers' external source links depend
+on network access. The actual book text remains unaudited. Mathematical identities,
+program execution, reference-label accuracy and independent physical truth remain
+different evidence levels.</p>
+<h2 id="delivery-checks">Delivery checks</h2>
+<p>Current release checks are recorded in <code>reports/v8/reader_links.json</code>,
+<code>reports/v8/browser.json</code>, and the final archive check supplied beside the ZIP.
+File-target checking is not a live external-link or fragment-ID audit. The final
+archive receives path-safety, CRC and SHA256 checks and a fresh extracted-copy
+test run. Earlier reports are retained as historical evidence, not asserted as
+current file manifests. The new manual sports log starts with all seven items
+unassessed and does not silently overwrite previous learner work.</p>
+<h2 id="reader-verification-actually-performed">Reader verification actually performed</h2>
+<p>The current reader check examined 1,384 HTML files and 65,904 local file-link
+targets, finding zero broken targets. Chromium rendered the desktop and mobile
+pages; search filtering, answer reveal and an embedded executed figure passed.
+The mobile home page had no horizontal overflow. The environment rejected
+<code>file://</code> navigation with <code>ERR_BLOCKED_BY_ADMINISTRATOR</code>. Testing therefore
+used a fresh page with document content and local CSS inlined. This demonstrates
+rendering and the tested interactions, not successful file-to-file navigation.
+Screenshot inspection found no clipped body text at the tested widths.</p>
+<p>The optional authoring QA tools require the <code>qa</code> extra. <code>browser_check_v8.py</code>
+uses the build environment's <code>/usr/bin/chromium</code>; that script's path is not a
+cross-platform browser installer. These tools are not necessary for learning or
+for opening the course in your normal browser. No font binaries are distributed.</p>
+<h2 id="review-scope">Review scope</h2>
+<p>Source, tests, documents and result claims received a same-session consistency
+review. No independent human, external reviewer or independent agent review is
+claimed. Historical verification files retain their original counts and dates;
+this document and the v8 release manifest describe this build.</p>
+<h2 id="release-metadata-regression-found-and-corrected">Release-metadata regression found and corrected</h2>
+<p>The first suite after setting the release metadata to 8.0.0 exposed one inherited
+assertion hard-coded to 7.0.0 (603 passed, 1 failed, 2 skipped). The assertion was
+updated to require the declared module and package versions to equal 8.0.0;
+it was not removed. The failing log is retained as <code>version_metadata_failure.txt</code>.
+The final suite and extracted-copy check are the release acceptance evidence.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

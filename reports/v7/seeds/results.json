@@ -1,0 +1,146 @@
+{
+  "source_numeric_sha256": "ccbb02ab12d769438861e857d4d944c3a1f674cb5303690a0eedc861a19d4e10",
+  "n": 210,
+  "metrics": {
+    "majority": {
+      "validation": {
+        "n": 42,
+        "correct": 14,
+        "accuracy": 0.3333333333333333,
+        "confusion_matrix": [
+          [
+            14,
+            0,
+            0
+          ],
+          [
+            14,
+            0,
+            0
+          ],
+          [
+            14,
+            0,
+            0
+          ]
+        ]
+      },
+      "test": {
+        "n": 42,
+        "correct": 14,
+        "accuracy": 0.3333333333333333,
+        "confusion_matrix": [
+          [
+            14,
+            0,
+            0
+          ],
+          [
+            14,
+            0,
+            0
+          ],
+          [
+            14,
+            0,
+            0
+          ]
+        ]
+      }
+    },
+    "seven_features": {
+      "validation": {
+        "n": 42,
+        "correct": 40,
+        "accuracy": 0.9523809523809523,
+        "confusion_matrix": [
+          [
+            13,
+            0,
+            1
+          ],
+          [
+            0,
+            14,
+            0
+          ],
+          [
+            1,
+            0,
+            13
+          ]
+        ]
+      },
+      "test": {
+        "n": 42,
+        "correct": 38,
+        "accuracy": 0.9047619047619048,
+        "confusion_matrix": [
+          [
+            13,
+            1,
+            0
+          ],
+          [
+            2,
+            12,
+            0
+          ],
+          [
+            1,
+            0,
+            13
+          ]
+        ]
+      }
+    },
+    "without_compactness": {
+      "validation": {
+        "n": 42,
+        "correct": 40,
+        "accuracy": 0.9523809523809523,
+        "confusion_matrix": [
+          [
+            13,
+            0,
+            1
+          ],
+          [
+            0,
+            14,
+            0
+          ],
+          [
+            1,
+            0,
+            13
+          ]
+        ]
+      },
+      "test": {
+        "n": 42,
+        "correct": 39,
+        "accuracy": 0.9285714285714286,
+        "confusion_matrix": [
+          [
+            13,
+            1,
+            0
+          ],
+          [
+            1,
+            13,
+            0
+          ],
+          [
+            1,
+            0,
+            13
+          ]
+        ]
+      }
+    }
+  },
+  "compactness_max_abs_gap": 0.0010199686358989268,
+  "scope": "Fixed within-collection demonstration. No farm/batch independence; no predictive TDA comparison in this lab."
+}

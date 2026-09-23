@@ -1,0 +1,80 @@
+{
+  "remote_modified": false,
+  "dependency_mode": "Existing host interpreter/dependencies; not a clean dependency install",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "add",
+        "docs/release/ENVIRONMENT_STATUS.json"
+      ],
+      "returncode": 0,
+      "log": "git_fix_add.log",
+      "seconds": 0.017220020294189453
+    },
+    {
+      "command": [
+        "git",
+        "commit",
+        "-m",
+        "Preserve environment-status compatibility and explicit blocked lock"
+      ],
+      "returncode": 0,
+      "log": "git_fix_commit.log",
+      "seconds": 0.0329282283782959
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "pytest",
+        "-vv",
+        "-ra",
+        "--durations=10",
+        "--junitxml=/mnt/data/v11_evidence/git_tests_final.xml"
+      ],
+      "returncode": 0,
+      "log": "git_tests_final.log",
+      "seconds": 32.122541666030884
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--no-project",
+        "--python",
+        "/opt/pyvenv/bin/python",
+        "python",
+        "course.py",
+        "run",
+        "--stage",
+        "0",
+        "--output",
+        "/mnt/data/v11_evidence/git_stage00",
+        "--jobs",
+        "1"
+      ],
+      "returncode": 0,
+      "log": "git_stage00.log",
+      "seconds": 16.582506895065308
+    },
+    {
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "course.py",
+        "practice",
+        "r01",
+        "--output",
+        "/mnt/data/v11_evidence/git_practice_r01"
+      ],
+      "returncode": 0,
+      "log": "git_practice.log",
+      "seconds": 2.0474565029144287
+    }
+  ],
+  "source": "Locally committed and exported course; environment-status compatibility correction applied before final verification",
+  "commit": "44f0cddd6b63543b6b9f9e7861bca75d6d75a2ed",
+  "status": "passed",
+  "tracked_files": 3401,
+  "practice_assessment": "not_assessed"
+}

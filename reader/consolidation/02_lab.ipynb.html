@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 02 consolidation — Separate units, distance, and topology · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../consolidation/02_lab.ipynb">consolidation/02_lab.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="stage-02-consolidation--separate-units-distance-and-topology">Stage 02 consolidation — Separate units, distance, and topology</h1>
+<p>Read <code>sessions/02_session.md</code> first. This is an executed reference, not an assessment of you.</p>
+<p><strong>Evidence:</strong> Real Iris measurements, plus the exact counterexample 0,1,2.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json
+import numpy as np
+
+ROOT = Path.cwd().resolve()
+while not (ROOT/&#x27;data/raw/iris.csv&#x27;).is_file():
+    if ROOT == ROOT.parent:
+        raise FileNotFoundError(&#x27;Start Jupyter in the extracted listening_to_shape_lab folder.&#x27;)
+    ROOT = ROOT.parent
+sys.path.insert(0, str(ROOT/&#x27;src&#x27;))
+</code></pre><div class="output"></div></section><h2 id="step-1">Step 1</h2>
+<p>Show exactly why squared Euclidean distance fails one metric axiom.</p>
+<p>Before running: write your expected result and name one way this check could fail.</p>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>left = (0 - 2)**2
+right = (0 - 1)**2 + (1 - 2)**2
+print(&#x27;squared-distance triangle inequality would require&#x27;, left, &#x27;&lt;=&#x27;, right)
+assert left &gt; right</code></pre><div class="output"><pre>squared-distance triangle inequality would require 4 &lt;= 2
+</pre></div></section><h2 id="step-2">Step 2</h2>
+<p>Select real measurements and compute pairwise distances with no labels in the feature array.</p>
+<p>Before running: write your expected result and name one way this check could fail.</p>
+<section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>from shape_lab.data import load_iris_data
+from scipy.spatial.distance import cdist
+frame = load_iris_data().iloc[::5].copy()
+columns = [c for c in frame if c.endswith(&#x27;_cm&#x27;)]
+X = frame[columns].to_numpy()
+D = cdist(X, X)
+Y = X.copy(); Y[:, 0] *= 10
+D_scaled = cdist(Y, Y)
+np.fill_diagonal(D, np.inf); np.fill_diagonal(D_scaled, np.inf)
+changed = np.argmin(D, axis=1) != np.argmin(D_scaled, axis=1)
+print(&#x27;changed nearest-neighbor selections:&#x27;, changed.sum(), &#x27;of&#x27;, len(X))</code></pre><div class="output"><pre>changed nearest-neighbor selections: 12 of 30
+</pre></div></section><h2 id="step-3">Step 3</h2>
+<p>A translation is an isometry: it must preserve these Euclidean distances. Rescaling one coordinate is not.</p>
+<p>Before running: write your expected result and name one way this check could fail.</p>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>assert np.allclose(cdist(X + 100, X + 100), cdist(X, X))
+assert not np.allclose(cdist(Y, Y), cdist(X, X))
+result = {&#x27;records&#x27;: len(X), &#x27;rescaled_feature&#x27;: columns[0], &#x27;multiplier&#x27;: 10,
+          &#x27;nearest_neighbor_changes&#x27;: int(changed.sum()),
+          &#x27;translation_distance_check&#x27;: &#x27;passed&#x27;}</code></pre><div class="output"></div></section><h2 id="keep-execution-evidence-separate-from-learning-evidence">Keep execution evidence separate from learning evidence</h2>
+<p>The following saves this reference calculation. Write your own explanation in <code>my_work/</code>; no learner score is assigned.</p>
+<section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>result[&#x27;stage&#x27;] = 2
+result[&#x27;execution_role&#x27;] = &#x27;reference_consolidation&#x27;
+result[&#x27;data_role&#x27;] = &#x27;Real Iris measurements, plus the exact counterexample 0,1,2.&#x27;
+output = ROOT/&#x27;reports/consolidation_v4/02.json&#x27;
+output.parent.mkdir(parents=True, exist_ok=True)
+output.write_text(json.dumps(result, indent=2, allow_nan=False) + &#x27;\n&#x27;)
+print(&#x27;Saved reference result:&#x27;, output.relative_to(ROOT))
+</code></pre><div class="output"><pre>Saved reference result: reports/consolidation_v4/02.json
+</pre></div></section><a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,327 @@
+[
+  {
+    "stage": 0,
+    "title": "Start here: how to learn, run, and question the results",
+    "gate": "Run Stage 00, explain its data shapes and provenance, and distinguish code execution from understanding.",
+    "core": "lessons/00_lesson.md",
+    "workbook": "workbooks/00_workbook.md",
+    "lab": "notebooks/00_lab.ipynb",
+    "practice": "practice/learner/00_practice.ipynb",
+    "reference_answers": "practice/answers/00_practice.ipynb",
+    "conceptual_exercises": 6,
+    "coding_ids": [
+      "00.C1",
+      "00.C2",
+      "00.C3",
+      "00.C4",
+      "00.C5"
+    ],
+    "retrieval_ids": [
+      "00.R1",
+      "00.R2",
+      "00.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 1,
+    "title": "Mathematical language, proofs, and linear algebra",
+    "gate": "Solve inverse images, write a correct elementary proof, and explain kernel/image and real versus F₂ rank.",
+    "core": "lessons/01_lesson.md",
+    "workbook": "workbooks/01_workbook.md",
+    "lab": "notebooks/01_lab.ipynb",
+    "practice": "practice/learner/01_practice.ipynb",
+    "reference_answers": "practice/answers/01_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "01.C1",
+      "01.C2",
+      "01.C3",
+      "01.C4",
+      "01.C5"
+    ],
+    "retrieval_ids": [
+      "01.R1",
+      "01.R2",
+      "01.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 2,
+    "title": "Closeness, metrics, neighborhoods, and topologies",
+    "gate": "Verify metrics and topology axioms, prove finite discreteness, and distinguish observed points from inferred shape.",
+    "core": "lessons/02_lesson.md",
+    "workbook": "workbooks/02_workbook.md",
+    "lab": "notebooks/02_lab.ipynb",
+    "practice": "practice/learner/02_practice.ipynb",
+    "reference_answers": "practice/answers/02_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "02.C1",
+      "02.C2",
+      "02.C3",
+      "02.C4",
+      "02.C5"
+    ],
+    "retrieval_ids": [
+      "02.R1",
+      "02.R2",
+      "02.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 3,
+    "title": "Continuity, homeomorphisms, connectedness, and compactness",
+    "gate": "Give correct map definitions and prove the basic continuity and compactness consequences with their hypotheses.",
+    "core": "lessons/03_lesson.md",
+    "workbook": "workbooks/03_workbook.md",
+    "lab": "notebooks/03_lab.ipynb",
+    "practice": "practice/learner/03_practice.ipynb",
+    "reference_answers": "practice/answers/03_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "03.C1",
+      "03.C2",
+      "03.C3",
+      "03.C4",
+      "03.C5"
+    ],
+    "retrieval_ids": [
+      "03.R1",
+      "03.R2",
+      "03.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 4,
+    "title": "Groups, symmetries, paths, loops, and homotopy",
+    "gate": "Explain and check a group action, verify a deformation retraction, and distinguish loop classes from raw paths.",
+    "core": "lessons/04_lesson.md",
+    "workbook": "workbooks/04_workbook.md",
+    "lab": "notebooks/04_lab.ipynb",
+    "practice": "practice/learner/04_practice.ipynb",
+    "reference_answers": "practice/answers/04_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "04.C1",
+      "04.C2",
+      "04.C3",
+      "04.C4",
+      "04.C5"
+    ],
+    "retrieval_ids": [
+      "04.R1",
+      "04.R2",
+      "04.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 5,
+    "title": "Surfaces, simplices, triangulations, and pixel geometry",
+    "gate": "Construct valid complexes, distinguish surfaces from solids, and state the exact pixel-connectivity convention.",
+    "core": "lessons/05_lesson.md",
+    "workbook": "workbooks/05_workbook.md",
+    "lab": "notebooks/05_lab.ipynb",
+    "practice": "practice/learner/05_practice.ipynb",
+    "reference_answers": "practice/answers/05_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "05.C1",
+      "05.C2",
+      "05.C3",
+      "05.C4",
+      "05.C5"
+    ],
+    "retrieval_ids": [
+      "05.R1",
+      "05.R2",
+      "05.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 6,
+    "title": "Chains, boundaries, homology, and Betti numbers",
+    "gate": "Calculate small homology groups by hand, prove boundary-of-boundary, and explain every term in the Betti formula.",
+    "core": "lessons/06_lesson.md",
+    "workbook": "workbooks/06_workbook.md",
+    "lab": "notebooks/06_lab.ipynb",
+    "practice": "practice/learner/06_practice.ipynb",
+    "reference_answers": "practice/answers/06_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "06.C1",
+      "06.C2",
+      "06.C3",
+      "06.C4",
+      "06.C5"
+    ],
+    "retrieval_ids": [
+      "06.R1",
+      "06.R2",
+      "06.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 7,
+    "title": "From data to shape: Rips, Čech, alpha, and filtrations",
+    "gate": "Specify and implement a valid filtration, distinguish Rips/Čech/alpha, and justify parameter units and dimension limits.",
+    "core": "lessons/07_lesson.md",
+    "workbook": "workbooks/07_workbook.md",
+    "lab": "notebooks/07_lab.ipynb",
+    "practice": "practice/learner/07_practice.ipynb",
+    "reference_answers": "practice/answers/07_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "07.C1",
+      "07.C2",
+      "07.C3",
+      "07.C4",
+      "07.C5"
+    ],
+    "retrieval_ids": [
+      "07.R1",
+      "07.R2",
+      "07.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 8,
+    "title": "Persistent homology, persistence modules, and reading diagrams",
+    "gate": "Read and derive barcodes and diagrams, interpret endpoint/truncation conventions, and explain the need for induced maps.",
+    "core": "lessons/08_lesson.md",
+    "workbook": "workbooks/08_workbook.md",
+    "lab": "notebooks/08_lab.ipynb",
+    "practice": "practice/learner/08_practice.ipynb",
+    "reference_answers": "practice/answers/08_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "08.C1",
+      "08.C2",
+      "08.C3",
+      "08.C4",
+      "08.C5"
+    ],
+    "retrieval_ids": [
+      "08.R1",
+      "08.R2",
+      "08.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 9,
+    "title": "Implement persistence, trace the algorithm, and test it independently",
+    "gate": "Trace reduction manually, explain all tested invariances, and run or explicitly retain the pending external-library validation gate.",
+    "core": "lessons/09_lesson.md",
+    "workbook": "workbooks/09_workbook.md",
+    "lab": "notebooks/09_lab.ipynb",
+    "practice": "practice/learner/09_practice.ipynb",
+    "reference_answers": "practice/answers/09_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "09.C1",
+      "09.C2",
+      "09.C3",
+      "09.C4",
+      "09.C5"
+    ],
+    "retrieval_ids": [
+      "09.R1",
+      "09.R2",
+      "09.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 10,
+    "title": "Stability, diagram distances, noise, and scientific uncertainty",
+    "gate": "Apply a precise stability statement, compute a diagram distance, and separate robustness from statistical significance.",
+    "core": "lessons/10_lesson.md",
+    "workbook": "workbooks/10_workbook.md",
+    "lab": "notebooks/10_lab.ipynb",
+    "practice": "practice/learner/10_practice.ipynb",
+    "reference_answers": "practice/answers/10_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "10.C1",
+      "10.C2",
+      "10.C3",
+      "10.C4",
+      "10.C5"
+    ],
+    "retrieval_ids": [
+      "10.R1",
+      "10.R2",
+      "10.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 11,
+    "title": "Useful representations, Mapper, time windows, and honest machine learning",
+    "gate": "Build declared representations, explain Mapper and window availability, and select models using validation rather than test data.",
+    "core": "lessons/11_lesson.md",
+    "workbook": "workbooks/11_workbook.md",
+    "lab": "notebooks/11_lab.ipynb",
+    "practice": "practice/learner/11_practice.ipynb",
+    "reference_answers": "practice/answers/11_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "11.C1",
+      "11.C2",
+      "11.C3",
+      "11.C4",
+      "11.C5"
+    ],
+    "retrieval_ids": [
+      "11.R1",
+      "11.R2",
+      "11.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  },
+  {
+    "stage": 12,
+    "title": "Capstone: reproduce, defend, transfer, and audit the book",
+    "gate": "Reproduce and defend the worked capstone, complete an independent application, and retain an explicit book-audit gap log.",
+    "core": "lessons/12_lesson.md",
+    "workbook": "workbooks/12_workbook.md",
+    "lab": "notebooks/12_lab.ipynb",
+    "practice": "practice/learner/12_practice.ipynb",
+    "reference_answers": "practice/answers/12_practice.ipynb",
+    "conceptual_exercises": 8,
+    "coding_ids": [
+      "12.C1",
+      "12.C2",
+      "12.C3",
+      "12.C4",
+      "12.C5"
+    ],
+    "retrieval_ids": [
+      "12.R1",
+      "12.R2",
+      "12.R3"
+    ],
+    "book_text_audited": false,
+    "learner_mastered": false
+  }
+]

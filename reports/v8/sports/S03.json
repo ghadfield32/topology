@@ -1,0 +1,23 @@
+{
+  "features": [
+    "running_distance_full_all",
+    "hsr_distance_full_all",
+    "sprint_distance_full_all"
+  ],
+  "profile_rows": 12,
+  "player_count": 8,
+  "raw_h1": [
+    [
+      201.01239190656875,
+      219.13503850365885
+    ]
+  ],
+  "standardized_h1": [
+    [
+      1.6679709446597777,
+      1.941997995869343
+    ]
+  ],
+  "metric": "Euclidean; Rips max-edge; F2; through triangles",
+  "predictive_benchmark": false
+}

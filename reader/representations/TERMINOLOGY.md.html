@@ -1,0 +1,252 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Terminology map — one entry point, not another required course · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../representations/TERMINOLOGY.md">representations/TERMINOLOGY.md</a> · Readable source notation; no online math renderer.</p><h1 id="terminology-map--one-entry-point-not-another-required-course">Terminology map — one entry point, not another required course</h1>
+<p>Use this index when a term in the supplied notes is unfamiliar. Definitions developed in a lesson are not assigned again as a second chapter. Model-family names below are orientation vocabulary, not a claim that every architecture is implemented or trained.</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning and first distinction</th>
+<th>Where to learn/use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LinReg, OLS</td>
+<td>Linear regression; ordinary least squares minimizes squared residuals under a stated design</td>
+<td>Existing regression industry cases; R03 losses</td>
+</tr>
+<tr>
+<td>LogReg, GLM</td>
+<td>Logistic regression models class probabilities; generalized linear models combine a distribution and link</td>
+<td>R04 frozen probe; existing classification cases</td>
+</tr>
+<tr>
+<td>Ridge, Lasso, Elastic Net</td>
+<td>L2, L1, and combined parameter penalties</td>
+<td>R03; distinguish from embedding regularization</td>
+</tr>
+<tr>
+<td>SIGReg</td>
+<td>Sketched Isotropic Gaussian Regularization</td>
+<td>R02 definition and numerical checks</td>
+</tr>
+<tr>
+<td>MSE, MAE</td>
+<td>Mean squared and mean absolute residuals</td>
+<td>R03; sensitivity to error magnitude</td>
+</tr>
+<tr>
+<td>BCE, CE, NLL</td>
+<td>Binary/multiclass cross-entropy; negative log likelihood</td>
+<td>R03 probability-model distinctions</td>
+</tr>
+<tr>
+<td>L1, L2, WD</td>
+<td>Absolute/squared parameter penalties; weight decay</td>
+<td>R03, source audit for AdamW</td>
+</tr>
+<tr>
+<td>Dropout</td>
+<td>Stochastic activation masking in training with a specified inference convention</td>
+<td>R03; not automatically label-preserving input masking</td>
+</tr>
+<tr>
+<td>Embedding, latent, latent space</td>
+<td>Internal representation and the space it occupies</td>
+<td>R01; no assumed physical units</td>
+</tr>
+<tr>
+<td>Complete/dimensional collapse</td>
+<td>All inputs coincide / representation loses rank</td>
+<td>R01–R04</td>
+</tr>
+<tr>
+<td>VICReg</td>
+<td>Variance-Invariance-Covariance Regularization</td>
+<td>R03 numerical implementation, not full training reproduction</td>
+</tr>
+<tr>
+<td>Barlow Twins</td>
+<td>Cross-view cross-correlation objective</td>
+<td>R03</td>
+</tr>
+<tr>
+<td>Contrastive, positive, negative</td>
+<td>Specified pair relationships and separations</td>
+<td>R03, false-negative examples</td>
+</tr>
+<tr>
+<td>InfoNCE, NT-Xent</td>
+<td>Related contrastive objective forms; exact denominator matters</td>
+<td>R03 code and indexing exercise</td>
+</tr>
+<tr>
+<td>BYOL</td>
+<td>Bootstrap Your Own Latent</td>
+<td>R03 mechanism overview, not trained here</td>
+</tr>
+<tr>
+<td>EMA</td>
+<td>Exponential moving average</td>
+<td>R03 hand calculation and code</td>
+</tr>
+<tr>
+<td>Stop-gradient, detach</td>
+<td>Value used forward; specified derivative path blocked</td>
+<td>R03 finite numerical demonstration</td>
+</tr>
+<tr>
+<td>Teacher/student, distillation</td>
+<td>Roles for producing and fitting targets</td>
+<td>R03; teacher update policy must be explicit</td>
+</tr>
+<tr>
+<td>DINO</td>
+<td>Original self-distillation-without-labels method and later family</td>
+<td>R03 original-method orientation; no successor training claim</td>
+</tr>
+<tr>
+<td>SSL</td>
+<td>Self-supervised or semi-supervised learning, depending on context</td>
+<td>R03: encoder task versus labeled evaluation</td>
+</tr>
+<tr>
+<td>JEPA</td>
+<td>Joint-Embedding Predictive Architecture</td>
+<td>R03/R05 context-target structure</td>
+</tr>
+<tr>
+<td>I-JEPA</td>
+<td>Image-region representation prediction</td>
+<td>R03 source reading</td>
+</tr>
+<tr>
+<td>V-JEPA</td>
+<td>Video representation prediction; not every mask is causal</td>
+<td>R03/R05 time-cutoff reasoning</td>
+</tr>
+<tr>
+<td>LeJEPA</td>
+<td>Latent-Euclidean JEPA, as explicitly named in the checked paper</td>
+<td>Source audit; R04 small inspired ablation</td>
+</tr>
+<tr>
+<td>Normal/Gaussian</td>
+<td>Probability family characterized by mean and covariance when jointly Gaussian</td>
+<td>R01</td>
+</tr>
+<tr>
+<td>Isotropic / standard</td>
+<td>Equal directional variance / specifically zero mean and identity covariance</td>
+<td>R01 distinction</td>
+</tr>
+<tr>
+<td>Covariance, whitening</td>
+<td>Second moments / fitted transform of those moments</td>
+<td>R01, rank assumptions</td>
+</tr>
+<tr>
+<td>Sketch, random projection</td>
+<td>Lower-dimensional directional observation</td>
+<td>R02</td>
+</tr>
+<tr>
+<td>Cramér–Wold</td>
+<td>Characterization via all linear projections of a joint law</td>
+<td>R02; finite-sketch limitation</td>
+</tr>
+<tr>
+<td>Characteristic function</td>
+<td>Expected complex exponential; empirical sine/cosine means</td>
+<td>R02</td>
+</tr>
+<tr>
+<td>Epps–Pulley</td>
+<td>Characteristic-function-based normality statistic family</td>
+<td>R02; fixed target/convention not a supplied p-value</td>
+</tr>
+<tr>
+<td>PCA, SVD</td>
+<td>Principal components; singular value decomposition</td>
+<td>Existing linear-algebra primer and R04 training-only PCA</td>
+</tr>
+<tr>
+<td>t-SNE, UMAP</td>
+<td>Nonlinear visualization/embedding methods with parameter-sensitive geometry</td>
+<td>Orientation only; no assumption that distances/topology are preserved</td>
+</tr>
+<tr>
+<td>AE, VAE</td>
+<td>Autoencoder reconstruction; variational latent-variable model</td>
+<td>Orientation only; not trained in this expansion</td>
+</tr>
+<tr>
+<td>RF, DT</td>
+<td>Random forest; decision tree</td>
+<td>Existing baseline vocabulary; not a new required route</td>
+</tr>
+<tr>
+<td>GBM, XGB, LGBM</td>
+<td>Gradient boosting family and named implementations</td>
+<td>Orientation; current software not benchmarked here</td>
+</tr>
+<tr>
+<td>MLP, CNN, ViT</td>
+<td>Dense layers; convolutions; vision transformer</td>
+<td>R04 trains an MLP; existing Stage 16 attention</td>
+</tr>
+<tr>
+<td>RNN, LSTM, GRU</td>
+<td>Recurrent model families</td>
+<td>Orientation for temporal modeling, not evidence of causal correctness</td>
+</tr>
+<tr>
+<td>GNN</td>
+<td>Graph neural network</td>
+<td>Existing Stage 29 structural updates</td>
+</tr>
+<tr>
+<td>GD, SGD, LR, BP</td>
+<td>Gradient descent, stochastic gradient descent, learning rate, backpropagation</td>
+<td>Existing differentiation primer; R03–R04</td>
+</tr>
+<tr>
+<td>Adam, AdamW</td>
+<td>Adaptive optimizers; AdamW decouples weight decay</td>
+<td>R04 declared optimizer; source audit</td>
+</tr>
+<tr>
+<td>ROC/AUC, PR/AP</td>
+<td>Threshold-sweep summaries; area under ROC; precision-recall; average precision</td>
+<td>Existing evaluation cases; averaging convention must be stated</td>
+</tr>
+<tr>
+<td>IoU, mAP</td>
+<td>Intersection-over-union; mean average precision</td>
+<td>Existing CV scope; matching thresholds/classes change meaning</td>
+</tr>
+<tr>
+<td>R²</td>
+<td>Relative squared-error score against a stated mean baseline</td>
+<td>Existing regression cases; may be negative on held-out data</td>
+</tr>
+<tr>
+<td>uv, lock, venv</td>
+<td>Dependency tool; resolved graph; local Python environment</td>
+<td>Current FIRST_RUN.md</td>
+</tr>
+<tr>
+<td>Image, container, Pod, Job, PVC</td>
+<td>Deployment objects with distinct roles</td>
+<td>Current KUBERNETES.md; not mathematical prerequisites</td>
+</tr>
+</tbody>
+</table>
+<h2 id="fast-retrieval-questions">Fast retrieval questions</h2>
+<ol>
+<li>Which three meanings of “normalization” have appeared, and which statistics are fitted?</li>
+<li>Why can an SSL encoder be evaluated with labels without those labels entering pretraining?</li>
+<li>What is the difference between a low loss, noncollapsed covariance, useful predictions, and calibrated physical output?</li>
+<li>Which terms above describe concepts only, which have code controls, and which have a trained experiment?</li>
+</ol>
+<p>Answer from the canonical lessons, not from the abbreviation alone. See SOURCE_AUDIT.md for the primary readings and corrections to the supplied wording.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

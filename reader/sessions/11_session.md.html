@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 11 guided session — Build a feature pipeline without seeing the answer · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/11_session.md">sessions/11_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-11-guided-session--build-a-feature-pipeline-without-seeing-the-answer">Stage 11 guided session — Build a feature pipeline without seeing the answer</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/11_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/11_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/11_workbook.md.html">original workbook</a> and <a href="../notebooks/11_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real train/validation digit pixels and the bundled historical annual sunspot series; no new forecast claim.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Distinguish fixed per-observation transformations from dataset-fitted preprocessing.</li>
+<li>Apply training-only scaling and identify where validation data may be used.</li>
+<li>Construct lagged features with their correct availability dates.</li>
+<li>Separate topological representation design from proof of predictive value.</li>
+</ol>
+<h2 id="a-representation-is-part-of-the-model">A representation is part of the model</h2>
+<p>A persistence diagram is not immediately a fixed-width feature vector. We can summarize counts, lifetimes, Betti curves, landscapes, or persistence images. Each choice retains some information and discards some. A count of intervals, for example, does not retain their positions. A discretized representation adds grid and bandwidth choices.</p>
+<p>Some transformations are fixed before looking at the dataset. Dividing an image's intensities by its documented maximum is a declared per-image conversion. Other transformations estimate parameters from data: a StandardScaler estimates feature means and variances. For predictive evaluation, fit those parameters on the training partition and apply the resulting rule unchanged to validation or test observations.</p>
+<p>A scikit-learn Pipeline can keep fitted transformations inside a cross-validation procedure. It cannot protect against leakage that occurred before the pipeline, a wrongly defined split, or features containing future information. Tools enforce only the boundaries their inputs actually preserve.</p>
+<h2 id="work-a-time-availability-example">Work a time-availability example</h2>
+<p>For observations x₀,x₁,x₂,…, a backward-looking three-value feature available at time t is <code>(x[t−2],x[t−1],x[t])</code>. A forward window <code>(x[t],x[t+1],x[t+2])</code> is not available at time t. It can be used at t+2, provided its timestamp is assigned accordingly. The array values can be identical while their interpretation is causally wrong.</p>
+<p>The new bundled historical sunspot series supplies real, dated annual observations. We use it to practice delay-coordinate construction and availability—not to assert a perfect low-dimensional dynamical system or forecast solar activity. The vintage ends in 2008 and is not a current operational feed. No new parameter choices are selected on future test labels.</p>
+<h2 id="inspect-a-real-fitted-transformation">Inspect a real fitted transformation</h2>
+<p>Use the existing training and validation digit splits. Fit pixel scaling on training rows only. Check that the fitted means equal training means. Transform validation rows without refitting. The transformed validation mean is not required to be zero: demanding that would tempt you to normalize the validation set separately and change the coordinate system.</p>
+<p>Then form the historical lag windows and attach the last included year. Avoid calling a row an independent sample just because it occupies a separate line: adjacent windows overlap. A downstream statistical evaluation must respect that dependence.</p>
+<p>The original Stage 11 lab compares actual predictive baselines. This supplement repairs two common prerequisites—fitted preprocessing and information availability—so that a promising score is not accepted before its construction is understood.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Fit a transformation only on the training digit pixels.</p>
+<pre><code class="language-python">from shape_lab.data import load_digit_data
+from sklearn.preprocessing import StandardScaler
+train, _, _ = load_digit_data('train')
+valid, _, _ = load_digit_data('validation')
+X_train = train.reshape(len(train), -1)
+X_valid = valid.reshape(len(valid), -1)
+scaler = StandardScaler().fit(X_train)
+assert np.allclose(scaler.mean_, X_train.mean(axis=0))
+Z_valid = scaler.transform(X_valid)
+print('training rows:', len(train), 'validation rows:', len(valid))
+print('mean absolute validation-feature mean:', np.abs(Z_valid.mean(0)).mean())
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Build windows from a real historical time series and attach the last included year.</p>
+<pre><code class="language-python">import pandas as pd
+from shape_lab.features import delay_embedding
+series = pd.read_csv(ROOT/'data/time_series/sunspots_yearly.csv')
+values = series.SUNACTIVITY.to_numpy()
+windows = delay_embedding(values, dimension=3, lag=1)
+available_year = series.YEAR.to_numpy()[2:]
+assert len(windows)==len(available_year)
+assert np.array_equal(windows[0], values[:3])
+display(pd.DataFrame({'available_year': available_year[:5],
+                      'older': windows[:5,0], 'previous': windows[:5,1], 'current': windows[:5,2]}))
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Record that this is feature construction, not an independently evaluated forecasting model.</p>
+<pre><code class="language-python">result = {'scaler_fit_rows': len(train), 'validation_transform_rows': len(valid),
+          'time_series_window_count': len(windows), 'first_available_year': int(available_year[0]),
+          'forecast_validation_performed': False, 'adjacent_windows_independent': False}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="11t1">11.T1</h3>
+<p>Must a validation partition transformed by a training-fitted StandardScaler have zero mean?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>No. Only the fitted training distribution is centered according to its estimated means. Re-centering validation independently changes the fitted transformation and can hide distribution shift.</p>
+</details>
+<h3 id="11t2">11.T2</h3>
+<p>A forward window begins in 1900 and ends in 1902. When can it first be used by a past-only prediction system?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>At the availability time of the last included observation, not 1900. The example attaches year 1902, while real systems would also need publication or sensor arrival times.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/11_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

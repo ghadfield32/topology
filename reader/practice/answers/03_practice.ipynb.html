@@ -1,0 +1,104 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 03 — Reference coding solutions · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../practice/answers/03_practice.ipynb">practice/answers/03_practice.ipynb</a> · Readable source notation; no online math renderer.</p><h1>Reference answers</h1><p>Attempt the independent work first.</p><details><summary>Reveal worked answers and outputs</summary><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="stage-03--reference-coding-solutions">Stage 03 — Reference coding solutions</h1>
+<p>These are instructor reference implementations, not evidence of your independent mastery. Run after attempting your own version. All examples use explicit small inputs and the declared dataset partitions.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json
+from itertools import combinations
+import numpy as np
+import pandas as pd
+ROOT=next((p for p in [Path.cwd(),*Path.cwd().parents] if (p/&#x27;data/manifest.json&#x27;).exists() and (p/&#x27;src/shape_lab&#x27;).exists()),None)
+if ROOT is None: raise RuntimeError(&#x27;Open this notebook inside the extracted course folder.&#x27;)
+sys.path.insert(0,str(ROOT/&#x27;src&#x27;))
+from shape_lab.data import load_iris_data,load_digit_data,digit_example
+from shape_lab.algebra import closure,validate_complex,rank_mod2,boundary_matrix,betti_numbers
+from shape_lab.topology import component_labels
+from shape_lab.persistence import ordered_filtration,rips_filtration,reduce_boundary,persistent_homology,diagram,pixel_filtration,finite_bottleneck
+print(&#x27;Working inside&#x27;,ROOT.name,&#x27;— no network data downloads.&#x27;)</code></pre><div class="output"><pre>Working inside course — no network data downloads.
+</pre></div></section><h2 id="03c1--pull-back-a-set-through-a-map">03.C1 — Pull back a set through a map</h2>
+<p>Given a total mapping dictionary and a codomain subset V, return its inverse image.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Iterate over dictionary input-output pairs.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>def pullback(mapping,V):
+    return {x for x,y in mapping.items() if y in V}</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>assert pullback({&#x27;a&#x27;:0,&#x27;b&#x27;:1,&#x27;c&#x27;:1},{1})=={&#x27;b&#x27;,&#x27;c&#x27;}
+assert pullback({&#x27;a&#x27;:0},set())==set()
+print(&quot;Inverse images computed&quot;)</code></pre><div class="output"><pre>Inverse images computed
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> The operation works even when several inputs share an output. It is exactly the operation appearing in the topological definition of continuity.</p>
+<h2 id="03c2--check-continuity-on-finite-spaces">03.C2 — Check continuity on finite spaces</h2>
+<p>Assume the supplied open-set collections are valid topologies and mapping is total. Return whether every codomain open set has an open inverse image.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Do not test only points; test all declared open subsets of the codomain.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>def continuous_on_finite(mapping,domain_opens,codomain_opens):
+    T=set(map(frozenset,domain_opens))
+    return all(frozenset(x for x,y in mapping.items() if y in V) in T for V in codomain_opens)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>discrete=[set(),{0},{1},{0,1}];indiscrete=[set(),{0,1}];f={0:0,1:1}
+assert continuous_on_finite(f,discrete,indiscrete)
+assert not continuous_on_finite(f,indiscrete,discrete)
+print(&quot;Identity continuous in one direction, not the reverse&quot;)</code></pre><div class="output"><pre>Identity continuous in one direction, not the reverse
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> The identity is a bijection of the underlying sets, yet changing the topologies can make its inverse discontinuous. This is a concrete reason that continuous bijection is not the definition of homeomorphism.</p>
+<h2 id="03c3--construct-an-inverse-when-it-exists">03.C3 — Construct an inverse when it exists</h2>
+<p>Return the inverse dictionary of a finite injective mapping. Raise ValueError when two inputs share an output.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Compare the number of unique outputs with the number of inputs.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 7</p><pre><code>def inverse_mapping(mapping):
+    if len(set(mapping.values()))!=len(mapping):
+        raise ValueError(&#x27;The map is not injective.&#x27;)
+    return {y:x for x,y in mapping.items()}</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 8</p><pre><code>assert inverse_mapping({&#x27;a&#x27;:2,&#x27;b&#x27;:7})=={2:&#x27;a&#x27;,7:&#x27;b&#x27;}
+try: inverse_mapping({&#x27;a&#x27;:1,&#x27;b&#x27;:1})
+except ValueError: pass
+else: raise AssertionError(&#x27;Non-injective map accepted&#x27;)
+print(&quot;Inverse and non-injective case checked&quot;)</code></pre><div class="output"><pre>Inverse and non-injective case checked
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> This constructs an inverse onto the image. Surjectivity onto a separately declared larger codomain remains a different condition; dictionary inversion alone does not prove it.</p>
+<h2 id="03c4--count-graph-components">03.C4 — Count graph components</h2>
+<p>Count connected components of a symmetric boolean adjacency matrix using a search. An isolated vertex is its own component.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Start a new search only from an unvisited vertex.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 9</p><pre><code>def graph_component_count(A):
+    A=np.asarray(A,dtype=bool);seen=set();count=0
+    for start in range(len(A)):
+        if start in seen: continue
+        count+=1;stack=[start];seen.add(start)
+        while stack:
+            v=stack.pop()
+            for w in np.flatnonzero(A[v]):
+                if int(w) not in seen:
+                    seen.add(int(w));stack.append(int(w))
+    return count</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 10</p><pre><code>assert graph_component_count([[0,1,0],[1,0,0],[0,0,0]])==2
+X=load_iris_data().iloc[:12,1:5].to_numpy()
+D=np.linalg.norm(X[:,None,:]-X[None,:,:],axis=2)
+A=D&lt;=.3
+assert graph_component_count(A)==len(np.unique(component_labels(A)))
+print(&quot;Real-data threshold graph components:&quot;,graph_component_count(A))</code></pre><div class="output"><pre>Real-data threshold graph components: 5
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> This counts components of the chosen finite graph, not plant species. Different thresholds give different graphs. For the geometric realization of a finite graph, connected and path-connected components agree.</p>
+<h2 id="03c5--measure-information-lost-in-a-projection">03.C5 — Measure information lost in a projection</h2>
+<p>For a feature table X and distinct rows i,j, return (full distance, distance after retaining the first two columns).</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>A coordinate projection discards some squared terms from the Euclidean distance.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 11</p><pre><code>def projection_distances(X,i,j):
+    delta=np.asarray(X,dtype=float)[i]-np.asarray(X,dtype=float)[j]
+    return float(np.linalg.norm(delta)),float(np.linalg.norm(delta[:2]))</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 12</p><pre><code>assert projection_distances([[0,0,0],[0,0,5]],0,1)==(5.,0.)
+X=load_iris_data().iloc[:,1:5].to_numpy()
+full,projected=projection_distances(X,0,75)
+assert projected&lt;=full+1e-12
+print(&quot;Measured pair full/projected distances:&quot;,full,projected)</code></pre><div class="output"><pre>Measured pair full/projected distances: 3.59722114972099 1.5811388300841898
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> A continuous projection can identify points that were distinct. A two-dimensional display is therefore not a certificate that the original higher-dimensional dataset has the same topology.</p>
+</details><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

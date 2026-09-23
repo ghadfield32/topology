@@ -1,0 +1,11 @@
+{
+  "scaler_fit_rows": 1077,
+  "validation_transform_rows": 360,
+  "time_series_window_count": 307,
+  "first_available_year": 1702,
+  "forecast_validation_performed": false,
+  "adjacent_windows_independent": false,
+  "stage": 11,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real train/validation digit pixels and the bundled historical annual sunspot series; no new forecast claim."
+}

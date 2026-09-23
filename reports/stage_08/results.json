@@ -1,0 +1,23 @@
+{
+  "square_H1": [
+    [
+      1.0,
+      1.4142135623730951
+    ]
+  ],
+  "square_truncated_H1": [
+    [
+      1.0,
+      null
+    ]
+  ],
+  "infinite_endpoint_encoding": "null",
+  "real_sample_id": 0,
+  "real_H1": [
+    [
+      0.5,
+      1.0
+    ]
+  ],
+  "pixel_axis": "f=1-intensity/16"
+}

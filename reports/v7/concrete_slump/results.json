@@ -1,0 +1,13 @@
+{
+  "test_n": 26,
+  "ridge_mae_mpa": 2.2032398132268396,
+  "ridge_rmse_mpa": 2.6220690813285468,
+  "mean_baseline_mae_mpa": 6.140502958579885,
+  "nominal_coverage": 0.9,
+  "empirical_test_coverage": 0.9615384615384616,
+  "covered_count": 25,
+  "calibration_n": 25,
+  "rank": 24,
+  "radius_mpa": 5.339996311920174,
+  "width_mpa": 10.679992623840349
+}

@@ -1,0 +1,182 @@
+{
+  "status": "pending_actual_book_text",
+  "verified_full_book": false,
+  "entries": [
+    {
+      "supplied_title": "Listening to Shape: What Does \u201cClose\u201d Mean?",
+      "mapped_stages": "02",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Good Maps Between Worlds (intuitive and formal)",
+      "mapped_stages": "03",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Rules of Combination",
+      "mapped_stages": "01, 04",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Paths, Loops, and Holes (intuitive and formal)",
+      "mapped_stages": "04, 06",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "From Loops to Surfaces",
+      "mapped_stages": "04, 05",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Counting Holes Without Paths",
+      "mapped_stages": "06",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Worlds That Change",
+      "mapped_stages": "07",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Remembering What Lasts",
+      "mapped_stages": "08\u201310",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Shapes from Data",
+      "mapped_stages": "07, 11",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Seeing Structure in the World",
+      "mapped_stages": "11, 12",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Learning to Listen",
+      "mapped_stages": "00, 12",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Looking Beneath the Surface",
+      "mapped_stages": "01\u201306",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "The Mathematics of Closeness",
+      "mapped_stages": "02",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Actions, Combination, and Groups",
+      "mapped_stages": "04",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Surfaces, Simplices, and Higher-Dimensional Shape",
+      "mapped_stages": "05, 06",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Homology, Betti Numbers, and the Shape of Information",
+      "mapped_stages": "06",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Filtrations and Persistent Homology",
+      "mapped_stages": "07\u201310",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Building Shape from Data",
+      "mapped_stages": "07, 11",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Topology in the Real World: Listening for Structure",
+      "mapped_stages": "10\u201312",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Continuing the Journey",
+      "mapped_stages": "12; deepening guide",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Epilogue",
+      "mapped_stages": "Pending actual text",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    },
+    {
+      "supplied_title": "Appendix A: A Short Mathematical Toolbox",
+      "mapped_stages": "00, 01",
+      "actual_section": null,
+      "new_material": null,
+      "evidence": null,
+      "status": "not_audited"
+    }
+  ]
+}

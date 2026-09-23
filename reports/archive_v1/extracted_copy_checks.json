@@ -1,0 +1,16 @@
+{
+  "status": "PASSED",
+  "verification": "Copy of release-selected files, run from a separate temporary directory with that copy on PYTHONPATH.",
+  "test_result": "79 passed, 2 skipped",
+  "module_resolution": "Extracted-copy source directory, not the original editable installation.",
+  "skipped": "Ripser and GUDHI absent.",
+  "excluded_from_archive": [
+    "__pycache__",
+    ".pytest_cache",
+    ".venv",
+    ".git",
+    "*.egg-info",
+    "*.pyc",
+    "*.pyo"
+  ]
+}

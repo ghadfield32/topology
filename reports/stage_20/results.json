@@ -1,0 +1,42 @@
+{
+  "schema": "shape_learning_spatial_evidence_v3",
+  "source_npz_sha256": "2ec813e33f86bcb4d1eb1bd90245f438b0841fd5b1ab9136a0132f0b28dfe469",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "numpy": "2.3.5"
+  },
+  "real_static_data": {
+    "source": "scikit-image 0.26.0 stereo_motorcycle; Middlebury 2014",
+    "reference_derived_cloud_rows": 860,
+    "independent_stereo_matcher_metrics": {
+      "eligible": 441,
+      "evaluated": 441,
+      "coverage": 1.0,
+      "mean_absolute_error_px": 6.628794520890632,
+      "median_absolute_error_px": 0.49462890625,
+      "bad_fraction": 0.31065759637188206,
+      "bad_threshold_px": 2.0
+    }
+  },
+  "mathematical_controls": {
+    "chart_roundtrip": 2.3551386880256624e-16,
+    "rigid_roundtrip_m": 1.3517848686956847e-15,
+    "similarity_holdout_m": 9.47996065121654e-16
+  },
+  "executed_CPU_systems": true,
+  "VGGT_inference_executed": false,
+  "real_sports_event_evaluation_executed": false,
+  "unassessed": [
+    "Learner's own proofs and coding",
+    "Unseen-scene metric reconstruction",
+    "Independent sports event labels",
+    "Actual book chapter audit"
+  ],
+  "not_inferred": [
+    "Calibrated uncertainty from model confidence",
+    "Real-time 4090 throughput",
+    "Consumer fisheye accuracy",
+    "Clinical or public-safety suitability"
+  ]
+}

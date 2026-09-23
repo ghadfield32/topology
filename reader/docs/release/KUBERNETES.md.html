@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kubernetes from zero: inspect, validate, schedule, finish, preserve · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/KUBERNETES.md">docs/release/KUBERNETES.md</a> · Readable source notation; no online math renderer.</p><h1 id="kubernetes-from-zero-inspect-validate-schedule-finish-preserve">Kubernetes from zero: inspect, validate, schedule, finish, preserve</h1>
+<h2 id="the-objects-and-what-they-mean">The objects and what they mean</h2>
+<p>A <strong>cluster</strong> is a Kubernetes control plane plus worker capacity. A <strong>context</strong> selects the cluster and identity your client will use. A <strong>namespace</strong> scopes this exercise's objects. A <strong>Pod</strong> runs containers together. A <strong>Deployment</strong> maintains a long-running application. A <strong>Job</strong> runs work expected to finish. A <strong>Service</strong> supplies a stable route to Pods. A <strong>PersistentVolumeClaim (PVC)</strong> asks for storage that outlives one Pod.</p>
+<p>The reader is a Deployment because it stays available. Acceptance is a Job because it must finish with a visible status. These are separate questions: configuration validity, API admission, scheduling, storage binding, process startup, completed tests, completed notebook, and reachable reader. Passing one does not imply the rest.</p>
+<h2 id="safe-local-scope">Safe local scope</h2>
+<p>The supplied tool accepts only an explicitly selected <code>kind-</code> context and a new non-system namespace. A context name is a guard against accidents, not proof that an arbitrary context is safe. Inspect <code>kubectl config view --minify --context ...</code> yourself. Do not use this teaching script with a work/production cluster. No cluster or namespace is deleted automatically.</p>
+<p>The deployment uses a restricted namespace policy, non-root containers, no mounted service-account token, no added capabilities, no privilege escalation, RuntimeDefault seccomp, a read-only root, explicit resources, and temporary scratch storage. No hostPath or host-network access is accepted by the project validator. ClusterIP exposes no public endpoint.</p>
+<p>Only the acceptance Job mounts <code>learner-work</code>. The public reader does not attach the private results PVC; this also avoids an unnecessary second consumer of single-writer storage. A valid PVC declaration still requires a real storage class/provisioner at runtime.</p>
+<h2 id="step-1-inspect-and-check-without-a-cluster">Step 1: inspect and check without a cluster</h2>
+<pre><code class="language-bash">uv run --no-sync python tools/k8s_verify.py --static --profile physics --namespace shape-study01 --output my_work/k8s_static01
+</code></pre>
+<p>Read the generated <code>resources.json</code> and <code>verification.json</code>. This checks project invariants, not the Kubernetes API schema. The static validator rejects privileged/root containers, host namespace/path access, missing restrictions, mixed namespaces, duplicate identities and changed retry policies. A static pass is reported as <code>static_only</code>, never <code>cluster_verified</code>.</p>
+<h2 id="step-2-prepare-an-explicitly-disposable-local-cluster">Step 2: prepare an explicitly disposable local cluster</h2>
+<p>Install Docker, kind, and a compatible kubectl. Record their actual versions. Follow <a href="DOCKER.md.html">Docker setup</a> to build <code>listening-to-shape:12</code> from a real lock first.</p>
+<pre><code class="language-bash">kind create cluster --name shape-learning
+kind load docker-image listening-to-shape:12 --name shape-learning
+kubectl config view --minify --context kind-shape-learning
+</code></pre>
+<p>Creating a kind cluster consumes local resources. Use a new approved name if this one exists. This course does not claim a Kubernetes version range was tested; CI's actual client/server/image versions must be saved with each deployment.</p>
+<h2 id="step-3-request-live-acceptance-explicitly">Step 3: request live acceptance explicitly</h2>
+<pre><code class="language-bash">uv run --no-sync python tools/k8s_verify.py --context kind-shape-learning --namespace shape-study01 --image listening-to-shape:12 --profile physics --apply --output my_work/k8s_live01
+</code></pre>
+<p>The tool checks runtime readiness and namespace absence. It creates only the requested Namespace before doing server-side dry-run for the full manifest, then applies and waits for the reader and Job. Failure preserves resources and diagnostics for inspection. There is no silent retry against another cluster or namespace.</p>
+<p>The Job uses <code>backoffLimit: 0</code> and an output directory based on its Pod UID. It runs the requested-profile tests and Stage 00 in fresh kernels, reads the child <code>tests.json</code> and <code>execution.json</code>, validates counts/scope/source continuity, and prints <code>SHAPE_ACCEPTANCE=</code> with structured evidence. The host verifier checks the child evidence again. A pair of zero exit codes alone is insufficient. Full profile rejects skipped comparisons. This Job is a bounded acceptance exercise, not an all-notebook distributed benchmark.</p>
+<h2 id="step-4-inspect-access-and-export-results">Step 4: inspect access and export results</h2>
+<pre><code class="language-bash">kubectl --context kind-shape-learning -n shape-study01 get pods,jobs,pvc
+kubectl --context kind-shape-learning -n shape-study01 logs job/course-acceptance
+kubectl --context kind-shape-learning -n shape-study01 port-forward service/course-reader 8000:8000
+</code></pre>
+<p>Visit <code>http://localhost:8000/START_HERE.html</code> and follow an actual lesson and figure link. Readiness probes do not independently establish your browser path. Record this manual check separately. Use the Job's logged output path when exporting results from persistent storage. A completed Job's container is not generally available for <code>kubectl cp</code>; use a separately reviewed temporary reader Pod mounting the existing PVC, or your local storage provider's supported export procedure. Avoid concurrent conflicting single-writer mounts. Inspect copied hashes before cleanup.</p>
+<p><strong>Do not delete the namespace, PVC, or kind cluster until your work is exported and checked.</strong> Namespace deletion can delete claims and their underlying storage depending on policy. Cleanup is a separate explicit action, never part of acceptance.</p>
+<h2 id="diagnose-the-layer-that-failed">Diagnose the layer that failed</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Inspect next</th>
+<th>Do not infer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Client missing/unreachable server</td>
+<td>Tool versions and selected context</td>
+<td>That the manifest was rejected</td>
+</tr>
+<tr>
+<td>Server dry-run rejected</td>
+<td>The exact admission/schema error</td>
+<td>That Python tests failed</td>
+</tr>
+<tr>
+<td>Pending Pod</td>
+<td>Scheduler events, requests, architecture</td>
+<td>That startup code ran</td>
+</tr>
+<tr>
+<td>Pending PVC</td>
+<td>StorageClass/provisioner and access mode</td>
+<td>That persistence is configured successfully</td>
+</tr>
+<tr>
+<td>ImagePullBackOff</td>
+<td>Image identity and kind image load</td>
+<td>That the image's Python environment was tested</td>
+</tr>
+<tr>
+<td>Job Failed</td>
+<td>Child logs and detailed evidence</td>
+<td>That retries should overwrite output</td>
+</tr>
+<tr>
+<td>Reader not reachable</td>
+<td>Pod readiness, Service selector, port-forward</td>
+<td>That opening a public port is required</td>
+</tr>
+</tbody>
+</table>
+<h2 id="delivery-status">Delivery status</h2>
+<p>This host has no Docker, kind, or kubectl. Project-policy and failure-reporting tests ran; live server validation, image scheduling, PVC binding, cluster Job execution, and cluster browser access did not. The exact statuses remain in the current verification report. Configuration presence is not deployment evidence.</p>
+<p>Primary references: <a href="https://kubernetes.io/docs/concepts/workloads/controllers/job/">https://kubernetes.io/docs/concepts/workloads/controllers/job/</a> ; <a href="https://kubernetes.io/docs/concepts/security/pod-security-standards/">https://kubernetes.io/docs/concepts/security/pod-security-standards/</a> ; <a href="https://kind.sigs.k8s.io/docs/user/quick-start/">https://kind.sigs.k8s.io/docs/user/quick-start/</a> .</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

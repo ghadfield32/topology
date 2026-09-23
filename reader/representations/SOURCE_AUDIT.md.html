@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Representation learning: supplied notes, checked sources, and course additions · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../representations/SOURCE_AUDIT.md">representations/SOURCE_AUDIT.md</a> · Readable source notation; no online math renderer.</p><h1 id="representation-learning-supplied-notes-checked-sources-and-course-additions">Representation learning: supplied notes, checked sources, and course additions</h1>
+<p>Checked 2026-09-22. The supplied <code>Pasted markdown(20260922-060459).md</code> is the requested conceptual basis. This file distinguishes that material from primary-source verification and original teaching experiments. It does not silently replace the source's claims.</p>
+<h2 id="primary-sources">Primary sources</h2>
+<ul>
+<li>Balestriero &amp; LeCun, <strong>LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics</strong>, arXiv:2511.08544v3, November 14, 2025. <a href="https://arxiv.org/html/2511.08544v3">https://arxiv.org/html/2511.08544v3</a> . Sections 4–5 supply the SIGReg/projection/statistic construction; Section 3 states the assumptions behind the theoretical claims. Official implementation: <a href="https://github.com/galilai-group/lejepa">https://github.com/galilai-group/lejepa</a> . Not installed or runtime-compared here.</li>
+<li>Bardes, Ponce &amp; LeCun, <strong>VICReg</strong>, <a href="https://arxiv.org/abs/2105.04906">https://arxiv.org/abs/2105.04906</a> . Variance/invariance/covariance construction; the original paper is not a guarantee for every independently modified implementation.</li>
+<li>Zbontar et al., <strong>Barlow Twins</strong>, <a href="https://arxiv.org/abs/2103.03230">https://arxiv.org/abs/2103.03230</a> . Cross-correlation objective.</li>
+<li>Chen et al., <strong>SimCLR</strong>, <a href="https://arxiv.org/abs/2002.05709">https://arxiv.org/abs/2002.05709</a> . Two-view contrastive representation learning.</li>
+<li>Grill et al., <strong>BYOL</strong>, <a href="https://arxiv.org/abs/2006.07733">https://arxiv.org/abs/2006.07733</a> . Online/target learning and EMA updates.</li>
+<li>Caron et al., <strong>DINO</strong>, <a href="https://arxiv.org/abs/2104.14294">https://arxiv.org/abs/2104.14294</a> . Self-distillation with vision transformers.</li>
+<li>Assran et al., <strong>I-JEPA</strong>, <a href="https://arxiv.org/abs/2301.08243">https://arxiv.org/abs/2301.08243</a> . Image-region representation prediction.</li>
+<li>Bardes et al., <strong>Revisiting Feature Prediction for Learning Visual Representations from Video</strong>, <a href="https://arxiv.org/abs/2404.08471">https://arxiv.org/abs/2404.08471</a> . V-JEPA background; masking must not be equated with guaranteed past-only forecasting.</li>
+<li>Loshchilov &amp; Hutter, <strong>Decoupled Weight Decay Regularization</strong>, <a href="https://arxiv.org/abs/1711.05101">https://arxiv.org/abs/1711.05101</a> . Distinguishes decoupled decay from an L2 penalty under adaptive optimization.</li>
+</ul>
+<h2 id="explicit-reconciliations">Explicit reconciliations</h2>
+<table>
+<thead>
+<tr>
+<th>Supplied wording / emphasis</th>
+<th>Checked qualification or original teaching addition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SIGReg means Sketched Isotropic Gaussian Regularization.</td>
+<td>Confirmed by the primary LeJEPA paper. It regularizes embeddings; it is not sigmoid regression.</td>
+</tr>
+<tr>
+<td>LeJEPA is expanded as “Lean JEPA.”</td>
+<td>The paper's introduction explicitly names <strong>Latent-Euclidean JEPA</strong> and also calls the method lean. We use its explicit expansion.</td>
+</tr>
+<tr>
+<td>An isotropic Gaussian is illustrated by N(0,I).</td>
+<td>That is the standard target. A Gaussian isotropic about its mean more generally has covariance sigma²I.</td>
+</tr>
+<tr>
+<td>Each dimension has “useful variance”; spreading gives a “healthy/informative” latent.</td>
+<td>Variance and usefulness are separate. R04 includes label-independent Gaussian noise; R01 includes dependent/duplicated coordinates.</td>
+</tr>
+<tr>
+<td>Whitening gives zero mean and identity covariance.</td>
+<td>At the fitted sample, under full-rank and stated denominator conventions. It does not establish Gaussianity or useful semantics.</td>
+</tr>
+<tr>
+<td>Cramér–Wold motivates repeated 1-D checks.</td>
+<td>The characterization concerns all projections of population laws. Finite random directions/frequencies/samples are approximations, not proof or a calibrated p-value.</td>
+</tr>
+<tr>
+<td>SIGReg prevents collapse.</td>
+<td>The paper motivates nondegenerate optima. Our exact zero-cloud control has positive penalty and zero first derivative; no universal training-trajectory claim is made.</td>
+</tr>
+<tr>
+<td>V-JEPA is expressed as past latents predicting future latents.</td>
+<td>This is a proposed causal task, not the definition of every masked-video JEPA setup. R05 requires an explicit time cutoff.</td>
+</tr>
+<tr>
+<td>EMA, detach, and teacher/student mechanisms help avoid pathological solutions.</td>
+<td>Their numerical behavior is demonstrated, but these mechanisms alone do not establish representation quality.</td>
+</tr>
+<tr>
+<td>SIGReg is related to VICReg, Barlow Twins, BYOL, DINO, and contrastive learning.</td>
+<td>R03 compares roles. Only agreement-only and agreement-plus-SIGReg encoders are trained in R04; no full-method benchmarks are claimed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mathematical-fidelity-of-the-teaching-implementation">Mathematical fidelity of the teaching implementation</h2>
+<p>The code implements a single-process, fixed-grid projected characteristic-function discrepancy with a standard Gaussian target. Numpy and Torch values are compared; Torch gradients are checked by finite differences. A different O(N²) Gaussian-integral formula independently checks quadrature on small 1-D samples. The two-view agreement objective and all scale factors are stated explicitly. No paper equation with an unexamined proportionality is silently copied as an exact identity.</p>
+<p>The implementation lacks official-library parity tests, distributed synchronization, large-image backbones, original benchmark protocols, and original hyperparameter sweeps. It must not be described as a complete reproduction of LeJEPA or the other papers.</p>
+<h2 id="evidence-levels">Evidence levels</h2>
+<ol>
+<li>Supplied notes: topic intent and intuition; not runtime or theorem evidence.</li>
+<li>Primary paper/docs: source-specific definitions and reported claims.</li>
+<li>Original derivation: worked counterexamples and identities with stated assumptions.</li>
+<li>Executed controls: measured numerical results in this package/environment.</li>
+<li>Domain application: only established when its own independent study runs and passes its predeclared checks.</li>
+</ol>
+<p>All historical data licenses and acquisition limitations remain attached to the original snapshots. No new full sports-video, wearable, or tracking data are bundled in this release.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

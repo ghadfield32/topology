@@ -1,0 +1,20 @@
+
+==================================== ERRORS ====================================
+______________ ERROR collecting tests/test_industry_exercises.py _______________
+tests/test_industry_exercises.py:8: in <module>
+    EX=json.loads(P.read_text())
+                  ^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:548: in read_text
+    return PathBase.read_text(self, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_abc.py:632: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/pathlib/_local.py:539: in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/v6_build/listening_to_shape_lab/industry/exercises.json'
+=========================== short test summary info ============================
+ERROR tests/test_industry_exercises.py - FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/v6_build/listening_to_shape_lab/industry/exercises.json'
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+1 error in 0.09s

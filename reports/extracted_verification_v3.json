@@ -1,0 +1,11 @@
+{
+  "status": "PASSED",
+  "test_passed": 231,
+  "test_skipped": 2,
+  "test_failed": 0,
+  "fresh_extraction": true,
+  "platform": "Linux",
+  "command": "PYTHONPATH=src python -m pytest -q -ra",
+  "release_structure_audit": "PASSED",
+  "scope": "Fresh path verification of release code/data before adding verification metadata; final ZIP integrity and file hashes checked separately."
+}

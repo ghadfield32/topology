@@ -1,0 +1,302 @@
+[
+  {
+    "id": "21.C1",
+    "stage": 21,
+    "name": "centered_rate",
+    "signature": "f, x, h",
+    "spec": "Estimate f′(x) with the centered two-point difference; require finite positive h.",
+    "hint": "Subtract symmetric values before dividing by 2h.",
+    "code": "def centered_rate(f, x, h):\n    if not np.isfinite(h) or h<=0: raise ValueError('Positive finite spacing required.')\n    return (f(x+h)-f(x-h))/(2*h)",
+    "checks": "assert abs(centered_rate(np.sin,.3,1e-4)-np.cos(.3))<1e-7\nassert centered_rate(lambda x:x*x,2.,.1)==pytest.approx(4.)\nwith pytest.raises(ValueError): centered_rate(np.sin,0.,0.)"
+  },
+  {
+    "id": "21.C2",
+    "stage": 21,
+    "name": "spring_rhs",
+    "signature": "z, mass, stiffness",
+    "spec": "Return (q′,p′) for canonical state (q,p) and H=p²/(2m)+kq²/2; mass must be positive.",
+    "hint": "Momentum is not velocity: q′=p/m.",
+    "code": "def spring_rhs(z, mass, stiffness):\n    z=np.asarray(z,dtype=float)\n    if z.shape!=(2,) or not np.isfinite(z).all() or not np.isfinite(mass) or mass<=0 or not np.isfinite(stiffness) or stiffness<0: raise ValueError('Invalid spring state or parameters.')\n    return np.array([z[1]/mass,-stiffness*z[0]])",
+    "checks": "np.testing.assert_allclose(spring_rhs([2.,6.],2.,3.),[3.,-6.])\nwith pytest.raises(ValueError):spring_rhs([1,2],0,1)"
+  },
+  {
+    "id": "21.C3",
+    "stage": 21,
+    "name": "measured_secant",
+    "signature": "x0, y0, x1, y1",
+    "spec": "Calculate a measured response-per-input secant; reject coincident inputs.",
+    "hint": "A secant is not necessarily a time derivative.",
+    "code": "def measured_secant(x0, y0, x1, y1):\n    a=np.asarray([x0,y0,x1,y1],dtype=float)\n    if not np.isfinite(a).all() or x0==x1: raise ValueError('Finite observations with distinct inputs required.')\n    return (y1-y0)/(x1-x0)",
+    "checks": "assert measured_secant(24.41,.591,34.82,1.547)==pytest.approx(.956/10.41)\nwith pytest.raises(ValueError):measured_secant(1,2,1,3)"
+  },
+  {
+    "id": "22.C1",
+    "stage": 22,
+    "name": "local_quadratic_flow",
+    "signature": "x, t",
+    "spec": "Evaluate x/(1-tx) only on the solution domain 1-tx>0.",
+    "hint": "An algebraic value beyond blow-up is not a solution continuation.",
+    "code": "def local_quadratic_flow(x, t):\n    x=np.asarray(x,dtype=float)\n    if not np.isfinite(x).all() or not np.isfinite(t) or np.any(1-t*x<=0):raise ValueError('Outside local flow domain.')\n    return x/(1-t*x)",
+    "checks": "x=np.array([-.3,.2]);np.testing.assert_allclose(local_quadratic_flow(local_quadratic_flow(x,.5),-.5),x)\nwith pytest.raises(ValueError):local_quadratic_flow(2.,.6)"
+  },
+  {
+    "id": "22.C2",
+    "stage": 22,
+    "name": "invert_coupling",
+    "signature": "Y",
+    "spec": "Invert the stage coupling on an N×2 finite array.",
+    "hint": "The first coordinate is unchanged, so solve the second scalar equation.",
+    "code": "def invert_coupling(Y):\n    Y=np.asarray(Y,dtype=float)\n    if Y.ndim!=2 or Y.shape[1]!=2 or not np.isfinite(Y).all():raise ValueError('N by 2 finite input required.')\n    x=Y[:,0]\n    return np.column_stack([x,(Y[:,1]-.5*np.sin(x))*np.exp(-.2*np.tanh(x))])",
+    "checks": "from shape_lab.physics.classical import coupling\nX=np.array([[.2,1.],[-1.,2.]])\nnp.testing.assert_allclose(invert_coupling(coupling(X)[0]),X)"
+  },
+  {
+    "id": "22.C3",
+    "stage": 22,
+    "name": "coupling_log_density",
+    "signature": "log_px, x",
+    "spec": "For y=F(x), return log p_Y(y) from log p_X(x); x is first coordinate.",
+    "hint": "Subtract the log absolute determinant.",
+    "code": "def coupling_log_density(log_px, x):\n    return np.asarray(log_px)-.2*np.tanh(np.asarray(x))",
+    "checks": "np.testing.assert_allclose(coupling_log_density([-1.,-2.],[0.,1.]),[-1.,-2.-.2*np.tanh(1.)])"
+  },
+  {
+    "id": "23.C1",
+    "stage": 23,
+    "name": "canonical_momentum",
+    "signature": "mass, velocity",
+    "spec": "Compute momentum for the stated constant-positive-mass kinetic model.",
+    "hint": "Differentiate m*v²/2 with respect to v.",
+    "code": "def canonical_momentum(mass, velocity):\n    if not np.isfinite(mass) or mass<=0:raise ValueError('Positive mass required.')\n    v=np.asarray(velocity,dtype=float)\n    if not np.isfinite(v).all():raise ValueError('Finite velocity required.')\n    return mass*v",
+    "checks": "assert canonical_momentum(2.,3.)==6.\nwith pytest.raises(ValueError):canonical_momentum(0.,1.)"
+  },
+  {
+    "id": "23.C2",
+    "stage": 23,
+    "name": "hamiltonian_from_lagrangian",
+    "signature": "q, p, mass, stiffness",
+    "spec": "Return the quadratic spring H after the Legendre transform.",
+    "hint": "Substitute v=p/m into p*v-L.",
+    "code": "def hamiltonian_from_lagrangian(q, p, mass, stiffness):\n    if not np.isfinite([q,p,mass,stiffness]).all() or mass<=0 or stiffness<0:raise ValueError('Invalid inputs.')\n    return p*p/(2*mass)+stiffness*q*q/2",
+    "checks": "assert hamiltonian_from_lagrangian(2.,6.,2.,3.)==15."
+  },
+  {
+    "id": "23.C3",
+    "stage": 23,
+    "name": "regular_lagrangian_acceleration",
+    "signature": "L_q, L_vq, L_vv, velocity",
+    "spec": "Calculate scalar autonomous Euler–Lagrange acceleration; reject a near-zero velocity Hessian.",
+    "hint": "Expand the time derivative of L_v using the chain rule.",
+    "code": "def regular_lagrangian_acceleration(L_q, L_vq, L_vv, velocity):\n    if not np.isfinite([L_q,L_vq,L_vv,velocity]).all() or abs(L_vv)<1e-12:raise ValueError('Regular finite scalar Lagrangian required.')\n    return (L_q-L_vq*velocity)/L_vv",
+    "checks": "assert regular_lagrangian_acceleration(-6,0,2,.4)==-3.\nwith pytest.raises(ValueError):regular_lagrangian_acceleration(1,0,0,2)"
+  },
+  {
+    "id": "24.C1",
+    "stage": 24,
+    "name": "kick_drift",
+    "signature": "z, h",
+    "spec": "Advance the dimensionless oscillator with kick-drift symplectic Euler.",
+    "hint": "Use the new momentum, not the old momentum, for position.",
+    "code": "def kick_drift(z, h):\n    q,p=np.asarray(z,dtype=float)\n    pn=p-h*q\n    return np.array([q+h*pn,pn])",
+    "checks": "np.testing.assert_allclose(kick_drift([1,0],.2),[.96,-.2])\nassert .5*np.sum(kick_drift([1,0],.2)**2)==pytest.approx(.4808)"
+  },
+  {
+    "id": "24.C2",
+    "stage": 24,
+    "name": "unit_energy",
+    "signature": "z",
+    "spec": "Compute H=(q²+p²)/2 along the final axis of an array.",
+    "hint": "Preserve batch dimensions.",
+    "code": "def unit_energy(z):\n    z=np.asarray(z,dtype=float)\n    if z.ndim<1 or z.shape[-1]!=2 or not np.isfinite(z).all():raise ValueError('Finite (...,2) state required.')\n    return .5*np.sum(z*z,axis=-1)",
+    "checks": "np.testing.assert_allclose(unit_energy([[1,0],[.96,-.2]]),[.5,.4808])"
+  },
+  {
+    "id": "24.C3",
+    "stage": 24,
+    "name": "linear_symplectic_error",
+    "signature": "M",
+    "spec": "Return Frobenius norm of MᵀJM-J in q-first, p-second ordering.",
+    "hint": "Construct the block skew matrix; determinant alone is insufficient.",
+    "code": "def linear_symplectic_error(M):\n    M=np.asarray(M,dtype=float)\n    if M.ndim!=2 or M.shape[0]!=M.shape[1] or M.shape[0]%2 or not np.isfinite(M).all():raise ValueError('Even finite square map required.')\n    d=M.shape[0]//2;I=np.eye(d);Z=np.zeros((d,d));J=np.block([[Z,I],[-I,Z]])\n    return np.linalg.norm(M.T@J@M-J)",
+    "checks": "assert linear_symplectic_error([[.96,.2],[-.2,1.]])<1e-12\nassert linear_symplectic_error(np.diag([2,.5,1,1]))>.1"
+  },
+  {
+    "id": "25.C1",
+    "stage": 25,
+    "name": "affine_correction",
+    "signature": "z, A, b",
+    "spec": "Project a point onto Az=b with full-row-rank A.",
+    "hint": "Use solve(AAᵀ,Az-b), not an explicit inverse.",
+    "code": "def affine_correction(z, A, b):\n    z=np.asarray(z,dtype=float);A=np.asarray(A,dtype=float);b=np.asarray(b,dtype=float)\n    if A.ndim!=2 or z.ndim!=1 or A.shape!=(len(b),len(z)) or np.linalg.matrix_rank(A)<len(b):raise ValueError('Full row rank and compatible dimensions required.')\n    return z-A.T@np.linalg.solve(A@A.T,A@z-b)",
+    "checks": "np.testing.assert_allclose(affine_correction([3,4],[[1,1]],[1]),[0,1])\nwith pytest.raises(ValueError):affine_correction([1,2],[[1,1],[2,2]],[1,2])"
+  },
+  {
+    "id": "25.C2",
+    "stage": 25,
+    "name": "circle_newton_step",
+    "signature": "z",
+    "spec": "Perform one linearized unit-circle constraint correction, not an exact radial projection.",
+    "hint": "C=z·z-1 and A=2zᵀ.",
+    "code": "def circle_newton_step(z):\n    z=np.asarray(z,dtype=float);r=z@z\n    if z.shape!=(2,) or not np.isfinite(r) or r==0:raise ValueError('Nonzero finite two-vector required.')\n    return z-z*(r-1)/(2*r)",
+    "checks": "np.testing.assert_allclose(circle_newton_step([2,0]),[1.25,0])\nwith pytest.raises(ValueError):circle_newton_step([0,0])"
+  },
+  {
+    "id": "25.C3",
+    "stage": 25,
+    "name": "tangent_component",
+    "signature": "q, v",
+    "spec": "Remove the radial component of v at unit q.",
+    "hint": "Subtract q times the inner product.",
+    "code": "def tangent_component(q, v):\n    q=np.asarray(q,dtype=float);v=np.asarray(v,dtype=float)\n    if q.shape!=v.shape or q.ndim!=1 or not np.isclose(q@q,1):raise ValueError('Unit point and matching vector required.')\n    return v-q*(q@v)",
+    "checks": "np.testing.assert_allclose(tangent_component([1,0],[2,3]),[0,3])"
+  },
+  {
+    "id": "26.C1",
+    "stage": 26,
+    "name": "poisson_residual",
+    "signature": "u_xx, x",
+    "spec": "Compute residual for -u″=pi² sin(pi*x).",
+    "hint": "Keep the leading negative sign.",
+    "code": "def poisson_residual(u_xx, x):\n    return -np.asarray(u_xx)-np.pi**2*np.sin(np.pi*np.asarray(x))",
+    "checks": "x=np.linspace(0,1,11)\nnp.testing.assert_allclose(poisson_residual(-np.pi**2*np.sin(np.pi*x),x),0)"
+  },
+  {
+    "id": "26.C2",
+    "stage": 26,
+    "name": "hard_zero_ansatz",
+    "signature": "x, network_values",
+    "spec": "Impose zero values at x=0,1 by multiplying by x(1-x).",
+    "hint": "This enforces only the boundary, not the equation.",
+    "code": "def hard_zero_ansatz(x, network_values):\n    x=np.asarray(x,dtype=float);v=np.asarray(network_values,dtype=float)\n    if x.shape!=v.shape or not np.isfinite(v).all():raise ValueError('Matching finite arrays required.')\n    return x*(1-x)*v",
+    "checks": "np.testing.assert_allclose(hard_zero_ansatz([0,.5,1],[7,4,-3]),[0,1,0])"
+  },
+  {
+    "id": "26.C3",
+    "stage": 26,
+    "name": "relative_error",
+    "signature": "prediction, reference",
+    "spec": "Compute Euclidean relative error; reject zero-norm reference.",
+    "hint": "Divide error norm by reference norm, not sample count.",
+    "code": "def relative_error(prediction, reference):\n    p=np.asarray(prediction,dtype=float);r=np.asarray(reference,dtype=float)\n    if p.shape!=r.shape or not np.isfinite(p).all() or not np.isfinite(r).all() or np.linalg.norm(r)==0:raise ValueError('Matching finite arrays and nonzero reference required.')\n    return np.linalg.norm(p-r)/np.linalg.norm(r)",
+    "checks": "assert relative_error([2,0],[1,0])==1.\nwith pytest.raises(ValueError):relative_error([1],[0])"
+  },
+  {
+    "id": "27.C1",
+    "stage": 27,
+    "name": "project_conflict",
+    "signature": "g_i, g_j",
+    "spec": "Project g_i away from a conflicting original g_j; keep unchanged for nonnegative dot or zero g_j.",
+    "hint": "Subtract only when the dot product is negative.",
+    "code": "def project_conflict(g_i, g_j):\n    a=np.asarray(g_i,dtype=float).copy();b=np.asarray(g_j,dtype=float)\n    if a.shape!=b.shape or a.ndim!=1 or not np.isfinite(a).all() or not np.isfinite(b).all():raise ValueError('Matching finite vectors required.')\n    denom=b@b;dot=a@b\n    return a-dot/denom*b if denom>0 and dot<0 else a",
+    "checks": "np.testing.assert_allclose(project_conflict([1,0],[-1,1]),[.5,.5])\nnp.testing.assert_allclose(project_conflict([1,0],[0,0]),[1,0])"
+  },
+  {
+    "id": "27.C2",
+    "stage": 27,
+    "name": "normalised_projected_sum",
+    "signature": "rows",
+    "spec": "Normalize already-projected rows and sum them; zero rows contribute zero.",
+    "hint": "Do not normalize the original gradients in place of the projected rows.",
+    "code": "def normalised_projected_sum(rows):\n    P=np.asarray(rows,dtype=float)\n    if P.ndim!=2 or not np.isfinite(P).all():raise ValueError('Finite matrix required.')\n    norm=np.linalg.norm(P,axis=1)\n    return np.divide(P,norm[:,None],out=np.zeros_like(P),where=norm[:,None]>1e-14).sum(axis=0)",
+    "checks": "np.testing.assert_allclose(normalised_projected_sum([[.5,.5],[0,1],[0,0]]),[1/np.sqrt(2),1+1/np.sqrt(2)])"
+  },
+  {
+    "id": "27.C3",
+    "stage": 27,
+    "name": "linear_mse_gradient",
+    "signature": "X, y, theta",
+    "spec": "Compute the analytical gradient of mean squared linear-regression error.",
+    "hint": "Differentiate ||X theta-y||²/n.",
+    "code": "def linear_mse_gradient(X, y, theta):\n    X=np.asarray(X,dtype=float);y=np.asarray(y,dtype=float);theta=np.asarray(theta,dtype=float)\n    if X.ndim!=2 or len(X)==0 or X.shape!=(len(y),len(theta)):raise ValueError('Compatible nonempty regression arrays required.')\n    return 2*X.T@(X@theta-y)/len(X)",
+    "checks": "X=np.array([[1.,0.],[1.,1.]])\nnp.testing.assert_allclose(linear_mse_gradient(X,[1,2],[0,0]),[-3,-2])"
+  },
+  {
+    "id": "28.C1",
+    "stage": 28,
+    "name": "heat_multipliers",
+    "signature": "k, nu, time, length=1.",
+    "spec": "Return exp(-nu*(2*pi*k/length)²*time), for nonnegative diffusivity/time and positive length.",
+    "hint": "The zero mode must have multiplier one.",
+    "code": "def heat_multipliers(k, nu, time, length=1.):\n    if not np.isfinite([nu,time,length]).all() or nu<0 or time<0 or length<=0:raise ValueError('Invalid heat parameters.')\n    k=np.asarray(k,dtype=float)\n    return np.exp(-nu*(2*np.pi*k/length)**2*time)",
+    "checks": "m=heat_multipliers(np.arange(3),.03,.15)\nassert m[0]==1 and m[2]<m[1]<m[0]"
+  },
+  {
+    "id": "28.C2",
+    "stage": 28,
+    "name": "branch_trunk_product",
+    "signature": "branch, trunk",
+    "spec": "Combine branch[B,r] and trunk[N,r] by an unscaled inner product to output [B,N].",
+    "hint": "This exercise deliberately omits the trained model's rank scaling and bias.",
+    "code": "def branch_trunk_product(branch, trunk):\n    b=np.asarray(branch);t=np.asarray(trunk)\n    if b.ndim!=2 or t.ndim!=2 or b.shape[1]!=t.shape[1]:raise ValueError('Shared feature dimension required.')\n    return b@t.T",
+    "checks": "np.testing.assert_allclose(branch_trunk_product([[1,2]],[[3,4],[1,0]]),[[11,1]])"
+  },
+  {
+    "id": "28.C3",
+    "stage": 28,
+    "name": "disjoint_function_splits",
+    "signature": "train_ids, validation_ids, test_ids",
+    "spec": "Return True only when the three nonempty function-ID lists are unique and pairwise disjoint.",
+    "hint": "Compare whole function IDs, not spatial row numbers.",
+    "code": "def disjoint_function_splits(train_ids, validation_ids, test_ids):\n    groups=[list(train_ids),list(validation_ids),list(test_ids)]\n    sets=[set(x) for x in groups]\n    return all(len(s)==len(g)>0 for s,g in zip(sets,groups)) and not any(sets[i]&sets[j] for i in range(3) for j in range(i))",
+    "checks": "assert disjoint_function_splits([1,2],[3],[4])\nassert not disjoint_function_splits([1,2],[2],[4])\nassert not disjoint_function_splits([1,1],[2],[3])"
+  },
+  {
+    "id": "29.C1",
+    "stage": 29,
+    "name": "balanced_pair_update",
+    "signature": "nodes, i, j, message",
+    "spec": "Add a message to i and its negative to j; leave the input unchanged.",
+    "hint": "Copy the array, then use equal and opposite updates.",
+    "code": "def balanced_pair_update(nodes, i, j, message):\n    a=np.asarray(nodes,dtype=float).copy();v=np.asarray(message,dtype=float)\n    if not 0<=i<len(a) or not 0<=j<len(a) or i==j or a.shape[1:]!=v.shape:raise ValueError('Valid endpoints and message shape required.')\n    a[i]+=v;a[j]-=v\n    return a",
+    "checks": "x=np.zeros((3,2));out=balanced_pair_update(x,0,2,[1.,2.])\nnp.testing.assert_allclose(out.sum(axis=0),0);np.testing.assert_allclose(x,0)"
+  },
+  {
+    "id": "29.C2",
+    "stage": 29,
+    "name": "attention_invariants",
+    "signature": "A",
+    "spec": "Report constant preservation (rows) and total preservation (columns) for a square matrix.",
+    "hint": "Test two different sums.",
+    "code": "def attention_invariants(A):\n    A=np.asarray(A,dtype=float)\n    if A.ndim!=2 or A.shape[0]!=A.shape[1] or not np.isfinite(A).all():raise ValueError('Finite square matrix required.')\n    return {'constant':bool(np.allclose(A.sum(axis=1),1)), 'total':bool(np.allclose(A.sum(axis=0),1))}",
+    "checks": "assert attention_invariants([[1,0],[1,0]])=={'constant':True,'total':False}\nassert attention_invariants(np.eye(2))=={'constant':True,'total':True}"
+  },
+  {
+    "id": "29.C3",
+    "stage": 29,
+    "name": "sensitivity_check",
+    "signature": "f, parameter, epsilon",
+    "spec": "Estimate a scalar output sensitivity by a centered parameter perturbation.",
+    "hint": "Compare this finite-difference program with autograd under matched solver settings.",
+    "code": "def sensitivity_check(f, parameter, epsilon):\n    if not np.isfinite(epsilon) or epsilon<=0:raise ValueError('Positive finite epsilon required.')\n    return (f(parameter+epsilon)-f(parameter-epsilon))/(2*epsilon)",
+    "checks": "assert sensitivity_check(lambda a:np.exp(-a),.3,1e-5)==pytest.approx(-np.exp(-.3),abs=1e-8)"
+  },
+  {
+    "id": "30.C1",
+    "stage": 30,
+    "name": "evidence_digest",
+    "signature": "path",
+    "spec": "Return the SHA-256 hash of an existing evidence file; do not invent a success for a missing file.",
+    "hint": "Read bytes, not a filename string.",
+    "code": "def evidence_digest(path):\n    from hashlib import sha256\n    from pathlib import Path\n    return sha256(Path(path).read_bytes()).hexdigest()",
+    "checks": "import tempfile\nfrom pathlib import Path\nwith tempfile.TemporaryDirectory() as d:\n p=Path(d)/'answer.txt';p.write_bytes(b'abc')\n assert evidence_digest(p)=='ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad'"
+  },
+  {
+    "id": "30.C2",
+    "stage": 30,
+    "name": "heldout_mae",
+    "signature": "prediction, reference",
+    "spec": "Compute mean absolute error for matching finite nonempty arrays.",
+    "hint": "State the response unit separately; MAE inherits it.",
+    "code": "def heldout_mae(prediction, reference):\n    p=np.asarray(prediction,dtype=float);r=np.asarray(reference,dtype=float)\n    if p.shape!=r.shape or p.size==0 or not np.isfinite(p).all() or not np.isfinite(r).all():raise ValueError('Matching finite nonempty arrays required.')\n    return float(np.mean(np.abs(p-r)))",
+    "checks": "assert heldout_mae([1,3],[2,3])==.5\nwith pytest.raises(ValueError):heldout_mae([],[])"
+  },
+  {
+    "id": "30.C3",
+    "stage": 30,
+    "name": "first_unfinished",
+    "signature": "stage_statuses",
+    "spec": "Return the smallest integer stage not demonstrated or retained; return None if none.",
+    "hint": "This reads declared statuses; it does not grade any answer.",
+    "code": "def first_unfinished(stage_statuses):\n    for key in sorted(stage_statuses,key=int):\n     if stage_statuses[key] not in {'demonstrated','retained'}:return int(key)\n    return None",
+    "checks": "assert first_unfinished({'00':'retained','01':'practicing','02':'demonstrated'})==1\nassert first_unfinished({'00':'demonstrated'}) is None"
+  }
+]

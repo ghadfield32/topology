@@ -1,0 +1,242 @@
+[
+  {
+    "id": "wdbc.C1",
+    "case": "wdbc",
+    "title": "Read the label map",
+    "spec": "Given loader labels 0 or 1, return integer 1 for malignant (original 0), else 0. Reject other labels.",
+    "signature": "malignant_indicator(labels)",
+    "solution": "def malignant_indicator(labels):\n    a=np.asarray(labels)\n    if not np.isin(a,[0,1]).all(): raise ValueError('Unknown loader label')\n    return (a==0).astype(int)",
+    "checks": "np.testing.assert_array_equal(malignant_indicator([0,1,0]),[1,0,1])\ntry: malignant_indicator([2])\nexcept ValueError: pass\nelse: raise AssertionError('Invalid label accepted')",
+    "explanation": "Equality creates a Boolean mask; converting it to integer gives 1/0. The explicit map is necessary because numeric label order is not universal."
+  },
+  {
+    "id": "wdbc.C2",
+    "case": "wdbc",
+    "title": "Count errors",
+    "spec": "For aligned nonempty binary vectors return (true negatives,false positives,false negatives,true positives).",
+    "signature": "confusion_counts(actual,predicted)",
+    "solution": "def confusion_counts(actual,predicted):\n    a,p=np.asarray(actual),np.asarray(predicted)\n    if a.shape!=p.shape or a.ndim!=1 or not len(a) or not np.isin(a,[0,1]).all() or not np.isin(p,[0,1]).all(): raise ValueError('Binary aligned vectors required')\n    return tuple(int(np.sum((a==t)&(p==q))) for t,q in [(0,0),(0,1),(1,0),(1,1)])",
+    "checks": "assert confusion_counts([0,0,1,1],[0,1,0,1])==(1,1,1,1)\nassert confusion_counts([0,1],[0,0])==(1,0,1,0)",
+    "explanation": "Count each actual/predicted pair separately; do not swap the row meaning and column meaning."
+  },
+  {
+    "id": "wdbc.C3",
+    "case": "wdbc",
+    "title": "Calculate balanced accuracy",
+    "spec": "For aligned binary vectors with both actual classes present, average recall for class 0 and class 1.",
+    "signature": "balanced_binary(actual,predicted)",
+    "solution": "def balanced_binary(actual,predicted):\n    a,p=np.asarray(actual),np.asarray(predicted)\n    if a.shape!=p.shape or a.ndim!=1 or set(a)!={0,1} or not np.isin(p,[0,1]).all(): raise ValueError('Two actual classes required')\n    return float(np.mean([np.mean(p[a==c]==c) for c in (0,1)]))",
+    "checks": "assert balanced_binary([0,0,0,1],[0,0,0,0])==.5\nassert balanced_binary([0,1],[0,1])==1",
+    "explanation": "Each actual class contributes one recall regardless of how many rows belong to it. This does not certify clinical usefulness."
+  },
+  {
+    "id": "wine.C1",
+    "case": "wine",
+    "title": "Use fitted scaling",
+    "spec": "Standardize a finite 2-D matrix using supplied training means and positive scales. Do not calculate new means.",
+    "signature": "apply_scale(x,mean,scale)",
+    "solution": "def apply_scale(x,mean,scale):\n    a,m,s=np.asarray(x,float),np.asarray(mean,float),np.asarray(scale,float)\n    if a.ndim!=2 or m.shape!=(a.shape[1],) or s.shape!=m.shape or np.any(s<=0): raise ValueError('Incompatible shape or scale')\n    return (a-m)/s",
+    "checks": "np.testing.assert_allclose(apply_scale([[101,5]],[2,5],[1,1]),[[99,0]])\nnp.testing.assert_allclose(apply_scale([[2,4]],[1,2],[1,2]),[[1,1]])",
+    "explanation": "The training transformation is frozen. Recalculating it on the test query would change the model definition."
+  },
+  {
+    "id": "wine.C2",
+    "case": "wine",
+    "title": "Choose nearby reference points",
+    "spec": "Return indices of the k nearest reference points to a query using Euclidean distance; preserve input order on ties.",
+    "signature": "nearest_reference(query,reference,k)",
+    "solution": "def nearest_reference(query,reference,k):\n    q,a=np.asarray(query,float),np.asarray(reference,float)\n    if a.ndim!=2 or q.shape!=(a.shape[1],) or not 1<=k<=len(a): raise ValueError('Bad neighbor request')\n    return np.argsort(np.linalg.norm(a-q,axis=1),kind='stable')[:k]",
+    "checks": "np.testing.assert_array_equal(nearest_reference([0,0],[[4,0],[1,0],[2,0]],2),[1,2])\nnp.testing.assert_array_equal(nearest_reference([0],[[1],[-1]],2),[0,1])",
+    "explanation": "Distance selects neighbors; sorting indices preserves the link back to the training rows. The tie convention differs explicitly from the production teaching descriptor\u2019s coordinate-based tie rule."
+  },
+  {
+    "id": "wine.C3",
+    "case": "wine",
+    "title": "Filter finite lifetimes",
+    "spec": "Given an n-by-2 birth/death array, return death-birth for finite positive-lifetime intervals only.",
+    "signature": "finite_lifetimes(diagram)",
+    "solution": "def finite_lifetimes(diagram):\n    a=np.asarray(diagram,float).reshape(-1,2)\n    valid=np.isfinite(a).all(axis=1)&(a[:,1]>a[:,0])\n    return a[valid,1]-a[valid,0]",
+    "checks": "np.testing.assert_allclose(finite_lifetimes([[0,1],[2,2],[0,np.inf],[3,5]]),[1,2])\nassert finite_lifetimes([]).size==0",
+    "explanation": "Essential classes need separate handling. Silently averaging infinity is not a meaningful finite persistence statistic."
+  },
+  {
+    "id": "stackloss.C1",
+    "case": "stackloss",
+    "title": "Compute MAE",
+    "spec": "Return mean absolute error for aligned nonempty finite vectors.",
+    "signature": "mean_absolute_error_hand(actual,predicted)",
+    "solution": "def mean_absolute_error_hand(actual,predicted):\n    a,p=np.asarray(actual,float),np.asarray(predicted,float)\n    if a.shape!=p.shape or a.ndim!=1 or not len(a) or not np.isfinite(a).all() or not np.isfinite(p).all(): raise ValueError('Finite aligned vectors required')\n    return float(np.mean(np.abs(a-p)))",
+    "checks": "assert mean_absolute_error_hand([10,12],[11,8])==2.5\nassert mean_absolute_error_hand([1],[1])==0",
+    "explanation": "Absolute value removes the direction of error; averaging retains the response unit but can hide extreme failures."
+  },
+  {
+    "id": "stackloss.C2",
+    "case": "stackloss",
+    "title": "Keep signed residuals",
+    "spec": "Return observed minus predicted; the sign convention must be explicit.",
+    "signature": "signed_residual(actual,predicted)",
+    "solution": "def signed_residual(actual,predicted):\n    a,p=np.asarray(actual,float),np.asarray(predicted,float)\n    if a.shape!=p.shape: raise ValueError('Shapes differ')\n    return a-p",
+    "checks": "np.testing.assert_array_equal(signed_residual([10,12],[11,8]),[-1,4])\nnp.testing.assert_array_equal(signed_residual([20],[15]),[5])",
+    "explanation": "A positive residual under this convention means the prediction was too low. Another convention is possible only when declared."
+  },
+  {
+    "id": "stackloss.C3",
+    "case": "stackloss",
+    "title": "Leave one row out",
+    "spec": "Return all integer indices from 0 to n-1 except the specified omitted index.",
+    "signature": "leave_out_indices(n,omitted)",
+    "solution": "def leave_out_indices(n,omitted):\n    if n<2 or not 0<=omitted<n: raise ValueError('Invalid omission')\n    return np.array([i for i in range(n) if i!=omitted],dtype=int)",
+    "checks": "np.testing.assert_array_equal(leave_out_indices(4,1),[0,2,3])\nassert 0 not in leave_out_indices(3,0)",
+    "explanation": "The scaler and model must both be refit on these indices, not only the model."
+  },
+  {
+    "id": "grunfeld.C1",
+    "case": "grunfeld",
+    "title": "Lag within an entity",
+    "spec": "Sort a table by firm and year and add lag_invest from the previous row within the same firm. Keep first records missing.",
+    "signature": "lag_investment(table)",
+    "solution": "def lag_investment(table):\n    result=table.sort_values(['firm','year']).copy()\n    result['lag_invest']=result.groupby('firm')['invest'].shift(1)\n    return result",
+    "checks": "t=pd.DataFrame({'firm':['A','B','A','B'],'year':[1,1,2,2],'invest':[10,90,20,80]})\nr=lag_investment(t)\nassert r.loc[2,'lag_invest']==10 and r.loc[3,'lag_invest']==90\nassert r.loc[[0,1],'lag_invest'].isna().all()",
+    "explanation": "Group boundaries are information boundaries. A global shift would mix different companies."
+  },
+  {
+    "id": "grunfeld.C2",
+    "case": "grunfeld",
+    "title": "Enforce a cutoff",
+    "spec": "Return indices with timestamp strictly earlier than the supplied decision cutoff.",
+    "signature": "before_cutoff(times,cutoff)",
+    "solution": "def before_cutoff(times,cutoff):\n    return np.flatnonzero(np.asarray(times)<cutoff)",
+    "checks": "np.testing.assert_array_equal(before_cutoff([1947,1948,1948,1950],1948),[0])\nassert len(before_cutoff([3],3))==0",
+    "explanation": "Strictly earlier differs from earlier-or-equal. Decide how simultaneous measurements become available."
+  },
+  {
+    "id": "grunfeld.C3",
+    "case": "grunfeld",
+    "title": "Find shared entities",
+    "spec": "Return the set of entities appearing in both partitions.",
+    "signature": "shared_entities(first,second)",
+    "solution": "def shared_entities(first,second):\n    return set(first)&set(second)",
+    "checks": "assert shared_entities(['A','B','A'],['C','B'])=={'B'}\nassert shared_entities([1,2],[3])==set()",
+    "explanation": "Entity overlap can be acceptable for future-known-firm evaluation but invalid for a new-firm claim."
+  },
+  {
+    "id": "co2.C1",
+    "case": "co2",
+    "title": "Preserve a missingness mask",
+    "spec": "For a vector and positive window length, return starting indices of finite contiguous windows. This task checks rows only; time-spacing validation is a separate obligation.",
+    "signature": "finite_window_starts(values,length)",
+    "solution": "def finite_window_starts(values,length):\n    a=np.asarray(values,float)\n    if a.ndim!=1 or length<1: raise ValueError('Invalid window request')\n    return np.array([i for i in range(len(a)-length+1) if np.isfinite(a[i:i+length]).all()],dtype=int)",
+    "checks": "np.testing.assert_array_equal(finite_window_starts([1,2,np.nan,4,5],2),[0,3])\nassert len(finite_window_starts([1],2))==0",
+    "explanation": "A finite contiguous row window is necessary but not sufficient: real time gaps must also be checked."
+  },
+  {
+    "id": "co2.C2",
+    "case": "co2",
+    "title": "Separate past and target",
+    "spec": "For a finite vector make length-L feature windows and one-step targets. Return (x,y), including correctly shaped empty arrays.",
+    "signature": "one_step_examples(values,length)",
+    "solution": "def one_step_examples(values,length):\n    a=np.asarray(values,float)\n    if a.ndim!=1 or length<1 or not np.isfinite(a).all(): raise ValueError('Finite vector required')\n    n=max(0,len(a)-length)\n    return np.array([a[i:i+length] for i in range(n)],float).reshape(n,length),a[length:].copy()",
+    "checks": "x,y=one_step_examples([0,1,2,3,4],3)\nnp.testing.assert_array_equal(x,[[0,1,2],[1,2,3]])\nnp.testing.assert_array_equal(y,[3,4])",
+    "explanation": "The target is not included in its own features. Reading later true observations for later predictions is observed-history evaluation."
+  },
+  {
+    "id": "co2.C3",
+    "case": "co2",
+    "title": "Check the entire support",
+    "spec": "Return whether every integer index from start through target inclusive belongs to the allowed partition.",
+    "signature": "support_inside(start,target,allowed)",
+    "solution": "def support_inside(start,target,allowed):\n    if start>target: raise ValueError('Start follows target')\n    return set(range(start,target+1))<=set(allowed)",
+    "checks": "assert support_inside(1,3,[0,1,2,3])\nassert not support_inside(1,3,[1,3])",
+    "explanation": "Checking only the final target misses leakage through an earlier feature or an intermediate observation."
+  },
+  {
+    "id": "nile.C1",
+    "case": "nile",
+    "title": "Convert units explicitly",
+    "spec": "Convert annual volumes expressed in 10^8 cubic metres to cubic metres. Do not call the output a rate.",
+    "signature": "volume_in_cubic_metres(source_volume)",
+    "solution": "def volume_in_cubic_metres(source_volume):\n    return np.asarray(source_volume,float)*1e8",
+    "checks": "np.testing.assert_allclose(volume_in_cubic_metres([1,2.5]),[1e8,2.5e8])",
+    "explanation": "The conversion changes representation, not information about peaks or subannual timing."
+  },
+  {
+    "id": "nile.C2",
+    "case": "nile",
+    "title": "Score a candidate split",
+    "spec": "For a finite vector and split k with two nonempty segments, return the within-segment squared error around each segment mean.",
+    "signature": "two_mean_sse(values,k)",
+    "solution": "def two_mean_sse(values,k):\n    a=np.asarray(values,float)\n    if not 0<k<len(a) or not np.isfinite(a).all(): raise ValueError('Two finite segments required')\n    return float(np.sum((a[:k]-a[:k].mean())**2)+np.sum((a[k:]-a[k:].mean())**2))",
+    "checks": "assert two_mean_sse([0,0,1,1],2)==0\nassert two_mean_sse([0,0,1,1],1)>0",
+    "explanation": "Minimizing this across many k is a search; the selected minimum is not automatically a significance test."
+  },
+  {
+    "id": "nile.C3",
+    "case": "nile",
+    "title": "Divide by the actual elapsed time",
+    "spec": "Return successive finite-difference rates for aligned finite values and strictly increasing times.",
+    "signature": "difference_rates(values,times)",
+    "solution": "def difference_rates(values,times):\n    a,t=np.asarray(values,float),np.asarray(times,float)\n    if a.shape!=t.shape or a.ndim!=1 or len(a)<2 or np.any(np.diff(t)<=0) or not np.isfinite(a).all() or not np.isfinite(t).all(): raise ValueError('Aligned increasing times required')\n    return np.diff(a)/np.diff(t)",
+    "checks": "np.testing.assert_allclose(difference_rates([0,2,8],[0,1,4]),[2,2])",
+    "explanation": "A difference in annual volume per year is not the instantaneous river-discharge signal. Units propagate through the calculation."
+  },
+  {
+    "id": "elnino.C1",
+    "case": "elnino",
+    "title": "Respect calendar order",
+    "spec": "Given YEAR and JAN..DEC columns, return a 1-D vector in year-sorted calendar order.",
+    "signature": "calendar_vector(table)",
+    "solution": "def calendar_vector(table):\n    names=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC']\n    return table.sort_values('YEAR')[names].to_numpy(float).ravel()",
+    "checks": "t=pd.DataFrame({'YEAR':[2001,2000],**{m:[i+13,i+1] for i,m in enumerate(['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'])}})\nnp.testing.assert_array_equal(calendar_vector(t),np.arange(1,25))",
+    "explanation": "Column names are not alphabetically ordered times; the explicit month sequence preserves meaning."
+  },
+  {
+    "id": "elnino.C2",
+    "case": "elnino",
+    "title": "Fit only a supplied reference period",
+    "spec": "For finite values and corresponding month labels 1..12, return twelve monthly means; require all months.",
+    "signature": "monthly_reference(values,months)",
+    "solution": "def monthly_reference(values,months):\n    a,m=np.asarray(values,float),np.asarray(months)\n    if a.shape!=m.shape or set(m)!=set(range(1,13)) or not np.isfinite(a).all(): raise ValueError('All twelve months required')\n    return np.array([a[m==j].mean() for j in range(1,13)])",
+    "checks": "m=np.tile(np.arange(1,13),2)\nnp.testing.assert_allclose(monthly_reference(m.astype(float),m),np.arange(1,13))",
+    "explanation": "Which rows you pass determines the fitted climatology. The function cannot infer the training boundary for you."
+  },
+  {
+    "id": "elnino.C3",
+    "case": "elnino",
+    "title": "Compute anomalies against a fixed baseline",
+    "spec": "Subtract each value\u2019s month-specific mean from a supplied length-12 reference.",
+    "signature": "monthly_anomalies(values,months,reference)",
+    "solution": "def monthly_anomalies(values,months,reference):\n    a,m,r=np.asarray(values,float),np.asarray(months,int),np.asarray(reference,float)\n    if a.shape!=m.shape or r.shape!=(12,) or not np.isin(m,np.arange(1,13)).all(): raise ValueError('Bad month or reference shape')\n    return a-r[m-1]",
+    "checks": "np.testing.assert_allclose(monthly_anomalies([25.5,22],[1,2],[24,20]+[0]*10),[1.5,2])",
+    "explanation": "A positive anomaly is relative to a declared baseline, not an absolute category of climate behavior."
+  },
+  {
+    "id": "modechoice.C1",
+    "case": "modechoice",
+    "title": "Recover one selected mode per person",
+    "spec": "Validate four modes and one selected alternative per individual, then return a Series of selected modes indexed by individual.",
+    "signature": "selected_modes(table)",
+    "solution": "def selected_modes(table):\n    result={}\n    for person,g in table.groupby('individual',sort=True):\n        if len(g)!=4 or set(g['mode'])!={1,2,3,4} or not g.choice.isin([0,1]).all() or g.choice.sum()!=1: raise ValueError('Invalid choice set')\n        result[person]=int(g.loc[g.choice==1,'mode'].iloc[0])\n    return pd.Series(result,dtype=int)",
+    "checks": "t=pd.DataFrame({'individual':[1]*4,'mode':[1,2,3,4],'choice':[0,1,0,0]})\nassert selected_modes(t).loc[1]==2",
+    "explanation": "Four alternative rows contain one decision. Invalid choice sets must not silently create extra labels."
+  },
+  {
+    "id": "modechoice.C2",
+    "case": "modechoice",
+    "title": "Build a cheapest-mode baseline",
+    "spec": "Given an n-by-4 finite cost matrix ordered air/train/bus/car, return mode codes1..4; choose the first mode on ties.",
+    "signature": "cheapest_mode(costs)",
+    "solution": "def cheapest_mode(costs):\n    a=np.asarray(costs,float)\n    if a.ndim!=2 or a.shape[1]!=4 or not np.isfinite(a).all(): raise ValueError('Four finite offered costs required')\n    return np.argmin(a,axis=1)+1",
+    "checks": "np.testing.assert_array_equal(cheapest_mode([[4,2,3,1],[1,1,2,3]]),[4,1])",
+    "explanation": "A baseline embodies a simple assumption; it is not a claim that all people minimize ticket price."
+  },
+  {
+    "id": "modechoice.C3",
+    "case": "modechoice",
+    "title": "Check disjoint travelers",
+    "spec": "Return True precisely when the two identifier collections share no member.",
+    "signature": "groups_disjoint(train_ids,test_ids)",
+    "solution": "def groups_disjoint(train_ids,test_ids):\n    return not bool(set(train_ids)&set(test_ids))",
+    "checks": "assert groups_disjoint([1,1,2],[3,4])\nassert not groups_disjoint([1,2],[2,3])",
+    "explanation": "Apply the same principle to athletes, patients and experiment runs. Disjoint rows alone do not establish disjoint entities."
+  }
+]

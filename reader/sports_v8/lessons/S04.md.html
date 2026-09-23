@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S04 — Time, missingness and uncertainty change the evidence · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v8/lessons/S04.md">sports_v8/lessons/S04.md</a> · Readable source notation; no online math renderer.</p><h1 id="s04--time-missingness-and-uncertainty-change-the-evidence">S04 — Time, missingness and uncertainty change the evidence</h1>
+<h2 id="your-destination">Your destination</h2>
+<p>Separate an observed value from a derived estimate, avoid future information in
+a live calculation, and test a mathematically justified perturbation bound without
+pretending to know the measurement system's true error distribution. Connect this
+to core Stages 10, 15 and 18–19.</p>
+<h2 id="an-observation-is-not-a-complete-continuous-trajectory">An observation is not a complete continuous trajectory</h2>
+<p>The sample contains gaps. Between two recorded points, many continuous paths are
+possible. Linear interpolation chooses a straight segment; a last-value hold
+chooses a constant segment. Both are estimators. Drawing either densely does not
+increase the number of independent observed frames.</p>
+<p>For a live query at time q, a past-only hold selects the last sample with
+<code>t_i &lt;= q</code>. It rejects the result when <code>q-t_i</code> exceeds a declared age threshold.
+For observations <code>(0,10), (1,20), (2,30)</code> and q=1.5, the hold returns 20, while
+linear interpolation between 1 and 2 returns 25. The interpolation uses the
+sample at time 2, which has not yet arrived at time 1.5. It may be appropriate
+for offline reconstruction, but not for that live decision.</p>
+<p>The notebook retains source-row indices for every held value. An unavailable
+answer has index -1 and a NaN value. It does not silently borrow a later point.
+The worked S04 lab also illustrates a short stale-age threshold on the sparse
+basketball excerpt. Some queries legitimately have no answer.</p>
+<h2 id="where-the-timestamp-belongs">Where the timestamp belongs</h2>
+<p>Capture time, estimated scene time, arrival time, model completion time and screen
+display time are different. A source at nominal scene time 1.0 may arrive at 1.2.
+Our simple hold assumes values are available at their recorded source time; a
+real system must add availability/arrival times. Record that assumption rather
+than claiming the teaching function is a production streaming service.</p>
+<p>A fixed camera frame rate cannot correct an identity swap. Likewise, smoothing
+coordinates cannot show that an occluded hand touched a ball. For an interaction
+hypothesis, retain IDs, visibility, time bounds, supporting frames, and whether
+the event was observed or inferred. The previously supplied interaction source
+motivates this separation; our exercises do not reproduce its event detector.</p>
+<h2 id="a-perturbation-experiment-with-a-known-assumption">A perturbation experiment with a known assumption</h2>
+<p>Take the finite point cloud X and create Y by adding small artificial offsets.
+Let <code>delta=max_i ||X_i-Y_i||</code>. By two triangle inequalities,</p>
+<pre><code>abs(||X_i-X_j|| - ||Y_i-Y_j||) &lt;= ||X_i-Y_i||+||X_j-Y_j|| &lt;= 2*delta.
+</code></pre>
+<p>Every Rips simplex's filtration value is the maximum of its edge lengths. With
+the same labeled vertices, those values therefore differ by at most 2*delta.
+For these finite filtrations, the corresponding persistence-diagram stability
+bound is consistent with that perturbation. The notebook compares finite H1
+bars using the existing exact small-diagram bottleneck function and checks the
+bound numerically. The general stability theorem is taught in core Stage 10.</p>
+<p>Our artificial offsets have a seeded generator and a stated scale. They are not
+estimated SPL camera noise, confidence intervals for biomechanics, or a measure
+of unseen-athlete accuracy. A sensitivity analysis says how an analysis responds
+to a specified perturbation; measurement validation needs independent truth.</p>
+<h2 id="a-stability-bound-is-not-a-usefulness-guarantee">A stability bound is not a usefulness guarantee</h2>
+<p>If the metric encodes the wrong question, a stable result can still be irrelevant.
+If all coordinates are biased by an unrecognized scale factor, a repeatable
+algorithm can report repeatable but wrong physical distances. If an occluded
+player disappears from a cloud, its vertex set changes; the simple matched-point
+argument above is no longer a complete justification. Do not reuse the formula
+without checking its assumptions.</p>
+<p>Current SkillCorner documentation distinguishes detected and extrapolated XY,
+and describes a predicted pose-error radius. Those values are outputs of a
+provider model. They are not guaranteed simultaneous coverage for every joint in
+a frame, nor a substitute for checking coverage on a suitable held-out dataset.
+The full pose data are listed in the catalogue but not bundled or evaluated here.</p>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li>With observations at 0 and 2 seconds, can an interpolation at 1 second be
+used in a decision made at 1 second? State an exception and its meaning.</li>
+<li>Every matched point moves by at most 0.01 m. What edge-distance change bound
+follows? Does it prove a selected sports event occurred?</li>
+<li>Why must a reported nearest-neighbour hold include source time or source row?</li>
+<li>A smooth trajectory fills fifty missing frames. How many new observations
+were measured by that filling operation?</li>
+</ol>
+<h2 id="worked-answers">Worked answers</h2>
+<ol>
+<li>Not when the time-2 sample is unavailable. In offline retrospective analysis
+it can be used, explicitly labeled as future-assisted reconstruction.</li>
+<li>At most 0.02 m under the specified Euclidean matched-point assumptions. It
+bounds a mathematical representation's change, not contact, intent or outcome.</li>
+<li>To audit age, availability, repeated use and whether the decision used future
+information. Values without provenance can appear newer than their evidence.</li>
+<li>Zero. It creates fifty derived values. An uncertainty-aware smoother may be
+useful, but the provenance and validation requirements remain.</li>
+</ol>
+<h2 id="mastery-gate">Mastery gate</h2>
+<p>Explain source versus query time, identify unavailable estimates, derive the
+2*delta edge bound, and state where that derivation stops applying. Delayed recall:
+why does a low bottleneck distance not automatically imply a good sports predictor?</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

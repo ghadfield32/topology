@@ -1,0 +1,34 @@
+{
+  "status": "PASSED",
+  "html_pages": 661,
+  "existing_local_link_targets_checked": 28400,
+  "external_links_not_retested": 222,
+  "stages_checked": 13,
+  "executed_notebook_code_cells": 46,
+  "exercise_solution_pairs": 102,
+  "broken_local_links": [],
+  "font_files": []
+}
+{
+  "status": "PASSED",
+  "version": "4.0.0",
+  "stages": 21,
+  "guided_sessions": 21,
+  "consolidation_notebooks": 21,
+  "explicit_outcomes": 84,
+  "conceptual_exercises": 150,
+  "additional_transfer_questions": 42,
+  "coding_exercises": 89,
+  "delayed_recall_questions": 63,
+  "foundation_primers": 6,
+  "executed_reference_notebooks": 63,
+  "executed_reference_code_cells": 381,
+  "embedded_reference_figures": 41,
+  "intentional_learner_notebooks": 21,
+  "datasets": 4,
+  "learner_stages_assessed": 0,
+  "full_book_text_audited": false,
+  "VGGT_inference_executed": false,
+  "physical_holdout_validated": false,
+  "real_sports_event_labels_evaluated": false
+}

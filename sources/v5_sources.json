@@ -1,0 +1,149 @@
+[
+  {
+    "id": "NIST",
+    "title": "Hahn1 observed copper thermal-expansion data",
+    "url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Hahn1.dat",
+    "scope": "56-row numeric excerpt; source has 236 observations. Response multiplier not specified.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "HNN",
+    "title": "Hamiltonian Neural Networks (2019)",
+    "url": "https://arxiv.org/abs/1906.01563",
+    "scope": "Scalar Hamiltonian and derivative supervision; not a discrete-integrator energy guarantee.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "LNN",
+    "title": "Lagrangian Neural Networks (2020)",
+    "url": "https://arxiv.org/abs/2003.04630",
+    "scope": "General Lagrangian formulation; our trained example is deliberately restricted.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "PCGRAD",
+    "title": "Gradient Surgery for Multi-Task Learning (2020)",
+    "url": "https://arxiv.org/abs/2001.06782",
+    "scope": "Projection of conflicting gradients; finite-step and multi-gradient behavior must be checked.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "CONFIG",
+    "title": "ConFIG: Towards Conflict-free Training of Physics Informed Neural Networks (2024)",
+    "url": "https://arxiv.org/abs/2408.11104",
+    "scope": "Normalized equal-alignment construction; degenerate/incompatible inputs need explicit handling.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "NORM",
+    "title": "Tackling Failure Modes of PINNs and PIKANs Using Conflict-Free Gradients (v1, 13 September 2026)",
+    "url": "https://arxiv.org/html/2609.14841v1",
+    "scope": "Preprint benchmarks not replicated here. Algorithm 1 normalizes projected rows before aggregation.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource",
+    "latest_checked_revision": "v2, 16 September 2026",
+    "latest_checked_url": "https://arxiv.org/html/2609.14841v2",
+    "revision_note": "Algorithm 1 was rechecked in v2: normalize projected rows before summing. The v2 curvature-aware optimizer comparisons are reading only; not reproduced."
+  },
+  {
+    "id": "PINN",
+    "title": "Physics Informed Deep Learning \u2014 author project",
+    "url": "https://maziarraissi.github.io/PINNs/",
+    "scope": "Physics residual and data formulations; not evidence that arbitrary PINN training succeeds.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "FAIL",
+    "title": "Characterizing possible failure modes in physics-informed neural networks (2021)",
+    "url": "https://arxiv.org/abs/2109.01050",
+    "scope": "Failure analysis motivates residual/error checks and conventional baselines.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "SPINN",
+    "title": "Separable Physics-Informed Neural Networks (2023)",
+    "url": "https://arxiv.org/abs/2306.15969",
+    "scope": "Per-axis evaluation and forward-mode differentiation; full output/residual accounting remains necessary.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "KAN",
+    "title": "KAN: Kolmogorov-Arnold Networks (2024)",
+    "url": "https://arxiv.org/abs/2404.19756",
+    "scope": "Learned univariate edge functions; no complete PIKAN training replication is supplied.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "DEEPONET",
+    "title": "Learning nonlinear operators via DeepONet (2019/2021)",
+    "url": "https://arxiv.org/abs/1910.03193",
+    "scope": "Branch/trunk representation; approximation results do not ensure optimization success.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "FNO",
+    "title": "Fourier Neural Operator for Parametric Partial Differential Equations (2020)",
+    "url": "https://arxiv.org/abs/2010.08895",
+    "scope": "Learned Fourier-space operator layers; a known FFT heat solver is a different object.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "NODE",
+    "title": "Neural Ordinary Differential Equations (2018)",
+    "url": "https://arxiv.org/abs/1806.07366",
+    "scope": "Continuous-state modeling; our differentiable RK4 uses direct discrete backpropagation, not the adjoint method.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "GNS",
+    "title": "Learning to Simulate Complex Physics with Graph Networks (2020)",
+    "url": "https://arxiv.org/abs/2002.09405",
+    "scope": "Graph simulation reference; our pair-force example is an algebraic building block, not that model.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "PINNSFORMER",
+    "title": "PINNsFormer (2023)",
+    "url": "https://arxiv.org/abs/2307.11833",
+    "scope": "Specific transformer PINN architecture; only the prerequisite attention/constraint experiment is implemented.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "NVP",
+    "title": "Density estimation using Real NVP (2016)",
+    "url": "https://arxiv.org/abs/1605.08803",
+    "scope": "Affine coupling and change of variables; our fixed invertible example is not a trained density model.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "CONSTRAINED",
+    "title": "Simplifying Hamiltonian and Lagrangian Neural Networks via Explicit Constraints (2020)",
+    "url": "https://arxiv.org/abs/2010.13581",
+    "scope": "Constraint-aware dynamics requires a formulated system; arbitrary projection is not a substitute.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  },
+  {
+    "id": "TONG",
+    "title": "David Tong \u2014 Classical Dynamics lecture notes",
+    "url": "https://www.damtp.cam.ac.uk/user/tong/dynamics.htm",
+    "scope": "Free deeper-reading destination; use the Lagrangian and Hamiltonian chapters. No page-specific quotation relied on.",
+    "checked": "2026-09-20",
+    "kind": "primary research or official data/resource"
+  }
+]

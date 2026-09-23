@@ -1,0 +1,92 @@
+name: Course verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  PYTHONUTF8: "1"
+concurrency:
+  group: course-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.10.0"
+          python-version: "3.13.5"
+      - name: Resolve or validate lock and sync core
+        run: uv run --no-project python tools/bootstrap.py --profile core
+      - name: Course structure
+        run: uv run --no-sync python course.py verify --profile core
+      - name: Core tests (optional physics and cross-check packages may skip)
+        run: uv run --no-sync python course.py test --profile core --output my_work/ci-tests
+      - name: First complete notebook
+        run: uv run --no-sync python course.py run --stage 0 --output my_work/ci-stage00
+      - name: Preserve evidence and resolved lock for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: course-${{ matrix.os }}
+          path: |
+            my_work/
+            uv.lock
+  full-and-docker:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.10.0"
+          python-version: "3.13.5"
+      - name: Full-profile resolution and sync
+        run: uv run --no-project python tools/bootstrap.py --profile full
+      - name: Strict checks (no optional-package omissions)
+        run: uv run --no-sync python course.py test --profile full --output my_work/full-tests
+      - name: Every reference notebook in fresh kernels
+        run: uv run --no-sync python course.py run --all --output my_work/all-references --jobs 1
+      - name: Actual Docker build, tests, and Stage 00
+        run: uv run --no-sync python tools/docker_verify.py --profile full --output my_work/docker-evidence
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: course-full-evidence
+          path: |
+            my_work/
+            uv.lock
+      - name: Install a tagged kind release
+        run: |
+          go install sigs.k8s.io/kind@v0.33.0
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+      - uses: azure/setup-kubectl@v4
+        with:
+          version: 'latest'
+      - name: Record client versions and create a disposable single-node cluster
+        run: |
+          kind version
+          kubectl version --client
+          kind create cluster --name shape-learning
+          kind load docker-image listening-to-shape:12 --name shape-learning
+      - name: Kubernetes admission, storage, Job, and reader acceptance
+        run: >-
+          uv run --no-sync python tools/k8s_verify.py
+          --context kind-shape-learning --namespace shape-course-ci
+          --image listening-to-shape:12 --profile full --apply
+          --output my_work/k8s-live
+      - name: Export kind diagnostics
+        if: always()
+        run: kind export logs my_work/kind-logs --name shape-learning
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: course-kubernetes-evidence
+          path: my_work/

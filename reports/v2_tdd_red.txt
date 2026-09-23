@@ -1,0 +1,490 @@
+FFFFFFFFFFFFFFFFFFFFFFFFF                                                [100%]
+=================================== FAILURES ===================================
+___________________ test_new_log_has_no_learner_achievements ___________________
+
+    def test_new_log_has_no_learner_achievements():
+>       log=new_log()
+            ^^^^^^^^^
+
+tests/test_learning_v2.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+______________________ test_code_execution_is_not_mastery ______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_code_execution_is_not_mas0')
+
+    def test_code_execution_is_not_mastery(tmp_path):
+>       log=new_log()
+            ^^^^^^^^^
+
+tests/test_learning_v2.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+___________ test_assessment_requires_independence_and_critical_clear ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_assessment_requires_indep0')
+
+    def test_assessment_requires_independence_and_critical_clear(tmp_path):
+        for independent,clear in [(False,True),(True,False)]:
+>           log=new_log()
+                ^^^^^^^^^
+
+tests/test_learning_v2.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+_____________________ test_assessment_then_delayed_recall ______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_assessment_then_delayed_r0')
+
+    def test_assessment_then_delayed_recall(tmp_path):
+>       log=new_log();e=evidence(tmp_path)
+            ^^^^^^^^^
+
+tests/test_learning_v2.py:32: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+______________________ test_failed_recall_requires_review ______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_failed_recall_requires_re0')
+
+    def test_failed_recall_requires_review(tmp_path):
+>       log=new_log();e=evidence(tmp_path)
+            ^^^^^^^^^
+
+tests/test_learning_v2.py:44: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+___________ test_recall_without_assessment_does_not_certify_mastery ____________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_recall_without_assessment0')
+
+    def test_recall_without_assessment_does_not_certify_mastery(tmp_path):
+>       log=new_log();e=evidence(tmp_path)
+            ^^^^^^^^^
+
+tests/test_learning_v2.py:51: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+________________ test_invalid_attempt_rejected[13-practice-50] _________________
+
+n = 13, kind = 'practice', score = 50
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_attempt_rejected_0')
+
+    @pytest.mark.parametrize('n,kind,score',[(13,'practice',50),(-1,'assessment',90),(0,'other',90),(0,'practice',101),(0,'practice',-1),(0,'practice',float('nan'))])
+    def test_invalid_attempt_rejected(n,kind,score,tmp_path):
+>       with pytest.raises(ValueError):record(new_log(),n,kind,score,evidence(tmp_path),tmp_path,date(2026,9,20),True,True)
+                                              ^^^^^^^^^
+
+tests/test_learning_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+_______________ test_invalid_attempt_rejected[-1-assessment-90] ________________
+
+n = -1, kind = 'assessment', score = 90
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_attempt_rejected_1')
+
+    @pytest.mark.parametrize('n,kind,score',[(13,'practice',50),(-1,'assessment',90),(0,'other',90),(0,'practice',101),(0,'practice',-1),(0,'practice',float('nan'))])
+    def test_invalid_attempt_rejected(n,kind,score,tmp_path):
+>       with pytest.raises(ValueError):record(new_log(),n,kind,score,evidence(tmp_path),tmp_path,date(2026,9,20),True,True)
+                                              ^^^^^^^^^
+
+tests/test_learning_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+__________________ test_invalid_attempt_rejected[0-other-90] ___________________
+
+n = 0, kind = 'other', score = 90
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_attempt_rejected_2')
+
+    @pytest.mark.parametrize('n,kind,score',[(13,'practice',50),(-1,'assessment',90),(0,'other',90),(0,'practice',101),(0,'practice',-1),(0,'practice',float('nan'))])
+    def test_invalid_attempt_rejected(n,kind,score,tmp_path):
+>       with pytest.raises(ValueError):record(new_log(),n,kind,score,evidence(tmp_path),tmp_path,date(2026,9,20),True,True)
+                                              ^^^^^^^^^
+
+tests/test_learning_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+________________ test_invalid_attempt_rejected[0-practice-101] _________________
+
+n = 0, kind = 'practice', score = 101
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_attempt_rejected_3')
+
+    @pytest.mark.parametrize('n,kind,score',[(13,'practice',50),(-1,'assessment',90),(0,'other',90),(0,'practice',101),(0,'practice',-1),(0,'practice',float('nan'))])
+    def test_invalid_attempt_rejected(n,kind,score,tmp_path):
+>       with pytest.raises(ValueError):record(new_log(),n,kind,score,evidence(tmp_path),tmp_path,date(2026,9,20),True,True)
+                                              ^^^^^^^^^
+
+tests/test_learning_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+_________________ test_invalid_attempt_rejected[0-practice--1] _________________
+
+n = 0, kind = 'practice', score = -1
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_attempt_rejected_4')
+
+    @pytest.mark.parametrize('n,kind,score',[(13,'practice',50),(-1,'assessment',90),(0,'other',90),(0,'practice',101),(0,'practice',-1),(0,'practice',float('nan'))])
+    def test_invalid_attempt_rejected(n,kind,score,tmp_path):
+>       with pytest.raises(ValueError):record(new_log(),n,kind,score,evidence(tmp_path),tmp_path,date(2026,9,20),True,True)
+                                              ^^^^^^^^^
+
+tests/test_learning_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+________________ test_invalid_attempt_rejected[0-practice-nan] _________________
+
+n = 0, kind = 'practice', score = nan
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_attempt_rejected_5')
+
+    @pytest.mark.parametrize('n,kind,score',[(13,'practice',50),(-1,'assessment',90),(0,'other',90),(0,'practice',101),(0,'practice',-1),(0,'practice',float('nan'))])
+    def test_invalid_attempt_rejected(n,kind,score,tmp_path):
+>       with pytest.raises(ValueError):record(new_log(),n,kind,score,evidence(tmp_path),tmp_path,date(2026,9,20),True,True)
+                                              ^^^^^^^^^
+
+tests/test_learning_v2.py:58: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+__________________ test_evidence_must_exist_inside_workspace ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_evidence_must_exist_insid0')
+
+    def test_evidence_must_exist_inside_workspace(tmp_path):
+>       with pytest.raises(ValueError):record(new_log(),0,'practice',10,'missing.md',tmp_path,date(2026,9,20),False,False)
+                                              ^^^^^^^^^
+
+tests/test_learning_v2.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+______________________ test_dates_cannot_reorder_history _______________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_dates_cannot_reorder_hist0')
+
+    def test_dates_cannot_reorder_history(tmp_path):
+>       log=new_log();e=evidence(tmp_path)
+            ^^^^^^^^^
+
+tests/test_learning_v2.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+__________________ test_log_roundtrip_and_version_validation ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_log_roundtrip_and_version0')
+
+    def test_log_roundtrip_and_version_validation(tmp_path):
+>       log=new_log();p=tmp_path/'state.json';write_log(log,p)
+            ^^^^^^^^^
+
+tests/test_learning_v2.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+>   def new_log(): raise NotImplementedError('Learning state not implemented yet')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: Learning state not implemented yet
+
+src/shape_lab/learning.py:2: NotImplementedError
+_________________________ test_square_csv_has_exact_h1 _________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_square_csv_has_exact_h10')
+
+    def test_square_csv_has_exact_h1(tmp_path):
+        p=make_csv(tmp_path,{'x':[0,1,1,0],'y':[0,0,1,1],'label':['a']*4})
+>       r=explore_csv(p,['x','y'],4,7,'none','Generated square control','metres')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:14: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_square_csv_has_exact_h10/input.csv'), ['x', 'y'], 4, 7, 'none', 'Generated square control', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+_______________ test_csv_deterministic_sampling_and_translation ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_csv_deterministic_samplin0')
+
+    def test_csv_deterministic_sampling_and_translation(tmp_path):
+        rng=np.random.default_rng(17);x=rng.normal(size=(30,3))
+        p=make_csv(tmp_path,dict(zip(['a','b','c'],x.T)))
+>       a=explore_csv(p,['a','b','c'],10,19,'none','synthetic test','unitless')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_csv_deterministic_samplin0/input.csv'), ['a', 'b', 'c'], 10, 19, 'none', 'synthetic test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+__________________ test_invalid_configuration[columns0-none] ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_configuration_col0')
+columns = [], scale = 'none'
+
+    @pytest.mark.parametrize('columns,scale', [([], 'none'),(['missing'],'none'),(['x','x'],'none'),(['x'],'nonsense')])
+    def test_invalid_configuration(tmp_path,columns,scale):
+        p=make_csv(tmp_path,{'x':[0,1]})
+>       with pytest.raises(ValueError):explore_csv(p,columns,5,1,scale,'test','units')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_configuration_col0/input.csv'), [], 5, 1, 'none', 'test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+__________________ test_invalid_configuration[columns1-none] ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_configuration_col1')
+columns = ['missing'], scale = 'none'
+
+    @pytest.mark.parametrize('columns,scale', [([], 'none'),(['missing'],'none'),(['x','x'],'none'),(['x'],'nonsense')])
+    def test_invalid_configuration(tmp_path,columns,scale):
+        p=make_csv(tmp_path,{'x':[0,1]})
+>       with pytest.raises(ValueError):explore_csv(p,columns,5,1,scale,'test','units')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_configuration_col1/input.csv'), ['missing'], 5, 1, 'none', 'test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+__________________ test_invalid_configuration[columns2-none] ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_configuration_col2')
+columns = ['x', 'x'], scale = 'none'
+
+    @pytest.mark.parametrize('columns,scale', [([], 'none'),(['missing'],'none'),(['x','x'],'none'),(['x'],'nonsense')])
+    def test_invalid_configuration(tmp_path,columns,scale):
+        p=make_csv(tmp_path,{'x':[0,1]})
+>       with pytest.raises(ValueError):explore_csv(p,columns,5,1,scale,'test','units')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_configuration_col2/input.csv'), ['x', 'x'], 5, 1, 'none', 'test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+________________ test_invalid_configuration[columns3-nonsense] _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_configuration_col3')
+columns = ['x'], scale = 'nonsense'
+
+    @pytest.mark.parametrize('columns,scale', [([], 'none'),(['missing'],'none'),(['x','x'],'none'),(['x'],'nonsense')])
+    def test_invalid_configuration(tmp_path,columns,scale):
+        p=make_csv(tmp_path,{'x':[0,1]})
+>       with pytest.raises(ValueError):explore_csv(p,columns,5,1,scale,'test','units')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_invalid_configuration_col3/input.csv'), ['x'], 5, 1, 'nonsense', 'test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+__________________________ test_missing_data_rejected __________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_missing_data_rejected0')
+
+    def test_missing_data_rejected(tmp_path):
+        p=make_csv(tmp_path,{'x':[0,np.nan],'y':[1,2]})
+>       with pytest.raises(ValueError):explore_csv(p,['x','y'],5,1,'none','test','units')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_missing_data_rejected0/input.csv'), ['x', 'y'], 5, 1, 'none', 'test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+__________________________ test_text_feature_rejected __________________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_text_feature_rejected0')
+
+    def test_text_feature_rejected(tmp_path):
+        p=make_csv(tmp_path,{'x':['a','b']})
+>       with pytest.raises(ValueError):explore_csv(p,['x'],5,1,'none','test','units')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:45: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_text_feature_rejected0/input.csv'), ['x'], 5, 1, 'none', 'test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+_________________ test_constant_standardized_feature_rejected __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_constant_standardized_fea0')
+
+    def test_constant_standardized_feature_rejected(tmp_path):
+        p=make_csv(tmp_path,{'x':[1,1,1]})
+>       with pytest.raises(ValueError):explore_csv(p,['x'],5,1,'standard','test','units')
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:50: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_constant_standardized_fea0/input.csv'), ['x'], 5, 1, 'standard', 'test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+__________________ test_sample_limit_and_provenance_required ___________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-0/test_sample_limit_and_provenan0')
+
+    def test_sample_limit_and_provenance_required(tmp_path):
+        p=make_csv(tmp_path,{'x':[0,1]})
+        for count,note,units in [(200,'test','units'),(0,'test','units'),(2,'','units'),(2,'test','')]:
+>           with pytest.raises(ValueError):explore_csv(p,['x'],count,1,'none',note,units)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_csv_explorer.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (PosixPath('/tmp/pytest-of-root/pytest-0/test_sample_limit_and_provenan0/input.csv'), ['x'], 200, 1, 'none', 'test', ...)
+kwargs = {}
+
+>   def explore_csv(*args, **kwargs): raise NotImplementedError('CSV exploration not implemented yet')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   NotImplementedError: CSV exploration not implemented yet
+
+src/shape_lab/explore.py:2: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_learning_v2.py::test_new_log_has_no_learner_achievements - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_code_execution_is_not_mastery - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_assessment_requires_independence_and_critical_clear - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_assessment_then_delayed_recall - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_failed_recall_requires_review - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_recall_without_assessment_does_not_certify_mastery - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_invalid_attempt_rejected[13-practice-50] - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_invalid_attempt_rejected[-1-assessment-90] - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_invalid_attempt_rejected[0-other-90] - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_invalid_attempt_rejected[0-practice-101] - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_invalid_attempt_rejected[0-practice--1] - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_invalid_attempt_rejected[0-practice-nan] - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_evidence_must_exist_inside_workspace - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_dates_cannot_reorder_history - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_learning_v2.py::test_log_roundtrip_and_version_validation - NotImplementedError: Learning state not implemented yet
+FAILED tests/test_csv_explorer.py::test_square_csv_has_exact_h1 - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_csv_deterministic_sampling_and_translation - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_invalid_configuration[columns0-none] - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_invalid_configuration[columns1-none] - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_invalid_configuration[columns2-none] - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_invalid_configuration[columns3-nonsense] - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_missing_data_rejected - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_text_feature_rejected - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_constant_standardized_feature_rejected - NotImplementedError: CSV exploration not implemented yet
+FAILED tests/test_csv_explorer.py::test_sample_limit_and_provenance_required - NotImplementedError: CSV exploration not implemented yet
+25 failed in 0.13s

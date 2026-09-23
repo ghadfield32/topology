@@ -1,0 +1,234 @@
+Building source distribution...
+running sdist
+running egg_info
+creating src/listening_to_shape_lab.egg-info
+writing src/listening_to_shape_lab.egg-info/PKG-INFO
+writing dependency_links to src/listening_to_shape_lab.egg-info/dependency_links.txt
+writing requirements to src/listening_to_shape_lab.egg-info/requires.txt
+writing top-level names to src/listening_to_shape_lab.egg-info/top_level.txt
+writing manifest file 'src/listening_to_shape_lab.egg-info/SOURCES.txt'
+reading manifest file 'src/listening_to_shape_lab.egg-info/SOURCES.txt'
+adding license file 'LICENSE.md'
+writing manifest file 'src/listening_to_shape_lab.egg-info/SOURCES.txt'
+running check
+creating listening_to_shape_lab-10.0.0
+creating listening_to_shape_lab-10.0.0/src/listening_to_shape_lab.egg-info
+creating listening_to_shape_lab-10.0.0/src/shape_lab
+creating listening_to_shape_lab-10.0.0/src/shape_lab/physics
+creating listening_to_shape_lab-10.0.0/tests
+copying files to listening_to_shape_lab-10.0.0...
+copying LICENSE.md -> listening_to_shape_lab-10.0.0
+copying README.md -> listening_to_shape_lab-10.0.0
+copying pyproject.toml -> listening_to_shape_lab-10.0.0
+copying src/listening_to_shape_lab.egg-info/PKG-INFO -> listening_to_shape_lab-10.0.0/src/listening_to_shape_lab.egg-info
+copying src/listening_to_shape_lab.egg-info/SOURCES.txt -> listening_to_shape_lab-10.0.0/src/listening_to_shape_lab.egg-info
+copying src/listening_to_shape_lab.egg-info/dependency_links.txt -> listening_to_shape_lab-10.0.0/src/listening_to_shape_lab.egg-info
+copying src/listening_to_shape_lab.egg-info/requires.txt -> listening_to_shape_lab-10.0.0/src/listening_to_shape_lab.egg-info
+copying src/listening_to_shape_lab.egg-info/top_level.txt -> listening_to_shape_lab-10.0.0/src/listening_to_shape_lab.egg-info
+copying src/shape_lab/__init__.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/acb.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/algebra.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/attention.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/audits.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/cache.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/cli.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/course.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/data.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/display.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/evidence_v7.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/explore.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/features.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/geometry.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/industries.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/industry_progress.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/learning.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/mapper.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/model_contract.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/persistence.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/practice_v7.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/release.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/runtime.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/sports_v8.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/stereo.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/temporal.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/topology.py -> listening_to_shape_lab-10.0.0/src/shape_lab
+copying src/shape_lab/physics/__init__.py -> listening_to_shape_lab-10.0.0/src/shape_lab/physics
+copying src/shape_lab/physics/classical.py -> listening_to_shape_lab-10.0.0/src/shape_lab/physics
+copying src/shape_lab/physics/constraints.py -> listening_to_shape_lab-10.0.0/src/shape_lab/physics
+copying src/shape_lab/physics/gradients.py -> listening_to_shape_lab-10.0.0/src/shape_lab/physics
+copying src/shape_lab/physics/neural.py -> listening_to_shape_lab-10.0.0/src/shape_lab/physics
+copying src/shape_lab/physics/operators.py -> listening_to_shape_lab-10.0.0/src/shape_lab/physics
+copying src/shape_lab/physics/practice.py -> listening_to_shape_lab-10.0.0/src/shape_lab/physics
+copying tests/test_algebra.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_attention_temporal_v3.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_audits_v4.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_beginner_v7.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_bridge_practice_v3.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_course_v9.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_csv_explorer.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_curriculum_v4.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_data.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_evidence_v7.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_features.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_geometry_v3.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_hahn_v5.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_independent_checks.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_industry_exercises.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_industry_progress.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_industry_v6.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_learning_v2.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_model_contract_v3.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_neural_physics_v5.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_optional_libraries.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_persistence.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_physics_v5.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_practice_physics_v5.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_practice_v2.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_practice_v7.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_progress_v3.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_progress_v5.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_release_version_v3.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_repository_v10.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_sports_v8.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_sports_v8_content.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_stereo_v3.py -> listening_to_shape_lab-10.0.0/tests
+copying tests/test_study_v4.py -> listening_to_shape_lab-10.0.0/tests
+copying src/listening_to_shape_lab.egg-info/SOURCES.txt -> listening_to_shape_lab-10.0.0/src/listening_to_shape_lab.egg-info
+Writing listening_to_shape_lab-10.0.0/setup.cfg
+Creating tar archive
+removing 'listening_to_shape_lab-10.0.0' (and everything under it)
+Building wheel from source distribution...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/shape_lab
+copying src/shape_lab/explore.py -> build/lib/shape_lab
+copying src/shape_lab/evidence_v7.py -> build/lib/shape_lab
+copying src/shape_lab/cli.py -> build/lib/shape_lab
+copying src/shape_lab/release.py -> build/lib/shape_lab
+copying src/shape_lab/course.py -> build/lib/shape_lab
+copying src/shape_lab/runtime.py -> build/lib/shape_lab
+copying src/shape_lab/display.py -> build/lib/shape_lab
+copying src/shape_lab/industry_progress.py -> build/lib/shape_lab
+copying src/shape_lab/data.py -> build/lib/shape_lab
+copying src/shape_lab/topology.py -> build/lib/shape_lab
+copying src/shape_lab/acb.py -> build/lib/shape_lab
+copying src/shape_lab/features.py -> build/lib/shape_lab
+copying src/shape_lab/stereo.py -> build/lib/shape_lab
+copying src/shape_lab/learning.py -> build/lib/shape_lab
+copying src/shape_lab/persistence.py -> build/lib/shape_lab
+copying src/shape_lab/sports_v8.py -> build/lib/shape_lab
+copying src/shape_lab/temporal.py -> build/lib/shape_lab
+copying src/shape_lab/practice_v7.py -> build/lib/shape_lab
+copying src/shape_lab/attention.py -> build/lib/shape_lab
+copying src/shape_lab/model_contract.py -> build/lib/shape_lab
+copying src/shape_lab/algebra.py -> build/lib/shape_lab
+copying src/shape_lab/mapper.py -> build/lib/shape_lab
+copying src/shape_lab/__init__.py -> build/lib/shape_lab
+copying src/shape_lab/geometry.py -> build/lib/shape_lab
+copying src/shape_lab/audits.py -> build/lib/shape_lab
+copying src/shape_lab/industries.py -> build/lib/shape_lab
+copying src/shape_lab/cache.py -> build/lib/shape_lab
+creating build/lib/shape_lab/physics
+copying src/shape_lab/physics/gradients.py -> build/lib/shape_lab/physics
+copying src/shape_lab/physics/constraints.py -> build/lib/shape_lab/physics
+copying src/shape_lab/physics/neural.py -> build/lib/shape_lab/physics
+copying src/shape_lab/physics/practice.py -> build/lib/shape_lab/physics
+copying src/shape_lab/physics/__init__.py -> build/lib/shape_lab/physics
+copying src/shape_lab/physics/classical.py -> build/lib/shape_lab/physics
+copying src/shape_lab/physics/operators.py -> build/lib/shape_lab/physics
+running egg_info
+writing src/listening_to_shape_lab.egg-info/PKG-INFO
+writing dependency_links to src/listening_to_shape_lab.egg-info/dependency_links.txt
+writing requirements to src/listening_to_shape_lab.egg-info/requires.txt
+writing top-level names to src/listening_to_shape_lab.egg-info/top_level.txt
+reading manifest file 'src/listening_to_shape_lab.egg-info/SOURCES.txt'
+adding license file 'LICENSE.md'
+writing manifest file 'src/listening_to_shape_lab.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/shape_lab
+copying build/lib/shape_lab/explore.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/evidence_v7.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/cli.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/release.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/course.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/runtime.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/display.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/industry_progress.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/data.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/topology.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/acb.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+creating build/bdist.linux-x86_64/wheel/shape_lab/physics
+copying build/lib/shape_lab/physics/gradients.py -> build/bdist.linux-x86_64/wheel/./shape_lab/physics
+copying build/lib/shape_lab/physics/constraints.py -> build/bdist.linux-x86_64/wheel/./shape_lab/physics
+copying build/lib/shape_lab/physics/neural.py -> build/bdist.linux-x86_64/wheel/./shape_lab/physics
+copying build/lib/shape_lab/physics/practice.py -> build/bdist.linux-x86_64/wheel/./shape_lab/physics
+copying build/lib/shape_lab/physics/__init__.py -> build/bdist.linux-x86_64/wheel/./shape_lab/physics
+copying build/lib/shape_lab/physics/classical.py -> build/bdist.linux-x86_64/wheel/./shape_lab/physics
+copying build/lib/shape_lab/physics/operators.py -> build/bdist.linux-x86_64/wheel/./shape_lab/physics
+copying build/lib/shape_lab/features.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/stereo.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/learning.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/persistence.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/sports_v8.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/temporal.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/practice_v7.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/attention.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/model_contract.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/algebra.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/mapper.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/__init__.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/geometry.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/audits.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/industries.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+copying build/lib/shape_lab/cache.py -> build/bdist.linux-x86_64/wheel/./shape_lab
+running install_egg_info
+Copying src/listening_to_shape_lab.egg-info to build/bdist.linux-x86_64/wheel/./listening_to_shape_lab-10.0.0-py3.13.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/listening_to_shape_lab-10.0.0.dist-info/WHEEL
+creating '/mnt/data/v10_evidence/distributions/.tmp-51r0s47v/listening_to_shape_lab-10.0.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'listening_to_shape_lab-10.0.0.dist-info/licenses/LICENSE.md'
+adding 'shape_lab/__init__.py'
+adding 'shape_lab/acb.py'
+adding 'shape_lab/algebra.py'
+adding 'shape_lab/attention.py'
+adding 'shape_lab/audits.py'
+adding 'shape_lab/cache.py'
+adding 'shape_lab/cli.py'
+adding 'shape_lab/course.py'
+adding 'shape_lab/data.py'
+adding 'shape_lab/display.py'
+adding 'shape_lab/evidence_v7.py'
+adding 'shape_lab/explore.py'
+adding 'shape_lab/features.py'
+adding 'shape_lab/geometry.py'
+adding 'shape_lab/industries.py'
+adding 'shape_lab/industry_progress.py'
+adding 'shape_lab/learning.py'
+adding 'shape_lab/mapper.py'
+adding 'shape_lab/model_contract.py'
+adding 'shape_lab/persistence.py'
+adding 'shape_lab/practice_v7.py'
+adding 'shape_lab/release.py'
+adding 'shape_lab/runtime.py'
+adding 'shape_lab/sports_v8.py'
+adding 'shape_lab/stereo.py'
+adding 'shape_lab/temporal.py'
+adding 'shape_lab/topology.py'
+adding 'shape_lab/physics/__init__.py'
+adding 'shape_lab/physics/classical.py'
+adding 'shape_lab/physics/constraints.py'
+adding 'shape_lab/physics/gradients.py'
+adding 'shape_lab/physics/neural.py'
+adding 'shape_lab/physics/operators.py'
+adding 'shape_lab/physics/practice.py'
+adding 'listening_to_shape_lab-10.0.0.dist-info/METADATA'
+adding 'listening_to_shape_lab-10.0.0.dist-info/WHEEL'
+adding 'listening_to_shape_lab-10.0.0.dist-info/top_level.txt'
+adding 'listening_to_shape_lab-10.0.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built /mnt/data/v10_evidence/distributions/listening_to_shape_lab-10.0.0.tar.gz
+Successfully built /mnt/data/v10_evidence/distributions/listening_to_shape_lab-10.0.0-py3-none-any.whl

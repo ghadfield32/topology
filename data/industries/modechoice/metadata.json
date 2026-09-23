@@ -1,0 +1,125 @@
+{
+  "id": "modechoice",
+  "sector": "transportation",
+  "title": "Choice sets, group splits and fair baselines",
+  "provider": "statsmodels",
+  "provider_version": "0.14.6",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/modechoice.html",
+  "source_doi": null,
+  "citation": "Greene and Hensher, 1987 intercity mode-choice sample documented in Greene (1997/2011); statsmodels distribution.",
+  "license": "Public domain (dataset distributor statement)",
+  "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/modechoice.html",
+  "license_url": "https://www.statsmodels.org/stable/datasets/generated/modechoice.html",
+  "observation_unit": "One alternative offered to one traveler. Four rows form one choice set.",
+  "scope_limitations": "840 alternatives, 210 travelers. Choice-based sampling oversamples some modes; not population market shares.",
+  "rows": 840,
+  "columns": [
+    "row_id",
+    "individual",
+    "mode",
+    "choice",
+    "ttme",
+    "invc",
+    "invt",
+    "gc",
+    "hinc",
+    "psize"
+  ],
+  "label_map": {},
+  "data_kind": "observed",
+  "acquisition": "offline export from installed package distribution; no invented records",
+  "source_review_date": "2026-09-20",
+  "data_file": "data/industries/modechoice/data.csv",
+  "data_sha256": "be6deb2170ab4c0b4a09319308ec6098a07a1f9ef4418380cfc7bcc6331c3556",
+  "source_file": "data/industries/modechoice/source_distribution.csv",
+  "source_sha256": "d2d72c1db440f8ffce01f58ed39fc1145569ec1703970dac1636c154fc01fd8e",
+  "missing_by_column": {
+    "row_id": 0,
+    "individual": 0,
+    "mode": 0,
+    "choice": 0,
+    "ttme": 0,
+    "invc": 0,
+    "invt": 0,
+    "gc": 0,
+    "hinc": 0,
+    "psize": 0
+  },
+  "transforms": [
+    "Preserved loaded values and row order; added zero-based row_id.",
+    "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+    "Missing CO2 observations remain blank, never zero."
+  ],
+  "schema": [
+    {
+      "name": "row_id",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "row id"
+    },
+    {
+      "name": "individual",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "ID",
+      "description": "One traveler/choice-set identifier."
+    },
+    {
+      "name": "mode",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "category",
+      "description": "1 air; 2 train; 3 bus; 4 car."
+    },
+    {
+      "name": "choice",
+      "role": "response_or_signal",
+      "dtype": "int64",
+      "units": "binary",
+      "description": "One selected alternative per choice set."
+    },
+    {
+      "name": "ttme",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "minutes",
+      "description": "Terminal waiting time, zero for car."
+    },
+    {
+      "name": "invc",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source dollars",
+      "description": "In-vehicle monetary cost; not inflation-adjusted here."
+    },
+    {
+      "name": "invt",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "minutes",
+      "description": "In-vehicle travel time."
+    },
+    {
+      "name": "gc",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source dollars",
+      "description": "Generalized cost combining cost and time; excluded to avoid double-counting."
+    },
+    {
+      "name": "hinc",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source thousands of dollars",
+      "description": "Household income."
+    },
+    {
+      "name": "psize",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "persons",
+      "description": "Group size in the chosen mode; excluded because availability for prospective choice is uncertain."
+    }
+  ]
+}

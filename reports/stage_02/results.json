@@ -1,0 +1,25 @@
+{
+  "query_id": 100,
+  "raw_neighbors": [
+    136,
+    144,
+    104,
+    143,
+    140,
+    124,
+    148,
+    120
+  ],
+  "scaled_neighbors": [
+    136,
+    148,
+    144,
+    115,
+    143,
+    140,
+    124,
+    120
+  ],
+  "overlap": 7,
+  "squared_distance_is_metric": false
+}

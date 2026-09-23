@@ -1,0 +1,12 @@
+{
+  "raw_slots": 2284,
+  "observed": 2225,
+  "missing": 59,
+  "valid_windows": 2022,
+  "partition_windows": {
+    "train": 1124,
+    "validation": 432,
+    "test": 445
+  },
+  "strict_boundary_policy": true
+}

@@ -1,0 +1,32 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+______________________ test_canonical_catalog_is_present _______________________
+
+    def test_canonical_catalog_is_present():
+>       assert (ROOT/'curriculum/catalog.json').is_file(), 'One canonical course manifest is required.'
+E       AssertionError: One canonical course manifest is required.
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'curriculum/catalog.json').is_file
+
+tests/test_course_v9.py:6: AssertionError
+__________________________ test_course_api_is_present __________________________
+
+    def test_course_api_is_present():
+>       assert (ROOT/'src/shape_lab/course.py').is_file(), 'Safe isolated lesson execution is required.'
+E       AssertionError: Safe isolated lesson execution is required.
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'src/shape_lab/course.py').is_file
+
+tests/test_course_v9.py:8: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_course_v9.py::test_canonical_catalog_is_present - AssertionError: One canonical course manifest is required.
+assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'curriculum/catalog.json').is_file
+FAILED tests/test_course_v9.py::test_course_api_is_present - AssertionError: Safe isolated lesson execution is required.
+assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'src/shape_lab/course.py').is_file
+2 failed in 0.20s

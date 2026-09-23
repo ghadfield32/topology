@@ -1,0 +1,109 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 09 — Reference coding solutions · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../practice/answers/09_practice.ipynb">practice/answers/09_practice.ipynb</a> · Readable source notation; no online math renderer.</p><h1>Reference answers</h1><p>Attempt the independent work first.</p><details><summary>Reveal worked answers and outputs</summary><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="stage-09--reference-coding-solutions">Stage 09 — Reference coding solutions</h1>
+<p>These are instructor reference implementations, not evidence of your independent mastery. Run after attempting your own version. All examples use explicit small inputs and the declared dataset partitions.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json
+from itertools import combinations
+import numpy as np
+import pandas as pd
+ROOT=next((p for p in [Path.cwd(),*Path.cwd().parents] if (p/&#x27;data/manifest.json&#x27;).exists() and (p/&#x27;src/shape_lab&#x27;).exists()),None)
+if ROOT is None: raise RuntimeError(&#x27;Open this notebook inside the extracted course folder.&#x27;)
+sys.path.insert(0,str(ROOT/&#x27;src&#x27;))
+from shape_lab.data import load_iris_data,load_digit_data,digit_example
+from shape_lab.algebra import closure,validate_complex,rank_mod2,boundary_matrix,betti_numbers
+from shape_lab.topology import component_labels
+from shape_lab.persistence import ordered_filtration,rips_filtration,reduce_boundary,persistent_homology,diagram,pixel_filtration,finite_bottleneck
+print(&#x27;Working inside&#x27;,ROOT.name,&#x27;— no network data downloads.&#x27;)</code></pre><div class="output"><pre>Working inside course — no network data downloads.
+</pre></div></section><h2 id="09c1--order-a-filtration-correctly">09.C1 — Order a filtration correctly</h2>
+<p>Given valid (simplex,time) entries, sort by time, then vertex count, then tuple.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Python compares tuples lexicographically, field by field.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>def filtration_order(entries):
+    return sorted(entries,key=lambda item:(item[1],len(item[0]),item[0]))</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>f=filtration_order([((0,1),0),((1,),0),((0,),0)])
+assert [s for s,v in f]==[(0,),(1,),(0,1)]
+print(&quot;Faces precede cofaces in a tied filtration&quot;)</code></pre><div class="output"><pre>Faces precede cofaces in a tied filtration
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> Tie ordering is an implementation detail, but it must respect the filtration. Positive-length intervals should not depend on an arbitrary valid ordering of simultaneous unrelated simplices.</p>
+<h2 id="09c2--construct-sparse-boundary-columns">09.C2 — Construct sparse boundary columns</h2>
+<p>Given an already valid ordered filtration, return one set of row indices per boundary column over F2. Vertices have empty boundary.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>The row index comes from the filtration order, not the numerical vertex ID.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>def sparse_boundary_columns(f):
+    index={s:i for i,(s,v) in enumerate(f)}
+    return [{index[face] for face in combinations(s,len(s)-1)} if len(s)&gt;1 else set() for s,v in f]</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>f=ordered_filtration([((0,),0),((1,),0),((0,1),1)])
+assert sparse_boundary_columns(f)==[set(),set(),{0,1}]
+print(&quot;One edge boundary contains its two vertex rows&quot;)</code></pre><div class="output"><pre>One edge boundary contains its two vertex rows
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> The sparse set stores which boundary coefficients are one. Indexing by simplex identity is necessary once rows represent edges and triangles rather than just vertices.</p>
+<h2 id="09c3--reduce-sparse-columns">09.C3 — Reduce sparse columns</h2>
+<p>Copy the columns. Repeatedly XOR a previous column with the same largest row until that pivot is unique. Return reduced columns and pivot-row-to-column mapping.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>The largest nonzero row is often called low. XOR cancels it when the pivots match.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 7</p><pre><code>def my_reduce(columns):
+    reduced=[];owners={}
+    for j,original in enumerate(columns):
+        col=set(original)
+        while col and max(col) in owners:
+            col ^= reduced[owners[max(col)]]
+        if col: owners[max(col)]=j
+        reduced.append(col)
+    return reduced,owners</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 8</p><pre><code>columns=[set(),set(),set(),{0,1},{1,2},{0,2}]
+reduced,owners=my_reduce(columns)
+assert reduced[-1]==set() and len(owners)==2
+assert columns[-1]=={0,2}
+print(&quot;The closing edge reduces to zero without mutating input&quot;)</code></pre><div class="output"><pre>The closing edge reduces to zero without mutating input
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> The zero column indicates a homology birth in the filtered complex. Later columns can pair with that birth; zero does not imply that the class survives forever.</p>
+<h2 id="09c4--extract-paired-birth-and-death-times">09.C4 — Extract paired birth and death times</h2>
+<p>Given a filtration and pivot mapping from reduced boundary columns, return (dimension,birth,death) for each finite positive-length pair.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>The dimension belongs to the birth simplex, one below its killing coface.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 9</p><pre><code>def finite_pair_times(f,pivots):
+    return sorted((len(f[i][0])-1,f[i][1],f[j][1]) for i,j in pivots.items() if f[j][1]&gt;f[i][1])</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 10</p><pre><code>X=np.array([[0,0],[1,0],[1,1],[0,1]],float)
+f,reduced,pairs,operations=reduce_boundary(rips_filtration(X))
+result=finite_pair_times(f,pairs)
+assert len([r for r in result if r[0]==1])==1
+assert np.allclose([r[1:] for r in result if r[0]==1],[[1,np.sqrt(2)]])
+print(&quot;Positive finite pairs:&quot;,result)</code></pre><div class="output"><pre>Positive finite pairs: [(0, 0.0, 1.0), (0, 0.0, 1.0), (0, 0.0, 1.0), (1, 1.0, 1.4142135623730951)]
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> Unpaired zero columns require a separate pass for surviving classes. This exercise deliberately returns only finite pairs and labels that restriction.</p>
+<h2 id="09c5--compute-h0-merges-independently">09.C5 — Compute H0 merges independently</h2>
+<p>On a nonempty small point cloud, sort all pairwise distances and use union-find to collect merge distances. Include zero-distance merges.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>An edge merges components only when its endpoints currently have different representatives.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 11</p><pre><code>def h0_merge_distances(X):
+    X=np.asarray(X,dtype=float);parent=list(range(len(X)))
+    def find(i):
+        while parent[i]!=i:
+            parent[i]=parent[parent[i]];i=parent[i]
+        return i
+    edges=sorted((float(np.linalg.norm(X[i]-X[j])),i,j) for i,j in combinations(range(len(X)),2))
+    deaths=[]
+    for d,i,j in edges:
+        a,b=find(i),find(j)
+        if a!=b: parent[b]=a;deaths.append(d)
+    return deaths</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 12</p><pre><code>X=load_iris_data().iloc[:12,1:5].to_numpy()
+deaths=h0_merge_distances(X)
+D=diagram(persistent_homology(rips_filtration(X,max_homology=0)),0,finite_only=True)
+assert len(deaths)==len(X)-1
+assert np.allclose([d for d in deaths if d&gt;0],sorted(D[:,1]))
+print(&quot;Real-point-cloud union-find merge agreement:&quot;,len(deaths),&quot;merges&quot;)</code></pre><div class="output"><pre>Real-point-cloud union-find merge agreement: 11 merges
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> This checks H0 with a different algorithmic route. It does not validate H1 by itself and does not independently certify every piece of shared distance code.</p>
+</details><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

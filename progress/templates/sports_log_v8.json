@@ -1,0 +1,55 @@
+{
+  "version": 8,
+  "note": "Manual evidence record. Unassessed is not failed. Preserve previous logs separately.",
+  "stages": {
+    "S00": {
+      "status": "unassessed",
+      "attempts": [],
+      "evidence_files": [],
+      "misconceptions": [],
+      "delayed_review_date": null
+    },
+    "S01": {
+      "status": "unassessed",
+      "attempts": [],
+      "evidence_files": [],
+      "misconceptions": [],
+      "delayed_review_date": null
+    },
+    "S02": {
+      "status": "unassessed",
+      "attempts": [],
+      "evidence_files": [],
+      "misconceptions": [],
+      "delayed_review_date": null
+    },
+    "S03": {
+      "status": "unassessed",
+      "attempts": [],
+      "evidence_files": [],
+      "misconceptions": [],
+      "delayed_review_date": null
+    },
+    "S04": {
+      "status": "unassessed",
+      "attempts": [],
+      "evidence_files": [],
+      "misconceptions": [],
+      "delayed_review_date": null
+    },
+    "S05": {
+      "status": "unassessed",
+      "attempts": [],
+      "evidence_files": [],
+      "misconceptions": [],
+      "delayed_review_date": null
+    },
+    "S06": {
+      "status": "unassessed",
+      "attempts": [],
+      "evidence_files": [],
+      "misconceptions": [],
+      "delayed_review_date": null
+    }
+  }
+}

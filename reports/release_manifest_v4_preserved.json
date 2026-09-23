@@ -1,0 +1,41 @@
+{
+  "status": "PASSED",
+  "version": "4.0.0",
+  "stages": 21,
+  "guided_sessions": 21,
+  "consolidation_notebooks": 21,
+  "explicit_outcomes": 84,
+  "conceptual_exercises": 150,
+  "additional_transfer_questions": 42,
+  "coding_exercises": 89,
+  "delayed_recall_questions": 63,
+  "foundation_primers": 6,
+  "executed_reference_notebooks": 63,
+  "executed_reference_code_cells": 381,
+  "embedded_reference_figures": 41,
+  "intentional_learner_notebooks": 21,
+  "datasets": 4,
+  "learner_stages_assessed": 0,
+  "full_book_text_audited": false,
+  "VGGT_inference_executed": false,
+  "physical_holdout_validated": false,
+  "real_sports_event_labels_evaluated": false,
+  "archive": "Listening_to_Shape_Learning_System_v4.zip",
+  "build_date": "2026-09-20",
+  "full_combined_package": true,
+  "learning_log_format": "preserved v3-compatible 21-stage schema",
+  "archive_file_count": 1202,
+  "test_summary": {
+    "passed": 296,
+    "skipped": 2,
+    "failed": 0
+  },
+  "limitations": [
+    "Ripser/GUDHI unavailable",
+    "No trained VGGT inference",
+    "No complete book audit",
+    "No physical holdout or real sports event validation",
+    "Mac/Windows not executed",
+    "Full browser navigation blocked by environment"
+  ]
+}

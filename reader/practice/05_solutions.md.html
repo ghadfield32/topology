@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 05 — coding practice solutions · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../practice/05_solutions.md">practice/05_solutions.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-05--coding-practice-solutions">Stage 05 — coding practice solutions</h1>
+<p>Attempt the learner notebook first. The following code and checks are the canonical reference, with limited declared input assumptions.</p>
+<h2 id="05c1--generate-all-nonempty-faces">05.C1 — Generate all nonempty faces</h2>
+<p>Given distinct integer vertices of one simplex, return a set of its nonempty face tuples with vertices sorted.</p>
+<pre><code class="language-python">def simplex_faces(vertices):
+    v=tuple(sorted(vertices))
+    return {face for size in range(1,len(v)+1) for face in combinations(v,size)}
+</code></pre>
+<p>An abstract triangle consists of a three-vertex simplex plus all its faces. The empty face is conventionally implicit in some texts; this course does not store it in code.</p>
+<h3 id="visible-checks">Visible checks</h3>
+<pre><code class="language-python">assert len(simplex_faces([2,0,1]))==7
+assert (0,2) in simplex_faces([2,0,1])
+assert len(simplex_faces([0,1,2,3]))==15
+print("Triangle and tetrahedron nonempty face counts: 7 and 15")
+</code></pre>
+<h2 id="05c2--count-simplices-by-dimension">05.C2 — Count simplices by dimension</h2>
+<p>Return counts for dimensions 0 through maximum dimension in a nonempty complex. A tuple with r vertices has dimension r-1.</p>
+<pre><code class="language-python">def simplex_counts(complex_):
+    largest=max(len(s)-1 for s in complex_)
+    return [sum(len(s)==k+1 for s in complex_) for k in range(largest+1)]
+</code></pre>
+<p>The dimension of a simplex is intrinsic to its vertex count. A triangle can be drawn in a two-dimensional page or embedded in three-dimensional space without changing its simplicial dimension.</p>
+<h3 id="visible-checks-1">Visible checks</h3>
+<pre><code class="language-python">K=closure([(0,1,2)])
+assert simplex_counts(K)==[3,3,1]
+print("Filled triangle V,E,F:",simplex_counts(K))
+</code></pre>
+<h2 id="05c3--check-the-face-condition">05.C3 — Check the face condition</h2>
+<p>Return whether every nonempty face of each listed simplex also occurs. Assume each supplied tuple already has distinct sorted vertices.</p>
+<pre><code class="language-python">def has_all_faces(complex_):
+    present=set(complex_)
+    return all(face in present for s in present for size in range(1,len(s)+1) for face in combinations(s,size))
+</code></pre>
+<p>This question only checks face closure; duplicate records and invalid vertex tuples are separate validation questions handled by the production course helper.</p>
+<h3 id="visible-checks-2">Visible checks</h3>
+<pre><code class="language-python">assert has_all_faces(closure([(0,1,2)]))
+assert not has_all_faces([(0,),(1,),(0,1,2)])
+print("Missing-face example rejected")
+</code></pre>
+<h2 id="05c4--compute-euler-characteristic">05.C4 — Compute Euler characteristic</h2>
+<p>For a finite complex return the alternating sum of simplex counts: vertices minus edges plus triangles and so on.</p>
+<pre><code class="language-python">def euler_from_simplices(complex_):
+    return sum((-1)**(len(s)-1) for s in complex_)
+</code></pre>
+<p>The alternating count is useful but incomplete. The same Euler characteristic does not imply the same homology groups, much less homeomorphism.</p>
+<h3 id="visible-checks-3">Visible checks</h3>
+<pre><code class="language-python">boundary=closure([(0,1),(1,2),(0,2)])
+filled=closure([(0,1,2)])
+assert euler_from_simplices(boundary)==0
+assert euler_from_simplices(filled)==1
+print("Outline versus filled triangle Euler values: 0 versus 1")
+</code></pre>
+<h2 id="05c5--build-a-real-image-threshold-object">05.C5 — Build a real image threshold object</h2>
+<p>Return simplices in the declared closed-pixel model whose entrance value 1-intensity/16 is &lt;= threshold. Use pixel_filtration, keeping all included faces.</p>
+<pre><code class="language-python">def image_threshold_complex(image,threshold):
+    f=pixel_filtration(1-np.asarray(image,dtype=float)/16)
+    return [simplex for simplex,value in f if value&lt;=threshold]
+</code></pre>
+<p>The object is a union of closed squares, with corner-touching pixels connected, subdivided into triangles. This is not the same as every possible image-connectivity convention.</p>
+<h3 id="visible-checks-4">Visible checks</h3>
+<pre><code class="language-python">image,sample_id=digit_example(0)
+K=image_threshold_complex(image,.5)
+validate_complex(K)
+assert len(K)&gt;0
+print("Training image",sample_id,"threshold complex simplices:",len(K))
+</code></pre>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

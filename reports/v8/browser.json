@@ -1,0 +1,13 @@
+{
+  "actual_file_navigation": false,
+  "desktop_render": true,
+  "mobile_render": true,
+  "search": true,
+  "answer_reveal": true,
+  "executed_figure": true,
+  "page_errors": [],
+  "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/v8_build/listening_to_shape_lab/START_HERE.html\nCall log:\n  - navigating to \"file:///mnt/data/v8_build/listening_to_shape_lab/START_HERE.html\", waiting until \"load\"\n",
+  "render_method": "fresh-page set_content with inline local CSS; file navigation NOT established",
+  "search_visible_cards": 1,
+  "home_mobile_no_horizontal_overflow": true
+}

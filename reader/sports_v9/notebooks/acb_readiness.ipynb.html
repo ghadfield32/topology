@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACB metadata readiness — measured records, precise scope · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v9/notebooks/acb_readiness.ipynb">sports_v9/notebooks/acb_readiness.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="acb-metadata-readiness--measured-records-precise-scope">ACB metadata readiness — measured records, precise scope</h1>
+<p>Read <code>sports_v9/lesson.md</code>. Predict the counts before running. Real source metadata is separate from the clearly marked constructed identity/count examples.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from pathlib import Path
+import sys, json
+ROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p/&#x27;curriculum/catalog.json&#x27;).is_file())
+sys.path.insert(0, str(ROOT/&#x27;src&#x27;))
+from shape_lab.acb import load_matches, chronological_split, canonical_id, team_only_total
+matches = load_matches(ROOT/&#x27;sports_v9/data&#x27;)
+OUT = ROOT/&#x27;reports/v9/acb&#x27;
+OUT.mkdir(parents=True, exist_ok=True)
+</code></pre><div class="output"></div></section><h2 id="one-game-is-one-observation">One game is one observation</h2>
+<p>Final score margin is an outcome, not a pregame input.</p>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>ids = [r[&#x27;id&#x27;] for r in matches]
+teams = {r[side][&#x27;id&#x27;] for r in matches for side in [&#x27;home_team&#x27;,&#x27;away_team&#x27;]}
+assert len(ids) == len(set(ids)) == 10
+margins = {r[&#x27;id&#x27;]:r[&#x27;home_score&#x27;]-r[&#x27;away_score&#x27;] for r in matches}
+assert margins[114243] == 15
+print(&#x27;Games:&#x27;, len(ids), &#x27;distinct teams:&#x27;, len(teams))
+print(&#x27;Final margins, not pregame features:&#x27;, margins)</code></pre><div class="output"><pre>Games: 10 distinct teams: 17
+Final margins, not pregame features: {114243: 15, 114234: -4, 114169: 3, 114099: 6, 114086: -22, 178442: -4, 179612: -7, 184439: -5, 188630: 22, 191313: -1}
+</pre></div></section><h2 id="split-games-not-frames">Split games, not frames</h2>
+<p>This is chronological game evaluation, not unseen-team evaluation. No model is fitted.</p>
+<section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>assignment = chronological_split(matches)
+assert assignment == chronological_split(list(reversed(matches)))
+counts = {s:sum(v==s for v in assignment.values()) for s in [&#x27;fit&#x27;,&#x27;validation&#x27;,&#x27;test&#x27;]}
+assert list(counts.values()) == [6,2,2]
+for a,b in [(&#x27;fit&#x27;,&#x27;validation&#x27;),(&#x27;fit&#x27;,&#x27;test&#x27;),(&#x27;validation&#x27;,&#x27;test&#x27;)]:
+    assert not ({i for i,s in assignment.items() if s==a} &amp; {i for i,s in assignment.items() if s==b})
+print(counts)
+print(assignment)</code></pre><div class="output"><pre>{&#x27;fit&#x27;: 6, &#x27;validation&#x27;: 2, &#x27;test&#x27;: 2}
+{114243: &#x27;fit&#x27;, 114234: &#x27;fit&#x27;, 114169: &#x27;fit&#x27;, 114099: &#x27;fit&#x27;, 114086: &#x27;fit&#x27;, 178442: &#x27;fit&#x27;, 179612: &#x27;validation&#x27;, 184439: &#x27;validation&#x27;, 188630: &#x27;test&#x27;, 191313: &#x27;test&#x27;}
+</pre></div></section><h2 id="constructed-counterexamples--not-additional-observed-athletes">Constructed counterexamples — not additional observed athletes</h2>
+<p>Use IDs rather than guessing from names. Sum additive team rows, not both team rows and their total.</p>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>assert canonical_id(11,{11:12,12:13}) == 13
+try:
+    canonical_id(11,{11:12,12:11})
+except ValueError as error:
+    print(&#x27;Expected invalid alias mapping:&#x27;, error)
+else:
+    raise AssertionError(&#x27;A cycle must be rejected.&#x27;)
+example=[{&#x27;team_name&#x27;:&#x27;A&#x27;,&#x27;attempts&#x27;:10},{&#x27;team_name&#x27;:&#x27;B&#x27;,&#x27;attempts&#x27;:5},{&#x27;team_name&#x27;:&#x27;total&#x27;,&#x27;attempts&#x27;:15}]
+assert team_only_total(example,&#x27;attempts&#x27;) == 15
+assert sum(r[&#x27;attempts&#x27;] for r in example) == 30
+print(&#x27;Correct count: 15. Naive double count: 30.&#x27;)</code></pre><div class="output"><pre>Expected invalid alias mapping: Alias cycle; fix the identity mapping first.
+Correct count: 15. Naive double count: 30.
+</pre></div></section><h2 id="record-evidence-and-its-boundaries">Record evidence and its boundaries</h2>
+<section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>result={&#x27;observed_games&#x27;:len(ids),&#x27;distinct_teams&#x27;:len(teams),&#x27;split_counts&#x27;:counts,
+        &#x27;split_game_ids&#x27;:assignment,&#x27;source_integrity&#x27;:&#x27;connector Git blob and local SHA-256 verified&#x27;,
+        &#x27;model_trained&#x27;:False,&#x27;raw_tracking_included&#x27;:False,
+        &#x27;inference_limit&#x27;:&#x27;No season-wide, unseen-team or physical-tracking validation.&#x27;}
+(OUT/&#x27;results.json&#x27;).write_text(json.dumps(result,indent=2)+&#x27;\n&#x27;)
+print(json.dumps(result,indent=2))</code></pre><div class="output"><pre>{
+  &quot;observed_games&quot;: 10,
+  &quot;distinct_teams&quot;: 17,
+  &quot;split_counts&quot;: {
+    &quot;fit&quot;: 6,
+    &quot;validation&quot;: 2,
+    &quot;test&quot;: 2
+  },
+  &quot;split_game_ids&quot;: {
+    &quot;114243&quot;: &quot;fit&quot;,
+    &quot;114234&quot;: &quot;fit&quot;,
+    &quot;114169&quot;: &quot;fit&quot;,
+    &quot;114099&quot;: &quot;fit&quot;,
+    &quot;114086&quot;: &quot;fit&quot;,
+    &quot;178442&quot;: &quot;fit&quot;,
+    &quot;179612&quot;: &quot;validation&quot;,
+    &quot;184439&quot;: &quot;validation&quot;,
+    &quot;188630&quot;: &quot;test&quot;,
+    &quot;191313&quot;: &quot;test&quot;
+  },
+  &quot;source_integrity&quot;: &quot;connector Git blob and local SHA-256 verified&quot;,
+  &quot;model_trained&quot;: false,
+  &quot;raw_tracking_included&quot;: false,
+  &quot;inference_limit&quot;: &quot;No season-wide, unseen-team or physical-tracking validation.&quot;
+}
+</pre></div></section><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

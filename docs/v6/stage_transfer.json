@@ -1,0 +1,219 @@
+[
+  {
+    "stage": 0,
+    "title": "Start here: how to learn, run, and question the results",
+    "case": "wdbc",
+    "focus": "Rows, features and labels",
+    "guide": "industry/stage_guides/00.md"
+  },
+  {
+    "stage": 1,
+    "title": "Mathematical language, proofs, and linear algebra",
+    "case": "wine",
+    "focus": "Linear algebra describes the array, not the domain",
+    "guide": "industry/stage_guides/01.md"
+  },
+  {
+    "stage": 2,
+    "title": "Closeness, metrics, neighborhoods, and topologies",
+    "case": "wine",
+    "focus": "A distance depends on scale",
+    "guide": "industry/stage_guides/02.md"
+  },
+  {
+    "stage": 3,
+    "title": "Continuity, homeomorphisms, connectedness, and compactness",
+    "case": "wdbc",
+    "focus": "Projection can erase information",
+    "guide": "industry/stage_guides/03.md"
+  },
+  {
+    "stage": 4,
+    "title": "Groups, symmetries, paths, loops, and homotopy",
+    "case": "wine",
+    "focus": "Symmetry is a declared equivalence",
+    "guide": "industry/stage_guides/04.md"
+  },
+  {
+    "stage": 5,
+    "title": "Surfaces, simplices, triangulations, and pixel geometry",
+    "case": "wdbc",
+    "focus": "Combinatorial objects need a clear construction",
+    "guide": "industry/stage_guides/05.md"
+  },
+  {
+    "stage": 6,
+    "title": "Chains, boundaries, homology, and Betti numbers",
+    "case": "wine",
+    "focus": "H0 connects observations; H1 needs faces",
+    "guide": "industry/stage_guides/06.md"
+  },
+  {
+    "stage": 7,
+    "title": "From data to shape: Rips, \u010cech, alpha, and filtrations",
+    "case": "wine",
+    "focus": "Filtration scale is not chronological time",
+    "guide": "industry/stage_guides/07.md"
+  },
+  {
+    "stage": 8,
+    "title": "Persistent homology, persistence modules, and reading diagrams",
+    "case": "co2",
+    "focus": "Persistence follows classes, not just separate counts",
+    "guide": "industry/stage_guides/08.md"
+  },
+  {
+    "stage": 9,
+    "title": "Implement persistence, trace the algorithm, and test it independently",
+    "case": "stackloss",
+    "focus": "Independent calculation catches algorithm mistakes",
+    "guide": "industry/stage_guides/09.md"
+  },
+  {
+    "stage": 10,
+    "title": "Stability, diagram distances, noise, and scientific uncertainty",
+    "case": "wine",
+    "focus": "Stability and scientific importance are different",
+    "guide": "industry/stage_guides/10.md"
+  },
+  {
+    "stage": 11,
+    "title": "Useful representations, Mapper, time windows, and honest machine learning",
+    "case": "wine",
+    "focus": "A descriptor must be deployable for a new query",
+    "guide": "industry/stage_guides/11.md"
+  },
+  {
+    "stage": 12,
+    "title": "Capstone: reproduce, defend, transfer, and audit the book",
+    "case": "modechoice",
+    "focus": "Defend a complete experiment",
+    "guide": "industry/stage_guides/12.md"
+  },
+  {
+    "stage": 13,
+    "title": "From topology to smooth manifolds",
+    "case": "co2",
+    "focus": "A cloud is not automatically a smooth manifold",
+    "guide": "industry/stage_guides/13.md"
+  },
+  {
+    "stage": 14,
+    "title": "Rotations, rigid transforms, and the camera model",
+    "case": "nile",
+    "focus": "Coordinates and physical units are part of a transform",
+    "guide": "industry/stage_guides/14.md"
+  },
+  {
+    "stage": 15,
+    "title": "Measured stereo, calibration, and uncertainty",
+    "case": "nile",
+    "focus": "Calibration and denominators determine physical claims",
+    "guide": "industry/stage_guides/15.md"
+  },
+  {
+    "stage": 16,
+    "title": "Attention and VGGT, from pixels to proposed geometry",
+    "case": "wdbc",
+    "focus": "Model input type matters",
+    "guide": "industry/stage_guides/16.md"
+  },
+  {
+    "stage": 17,
+    "title": "Register, validate, and ask topology the right question",
+    "case": "wine",
+    "focus": "Fit transformations on references; evaluate elsewhere",
+    "guide": "industry/stage_guides/17.md"
+  },
+  {
+    "stage": 18,
+    "title": "Make the pipeline efficient without changing the evidence",
+    "case": "co2",
+    "focus": "Fast processing must preserve time and missingness",
+    "guide": "industry/stage_guides/18.md"
+  },
+  {
+    "stage": 19,
+    "title": "From geometry to cautious interaction hypotheses",
+    "case": "modechoice",
+    "focus": "Availability precedes causal or event interpretation",
+    "guide": "industry/stage_guides/19.md"
+  },
+  {
+    "stage": 20,
+    "title": "Independent spatial capstone and continuing mastery",
+    "case": "wdbc",
+    "focus": "Cross-domain transfer needs a new evidence contract",
+    "guide": "industry/stage_guides/20.md"
+  },
+  {
+    "stage": 21,
+    "title": "Rates, equations, units and what data can identify",
+    "case": "nile",
+    "focus": "Dimensional analysis comes before an ODE fit",
+    "guide": "industry/stage_guides/21.md"
+  },
+  {
+    "stage": 22,
+    "title": "Smooth flows, coordinate changes and invertible networks",
+    "case": "co2",
+    "focus": "An exact flow is not every discrete predictor",
+    "guide": "industry/stage_guides/22.md"
+  },
+  {
+    "stage": 23,
+    "title": "Mechanics, Hamiltonian networks and Lagrangian networks",
+    "case": "stackloss",
+    "focus": "Mechanics assumptions should not be imported blindly",
+    "guide": "industry/stage_guides/23.md"
+  },
+  {
+    "stage": 24,
+    "title": "Symplectic integration, energy, phase and long rollouts",
+    "case": "elnino",
+    "focus": "Symplecticity is not exact energy conservation",
+    "guide": "industry/stage_guides/24.md"
+  },
+  {
+    "stage": 25,
+    "title": "Constraints, projections, retractions and rank failure",
+    "case": "modechoice",
+    "focus": "A normalized output is one constraint, not physical validation",
+    "guide": "industry/stage_guides/25.md"
+  },
+  {
+    "stage": 26,
+    "title": "Physics-informed learning and inverse problems",
+    "case": "stackloss",
+    "focus": "Physics residuals require defensible equations",
+    "guide": "industry/stage_guides/26.md"
+  },
+  {
+    "stage": 27,
+    "title": "Conflicting gradients, interfaces, separability and PIKANs",
+    "case": "stackloss",
+    "focus": "Gradient surgery cannot correct an invalid physical problem",
+    "guide": "industry/stage_guides/27.md"
+  },
+  {
+    "stage": 28,
+    "title": "Functions to functions: DeepONet, Fourier operators and baselines",
+    "case": "elnino",
+    "focus": "Functions-to-functions learning needs function-level examples",
+    "guide": "industry/stage_guides/28.md"
+  },
+  {
+    "stage": 29,
+    "title": "Differentiable simulation, graph physics and attention constraints",
+    "case": "nile",
+    "focus": "Differentiable does not mean identifiable",
+    "guide": "industry/stage_guides/29.md"
+  },
+  {
+    "stage": 30,
+    "title": "An independent world-model study: evidence before adoption",
+    "case": "wine",
+    "focus": "Finish with a new locked investigation, not a higher exposed score",
+    "guide": "industry/stage_guides/30.md"
+  }
+]

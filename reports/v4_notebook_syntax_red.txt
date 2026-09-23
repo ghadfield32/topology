@@ -1,0 +1,24 @@
+......F................                                                  [100%]
+=================================== FAILURES ===================================
+__________________ test_consolidation_code_is_valid_python[6] __________________
+
+stage = 6
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "06/cell-5", line 4
+E               print('d1:
+E                     ^
+E           SyntaxError: unterminated string literal (detected at line 4)
+
+tests/test_curriculum_v4.py:11: SyntaxError
+=========================== short test summary info ============================
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[6] -   File "06/cell-5", line 4
+    print('d1:
+          ^
+SyntaxError: unterminated string literal (detected at line 4)
+1 failed, 22 passed in 0.92s

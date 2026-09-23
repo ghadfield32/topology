@@ -1,0 +1,72 @@
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET /START_HERE.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET /reader/representations/lessons/R01.md.html HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET /reader/assets/course.css HTTP/1.1" 200 -
+127.0.0.1 - - [22/Sep/2026 12:44:51] code 403, message Private path
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET /my_work/answer.md HTTP/1.1" 403 -
+127.0.0.1 - - [22/Sep/2026 12:44:51] code 403, message Private path
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET /.git/config HTTP/1.1" 403 -
+127.0.0.1 - - [22/Sep/2026 12:44:51] code 403, message Private path
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET /progress/log.json HTTP/1.1" 403 -
+127.0.0.1 - - [22/Sep/2026 12:44:51] code 403, message Private path
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET /%2e%2e/.env HTTP/1.1" 403 -
+127.0.0.1 - - [22/Sep/2026 12:44:51] code 403, message Directory listing disabled
+127.0.0.1 - - [22/Sep/2026 12:44:51] "GET /src/ HTTP/1.1" 403 -
+{
+  "browser_navigation": "blocked",
+  "rendering": "passed",
+  "http": [
+    {
+      "path": "/",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/START_HERE.html",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/reader/representations/lessons/R01.md.html",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/reader/assets/course.css",
+      "status": 200,
+      "expected": 200
+    },
+    {
+      "path": "/my_work/answer.md",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/.git/config",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/progress/log.json",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/%2e%2e/.env",
+      "status": 403,
+      "expected": 403
+    },
+    {
+      "path": "/src/",
+      "status": 403,
+      "expected": 403
+    }
+  ],
+  "external_network_required": false,
+  "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:39415/START_HERE.html\nCall log:\n  - navigating to \"http://127.0.0.1:39415/START_HERE.html\", waiting until \"load\"\n",
+  "filter_visible_count": 2,
+  "mobile_horizontal_overflow": false,
+  "answer_reveal": "passed",
+  "embedded_figure": "passed",
+  "rendering_mode": "set_content with inline local CSS; not browser navigation"
+}

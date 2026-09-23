@@ -1,0 +1,8 @@
+{
+  "static_policy": "passed",
+  "policy_errors": [],
+  "cluster_verified": false,
+  "scope": "Static project checks are not schema validation or a live deployment.",
+  "commands": [],
+  "status": "static_only"
+}

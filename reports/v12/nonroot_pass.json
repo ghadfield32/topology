@@ -1,0 +1,20 @@
+{
+  "uid": 65534,
+  "source_mode": "directories 0555/files 0444; source owned by root",
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "course.py",
+    "acceptance",
+    "--profile",
+    "physics",
+    "--references",
+    "first",
+    "--jobs",
+    "1",
+    "--output",
+    "/mnt/data/v12_evidence/nonroot_work4/acceptance"
+  ],
+  "returncode": 0,
+  "seconds": 31.01447152200012,
+  "scope": "Linux native non-root read-only source with writable scratch/output; NOT Docker or Kubernetes, and NOT a fresh dependency install"
+}

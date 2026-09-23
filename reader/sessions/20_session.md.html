@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 20 guided session — Turn a completed course into a reproducible next investigation · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/20_session.md">sessions/20_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-20-guided-session--turn-a-completed-course-into-a-reproducible-next-investigation">Stage 20 guided session — Turn a completed course into a reproducible next investigation</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/20_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/20_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/20_workbook.md.html">original workbook</a> and <a href="../notebooks/20_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Actual bundled dataset bytes and executed reference reports; learner and deployment claims remain separate.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Assemble the chain from question through measurement, representation, computation and claim.</li>
+<li>Audit the presence and integrity of execution evidence without equating it with mastery.</li>
+<li>Identify what a new independent dataset must provide for the intended claim.</li>
+<li>Use a finite completion contract while leaving advanced topics and the actual-book audit explicit.</li>
+</ol>
+<h2 id="start-with-the-claim-you-want-to-make">Start with the claim you want to make</h2>
+<p>A useful capstone begins with a question narrow enough to test. For example: does a chosen topological representation improve a declared prediction task over a specified baseline on independent sessions? Or: after fitting scale and pose on anchor measurements, how accurate are reconstructed distances at different held-out locations? Those questions require different data and evaluation procedures.</p>
+<p>Write the observation unit first. An image is not a person, a frame is not an independent session, and a reference-generated coordinate is not a new physical measurement. Define units, identifiers, timestamps, and missing-data treatment before building features. List which quantities are measured, fitted, assumed, or generated for a control.</p>
+<h2 id="build-a-reproducible-claim-chain">Build a reproducible claim chain</h2>
+<p>A report should connect the question to the source records, transformations, mathematical object, parameters, code revision, test evidence, numerical results, and interpretation. If one link changes, downstream results may need rerunning. Hashes can detect byte changes; they cannot tell you whether the content is true. A semantic change may require an experiment even when a software test still passes.</p>
+<p>The v4 evidence verifier reads the existing progress log and checks whether each referenced answer file still matches its recorded hash. Missing, changed, or outside-folder paths are reported separately. It does not rewrite the history, score your proof, or treat a modified answer as dishonest. Revision is normal; save a new dated answer and record a new attempt when appropriate.</p>
+<h2 id="complete-the-foundation-without-endless-restarting">Complete the foundation without endless restarting</h2>
+<p>The course's core scope is the agreed introductory topology and TDA path, plus the applied geometry continuation. The included lessons, original exercises, coding practice, consolidation sessions, proofs, and capstone cover that declared scope at explicitly stated levels. Reading a page is not the same as independently proving its statements or applying them to new data.</p>
+<p>Use the objective matrix to find a specific missing capability. Repair that prerequisite, solve a fresh transfer problem, and continue. Do not restart Stage 00 merely because you encountered a difficult theorem later. Likewise, do not add a new modeling architecture to avoid an unresolved measurement or algebra gap.</p>
+<h2 id="what-remains-an-honest-next-step">What remains an honest next step</h2>
+<p>The actual book has not been compared page by page with this course. Its audit remains unassessed. Trained VGGT inference, independent physical camera validation, real basketball event accuracy, and later advanced mathematics are separate obligations. Their absence does not invalidate the tested introductory exercises; it limits which claims those exercises support.</p>
+<p>The notebook assembles the preceding consolidation evidence and names the boundaries. Your independent capstone must add your own question, data, analysis, and defense rather than republishing the reference outputs as personal mastery. Finish with a failure analysis and a concrete next experiment that could change your conclusion. That is a foundation capable of continued learning rather than an archive that only grows.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Inspect the real dataset manifests and prior experiment evidence available in this package.</p>
+<pre><code class="language-python">from hashlib import sha256
+paths = [ROOT/'data/raw/iris.csv', ROOT/'data/raw/digits.npz',
+         ROOT/'data/stereo/motorcycle.npz', ROOT/'data/time_series/sunspots_yearly.csv']
+inventory = [{'path': str(p.relative_to(ROOT)), 'bytes': p.stat().st_size,
+              'sha256': sha256(p.read_bytes()).hexdigest()} for p in paths]
+print(json.dumps(inventory, indent=2))
+assert len(inventory)==4
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Check the preceding consolidation reports exist. These certify reference execution only.</p>
+<pre><code class="language-python">folder = ROOT/'reports/consolidation_v4'
+completed = []
+for stage in range(20):
+    path = folder/f'{stage:02d}.json'
+    if not path.is_file():
+        raise FileNotFoundError(f'Run or restore the preceding reference notebook for Stage {stage:02d}.')
+    report = json.loads(path.read_text())
+    assert report['execution_role']=='reference_consolidation'
+    completed.append(stage)
+print('preceding reference sessions:', completed)
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Audit the unchanged learner-log format and leave unestablished claims false.</p>
+<pre><code class="language-python">from shape_lab.learning import read_log
+from shape_lab.audits import verify_evidence
+log = read_log(ROOT/'progress/learning_log_v3.json')
+audit = verify_evidence(log, ROOT)
+result = {'bundled_real_datasets': 4, 'preceding_reference_sessions': len(completed),
+          'learner_evidence_records_checked': len(audit), 'evidence_audit': audit,
+          'learner_mastery_inferred_from_reference_runs': False,
+          'full_book_text_audited': False, 'VGGT_inference_executed': False,
+          'independent_physical_validation': False, 'real_basketball_event_validation': False}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="20t1">20.T1</h3>
+<p>A file checksum matches the saved learning record. What does that establish, and what does it not establish?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>It establishes byte identity with the recorded artifact, assuming the log itself is trusted. It does not establish mathematical correctness, independence of the attempt, understanding, or retention.</p>
+</details>
+<h3 id="20t2">20.T2</h3>
+<p>What is a productive response to discovering that a capstone result depends heavily on one arbitrary scale?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Report the sensitivity, revisit the measurement and metric rationale, and design a controlled comparison or new validation protocol. Do not silently choose the scale giving the most attractive result.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/20_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,365 @@
+{
+  "apiVersion": "v1",
+  "kind": "List",
+  "items": [
+    {
+      "apiVersion": "v1",
+      "kind": "Namespace",
+      "metadata": {
+        "name": "shape-learning-v12",
+        "labels": {
+          "pod-security.kubernetes.io/enforce": "restricted",
+          "pod-security.kubernetes.io/audit": "restricted",
+          "pod-security.kubernetes.io/warn": "restricted"
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "PersistentVolumeClaim",
+      "metadata": {
+        "name": "learner-work",
+        "namespace": "shape-learning-v12"
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "4Gi"
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "apps/v1",
+      "kind": "Deployment",
+      "metadata": {
+        "name": "course-reader",
+        "namespace": "shape-learning-v12",
+        "labels": {
+          "app.kubernetes.io/name": "shape-course",
+          "app.kubernetes.io/part-of": "shape-learning"
+        }
+      },
+      "spec": {
+        "replicas": 1,
+        "selector": {
+          "matchLabels": {
+            "app": "course-reader"
+          }
+        },
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "course-reader",
+              "app.kubernetes.io/name": "shape-course",
+              "app.kubernetes.io/part-of": "shape-learning"
+            }
+          },
+          "spec": {
+            "automountServiceAccountToken": false,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 1000,
+              "runAsGroup": 1000,
+              "fsGroup": 1000,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "course",
+                "image": "listening-to-shape:12",
+                "imagePullPolicy": "IfNotPresent",
+                "workingDir": "/course",
+                "env": [
+                  {
+                    "name": "HOME",
+                    "value": "/tmp/student"
+                  },
+                  {
+                    "name": "MPLCONFIGDIR",
+                    "value": "/tmp/matplotlib"
+                  },
+                  {
+                    "name": "JUPYTER_RUNTIME_DIR",
+                    "value": "/tmp/jupyter"
+                  },
+                  {
+                    "name": "PYTHONDONTWRITEBYTECODE",
+                    "value": "1"
+                  },
+                  {
+                    "name": "PYTHONUNBUFFERED",
+                    "value": "1"
+                  },
+                  {
+                    "name": "MPLBACKEND",
+                    "value": "Agg"
+                  },
+                  {
+                    "name": "OMP_NUM_THREADS",
+                    "value": "1"
+                  },
+                  {
+                    "name": "OPENBLAS_NUM_THREADS",
+                    "value": "1"
+                  },
+                  {
+                    "name": "MKL_NUM_THREADS",
+                    "value": "1"
+                  },
+                  {
+                    "name": "COURSE_PROFILE",
+                    "value": "physics"
+                  },
+                  {
+                    "name": "PYTEST_ADDOPTS",
+                    "value": "-p no:cacheprovider"
+                  }
+                ],
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "resources": {
+                  "requests": {
+                    "cpu": "500m",
+                    "memory": "1Gi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "4Gi"
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "scratch",
+                    "mountPath": "/tmp"
+                  }
+                ],
+                "command": [
+                  "python",
+                  "-m",
+                  "shape_lab.safe_server",
+                  "--root",
+                  "/course",
+                  "--bind",
+                  "0.0.0.0",
+                  "--port",
+                  "8000"
+                ],
+                "ports": [
+                  {
+                    "name": "http",
+                    "containerPort": 8000
+                  }
+                ],
+                "readinessProbe": {
+                  "httpGet": {
+                    "path": "/START_HERE.html",
+                    "port": "http"
+                  },
+                  "initialDelaySeconds": 2,
+                  "periodSeconds": 5
+                },
+                "livenessProbe": {
+                  "httpGet": {
+                    "path": "/START_HERE.html",
+                    "port": "http"
+                  },
+                  "initialDelaySeconds": 10,
+                  "periodSeconds": 20
+                }
+              }
+            ],
+            "volumes": [
+              {
+                "name": "scratch",
+                "emptyDir": {
+                  "sizeLimit": "4Gi"
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Service",
+      "metadata": {
+        "name": "course-reader",
+        "namespace": "shape-learning-v12"
+      },
+      "spec": {
+        "type": "ClusterIP",
+        "selector": {
+          "app": "course-reader"
+        },
+        "ports": [
+          {
+            "port": 8000,
+            "targetPort": "http"
+          }
+        ]
+      }
+    },
+    {
+      "apiVersion": "batch/v1",
+      "kind": "Job",
+      "metadata": {
+        "name": "course-acceptance",
+        "namespace": "shape-learning-v12",
+        "labels": {
+          "app.kubernetes.io/name": "shape-course",
+          "app.kubernetes.io/part-of": "shape-learning"
+        }
+      },
+      "spec": {
+        "backoffLimit": 0,
+        "activeDeadlineSeconds": 3600,
+        "template": {
+          "metadata": {
+            "labels": {
+              "app": "course-acceptance",
+              "app.kubernetes.io/name": "shape-course",
+              "app.kubernetes.io/part-of": "shape-learning"
+            }
+          },
+          "spec": {
+            "automountServiceAccountToken": false,
+            "securityContext": {
+              "runAsNonRoot": true,
+              "runAsUser": 1000,
+              "runAsGroup": 1000,
+              "fsGroup": 1000,
+              "seccompProfile": {
+                "type": "RuntimeDefault"
+              }
+            },
+            "containers": [
+              {
+                "name": "course",
+                "image": "listening-to-shape:12",
+                "imagePullPolicy": "IfNotPresent",
+                "workingDir": "/course",
+                "env": [
+                  {
+                    "name": "HOME",
+                    "value": "/tmp/student"
+                  },
+                  {
+                    "name": "MPLCONFIGDIR",
+                    "value": "/tmp/matplotlib"
+                  },
+                  {
+                    "name": "JUPYTER_RUNTIME_DIR",
+                    "value": "/tmp/jupyter"
+                  },
+                  {
+                    "name": "PYTHONDONTWRITEBYTECODE",
+                    "value": "1"
+                  },
+                  {
+                    "name": "PYTHONUNBUFFERED",
+                    "value": "1"
+                  },
+                  {
+                    "name": "MPLBACKEND",
+                    "value": "Agg"
+                  },
+                  {
+                    "name": "OMP_NUM_THREADS",
+                    "value": "1"
+                  },
+                  {
+                    "name": "OPENBLAS_NUM_THREADS",
+                    "value": "1"
+                  },
+                  {
+                    "name": "MKL_NUM_THREADS",
+                    "value": "1"
+                  },
+                  {
+                    "name": "COURSE_PROFILE",
+                    "value": "physics"
+                  },
+                  {
+                    "name": "PYTEST_ADDOPTS",
+                    "value": "-p no:cacheprovider"
+                  },
+                  {
+                    "name": "POD_UID",
+                    "valueFrom": {
+                      "fieldRef": {
+                        "fieldPath": "metadata.uid"
+                      }
+                    }
+                  }
+                ],
+                "securityContext": {
+                  "allowPrivilegeEscalation": false,
+                  "readOnlyRootFilesystem": true,
+                  "capabilities": {
+                    "drop": [
+                      "ALL"
+                    ]
+                  }
+                },
+                "resources": {
+                  "requests": {
+                    "cpu": "500m",
+                    "memory": "1Gi"
+                  },
+                  "limits": {
+                    "cpu": "2",
+                    "memory": "4Gi"
+                  }
+                },
+                "volumeMounts": [
+                  {
+                    "name": "scratch",
+                    "mountPath": "/tmp"
+                  },
+                  {
+                    "name": "work",
+                    "mountPath": "/work"
+                  }
+                ],
+                "command": [
+                  "python",
+                  "-c",
+                  "import os,subprocess,sys,json\nfrom pathlib import Path\nout=Path('/work')/('acceptance-'+os.environ['POD_UID']);out.mkdir(exist_ok=False)\ncommands=[[sys.executable,'course.py','test','--profile',os.environ['COURSE_PROFILE'],'--output',str(out/'tests')],\n [sys.executable,'course.py','run','--stage','0','--jobs','1','--output',str(out/'stage00')]]\nresults=[]\nfor cmd in commands:\n rc=subprocess.run(cmd,check=False).returncode;results.append({'command':cmd,'returncode':rc})\n if rc:break\nfrom shape_lab.acceptance import validate_native_evidence\nprofile=os.environ['COURSE_PROFILE']\ntests=json.loads((out/'tests/tests.json').read_text()) if (out/'tests/tests.json').is_file() else {}\nrefs=json.loads((out/'stage00/execution.json').read_text()) if (out/'stage00/execution.json').is_file() else {}\nerrors=validate_native_evidence(tests,refs,profile,['notebooks/00_lab.ipynb'])\nstatus={'status':'passed' if len(results)==2 and all(x['returncode']==0 for x in results) and not errors else 'failed',\n 'commands':results,'output':str(out),'profile':profile,'errors':errors,'tests':tests,\n 'reference_evidence':{k:refs.get(k) for k in ['order','records','passed','failed','source_inputs_unchanged','required_prior_reports_copied']}}\n\n(out/'acceptance.json').write_text(json.dumps(status,indent=2)+'\\n');print('SHAPE_ACCEPTANCE='+json.dumps(status),flush=True)\nsys.exit(0 if status['status']=='passed' else 1)\n"
+                ]
+              }
+            ],
+            "volumes": [
+              {
+                "name": "scratch",
+                "emptyDir": {
+                  "sizeLimit": "4Gi"
+                }
+              },
+              {
+                "name": "work",
+                "persistentVolumeClaim": {
+                  "claimName": "learner-work"
+                }
+              }
+            ],
+            "restartPolicy": "Never"
+          }
+        }
+      }
+    }
+  ]
+}

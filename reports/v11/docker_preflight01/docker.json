@@ -1,0 +1,9 @@
+{
+  "status": "blocked",
+  "profile": "core",
+  "commands": [],
+  "image_build": "not_run",
+  "container_tests": "not_run",
+  "notebook_run": "not_run",
+  "reason": "Docker CLI is not installed; no image or container was tested."
+}

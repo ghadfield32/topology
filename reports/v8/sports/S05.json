@@ -1,0 +1,51 @@
+{
+  "partition_rows": {
+    "train": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "validation": [
+      6,
+      7,
+      8
+    ],
+    "test": [
+      9,
+      10,
+      11
+    ]
+  },
+  "partition_players": {
+    "train": [
+      211,
+      218,
+      2759,
+      2858
+    ],
+    "validation": [
+      4322,
+      4792
+    ],
+    "test": [
+      5468,
+      5521
+    ]
+  },
+  "training_mean": [
+    1311.6033333333332,
+    426.84833333333336,
+    90.11000000000001
+  ],
+  "all_mean": [
+    1301.7358333333334,
+    441.12083333333334,
+    97.09250000000002
+  ],
+  "model_fitted": false,
+  "sports_predictive_accuracy": null,
+  "reason": "Small ordered excerpt; no independent supervised performance claim."
+}

@@ -1,0 +1,13 @@
+{
+  "real_time_series": "historical yearly sunspot activity 1700-2008",
+  "threshold": 80.0,
+  "confirming_observations": 2,
+  "episodes": 18,
+  "prefix_checks": 5,
+  "availability_assumption": "annual sample boundary; actual publication times not supplied",
+  "independent_event_accuracy_measured": false,
+  "basketball_events_validated": false,
+  "stage": 19,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real historical annual observations for causal timing; no human-contact or scientific solar-event ground truth."
+}

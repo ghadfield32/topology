@@ -1,0 +1,171 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S06 — From worked examples to an independent sports study · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v8/notebooks/S06.ipynb">sports_v8/notebooks/S06.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="s06--from-worked-examples-to-an-independent-sports-study">S06 — From worked examples to an independent sports study</h1>
+<p>Read the matching lesson before running. Predictions first; source facts, manufactured controls and interpretations are labeled separately. This is not a sports performance benchmark.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from pathlib import Path
+import sys, json
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;, &#x27;inline&#x27;)
+from dataclasses import asdict
+ROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / &#x27;src/shape_lab&#x27;).exists())
+sys.path.insert(0, str(ROOT / &#x27;src&#x27;))
+from shape_lab import sports_v8 as sport
+from shape_lab.persistence import finite_bottleneck
+spl, profiles = sport.load_sports(ROOT)
+frames = np.array([r[&#x27;frame&#x27;] for r in spl[&#x27;records&#x27;]])
+times = sport.frame_times(frames, spl[&#x27;sampling_rate&#x27;])
+ball = sport.to_metres([r[&#x27;ball&#x27;] for r in spl[&#x27;records&#x27;]], spl[&#x27;xyz_unit&#x27;])
+report_dir = ROOT / &#x27;reports/v8/sports&#x27;
+report_dir.mkdir(parents=True, exist_ok=True)
+def save_report(stage, result):
+    # Reports contain ordinary finite values; absent values are recorded explicitly.
+    (report_dir / f&#x27;{stage}.json&#x27;).write_text(json.dumps(result, indent=2, allow_nan=False) + &#x27;\n&#x27;)
+print(&#x27;Data:&#x27;, len(frames), &#x27;selected frames from one shot;&#x27;, len(profiles), &#x27;profiles from&#x27;, profiles.player_id.nunique(), &#x27;players&#x27;)
+</code></pre><div class="output"><pre>Data: 12 selected frames from one shot; 12 profiles from 8 players
+</pre></div></section><h2 id="audit-the-required-local-source-excerpts">Audit the required local source excerpts</h2>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>checks=sport.verify_local_data(ROOT)
+assert all(row[&#x27;ok&#x27;] for row in checks)
+print(json.dumps(checks,indent=2))
+registry=json.loads((ROOT/&#x27;sports_v8/dataset_registry.json&#x27;).read_text())
+display(pd.DataFrame([{k:d[k] for k in [&#x27;name&#x27;,&#x27;date&#x27;,&#x27;status&#x27;,&#x27;license&#x27;]} for d in registry[&#x27;datasets&#x27;]]))
+</code></pre><div class="output"><pre>[
+  {
+    &quot;id&quot;: &quot;spl&quot;,
+    &quot;ok&quot;: true,
+    &quot;sha256&quot;: &quot;4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc&quot;
+  },
+  {
+    &quot;id&quot;: &quot;skillcorner&quot;,
+    &quot;ok&quot;: true,
+    &quot;sha256&quot;: &quot;fe4096d511e4f8811f5c504f633767ef5848c91043369d5643e57165e34303a2&quot;
+  }
+]
+</pre><div class="scroll"><div>
+
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>name</th>
+<th>date</th>
+<th>status</th>
+<th>license</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>SPL Open Data free throws</td>
+<td>Documentation March 2026; recent collection 20...</td>
+<td>12 selected frames bundled and executed; full ...</td>
+<td>CC BY-NC-SA 4.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>SkillCorner Open Data / body pose</td>
+<td>2024/2025 A-League season; current documentati...</td>
+<td>12 profile rows bundled; full tracking/pose un...</td>
+<td>MIT repository license; inspect dataset-specif...</td>
+</tr>
+<tr>
+<th>2</th>
+<td>BasketHAR</td>
+<td>Paper submitted 2026-04-18</td>
+<td>Primary paper inspected; hosted data not retri...</td>
+<td>Paper states Apache 2.0; verify actual hosted ...</td>
+</tr>
+<tr>
+<th>3</th>
+<td>MUVS</td>
+<td>Zenodo v1.0 published 2026-06-15</td>
+<td>Repository record/README inspected; video and ...</td>
+<td>License field not resolved in rendered record;...</td>
+</tr>
+<tr>
+<th>4</th>
+<td>UVY / UVY-Track</td>
+<td>Zenodo v1 published 2026-07-11</td>
+<td>Record inspected; payload not downloaded</td>
+<td>Provider says source videos CC BY; record lice...</td>
+</tr>
+<tr>
+<th>5</th>
+<td>TrackID3x3</td>
+<td>2025 paper/repository; current README inspecte...</td>
+<td>Official repository inspected; linked video no...</td>
+<td>Dataset CC BY 4.0; original code Apache 2.0; t...</td>
+</tr>
+<tr>
+<th>6</th>
+<td>SoccerTrack v2</td>
+<td>Paper submitted 2025-08-03</td>
+<td>Primary paper inspected; payload not downloaded</td>
+<td>Dataset license not verified from abstract; in...</td>
+</tr>
+<tr>
+<th>7</th>
+<td>SoccerNet Game State Reconstruction</td>
+<td>Task page checked 2026-09-21; page retains his...</td>
+<td>Official task description inspected; media not...</td>
+<td>Review current task data/media access agreemen...</td>
+</tr>
+<tr>
+<th>8</th>
+<td>OpenBiomechanics</td>
+<td>Current repository documents 2026-07-04 histor...</td>
+<td>Current official README/license wording inspec...</td>
+<td>Data/documentation CC BY-NC-SA 4.0 with additi...</td>
+</tr>
+<tr>
+<th>9</th>
+<td>BASKET-Multiview</td>
+<td>Current official dataset page inspected 2026-0...</td>
+<td>Official description inspected; render payload...</td>
+<td>Inspect dataset license and any SMPL/asset res...</td>
+</tr>
+</tbody>
+</table>
+</div></div></div></section><h2 id="demonstrate-why-an-lfs-pointer-is-not-a-tracking-dataset">Demonstrate why an LFS pointer is not a tracking dataset</h2>
+<section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>pointer=b&#x27;version https://git-lfs.github.com/spec/v1\noid sha256:abc\nsize 97091519\n&#x27;
+try:
+    sport.check_payload(pointer)
+except ValueError as error:
+    print(&#x27;Expected rejection:&#x27;,error)
+else:raise AssertionError(&#x27;Pointer should never pass as numeric data.&#x27;)
+</code></pre><div class="output"><pre>Expected rejection: Git LFS pointer received, not the dataset bytes.
+</pre></div></section><h2 id="an-explicit-schema-adapter-with-a-constructednot-observedfixture">An explicit schema adapter, with a constructed—not observed—fixture</h2>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>fixture=[{&#x27;player_id&#x27;:1,&#x27;x&#x27;:0.,&#x27;y&#x27;:0.,&#x27;is_detected&#x27;:True},{&#x27;player_id&#x27;:2,&#x27;x&#x27;:3.,&#x27;y&#x27;:4.,&#x27;is_detected&#x27;:False}]
+observed,obs_ids=sport.tracking_cloud(fixture,detected_only=True)
+all_provider,all_ids=sport.tracking_cloud(fixture,detected_only=False)
+assert observed.shape==(1,2) and all_provider.shape==(2,2)
+print(&#x27;Constructed fixture:&#x27;,obs_ids,all_ids)
+print(&#x27;No full-match tracking or body-pose payload was executed.&#x27;)
+</code></pre><div class="output"><pre>Constructed fixture: [1] [1 2]
+No full-match tracking or body-pose payload was executed.
+</pre></div></section><h2 id="build-your-own-protocol-before-obtaining-a-score">Build your own protocol before obtaining a score</h2>
+<section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>protocol={&#x27;question&#x27;:&#x27;Does a topological movement descriptor add held-out information beyond conventional features for a specified available label?&#x27;, &#x27;decision_time&#x27;:&#x27;Must be declared before feature extraction&#x27;, &#x27;independent_unit&#x27;:&#x27;Athlete/session/trial, chosen to match use&#x27;, &#x27;baseline&#x27;:&#x27;Conventional features with training-only preprocessing&#x27;, &#x27;test_policy&#x27;:&#x27;Untouched source groups&#x27;, &#x27;rights_review_required&#x27;:True, &#x27;current_excerpt_sufficient_for_prediction&#x27;:False}
+save_report(&#x27;S06&#x27;,{&#x27;local_sources&#x27;:checks,&#x27;registry_entries&#x27;:len(registry[&#x27;datasets&#x27;]),&#x27;full_source_download_executed&#x27;:False,&#x27;tracking_fixture_is_manufactured&#x27;:True,&#x27;protocol&#x27;:protocol})
+print(json.dumps(protocol,indent=2))
+</code></pre><div class="output"><pre>{
+  &quot;question&quot;: &quot;Does a topological movement descriptor add held-out information beyond conventional features for a specified available label?&quot;,
+  &quot;decision_time&quot;: &quot;Must be declared before feature extraction&quot;,
+  &quot;independent_unit&quot;: &quot;Athlete/session/trial, chosen to match use&quot;,
+  &quot;baseline&quot;: &quot;Conventional features with training-only preprocessing&quot;,
+  &quot;test_policy&quot;: &quot;Untouched source groups&quot;,
+  &quot;rights_review_required&quot;: true,
+  &quot;current_excerpt_sufficient_for_prediction&quot;: false
+}
+</pre></div></section><h2 id="independent-explanation">Independent explanation</h2>
+<p>State the observation unit, assumptions, units, one result and one unsupported conclusion. Then work the separate learner notebook without the answer notebook open.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

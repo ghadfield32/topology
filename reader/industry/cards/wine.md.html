@@ -1,0 +1,125 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Dataset card: wine · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../industry/cards/wine.md">industry/cards/wine.md</a> · Readable source notation; no online math renderer.</p><h1 id="dataset-card-wine">Dataset card: wine</h1>
+<h2 id="identity-and-evidence">Identity and evidence</h2>
+<p><strong>Title:</strong> Chemistry, scale and out-of-sample topological descriptors</p>
+<p><strong>Sector:</strong> food_chemistry. <strong>Kind:</strong> observed historical data. <strong>Canonical snapshot:</strong> 178 rows.</p>
+<p><strong>Source attribution:</strong> <a href="https://archive.ics.uci.edu/dataset/109/wine">Aeberhard and Forina (1992), Wine, UCI Machine Learning Repository.</a></p>
+<p><strong>Reuse basis:</strong> <a href="https://archive.ics.uci.edu/dataset/109/wine">CC BY 4.0</a>. The normalized snapshot is an adaptation of the distributed source. Attribution, source, license link and changes are recorded here; no endorsement is implied.</p>
+<p><strong>Acquisition:</strong> offline export from installed package distribution; no invented records, using sklearn 1.8.0. Primary documentation reviewed 2026-09-20. The current online documentation may describe a newer package release; the files and hashes here identify the actual distribution used.</p>
+<p><strong>Observation unit:</strong> One wine sample; cultivar is a category, not a quality score.</p>
+<p><strong>Limitations:</strong> 178 rows, 13 chemistry features, three cultivars. Different from Wine Quality (UCI 186).</p>
+<h2 id="files-and-provenance">Files and provenance</h2>
+<p><a href="../../../data/industries/wine/data.csv">Normalized CSV</a> · <a href="../../../data/industries/wine/source_distribution.csv">Original package-distribution CSV</a> · <a href="../../../data/industries/wine/metadata.json">Machine-readable metadata</a></p>
+<p>Normalized SHA-256: <code>2f6d6d39c2ba1898b9d254feb78ae575383fac1f9ed735c9aaa9308293568aac</code></p>
+<p>Original distribution SHA-256: <code>10e8a802908b34f86e5da8ce962f3c806694bc98450a18f61851af59f324bede</code></p>
+<p>Changes: Preserved package data values and row order; added zero-based row_id. Normalized CSV serialization; replaced spaces/slashes in sklearn feature names. Provider label codes preserved and mapped explicitly; not original UCI IDs.</p>
+<p>Missing values by column: <code>{}</code>. An empty object means none are present, not that real-world measurement uncertainty is zero.</p>
+<h2 id="complete-column-dictionary">Complete column dictionary</h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Role</th>
+<th>Units / encoding</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>row_id</code></td>
+<td>metadata</td>
+<td>source scale; see data card (not guessed)</td>
+<td>row id</td>
+</tr>
+<tr>
+<td><code>alcohol</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: alcohol. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>malic_acid</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: malic acid. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>ash</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: ash. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>alcalinity_of_ash</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: alcalinity of ash. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>magnesium</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: magnesium. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>total_phenols</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: total phenols. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>flavanoids</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: flavanoids. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>nonflavanoid_phenols</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: nonflavanoid phenols. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>proanthocyanins</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: proanthocyanins. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>color_intensity</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: color intensity. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>hue</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: hue. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>od280_od315_of_diluted_wines</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: od280 od315 of diluted wines. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>proline</code></td>
+<td>feature</td>
+<td>source scale; see data card (not guessed)</td>
+<td>Chemistry measurement: proline. Original source does not specify every unit.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>response_or_signal</td>
+<td>source scale; see data card (not guessed)</td>
+<td>label</td>
+</tr>
+</tbody>
+</table>
+<p>Explicit loader label map: <code>{"0": "class_0", "1": "class_1", "2": "class_2"}</code>. These are not automatically the original provider codes.</p>
+<h2 id="evaluation-and-approved-learning-use">Evaluation and approved learning use</h2>
+<p>Read the <a href="../lessons/wine.md.html">case lesson</a> before the <a href="../notebooks/wine.ipynb.html">worked notebook</a>. The notebook persists its split, source identifiers, fitted transforms where applicable, predictions and metrics under <code>reports/v6/industries/wine/</code>. Its test partition is already exposed in the reference outputs. New tuning requires a new protocol.</p>
+<p>The data are suitable for the stated teaching calculation, not certified clinical decisions, trading, process control, dam operations, operational climate forecasting or transport interventions. Scale, age and missing metadata limit claims independently of prediction accuracy.</p>
+<h2 id="rebuild-without-inventing-records">Rebuild without inventing records</h2>
+<p>Normal lessons read the bundled CSV. To intentionally recreate the snapshots install the recorded distributions using the optional <code>data-rebuild</code> extra, then run <code>python scripts/prepare_industry_data.py --replace</code>. This explicitly overwrites snapshots and requires rerunning every verification. The raw distribution copy allows comparison before and after normalization. No web download is represented as having succeeded.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "purpose": "Manual study checklist; no automatic grading or synchronization",
+  "sections": {
+    "seeds": {
+      "status": "unassessed",
+      "evidence_files": [],
+      "notes": ""
+    },
+    "concrete_slump": {
+      "status": "unassessed",
+      "evidence_files": [],
+      "notes": ""
+    },
+    "leakage": {
+      "status": "unassessed",
+      "evidence_files": [],
+      "notes": ""
+    },
+    "claims": {
+      "status": "unassessed",
+      "evidence_files": [],
+      "notes": ""
+    }
+  }
+}

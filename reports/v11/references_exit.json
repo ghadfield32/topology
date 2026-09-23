@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "course.py",
+    "run",
+    "--all",
+    "--output",
+    "/mnt/data/v11_evidence/all_references01",
+    "--jobs",
+    "2",
+    "--timeout",
+    "300"
+  ],
+  "returncode": 0,
+  "seconds": 386.59942650794983
+}

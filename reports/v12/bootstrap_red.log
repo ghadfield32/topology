@@ -1,0 +1,49 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______________ test_bootstrap_records_timeout_without_fallback ________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-11/test_bootstrap_records_timeout0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f1d1163fa80>
+
+    def test_bootstrap_records_timeout_without_fallback(tmp_path,monkeypatch):
+        import importlib.util,subprocess
+        spec=importlib.util.spec_from_file_location('boot_under_test',ROOT/'tools/bootstrap.py')
+        boot=importlib.util.module_from_spec(spec);spec.loader.exec_module(boot)
+        root=tmp_path/'project';root.mkdir();out=tmp_path/'setup'
+        monkeypatch.setattr(boot,'ROOT',root)
+        monkeypatch.setattr(boot.shutil,'which',lambda n:'/usr/bin/uv')
+        def timeout(cmd,**kw):raise subprocess.TimeoutExpired(cmd,kw['timeout'])
+        monkeypatch.setattr(boot.subprocess,'run',timeout)
+        monkeypatch.setattr(sys,'argv',['bootstrap.py','--timeout','1','--output',str(out)])
+>       assert boot.main()==2
+               ^^^^^^^^^^^
+
+tests/test_integration_v12.py:173: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tools/bootstrap.py:25: in main
+    args=parser.parse_args()
+         ^^^^^^^^^^^^^^^^^^^
+/usr/lib/python3.13/argparse.py:1916: in parse_args
+    self.error(msg)
+/usr/lib/python3.13/argparse.py:2672: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ArgumentParser(prog='bootstrap.py', usage=None, description='Resolve and sync a real uv environment, or explicitly aud...t is an evidence folder.\n', formatter_class=<class 'argparse.HelpFormatter'>, conflict_handler='error', add_help=True)
+status = 2
+message = 'bootstrap.py: error: unrecognized arguments: --timeout 1\n'
+
+    def exit(self, status=0, message=None):
+        if message:
+            self._print_message(message, _sys.stderr)
+>       _sys.exit(status)
+E       SystemExit: 2
+
+/usr/lib/python3.13/argparse.py:2659: SystemExit
+----------------------------- Captured stderr call -----------------------------
+usage: bootstrap.py [-h] [--profile {core,physics,full}] [--reuse-installed]
+                    [--output OUTPUT]
+bootstrap.py: error: unrecognized arguments: --timeout 1
+=========================== short test summary info ============================
+FAILED tests/test_integration_v12.py::test_bootstrap_records_timeout_without_fallback - SystemExit: 2
+1 failed, 51 deselected in 0.15s

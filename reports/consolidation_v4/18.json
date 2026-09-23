@@ -1,0 +1,14 @@
+{
+  "points": 860,
+  "median_cpu_transform_seconds": {
+    "loop": 0.0013463119998959883,
+    "array": 1.8548000070950366e-05
+  },
+  "timing_boundary": "in-memory CPU transform only",
+  "simulated_first_latency_s": 0.03,
+  "simulated_last_latency_s": 1.0199999999999951,
+  "end_to_end_camera_latency_measured": false,
+  "stage": 18,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real reference point table for measured CPU operations; separate deterministic FIFO simulation."
+}

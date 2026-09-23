@@ -1,0 +1,24 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_________ test_practice_copy_preserves_original_and_refuses_overwrite __________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-2/test_practice_copy_preserves_o0')
+
+    def test_practice_copy_preserves_original_and_refuses_overwrite(tmp_path):
+>       from shape_lab.practice_workspace import prepare_practice
+E       ModuleNotFoundError: No module named 'shape_lab.practice_workspace'
+
+tests/test_deploy_v11.py:64: ModuleNotFoundError
+_______ test_representation_sources_and_controls_are_in_run_fingerprint ________
+
+    def test_representation_sources_and_controls_are_in_run_fingerprint():
+        from shape_lab.runtime import fingerprint_inputs
+        fp=fingerprint_inputs(ROOT)
+>       assert 'representations/lessons/R01.md' in fp
+E       AssertionError: assert 'representations/lessons/R01.md' in {'.python-version': 'e72b03ed5b70312f2782f2b05055c55b24670e126d50e24c4f2c559bf288f810', 'applications_v7/concrete_slum...', 'applications_v7/concrete_slump/lab.ipynb': '428116dd55b2f380b7e3bc048da04c649af1ade1d367c99920a43dc51ee45b01', ...}
+
+tests/test_deploy_v11.py:76: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_deploy_v11.py::test_practice_copy_preserves_original_and_refuses_overwrite - ModuleNotFoundError: No module named 'shape_lab.practice_workspace'
+FAILED tests/test_deploy_v11.py::test_representation_sources_and_controls_are_in_run_fingerprint - AssertionError: assert 'representations/lessons/R01.md' in {'.python-version': 'e72b03ed5b70312f2782f2b05055c55b24670e126d50e24c4f2c559bf288f810', 'applications_v7/concrete_slum...', 'applications_v7/concrete_slump/lab.ipynb': '428116dd55b2f380b7e3bc048da04c649af1ade1d367c99920a43dc51ee45b01', ...}
+2 failed in 0.18s

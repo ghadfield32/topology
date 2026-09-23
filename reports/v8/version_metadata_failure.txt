@@ -1,0 +1,33 @@
+........................................................................ [ 11%]
+........................................................................ [ 23%]
+........................................................................ [ 35%]
+........................................................................ [ 47%]
+..........................................................ss............ [ 59%]
+........................................................................ [ 71%]
+........................................................................ [ 83%]
+.....................F.................................................. [ 95%]
+..............................                                           [100%]
+=================================== FAILURES ===================================
+_________________ test_distribution_and_module_versions_agree __________________
+
+    def test_distribution_and_module_versions_agree():
+        metadata=tomllib.loads((Path(__file__).resolve().parents[1]/'pyproject.toml').read_text())
+>       assert shape_lab.__version__==metadata['project']['version']=='7.0.0'
+E       AssertionError: assert '8.0.0' == '7.0.0'
+E         
+E         - 7.0.0
+E         ? ^
+E         + 8.0.0
+E         ? ^
+
+tests/test_release_version_v3.py:7: AssertionError
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_optional_libraries.py:14: could not import 'ripser': No module named 'ripser'
+SKIPPED [1] tests/test_optional_libraries.py:20: could not import 'gudhi': No module named 'gudhi'
+FAILED tests/test_release_version_v3.py::test_distribution_and_module_versions_agree - AssertionError: assert '8.0.0' == '7.0.0'
+  
+  - 7.0.0
+  ? ^
+  + 8.0.0
+  ? ^
+1 failed, 603 passed, 2 skipped in 16.00s

@@ -1,0 +1,7 @@
+{
+  "release": "12.0.0",
+  "core_primary_lessons": 31,
+  "representation_primary_lessons": 5,
+  "reference_notebooks": 133,
+  "source_build_report": "reports/release/reader_build.json"
+}

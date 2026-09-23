@@ -1,0 +1,42 @@
+{
+  "stage": 27,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "analytic gradient and interface examples plus observed regression gradients",
+  "two_objective_directions": {
+    "sum": [
+      0.0,
+      1.0
+    ],
+    "PCGrad": [
+      0.5,
+      1.5
+    ],
+    "Norm-PCGrad": [
+      0.7071067811865475,
+      1.7071067811865475
+    ],
+    "ConFIG": [
+      0.3535533905932738,
+      0.8535533905932736
+    ]
+  },
+  "observed_gradient_cosine": -1.0000000000000002,
+  "observed_gradients": [
+    [
+      -0.4745230199521613,
+      -1.9049771932401856
+    ],
+    [
+      0.4745230199521679,
+      1.9049771932401878
+    ]
+  ],
+  "equal_alignment_residual": 0.07644303103290964,
+  "interface_value_jump": 0.10000000000000009,
+  "interface_derivative_jump": -0.2,
+  "separable_axis_values": 128,
+  "dense_output_values": 4096,
+  "paper_benchmark_reproduced": false,
+  "unsupported": "No unconditional multi-objective descent or general linear-cost solver claim.",
+  "source_review_date": "2026-09-20"
+}

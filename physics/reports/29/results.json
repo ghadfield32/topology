@@ -1,0 +1,20 @@
+{
+  "stage": 29,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "manufactured differentiable dynamics plus constructed exchanges on real digit intensities",
+  "rk4_parameter_sensitivity": -0.7408182191903769,
+  "exact_decay_sensitivity": -0.7408182206817179,
+  "manufactured_true_damping": 0.15,
+  "fitted_damping": 0.1499932632346855,
+  "training_trajectory_mse": 1.0547861051280454e-10,
+  "measured_dynamics_used": false,
+  "digit_sample_id": 13,
+  "graph_edges": 112,
+  "graph_total_update": 0.0,
+  "graph_intensity_sum_error": 0.0,
+  "attention_input_sum": 1.0,
+  "attention_output_sum": 2.0,
+  "PINNsFormer_benchmark_trained": false,
+  "unsupported": "No trained graph simulator, contact sensitivity or GPU throughput claim.",
+  "source_review_date": "2026-09-20"
+}

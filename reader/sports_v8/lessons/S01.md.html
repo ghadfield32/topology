@@ -1,0 +1,94 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S01 — Position, angle, and motion are different objects · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v8/lessons/S01.md">sports_v8/lessons/S01.md</a> · Readable source notation; no online math renderer.</p><h1 id="s01--position-angle-and-motion-are-different-objects">S01 — Position, angle, and motion are different objects</h1>
+<h2 id="your-destination">Your destination</h2>
+<p>Calculate an unsigned landmark angle and a time-averaged velocity, state their
+units, and refuse to bridge unobserved gaps without an explicit policy. Connect
+this to core Stages 02–03 on distances and maps, and Stage 14 on coordinate frames.</p>
+<h2 id="start-with-a-displacement">Start with a displacement</h2>
+<p>If a ball moves from <code>(1,2,3)</code> to <code>(1.1,2,3)</code> metres, its displacement is the second
+vector minus the first: <code>(0.1,0,0)</code> metres. Its travelled path might be longer if
+it moved along a curve. The norm, <code>sqrt(dx²+dy²+dz²)</code>, is straight-line separation.
+An estimated average velocity divides displacement by elapsed time. Its norm is
+the magnitude of the average velocity, not necessarily average speed along an
+unknown curved path.</p>
+<p>With frame IDs 110 and 115 at 60 Hz, elapsed time is <code>(115-110)/60 = 1/12</code> second.
+It is not <code>1/60</code> merely because these records are adjacent in our small table.
+Our excerpt is nonuniformly sampled. This is a useful built-in failure case:
+assigning <code>np.arange(len(records))/60</code> would invent a different clock.</p>
+<p>The notebook uses the declared sampling rate and original frame IDs. It keeps
+the raw source <code>time</code> separately. Values such as frame 115/time 1916 are consistent
+with truncated milliseconds, but our main calculations do not require that
+interpretation. A nominal sample clock is still not hardware exposure timing.</p>
+<h2 id="a-joint-angle-from-three-landmarks">A joint angle from three landmarks</h2>
+<p>Take shoulder A, elbow B, and wrist C. The two rays meeting at the elbow are
+<code>u=A-B</code> and <code>v=C-B</code>. Their unsigned angle is</p>
+<pre><code>cos(theta) = dot(u,v) / (norm(u) * norm(v))
+theta_degrees = arccos(cos(theta)) * 180/pi
+</code></pre>
+<p>For A=(1,0,0), B=(0,0,0), C=(0,1,0), the dot product is zero and the angle is
+90 degrees. For A=(-1,0,0), B=(0,0,0), C=(1,0,0), it is 180 degrees. Translate
+all three points by the same vector: the subtraction cancels that translation.
+Scale them uniformly by a positive factor: numerator and denominator both gain
+the square of that factor. The angle does not change.</p>
+<p>This angle is NOT automatically elbow flexion under a clinical anatomical
+coordinate convention. Such a convention may define zero at extension and
+requires anatomical axes, sign conventions and validation. We call our number
+“unsigned shoulder–elbow–wrist angle.” Precise naming prevents overclaiming.</p>
+<p>Coincident shoulder and elbow points give a zero-length ray. There is no defined
+angle to recover, so the code raises an error rather than assigning zero degrees.
+Floating-point division may produce 1.0000000000000002; clipping the cosine to
+[-1,1] handles roundoff, not missing landmarks or incorrect identities.</p>
+<h2 id="run-the-observed-excerpt">Run the observed excerpt</h2>
+<p>The lab converts all four coordinate arrays to metres, calculates the landmark
+angles, and prints accepted and rejected velocity intervals. With a strict
+one-frame-gap rule, only our adjacent frames 0 and 1 pass. Relaxing the rule to
+five frames admits the selected 110–140 intervals. That is an analysis policy;
+it does not transform five-frame averages into measured 60 Hz derivatives.</p>
+<pre><code class="language-python">velocity, accepted = interval_velocities(frames, ball_m, fps=60,
+                                         max_gap_frames=5)
+</code></pre>
+<p>A rejected row is NaN, accompanied by <code>accepted=False</code>. Plot accepted points
+without connecting across rejected gaps. A smooth connecting line is otherwise
+a surprisingly persuasive way to hide unavailable evidence.</p>
+<h2 id="a-controlled-mistake-that-you-should-try">A controlled mistake that you should try</h2>
+<p>Recompute with the wrong clock of one frame between every record. Compare the
+magnitude of the velocities. Then restore the correct clock. Do this only on a
+copy labeled “incorrect timing control.” Save both settings so a future reader
+cannot mistake the intentionally wrong result for the final analysis.</p>
+<p>A short apparent hand–ball distance is not a contact sensor. Pose and ball
+estimates can be wrong, the wrist is not the contact patch, and visibility varies.
+One must not label our nearest frame as a verified release. There is no independent
+per-frame release annotation bundled in this excerpt.</p>
+<h2 id="go-deeper-when-needed">Go deeper when needed</h2>
+<p>A derivative is a limit of displacement divided by smaller time intervals.
+Finite differences estimate it under assumptions. Differentiating noise can
+magnify its influence: independent coordinate noise of standard deviation sigma
+makes a two-point velocity error scale like <code>sqrt(2)*sigma/dt</code> in a scalar
+idealization. This is a derivation for a stated noise model, not an error estimate
+for SPL. We have not measured SPL's sigma. Filtering creates another estimator,
+with choices about delay, boundaries and future information; S04 investigates that.</p>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li>A 0.2 m displacement occurs over frames 20 to 24 at 40 Hz. Calculate the
+average-velocity magnitude for a straight displacement along one axis.</li>
+<li>Why can a landmark angle stay unchanged after a camera-frame rotation?</li>
+<li>What should happen when an input ray has length zero?</li>
+<li>Can a 240 Hz camera specification justify a 240 Hz ball trajectory after
+frames were dropped, duplicated or synthesized?</li>
+</ol>
+<h2 id="worked-answers">Worked answers</h2>
+<ol>
+<li>Elapsed time is 4/40=0.1 s; the magnitude is 2 m/s. This does not reveal curved
+path length between observations.</li>
+<li>Orthogonal rotations preserve dot products and norms. They therefore preserve
+the ratio defining the angle. Arbitrary projection into an image need not.</li>
+<li>Mark it undefined or stop explicitly. A fabricated zero would be a false
+anatomical statement, not a harmless numerical default.</li>
+<li>No. Audit actual timestamps, observed versus derived frames, gaps and identity.
+A device mode is not proof of end-to-end effective temporal resolution.</li>
+</ol>
+<h2 id="mastery-gate">Mastery gate</h2>
+<p>Derive the angle, calculate one time interval by hand, explain every rejected
+interval, and distinguish velocity, speed, displacement and path length. Delayed
+recall: explain how higher fps can make unfiltered differentiation noisier even
+though it offers finer time sampling.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

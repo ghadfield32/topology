@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R05 coding reference — attempt the learner notebook first · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../representations/answers/r05.ipynb">representations/answers/r05.ipynb</a> · Readable source notation; no online math renderer.</p><h1>Reference answers</h1><p>Attempt the independent work first.</p><details><summary>Reveal worked answers and outputs</summary><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="r05-coding-reference--attempt-the-learner-notebook-first">R05 coding reference — attempt the learner notebook first</h1>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from pathlib import Path
+import sys, json
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+here = Path.cwd().resolve()
+ROOT = next((p for p in [here, *here.parents] if (p / &#x27;src/shape_lab&#x27;).is_dir()), None)
+if ROOT is None:
+    raise RuntimeError(&#x27;Open this notebook within the extracted course project.&#x27;)
+sys.path.insert(0, str(ROOT / &#x27;src&#x27;))
+from shape_lab import representations as r
+from shape_lab import representation_experiments as exp
+print(&#x27;Course source:&#x27;, ROOT)
+</code></pre><div class="output"><pre>Course source: /tmp/shape-course-q90rdcpz/course
+</pre></div></section><h2 id="r05c1-identity_overlap">R05.C1: identity_overlap</h2>
+<p>Return repeated source identities across the two partitions.</p>
+<p>Hint: A set intersection is about identity, not row index.</p>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>def identity_overlap(training_ids, test_ids):
+    return sorted(set(training_ids)&amp;set(test_ids))
+
+assert identity_overlap([1,1,2],[2,3])==[2]
+print(&quot;R05.C1 reference checks passed&quot;)</code></pre><div class="output"><pre>R05.C1 reference checks passed
+</pre></div></section><h2 id="r05c2-causal_mask">R05.C2: causal_mask</h2>
+<p>Return a mask for finite observations available at or before the cutoff.</p>
+<p>Hint: Include equality; exclude unknown timestamps.</p>
+<section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>def causal_mask(timestamps, cutoff):
+    t=np.asarray(timestamps,float)
+    return np.isfinite(t)&amp;(t&lt;=cutoff)
+
+assert causal_mask([0,.1,.2,np.nan],.1).tolist()==[True,True,False,False]
+print(&quot;R05.C2 reference checks passed&quot;)</code></pre><div class="output"><pre>R05.C2 reference checks passed
+</pre></div></section><h2 id="r05c3-paired_differences">R05.C3: paired_differences</h2>
+<p>Return counts newly correct and newly wrong for method B versus A.</p>
+<p>Hint: Pair predictions on the SAME observations.</p>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>def paired_differences(correct_a, correct_b):
+    a=np.asarray(correct_a,bool);b=np.asarray(correct_b,bool)
+    if a.shape!=b.shape:raise ValueError(&#x27;Matching observations required.&#x27;)
+    return int((~a&amp;b).sum()),int((a&amp;~b).sum())
+
+assert paired_differences([1,0,0,1],[1,1,0,0])==(1,1)
+print(&quot;R05.C3 reference checks passed&quot;)</code></pre><div class="output"><pre>R05.C3 reference checks passed
+</pre></div></section></details><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,12 @@
+{
+  "status": "PASSED_RENDER_AND_INTERACTION",
+  "checks": [
+    "31 stage cards; stage search narrows results",
+    "90 question cards; filter 24.Q1 and reveal answer",
+    "Stage 24 executed-notebook figures load from embedded outputs",
+    "Home, symplectic lesson and practice fit a 390px viewport"
+  ],
+  "navigation": "NOT_VERIFIED_RENDER_FALLBACK",
+  "navigation_limitation": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/v5_build/listening_to_shape_lab/START_HERE.html\nCall log:\n  - navigating to \"file:///mnt/data/v5_build/listening_to_shape_lab/START_HERE.html\", waiting until \"load\"\n",
+  "page_errors": []
+}

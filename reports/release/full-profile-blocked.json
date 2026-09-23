@@ -1,0 +1,39 @@
+{
+  "status": "failed",
+  "course_stages": 31,
+  "reference_notebooks": 123,
+  "experiments": 20,
+  "missing_paths": [],
+  "environment": {
+    "profile": "full",
+    "python": "3.13.5",
+    "interpreter": "/mnt/data/v10_build/listening_to_shape_lab/.venv/bin/python3",
+    "distributions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.8",
+      "scikit-learn": "1.8.0",
+      "nbclient": "0.10.4",
+      "nbformat": "5.10.4",
+      "ipykernel": "7.2.0",
+      "pytest": "9.0.2",
+      "mistune": "3.2.1",
+      "beautifulsoup4": "4.14.3",
+      "torch": "2.10.0+cpu",
+      "ripser": null,
+      "gudhi": null
+    },
+    "missing": [
+      "ripser",
+      "gudhi"
+    ],
+    "uv": "/opt/pyvenv/bin/uv",
+    "docker_cli": null,
+    "lockfile_present": false,
+    "fresh_install_validated": false,
+    "notice": "Presence checks do not prove a successful independent installation or Docker build."
+  },
+  "learner_assessment": "not_assessed",
+  "scope": "Course structure and selected installed distributions, not Docker or a fresh install."
+}

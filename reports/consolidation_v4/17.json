@@ -1,0 +1,11 @@
+{
+  "anchors": 23,
+  "held_out": 22,
+  "anchor_max_error": 5.3705425095741715e-15,
+  "warped_holdout_mean_error": 0.029999999999999895,
+  "targets_are_generated": true,
+  "independent_physical_validation": false,
+  "stage": 17,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real reference point arrangement; target transforms and held-out deformations are generated controls."
+}

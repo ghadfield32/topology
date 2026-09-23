@@ -1,0 +1,18 @@
+{
+  "dataset": "statsmodels sunspots historical yearly snapshot",
+  "upstream": "National Geophysical Data Center, as packaged by statsmodels",
+  "upstream_package_version": "0.14.6",
+  "observations": 309,
+  "years": [
+    1700,
+    2008
+  ],
+  "columns": [
+    "YEAR",
+    "SUNACTIVITY"
+  ],
+  "license": "Public domain, according to statsmodels dataset documentation",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/sunspots.html",
+  "sha256": "7dac2f45399b4d3b335823db9884c4b6d7f79509f94aed6de20da6a431ae5900",
+  "status": "Historical vintage, not current/revised solar-monitoring data; annual values are used as supplied."
+}

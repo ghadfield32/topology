@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Verification — Listening to Shape Learning System 3.0 · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../docs/VERIFICATION_V3.md">docs/VERIFICATION_V3.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="verification--listening-to-shape-learning-system-30">Verification — Listening to Shape Learning System 3.0</h1>
+<p>Build date: <strong>2026-09-20</strong>. This report separates executed demonstrations, learner state, source review and unexecuted work.</p>
+<h2 id="executed-reference-evidence">Executed reference evidence</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python test suite</td>
+<td><strong>231 passed, 2 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td>Reference lab notebooks</td>
+<td><strong>21 executed successfully</strong></td>
+</tr>
+<tr>
+<td>Reference coding-answer notebooks</td>
+<td><strong>21 executed successfully</strong></td>
+</tr>
+<tr>
+<td>Total executed reference code cells</td>
+<td><strong>276</strong></td>
+</tr>
+<tr>
+<td>Learner starter notebooks</td>
+<td><strong>21 deliberately unexecuted</strong></td>
+</tr>
+<tr>
+<td>Stage analytical figures</td>
+<td><strong>38</strong></td>
+</tr>
+<tr>
+<td>Conceptual exercises and solutions</td>
+<td><strong>150 pairs</strong></td>
+</tr>
+<tr>
+<td>Independent coding activities with reference checks</td>
+<td><strong>89</strong></td>
+</tr>
+<tr>
+<td>Delayed-recall questions</td>
+<td><strong>63</strong></td>
+</tr>
+<tr>
+<td>Foundation primers</td>
+<td><strong>6</strong></td>
+</tr>
+<tr>
+<td>Default learner assessments recorded</td>
+<td><strong>0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Test output is in <code>reports/pytest_v3.txt</code>. Notebook execution records are in <code>reports/notebook_execution.json</code> and <code>reports/practice_execution.json</code>; the executed notebooks retain outputs. The 24 new coding activities each run independently in the test suite. The original 65 reference activities remain included and executed.</p>
+<p>The two skipped tests require <strong>Ripser and GUDHI</strong>, which were unavailable. No agreement with those libraries is claimed. The geometry tests do compare rotation calculations with local SciPy and triangulation with locally installed OpenCV. On a machine lacking optional OpenCV, its explicitly optional check may also skip; inspect your own test summary.</p>
+<p>A shell execution timeout interrupted an early batch; those notebooks were rerun successfully in smaller batches. The report reflects the final completed runs, not the interrupted attempt. An initial notebook argument-order mismatch was corrected before final execution.</p>
+<h2 id="real-data-and-measured-outputs">Real data and measured outputs</h2>
+<p>The required course includes Iris, handwritten digits and a real rectified Middlebury motorcycle stereo pair supplied through local scikit-image data. The stereo reference has shape 500×741 with <strong>343,274 finite disparity entries</strong>. Nonfinite data are retained in the raw archive and explicitly excluded from calculations. Dataset source/shape/calibration discrepancies and licenses are documented in <code>data/stereo/README.md</code>, <code>manifest.json</code> and the source ledger.</p>
+<p>The independent integer-SAD stereo demonstration evaluates <strong>441 eligible reference pixels from 480 fixed requests</strong>. Every eligible pixel receives a prediction: <strong>100% coverage among eligible references</strong>. Mean absolute disparity error is <strong>6.6288 pixels</strong>, median absolute error <strong>0.4946 pixels</strong>, and <strong>31.07%</strong> exceed the declared two-pixel threshold. These errors are not hidden by a favorable median. Reference-depth MAE is <strong>0.2629 m</strong>. The deliberately incorrect no-offset formula produces a <strong>76.03% median relative depth error</strong> on its defined comparison subset. See <code>reports/stage_15/results.json</code> and the saved source-aligned prediction archive.</p>
+<p>The DLT/stereo-formula agreement is a consistency check using the same supplied reference/calibration, not two independent metric truths. The calibration fit, uncertainty perturbations, synchronization example, imposed registration transforms and temporal event sequences are explicitly generated controls. The actual measured CPU vectorization timing applies only to this environment. FIFO queue ages are simulated, not measured camera-to-display latencies.</p>
+<p>The original exposed handwriting capstone reproduces its declared results: 347/360 correct with pixels, 168/360 with topology-only features, 351/360 combined and 36/360 majority baseline. These are demonstration results, not new statistically established improvements or unseen-writer evidence.</p>
+<h2 id="reader-verification">Reader verification</h2>
+<p>Static checks inspected <strong>363 HTML pages and 14,393 local link targets</strong>, with no broken local targets. The checks verify paths, not the continuing availability of every external resource. No font files are bundled.</p>
+<p>Chromium rendered the actual home/recall/notebook markup with the same CSS inlined. It verified 21 home stage cards, a Stage 00 link, filtering 63 recall cards to a single query, answer reveal, all five embedded stereo plots, and no horizontal home-page overflow at a 390-pixel viewport. No JavaScript page errors occurred during those checks.</p>
+<p><strong>Local file navigation was blocked by the build environment's browser policy.</strong> Full click-through navigation in a normal user's browser was not executed. Rendering and interaction tests are therefore reported separately from navigation; static link checking is not a substitute for full browser navigation. No browser-storage synchronization is claimed. <code>reports/browser_v3.json</code> retains this limitation.</p>
+<h2 id="model-status">Model status</h2>
+<p><strong>Neither original VGGT nor VGGT-Omega trained inference was executed.</strong> No checkpoint, model repository or weights are bundled. The optional original-VGGT adapter was source-reviewed, syntax-compiled and help-tested. Its output contract and small point sampler are tested using <strong>synthetic arrays labeled as contract fixtures</strong>, not as neural-network predictions.</p>
+<p>The adapter records a local code revision, checkpoint/input hashes, preprocessing, coordinate/scale status, optional 2D tracks, device precision and synchronized GPU timing when the user actually runs it. It never marks the resulting geometry as validated metres. Raw-to-processed pixel mapping and registration/holdout validation remain explicit future checks. The original-model adapter does not silently accept Omega's different API.</p>
+<h2 id="source-and-scope-status">Source and scope status</h2>
+<p>Primary sources were checked on September 20, 2026. The source audit preserves two discrepancies: Omega's project page dates the training/reproduction update September 18 while its README says September 8; the stereo documentation's disparity shape differs from the actual two-dimensional array. No invented reconciliation is supplied.</p>
+<p>Real hand–ball event labels, sports-event precision/recall, independent physical scene holdouts, rolling-shutter/fisheye validation, clinical suitability and WMS production deployment are <strong>not established</strong>. The attached source's reported timing figures and prior watch updates are contextual source claims, not work executed here. No production code or scheduled watch was modified.</p>
+<p>The package contains an original curriculum for the agreed introductory scope and an applied continuation. It is not the complete book text. Its full-book audit remains false/unassessed. Elementary proofs are supplied; major theorem proof obligations and deeper topics are stated explicitly rather than certified through examples alone.</p>
+<h2 id="environment-and-portability">Environment and portability</h2>
+<p>Executed on <strong>Linux x86-64, Python 3.13.5</strong>. Core packages: NumPy 2.3.5, SciPy 1.17.0, pandas 2.2.3, matplotlib 3.10.8, scikit-learn 1.8.0; pytest 9.0.2. Full values are in <code>reports/environment_v3.json</code>. Mac/Windows instructions are provided but those systems were not executed. Required labs are CPU-only and use bundled data; first dependency installation requires internet or a cache.</p>
+<h2 id="archive-verification">Archive verification</h2>
+<p>The delivered archive is tested for ZIP integrity and verified against its internal SHA-256 file inventory. The final extracted-copy test result is saved separately in <code>reports/extracted_verification_v3.json</code>. This is a fresh-path package test; it is not a claim to have repeated all model or notebook work on a second operating system.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

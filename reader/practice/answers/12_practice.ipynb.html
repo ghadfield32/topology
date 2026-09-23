@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 12 — Reference coding solutions · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../practice/answers/12_practice.ipynb">practice/answers/12_practice.ipynb</a> · Readable source notation; no online math renderer.</p><h1>Reference answers</h1><p>Attempt the independent work first.</p><details><summary>Reveal worked answers and outputs</summary><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="stage-12--reference-coding-solutions">Stage 12 — Reference coding solutions</h1>
+<p>These are instructor reference implementations, not evidence of your independent mastery. Run after attempting your own version. All examples use explicit small inputs and the declared dataset partitions.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json
+from itertools import combinations
+import numpy as np
+import pandas as pd
+ROOT=next((p for p in [Path.cwd(),*Path.cwd().parents] if (p/&#x27;data/manifest.json&#x27;).exists() and (p/&#x27;src/shape_lab&#x27;).exists()),None)
+if ROOT is None: raise RuntimeError(&#x27;Open this notebook inside the extracted course folder.&#x27;)
+sys.path.insert(0,str(ROOT/&#x27;src&#x27;))
+from shape_lab.data import load_iris_data,load_digit_data,digit_example
+from shape_lab.algebra import closure,validate_complex,rank_mod2,boundary_matrix,betti_numbers
+from shape_lab.topology import component_labels
+from shape_lab.persistence import ordered_filtration,rips_filtration,reduce_boundary,persistent_homology,diagram,pixel_filtration,finite_bottleneck
+print(&#x27;Working inside&#x27;,ROOT.name,&#x27;— no network data downloads.&#x27;)</code></pre><div class="output"><pre>Working inside course — no network data downloads.
+</pre></div></section><h2 id="12c1--check-a-partition-contract">12.C1 — Check a partition contract</h2>
+<p>Given disjointness candidates and the full set of IDs, return whether train, validation, and test are pairwise disjoint and jointly exhaustive.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Set intersections test overlap; the union tests coverage.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>def partition_valid(train,validation,test,all_ids):
+    a,b,c=map(set,(train,validation,test))
+    return not(a&amp;b or a&amp;c or b&amp;c) and a|b|c==set(all_ids)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>assert partition_valid([0,1],[2],[3],range(4))
+assert not partition_valid([0,1],[1,2],[3],range(4))
+splits=json.loads((ROOT/&#x27;data/splits.json&#x27;).read_text())
+assert partition_valid(splits[&#x27;train&#x27;],splits[&#x27;validation&#x27;],splits[&#x27;test&#x27;],range(1797))
+print(&quot;Frozen image-ID partitions are disjoint and exhaustive&quot;)</code></pre><div class="output"><pre>Frozen image-ID partitions are disjoint and exhaustive
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> ID disjointness does not guarantee independence. Images from the same writer or frames from one recording can still be related across partitions when those grouping variables are unavailable.</p>
+<h2 id="12c2--report-counts-with-accuracy">12.C2 — Report counts with accuracy</h2>
+<p>Return correct count, total count, and accuracy for nonempty equally sized true/predicted arrays.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Count equality element by element and divide by the number of observations.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>def accuracy_counts(truth,prediction):
+    truth=np.asarray(truth);prediction=np.asarray(prediction)
+    correct=int(np.sum(truth==prediction));total=len(truth)
+    return correct,total,correct/total</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>assert accuracy_counts([0,1,2],[0,0,2])==(2,3,2/3)
+frame=pd.read_csv(ROOT/&#x27;reports/stage_12/test_predictions.csv&#x27;)
+correct,total,accuracy=accuracy_counts(frame.true_label,frame.pixels)
+assert total==360
+print(&quot;Previously exposed worked-test pixel result:&quot;,correct,total,accuracy)</code></pre><div class="output"><pre>Previously exposed worked-test pixel result: 347 360 0.9638888888888889
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> Counts make small apparent improvements easier to interpret. These are already exposed teaching-test predictions; inspecting them is not a newly blinded experiment.</p>
+<h2 id="12c3--compare-errors-on-the-same-observations">12.C3 — Compare errors on the same observations</h2>
+<p>Return counts of observations where A alone is correct and where B alone is correct, in that order.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Use the same sample ordering for both models before applying boolean masks.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 7</p><pre><code>def paired_disagreements(truth,pred_a,pred_b):
+    truth=np.asarray(truth);a=np.asarray(pred_a)==truth;b=np.asarray(pred_b)==truth
+    return int(np.sum(a&amp;~b)),int(np.sum(b&amp;~a))</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 8</p><pre><code>assert paired_disagreements([0,1],[0,0],[1,1])==(1,1)
+frame=pd.read_csv(ROOT/&#x27;reports/stage_12/test_predictions.csv&#x27;)
+a_only,b_only=paired_disagreements(frame.true_label,frame.pixels,frame.combined)
+assert b_only-a_only==int((frame.combined==frame.true_label).sum()-(frame.pixels==frame.true_label).sum())
+print(&quot;Previously exposed test: pixels-only correct / combined-only correct:&quot;,a_only,b_only)</code></pre><div class="output"><pre>Previously exposed test: pixels-only correct / combined-only correct: 3 7
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> A paired comparison retains information that comparing two accuracy percentages loses. A significance test would additionally require its own assumptions and analysis protocol; this count alone is not one.</p>
+<h2 id="12c4--fingerprint-the-evidence">12.C4 — Fingerprint the evidence</h2>
+<p>Return the SHA-256 hexadecimal digest of a local file without modifying it.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Hash raw bytes, not a reformatted view of the data.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 9</p><pre><code>def file_fingerprint(path):
+    from hashlib import sha256
+    return sha256(Path(path).read_bytes()).hexdigest()</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 10</p><pre><code>p=ROOT/&#x27;data/raw/iris.csv&#x27;
+h=file_fingerprint(p)
+assert len(h)==64 and h==file_fingerprint(p)
+print(&quot;Iris snapshot SHA-256:&quot;,h)</code></pre><div class="output"><pre>Iris snapshot SHA-256: 160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> A content hash detects a change to the file but cannot prove that the original measurement was correct or that the data source was trustworthy.</p>
+<h2 id="12c5--check-a-report-has-its-required-fields">12.C5 — Check a report has its required fields</h2>
+<p>Return the set of missing field names among source, observation_unit, metric, filtration, coefficients, evaluation_unit, limitations. Do not treat field presence as factual verification.</p>
+<p><strong>Before running:</strong> describe the input type, output type, and a hand-checkable expected result.</p>
+<details><summary>Hint</summary>
+<p>Compare a set of required keys against the actual keys.</p>
+</details>
+<section class="cell"><p class="cell-label">Code · execution 11</p><pre><code>def missing_report_fields(report):
+    required={&#x27;source&#x27;,&#x27;observation_unit&#x27;,&#x27;metric&#x27;,&#x27;filtration&#x27;,&#x27;coefficients&#x27;,&#x27;evaluation_unit&#x27;,&#x27;limitations&#x27;}
+    return required-set(report)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 12</p><pre><code>assert &#x27;metric&#x27; in missing_report_fields({&#x27;source&#x27;:&#x27;example&#x27;})
+report=dict.fromkeys([&#x27;source&#x27;,&#x27;observation_unit&#x27;,&#x27;metric&#x27;,&#x27;filtration&#x27;,&#x27;coefficients&#x27;,&#x27;evaluation_unit&#x27;,&#x27;limitations&#x27;],&#x27;declared&#x27;)
+assert missing_report_fields(report)==set()
+print(&quot;Report structure checked; claim correctness still needs review&quot;)</code></pre><div class="output"><pre>Report structure checked; claim correctness still needs review
+</pre></div></section><p><strong>Why this works and what it does not establish:</strong> Completeness of a form is not completeness of an argument. Review whether each statement is true, supported, internally consistent, and adequate for the question.</p>
+</details><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

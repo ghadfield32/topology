@@ -1,0 +1,16 @@
+{
+  "mode": "file URLs with system Chromium via Playwright",
+  "steps": [
+    {
+      "check": "browser interaction exception",
+      "passed": false,
+      "detail": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/v9_build/listening_to_shape_lab/START_HERE.html\nCall log:\n  - navigating to \"file:///mnt/data/v9_build/listening_to_shape_lab/START_HERE.html\", waiting until \"load\"\n"
+    },
+    {
+      "check": "no JavaScript page errors",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "all_passed": false
+}

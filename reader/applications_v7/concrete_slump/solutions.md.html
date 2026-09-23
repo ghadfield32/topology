@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Coding answer explanations · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../applications_v7/concrete_slump/solutions.md">applications_v7/concrete_slump/solutions.md</a> · Readable source notation; no online math renderer.</p><h1 id="coding-answer-explanations">Coding answer explanations</h1>
+<h2 id="concrete_slumpc1">concrete_slump.C1</h2>
+<p>Compute each absolute prediction error while preserving target units.</p>
+<p>Subtract matching vectors, then take absolute values.</p>
+<pre><code class="language-python">def absolute_errors(y,prediction):
+    """Absolute residuals retain the physical units of the target."""
+    y=np.asarray(y,float);p=np.asarray(prediction,float)
+    if y.ndim!=1 or p.shape!=y.shape or not y.size or not np.isfinite(y).all() or not np.isfinite(p).all():raise ValueError('Matching finite vectors required')
+    return np.abs(y-p)
+</code></pre>
+<p>Check:</p>
+<pre><code class="language-python">assert np.allclose(absolute_errors([20,30,40],[22,25,43]),[2,5,3])
+</code></pre>
+<h2 id="concrete_slumpc2">concrete_slump.C2</h2>
+<p>Return lower and upper prediction bounds for a fixed nonnegative radius.</p>
+<p>One radius is used on both sides. Do not refit it on these outcomes.</p>
+<pre><code class="language-python">def interval_bounds(prediction,radius):
+    """Closed symmetric intervals. Negative lower strength is not silently clipped."""
+    p=np.asarray(prediction,float);r=float(radius)
+    if p.ndim!=1 or not p.size or not np.isfinite(p).all() or np.isnan(r) or r&lt;0:raise ValueError('Finite predictions and nonnegative radius required')
+    return p-r,p+r
+</code></pre>
+<p>Check:</p>
+<pre><code class="language-python">lo,hi=interval_bounds([30.],8.)
+assert np.allclose(lo,[22.]) and np.allclose(hi,[38.])
+</code></pre>
+<h2 id="concrete_slumpc3">concrete_slump.C3</h2>
+<p>Compute the fraction inside closed lower/upper bounds.</p>
+<p>Both inequalities must hold; the boundary counts as covered.</p>
+<pre><code class="language-python">def empirical_coverage(y,lower,upper):
+    """Fraction of this finite sample within the supplied closed bounds."""
+    y=np.asarray(y,float);lo=np.asarray(lower,float);hi=np.asarray(upper,float)
+    if y.ndim!=1 or lo.shape!=y.shape or hi.shape!=y.shape or not y.size or not np.isfinite(y).all() or np.isnan(lo).any() or np.isnan(hi).any() or np.any(lo&gt;hi):raise ValueError('Matching ordered interval bounds required')
+    return float(np.mean((lo&lt;=y)&amp;(y&lt;=hi)))
+</code></pre>
+<p>Check:</p>
+<pre><code class="language-python">assert empirical_coverage([0,1,2],[-1,0,0],[0,1,1]) == 2/3
+</code></pre>
+<h2 id="concrete_slumpc4">concrete_slump.C4</h2>
+<p>Predict the training mean for n future cases.</p>
+<p>The test outcomes are not an argument to this function.</p>
+<pre><code class="language-python">def mean_baseline(training_y,n):
+    """A constant prediction fitted only to training outcomes."""
+    y=np.asarray(training_y,float)
+    if y.ndim!=1 or not y.size or not np.isfinite(y).all() or not isinstance(n,int) or n&lt;1:raise ValueError('Finite training outcomes and positive count required')
+    return np.full(n,y.mean())
+</code></pre>
+<p>Check:</p>
+<pre><code class="language-python">assert np.allclose(mean_baseline([2.,6.],3),[4,4,4])
+</code></pre>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

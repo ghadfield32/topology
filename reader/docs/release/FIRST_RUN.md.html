@@ -1,0 +1,116 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Start once, learn in order, preserve your evidence · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/FIRST_RUN.md">docs/release/FIRST_RUN.md</a> · Readable source notation; no online math renderer.</p><h1 id="start-once-learn-in-order-preserve-your-evidence">Start once, learn in order, preserve your evidence</h1>
+<p>Version 12 • beginner-first repository edition • 22 September 2026</p>
+<h2 id="what-this-folder-is">What this folder is</h2>
+<p>This is a course project, not a plugin for your production application. A <strong>repository</strong> is the version-controlled folder containing the project. A <strong>terminal</strong> accepts commands. An <strong>environment</strong> supplies Python and installed packages. A <strong>notebook</strong> combines explanations, code cells, and saved outputs. A <strong>test</strong> checks a specific expectation; it does not assess your understanding. An <strong>experiment</strong> specifies observations, assumptions, methods, and measurements before interpreting a result.</p>
+<p>Start by extracting the entire archive. Do not run files while they are still inside the ZIP. Open <code>START_HERE.html</code> for the offline reader. Lessons and saved outputs need no installation. External videos, papers, optional datasets, and weights require separate access. The publisher's complete book is not included.</p>
+<p>Keep one required reading path: Stage → primary lesson → prediction → worked lab → independent assignment → explanation. Open a primer only to repair a gap. The combined reading export is another view of the same material, not an additional assignment.</p>
+<h2 id="choose-your-execution-path">Choose your execution path</h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Use it for</th>
+<th>What it does not prove</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read only</td>
+<td>Learn vocabulary and inspect saved experiments now</td>
+<td>That code ran on your computer</td>
+</tr>
+<tr>
+<td>Native uv</td>
+<td>First experiments and ordinary daily learning</td>
+<td>That Docker or Kubernetes works</td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>Rebuild a container environment and isolate its filesystem</td>
+<td>That a cluster schedules the image</td>
+</tr>
+<tr>
+<td>Local Kubernetes</td>
+<td>Learn admission, Pods, Jobs, storage, and service access</td>
+<td>That a production cluster or every platform is supported</td>
+</tr>
+</tbody>
+</table>
+<p>Start native. Kubernetes is optional infrastructure practice, not a prerequisite for learning sets, homology, or self-supervision. The supplied deployment workflow accepts a separately chosen disposable local kind context; never aim it at a work or production cluster.</p>
+<h2 id="before-running-commands">Before running commands</h2>
+<p>Copy the complete folder, including dotfiles, into a new dedicated repository or an isolated subdirectory such as <code>learning/listening-to-shape</code>. Do not replace another project's <code>pyproject.toml</code>, <code>uv.lock</code>, Dockerfile, CI workflow, or agent instructions. See <a href="GIT_IMPORT.md.html">Git import</a>.</p>
+<p>The teaching runtime is Python 3.13.5. uv 0.10.0 was available in the build environment; it is a tested tool version, not a claim to be the newest. Install uv through its official instructions: <a href="https://docs.astral.sh/uv/getting-started/installation/">https://docs.astral.sh/uv/getting-started/installation/</a> . Then open a terminal in the folder containing <code>course.py</code>.</p>
+<p>On macOS/Linux, <code>pwd</code> prints that folder and <code>ls</code> lists its files. On PowerShell, use <code>Get-Location</code> and <code>Get-ChildItem</code>. Do not include the prompt characters shown by your terminal when copying commands.</p>
+<h2 id="create-your-own-genuine-environment">Create your own genuine environment</h2>
+<pre><code class="language-bash">uv python install 3.13.5
+uv run --no-project --python 3.13.5 python tools/bootstrap.py --profile physics
+</code></pre>
+<p><code>--no-project</code> prevents the bootstrap launcher from first trying to install the whole project automatically. The script then performs the actual project resolution and synchronization explicitly. It fails rather than replacing the requested setup with an unrelated installed environment.</p>
+<p>Profiles:</p>
+<table>
+<thead>
+<tr>
+<th>Profile</th>
+<th>Includes</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>core</code></td>
+<td>Numeric libraries, notebooks, reader, tests</td>
+<td>Topology and most small industry/sports cases</td>
+</tr>
+<tr>
+<td><code>physics</code></td>
+<td>Core plus CPU-oriented PyTorch dependency selection</td>
+<td>All supplied worked references, including neural physics and representations</td>
+</tr>
+<tr>
+<td><code>full</code></td>
+<td>Physics plus Ripser and GUDHI</td>
+<td>Independent topology-library checks; no skipped checks accepted</td>
+</tr>
+</tbody>
+</table>
+<p>The bootstrap creates <code>uv.lock</code> using uv's resolver when absent, or checks an existing lock. It then synchronizes with <code>--locked</code>. Review and commit a successfully resolved lock. <strong>No lock was generated in this build environment because package-index access failed.</strong> Installed-version observations and direct pins are evidence about the tested host, not a substitute for a real resolved lock or a fresh installation. After you change requirements, explicitly resolve, inspect the diff, synchronize, and rerun acceptance.</p>
+<p>A setup attempt saves <code>setup.json</code> and command logs in a new <code>my_work/setup-*</code> folder. A command timeout or failure is not a pass. A supplied <code>--reuse-installed</code> option is for an explicitly labeled offline diagnostic only; do not use it to certify a clean install. An inherited diagnostic <code>.venv</code> must not later be relabeled independent. Keep the old workspace and use a new extraction rather than deleting work automatically.</p>
+<h2 id="one-command-collects-first-session-evidence">One command collects first-session evidence</h2>
+<pre><code class="language-bash">uv run --no-sync python course.py doctor --profile physics
+uv run --no-sync python course.py acceptance --profile physics --references first --output my_work/acceptance01
+</code></pre>
+<p><code>doctor</code> checks declared direct versions as well as package presence. It is not a full resolver, vulnerability scan, or deployment test. <code>--no-sync</code> runs the already-prepared environment without silently resolving again.</p>
+<p>The acceptance command runs the chosen profile's tests and Stage 00 in a fresh workspace and kernel. It also renders/checks Kubernetes project policy <strong>without contacting or applying to a cluster</strong>. It validates the child test counts, exact notebook identities, profile, successful code execution, and unchanged source inputs. Read <code>my_work/acceptance01/index.html</code> and the adjacent JSON/log files. A native pass leaves Docker and Kubernetes runtime status as <code>not_run</code>.</p>
+<p>A previously used output directory is refused. Use <code>acceptance02</code> for another attempt. Do not erase old evidence merely to make a rerun appear to be the first one.</p>
+<h2 id="your-first-learning-session">Your first learning session</h2>
+<pre><code class="language-bash">uv run --no-sync python course.py stage 0
+uv run --no-sync python course.py check 0
+uv run --no-sync python course.py run --stage 0 --output my_work/stage00_attempt01
+uv run --no-sync python course.py practice 0 --output my_work/practice00_attempt01
+uv run --no-sync jupyter lab
+</code></pre>
+<p>Read the linked primary lesson. Before executing its smallest example, write what one row and one feature mean, the expected array shape, and the output you expect. Run the example. In Jupyter, open <code>my_work/practice00_attempt01/learner.ipynb</code>; put your explanation in the accompanying <code>answer.md</code>.</p>
+<p><code>NotImplementedError</code> in a learner function means <strong>you have reached an assignment</strong>. It is intentionally unfinished. Reference answers are separate. A <code>NotImplementedError</code> in a worked reference is a failure and should be reported.</p>
+<p>A <code>.ipynb</code> notebook's <code>[ ]</code> means a cell has not executed, <code>[*]</code> means it is busy, and a number records its execution order. Restart the kernel and run from the top to avoid depending on hidden state. The course runner does that automatically for worked references and records the actual interpreter and copied source path.</p>
+<h2 id="continue-without-another-restart">Continue without another restart</h2>
+<pre><code class="language-bash">uv run --no-sync python course.py next
+uv run --no-sync python course.py cases
+uv run --no-sync python course.py run --case wine --output my_work/wine01
+uv run --no-sync python course.py practice wine --output my_work/wine_practice01
+uv run --no-sync python course.py run --case s00 --output my_work/sports01
+uv run --no-sync python course.py practice r01 --output my_work/representation_practice01
+</code></pre>
+<p>All 31 stage and all 25 named case practice routes now resolve to existing learner notebooks. Answers are copied into separate workspaces; references remain unchanged. <code>next</code> reads the core learning record, not your shell history, so running a command does not mark a lesson as understood.</p>
+<p>To replay the whole supplied set rather than one lesson:</p>
+<pre><code class="language-bash">uv run --no-sync python course.py acceptance --profile physics --references all --jobs 1 --output my_work/full_course01
+</code></pre>
+<p>Serial execution is the predictable default on laptops. <code>--jobs 2</code> is available after a serial pass when you deliberately measure performance. One parallel kernel-start failure was observed during the v12 audit; that failed record is retained. The runner does not hide it with a silent successful retry. Full profile requires both independent topology packages; it returns nonzero when those checks cannot run.</p>
+<h2 id="how-to-read-a-result">How to read a result</h2>
+<p><code>execution.json</code> lists each notebook, its success/failure, source hash, interpreter, source-code-cell count, and timing. <code>executed/</code> contains the actual rerun notebooks. <code>artifacts/</code> contains newly produced reports. <code>tests.json</code> and <code>junit.xml</code> report test counts. <code>acceptance.json</code> records the declared scope. A hash checks byte continuity, not measurement truth. A test pass checks its assertions, not every possible application.</p>
+<p>Your answer should state: observation unit; method and assumptions; hand calculation; code/output; controlled change; conclusion; limitation; what required help. Revisit an unfamiliar variant after a delay. Mastery, notebook execution, source integrity, installation, and deployment are separate statuses.</p>
+<h2 id="what-to-preserve-before-upgrading">What to preserve before upgrading</h2>
+<p>Keep <code>my_work/</code>, your edited learner notebooks, existing progress logs, referenced evidence, and any real <code>uv.lock</code>. The older progress filenames are intentional compatibility interfaces. Copy rather than overwrite; reconcile conflicts. Blank tracked templates remain under <code>curriculum/response_templates/</code> and <code>progress/templates/</code>. Private answers and active logs are ignored by Git by default.</p>
+<h2 id="verification-boundary-for-this-delivery">Verification boundary for this delivery</h2>
+<p>See <a href="VERIFICATION.md.html">the current verification report</a>. Linux/native execution is distinct from clean uv sync, Docker image execution, Kubernetes admission/storage/Jobs, Mac/Windows, and GPU. No full sports tracking/video corpus or trained VGGT inference was newly executed. The retained datasets and terminology audits carry their original caveats. Complete-book reconciliation and independent proofs/capstones remain learning obligations.</p>
+<p>Official setup reference: <a href="https://docs.astral.sh/uv/concepts/projects/sync/">https://docs.astral.sh/uv/concepts/projects/sync/</a> .</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

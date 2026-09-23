@@ -1,0 +1,11 @@
+{
+  "status": "PASSED",
+  "html_pages": 59,
+  "existing_local_link_targets_checked": 1766,
+  "external_links_not_retested": 24,
+  "stages_checked": 13,
+  "executed_notebook_code_cells": 46,
+  "exercise_solution_pairs": 102,
+  "broken_local_links": [],
+  "font_files": []
+}

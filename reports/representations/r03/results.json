@@ -1,0 +1,15 @@
+{
+  "data": "64 real training digit images, fixed random projections and manufactured perturbations",
+  "agreement_same": 0.00038117991323442026,
+  "agreement_different": 30.097293919693143,
+  "vicreg_same": 33.25053640984614,
+  "barlow_same": 0.01992710355773961,
+  "info_nce_same": 3.433419644504835,
+  "info_nce_shuffled": 5.4280279930539175,
+  "zero_cloud_penalty": 13.085463046861499,
+  "zero_cloud_gradient_norm": 0.0,
+  "stop_gradient_online": -2.0,
+  "stop_gradient_target_is_none": true,
+  "ema_hand_example": 1.5,
+  "interpretation": "Separate objective scales are not a model ranking. A positive anti-collapse penalty does not ensure a nonzero gradient at every state."
+}

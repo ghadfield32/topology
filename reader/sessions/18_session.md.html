@@ -1,0 +1,76 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 18 guided session — Separate throughput from how old the answer is · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/18_session.md">sessions/18_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-18-guided-session--separate-throughput-from-how-old-the-answer-is">Stage 18 guided session — Separate throughput from how old the answer is</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/18_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/18_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/18_workbook.md.html">original workbook</a> and <a href="../notebooks/18_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real reference point table for measured CPU operations; separate deterministic FIFO simulation.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Preserve numerical outputs while changing an implementation.</li>
+<li>Distinguish measured code duration from simulated queue latency.</li>
+<li>Derive queue growth when service is slower than arrival.</li>
+<li>Report warm-up, work units, and timing boundaries.</li>
+</ol>
+<h2 id="time-the-path-you-actually-claim">Time the path you actually claim</h2>
+<p>Throughput is completed work per unit time. Latency is elapsed time for a particular item between named boundaries. Result age is how old the source observation is when its result is used or displayed. A pipeline can have high throughput and still show stale results because work waits in a queue or because batches delay individual observations.</p>
+<p>Before timing anything, specify the work item: an image, a frame pair, a point table, or a batch. Specify whether timing includes capture, decode, preprocessing, transfer, model execution, synchronization, serialization, and display. A CPU array operation is not a benchmark of the entire video pipeline.</p>
+<h2 id="preserve-the-answer-before-optimizing-it">Preserve the answer before optimizing it</h2>
+<p>The real stereo reference generates a point table. Apply one rigid transform using a Python loop and using matrix operations. Compare the resulting coordinates first. Timing a faster but incorrect transformation is not an optimization of the same calculation.</p>
+<p>Warm each implementation, then time several repetitions and record the median. The exact numbers depend on hardware, runtime, process contention, and array size. This small benchmark is illustrative. It does not establish performance on your Mac, Windows desktop, GPU, or ROS2 pipeline.</p>
+<h2 id="derive-a-queue-example">Derive a queue example</h2>
+<p>Suppose observations arrive every 0.02 seconds but each takes 0.03 seconds to process on one FIFO server. The first item finishes at 0.03 seconds with latency 0.03. The second arrives at 0.02, waits until 0.03, and finishes at 0.06 with latency 0.04. Each item adds another 0.01 seconds of backlog. By the hundredth item, latency is 1.02 seconds.</p>
+<p>This is a constructed deterministic simulation, not a measured camera benchmark. It explains why a model's isolated service time is insufficient to assess a live system. Dropping work, replacing stale queued items, parallel processing, or lowering the incoming rate are different policies with different completeness and ordering consequences. They should not be silently exchanged in a benchmark.</p>
+<h2 id="carry-the-evidence-forward">Carry the evidence forward</h2>
+<p>A timing report should name the input size, repetitions, warm-up, clock, device, and boundary. A latency report should retain observation timestamps and report queue age and drops as well as summary percentiles. Optimizations should be compared on the same numerical and temporal contract.</p>
+<p>The original performance sources motivate profiling; their reported measurements are not results of this course. This notebook records only the small CPU transformation it executes and the FIFO example it simulates. Keeping those labels separate is part of learning accurate systems engineering.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Compare two implementations on a point table derived from real reference data.</p>
+<pre><code class="language-python">from shape_lab.stereo import reference_sample, point_cloud
+from shape_lab.geometry import exp_so3
+from time import perf_counter
+_, _, disparity, calibration = reference_sample()
+X, _ = point_cloud(disparity, calibration, stride=20)
+rotation = exp_so3([.1,.2,.3]); translation = np.array([.2,0.,-.1])
+def loop_transform():
+    return np.array([rotation @ p + translation for p in X])
+def array_transform():
+    return X @ rotation.T + translation
+assert np.allclose(loop_transform(), array_transform())
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Measure only the CPU coordinate transformation, with warm-up and repeated runs.</p>
+<pre><code class="language-python">loop_transform(); array_transform()
+timings = {}
+for name, operation in [('loop', loop_transform), ('array', array_transform)]:
+    durations = []
+    for _ in range(7):
+        start = perf_counter(); operation(); durations.append(perf_counter()-start)
+    timings[name] = float(np.median(durations))
+print('median CPU seconds:', timings)
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>A separate FIFO simulation demonstrates backlog. It is not relabeled as measured latency.</p>
+<pre><code class="language-python">from shape_lab.temporal import fifo_latencies
+arrival = np.arange(100)*.02
+latency = fifo_latencies(arrival, np.full(100,.03))
+assert np.isclose(latency[0], .03)
+assert np.isclose(latency[-1], 1.02)
+result = {'points': len(X), 'median_cpu_transform_seconds': timings,
+          'timing_boundary': 'in-memory CPU transform only',
+          'simulated_first_latency_s': float(latency[0]), 'simulated_last_latency_s': float(latency[-1]),
+          'end_to_end_camera_latency_measured': False}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="18t1">18.T1</h3>
+<p>How can a system with acceptable per-item inference time still display old results?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Queue wait, batching, transfer, decode, serialization, or display delay can dominate source-to-result age. Service time is only one portion of the path.</p>
+</details>
+<h3 id="18t2">18.T2</h3>
+<p>What must be checked before calling a vectorized implementation a valid optimization?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>It must preserve the intended numerical result, shapes, units, ordering and relevant metadata. Timings must then use comparable inputs and declared boundaries.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/18_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

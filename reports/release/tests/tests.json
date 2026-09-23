@@ -1,0 +1,45 @@
+{
+  "profile": "physics",
+  "environment": {
+    "profile": "physics",
+    "python": "3.13.5",
+    "interpreter": "/mnt/data/v10_build/listening_to_shape_lab/.venv/bin/python3",
+    "distributions": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "pandas": "2.2.3",
+      "matplotlib": "3.10.8",
+      "scikit-learn": "1.8.0",
+      "nbclient": "0.10.4",
+      "nbformat": "5.10.4",
+      "ipykernel": "7.2.0",
+      "pytest": "9.0.2",
+      "mistune": "3.2.1",
+      "beautifulsoup4": "4.14.3",
+      "torch": "2.10.0+cpu"
+    },
+    "missing": [],
+    "uv": "/opt/pyvenv/bin/uv",
+    "docker_cli": null,
+    "lockfile_present": false,
+    "fresh_install_validated": false,
+    "notice": "Presence checks do not prove a successful independent installation or Docker build."
+  },
+  "status": "passed",
+  "returncode": 0,
+  "command": [
+    "/mnt/data/v10_build/listening_to_shape_lab/.venv/bin/python3",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "--junitxml=/mnt/data/v10_evidence/delivery-tests/junit.xml"
+  ],
+  "counts": {
+    "total": 655,
+    "skipped": 2,
+    "failures": 0,
+    "errors": 0,
+    "passed": 653
+  }
+}

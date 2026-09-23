@@ -1,0 +1,40 @@
+{
+  "real_static_pair_distance_m": 0.16824126124172512,
+  "real_source_pixels": [
+    [
+      60,
+      40
+    ],
+    [
+      60,
+      60
+    ]
+  ],
+  "real_contact_ground_truth": null,
+  "control_source": "explicit synthetic distance/time sequence, not observed basketball",
+  "events": [
+    {
+      "label": "separation_candidate",
+      "onset_s": 0.24,
+      "decision_s": 0.26,
+      "contact_certified": false,
+      "evidence": "observed_distance_thresholds"
+    }
+  ],
+  "prefix_causality_checked": true,
+  "occlusion_reset_checked": true,
+  "never_near_negative_checked": true,
+  "synthetic_matching": {
+    "true_positive": 1,
+    "false_positive": 0,
+    "false_negative": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "matched_signed_onset_errors_s": [
+      0.0
+    ]
+  },
+  "real_event_precision": null,
+  "real_event_recall": null,
+  "contact_certified": false
+}

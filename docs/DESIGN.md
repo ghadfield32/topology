@@ -1,0 +1,9 @@
+# Listening to Shape Learning Lab — design
+
+This is an original, beginner-first companion to the user's supplied 12-stage outline, not a copy or a verified chapter-complete replacement of the forthcoming book. Deliver 00 orientation plus stages 01–12. Every stage includes substantial teaching, a hand-worked example, runnable experiments with a real-data bridge, exercises, separate worked solutions, and a human mastery gate. All executable experiments must run without network after installation; all data carry provenance and licenses. Synthetic data are labeled and never substituted for empirical data. Real data: scikit-learn Iris and the 1,797-image digits snapshot. Freeze a new 1,077/360/360 per-image split; do not call it the original UCI split or claim unseen-writer validation.
+
+Core mathematics: finite ordinary homology over F2; Rips parameter = maximum edge length; compute through k+1 simplices to report Hk; use finite nonzero persistence intervals with essential intervals labeled. Cubical images use top-dimensional square cells valued at 1-image/16 with face values induced by minimum coface value. No claims of statistical significance from barcode length alone.
+
+Architecture: small inspectable Python package; sequential self-contained notebooks; Markdown course plus static browser reader; generated plots and reports; tests before mathematical implementation; no production WMS changes. Tests, notebook execution, available independent checks, optional cross-library checks, and environment facts are evidence, not human-learning certification.
+
+No paid account, GPU, hosted service, or cloud access is required for the lessons. External textbooks and videos are linked, not redistributed. Initial dependency installation needs internet. Platforms: document Mac/Windows/Linux commands; only claim the environment actually executed. All output remains within the unzipped project by default.

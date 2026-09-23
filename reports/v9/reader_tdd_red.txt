@@ -1,0 +1,16 @@
+......................F..                                                [100%]
+=================================== FAILURES ===================================
+_____________________ test_canonical_reader_builder_exists _____________________
+
+    def test_canonical_reader_builder_exists():
+>       assert (ROOT/'scripts/build_reader_v9.py').is_file()
+E       AssertionError: assert False
+E        +  where False = is_file()
+E        +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'scripts/build_reader_v9.py').is_file
+
+tests/test_course_v9.py:95: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_course_v9.py::test_canonical_reader_builder_exists - AssertionError: assert False
+ +  where False = is_file()
+ +    where is_file = (PosixPath('/mnt/data/v9_build/listening_to_shape_lab') / 'scripts/build_reader_v9.py').is_file
+1 failed, 24 passed in 0.22s

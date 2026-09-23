@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S03 — Shape of a player profile is not shape on a pitch · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v8/lessons/S03.md">sports_v8/lessons/S03.md</a> · Readable source notation; no online math renderer.</p><h1 id="s03--shape-of-a-player-profile-is-not-shape-on-a-pitch">S03 — Shape of a player profile is not shape on a pitch</h1>
+<h2 id="your-destination">Your destination</h2>
+<p>Build a tiny point cloud from real football profile measurements, calculate its
+persistent homology, and state precisely what the points and distances mean.
+Read core Stages 06–09 for the full hand calculation and reduction algorithm.
+The lab can be viewed earlier; its algebra is not a prerequisite for opening a table.</p>
+<h2 id="decide-what-one-point-represents">Decide what one point represents</h2>
+<p>A point need not be a physical location. Here one point is a published
+player/team/season/position profile. Its selected coordinates are distance-related
+summary features. Our 12 rows represent 8 player IDs. The provider filters the
+season aggregates to performances above 60 minutes. These are therefore selected
+summaries, not every minute played by every athlete.</p>
+<p>The README calls the aggregates player-season data. Direct inspection shows
+repeated IDs across positions in this excerpt; we retain the finer observed row
+grain rather than silently collapsing the records. Exact averaging and weighting
+should be checked against the full provider definitions before using these numbers
+as season totals. The notebook never treats <code>total_distance_full_all</code> as a sum
+across the entire season. <code>count_match</code> is not a sample weight by default.</p>
+<p>For our descriptive cloud, select <code>running_distance_full_all</code>,
+<code>hsr_distance_full_all</code>, and <code>sprint_distance_full_all</code>. These quantities summarize
+different speed regimes; the official glossary defines the thresholds and the
+distance categories. They are not x,y,z positions. A coordinate-frame rotation
+of a pitch is therefore not the same thing as mixing these feature columns.</p>
+<h2 id="why-scaling-changes-a-question">Why scaling changes a question</h2>
+<p>Euclidean distance computes the square root of the sum of squared coordinate
+differences. A feature with a larger numerical range can dominate that sum.
+For a training-reference standardization, set</p>
+<pre><code>standardized_feature = (value - fitting_mean) / fitting_standard_deviation
+</code></pre>
+<p>A deviation of one then means one fitting-set standard deviation for that column.
+This is a deliberate new metric, not a neutral improvement to all questions.
+Changing metres to centimetres uniformly across all distance columns scales every
+Rips birth and death. Standardizing each column separately changes relative weights
+and can change which features appear. The lab reports both choices.</p>
+<p>The full twelve-row profile cloud is an explicitly exploratory calculation. A
+separate small group partition is used only to demonstrate training-only fitting
+of preprocessing. No sports prediction accuracy is estimated on this excerpt.</p>
+<h2 id="rips-complexes-in-the-smallest-useful-example">Rips complexes in the smallest useful example</h2>
+<p>For four corners of a unit square, edges appear at distance one. The four
+perimeter edges form a loop. At sqrt(2), both diagonals and the filled triangles
+appear. Thus its H1 interval is <code>[1,sqrt(2))</code> under our maximum-edge convention.
+The function <code>cloud_diagrams</code> reuses the course's F2 boundary reduction and builds
+through triangles so H1 classes can die. A graph-only clique omission would give
+a different mathematical object.</p>
+<p>The notebook first verifies this square, then uses the real profile cloud. A
+long-lived profile feature is a property of the selected observations and metric.
+It is not a tactical formation, a physical void, or evidence that a coach intended
+a particular shape. The rows are not simultaneous positions from a match.</p>
+<h2 id="order-and-invariance">Order and invariance</h2>
+<p>Permuting rows changes names in the implementation but not the distance-based
+barcode. A rigid transform of a Euclidean coordinate cloud preserves distances.
+A uniform positive scale factor multiplies barcode coordinates by that factor.
+These are exact mathematical controls; arbitrary feature standardization is not
+one of those invariances.</p>
+<p>For a moving squad, one cloud per timestamp loses temporal identity unless you
+also preserve track IDs and time. A path traversed forward and backward has the
+same unparameterized point set. Persistence alone cannot distinguish those motion
+directions. A state representation that includes time or velocity changes the
+metric and requires a justified scale between its components.</p>
+<h2 id="bridge-to-actual-tracking">Bridge to actual tracking</h2>
+<p>The optional SkillCorner XY adapter accepts provider frame records and respects
+<code>is_detected</code>. Its tests use manufactured schema examples, not a downloaded match.
+The full tracking file encountered during this build was a Git LFS pointer to a
+roughly 97 MB object. A pointer is metadata, not the object. Current body-pose data
+are larger still. Acquisition and independent validation are explicit next steps.</p>
+<p>For actual tracking, write down observed/extrapolated policy, identity scope,
+pitch dimensions, attack direction, missing-player rules and the timestamp.
+Compare detected-only clouds with all-provider clouds as a missingness sensitivity
+analysis. Neither policy automatically yields a complete ground-truth team.</p>
+<h2 id="exercises">Exercises</h2>
+<ol>
+<li>Why can a “hole” in three distance-summary features not be drawn as a hole
+between football players on the field?</li>
+<li>What does changing all metres to centimetres do to a Rips barcode?</li>
+<li>What breaks when scaling means are fitted using future test observations?</li>
+<li>Why can a forward and a backward movement have identical point-cloud persistence?</li>
+</ol>
+<h2 id="worked-answers">Worked answers</h2>
+<ol>
+<li>The axes describe athlete profiles, not simultaneous field positions. Their
+units, observation grain and generating process differ.</li>
+<li>All finite birth/death coordinates multiply by 100 if the same distance rule
+is used. The numerical units change; the combinatorial sequence is reparameterized.</li>
+<li>The representation gains information from the evaluation set. The result no
+longer measures the complete previously fixed training procedure on unseen input.</li>
+<li>An unordered point set discards order. Direction is information that must be
+represented and tested separately, not recovered from a barcode by interpretation.</li>
+</ol>
+<h2 id="mastery-gate">Mastery gate</h2>
+<p>Derive the square interval, identify the exact selected feature columns and
+scaling policy, explain repeated IDs and reject one tempting unsupported claim.
+Delayed recall: construct two sequences with the same point set and different order.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,214 @@
+1/107 applications_v7/concrete_slump/answers.ipynb
+passed
+2/107 applications_v7/concrete_slump/lab.ipynb
+passed
+3/107 applications_v7/seeds/answers.ipynb
+passed
+4/107 applications_v7/seeds/lab.ipynb
+passed
+5/107 consolidation/00_lab.ipynb
+passed
+6/107 consolidation/01_lab.ipynb
+passed
+7/107 consolidation/02_lab.ipynb
+passed
+8/107 consolidation/03_lab.ipynb
+passed
+9/107 consolidation/04_lab.ipynb
+passed
+10/107 consolidation/05_lab.ipynb
+passed
+11/107 consolidation/06_lab.ipynb
+passed
+12/107 consolidation/07_lab.ipynb
+passed
+13/107 consolidation/08_lab.ipynb
+passed
+14/107 consolidation/09_lab.ipynb
+passed
+15/107 consolidation/10_lab.ipynb
+passed
+16/107 consolidation/11_lab.ipynb
+passed
+17/107 consolidation/12_lab.ipynb
+passed
+18/107 consolidation/13_lab.ipynb
+passed
+19/107 consolidation/14_lab.ipynb
+passed
+20/107 consolidation/15_lab.ipynb
+passed
+21/107 consolidation/16_lab.ipynb
+passed
+22/107 consolidation/17_lab.ipynb
+passed
+23/107 consolidation/18_lab.ipynb
+passed
+24/107 consolidation/19_lab.ipynb
+passed
+25/107 consolidation/20_lab.ipynb
+passed
+26/107 industry/answers/co2.ipynb
+passed
+27/107 industry/answers/elnino.ipynb
+passed
+28/107 industry/answers/grunfeld.ipynb
+passed
+29/107 industry/answers/modechoice.ipynb
+passed
+30/107 industry/answers/nile.ipynb
+passed
+31/107 industry/answers/stackloss.ipynb
+passed
+32/107 industry/answers/wdbc.ipynb
+passed
+33/107 industry/answers/wine.ipynb
+passed
+34/107 industry/notebooks/co2.ipynb
+passed
+35/107 industry/notebooks/elnino.ipynb
+passed
+36/107 industry/notebooks/grunfeld.ipynb
+passed
+37/107 industry/notebooks/modechoice.ipynb
+passed
+38/107 industry/notebooks/nile.ipynb
+passed
+39/107 industry/notebooks/stackloss.ipynb
+passed
+40/107 industry/notebooks/wdbc.ipynb
+passed
+41/107 industry/notebooks/wine.ipynb
+passed
+42/107 methods_v7/claims/answers.ipynb
+passed
+43/107 methods_v7/claims/lab.ipynb
+passed
+44/107 methods_v7/leakage/answers.ipynb
+passed
+45/107 methods_v7/leakage/lab.ipynb
+passed
+46/107 notebooks/00_lab.ipynb
+passed
+47/107 notebooks/01_lab.ipynb
+passed
+48/107 notebooks/02_lab.ipynb
+passed
+49/107 notebooks/03_lab.ipynb
+passed
+50/107 notebooks/04_lab.ipynb
+passed
+51/107 notebooks/05_lab.ipynb
+passed
+52/107 notebooks/06_lab.ipynb
+passed
+53/107 notebooks/07_lab.ipynb
+passed
+54/107 notebooks/08_lab.ipynb
+passed
+55/107 notebooks/09_lab.ipynb
+passed
+56/107 notebooks/10_lab.ipynb
+passed
+57/107 notebooks/11_lab.ipynb
+passed
+58/107 notebooks/12_lab.ipynb
+passed
+59/107 notebooks/13_lab.ipynb
+passed
+60/107 notebooks/14_lab.ipynb
+passed
+61/107 notebooks/15_lab.ipynb
+passed
+62/107 notebooks/16_lab.ipynb
+passed
+63/107 notebooks/17_lab.ipynb
+passed
+64/107 notebooks/18_lab.ipynb
+passed
+65/107 notebooks/19_lab.ipynb
+passed
+66/107 notebooks/20_lab.ipynb
+passed
+67/107 physics/notebooks/21_lab.ipynb
+passed
+68/107 physics/notebooks/22_lab.ipynb
+passed
+69/107 physics/notebooks/23_lab.ipynb
+passed
+70/107 physics/notebooks/24_lab.ipynb
+passed
+71/107 physics/notebooks/25_lab.ipynb
+passed
+72/107 physics/notebooks/26_lab.ipynb
+passed
+73/107 physics/notebooks/27_lab.ipynb
+passed
+74/107 physics/notebooks/28_lab.ipynb
+passed
+75/107 physics/notebooks/29_lab.ipynb
+passed
+76/107 physics/notebooks/30_lab.ipynb
+passed
+77/107 physics/practice/answers/21_practice.ipynb
+passed
+78/107 physics/practice/answers/22_practice.ipynb
+passed
+79/107 physics/practice/answers/23_practice.ipynb
+passed
+80/107 physics/practice/answers/24_practice.ipynb
+passed
+81/107 physics/practice/answers/25_practice.ipynb
+passed
+82/107 physics/practice/answers/26_practice.ipynb
+passed
+83/107 physics/practice/answers/27_practice.ipynb
+passed
+84/107 physics/practice/answers/28_practice.ipynb
+passed
+85/107 physics/practice/answers/29_practice.ipynb
+passed
+86/107 physics/practice/answers/30_practice.ipynb
+passed
+87/107 practice/answers/00_practice.ipynb
+passed
+88/107 practice/answers/01_practice.ipynb
+passed
+89/107 practice/answers/02_practice.ipynb
+passed
+90/107 practice/answers/03_practice.ipynb
+passed
+91/107 practice/answers/04_practice.ipynb
+passed
+92/107 practice/answers/05_practice.ipynb
+passed
+93/107 practice/answers/06_practice.ipynb
+passed
+94/107 practice/answers/07_practice.ipynb
+passed
+95/107 practice/answers/08_practice.ipynb
+passed
+96/107 practice/answers/09_practice.ipynb
+passed
+97/107 practice/answers/10_practice.ipynb
+passed
+98/107 practice/answers/11_practice.ipynb
+passed
+99/107 practice/answers/12_practice.ipynb
+passed
+100/107 practice/answers/13_practice.ipynb
+passed
+101/107 practice/answers/14_practice.ipynb
+passed
+102/107 practice/answers/15_practice.ipynb
+passed
+103/107 practice/answers/16_practice.ipynb
+passed
+104/107 practice/answers/17_practice.ipynb
+passed
+105/107 practice/answers/18_practice.ipynb
+passed
+106/107 practice/answers/19_practice.ipynb
+passed
+107/107 practice/answers/20_practice.ipynb
+passed

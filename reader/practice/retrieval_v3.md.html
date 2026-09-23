@@ -1,0 +1,123 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Geometry delayed recall · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../practice/retrieval_v3.md">practice/retrieval_v3.md</a> · Readable source notation; no online math renderer.</p><h1 id="geometry-delayed-recall">Geometry delayed recall</h1>
+<p>24 questions for Stages 13–20. Attempt after a delay without the corresponding lesson open. The original 39 questions remain in <code>retrieval.md</code>.</p>
+<h2 id="13r1">13.R1</h2>
+<p>Explain why one normalized direction cannot recover the original 3D point.</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>All positive multiples of a point yield the same direction. Range was discarded.</p>
+</details>
+<h2 id="13r2">13.R2</h2>
+<p>Derive p·v=0 for a curve on a unit sphere.</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Differentiate p(t)·p(t)=1, obtaining 2p·p′=0.</p>
+</details>
+<h2 id="13r3">13.R3</h2>
+<p>What fails at the excluded stereographic pole?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>The chosen chart denominator vanishes; the space itself remains well-defined and another chart works.</p>
+</details>
+<h2 id="14r1">14.R1</h2>
+<p>Why is -t generally not the camera center for Xc=RXw+t?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Set Xc=0 and solve C=-Rᵀt.</p>
+</details>
+<h2 id="14r2">14.R2</h2>
+<p>What makes a reflection different from a proper rotation?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Both may be orthogonal, but a reflection has determinant -1, not +1.</p>
+</details>
+<h2 id="14r3">14.R3</h2>
+<p>Name three things pixel coordinates alone do not encode.</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Camera-axis depth, physical scale, and the raw-to-processed pixel mapping or camera calibration; acceptable alternatives must be explained.</p>
+</details>
+<h2 id="15r1">15.R1</h2>
+<p>Derive the sign of doffs in rectified disparity.</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>d=uL-uR=fB/Z+cxL-cxR=fB/Z-doffs, so Z=fB/(d+doffs).</p>
+</details>
+<h2 id="15r2">15.R2</h2>
+<p>Why report both median and mean disparity error?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>The median reflects a typical magnitude; a heavy error tail may make the mean much larger. Neither replaces coverage.</p>
+</details>
+<h2 id="15r3">15.R3</h2>
+<p>How can asynchronous horizontal motion pass an epipolar check?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>The same image row may be preserved while the differing-time horizontal position alters disparity and inferred depth.</p>
+</details>
+<h2 id="16r1">16.R1</h2>
+<p>What did the toy attention experiment verify?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Within-frame masking and subsequent cross-frame information flow on real patches, not learned reconstruction.</p>
+</details>
+<h2 id="16r2">16.R2</h2>
+<p>What additional evidence turns an image track into a metric 3D trajectory?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Valid depth or triangulation, coordinate/frame/scale registration, timing, identity, visibility and independent validation.</p>
+</details>
+<h2 id="16r3">16.R3</h2>
+<p>Why must original VGGT and Omega not share an assumed interface?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>They have different architectures, code paths, checkpoints and APIs; read and pin each exact implementation.</p>
+</details>
+<h2 id="17r1">17.R1</h2>
+<p>What does a tiny anchor residual fail to establish?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Correctness away from fitted anchors, metric accuracy on independent landmarks, or generalization to new scenes.</p>
+</details>
+<h2 id="17r2">17.R2</h2>
+<p>Why does a factor-of-two cloud scale move persistence coordinates?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Rips birth/death thresholds are distances; uniform scale multiplies pairwise distances and filtration coordinates.</p>
+</details>
+<h2 id="17r3">17.R3</h2>
+<p>Why is a TDA shape summary not a calibration certificate?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>It loses information and may be invariant to changes such as rigid pose or insensitive to particular geometric errors.</p>
+</details>
+<h2 id="18r1">18.R1</h2>
+<p>What does synchronized GPU timing measure that an unsynchronized host timer may miss?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Completion of queued device work at the declared boundaries rather than launch submission time alone.</p>
+</details>
+<h2 id="18r2">18.R2</h2>
+<p>What happens when average single-worker service time exceeds frame interarrival time?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>In an indefinitely continuing lossless FIFO setting, backlog and age grow rather than reaching a stable finite queue.</p>
+</details>
+<h2 id="18r3">18.R3</h2>
+<p>Why is a point-cloud message not always a packed Nx3 float array?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Field types, offsets, padding, row stride and endianness can vary and must be respected.</p>
+</details>
+<h2 id="19r1">19.R1</h2>
+<p>Distinguish event onset and decision availability.</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Onset is the estimated event time; a causal decision becomes available only after enough supporting observations arrive.</p>
+</details>
+<h2 id="19r2">19.R2</h2>
+<p>Why reset evidence across an occlusion?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Missing observations cannot be silently used as direct support; any continued hypothesis needs an explicit prediction/uncertainty policy.</p>
+</details>
+<h2 id="19r3">19.R3</h2>
+<p>Why is a passing proximity-and-motion test not proof of contact?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Objects can approach and separate without touching; contact needs independent evidence and appropriate labels.</p>
+</details>
+<h2 id="20r1">20.R1</h2>
+<p>What survives a course upgrade?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Learner answers, notebooks, source data, attempt history, evidence paths/hashes and explicit unresolved gaps—not automatic new-stage passes.</p>
+</details>
+<h2 id="20r2">20.R2</h2>
+<p>What information must accompany a model-derived cloud?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>Input/source IDs and hashes, preprocessing, exact checkpoint/code revision, units and frame, confidence semantics, timestamp policy and validation status.</p>
+</details>
+<h2 id="20r3">20.R3</h2>
+<p>What distinguishes a reproduced demonstration from an independent project?</p>
+<details><summary>Answer criteria — open after attempting</summary>
+<p>The independent question, parameter choices and suitable held-out evidence were not taken from the already exposed worked answers.</p>
+</details>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

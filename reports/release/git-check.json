@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "tracked_files": 3290,
+  "module_origin": "/mnt/data/v10_git_export_final/src/shape_lab/__init__.py",
+  "command": "local git init/add/commit/archive then full pytest from exported source",
+  "dependency_mode": "Existing host dependencies reused; not an independent install",
+  "remote_operations": false,
+  "private_work_ignored": true,
+  "templates_tracked": true,
+  "progress_initialization": "passed without records from prior folder",
+  "test_returncode": 0
+}

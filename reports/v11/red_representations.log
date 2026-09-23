@@ -1,0 +1,18 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+______________________ test_representation_module_present ______________________
+
+    def test_representation_module_present():
+>       assert importlib.util.find_spec('shape_lab.representations') is not None
+E       AssertionError: assert None is not None
+E        +  where None = <function find_spec at 0x7fa1e54e7b00>('shape_lab.representations')
+E        +    where <function find_spec at 0x7fa1e54e7b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_representations_v11.py:7: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_representations_v11.py::test_representation_module_present - AssertionError: assert None is not None
+ +  where None = <function find_spec at 0x7fa1e54e7b00>('shape_lab.representations')
+ +    where <function find_spec at 0x7fa1e54e7b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+1 failed in 0.16s

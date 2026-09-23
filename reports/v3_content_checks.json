@@ -1,0 +1,18 @@
+{
+  "status": "PASSED",
+  "stages": 21,
+  "core_stages": 13,
+  "applied_geometry_stages": 8,
+  "foundation_primers": 6,
+  "conceptual_exercises": 150,
+  "coding_exercises": 89,
+  "delayed_recall_questions": 63,
+  "executed_reference_notebooks": 42,
+  "executed_reference_code_cells": 276,
+  "intentional_unexecuted_learner_notebooks": 21,
+  "unexecuted_learner_code_cells": 199,
+  "stage_figures": 38,
+  "learner_stages_assessed": 0,
+  "VGGT_inference_executed": false,
+  "full_book_text_audited": false
+}

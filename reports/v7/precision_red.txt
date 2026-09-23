@@ -1,0 +1,28 @@
+..........................................F                              [100%]
+=================================== FAILURES ===================================
+_____________ test_canonical_preserves_more_than_context_precision _____________
+
+    def test_canonical_preserves_more_than_context_precision():
+        from shape_lab.evidence_v7 import canonical_numeric
+        token='1.123456789012345678901234567890123456789'
+>       assert canonical_numeric([[token]]) == (token+'\n').encode()
+E       AssertionError: assert b'1.123456789...78901234568\n' == b'1.123456789...90123456789\n'
+E         
+E         At index 28 diff: b'8' != b'7'
+E         
+E         Full diff:
+E         - (b'1.123456789012345678901234567890123456789\n')
+E         ?                                - -----------
+E         + (b'1.123456789012345678901234568\n')
+
+tests/test_evidence_v7.py:84: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_evidence_v7.py::test_canonical_preserves_more_than_context_precision - AssertionError: assert b'1.123456789...78901234568\n' == b'1.123456789...90123456789\n'
+  
+  At index 28 diff: b'8' != b'7'
+  
+  Full diff:
+  - (b'1.123456789012345678901234567890123456789\n')
+  ?                                - -----------
+  + (b'1.123456789012345678901234568\n')
+1 failed, 42 passed in 0.10s

@@ -1,0 +1,62 @@
+{
+  "mode": "page.set_content with exact generated HTML and inlined local CSS; no file navigation claim",
+  "steps": [
+    {
+      "check": "home renders",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "search filters",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "search resets",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "stage route renders",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "saved code visible",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "embedded figure loads",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "answers hidden",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "answers reveal",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "mobile page width",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "sports lesson renders",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "no JavaScript errors",
+      "passed": true,
+      "detail": "[]"
+    }
+  ],
+  "all_passed": true,
+  "navigation": "blocked by environment for file and localhost URLs"
+}

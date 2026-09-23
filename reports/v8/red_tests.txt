@@ -1,0 +1,487 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF                            [100%]
+=================================== FAILURES ===================================
+___________________________ test_units[ft-10-3.048] ____________________________
+
+unit = 'ft', value = 10, expected = 3.048
+
+    @pytest.mark.parametrize('unit,value,expected',[('ft',10,3.048),('in',12,.3048),('m',2,2)])
+>   def test_units(unit,value,expected): assert s.to_metres(value,unit)==pytest.approx(expected)
+                                                ^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+
+tests/test_sports_v8.py:10: AttributeError
+___________________________ test_units[in-12-0.3048] ___________________________
+
+unit = 'in', value = 12, expected = 0.3048
+
+    @pytest.mark.parametrize('unit,value,expected',[('ft',10,3.048),('in',12,.3048),('m',2,2)])
+>   def test_units(unit,value,expected): assert s.to_metres(value,unit)==pytest.approx(expected)
+                                                ^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+
+tests/test_sports_v8.py:10: AttributeError
+______________________________ test_units[m-2-2] _______________________________
+
+unit = 'm', value = 2, expected = 2
+
+    @pytest.mark.parametrize('unit,value,expected',[('ft',10,3.048),('in',12,.3048),('m',2,2)])
+>   def test_units(unit,value,expected): assert s.to_metres(value,unit)==pytest.approx(expected)
+                                                ^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+
+tests/test_sports_v8.py:10: AttributeError
+__________________________ test_unknown_units[feet?] ___________________________
+
+unit = 'feet?'
+
+    @pytest.mark.parametrize('unit',['feet?','pixel','yard',''])
+    def test_unknown_units(unit):
+>       with pytest.raises(ValueError):s.to_metres([1],unit)
+                                       ^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+
+tests/test_sports_v8.py:13: AttributeError
+__________________________ test_unknown_units[pixel] ___________________________
+
+unit = 'pixel'
+
+    @pytest.mark.parametrize('unit',['feet?','pixel','yard',''])
+    def test_unknown_units(unit):
+>       with pytest.raises(ValueError):s.to_metres([1],unit)
+                                       ^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+
+tests/test_sports_v8.py:13: AttributeError
+___________________________ test_unknown_units[yard] ___________________________
+
+unit = 'yard'
+
+    @pytest.mark.parametrize('unit',['feet?','pixel','yard',''])
+    def test_unknown_units(unit):
+>       with pytest.raises(ValueError):s.to_metres([1],unit)
+                                       ^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+
+tests/test_sports_v8.py:13: AttributeError
+_____________________________ test_unknown_units[] _____________________________
+
+unit = ''
+
+    @pytest.mark.parametrize('unit',['feet?','pixel','yard',''])
+    def test_unknown_units(unit):
+>       with pytest.raises(ValueError):s.to_metres([1],unit)
+                                       ^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+
+tests/test_sports_v8.py:13: AttributeError
+_____________________________ test_invalid_length ______________________________
+
+    def test_invalid_length():
+>       with pytest.raises(ValueError):s.to_metres([np.nan],'ft')
+                                       ^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+
+tests/test_sports_v8.py:16: AttributeError
+____________________________ test_frames_real_clock ____________________________
+
+>   def test_frames_real_clock():assert np.allclose(s.frame_times([110,115,120],60),[110/60,115/60,2])
+                                                    ^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+
+tests/test_sports_v8.py:18: AttributeError
+_______________________ test_bad_frame_clock[frames0-60] _______________________
+
+frames = [0, 0], fps = 60
+
+    @pytest.mark.parametrize('frames,fps',[([0,0],60),([2,1],60),([.5,1],60),([0,1],0),([0,1],np.nan),([],60)])
+    def test_bad_frame_clock(frames,fps):
+>       with pytest.raises(ValueError):s.frame_times(frames,fps)
+                                       ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+
+tests/test_sports_v8.py:21: AttributeError
+_______________________ test_bad_frame_clock[frames1-60] _______________________
+
+frames = [2, 1], fps = 60
+
+    @pytest.mark.parametrize('frames,fps',[([0,0],60),([2,1],60),([.5,1],60),([0,1],0),([0,1],np.nan),([],60)])
+    def test_bad_frame_clock(frames,fps):
+>       with pytest.raises(ValueError):s.frame_times(frames,fps)
+                                       ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+
+tests/test_sports_v8.py:21: AttributeError
+_______________________ test_bad_frame_clock[frames2-60] _______________________
+
+frames = [0.5, 1], fps = 60
+
+    @pytest.mark.parametrize('frames,fps',[([0,0],60),([2,1],60),([.5,1],60),([0,1],0),([0,1],np.nan),([],60)])
+    def test_bad_frame_clock(frames,fps):
+>       with pytest.raises(ValueError):s.frame_times(frames,fps)
+                                       ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+
+tests/test_sports_v8.py:21: AttributeError
+_______________________ test_bad_frame_clock[frames3-0] ________________________
+
+frames = [0, 1], fps = 0
+
+    @pytest.mark.parametrize('frames,fps',[([0,0],60),([2,1],60),([.5,1],60),([0,1],0),([0,1],np.nan),([],60)])
+    def test_bad_frame_clock(frames,fps):
+>       with pytest.raises(ValueError):s.frame_times(frames,fps)
+                                       ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+
+tests/test_sports_v8.py:21: AttributeError
+______________________ test_bad_frame_clock[frames4-nan] _______________________
+
+frames = [0, 1], fps = nan
+
+    @pytest.mark.parametrize('frames,fps',[([0,0],60),([2,1],60),([.5,1],60),([0,1],0),([0,1],np.nan),([],60)])
+    def test_bad_frame_clock(frames,fps):
+>       with pytest.raises(ValueError):s.frame_times(frames,fps)
+                                       ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+
+tests/test_sports_v8.py:21: AttributeError
+_______________________ test_bad_frame_clock[frames5-60] _______________________
+
+frames = [], fps = 60
+
+    @pytest.mark.parametrize('frames,fps',[([0,0],60),([2,1],60),([.5,1],60),([0,1],0),([0,1],np.nan),([],60)])
+    def test_bad_frame_clock(frames,fps):
+>       with pytest.raises(ValueError):s.frame_times(frames,fps)
+                                       ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+
+tests/test_sports_v8.py:21: AttributeError
+__________________________ test_angle_right_straight ___________________________
+
+    def test_angle_right_straight():
+>       assert s.joint_angles([[1,0,0],[-1,0,0]],[[0,0,0],[0,0,0]],[[0,1,0],[1,0,0]]).tolist()==pytest.approx([90,180])
+               ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'joint_angles'
+
+tests/test_sports_v8.py:24: AttributeError
+_________________________ test_angle_scale_translation _________________________
+
+    def test_angle_scale_translation():
+        a,b,c=np.array([[1.,0,0]]),np.zeros((1,3)),np.array([[0.,1,0]])
+>       assert np.allclose(s.joint_angles(a,b,c),s.joint_angles(a*5+9,b+9,c*5+9))
+                           ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'joint_angles'
+
+tests/test_sports_v8.py:27: AttributeError
+____________________________ test_degenerate_angle _____________________________
+
+    def test_degenerate_angle():
+>       with pytest.raises(ValueError):s.joint_angles([[0,0,0]],[[0,0,0]],[[1,0,0]])
+                                       ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'joint_angles'
+
+tests/test_sports_v8.py:29: AttributeError
+____________________________ test_mismatched_angle _____________________________
+
+    def test_mismatched_angle():
+>       with pytest.raises(ValueError):s.joint_angles([[0,0]],[[0,0,0]],[[1,0,0]])
+                                       ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'joint_angles'
+
+tests/test_sports_v8.py:31: AttributeError
+__________________________ test_interval_velocity_gap __________________________
+
+    def test_interval_velocity_gap():
+>       v,ok=s.interval_velocities([0,1,10],[[0,0,0],[.1,0,0],[1,0,0]],10,max_gap_frames=1)
+             ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+
+tests/test_sports_v8.py:34: AttributeError
+________________________ test_missing_interval_velocity ________________________
+
+    def test_missing_interval_velocity():
+>       v,ok=s.interval_velocities([0,1,2],[[0,0,0],[np.nan,0,0],[2,0,0]],10,max_gap_frames=1)
+             ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+
+tests/test_sports_v8.py:37: AttributeError
+_____________________________ test_invalid_gap[0] ______________________________
+
+gap = 0
+
+    @pytest.mark.parametrize('gap',[0,-1,1.5,np.inf])
+    def test_invalid_gap(gap):
+>       with pytest.raises(ValueError):s.interval_velocities([0,1],[[0,0,0],[1,0,0]],10,gap)
+                                       ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+
+tests/test_sports_v8.py:41: AttributeError
+_____________________________ test_invalid_gap[-1] _____________________________
+
+gap = -1
+
+    @pytest.mark.parametrize('gap',[0,-1,1.5,np.inf])
+    def test_invalid_gap(gap):
+>       with pytest.raises(ValueError):s.interval_velocities([0,1],[[0,0,0],[1,0,0]],10,gap)
+                                       ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+
+tests/test_sports_v8.py:41: AttributeError
+____________________________ test_invalid_gap[1.5] _____________________________
+
+gap = 1.5
+
+    @pytest.mark.parametrize('gap',[0,-1,1.5,np.inf])
+    def test_invalid_gap(gap):
+>       with pytest.raises(ValueError):s.interval_velocities([0,1],[[0,0,0],[1,0,0]],10,gap)
+                                       ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+
+tests/test_sports_v8.py:41: AttributeError
+____________________________ test_invalid_gap[inf] _____________________________
+
+gap = inf
+
+    @pytest.mark.parametrize('gap',[0,-1,1.5,np.inf])
+    def test_invalid_gap(gap):
+>       with pytest.raises(ValueError):s.interval_velocities([0,1],[[0,0,0],[1,0,0]],10,gap)
+                                       ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+
+tests/test_sports_v8.py:41: AttributeError
+___________________________ test_fit_vertical_exact ____________________________
+
+    def test_fit_vertical_exact():
+        t=np.arange(7)/10+20;z=2+4*(t-20)-.5*9.81*(t-20)**2
+>       fit=s.fit_vertical(t,z)
+            ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+
+tests/test_sports_v8.py:45: AttributeError
+____________________________ test_fixed_gravity_fit ____________________________
+
+    def test_fixed_gravity_fit():
+        t=np.arange(6)/10;z=1+2*t-4.9*t*t
+>       f=s.fit_vertical(t,z,gravity=9.8)
+          ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+
+tests/test_sports_v8.py:51: AttributeError
+_________________________ test_vertical_invalid[t0-z0] _________________________
+
+t = [0, 0, 1], z = [0, 1, 2]
+
+    @pytest.mark.parametrize('t,z',[([0,0,1],[0,1,2]),([0,1],[0,1]),([0,1,2],[0,np.nan,2]),([2,1,0],[1,2,3])])
+    def test_vertical_invalid(t,z):
+>       with pytest.raises(ValueError):s.fit_vertical(t,z)
+                                       ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+
+tests/test_sports_v8.py:55: AttributeError
+_________________________ test_vertical_invalid[t1-z1] _________________________
+
+t = [0, 1], z = [0, 1]
+
+    @pytest.mark.parametrize('t,z',[([0,0,1],[0,1,2]),([0,1],[0,1]),([0,1,2],[0,np.nan,2]),([2,1,0],[1,2,3])])
+    def test_vertical_invalid(t,z):
+>       with pytest.raises(ValueError):s.fit_vertical(t,z)
+                                       ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+
+tests/test_sports_v8.py:55: AttributeError
+_________________________ test_vertical_invalid[t2-z2] _________________________
+
+t = [0, 1, 2], z = [0, nan, 2]
+
+    @pytest.mark.parametrize('t,z',[([0,0,1],[0,1,2]),([0,1],[0,1]),([0,1,2],[0,np.nan,2]),([2,1,0],[1,2,3])])
+    def test_vertical_invalid(t,z):
+>       with pytest.raises(ValueError):s.fit_vertical(t,z)
+                                       ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+
+tests/test_sports_v8.py:55: AttributeError
+_________________________ test_vertical_invalid[t3-z3] _________________________
+
+t = [2, 1, 0], z = [1, 2, 3]
+
+    @pytest.mark.parametrize('t,z',[([0,0,1],[0,1,2]),([0,1],[0,1]),([0,1,2],[0,np.nan,2]),([2,1,0],[1,2,3])])
+    def test_vertical_invalid(t,z):
+>       with pytest.raises(ValueError):s.fit_vertical(t,z)
+                                       ^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+
+tests/test_sports_v8.py:55: AttributeError
+_______________________ test_causal_no_future_and_stale ________________________
+
+    def test_causal_no_future_and_stale():
+>       v,source=s.causal_hold([0,1,2],[10,20,30],[-.1,.5,1.5,5],max_age=.75)
+                 ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'causal_hold'
+
+tests/test_sports_v8.py:58: AttributeError
+________________________ test_standardize_only_fit_rows ________________________
+
+    def test_standardize_only_fit_rows():
+        x=np.array([[1,2],[3,2],[99,100]],float)
+>       z,mean,scale=s.fit_standardize(x,[0,1])
+                     ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_standardize'
+
+tests/test_sports_v8.py:64: AttributeError
+________________________ test_groups_cover_not_overlap _________________________
+
+    def test_groups_cover_not_overlap():
+>       g=[1,1,2,3,4];p=s.group_partition(g,[1,2],[3],[4])
+                        ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'group_partition'
+
+tests/test_sports_v8.py:68: AttributeError
+______________________ test_bad_group_partition[a0-b0-c0] ______________________
+
+a = [1], b = [1], c = [2, 3]
+
+    @pytest.mark.parametrize('a,b,c',[([1],[1],[2,3]),([1],[2],[4]),([1,2],[],[3])])
+    def test_bad_group_partition(a,b,c):
+>       with pytest.raises(ValueError):s.group_partition([1,2,3],a,b,c)
+                                       ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'group_partition'
+
+tests/test_sports_v8.py:72: AttributeError
+______________________ test_bad_group_partition[a1-b1-c1] ______________________
+
+a = [1], b = [2], c = [4]
+
+    @pytest.mark.parametrize('a,b,c',[([1],[1],[2,3]),([1],[2],[4]),([1,2],[],[3])])
+    def test_bad_group_partition(a,b,c):
+>       with pytest.raises(ValueError):s.group_partition([1,2,3],a,b,c)
+                                       ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'group_partition'
+
+tests/test_sports_v8.py:72: AttributeError
+______________________ test_bad_group_partition[a2-b2-c2] ______________________
+
+a = [1, 2], b = [], c = [3]
+
+    @pytest.mark.parametrize('a,b,c',[([1],[1],[2,3]),([1],[2],[4]),([1,2],[],[3])])
+    def test_bad_group_partition(a,b,c):
+>       with pytest.raises(ValueError):s.group_partition([1,2,3],a,b,c)
+                                       ^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'group_partition'
+
+tests/test_sports_v8.py:72: AttributeError
+_________________________ test_cloud_square_and_rigid __________________________
+
+    def test_cloud_square_and_rigid():
+        x=np.array([[0,0],[1,0],[1,1],[0,1]],float)
+>       d=s.cloud_diagrams(x)
+          ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'cloud_diagrams'
+
+tests/test_sports_v8.py:76: AttributeError
+____________________________ test_bundled_integrity ____________________________
+
+    def test_bundled_integrity():
+>       report=s.verify_local_data(R)
+               ^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'verify_local_data'
+
+tests/test_sports_v8.py:82: AttributeError
+_______________________ test_data_units_repeated_players _______________________
+
+    def test_data_units_repeated_players():
+>       spl,sc=s.load_sports(R)
+               ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'load_sports'
+
+tests/test_sports_v8.py:86: AttributeError
+______________________________ test_lfs_rejected _______________________________
+
+    def test_lfs_rejected():
+>       with pytest.raises(ValueError,match='LFS'):s.check_payload(b'version https://git-lfs.github.com/spec/v1\noid sha256:123')
+                                                   ^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'check_payload'
+
+tests/test_sports_v8.py:92: AttributeError
+_____________________________ test_source_git_hash _____________________________
+
+    def test_source_git_hash():
+        b=b'hello\n'; expected=hashlib.sha1(b'blob 6\0'+b).hexdigest()
+>       assert s.git_blob_sha1(b)==expected
+               ^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'git_blob_sha1'
+
+tests/test_sports_v8.py:96: AttributeError
+_______________________ test_compare_spl_source_control ________________________
+
+    def test_compare_spl_source_control():
+        local={'sampling_rate':60,'session':'2025-12-18','participant_id':'P','trial_id':'T','records':[{'frame':1,'source_time':16,'ball':[1,2,3],'right_shoulder':[2,3,4],'right_elbow':[3,4,5],'right_wrist':[4,5,6]}]}
+        src={'sampling_rate':60,'trial_date':'2025-12-18','participant_id':'P','trial_id':'T','tracking':[{'frame':1,'time':16,'data':{'ball':[1,2,3],'player':{'RIGHT_SHOULDER':[2,3,4],'RIGHT_ELBOW':[3,4,5],'RIGHT_WRIST':[4,5,6]}}}]}
+>       assert s.compare_spl(local,src)['numeric_values']==12
+               ^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'compare_spl'
+
+tests/test_sports_v8.py:102: AttributeError
+________________________ test_tracking_observed_filter _________________________
+
+    def test_tracking_observed_filter():
+        records=[{'player_id':1,'x':0.,'y':0.,'is_detected':True},{'player_id':2,'x':2.,'y':3.,'is_detected':False}]
+>       p,ids=s.tracking_cloud(records,detected_only=True)
+              ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'tracking_cloud'
+
+tests/test_sports_v8.py:108: AttributeError
+_______________________ test_tracking_duplicate_identity _______________________
+
+    def test_tracking_duplicate_identity():
+        rows=[{'player_id':1,'x':1.,'y':2.,'is_detected':True}]*2
+>       with pytest.raises(ValueError):s.tracking_cloud(rows)
+                                       ^^^^^^^^^^^^^^^^
+E       AttributeError: module 'shape_lab.sports_v8' has no attribute 'tracking_cloud'
+
+tests/test_sports_v8.py:114: AttributeError
+=========================== short test summary info ============================
+FAILED tests/test_sports_v8.py::test_units[ft-10-3.048] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+FAILED tests/test_sports_v8.py::test_units[in-12-0.3048] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+FAILED tests/test_sports_v8.py::test_units[m-2-2] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+FAILED tests/test_sports_v8.py::test_unknown_units[feet?] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+FAILED tests/test_sports_v8.py::test_unknown_units[pixel] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+FAILED tests/test_sports_v8.py::test_unknown_units[yard] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+FAILED tests/test_sports_v8.py::test_unknown_units[] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+FAILED tests/test_sports_v8.py::test_invalid_length - AttributeError: module 'shape_lab.sports_v8' has no attribute 'to_metres'
+FAILED tests/test_sports_v8.py::test_frames_real_clock - AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+FAILED tests/test_sports_v8.py::test_bad_frame_clock[frames0-60] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+FAILED tests/test_sports_v8.py::test_bad_frame_clock[frames1-60] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+FAILED tests/test_sports_v8.py::test_bad_frame_clock[frames2-60] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+FAILED tests/test_sports_v8.py::test_bad_frame_clock[frames3-0] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+FAILED tests/test_sports_v8.py::test_bad_frame_clock[frames4-nan] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+FAILED tests/test_sports_v8.py::test_bad_frame_clock[frames5-60] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'frame_times'
+FAILED tests/test_sports_v8.py::test_angle_right_straight - AttributeError: module 'shape_lab.sports_v8' has no attribute 'joint_angles'
+FAILED tests/test_sports_v8.py::test_angle_scale_translation - AttributeError: module 'shape_lab.sports_v8' has no attribute 'joint_angles'
+FAILED tests/test_sports_v8.py::test_degenerate_angle - AttributeError: module 'shape_lab.sports_v8' has no attribute 'joint_angles'
+FAILED tests/test_sports_v8.py::test_mismatched_angle - AttributeError: module 'shape_lab.sports_v8' has no attribute 'joint_angles'
+FAILED tests/test_sports_v8.py::test_interval_velocity_gap - AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+FAILED tests/test_sports_v8.py::test_missing_interval_velocity - AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+FAILED tests/test_sports_v8.py::test_invalid_gap[0] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+FAILED tests/test_sports_v8.py::test_invalid_gap[-1] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+FAILED tests/test_sports_v8.py::test_invalid_gap[1.5] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+FAILED tests/test_sports_v8.py::test_invalid_gap[inf] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'interval_velocities'
+FAILED tests/test_sports_v8.py::test_fit_vertical_exact - AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+FAILED tests/test_sports_v8.py::test_fixed_gravity_fit - AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+FAILED tests/test_sports_v8.py::test_vertical_invalid[t0-z0] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+FAILED tests/test_sports_v8.py::test_vertical_invalid[t1-z1] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+FAILED tests/test_sports_v8.py::test_vertical_invalid[t2-z2] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+FAILED tests/test_sports_v8.py::test_vertical_invalid[t3-z3] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_vertical'
+FAILED tests/test_sports_v8.py::test_causal_no_future_and_stale - AttributeError: module 'shape_lab.sports_v8' has no attribute 'causal_hold'
+FAILED tests/test_sports_v8.py::test_standardize_only_fit_rows - AttributeError: module 'shape_lab.sports_v8' has no attribute 'fit_standardize'
+FAILED tests/test_sports_v8.py::test_groups_cover_not_overlap - AttributeError: module 'shape_lab.sports_v8' has no attribute 'group_partition'
+FAILED tests/test_sports_v8.py::test_bad_group_partition[a0-b0-c0] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'group_partition'
+FAILED tests/test_sports_v8.py::test_bad_group_partition[a1-b1-c1] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'group_partition'
+FAILED tests/test_sports_v8.py::test_bad_group_partition[a2-b2-c2] - AttributeError: module 'shape_lab.sports_v8' has no attribute 'group_partition'
+FAILED tests/test_sports_v8.py::test_cloud_square_and_rigid - AttributeError: module 'shape_lab.sports_v8' has no attribute 'cloud_diagrams'
+FAILED tests/test_sports_v8.py::test_bundled_integrity - AttributeError: module 'shape_lab.sports_v8' has no attribute 'verify_local_data'
+FAILED tests/test_sports_v8.py::test_data_units_repeated_players - AttributeError: module 'shape_lab.sports_v8' has no attribute 'load_sports'
+FAILED tests/test_sports_v8.py::test_lfs_rejected - AttributeError: module 'shape_lab.sports_v8' has no attribute 'check_payload'
+FAILED tests/test_sports_v8.py::test_source_git_hash - AttributeError: module 'shape_lab.sports_v8' has no attribute 'git_blob_sha1'
+FAILED tests/test_sports_v8.py::test_compare_spl_source_control - AttributeError: module 'shape_lab.sports_v8' has no attribute 'compare_spl'
+FAILED tests/test_sports_v8.py::test_tracking_observed_filter - AttributeError: module 'shape_lab.sports_v8' has no attribute 'tracking_cloud'
+FAILED tests/test_sports_v8.py::test_tracking_duplicate_identity - AttributeError: module 'shape_lab.sports_v8' has no attribute 'tracking_cloud'
+45 failed in 0.22s

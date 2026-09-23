@@ -1,0 +1,23 @@
+{
+  "name": "NIST Hahn1 \u2014 first 56 observations only",
+  "source_url": "https://www.itl.nist.gov/div898/strd/nls/data/LINKS/DATA/Hahn1.dat",
+  "review_date": "2026-09-20",
+  "origin": "Observed copper thermal-expansion study; NIST/ITL StRD",
+  "capture": "Numeric transcription from web-visible official source; not a byte-for-byte original download.",
+  "selection": "Observations 1\u201356 of 236, original order retained. Selection fixed before model fitting.",
+  "rows": 56,
+  "original_rows": 236,
+  "temperature_unit": "kelvin",
+  "response_unit": "Original source response scale; dimensional multiplier not specified in the source file.",
+  "time_axis": false,
+  "replicate_ids_available": false,
+  "unsupported_claims": [
+    "PDE solution accuracy",
+    "thermal diffusivity identification",
+    "energy conservation",
+    "NIST full-data certified residual replication",
+    "new independent benchmark"
+  ],
+  "permission": "U.S. NIST reference data; attributed. No third-party photographs or full papers added.",
+  "sha256": "abcdeee10337f548d7072ce2284f6760e00cab3107bae472f1074efd9ab270b9"
+}

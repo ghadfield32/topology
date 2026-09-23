@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 08 guided session — Read a barcode as a history, not a collection of scores · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/08_session.md">sessions/08_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-08-guided-session--read-a-barcode-as-a-history-not-a-collection-of-scores">Stage 08 guided session — Read a barcode as a history, not a collection of scores</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/08_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/08_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/08_workbook.md.html">original workbook</a> and <a href="../notebooks/08_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real digit intensity filtration and an exact complete/truncated square control.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Derive the square filtration and its positive-length interval.</li>
+<li>Explain half-open interval endpoints and zero-length bars.</li>
+<li>Cross-check barcode Betti counts against thresholded real images.</li>
+<li>Distinguish an unpaired class in a truncated filtration from a globally essential class.</li>
+</ol>
+<h2 id="follow-one-square-through-scale">Follow one square through scale</h2>
+<p>Place points at <code>(0,0)</code>, <code>(1,0)</code>, <code>(1,1)</code>, and <code>(0,1)</code>. At scale zero there are four vertices. At scale one, the four side edges enter. Three of those edge additions merge components; the remaining edge closes a loop. No triangle is present yet because every triangle needs one diagonal of length √2.</p>
+<p>At √2 the diagonals and their associated higher-dimensional simplices enter. The loop is filled. The positive-length H1 interval is therefore <code>[1,√2)</code>. At its birth it is present. At its death it is no longer present. Using a closed interval at both ends would count a class after it has died.</p>
+<p>The finite H0 bars record three component merges at one; one component survives. Equal-time simplex choices can change a reduction algorithm's intermediate pairings, but the interval multiset of this filtration should not depend on an arbitrary legal tie ordering.</p>
+<h2 id="a-diagram-retains-birth-and-death">A diagram retains birth and death</h2>
+<p>A diagram point <code>(b,d)</code> stores when a class appears and disappears. Its vertical distance above the diagonal is related to lifetime, but a diagram is not just a histogram of lifetimes. Two classes with the same duration can occur at different scales. Essential or truncated classes require a stated convention rather than silently inserting an enormous finite number.</p>
+<p>If you stop the square filtration at 1.2, its loop is unpaired at the end. That does not mean the loop would survive every possible future scale. The full square example already tells us it dies at √2. Report the computed maximum scale next to any unpaired interval.</p>
+<h2 id="connect-the-barcode-to-an-actual-image">Connect the barcode to an actual image</h2>
+<p>For a digit, use <code>f=1−intensity/16</code> on closed pixels and include pixels when <code>f≤t</code>. A persistence barcode implies a Betti count at each threshold: count intervals satisfying <code>birth≤t&lt;death</code>. Calculate the same count directly from the selected square cells. Agreement links the temporal-looking interval representation to the underlying image geometry.</p>
+<p>Filtration scale is not time in this experiment. Nothing physically moves while we vary an intensity threshold. Terms such as “birth” and “death” describe changes in the mathematical filtration. This distinction prevents an easy mistake when later applying similar notation to real sequences.</p>
+<p>Explain the first threshold at which the measured digit acquires a loop, and then the threshold at which it fills. A result for this specific discretized image is not a claim about every symbol with the same label.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Recover the exact square interval with the course implementation.</p>
+<pre><code class="language-python">from shape_lab.persistence import rips_filtration, persistent_homology, diagram, pixel_filtration
+square = np.array([[0.,0.],[1.,0.],[1.,1.],[0.,1.]])
+bars = persistent_homology(rips_filtration(square))
+h1 = diagram(bars, 1)
+print(h1)
+assert np.allclose(h1, [[1., np.sqrt(2)]])
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Read barcode counts at declared thresholds on a real digit and compare with the direct square-cell oracle.</p>
+<pre><code class="language-python">from shape_lab.data import digit_example
+from shape_lab.audits import pixel_betti_oracle
+image, sample_id = digit_example(0)
+f = 1-image/16.
+bars = persistent_homology(pixel_filtration(f))
+counts = []
+for t in [0., .25, .5, .75, 1.]:
+    predicted = [sum(b.dim==k and b.birth&lt;=t&lt;b.death for b in bars) for k in [0,1]]
+    direct = list(pixel_betti_oracle(f&lt;=t))
+    assert predicted == direct
+    counts.append([t, *direct])
+print(counts)
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Stop the square early to demonstrate an infinite endpoint caused by truncation.</p>
+<pre><code class="language-python">truncated = diagram(persistent_homology(rips_filtration(square, max_edge=1.2)), 1)
+assert len(truncated)==1 and np.isinf(truncated[0,1])
+result = {'sample_id': sample_id, 'image_counts': counts,
+          'square_complete_h1': h1.tolist(), 'truncated_square_h1_survives_end': True,
+          'truncated_max_edge': 1.2, 'global_essential_claim': False}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="08t1">08.T1</h3>
+<p>At t=√2, should the square H1 bar [1,√2) count toward beta1?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>No. The interval is half-open; the death event has occurred. The filled complex at that scale has no H1 class from the square outline.</p>
+</details>
+<h3 id="08t2">08.T2</h3>
+<p>Why can equal lifetimes describe different information?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Intervals [1,2) and [10,11) both last one unit but occupy different scales. A lifetime-only summary discards their positions in the filtration.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/08_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

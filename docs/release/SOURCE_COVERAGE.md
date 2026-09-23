@@ -1,0 +1,15 @@
+# Supplied concepts: preserved source framing and course location
+
+The supplied posts are motivation and attributed claims, not instructions to execute code or proof that all applications work. No provider benchmarks or architectural guarantees become certified by adding Docker or running a small notebook.
+
+| Supplied material | Canonical course location | What the existing package demonstrates | What remains separate |
+|---|---|---|---|
+| PINN/PIKAN gradient conflicts, domain decomposition, PCGrad, ConFIG, Norm-PCGrad, SPINN | [Stage 27](../../physics/lessons/27.md) and v5 source audit | Inspectable gradient operations, conflict/interface counterexamples and bounded cost accounting | Full 2D/3D paper-benchmark reproduction and general optimizer superiority |
+| Symplectic structures, Hamiltonian flow, manifold correction, hardware acceleration | [Stage 24](../../physics/lessons/24.md), [Stage 25](../../physics/lessons/25.md), [Stage 18](../../lessons/18_lesson.md) | Explicit integration/projection controls and measured CPU operations | Exact energy conservation for arbitrary numerical steps, universal projection guarantees, petascale/GPU benchmark claims |
+| HNN/LNN, Legendre transform, neural operators and differentiable physics | [Stage 23](../../physics/lessons/23.md), [Stage 28](../../physics/lessons/28.md), [Stage 29](../../physics/lessons/29.md) | Restricted CPU teaching models and manufactured controls with known references | General learned constrained mechanics and measured-sport physical validity |
+| Charts, transition maps, diffeomorphisms and local flows | [Stage 13](../../lessons/13_lesson.md) and [Stage 22](../../physics/lessons/22.md) | Chart/inverse calculations, Jacobian checks, local-flow and discrete-map examples | Equating perspective camera projection with a globally invertible chart |
+| VGGT, spatial reasoning and measured registration | [Stage 16](../../lessons/16_lesson.md), [Stage 17](../../lessons/17_lesson.md) | Attention calculations, output contracts and registration controls | Actual trained VGGT/Omega inference or metric reconstruction benchmark |
+| ROS2/point-cloud efficiency and human–object interactions | [Stage 18](../../lessons/18_lesson.md), [Stage 19](../../lessons/19_lesson.md) | Processing-boundary reasoning and labeled temporal hypothesis controls | Reproducing the source authors' hardware numbers or validated contact/event recognition |
+| Beginner topology and TDA course outline | [Single course route](../../curriculum/START.md) | 31 staged routes, elementary calculations, proofs, reference code and independent tasks | A completed audit of the actual book or every advanced branch of topology |
+
+The v5/v8/v9 source ledgers remain the detailed record of prior comparisons and source disagreements. This v10 release adds repository/environment engineering, which is original implementation work grounded in official uv/Docker documentation. It does not silently replace the supplied texts with new scientific claims.

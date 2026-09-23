@@ -1,0 +1,24 @@
+{
+  "stage": 23,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "manufactured unit oscillator derivative samples",
+  "seed": 5,
+  "steps": 500,
+  "train_states": 256,
+  "test_states": 128,
+  "hnn_test_derivative_mse": 0.00018408787499218164,
+  "restricted_lnn_test_acceleration_mse": 8.365068142685891e-05,
+  "scope": "No measured trajectories; no canonical-coordinate learning; no general-LNN Hessian training.",
+  "observed_data_admissibility": {
+    "dataset": "NIST Hahn1 excerpt",
+    "rows": 56,
+    "missing_trajectory_fields": [
+      "canonical_momentum",
+      "position_m",
+      "time_s"
+    ],
+    "decision": "Not suitable as measured trajectory training data; static regression remains valid."
+  },
+  "hand_acceleration": -3.0,
+  "source_review_date": "2026-09-20"
+}

@@ -1,0 +1,9 @@
+{
+  "dataset": "wdbc",
+  "seed": 20260920,
+  "data_sha256": "67a1bb2aa650da2ba7c76b5f64e1a180e00f50dcb0e91a2650be35d6251116dd",
+  "code_sha256": "bd09db4e9f52278d9c459a9b1c27ac2950f28441d113c387a3a9d52e9b260899",
+  "data_kind": "observed",
+  "evaluation": "fixed teaching experiment; displayed test outcomes are now exposed",
+  "external_validation": false
+}

@@ -1,0 +1,27 @@
+{
+  "sample_id": 8,
+  "comparisons": [
+    [
+      0.01,
+      0.009982390945185715,
+      0.006458603770655769
+    ],
+    [
+      0.03,
+      0.029537481492360018,
+      0.02146687363842792
+    ],
+    [
+      0.08,
+      0.07965962274435368,
+      0.053851889550912135
+    ]
+  ],
+  "same_fixed_pixel_grid": true,
+  "homology_dimension": 1,
+  "noise_is_synthetic": true,
+  "scientific_significance_established": false,
+  "stage": 10,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real training image plus explicitly generated bounded perturbations; not repeated sensor observations."
+}

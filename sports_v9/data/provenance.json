@@ -1,0 +1,14 @@
+{
+  "dataset": "SkillCorner ACB 2025-2026 sample game catalog",
+  "path": "matches.json",
+  "source_url": "https://github.com/SkillCorner/opendata-basketball/blob/main/data/matches.json",
+  "source_blob_sha1": "6db83d7fa75a699270630c02efc330ce8a8d2e2b",
+  "local_sha256": "5a6f2ee5b55aff806e0f13c9c90b47f19bc1734a6ed7d26b7682dd4bcc7ca063",
+  "bytes": 4324,
+  "rows": 10,
+  "accessed": "2026-09-21",
+  "acquisition": "Reconstructed exact UTF-8 text from GitHub connector response, then matched the returned Git blob SHA-1. Not an independent second download.",
+  "scope": "Complete metadata catalog for the 10 published sample games; not complete season results or tracking.",
+  "license": "MIT repository license; retain SkillCorner attribution.",
+  "optional_payloads": "Tracking, dynamic events and season aggregates not bundled or executed."
+}

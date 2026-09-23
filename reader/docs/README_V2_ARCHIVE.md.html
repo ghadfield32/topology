@@ -1,0 +1,88 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Listening to Shape — Learning Lab 2.0 · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../docs/README_V2_ARCHIVE.md">docs/README_V2_ARCHIVE.md</a> · Readable source notation; no online math renderer.</p><h1 id="listening-to-shape--learning-lab-20">Listening to Shape — Learning Lab 2.0</h1>
+<p>A beginner-first, original companion to your supplied 12-stage learning outline. Start at Stage 00 even with no topology background. This is not the book text, not an official course from its author, and not a verified substitute for every section of the forthcoming book.</p>
+<h2 id="version-2-your-complete-working-route">Version 2: your complete working route</h2>
+<p>Start with <strong>Stage 00's hub</strong>, then use <strong>lesson → beginner workbook → worked lab → your coding notebook → independent questions → delayed recall</strong>. No topology, proof, or Python background is assumed; four primers explain numbers/notation, Python, proofs, and linear algebra. The package includes 13 original core lessons, 13 expanded workbooks, 102 conceptual exercises with solutions, 65 coding exercises, and 39 new delayed-retrieval questions.</p>
+<p>There are <strong>26 executed reference notebooks</strong>: 13 worked labs and 13 coding-answer notebooks. The <strong>13 learner notebooks are intentionally unfinished assignments</strong>, with clear starter errors, hints and checks. They are not counted as successful executions. Changing them is encouraged and does not break the package test suite.</p>
+<ul>
+<li><code>docs/START_YOUR_FIRST_SESSION.md</code>: a concrete first session from zero.</li>
+<li><code>stages/00/README.md</code> through <code>stages/12/README.md</code>: the stage-by-stage resource hubs.</li>
+<li><code>foundations/</code> and <code>workbooks/</code>: prerequisite explanations and deeper worked reasoning.</li>
+<li><code>practice/learner/</code>: write your own code here; <code>practice/answers/</code> contains executed reference answers.</li>
+<li><code>docs/PROOF_ATLAS.md</code>: complete elementary proofs and explicit advanced proof obligations.</li>
+<li><code>docs/LEARNING_SYSTEM_V2.md</code>: assessment rubric, review rules, evidence log and upgrade safety.</li>
+<li><code>docs/BRING_YOUR_OWN_DATA.md</code>: a small exploratory CSV pipeline, not a production model.</li>
+<li><code>COMPLETE_COURSE_V2.md</code>: combined reading volume; answers remain separate.</li>
+</ul>
+<h3 id="run-only-the-reference-answer-checks">Run only the reference answer checks</h3>
+<pre><code class="language-bash">python scripts/run_practice_answers.py --stages 0 1
+python scripts/run_practice_answers.py
+</code></pre>
+<h3 id="keep-learning-with-evidence">Keep learning with evidence</h3>
+<pre><code class="language-bash">python scripts/learn.py status
+python scripts/learn.py due
+python scripts/learn.py handoff
+</code></pre>
+<p>Create your own answer files under <code>my_work/</code> and follow <code>docs/LEARNING_SYSTEM_V2.md</code> to record practice, assessment and recall. The untouched new record is <code>progress/learning_log_v2.json</code>. Scores are self-reported, not automatically graded proof claims. The old browser progress page remains a separate legacy scratchpad and does not sync with the new log.</p>
+<h2 id="start-without-installing-anything">Start without installing anything</h2>
+<p>Extract the ZIP completely. Open <strong>START_HERE.html</strong> in your browser. It links all thirteen lesson sections, executed labs, worked solutions, flashcards, sources, and verification notes. Everything needed for the included reading and saved outputs is local; external free readings require internet. No account is needed. The reader uses system fonts, not downloaded font files.</p>
+<p>Do not browse the ZIP as if it were an extracted folder: relative links and Python paths need the extracted directory structure.</p>
+<h2 id="run-it-on-a-mac-or-linux-computer">Run it on a Mac or Linux computer</h2>
+<p>The commands below create an isolated environment inside the course folder. They do not change your production projects. Python 3.13 is recommended because Python 3.13.5 on Linux was used for the recorded execution. Other Python/platform combinations have not been executed here.</p>
+<pre><code class="language-bash">cd /path/to/listening_to_shape_lab
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e ".[notebooks,test,reader]"
+python -m pytest -q -ra
+python -m jupyterlab
+</code></pre>
+<p>Open <code>notebooks/00_lab.ipynb</code> and run from the top. To execute the first two stages without opening Jupyter:</p>
+<pre><code class="language-bash">python scripts/run_notebooks.py --stages 0 1
+</code></pre>
+<p>To rerun the full worked course:</p>
+<pre><code class="language-bash">python scripts/run_notebooks.py
+</code></pre>
+<p>The stage runner uses a fresh kernel for each notebook. It writes working outputs under <code>reports/</code> and updates notebook outputs. It does not modify raw data. Stage 12 expects Stage 11's validation selection. Rerunning the already viewed capstone is reproduction, not a newly independent test.</p>
+<h2 id="run-it-on-windows-without-changing-powershell-execution-policy">Run it on Windows without changing PowerShell execution policy</h2>
+<pre><code class="language-powershell">cd C:\path\to\listening_to_shape_lab
+py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install -e ".[notebooks,test,reader]"
+.\.venv\Scripts\python.exe -m pytest -q -ra
+.\.venv\Scripts\python.exe -m jupyterlab
+</code></pre>
+<p>If <code>py -3.13</code> is not found, install Python 3.13 using the official Python distribution or select an existing compatible Python interpreter. The code itself is platform-neutral, but Windows and macOS execution were not tested in the build environment. CPU execution is sufficient for these small labs; no GPU is required.</p>
+<h2 id="existing-uv-users">Existing uv users</h2>
+<pre><code class="language-bash">uv venv --python 3.13
+uv pip install --python .venv/bin/python -e ".[notebooks,test,reader]"
+</code></pre>
+<p>On Windows select <code>.venv\Scripts\python.exe</code> instead. The project pins direct tested core dependencies; it does not pretend to contain a universally validated cross-platform lockfile. <code>reports/environment.json</code> records the actual environment, and <code>reports/tested_dependency_snapshot.txt</code> records the relevant installed dependency closure. Initial installation needs internet or an existing local package cache; the lessons do not download datasets.</p>
+<h2 id="optional-independent-library-checks">Optional independent library checks</h2>
+<pre><code class="language-bash">python -m pip install -e ".[crosscheck]"
+python scripts/check_optional_libraries.py
+python -m pytest tests/test_optional_libraries.py -q -ra
+python scripts/optional_alpha_demo.py
+</code></pre>
+<p><strong>These are not required to run the core notebooks.</strong> Ripser and GUDHI could not be installed in the build container, so both external-library checks are recorded as NOT RUN / SKIPPED. Do not count these skips as successful validation. Run them locally to finish the external-library validation gate. The alpha demo is also optional and unexecuted in the bundled environment.</p>
+<h2 id="the-learning-sequence">The learning sequence</h2>
+<p>Each numbered stage has a detailed lesson, a fully runnable worked notebook, and separate original exercises with worked solutions. Stages 00–10 build foundations and persistence; Stage 11 covers representations, Mapper and validation; Stage 12 runs the capstone and prepares an independent project and actual-book audit.</p>
+<p>Follow this cycle: <strong>read → predict → calculate → run → explain → solve independently → revisit after a delay</strong>. Do not mark a stage mastered merely because its code ran. Your progress template starts with no stages marked complete.</p>
+<h2 id="real-data-and-claims">Real data and claims</h2>
+<p>Iris: 150 measured samples, four features; scikit-learn's corrected snapshot. Digits: 1,797 real 8×8 images with intensities 0–16, distributed by scikit-learn from the UCI original test set. Our new split is 1,077 training / 360 validation / 360 test images, not the original 3,823/1,797 UCI train/test design. Writer IDs are unavailable, so the reported evaluation is image-level, not unseen-writer generalization. Attribution, source links, variants, hashes and license notes are in <code>data/README.md</code> and <code>data/manifest.json</code>.</p>
+<p>Synthetic circles, triangles, grids, and sinusoids are labeled controls. No synthetic data are silently substituted for real measurements.</p>
+<h2 id="what-is-in-the-project">What is in the project</h2>
+<ul>
+<li><code>lessons/</code>, <code>notebooks/</code>, <code>solutions/</code>: thirteen staged sections and their practical work.</li>
+<li><code>src/shape_lab/</code>: inspectable original topology, homology, persistence and feature code.</li>
+<li><code>tests/</code>: exact examples, invariance tests, independent checks and optional library comparisons.</li>
+<li><code>data/</code>: attributed real datasets, frozen splits and content-addressed feature caches.</li>
+<li><code>reports/</code>: executed plots, results, predictions, environment and validation evidence.</li>
+<li><code>docs/</code>: sources, conventions, glossary, coverage, assessment, capstone, proof-deepening and tutor guides.</li>
+<li><code>progress/</code>: untouched learner record and book-audit gap log.</li>
+<li><code>site/</code> and <code>START_HERE.html</code>: offline reading interface, including saved lab outputs.</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>“Module not found” usually means Jupyter is using a different interpreter from the installed environment. Start it with the same <code>python -m jupyterlab</code> command used above. “Open this notebook inside…” means the working folder is outside the extracted project. Restart a notebook kernel and run all cells to remove stale variables. A failed mathematical assertion should be investigated; do not remove the assertion to obtain a green result.</p>
+<p>The educational Rips builder caps candidate counts. Use the small supplied examples or a specialized TDA library for large inputs. If you intentionally change raw data, regenerate the manifest and document a new experiment rather than bypassing hash checks. Do not delete or alter test rows to improve a reported score.</p>
+<p>For continued learning here, use <code>docs/CONTINUE_WITH_TUTOR.md</code> and share your answers plus stage output. That supplies concrete evidence for targeted instruction rather than repeatedly rebuilding the plan.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

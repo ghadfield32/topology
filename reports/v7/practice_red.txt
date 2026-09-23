@@ -1,0 +1,1080 @@
+FFFFFFFFFFFFFFFFFFFFFFFF                                                 [100%]
+=================================== FAILURES ===================================
+_______________________________ test_table_shape _______________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_table_shape():
+>       assert module().table_dimensions(np.ones((210,7))) == (210,7)
+               ^^^^^^^^
+
+tests/test_practice_v7.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_______________________________ test_compactness _______________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_compactness():
+>       assert np.allclose(module().compactness(np.array([np.pi]), np.array([2*np.pi])),1)
+                           ^^^^^^^^
+
+tests/test_practice_v7.py:13: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+____________________________ test_training_scaling _____________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_training_scaling():
+>       c,s=module().fit_scaler(np.array([[0.,9],[2.,9]]))
+            ^^^^^^^^
+
+tests/test_practice_v7.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+______________________________ test_class_counts _______________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_class_counts():
+>       assert module().class_counts([3,1,3,2]) == {1:1,2:1,3:2}
+               ^^^^^^^^
+
+tests/test_practice_v7.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_____________________________ test_absolute_errors _____________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_absolute_errors():
+>       assert np.allclose(module().absolute_errors([1,2,3],[2,2,1]),[1,0,2])
+                           ^^^^^^^^
+
+tests/test_practice_v7.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_____________________________ test_interval_bounds _____________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_interval_bounds():
+>       lo,hi=module().interval_bounds([2.,5.],3.)
+              ^^^^^^^^
+
+tests/test_practice_v7.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+___________________________ test_empirical_coverage ____________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_empirical_coverage():
+>       assert module().empirical_coverage([0,1,2],[-1,0,0],[0,1,1]) == 2/3
+               ^^^^^^^^
+
+tests/test_practice_v7.py:30: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+______________________________ test_mean_baseline ______________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_mean_baseline():
+>       assert np.allclose(module().mean_baseline([2.,6.],3),[4,4,4])
+                           ^^^^^^^^
+
+tests/test_practice_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_______________________________ test_shared_rows _______________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_shared_rows():
+>       assert module().shared_rows([0,2,3],[1,3,4]) == [3]
+               ^^^^^^^^
+
+tests/test_practice_v7.py:36: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+______________________________ test_shared_units _______________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_shared_units():
+>       assert module().shared_units([0,2],[1,3],['a','a','b','c']) == ['a']
+               ^^^^^^^^
+
+tests/test_practice_v7.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_____________________________ test_group_partition _____________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_group_partition():
+>       a,b=module().partition_by_units(['a','b','a','c'],['b'])
+            ^^^^^^^^
+
+tests/test_practice_v7.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+______________________________ test_apply_scaler _______________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_apply_scaler():
+>       assert np.allclose(module().apply_scaler([[6,2]],[2,2],[2,1]),[[2,0]])
+                           ^^^^^^^^
+
+tests/test_practice_v7.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_________________________________ test_energy __________________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_energy():
+>       assert module().oscillator_energy([.96,-.2]) == pytest.approx(.4808)
+               ^^^^^^^^
+
+tests/test_practice_v7.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+__________________________ test_symplectic_not_energy __________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_symplectic_not_energy():
+        A=np.array([[.96,.2],[-.2,1.]])
+>       assert module().symplectic_defect(A)<1e-14
+               ^^^^^^^^
+
+tests/test_practice_v7.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_______________________________ test_sphere_step _______________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_sphere_step():
+>       x=module().sphere_newton_step([2.,0.])
+          ^^^^^^^^
+
+tests/test_practice_v7.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+____________________________ test_gradient_conflict ____________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+    def test_gradient_conflict():
+>       assert module().gradient_inner_product([1,0],[-1,0]) == -1
+               ^^^^^^^^
+
+tests/test_practice_v7.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_______________________ test_invalid[compactness-args0] ________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+fn = 'compactness', args = ([1], [0])
+
+    @pytest.mark.parametrize('fn,args',[
+     ('compactness',([1],[0])),('fit_scaler',([[np.nan]],)),
+     ('table_dimensions',([1,2],)),('absolute_errors',([1],[1,2])),
+     ('interval_bounds',([1],-1)),('sphere_newton_step',([0,0],)),
+     ('symplectic_defect',(np.eye(3),)),('apply_scaler',([[1]],[0],[0])),
+    ])
+    def test_invalid(fn,args):
+>       with pytest.raises(ValueError):getattr(module(),fn)(*args)
+                                               ^^^^^^^^
+
+tests/test_practice_v7.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+________________________ test_invalid[fit_scaler-args1] ________________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+fn = 'fit_scaler', args = ([[nan]],)
+
+    @pytest.mark.parametrize('fn,args',[
+     ('compactness',([1],[0])),('fit_scaler',([[np.nan]],)),
+     ('table_dimensions',([1,2],)),('absolute_errors',([1],[1,2])),
+     ('interval_bounds',([1],-1)),('sphere_newton_step',([0,0],)),
+     ('symplectic_defect',(np.eye(3),)),('apply_scaler',([[1]],[0],[0])),
+    ])
+    def test_invalid(fn,args):
+>       with pytest.raises(ValueError):getattr(module(),fn)(*args)
+                                               ^^^^^^^^
+
+tests/test_practice_v7.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_____________________ test_invalid[table_dimensions-args2] _____________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+fn = 'table_dimensions', args = ([1, 2],)
+
+    @pytest.mark.parametrize('fn,args',[
+     ('compactness',([1],[0])),('fit_scaler',([[np.nan]],)),
+     ('table_dimensions',([1,2],)),('absolute_errors',([1],[1,2])),
+     ('interval_bounds',([1],-1)),('sphere_newton_step',([0,0],)),
+     ('symplectic_defect',(np.eye(3),)),('apply_scaler',([[1]],[0],[0])),
+    ])
+    def test_invalid(fn,args):
+>       with pytest.raises(ValueError):getattr(module(),fn)(*args)
+                                               ^^^^^^^^
+
+tests/test_practice_v7.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_____________________ test_invalid[absolute_errors-args3] ______________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+fn = 'absolute_errors', args = ([1], [1, 2])
+
+    @pytest.mark.parametrize('fn,args',[
+     ('compactness',([1],[0])),('fit_scaler',([[np.nan]],)),
+     ('table_dimensions',([1,2],)),('absolute_errors',([1],[1,2])),
+     ('interval_bounds',([1],-1)),('sphere_newton_step',([0,0],)),
+     ('symplectic_defect',(np.eye(3),)),('apply_scaler',([[1]],[0],[0])),
+    ])
+    def test_invalid(fn,args):
+>       with pytest.raises(ValueError):getattr(module(),fn)(*args)
+                                               ^^^^^^^^
+
+tests/test_practice_v7.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_____________________ test_invalid[interval_bounds-args4] ______________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+fn = 'interval_bounds', args = ([1], -1)
+
+    @pytest.mark.parametrize('fn,args',[
+     ('compactness',([1],[0])),('fit_scaler',([[np.nan]],)),
+     ('table_dimensions',([1,2],)),('absolute_errors',([1],[1,2])),
+     ('interval_bounds',([1],-1)),('sphere_newton_step',([0,0],)),
+     ('symplectic_defect',(np.eye(3),)),('apply_scaler',([[1]],[0],[0])),
+    ])
+    def test_invalid(fn,args):
+>       with pytest.raises(ValueError):getattr(module(),fn)(*args)
+                                               ^^^^^^^^
+
+tests/test_practice_v7.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+____________________ test_invalid[sphere_newton_step-args5] ____________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+fn = 'sphere_newton_step', args = ([0, 0],)
+
+    @pytest.mark.parametrize('fn,args',[
+     ('compactness',([1],[0])),('fit_scaler',([[np.nan]],)),
+     ('table_dimensions',([1,2],)),('absolute_errors',([1],[1,2])),
+     ('interval_bounds',([1],-1)),('sphere_newton_step',([0,0],)),
+     ('symplectic_defect',(np.eye(3),)),('apply_scaler',([[1]],[0],[0])),
+    ])
+    def test_invalid(fn,args):
+>       with pytest.raises(ValueError):getattr(module(),fn)(*args)
+                                               ^^^^^^^^
+
+tests/test_practice_v7.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+____________________ test_invalid[symplectic_defect-args6] _____________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+fn = 'symplectic_defect'
+args = (array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]]),)
+
+    @pytest.mark.parametrize('fn,args',[
+     ('compactness',([1],[0])),('fit_scaler',([[np.nan]],)),
+     ('table_dimensions',([1,2],)),('absolute_errors',([1],[1,2])),
+     ('interval_bounds',([1],-1)),('sphere_newton_step',([0,0],)),
+     ('symplectic_defect',(np.eye(3),)),('apply_scaler',([[1]],[0],[0])),
+    ])
+    def test_invalid(fn,args):
+>       with pytest.raises(ValueError):getattr(module(),fn)(*args)
+                                               ^^^^^^^^
+
+tests/test_practice_v7.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+_______________________ test_invalid[apply_scaler-args7] _______________________
+
+    def module():
+>       try: return importlib.import_module('shape_lab.practice_v7')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_practice_v7.py:6: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/lib/python3.13/importlib/__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+name = 'shape_lab.practice_v7'
+import_ = <function _gcd_import at 0x7f165950c4a0>
+
+>   ???
+E   ModuleNotFoundError: No module named 'shape_lab.practice_v7'
+
+<frozen importlib._bootstrap>:1324: ModuleNotFoundError
+
+During handling of the above exception, another exception occurred:
+
+fn = 'apply_scaler', args = ([[1]], [0], [0])
+
+    @pytest.mark.parametrize('fn,args',[
+     ('compactness',([1],[0])),('fit_scaler',([[np.nan]],)),
+     ('table_dimensions',([1,2],)),('absolute_errors',([1],[1,2])),
+     ('interval_bounds',([1],-1)),('sphere_newton_step',([0,0],)),
+     ('symplectic_defect',(np.eye(3),)),('apply_scaler',([[1]],[0],[0])),
+    ])
+    def test_invalid(fn,args):
+>       with pytest.raises(ValueError):getattr(module(),fn)(*args)
+                                               ^^^^^^^^
+
+tests/test_practice_v7.py:70: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def module():
+        try: return importlib.import_module('shape_lab.practice_v7')
+>       except ModuleNotFoundError: pytest.fail('Practice reference functions are not implemented')
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: Practice reference functions are not implemented
+
+tests/test_practice_v7.py:7: Failed
+=========================== short test summary info ============================
+FAILED tests/test_practice_v7.py::test_table_shape - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_compactness - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_training_scaling - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_class_counts - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_absolute_errors - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_interval_bounds - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_empirical_coverage - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_mean_baseline - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_shared_rows - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_shared_units - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_group_partition - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_apply_scaler - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_energy - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_symplectic_not_energy - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_sphere_step - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_gradient_conflict - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_invalid[compactness-args0] - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_invalid[fit_scaler-args1] - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_invalid[table_dimensions-args2] - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_invalid[absolute_errors-args3] - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_invalid[interval_bounds-args4] - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_invalid[sphere_newton_step-args5] - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_invalid[symplectic_defect-args6] - Failed: Practice reference functions are not implemented
+FAILED tests/test_practice_v7.py::test_invalid[apply_scaler-args7] - Failed: Practice reference functions are not implemented
+24 failed in 0.28s

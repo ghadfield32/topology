@@ -1,0 +1,452 @@
+........................................................................ [ 13%]
+..........................................................FFFFFFFFFFFFFF [ 26%]
+FFFFFFF................................................................. [ 40%]
+........................................................................ [ 53%]
+..........................................................ss............ [ 66%]
+........................................................................ [ 80%]
+........................................................................ [ 93%]
+.....................F..............                                     [100%]
+=================================== FAILURES ===================================
+__________________ test_consolidation_code_is_valid_python[0] __________________
+
+stage = 0
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "00/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[1] __________________
+
+stage = 1
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "01/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[2] __________________
+
+stage = 2
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "02/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[3] __________________
+
+stage = 3
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "03/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[4] __________________
+
+stage = 4
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "04/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[5] __________________
+
+stage = 5
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "05/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[6] __________________
+
+stage = 6
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "06/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[7] __________________
+
+stage = 7
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "07/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[8] __________________
+
+stage = 8
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "08/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+__________________ test_consolidation_code_is_valid_python[9] __________________
+
+stage = 9
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "09/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[10] __________________
+
+stage = 10
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "10/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[11] __________________
+
+stage = 11
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "11/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[12] __________________
+
+stage = 12
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "12/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[13] __________________
+
+stage = 13
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "13/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[14] __________________
+
+stage = 14
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "14/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[15] __________________
+
+stage = 15
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "15/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[16] __________________
+
+stage = 16
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "16/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[17] __________________
+
+stage = 17
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "17/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[18] __________________
+
+stage = 18
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "18/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[19] __________________
+
+stage = 19
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "19/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_consolidation_code_is_valid_python[20] __________________
+
+stage = 20
+
+    @pytest.mark.parametrize('stage',range(21))
+    def test_consolidation_code_is_valid_python(stage):
+        notebook=nbformat.read(ROOT/f'consolidation/{stage:02d}_lab.ipynb',4)
+        for index,c in enumerate(notebook.cells):
+>           if c.cell_type=='code':compile(c.source,f'{stage:02d}/cell-{index}','exec')
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E             File "20/cell-1", line 1
+E               %matplotlib inline
+E               ^
+E           SyntaxError: invalid syntax
+
+tests/test_curriculum_v4.py:11: SyntaxError
+_________________ test_distribution_and_module_versions_agree __________________
+
+    def test_distribution_and_module_versions_agree():
+        metadata=tomllib.loads((Path(__file__).resolve().parents[1]/'pyproject.toml').read_text())
+>       assert shape_lab.__version__==metadata['project']['version']=='6.0.0'
+E       AssertionError: assert '6.0.0' == '7.0.0'
+E         
+E         - 7.0.0
+E         ? ^
+E         + 6.0.0
+E         ? ^
+
+tests/test_release_version_v3.py:7: AssertionError
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_optional_libraries.py:14: could not import 'ripser': No module named 'ripser'
+SKIPPED [1] tests/test_optional_libraries.py:20: could not import 'gudhi': No module named 'gudhi'
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[0] -   File "00/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[1] -   File "01/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[2] -   File "02/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[3] -   File "03/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[4] -   File "04/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[5] -   File "05/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[6] -   File "06/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[7] -   File "07/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[8] -   File "08/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[9] -   File "09/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[10] -   File "10/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[11] -   File "11/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[12] -   File "12/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[13] -   File "13/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[14] -   File "14/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[15] -   File "15/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[16] -   File "16/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[17] -   File "17/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[18] -   File "18/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[19] -   File "19/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_curriculum_v4.py::test_consolidation_code_is_valid_python[20] -   File "20/cell-1", line 1
+    %matplotlib inline
+    ^
+SyntaxError: invalid syntax
+FAILED tests/test_release_version_v3.py::test_distribution_and_module_versions_agree - AssertionError: assert '6.0.0' == '7.0.0'
+  
+  - 7.0.0
+  ? ^
+  + 6.0.0
+  ? ^
+22 failed, 516 passed, 2 skipped in 18.51s

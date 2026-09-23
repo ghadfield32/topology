@@ -1,0 +1,146 @@
+[
+  {
+    "id": "wdbc.R1",
+    "case": "wdbc",
+    "question": "What is one observation here, and when is a row not an independent example?",
+    "answer": "One digitized fine-needle-aspirate image summary. The scikit-learn snapshot does not retain original IDs."
+  },
+  {
+    "id": "wdbc.R2",
+    "case": "wdbc",
+    "question": "What does a high score on this partition fail to establish?",
+    "answer": "The original IDs/sites are absent. This image-summary split is not independent clinical or new-site validation."
+  },
+  {
+    "id": "wdbc.R3",
+    "case": "wdbc",
+    "question": "State one unsupported conclusion and the additional evidence needed.",
+    "answer": "569 rows; 30 features. Educational observational data, not clinical validation. Name an independent evaluation appropriate to the claim; explain what the existing data do not contain."
+  },
+  {
+    "id": "wine.R1",
+    "case": "wine",
+    "question": "What is one observation here, and when is a row not an independent example?",
+    "answer": "One wine sample; cultivar is a category, not a quality score."
+  },
+  {
+    "id": "wine.R2",
+    "case": "wine",
+    "question": "How can a training query accidentally get an advantage in a local topology descriptor?",
+    "answer": "Including the training query itself as a reference point creates an advantage absent for an unseen query. Reserve and freeze the reference set; compare models on identical fitting rows."
+  },
+  {
+    "id": "wine.R3",
+    "case": "wine",
+    "question": "State one unsupported conclusion and the additional evidence needed.",
+    "answer": "178 rows, 13 chemistry features, three cultivars. Different from Wine Quality (UCI 186). Name an independent evaluation appropriate to the claim; explain what the existing data do not contain."
+  },
+  {
+    "id": "stackloss.R1",
+    "case": "stackloss",
+    "question": "What is one observation here, and when is a row not an independent example?",
+    "answer": "One operating-day measurement in the historical plant table; original timestamps are unavailable."
+  },
+  {
+    "id": "stackloss.R2",
+    "case": "stackloss",
+    "question": "Why is source order not automatically a forward-time evaluation?",
+    "answer": "Dates and their validated ordering are absent from the distribution. Call it a source-order holdout, not established temporal forecasting."
+  },
+  {
+    "id": "stackloss.R3",
+    "case": "stackloss",
+    "question": "State one unsupported conclusion and the additional evidence needed.",
+    "answer": "21 records. Cannot support a broad plant-deployment claim or certify a mechanistic model. Name an independent evaluation appropriate to the claim; explain what the existing data do not contain."
+  },
+  {
+    "id": "grunfeld.R1",
+    "case": "grunfeld",
+    "question": "What is one observation here, and when is a row not an independent example?",
+    "answer": "One firm-year record. A repeated firm is not a new independent company."
+  },
+  {
+    "id": "grunfeld.R2",
+    "case": "grunfeld",
+    "question": "Why lag firm value before forecasting investment?",
+    "answer": "The supplied same-year value is measured at year end. It is not established to be available when making an earlier prediction; group by firm before lagging."
+  },
+  {
+    "id": "grunfeld.R3",
+    "case": "grunfeld",
+    "question": "State one unsupported conclusion and the additional evidence needed.",
+    "answer": "220 rows; 11 firms, 1935\u20131954. Historical data, not investment advice or current-market evidence. Name an independent evaluation appropriate to the claim; explain what the existing data do not contain."
+  },
+  {
+    "id": "co2.R1",
+    "case": "co2",
+    "question": "What is one observation here, and when is a row not an independent example?",
+    "answer": "One weekly date slot, possibly missing a CO2 observation."
+  },
+  {
+    "id": "co2.R2",
+    "case": "co2",
+    "question": "What observations can one forecast window depend on?",
+    "answer": "Only past finite measurements at the expected weekly spacing. In this strict protocol the full input-to-target support belongs to one raw time block; never interpolate across a held-out boundary silently."
+  },
+  {
+    "id": "co2.R3",
+    "case": "co2",
+    "question": "State one unsupported conclusion and the additional evidence needed.",
+    "answer": "2284 slots, 2225 observed values and 59 missing. Snapshot covers 1958\u20132001, not current CO2. Name an independent evaluation appropriate to the claim; explain what the existing data do not contain."
+  },
+  {
+    "id": "nile.R1",
+    "case": "nile",
+    "question": "What is one observation here, and when is a row not an independent example?",
+    "answer": "One annual river-volume observation, not an instantaneous discharge-rate sample."
+  },
+  {
+    "id": "nile.R2",
+    "case": "nile",
+    "question": "Why is a fitted mean change not a discovered cause?",
+    "answer": "The breakpoint minimizes a retrospective objective; other processes can explain a mean shift. Independent causal evidence and an explicit competing explanation are needed."
+  },
+  {
+    "id": "nile.R3",
+    "case": "nile",
+    "question": "State one unsupported conclusion and the additional evidence needed.",
+    "answer": "100 annual observations, 1871\u20131970. A detected change is not proof of its physical cause. Name an independent evaluation appropriate to the claim; explain what the existing data do not contain."
+  },
+  {
+    "id": "elnino.R1",
+    "case": "elnino",
+    "question": "What is one observation here, and when is a row not an independent example?",
+    "answer": "One year with twelve monthly regional mean temperatures; the derived long view has one month per row."
+  },
+  {
+    "id": "elnino.R2",
+    "case": "elnino",
+    "question": "How do you prevent climatology from seeing future observations?",
+    "answer": "Fit all twelve monthly means using training years only, then apply them unchanged. Keep sequence order and account for whole-window support at the split."
+  },
+  {
+    "id": "elnino.R3",
+    "case": "elnino",
+    "question": "State one unsupported conclusion and the additional evidence needed.",
+    "answer": "61 years, 1950\u20132010, 732 monthly observations. Not an operational forecast or a simulated PDE field. Name an independent evaluation appropriate to the claim; explain what the existing data do not contain."
+  },
+  {
+    "id": "modechoice.R1",
+    "case": "modechoice",
+    "question": "What is one observation here, and when is a row not an independent example?",
+    "answer": "One alternative offered to one traveler. Four rows form one choice set."
+  },
+  {
+    "id": "modechoice.R2",
+    "case": "modechoice",
+    "question": "Why must four alternative rows travel together through a split?",
+    "answer": "They belong to one decision maker and one choice set. Splitting rows leaks a person and can leave incomplete choice sets. The sample is choice-based, not a population market-share estimate."
+  },
+  {
+    "id": "modechoice.R3",
+    "case": "modechoice",
+    "question": "State one unsupported conclusion and the additional evidence needed.",
+    "answer": "840 alternatives, 210 travelers. Choice-based sampling oversamples some modes; not population market shares. Name an independent evaluation appropriate to the claim; explain what the existing data do not contain."
+  }
+]

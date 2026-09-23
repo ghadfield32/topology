@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 15 guided session — Turn disparity error into a physical uncertainty calculation · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sessions/15_session.md">sessions/15_session.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-15-guided-session--turn-disparity-error-into-a-physical-uncertainty-calculation">Stage 15 guided session — Turn disparity error into a physical uncertainty calculation</h1>
+<p><strong>Role:</strong> Original v4 teaching supplement. It deepens the preserved lesson; it does not replace the book or its unavailable full text.</p>
+<p><strong>Read first:</strong> <a href="../lessons/15_lesson.md.html">Stage lesson</a>, then use this explanation before the <a href="../consolidation/15_lab.ipynb.html">consolidation notebook</a>. The <a href="../workbooks/15_workbook.md.html">original workbook</a> and <a href="../notebooks/15_lab.ipynb.html">worked lab</a> remain available. Repair earlier concepts only where needed; do not restart the whole course.</p>
+<p><strong>Data and evidence:</strong> Real stereo-reference disparities with generated local noise; no independent calibration-noise measurement.</p>
+<h2 id="what-you-will-be-able-to-demonstrate">What you will be able to demonstrate</h2>
+<ol>
+<li>Derive the principal-point offset in rectified stereo.</li>
+<li>Carry pixels and metres through the depth formula.</li>
+<li>Compare a first-order uncertainty calculation with controlled numerical perturbations.</li>
+<li>State which uncertainties a supplied-reference experiment cannot measure.</li>
+</ol>
+<h2 id="derive-the-denominator-instead-of-memorizing-it">Derive the denominator instead of memorizing it</h2>
+<p>For rectified cameras, let the right camera center be B to the right of the left center. A point has horizontal coordinates X and X−B in the two camera frames. Its pixels are <code>u_L=fX/Z+cx_L</code> and <code>u_R=f(X−B)/Z+cx_R</code>. Subtracting gives disparity <code>d=u_L−u_R=fB/Z+cx_L−cx_R</code>.</p>
+<p>Define <code>doffs=cx_R−cx_L</code>. Then <code>d+doffs=fB/Z</code>, so <code>Z=fB/(d+doffs)</code>. The offset's sign follows from the chosen disparity definition. Reversing one without the other is not a cosmetic convention change.</p>
+<p>With f in pixels, disparity and offset in pixels, and B in metres, depth is in metres. The original Middlebury calibration reports baseline in millimetres; the package's calibration explicitly converts it. A plausible point cloud does not reveal a factor-of-1000 unit error by itself.</p>
+<h2 id="work-a-sensitivity-example">Work a sensitivity example</h2>
+<p>For f=1000 pixels, B=0.1 metres, corrected disparity 50 pixels, depth is two metres. Holding calibration fixed, <code>dZ/dd=−fB/(d+doffs)²</code>, which here is -0.04 metres per pixel. A small disparity standard deviation of 0.5 pixels gives a first-order depth standard deviation of about 0.02 metres.</p>
+<p>This linear approximation is local. It worsens near a small denominator, and it does not turn a confidence score into a calibrated probability. A complete uncertainty calculation may include calibration, correspondence errors, distortion, and correlations. Gross matching failures are not adequately represented by tiny Gaussian noise around the correct match.</p>
+<h2 id="use-the-actual-reference-carefully">Use the actual reference carefully</h2>
+<p>Select valid disparities from the real stereo reference. Add small generated Gaussian perturbations with a fixed seed, compute resulting depths, and compare empirical spread with the derivative approximation. This tests the propagation calculation under the imposed noise model.</p>
+<p>It is not an empirical measurement of the actual stereo matcher's noise distribution. The original Stage 15 lab separately compares a simple image-based matcher with the supplied reference and reports its large failures. Keep those two experiments distinct: reference perturbation studies sensitivity; matcher evaluation measures a particular algorithm against available reference data.</p>
+<p>A practical reconstruction report should show error distributions, eligible coverage, failures, units, and independent holdouts. A low reprojection error alone can coexist with wrong scale or weakly constrained depth. State what is observed, what is supplied, what is estimated, and what is imposed by an experimental control.</p>
+<h2 id="predict-execute-and-explain">Predict, execute, and explain</h2>
+<h3 id="step-1">Step 1</h3>
+<p>Select finite reference disparities and compute the local derivative with explicit units.</p>
+<pre><code class="language-python">from shape_lab.stereo import reference_sample, depth_from_disparity
+_, _, reference, calibration = reference_sample()
+samples = reference[::80, ::80].ravel()
+samples = samples[np.isfinite(samples)][:25]
+f = calibration['focal_px']; B = calibration['baseline_m']; offset = calibration['doffs_px']
+sigma_px = .2
+expected_sigma_m = f*B/(samples+offset)**2 * sigma_px
+assert len(samples)&gt;5
+print('first reference depths:', depth_from_disparity(samples, f, B, offset)[:5])
+</code></pre>
+<h3 id="step-2">Step 2</h3>
+<p>Generate only the declared perturbation, not replacement reference truth.</p>
+<pre><code class="language-python">rng = np.random.default_rng(1504)
+perturbed = samples[None,:] + rng.normal(0, sigma_px, size=(5000,len(samples)))
+depths = depth_from_disparity(perturbed, f, B, offset)
+measured_sigma_m = np.std(depths, axis=0, ddof=1)
+ratio = measured_sigma_m/expected_sigma_m
+print('empirical / first-order standard deviation:', ratio)
+assert np.all(np.abs(ratio-1)&lt;.06)
+</code></pre>
+<h3 id="step-3">Step 3</h3>
+<p>Store what is fixed and what is random so the numerical agreement cannot be mistaken for complete sensor uncertainty.</p>
+<pre><code class="language-python">result = {'points': len(samples), 'perturbation_trials': len(perturbed),
+          'disparity_sigma_px': sigma_px, 'median_empirical_to_linear_sigma_ratio': float(np.median(ratio)),
+          'calibration_fixed': True, 'noise_model': 'synthetic independent Gaussian disparity noise',
+          'actual_matcher_uncertainty_established': False}
+</code></pre>
+<h2 id="transfer-problems--attempt-without-the-solution">Transfer problems — attempt without the solution</h2>
+<h3 id="15t1">15.T1</h3>
+<p>If the baseline is multiplied by 1000 but disparity and focal length are unchanged, what happens to reconstructed depth?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>Depth is multiplied by 1000. The unit of depth follows the baseline; this error can preserve relative shape while ruining metric scale.</p>
+</details>
+<h3 id="15t2">15.T2</h3>
+<p>Why does a local Gaussian perturbation experiment not characterize gross correspondence failures?</p>
+<details><summary>Reveal reasoning after your attempt</summary>
+<p>It perturbs values near a reference match under an imposed distribution. Incorrect matches can have large, structured, non-Gaussian errors and require direct algorithm evaluation.</p>
+</details>
+<h2 id="record-what-you-actually-demonstrated">Record what you actually demonstrated</h2>
+<p>Copy <a href="../curriculum/response_templates/15_response.md.html">the response template</a> to a new dated file in <code>my_work/</code>. Explain each output, attempt the two transfer questions, and complete the original independent coding tasks. A passed reference notebook is not a mastery score. The four outcomes above are assessed by explanation, calculation, implementation and critique; delayed recall remains a separate check.</p>
+<p><strong>References:</strong> The original stage's reading assignments remain authoritative for that stage. See <a href="../docs/SOURCES.md.html">the core source ledger</a>, <a href="../docs/SOURCES_V3.md.html">the geometry source ledger</a>, and <a href="../docs/SOURCES_V4.md.html">the v4 source and scope ledger</a>. The worked calculations and these questions are original course additions; theorem proof obligations remain explicit in the proof atlases.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

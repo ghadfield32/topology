@@ -1,0 +1,14 @@
+{
+  "sample_id": 8,
+  "foreground_rule": "intensity >= 8",
+  "object": "union of closed square cells",
+  "corner_touching_connected": true,
+  "betti": [
+    1,
+    2
+  ],
+  "claim": "One thresholded image, not an ideal numeral.",
+  "stage": 5,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real training digit foreground; exact ring and diagonal-pair controls."
+}

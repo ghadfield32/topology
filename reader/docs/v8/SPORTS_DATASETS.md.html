@@ -1,0 +1,156 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Modern sports dataset guide · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v8/SPORTS_DATASETS.md">docs/v8/SPORTS_DATASETS.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="modern-sports-dataset-guide">Modern sports dataset guide</h1>
+<p>Checked against primary documentation on <strong>2026-09-21</strong>. Release dates, collection
+periods and our access date are distinct. Modernity is not a license or an accuracy
+guarantee. Choose evidence that can answer your question, not the largest download.
+The two bundled numeric excerpts are explicitly transcribed; other entries are
+<strong>acquisition and study plans</strong>, not executed benchmarks.</p>
+<p>For a beginner, work S00–S02 on the small basketball excerpt and S03–S05 on
+profile data. Choose a full dataset only after its independent unit, clock, units,
+labels, license and baseline are written down.</p>
+<h2 id="spl-open-data-free-throws">SPL Open Data free throws</h2>
+<p><strong>Date:</strong> Documentation March 2026; recent collection 2025-12-18</p>
+<p><strong>Sport:</strong> Basketball</p>
+<p><strong>Evidence:</strong> Markerless 3D estimates and shot outcomes</p>
+<p><strong>What was actually done:</strong> 12 selected frames bundled and executed; full release not downloaded</p>
+<p><strong>Rights/access:</strong> CC BY-NC-SA 4.0</p>
+<p><strong>Release scope and storage:</strong> Selected source trial 2,385,805 bytes; release 583 trials across two sessions</p>
+<p><strong>Units and annotations:</strong> xyz feet; hoop outcome inches; angle degrees; recent session 60 fps</p>
+<p><strong>First experiment:</strong> Unit/clock checks, landmark angles, fixed-gravity versus free quadratic</p>
+<p><strong>Split design:</strong> Athlete/session/trial; stable athlete IDs across sessions</p>
+<p><strong>Evaluation:</strong> Held-out trajectory errors with reference type; missingness; timing uncertainty</p>
+<p><strong>Failure modes:</strong> One selected trial cannot test prediction; no verified release label; noisy volume boundaries.</p>
+<p>Primary source: <a href="https://github.com/Sport-Performance-Lab/SPL-Open-Data">https://github.com/Sport-Performance-Lab/SPL-Open-Data</a></p>
+<h2 id="skillcorner-open-data--body-pose">SkillCorner Open Data / body pose</h2>
+<p><strong>Date:</strong> 2024/2025 A-League season; current documentation inspected 2026-09-21</p>
+<p><strong>Sport:</strong> Soccer</p>
+<p><strong>Evidence:</strong> Broadcast-derived XY, physical profiles and model-estimated 3D pose</p>
+<p><strong>What was actually done:</strong> 12 profile rows bundled; full tracking/pose unexecuted</p>
+<p><strong>Rights/access:</strong> MIT repository license; inspect dataset-specific hosting terms</p>
+<p><strong>Release scope and storage:</strong> 10 sample matches; XY example 97 MB; full pose approximately 3.3 GB per match</p>
+<p><strong>Units and annotations:</strong> XY metres at 10 fps; pose 29 joints at 25 fps; predicted error cm</p>
+<p><strong>First experiment:</strong> Constant-velocity tracks and detected-only coverage before learned models</p>
+<p><strong>Split design:</strong> Match first, then independent teams/venues as required; player groups for profiles</p>
+<p><strong>Evaluation:</strong> Localization/identity errors, observed-versus-extrapolated coverage; temporal alignment</p>
+<p><strong>Failure modes:</strong> Pose relative z may differ from global pitch z; XY interpolated to 25 fps is not 25 Hz independent XY measurement; full payloads need Git LFS/HF.</p>
+<p>Primary source: <a href="https://github.com/SkillCorner/opendata">https://github.com/SkillCorner/opendata</a></p>
+<h2 id="baskethar">BasketHAR</h2>
+<p><strong>Date:</strong> Paper submitted 2026-04-18</p>
+<p><strong>Sport:</strong> Basketball training</p>
+<p><strong>Evidence:</strong> Wearable/IMU signals with synchronized video</p>
+<p><strong>What was actually done:</strong> Primary paper inspected; hosted data not retrieved; not bundled</p>
+<p><strong>Rights/access:</strong> Paper states Apache 2.0; verify actual hosted artifact license before acquisition</p>
+<p><strong>Release scope and storage:</strong> Not verified; inspect hosting file inventory before download</p>
+<p><strong>Units and annotations:</strong> Per-sensor units, clock offsets, rate and calibration must be read from release; not guessed</p>
+<p><strong>First experiment:</strong> Window statistics with subject-grouped evaluation; compare each modality</p>
+<p><strong>Split design:</strong> Subject/session; keep synchronized windows and overlaps together</p>
+<p><strong>Evaluation:</strong> Macro F1, balanced accuracy, latency and sensor failure sensitivity</p>
+<p><strong>Failure modes:</strong> Paper claims are not reproduced; synchronization and labels must be verified before fusion.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2604.17065">https://arxiv.org/abs/2604.17065</a></p>
+<p>Linked hosting: <a href="https://huggingface.co/datasets/Xian-Gao/BasketHAR">https://huggingface.co/datasets/Xian-Gao/BasketHAR</a></p>
+<h2 id="muvs">MUVS</h2>
+<p><strong>Date:</strong> Zenodo v1.0 published 2026-06-15</p>
+<p><strong>Sport:</strong> Basketball, soccer, hockey, volleyball</p>
+<p><strong>Evidence:</strong> Real handheld multiview videos and device sensors</p>
+<p><strong>What was actually done:</strong> Repository record/README inspected; video and sensor payloads not downloaded</p>
+<p><strong>Rights/access:</strong> License field not resolved in rendered record; obtain explicit release/media terms before redistribution</p>
+<p><strong>Release scope and storage:</strong> 17 events; 5,039 three-second fragments; 258 period videos; 9.8 MB record files exclude hosted video payload</p>
+<p><strong>Units and annotations:</strong> Video/sensor clocks and device frames require manifest; camera-selection labels are not 3D ground truth</p>
+<p><strong>First experiment:</strong> Timestamp audit and simple camera-selection policy before learned reconstruction</p>
+<p><strong>Split design:</strong> Whole event across all views; independent venues/devices when possible</p>
+<p><strong>Evaluation:</strong> Selection agreement, synchronization residuals; separate independently measured geometry checks</p>
+<p><strong>Failure modes:</strong> Do not equate synchronized views or sensor records with metrically calibrated cameras.</p>
+<p>Primary source: <a href="https://zenodo.org/records/20708683">https://zenodo.org/records/20708683</a></p>
+<h2 id="uvy--uvy-track">UVY / UVY-Track</h2>
+<p><strong>Date:</strong> Zenodo v1 published 2026-07-11</p>
+<p><strong>Sport:</strong> Seven sports including basketball, soccer, tennis and cricket</p>
+<p><strong>Evidence:</strong> User-generated video with multi-object tracking labels</p>
+<p><strong>What was actually done:</strong> Record inspected; payload not downloaded</p>
+<p><strong>Rights/access:</strong> Provider says source videos CC BY; record license field not fully rendered; verify per-video and annotation terms</p>
+<p><strong>Release scope and storage:</strong> 20 videos; 31,961 annotated frames; 128,258 boxes; 378 tracks; 3.3 GB ZIP</p>
+<p><strong>Units and annotations:</strong> Pixel boxes and track IDs, not calibrated 3D metres</p>
+<p><strong>First experiment:</strong> Detector plus tracker, compare with supplied labels</p>
+<p><strong>Split design:</strong> Video/event/uploader context; never adjacent-frame random split</p>
+<p><strong>Evaluation:</strong> HOTA/IDF1 plus detection recall and occlusion breakdown</p>
+<p><strong>Failure modes:</strong> Semi-automatic annotations with manual review remain reference labels, not perfect physical truth; UVY and MUVS are different.</p>
+<p>Primary source: <a href="https://zenodo.org/records/21303900">https://zenodo.org/records/21303900</a></p>
+<h2 id="trackid3x3">TrackID3x3</h2>
+<p><strong>Date:</strong> 2025 paper/repository; current README inspected 2026-09-21</p>
+<p><strong>Sport:</strong> 3x3 basketball</p>
+<p><strong>Evidence:</strong> Indoor/outdoor fixed-camera and drone video with tracks and partial pose labels</p>
+<p><strong>What was actually done:</strong> Official repository inspected; linked video not downloaded</p>
+<p><strong>Rights/access:</strong> Dataset CC BY 4.0; original code Apache 2.0; third-party jersey pipeline CC BY-NC 3.0</p>
+<p><strong>Release scope and storage:</strong> Inspect linked file inventory; no size invented here</p>
+<p><strong>Units and annotations:</strong> Six on-court players; boxes all frames; ten pose keypoints some frames; metric mapping needs court calibration</p>
+<p><strong>First experiment:</strong> Tracking/identification baseline with manual court localization separated from learned steps</p>
+<p><strong>Split design:</strong> Sequence/camera/event; cross-view leakage audit</p>
+<p><strong>Evaluation:</strong> TI-HOTA/identity and court localization, conditioned on visibility</p>
+<p><strong>Failure modes:</strong> Partial pose coverage is not complete 3D mocap; code/weights/data licenses differ.</p>
+<p>Primary source: <a href="https://github.com/open-starlab/TrackID3x3">https://github.com/open-starlab/TrackID3x3</a></p>
+<h2 id="soccertrack-v2">SoccerTrack v2</h2>
+<p><strong>Date:</strong> Paper submitted 2025-08-03</p>
+<p><strong>Sport:</strong> Soccer</p>
+<p><strong>Evidence:</strong> Full-pitch panoramic 4K match video with reconstruction and ball-action labels</p>
+<p><strong>What was actually done:</strong> Primary paper inspected; payload not downloaded</p>
+<p><strong>Rights/access:</strong> Dataset license not verified from abstract; inspect linked host before acquisition</p>
+<p><strong>Release scope and storage:</strong> 10 full-length university matches; storage budget not verified</p>
+<p><strong>Units and annotations:</strong> Annotated 2D pitch positions, jersey IDs, roles, teams; 12 ball-action classes</p>
+<p><strong>First experiment:</strong> Annotated positions to team-shape descriptors; simple temporal action baseline</p>
+<p><strong>Split design:</strong> Match/venue, retaining all views and contiguous windows in one group</p>
+<p><strong>Evaluation:</strong> Tracking/reconstruction accuracy and event timing/matching under official protocol</p>
+<p><strong>Failure modes:</strong> 2D pitch labels do not provide airborne metric ball/player height.</p>
+<p>Primary source: <a href="https://arxiv.org/abs/2508.01802">https://arxiv.org/abs/2508.01802</a></p>
+<h2 id="soccernet-game-state-reconstruction">SoccerNet Game State Reconstruction</h2>
+<p><strong>Date:</strong> Task page checked 2026-09-21; page retains historical 2024 challenge placeholder</p>
+<p><strong>Sport:</strong> Soccer</p>
+<p><strong>Evidence:</strong> Broadcast reconstruction benchmark</p>
+<p><strong>What was actually done:</strong> Official task description inspected; media not downloaded</p>
+<p><strong>Rights/access:</strong> Review current task data/media access agreement; not assumed permissive</p>
+<p><strong>Release scope and storage:</strong> Page lists 57 train, 59 validation, 50 test clips of 30 seconds at 1080p</p>
+<p><strong>Units and annotations:</strong> On-field coordinates, roles, teams and jersey IDs; see official coordinate specification</p>
+<p><strong>First experiment:</strong> Official development kit and a simple calibrated tracking baseline</p>
+<p><strong>Split design:</strong> Official partitions; prohibit tuning on test results</p>
+<p><strong>Evaluation:</strong> Official GS-HOTA, plus error breakdowns</p>
+<p><strong>Failure modes:</strong> Page includes an unresolved challenge count; not presented as verified 2026 challenge statistics.</p>
+<p>Primary source: <a href="https://www.soccer-net.org/tasks/game-state-reconstruction">https://www.soccer-net.org/tasks/game-state-reconstruction</a></p>
+<h2 id="openbiomechanics">OpenBiomechanics</h2>
+<p><strong>Date:</strong> Current repository documents 2026-07-04 history rewrite and release-based distribution</p>
+<p><strong>Sport:</strong> Baseball pitching/hitting and physical assessment</p>
+<p><strong>Evidence:</strong> C3D motion capture, processed signals, POI and force-plate assessments</p>
+<p><strong>What was actually done:</strong> Current official README/license wording inspected; data not bundled</p>
+<p><strong>Rights/access:</strong> Data/documentation CC BY-NC-SA 4.0 with additional professional-sports/financial-firm exclusion; code MIT</p>
+<p><strong>Release scope and storage:</strong> 411 pitching trials/100 athletes; 677 swing trials/98 athletes; 1,934 assessments/1,162 athletes; approximately 1.1 GB large release compressed</p>
+<p><strong>Units and annotations:</strong> Per-column dictionaries; marker signals 360 Hz and force plates 1,080 Hz; POI units vary</p>
+<p><strong>First experiment:</strong> Validated ID joins and conventional biomechanics before topological descriptors</p>
+<p><strong>Split design:</strong> Athlete/session; session_pitch or session_swing joins; no unsupported cross-module person linkage</p>
+<p><strong>Evaluation:</strong> Signal reconstruction or target-specific held-out errors; not injury prediction without injury labels</p>
+<p><strong>Failure modes:</strong> Current download path differs from old clones. Additional license restriction is material; no commercial/pro-team permission is granted here.</p>
+<p>Primary source: <a href="https://github.com/drivelineresearch/openbiomechanics">https://github.com/drivelineresearch/openbiomechanics</a></p>
+<h2 id="basket-multiview">BASKET-Multiview</h2>
+<p><strong>Date:</strong> Current official dataset page inspected 2026-09-21; release date not asserted</p>
+<p><strong>Sport:</strong> Basketball</p>
+<p><strong>Evidence:</strong> SYNTHETIC Unreal Engine scenes</p>
+<p><strong>What was actually done:</strong> Official description inspected; render payload not downloaded</p>
+<p><strong>Rights/access:</strong> Inspect dataset license and any SMPL/asset restrictions separately</p>
+<p><strong>Release scope and storage:</strong> 1080p/4K renders at 30 fps; choose bounded scene/camera subset</p>
+<p><strong>Units and annotations:</strong> Simulator camera parameters, depth, segmentation, normals and meshes; verify coordinate conventions</p>
+<p><strong>First experiment:</strong> Known-camera triangulation and reconstruction checks</p>
+<p><strong>Split design:</strong> Scene/play/actor/camera, not adjacent rendered frames</p>
+<p><strong>Evaluation:</strong> Errors against simulator truth plus separate real-data transfer evaluation</p>
+<p><strong>Failure modes:</strong> Excellent known-answer controls do not validate real-world camera calibration or athlete dynamics.</p>
+<p>Primary source: <a href="https://humansensinglab.github.io/basket-multiview/data.html">https://humansensinglab.github.io/basket-multiview/data.html</a></p>
+<h2 id="a-bounded-acquisition-checklist">A bounded acquisition checklist</h2>
+<p>Read the actual release/card/license and choose one dataset version. Record the
+SHA/DOI, collection dates, byte sizes, checksums and expected file schema. Estimate
+storage before accepting full archives; body-pose JSON and video can be gigabytes.
+Use a separate environment for third-party models and review their scripts before
+execution. Never paste credentials into a notebook or bundle them in this archive.
+Validate one small file, then IDs, clocks and units, then one sequence. Detect Git
+LFS pointer text before parsing it as data. Quarantine a mismatch; do not silently
+refresh the reference hash to make verification pass.</p>
+<p>For full sports data, keep match/athlete/session/video identities through every
+transformation. Preserve source/derived status and availability timestamps. Record
+selection and exclusion counts. Pin full-source training/validation/test manifests
+before tuning. Display uncertainty and rejected frames rather than implying every
+model output is measured truth. The current sports examples intentionally do not
+report predictive accuracy from one basketball trial or twelve soccer profiles.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

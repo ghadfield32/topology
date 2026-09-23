@@ -1,0 +1,9 @@
+{
+  "dataset": "modechoice",
+  "seed": 20260920,
+  "data_sha256": "be6deb2170ab4c0b4a09319308ec6098a07a1f9ef4418380cfc7bcc6331c3556",
+  "code_sha256": "bd09db4e9f52278d9c459a9b1c27ac2950f28441d113c387a3a9d52e9b260899",
+  "data_kind": "observed",
+  "evaluation": "fixed teaching experiment; displayed test outcomes are now exposed",
+  "external_validation": false
+}

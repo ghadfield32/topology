@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R02 — Projections, characteristic functions, and SIGReg · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../representations/notebooks/r02.ipynb">representations/notebooks/r02.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="r02--projections-characteristic-functions-and-sigreg">R02 — Projections, characteristic functions, and SIGReg</h1>
+<p>Read the single primary lesson before this lab. Predict each result. Numerical correctness is not independent mastery. See <code>representations/SOURCE_AUDIT.md</code> for provenance.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from pathlib import Path
+import sys, json
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+here = Path.cwd().resolve()
+ROOT = next((p for p in [here, *here.parents] if (p / &#x27;src/shape_lab&#x27;).is_dir()), None)
+if ROOT is None:
+    raise RuntimeError(&#x27;Open this notebook within the extracted course project.&#x27;)
+sys.path.insert(0, str(ROOT / &#x27;src&#x27;))
+from shape_lab import representations as r
+from shape_lab import representation_experiments as exp
+print(&#x27;Course source:&#x27;, ROOT)
+</code></pre><div class="output"><pre>Course source: /tmp/shape-course-q90rdcpz/course
+</pre></div></section><h2 id="calculate-a-characteristic-function-using-only-trigonometric-averages">Calculate a characteristic function using only trigonometric averages.</h2>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>t = np.linspace(-5,5,101)
+cf = r.empirical_cf(np.array([-1.,1.]), t)
+assert np.allclose(cf.real, np.cos(t)) and np.allclose(cf.imag, 0)
+plt.figure(figsize=(7,4)); plt.plot(t, cf.real, label=&#x27;Two-point sample ECF&#x27;); plt.plot(t,np.exp(-t*t/2),label=&#x27;Standard Gaussian target&#x27;); plt.xlabel(&#x27;Frequency t&#x27;); plt.ylabel(&#x27;Real characteristic function&#x27;); plt.legend(); plt.tight_layout(); plt.show()</code></pre><div class="output"><pre>/tmp/ipykernel_6857/1668305131.py:4: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.figure(figsize=(7,4)); plt.plot(t, cf.real, label=&#x27;Two-point sample ECF&#x27;); plt.plot(t,np.exp(-t*t/2),label=&#x27;Standard Gaussian target&#x27;); plt.xlabel(&#x27;Frequency t&#x27;); plt.ylabel(&#x27;Real characteristic function&#x27;); plt.legend(); plt.tight_layout(); plt.show()
+</pre></div></section><h2 id="compare-a-numerical-integral-with-a-separate-analytic-formula">Compare a numerical integral with a separate analytic formula.</h2>
+<section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>result = exp.projection_lab()
+print(json.dumps(result, indent=2))
+assert abs(result[&#x27;quadrature&#x27;][&#x27;1025&#x27;]-result[&#x27;exact_integral&#x27;]) &lt; 1e-8
+assert result[&#x27;flat_second_axis&#x27;] &gt; result[&#x27;flat_first_axis&#x27;]</code></pre><div class="output"><pre>{
+  &quot;manufactured_controls&quot;: true,
+  &quot;exact_integral&quot;: 0.7472058553043581,
+  &quot;quadrature&quot;: {
+    &quot;17&quot;: 0.9265874148547769,
+    &quot;65&quot;: 0.7472058553043583,
+    &quot;257&quot;: 0.7472058553043583,
+    &quot;1025&quot;: 0.7472058553043586
+  },
+  &quot;flat_first_axis&quot;: 1.3032128573863067,
+  &quot;flat_second_axis&quot;: 104.68370437489199,
+  &quot;seed_scores&quot;: {
+    &quot;0&quot;: 3.9178343127070687,
+    &quot;1&quot;: 3.0670655161721685,
+    &quot;2&quot;: 3.118834627063907,
+    &quot;3&quot;: 3.2029740637918547
+  },
+  &quot;interpretation&quot;: &quot;Quadrature, slice selection and sample variation are separate errors; none of these scores is a p-value.&quot;,
+  &quot;real_digits_pca&quot;: {
+    &quot;n&quot;: 1077,
+    &quot;dimension&quot;: 8,
+    &quot;mean_norm&quot;: 8.114179737808513e-17,
+    &quot;mean_coordinate_std&quot;: 0.6103773912499599,
+    &quot;covariance_identity_frobenius&quot;: 1.7945465105581186,
+    &quot;effective_rank&quot;: 7.0837876783380205
+  },
+  &quot;real_digits_sample_count&quot;: 1077
+}
+</pre></div></section><h2 id="treat-projection-seed-as-an-experimental-variable-not-an-unrecorded-implementation-detail">Treat projection seed as an experimental variable, not an unrecorded implementation detail.</h2>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>rng=np.random.default_rng(5); z=rng.normal(size=(64,8))
+values=[r.projected_gaussian_score(z,r.unit_directions(8,16,s)) for s in range(10)]
+plt.figure(figsize=(7,4)); plt.plot(range(10),values,marker=&#x27;o&#x27;); plt.xlabel(&#x27;Direction seed&#x27;); plt.ylabel(&#x27;Finite projected score&#x27;); plt.title(&#x27;Same observations, different finite sketches&#x27;); plt.tight_layout(); plt.show()</code></pre><div class="output"><pre>/tmp/ipykernel_6857/243868236.py:3: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.figure(figsize=(7,4)); plt.plot(range(10),values,marker=&#x27;o&#x27;); plt.xlabel(&#x27;Direction seed&#x27;); plt.ylabel(&#x27;Finite projected score&#x27;); plt.title(&#x27;Same observations, different finite sketches&#x27;); plt.tight_layout(); plt.show()
+</pre></div></section><h2 id="your-evidence">Your evidence</h2>
+<p>Record: observation unit; assumptions; prediction; calculated result; difference from your prediction; and one unsupported conclusion. Attempt the separate learner notebook before opening the reference solutions.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,18 @@
+{
+  "release": "12.0.0",
+  "uv_diagnostic": "passed using explicitly inherited dependencies",
+  "fresh_uv_install": "blocked by package-index DNS failure",
+  "genuine_uv_lock_present": false,
+  "docker_runtime": "blocked: no Docker CLI/engine",
+  "kubernetes_static": "passed project policy; not server validation",
+  "kubernetes_live": "blocked: no docker/kubectl/kind",
+  "native_nonroot_readonly": "passed tests + Stage 00",
+  "uv_lock": {
+    "status": "blocked",
+    "reason": "Actual uv resolver failed on package-index DNS; no uv.lock supplied."
+  },
+  "docker_build": {
+    "status": "blocked",
+    "reason": "Docker CLI/engine unavailable; no image build executed."
+  }
+}

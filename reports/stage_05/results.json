@@ -1,0 +1,45 @@
+{
+  "exact_examples": {
+    "triangle_boundary": {
+      "counts_by_dimension": [
+        3,
+        3,
+        0,
+        0
+      ],
+      "euler": 0
+    },
+    "filled_triangle": {
+      "counts_by_dimension": [
+        3,
+        3,
+        1,
+        0
+      ],
+      "euler": 1
+    },
+    "tetrahedron_boundary": {
+      "counts_by_dimension": [
+        4,
+        6,
+        4,
+        0
+      ],
+      "euler": 2
+    },
+    "solid_tetrahedron": {
+      "counts_by_dimension": [
+        4,
+        6,
+        4,
+        1
+      ],
+      "euler": 1
+    }
+  },
+  "real_sample_id": 0,
+  "threshold": 0.5,
+  "simplex_count": 172,
+  "euler": 0,
+  "connectivity": "Closed squares; corner contact connects."
+}

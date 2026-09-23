@@ -1,0 +1,14 @@
+{
+  "status": "PASSED_RENDER_AND_INTERACTION",
+  "checks": [
+    "Home: 21 stage cards and 63-reference count",
+    "Transfer: filter 42 cards and reveal one answer",
+    "Delayed recall: 63 cards",
+    "New real-data notebook figure loads from embedded output",
+    "Home, homology session and transfer page fit 390px viewport"
+  ],
+  "method": "Chromium actual course HTML; CSS inlined for render-only fallback",
+  "navigation": "not_verified_fallback_to_render_only",
+  "navigation_limitation": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/shape_v4_build/listening_to_shape_lab/START_HERE.html\nCall log:\n  - navigating to \"file:///mnt/data/shape_v4_build/listening_to_shape_lab/START_HERE.html\", waiting until \"load\"\n",
+  "page_errors": []
+}

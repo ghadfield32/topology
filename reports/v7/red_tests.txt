@@ -1,0 +1,1049 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF.                               [100%]
+=================================== FAILURES ===================================
+____________ test_numeric_fingerprint_ignores_formatting_not_values ____________
+
+    def test_numeric_fingerprint_ignores_formatting_not_values():
+>       m=engine()
+          ^^^^^^^^
+
+tests/test_evidence_v7.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_bad_numeric_tables_rejected[rows0] ____________________
+
+rows = []
+
+    @pytest.mark.parametrize('rows',[[],[[]],[[1,2],[3]],[[1,float('nan')]],[[1,float('inf')]],[[1,'hello']]])
+    def test_bad_numeric_tables_rejected(rows):
+>       with pytest.raises(ValueError):engine().numeric_digest(rows)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_bad_numeric_tables_rejected[rows1] ____________________
+
+rows = [[]]
+
+    @pytest.mark.parametrize('rows',[[],[[]],[[1,2],[3]],[[1,float('nan')]],[[1,float('inf')]],[[1,'hello']]])
+    def test_bad_numeric_tables_rejected(rows):
+>       with pytest.raises(ValueError):engine().numeric_digest(rows)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_bad_numeric_tables_rejected[rows2] ____________________
+
+rows = [[1, 2], [3]]
+
+    @pytest.mark.parametrize('rows',[[],[[]],[[1,2],[3]],[[1,float('nan')]],[[1,float('inf')]],[[1,'hello']]])
+    def test_bad_numeric_tables_rejected(rows):
+>       with pytest.raises(ValueError):engine().numeric_digest(rows)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_bad_numeric_tables_rejected[rows3] ____________________
+
+rows = [[1, nan]]
+
+    @pytest.mark.parametrize('rows',[[],[[]],[[1,2],[3]],[[1,float('nan')]],[[1,float('inf')]],[[1,'hello']]])
+    def test_bad_numeric_tables_rejected(rows):
+>       with pytest.raises(ValueError):engine().numeric_digest(rows)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_bad_numeric_tables_rejected[rows4] ____________________
+
+rows = [[1, inf]]
+
+    @pytest.mark.parametrize('rows',[[],[[]],[[1,2],[3]],[[1,float('nan')]],[[1,float('inf')]],[[1,'hello']]])
+    def test_bad_numeric_tables_rejected(rows):
+>       with pytest.raises(ValueError):engine().numeric_digest(rows)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_bad_numeric_tables_rejected[rows5] ____________________
+
+rows = [[1, 'hello']]
+
+    @pytest.mark.parametrize('rows',[[],[[]],[[1,2],[3]],[[1,float('nan')]],[[1,float('inf')]],[[1,'hello']]])
+    def test_bad_numeric_tables_rejected(rows):
+>       with pytest.raises(ValueError):engine().numeric_digest(rows)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+_____________________ test_finite_sample_ceiling[9-0.1-9] ______________________
+
+n = 9, alpha = 0.1, k = 9
+
+    @pytest.mark.parametrize('n,alpha,k',[(9,.1,9),(10,.1,10),(3,.25,3),(3,.1,4),(20,.05,20),(1,.1,2)])
+    def test_finite_sample_ceiling(n,alpha,k):
+>       assert engine().conformal_rank(n,alpha)==k
+               ^^^^^^^^
+
+tests/test_evidence_v7.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_finite_sample_ceiling[10-0.1-10] _____________________
+
+n = 10, alpha = 0.1, k = 10
+
+    @pytest.mark.parametrize('n,alpha,k',[(9,.1,9),(10,.1,10),(3,.25,3),(3,.1,4),(20,.05,20),(1,.1,2)])
+    def test_finite_sample_ceiling(n,alpha,k):
+>       assert engine().conformal_rank(n,alpha)==k
+               ^^^^^^^^
+
+tests/test_evidence_v7.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+_____________________ test_finite_sample_ceiling[3-0.25-3] _____________________
+
+n = 3, alpha = 0.25, k = 3
+
+    @pytest.mark.parametrize('n,alpha,k',[(9,.1,9),(10,.1,10),(3,.25,3),(3,.1,4),(20,.05,20),(1,.1,2)])
+    def test_finite_sample_ceiling(n,alpha,k):
+>       assert engine().conformal_rank(n,alpha)==k
+               ^^^^^^^^
+
+tests/test_evidence_v7.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+_____________________ test_finite_sample_ceiling[3-0.1-4] ______________________
+
+n = 3, alpha = 0.1, k = 4
+
+    @pytest.mark.parametrize('n,alpha,k',[(9,.1,9),(10,.1,10),(3,.25,3),(3,.1,4),(20,.05,20),(1,.1,2)])
+    def test_finite_sample_ceiling(n,alpha,k):
+>       assert engine().conformal_rank(n,alpha)==k
+               ^^^^^^^^
+
+tests/test_evidence_v7.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_finite_sample_ceiling[20-0.05-20] ____________________
+
+n = 20, alpha = 0.05, k = 20
+
+    @pytest.mark.parametrize('n,alpha,k',[(9,.1,9),(10,.1,10),(3,.25,3),(3,.1,4),(20,.05,20),(1,.1,2)])
+    def test_finite_sample_ceiling(n,alpha,k):
+>       assert engine().conformal_rank(n,alpha)==k
+               ^^^^^^^^
+
+tests/test_evidence_v7.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+_____________________ test_finite_sample_ceiling[1-0.1-2] ______________________
+
+n = 1, alpha = 0.1, k = 2
+
+    @pytest.mark.parametrize('n,alpha,k',[(9,.1,9),(10,.1,10),(3,.25,3),(3,.1,4),(20,.05,20),(1,.1,2)])
+    def test_finite_sample_ceiling(n,alpha,k):
+>       assert engine().conformal_rank(n,alpha)==k
+               ^^^^^^^^
+
+tests/test_evidence_v7.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+_______________ test_radius_uses_rank_not_interpolated_quantile ________________
+
+    def test_radius_uses_rank_not_interpolated_quantile():
+>       m=engine()
+          ^^^^^^^^
+
+tests/test_evidence_v7.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+________________ test_invalid_calibration_rejected[scores0-0.1] ________________
+
+scores = [], alpha = 0.1
+
+    @pytest.mark.parametrize('scores,alpha',[([], .1),([-1,2],.1),([1,np.nan],.1),([1,np.inf],.1),([1,2],0),([1,2],1),([1,2],np.nan),([[1,2]],.1)])
+    def test_invalid_calibration_rejected(scores,alpha):
+>       with pytest.raises(ValueError):engine().conformal_radius(scores,alpha)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+________________ test_invalid_calibration_rejected[scores1-0.1] ________________
+
+scores = [-1, 2], alpha = 0.1
+
+    @pytest.mark.parametrize('scores,alpha',[([], .1),([-1,2],.1),([1,np.nan],.1),([1,np.inf],.1),([1,2],0),([1,2],1),([1,2],np.nan),([[1,2]],.1)])
+    def test_invalid_calibration_rejected(scores,alpha):
+>       with pytest.raises(ValueError):engine().conformal_radius(scores,alpha)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+________________ test_invalid_calibration_rejected[scores2-0.1] ________________
+
+scores = [1, nan], alpha = 0.1
+
+    @pytest.mark.parametrize('scores,alpha',[([], .1),([-1,2],.1),([1,np.nan],.1),([1,np.inf],.1),([1,2],0),([1,2],1),([1,2],np.nan),([[1,2]],.1)])
+    def test_invalid_calibration_rejected(scores,alpha):
+>       with pytest.raises(ValueError):engine().conformal_radius(scores,alpha)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+________________ test_invalid_calibration_rejected[scores3-0.1] ________________
+
+scores = [1, inf], alpha = 0.1
+
+    @pytest.mark.parametrize('scores,alpha',[([], .1),([-1,2],.1),([1,np.nan],.1),([1,np.inf],.1),([1,2],0),([1,2],1),([1,2],np.nan),([[1,2]],.1)])
+    def test_invalid_calibration_rejected(scores,alpha):
+>       with pytest.raises(ValueError):engine().conformal_radius(scores,alpha)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+_________________ test_invalid_calibration_rejected[scores4-0] _________________
+
+scores = [1, 2], alpha = 0
+
+    @pytest.mark.parametrize('scores,alpha',[([], .1),([-1,2],.1),([1,np.nan],.1),([1,np.inf],.1),([1,2],0),([1,2],1),([1,2],np.nan),([[1,2]],.1)])
+    def test_invalid_calibration_rejected(scores,alpha):
+>       with pytest.raises(ValueError):engine().conformal_radius(scores,alpha)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+_________________ test_invalid_calibration_rejected[scores5-1] _________________
+
+scores = [1, 2], alpha = 1
+
+    @pytest.mark.parametrize('scores,alpha',[([], .1),([-1,2],.1),([1,np.nan],.1),([1,np.inf],.1),([1,2],0),([1,2],1),([1,2],np.nan),([[1,2]],.1)])
+    def test_invalid_calibration_rejected(scores,alpha):
+>       with pytest.raises(ValueError):engine().conformal_radius(scores,alpha)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+________________ test_invalid_calibration_rejected[scores6-nan] ________________
+
+scores = [1, 2], alpha = nan
+
+    @pytest.mark.parametrize('scores,alpha',[([], .1),([-1,2],.1),([1,np.nan],.1),([1,np.inf],.1),([1,2],0),([1,2],1),([1,2],np.nan),([[1,2]],.1)])
+    def test_invalid_calibration_rejected(scores,alpha):
+>       with pytest.raises(ValueError):engine().conformal_radius(scores,alpha)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+________________ test_invalid_calibration_rejected[scores7-0.1] ________________
+
+scores = [[1, 2]], alpha = 0.1
+
+    @pytest.mark.parametrize('scores,alpha',[([], .1),([-1,2],.1),([1,np.nan],.1),([1,np.inf],.1),([1,2],0),([1,2],1),([1,2],np.nan),([[1,2]],.1)])
+    def test_invalid_calibration_rejected(scores,alpha):
+>       with pytest.raises(ValueError):engine().conformal_radius(scores,alpha)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:33: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_bad_calibration_count_rejected[0] ____________________
+
+n = 0
+
+    @pytest.mark.parametrize('n',[0,-1,1.5,True])
+    def test_bad_calibration_count_rejected(n):
+>       with pytest.raises(ValueError):engine().conformal_rank(n,.1)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_bad_calibration_count_rejected[-1] ____________________
+
+n = -1
+
+    @pytest.mark.parametrize('n',[0,-1,1.5,True])
+    def test_bad_calibration_count_rejected(n):
+>       with pytest.raises(ValueError):engine().conformal_rank(n,.1)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_bad_calibration_count_rejected[1.5] ___________________
+
+n = 1.5
+
+    @pytest.mark.parametrize('n',[0,-1,1.5,True])
+    def test_bad_calibration_count_rejected(n):
+>       with pytest.raises(ValueError):engine().conformal_rank(n,.1)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+__________________ test_bad_calibration_count_rejected[True] ___________________
+
+n = True
+
+    @pytest.mark.parametrize('n',[0,-1,1.5,True])
+    def test_bad_calibration_count_rejected(n):
+>       with pytest.raises(ValueError):engine().conformal_rank(n,.1)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_interval_boundaries_are_inclusive ____________________
+
+    def test_interval_boundaries_are_inclusive():
+>       m=engine()
+          ^^^^^^^^
+
+tests/test_evidence_v7.py:40: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_invalid_interval_inputs[y0-p0-1] _____________________
+
+y = [], p = [], r = 1
+
+    @pytest.mark.parametrize('y,p,r',[([],[],1),([1],[1,2],1),([1],[1],-1),([np.nan],[1],1),([1],[1],np.nan)])
+    def test_invalid_interval_inputs(y,p,r):
+>       with pytest.raises(ValueError):engine().coverage(y,p,r)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_invalid_interval_inputs[y1-p1-1] _____________________
+
+y = [1], p = [1, 2], r = 1
+
+    @pytest.mark.parametrize('y,p,r',[([],[],1),([1],[1,2],1),([1],[1],-1),([np.nan],[1],1),([1],[1],np.nan)])
+    def test_invalid_interval_inputs(y,p,r):
+>       with pytest.raises(ValueError):engine().coverage(y,p,r)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_invalid_interval_inputs[y2-p2--1] ____________________
+
+y = [1], p = [1], r = -1
+
+    @pytest.mark.parametrize('y,p,r',[([],[],1),([1],[1,2],1),([1],[1],-1),([np.nan],[1],1),([1],[1],np.nan)])
+    def test_invalid_interval_inputs(y,p,r):
+>       with pytest.raises(ValueError):engine().coverage(y,p,r)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_invalid_interval_inputs[y3-p3-1] _____________________
+
+y = [nan], p = [1], r = 1
+
+    @pytest.mark.parametrize('y,p,r',[([],[],1),([1],[1,2],1),([1],[1],-1),([np.nan],[1],1),([1],[1],np.nan)])
+    def test_invalid_interval_inputs(y,p,r):
+>       with pytest.raises(ValueError):engine().coverage(y,p,r)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+___________________ test_invalid_interval_inputs[y4-p4-nan] ____________________
+
+y = [1], p = [1], r = nan
+
+    @pytest.mark.parametrize('y,p,r',[([],[],1),([1],[1,2],1),([1],[1],-1),([np.nan],[1],1),([1],[1],np.nan)])
+    def test_invalid_interval_inputs(y,p,r):
+>       with pytest.raises(ValueError):engine().coverage(y,p,r)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_row_disjoint_can_still_leak_units ____________________
+
+    def test_row_disjoint_can_still_leak_units():
+>       m=engine(); report=m.overlap_report({'train':[0,2],'test':[1,3]},['person_a','person_a','person_b','person_c'])
+          ^^^^^^^^
+
+tests/test_evidence_v7.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+________________ test_disjoint_and_overlapping_indices_reported ________________
+
+    def test_disjoint_and_overlapping_indices_reported():
+>       m=engine()
+          ^^^^^^^^
+
+tests/test_evidence_v7.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+__________________ test_invalid_split_contract[parts0-units0] __________________
+
+parts = {'test': [1], 'train': [5]}, units = ['a', 'b']
+
+    @pytest.mark.parametrize('parts,units',[({'train':[5],'test':[1]},['a','b']),({'train':[0.,.5],'test':[1]},['a','b']),({'train':[0,0],'test':[1]},['a','b']),({'train':[],'test':[1]},['a','b']),({'train':[0],'test':[1]},['a',None])])
+    def test_invalid_split_contract(parts,units):
+>       with pytest.raises(ValueError):engine().overlap_report(parts,units)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+__________________ test_invalid_split_contract[parts1-units1] __________________
+
+parts = {'test': [1], 'train': [0.0, 0.5]}, units = ['a', 'b']
+
+    @pytest.mark.parametrize('parts,units',[({'train':[5],'test':[1]},['a','b']),({'train':[0.,.5],'test':[1]},['a','b']),({'train':[0,0],'test':[1]},['a','b']),({'train':[],'test':[1]},['a','b']),({'train':[0],'test':[1]},['a',None])])
+    def test_invalid_split_contract(parts,units):
+>       with pytest.raises(ValueError):engine().overlap_report(parts,units)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+__________________ test_invalid_split_contract[parts2-units2] __________________
+
+parts = {'test': [1], 'train': [0, 0]}, units = ['a', 'b']
+
+    @pytest.mark.parametrize('parts,units',[({'train':[5],'test':[1]},['a','b']),({'train':[0.,.5],'test':[1]},['a','b']),({'train':[0,0],'test':[1]},['a','b']),({'train':[],'test':[1]},['a','b']),({'train':[0],'test':[1]},['a',None])])
+    def test_invalid_split_contract(parts,units):
+>       with pytest.raises(ValueError):engine().overlap_report(parts,units)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+__________________ test_invalid_split_contract[parts3-units3] __________________
+
+parts = {'test': [1], 'train': []}, units = ['a', 'b']
+
+    @pytest.mark.parametrize('parts,units',[({'train':[5],'test':[1]},['a','b']),({'train':[0.,.5],'test':[1]},['a','b']),({'train':[0,0],'test':[1]},['a','b']),({'train':[],'test':[1]},['a','b']),({'train':[0],'test':[1]},['a',None])])
+    def test_invalid_split_contract(parts,units):
+>       with pytest.raises(ValueError):engine().overlap_report(parts,units)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+__________________ test_invalid_split_contract[parts4-units4] __________________
+
+parts = {'test': [1], 'train': [0]}, units = ['a', None]
+
+    @pytest.mark.parametrize('parts,units',[({'train':[5],'test':[1]},['a','b']),({'train':[0.,.5],'test':[1]},['a','b']),({'train':[0,0],'test':[1]},['a','b']),({'train':[],'test':[1]},['a','b']),({'train':[0],'test':[1]},['a',None])])
+    def test_invalid_split_contract(parts,units):
+>       with pytest.raises(ValueError):engine().overlap_report(parts,units)
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_snapshot_schema_and_source_values ____________________
+
+    def test_snapshot_schema_and_source_values():
+>       m=engine();s,meta=m.load_snapshot('seeds')
+          ^^^^^^^^
+
+tests/test_evidence_v7.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+____________________ test_unknown_snapshot_is_not_replaced _____________________
+
+    def test_unknown_snapshot_is_not_replaced():
+>       with pytest.raises(ValueError):engine().load_snapshot('imaginary')
+                                       ^^^^^^^^
+
+tests/test_evidence_v7.py:74: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def engine():
+>       assert importlib.util.find_spec('shape_lab.evidence_v7') is not None, 'v7 evidence implementation is missing'
+E       AssertionError: v7 evidence implementation is missing
+E       assert None is not None
+E        +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+E        +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+E        +      where <module 'importlib.util' (frozen)> = importlib.util
+
+tests/test_evidence_v7.py:8: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_evidence_v7.py::test_numeric_fingerprint_ignores_formatting_not_values - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_numeric_tables_rejected[rows0] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_numeric_tables_rejected[rows1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_numeric_tables_rejected[rows2] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_numeric_tables_rejected[rows3] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_numeric_tables_rejected[rows4] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_numeric_tables_rejected[rows5] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_finite_sample_ceiling[9-0.1-9] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_finite_sample_ceiling[10-0.1-10] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_finite_sample_ceiling[3-0.25-3] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_finite_sample_ceiling[3-0.1-4] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_finite_sample_ceiling[20-0.05-20] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_finite_sample_ceiling[1-0.1-2] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_radius_uses_rank_not_interpolated_quantile - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_calibration_rejected[scores0-0.1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_calibration_rejected[scores1-0.1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_calibration_rejected[scores2-0.1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_calibration_rejected[scores3-0.1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_calibration_rejected[scores4-0] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_calibration_rejected[scores5-1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_calibration_rejected[scores6-nan] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_calibration_rejected[scores7-0.1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_calibration_count_rejected[0] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_calibration_count_rejected[-1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_calibration_count_rejected[1.5] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_bad_calibration_count_rejected[True] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_interval_boundaries_are_inclusive - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_interval_inputs[y0-p0-1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_interval_inputs[y1-p1-1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_interval_inputs[y2-p2--1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_interval_inputs[y3-p3-1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_interval_inputs[y4-p4-nan] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_row_disjoint_can_still_leak_units - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_disjoint_and_overlapping_indices_reported - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_split_contract[parts0-units0] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_split_contract[parts1-units1] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_split_contract[parts2-units2] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_split_contract[parts3-units3] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_invalid_split_contract[parts4-units4] - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_snapshot_schema_and_source_values - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+FAILED tests/test_evidence_v7.py::test_unknown_snapshot_is_not_replaced - AssertionError: v7 evidence implementation is missing
+assert None is not None
+ +  where None = <function find_spec at 0x7f66acc53b00>('shape_lab.evidence_v7')
+ +    where <function find_spec at 0x7f66acc53b00> = <module 'importlib.util' (frozen)>.find_spec
+ +      where <module 'importlib.util' (frozen)> = importlib.util
+41 failed, 1 passed in 0.29s

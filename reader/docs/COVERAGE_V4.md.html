@@ -1,0 +1,215 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage coverage and explicit outcomes — v4 · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../docs/COVERAGE_V4.md">docs/COVERAGE_V4.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-coverage-and-explicit-outcomes--v4">Stage coverage and explicit outcomes — v4</h1>
+<p>All 21 stages are preserved. These are original curriculum targets, not checked learner achievements. See <a href="COMPLETION_SYSTEM_V4.md.html">the learning policy</a>.</p>
+<h2 id="stage-00--start-here-how-to-learn-run-and-question-the-results">Stage 00 — Start here: how to learn, run, and question the results</h2>
+<p><strong>Focus:</strong> Read a measurement before calculating with it
+<strong>Prerequisites:</strong> none; use the beginner primers</p>
+<ol>
+<li>Identify one observation, one measured feature, one label, and a source identifier.</li>
+<li>Explain the two axes of a table and the three axes of an image collection.</li>
+<li>Produce a small descriptive result with explicit units and a reproducible row selection.</li>
+<li>Distinguish executing a reference solution from demonstrating your own understanding.</li>
+</ol>
+<p><a href="../sessions/00_session.md.html">Guided session</a> · <a href="../notebooks/00_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/00_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/00_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-01--mathematical-language-proofs-and-linear-algebra">Stage 01 — Mathematical language, proofs, and linear algebra</h2>
+<p><strong>Focus:</strong> Why the arithmetic system changes the answer
+<strong>Prerequisites:</strong> 00</p>
+<ol>
+<li>Translate a small matrix into a system of equations.</li>
+<li>Perform a row operation and explain why it preserves the solution set.</li>
+<li>Compare rank over the real numbers and over a prime field.</li>
+<li>Distinguish a numerical calculation on an image from a topological invariant.</li>
+</ol>
+<p><a href="../sessions/01_session.md.html">Guided session</a> · <a href="../notebooks/01_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/01_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/01_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-02--closeness-metrics-neighborhoods-and-topologies">Stage 02 — Closeness, metrics, neighborhoods, and topologies</h2>
+<p><strong>Focus:</strong> Separate units, distance, and topology
+<strong>Prerequisites:</strong> 01</p>
+<ol>
+<li>Check the metric axioms on an explicit counterexample.</li>
+<li>Explain why positive coordinate rescaling preserves Euclidean-space topology but changes distance scale.</li>
+<li>Compare nearest observations before and after a declared feature rescaling.</li>
+<li>State the difference between distinct locations and distinct observation IDs.</li>
+</ol>
+<p><a href="../sessions/02_session.md.html">Guided session</a> · <a href="../notebooks/02_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/02_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/02_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-03--continuity-homeomorphisms-connectedness-and-compactness">Stage 03 — Continuity, homeomorphisms, connectedness, and compactness</h2>
+<p><strong>Focus:</strong> A continuous map can discard the information you need
+<strong>Prerequisites:</strong> 02</p>
+<ol>
+<li>Use inverse images, rather than pictures alone, to define continuity.</li>
+<li>Distinguish a continuous bijection from a homeomorphism.</li>
+<li>Construct a projection that sends different inputs to the same output.</li>
+<li>Explain why a finite numerical check cannot prove an infinite-space theorem.</li>
+</ol>
+<p><a href="../sessions/03_session.md.html">Guided session</a> · <a href="../notebooks/03_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/03_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/03_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-04--groups-symmetries-paths-loops-and-homotopy">Stage 04 — Groups, symmetries, paths, loops, and homotopy</h2>
+<p><strong>Focus:</strong> Symmetry preserves some things, not everything
+<strong>Prerequisites:</strong> 03</p>
+<ol>
+<li>Calculate a rotation and reflection and show that their order can matter.</li>
+<li>Distinguish a group action from a label-preserving data augmentation assumption.</li>
+<li>Explain homotopy using an annulus and a circle.</li>
+<li>Identify what prevents a proposed deformation from being well defined.</li>
+</ol>
+<p><a href="../sessions/04_session.md.html">Guided session</a> · <a href="../notebooks/04_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/04_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/04_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-05--surfaces-simplices-triangulations-and-pixel-geometry">Stage 05 — Surfaces, simplices, triangulations, and pixel geometry</h2>
+<p><strong>Focus:</strong> Choose the object before counting its holes
+<strong>Prerequisites:</strong> 04</p>
+<ol>
+<li>Distinguish closed-square pixel geometry from a graph of pixel centers.</li>
+<li>Count vertices, edges, and faces of a small cell complex.</li>
+<li>Explain why diagonal touching connects closed squares.</li>
+<li>Declare the intensity threshold before interpreting a real image.</li>
+</ol>
+<p><a href="../sessions/05_session.md.html">Guided session</a> · <a href="../notebooks/05_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/05_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/05_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-06--chains-boundaries-homology-and-betti-numbers">Stage 06 — Chains, boundaries, homology, and Betti numbers</h2>
+<p><strong>Focus:</strong> Learn what coefficient fields reveal and forget
+<strong>Prerequisites:</strong> 05</p>
+<ol>
+<li>Construct an oriented integer boundary and check boundary-of-boundary.</li>
+<li>Calculate how a coefficient change affects a cellular boundary map.</li>
+<li>Independently verify image homology across multiple thresholds.</li>
+<li>Distinguish Betti numbers from full integer homology, including torsion.</li>
+</ol>
+<p><a href="../sessions/06_session.md.html">Guided session</a> · <a href="../notebooks/06_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/06_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/06_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-07--from-data-to-shape-rips-čech-alpha-and-filtrations">Stage 07 — From data to shape: Rips, Čech, alpha, and filtrations</h2>
+<p><strong>Focus:</strong> Understand why the same points give different complexes
+<strong>Prerequisites:</strong> 06</p>
+<ol>
+<li>Derive edge and face entry times from a declared filtration convention.</li>
+<li>Explain pairwise overlap versus a common intersection.</li>
+<li>Build a small Rips filtration and verify that faces appear no later than cofaces.</li>
+<li>Use a real point cloud without treating its label columns as geometry.</li>
+</ol>
+<p><a href="../sessions/07_session.md.html">Guided session</a> · <a href="../notebooks/07_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/07_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/07_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-08--persistent-homology-persistence-modules-and-reading-diagrams">Stage 08 — Persistent homology, persistence modules, and reading diagrams</h2>
+<p><strong>Focus:</strong> Read a barcode as a history, not a collection of scores
+<strong>Prerequisites:</strong> 07</p>
+<ol>
+<li>Derive the square filtration and its positive-length interval.</li>
+<li>Explain half-open interval endpoints and zero-length bars.</li>
+<li>Cross-check barcode Betti counts against thresholded real images.</li>
+<li>Distinguish an unpaired class in a truncated filtration from a globally essential class.</li>
+</ol>
+<p><a href="../sessions/08_session.md.html">Guided session</a> · <a href="../notebooks/08_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/08_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/08_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-09--implement-persistence-trace-the-algorithm-and-test-it-independently">Stage 09 — Implement persistence, trace the algorithm, and test it independently</h2>
+<p><strong>Focus:</strong> Verify persistence without trusting the same algorithm twice
+<strong>Prerequisites:</strong> 08</p>
+<ol>
+<li>Explain what a boundary-column pivot represents.</li>
+<li>Relate finite H0 death times to spanning-tree edge weights.</li>
+<li>Handle duplicate observations and zero-length intervals explicitly.</li>
+<li>State the dimension and scope actually checked by an independent oracle.</li>
+</ol>
+<p><a href="../sessions/09_session.md.html">Guided session</a> · <a href="../notebooks/09_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/09_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/09_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-10--stability-diagram-distances-noise-and-scientific-uncertainty">Stage 10 — Stability, diagram distances, noise, and scientific uncertainty</h2>
+<p><strong>Focus:</strong> A stability bound is not a discovery certificate
+<strong>Prerequisites:</strong> 09</p>
+<ol>
+<li>State the fixed-domain filtration assumptions behind the tested bound.</li>
+<li>Explain why a diagram point can match to the diagonal.</li>
+<li>Compute a bounded image perturbation and its diagram distance.</li>
+<li>Distinguish deterministic stability, statistical uncertainty, and scientific meaning.</li>
+</ol>
+<p><a href="../sessions/10_session.md.html">Guided session</a> · <a href="../notebooks/10_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/10_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/10_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-11--useful-representations-mapper-time-windows-and-honest-machine-learning">Stage 11 — Useful representations, Mapper, time windows, and honest machine learning</h2>
+<p><strong>Focus:</strong> Build a feature pipeline without seeing the answer
+<strong>Prerequisites:</strong> 10</p>
+<ol>
+<li>Distinguish fixed per-observation transformations from dataset-fitted preprocessing.</li>
+<li>Apply training-only scaling and identify where validation data may be used.</li>
+<li>Construct lagged features with their correct availability dates.</li>
+<li>Separate topological representation design from proof of predictive value.</li>
+</ol>
+<p><a href="../sessions/11_session.md.html">Guided session</a> · <a href="../notebooks/11_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/11_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/11_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-12--capstone-reproduce-defend-transfer-and-audit-the-book">Stage 12 — Capstone: reproduce, defend, transfer, and audit the book</h2>
+<p><strong>Focus:</strong> Interpret a small improvement with paired evidence
+<strong>Prerequisites:</strong> 11</p>
+<ol>
+<li>Construct the paired correctness table for two models on the same observations.</li>
+<li>Distinguish percentage points, counts, and conditional inferential quantities.</li>
+<li>Calculate an exploratory exact discordance test and paired bootstrap interval.</li>
+<li>Explain why reanalyzing an exposed holdout cannot create a fresh confirmatory test.</li>
+</ol>
+<p><a href="../sessions/12_session.md.html">Guided session</a> · <a href="../notebooks/12_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/12_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/12_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-13--from-topology-to-smooth-manifolds">Stage 13 — From topology to smooth manifolds</h2>
+<p><strong>Focus:</strong> A chart changes coordinates, not the underlying point
+<strong>Prerequisites:</strong> 12</p>
+<ol>
+<li>Write the domain restriction of a stereographic chart.</li>
+<li>Check that chart-to-space-to-chart returns the same point.</li>
+<li>Construct a tangent vector by removing its radial component.</li>
+<li>Explain why normalizing scene points does not prove a spherical physical scene.</li>
+</ol>
+<p><a href="../sessions/13_session.md.html">Guided session</a> · <a href="../notebooks/13_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/13_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/13_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-14--rotations-rigid-transforms-and-the-camera-model">Stage 14 — Rotations, rigid transforms, and the camera model</h2>
+<p><strong>Focus:</strong> Make camera equations reversible only when the information exists
+<strong>Prerequisites:</strong> 13</p>
+<ol>
+<li>Name the source and destination frame of a rigid transformation.</li>
+<li>Distinguish optical-axis depth from radial distance.</li>
+<li>Project and unproject real reference points using the same calibration.</li>
+<li>Explain why a round-trip check is not independent measurement validation.</li>
+</ol>
+<p><a href="../sessions/14_session.md.html">Guided session</a> · <a href="../notebooks/14_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/14_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/14_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-15--measured-stereo-calibration-and-uncertainty">Stage 15 — Measured stereo, calibration, and uncertainty</h2>
+<p><strong>Focus:</strong> Turn disparity error into a physical uncertainty calculation
+<strong>Prerequisites:</strong> 14</p>
+<ol>
+<li>Derive the principal-point offset in rectified stereo.</li>
+<li>Carry pixels and metres through the depth formula.</li>
+<li>Compare a first-order uncertainty calculation with controlled numerical perturbations.</li>
+<li>State which uncertainties a supplied-reference experiment cannot measure.</li>
+</ol>
+<p><a href="../sessions/15_session.md.html">Guided session</a> · <a href="../notebooks/15_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/15_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/15_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-16--attention-and-vggt-from-pixels-to-proposed-geometry">Stage 16 — Attention and VGGT, from pixels to proposed geometry</h2>
+<p><strong>Focus:</strong> Attention moves information; training gives it task meaning
+<strong>Prerequisites:</strong> 15</p>
+<ol>
+<li>Identify query, key, and value shapes in scaled dot-product attention.</li>
+<li>Explain why each attention row sums to one.</li>
+<li>Check a controlled attention calculation on patches from a real image.</li>
+<li>Distinguish an attention example, a model-output contract, and actual trained VGGT inference.</li>
+</ol>
+<p><a href="../sessions/16_session.md.html">Guided session</a> · <a href="../notebooks/16_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/16_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/16_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-17--register-validate-and-ask-topology-the-right-question">Stage 17 — Register, validate, and ask topology the right question</h2>
+<p><strong>Focus:</strong> Fit on anchors, evaluate elsewhere
+<strong>Prerequisites:</strong> 16</p>
+<ol>
+<li>Distinguish rigid alignment from a similarity transform with scale.</li>
+<li>Separate fitting references from held-out evaluation points.</li>
+<li>Construct a negative control showing why fitted residual is optimistic.</li>
+<li>Explain why perfect synthetic-transform recovery does not validate physical scene scale.</li>
+</ol>
+<p><a href="../sessions/17_session.md.html">Guided session</a> · <a href="../notebooks/17_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/17_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/17_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-18--make-the-pipeline-efficient-without-changing-the-evidence">Stage 18 — Make the pipeline efficient without changing the evidence</h2>
+<p><strong>Focus:</strong> Separate throughput from how old the answer is
+<strong>Prerequisites:</strong> 17</p>
+<ol>
+<li>Preserve numerical outputs while changing an implementation.</li>
+<li>Distinguish measured code duration from simulated queue latency.</li>
+<li>Derive queue growth when service is slower than arrival.</li>
+<li>Report warm-up, work units, and timing boundaries.</li>
+</ol>
+<p><a href="../sessions/18_session.md.html">Guided session</a> · <a href="../notebooks/18_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/18_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/18_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-19--from-geometry-to-cautious-interaction-hypotheses">Stage 19 — From geometry to cautious interaction hypotheses</h2>
+<p><strong>Focus:</strong> Do not let future observations leak into an event decision
+<strong>Prerequisites:</strong> 18</p>
+<ol>
+<li>Distinguish event onset, confirmation time, and observation availability.</li>
+<li>Construct a past-only confirmation rule on a real dated series.</li>
+<li>Check that extending the future does not revise already-issued decisions.</li>
+<li>Separate a threshold-rule output from validated human–object interaction labels.</li>
+</ol>
+<p><a href="../sessions/19_session.md.html">Guided session</a> · <a href="../notebooks/19_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/19_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/19_practice.ipynb.html">Learner code</a></p>
+<h2 id="stage-20--independent-spatial-capstone-and-continuing-mastery">Stage 20 — Independent spatial capstone and continuing mastery</h2>
+<p><strong>Focus:</strong> Turn a completed course into a reproducible next investigation
+<strong>Prerequisites:</strong> 19</p>
+<ol>
+<li>Assemble the chain from question through measurement, representation, computation and claim.</li>
+<li>Audit the presence and integrity of execution evidence without equating it with mastery.</li>
+<li>Identify what a new independent dataset must provide for the intended claim.</li>
+<li>Use a finite completion contract while leaving advanced topics and the actual-book audit explicit.</li>
+</ol>
+<p><a href="../sessions/20_session.md.html">Guided session</a> · <a href="../notebooks/20_lab.ipynb.html">Reference lab</a> · <a href="../consolidation/20_lab.ipynb.html">Consolidation</a> · <a href="../practice/learner/20_practice.ipynb.html">Learner code</a></p>
+<h2 id="coverage-that-remains-deliberately-open">Coverage that remains deliberately open</h2>
+<p>The supplied book section titles remain mapped in the inherited book audit. No full book text has been inspected. A numerical experiment is not a full proof of a major theorem. Optional Ripser/GUDHI comparison is skipped in this build. Trained VGGT inference, independent physical holdouts, real sports-event labels, unseen-writer evaluation, and production integration are not delivered validations. These distinctions are scope boundaries, not hidden completed tasks.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

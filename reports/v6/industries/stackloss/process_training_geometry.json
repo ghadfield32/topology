@@ -1,0 +1,74 @@
+{
+  "points": 14,
+  "coefficient_field": 2,
+  "edge_convention": "distance <= epsilon",
+  "finite_bars": [
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.27514524413274577
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.3006064256537211
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.3006064256537211
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.4075158015502888
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.5078960305902006
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.5502904882654915
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 0.9166361128594573
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.140895573243318
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.4165470587571927
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.586525750341587
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.6780169297189955
+    },
+    {
+      "dimension": 0,
+      "birth": 0.0,
+      "death": 1.8698646309077194
+    },
+    {
+      "dimension": 1,
+      "birth": 1.6508714647964748,
+      "death": 1.9484899228549517
+    }
+  ],
+  "essential_h0": 1,
+  "role": "exploratory descriptor, not significance"
+}

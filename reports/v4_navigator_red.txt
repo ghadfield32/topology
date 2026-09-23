@@ -1,0 +1,167 @@
+FFFFFFFFFF                                                               [100%]
+=================================== FAILURES ===================================
+_________________________ test_study_script_is_present _________________________
+
+    def test_study_script_is_present():
+>       assert SCRIPT.is_file(), 'The read-only study navigator is not implemented yet.'
+E       AssertionError: The read-only study navigator is not implemented yet.
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:11: AssertionError
+__________________ test_stage_navigation_has_local_targets[0] __________________
+
+stage = 0
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_stage_navigation_has_loca0')
+
+    @pytest.mark.parametrize('stage',[0,6,12,20])
+    def test_stage_navigation_has_local_targets(stage,tmp_path):
+>       assert SCRIPT.is_file(), 'Navigator missing'
+E       AssertionError: Navigator missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:15: AssertionError
+__________________ test_stage_navigation_has_local_targets[6] __________________
+
+stage = 6
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_stage_navigation_has_loca1')
+
+    @pytest.mark.parametrize('stage',[0,6,12,20])
+    def test_stage_navigation_has_local_targets(stage,tmp_path):
+>       assert SCRIPT.is_file(), 'Navigator missing'
+E       AssertionError: Navigator missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:15: AssertionError
+_________________ test_stage_navigation_has_local_targets[12] __________________
+
+stage = 12
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_stage_navigation_has_loca2')
+
+    @pytest.mark.parametrize('stage',[0,6,12,20])
+    def test_stage_navigation_has_local_targets(stage,tmp_path):
+>       assert SCRIPT.is_file(), 'Navigator missing'
+E       AssertionError: Navigator missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:15: AssertionError
+_________________ test_stage_navigation_has_local_targets[20] __________________
+
+stage = 20
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_stage_navigation_has_loca3')
+
+    @pytest.mark.parametrize('stage',[0,6,12,20])
+    def test_stage_navigation_has_local_targets(stage,tmp_path):
+>       assert SCRIPT.is_file(), 'Navigator missing'
+E       AssertionError: Navigator missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:15: AssertionError
+_______________________ test_invalid_stage_fails_cleanly _______________________
+
+    def test_invalid_stage_fails_cleanly():
+>       assert SCRIPT.is_file(), 'Navigator missing'
+E       AssertionError: Navigator missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:24: AssertionError
+________________ test_next_starts_at_zero_without_modifying_log ________________
+
+    def test_next_starts_at_zero_without_modifying_log():
+>       assert SCRIPT.is_file(), 'Navigator missing'
+E       AssertionError: Navigator missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:29: AssertionError
+_____________________ test_empty_evidence_is_not_certified _____________________
+
+    def test_empty_evidence_is_not_certified():
+>       assert SCRIPT.is_file(), 'Navigator missing'
+E       AssertionError: Navigator missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:36: AssertionError
+_________________ test_doctor_checks_bundled_data_not_network __________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-4/test_doctor_checks_bundled_dat0')
+
+    def test_doctor_checks_bundled_data_not_network(tmp_path):
+>       assert SCRIPT.is_file(), 'Navigator missing'
+E       AssertionError: Navigator missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+
+tests/test_study_v4.py:42: AssertionError
+_________________ test_distribution_and_module_versions_agree __________________
+
+    def test_distribution_and_module_versions_agree():
+        metadata=tomllib.loads((Path(__file__).resolve().parents[1]/'pyproject.toml').read_text())
+>       assert shape_lab.__version__==metadata['project']['version']=='4.0.0'
+E       AssertionError: assert '3.0.0' == '4.0.0'
+E         
+E         - 4.0.0
+E         ? ^
+E         + 3.0.0
+E         ? ^
+
+tests/test_release_version_v3.py:7: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_study_v4.py::test_study_script_is_present - AssertionError: The read-only study navigator is not implemented yet.
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_study_v4.py::test_stage_navigation_has_local_targets[0] - AssertionError: Navigator missing
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_study_v4.py::test_stage_navigation_has_local_targets[6] - AssertionError: Navigator missing
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_study_v4.py::test_stage_navigation_has_local_targets[12] - AssertionError: Navigator missing
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_study_v4.py::test_stage_navigation_has_local_targets[20] - AssertionError: Navigator missing
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_study_v4.py::test_invalid_stage_fails_cleanly - AssertionError: Navigator missing
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_study_v4.py::test_next_starts_at_zero_without_modifying_log - AssertionError: Navigator missing
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_study_v4.py::test_empty_evidence_is_not_certified - AssertionError: Navigator missing
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_study_v4.py::test_doctor_checks_bundled_data_not_network - AssertionError: Navigator missing
+assert False
+ +  where False = is_file()
+ +    where is_file = PosixPath('/mnt/data/shape_v4_build/listening_to_shape_lab/scripts/study.py').is_file
+FAILED tests/test_release_version_v3.py::test_distribution_and_module_versions_agree - AssertionError: assert '3.0.0' == '4.0.0'
+  
+  - 4.0.0
+  ? ^
+  + 3.0.0
+  ? ^
+10 failed in 0.08s

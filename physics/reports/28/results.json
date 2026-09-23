@@ -1,0 +1,42 @@
+{
+  "stage": 28,
+  "role": "executed teaching experiment; not learner assessment",
+  "data_kind": "manufactured periodic Fourier heat family",
+  "seed": 5,
+  "steps_per_model": 400,
+  "split_functions": {
+    "train": 96,
+    "validation": 32,
+    "test": 32
+  },
+  "grid_points": 32,
+  "nu": 0.03,
+  "time": 0.15,
+  "models": {
+    "DeepONet": {
+      "test_mse": 0.040812909603118896,
+      "validation_mse": 0.06232729181647301,
+      "selected_step": 399,
+      "parameter_tensor_elements": 7953,
+      "real_scalar_degrees_of_freedom": 7953
+    },
+    "FNO": {
+      "test_mse": 0.00031707147718407214,
+      "validation_mse": 0.00035302527248859406,
+      "selected_step": 399,
+      "parameter_tensor_elements": 1193,
+      "real_scalar_degrees_of_freedom": 2217
+    },
+    "identity_baseline_test_mse": 0.13508638739585876,
+    "analytic_heat_reference_mse": 0.0
+  },
+  "scope": "Not a benchmark replication, grid-transfer test, climate model, or measured diffusion validation.",
+  "observed_input": {
+    "dataset": "training-split digit image",
+    "sample_id": 13,
+    "row": 3,
+    "mean_difference": 4.440892098500626e-16,
+    "observed_later_heat_field": false
+  },
+  "source_review_date": "2026-09-20"
+}

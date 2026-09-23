@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "pages": 2004,
+  "local_targets": 30535,
+  "fragments": 622,
+  "errors": [],
+  "scope": "Delivered local targets/HTML fragments; external URLs and browser navigation not certified."
+}

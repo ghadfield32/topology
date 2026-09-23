@@ -1,0 +1,13 @@
+{
+  "method": "Chromium DOM rendering from actual HTML with the same CSS inlined",
+  "navigation_status": "blocked_by_environment_policy",
+  "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/shape_v3_work/listening_to_shape_lab/START_HERE.html\nCall log:\n  - navigating to \"file:///mnt/data/shape_v3_work/listening_to_shape_lab/START_HERE.html\", waiting until \"load\"\n",
+  "status": "PASSED_RENDER_AND_INTERACTION_ONLY",
+  "checks": [
+    "Home renders 21 stage cards and Stage 00 link",
+    "Recall query filters 63 cards to one and answer-reveal works",
+    "Stereo notebook renders all five embedded output figures",
+    "390px home viewport has no horizontal page overflow"
+  ],
+  "page_errors": []
+}

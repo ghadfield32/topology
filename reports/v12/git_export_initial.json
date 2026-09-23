@@ -1,0 +1,17 @@
+{
+  "commit": "bbdc774b8815af6e1a7306d32a2ce939ce8f18e9",
+  "repository": "Temporary local repository; no user remote modified",
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-ra",
+    "--junitxml=/mnt/data/v12_evidence/git_tests.xml"
+  ],
+  "returncode": 1,
+  "tracked_files": 3450,
+  "stdout_tail": "[ 76%]\n..............................................................F......... [ 86%]\n........................................................................ [ 95%]\n.................................                                        [100%]\n=================================== FAILURES ===================================\n______________________ test_no_unsubstantiated_lock_claim ______________________\n\n    def test_no_unsubstantiated_lock_claim():\n        p=ROOT/'docs/release/ENVIRONMENT_STATUS.json'\n        assert p.is_file()\n        obj=json.loads(p.read_text())\n        if not (ROOT/'uv.lock').exists():\n>           assert obj['uv_lock']['status'] != 'passed'\n                   ^^^^^^^^^^^^^^\nE           KeyError: 'uv_lock'\n\ntests/test_repository_v10.py:100: KeyError\n=========================== short test summary info ============================\nSKIPPED [1] tests/test_optional_libraries.py:14: could not import 'ripser': No module named 'ripser'\nSKIPPED [1] tests/test_optional_libraries.py:20: could not import 'gudhi': No module named 'gudhi'\nFAILED tests/test_repository_v10.py::test_no_unsubstantiated_lock_claim - KeyError: 'uv_lock'\n1 failed, 750 passed, 2 skipped in 17.77s\n",
+  "private_work_tracked": true,
+  "has_templates": true
+}

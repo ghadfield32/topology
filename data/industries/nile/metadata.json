@@ -1,0 +1,62 @@
+{
+  "id": "nile",
+  "sector": "water_infrastructure",
+  "title": "Retrospective change and forward evaluation",
+  "provider": "statsmodels",
+  "provider_version": "0.14.6",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/nile.html",
+  "source_doi": null,
+  "citation": "Cobb (1978), The Problem of the Nile; statsmodels distribution.",
+  "license": "Public domain (dataset distributor statement)",
+  "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/nile.html",
+  "license_url": "https://www.statsmodels.org/stable/datasets/generated/nile.html",
+  "observation_unit": "One annual river-volume observation, not an instantaneous discharge-rate sample.",
+  "scope_limitations": "100 annual observations, 1871–1970. A detected change is not proof of its physical cause.",
+  "rows": 100,
+  "columns": [
+    "row_id",
+    "year",
+    "volume"
+  ],
+  "label_map": {},
+  "data_kind": "observed",
+  "acquisition": "offline export from installed package distribution; no invented records",
+  "source_review_date": "2026-09-20",
+  "data_file": "data/industries/nile/data.csv",
+  "data_sha256": "fa4813b7d95f16c78ca32a909e2de1979ed99959352e29850bcaab1dd8eab982",
+  "source_file": "data/industries/nile/source_distribution.csv",
+  "source_sha256": "88e97bea7249e5832a85e41aec6ce4b8f7b1b14aae930c8363da7f193286b598",
+  "missing_by_column": {
+    "row_id": 0,
+    "year": 0,
+    "volume": 0
+  },
+  "transforms": [
+    "Preserved loaded values and row order; added zero-based row_id.",
+    "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+    "Missing CO2 observations remain blank, never zero."
+  ],
+  "schema": [
+    {
+      "name": "row_id",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "row id"
+    },
+    {
+      "name": "year",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "calendar year",
+      "description": "1871–1970."
+    },
+    {
+      "name": "volume",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "10^8 m^3 per annual observation",
+      "description": "Annual recorded volume; do not label as cubic metres per second."
+    }
+  ]
+}

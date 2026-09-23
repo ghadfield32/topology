@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 11 — Useful representations, Mapper, time windows, and honest machine learning · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../stages/11/README.md">stages/11/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-11--useful-representations-mapper-time-windows-and-honest-machine-learning">Stage 11 — Useful representations, Mapper, time windows, and honest machine learning</h1>
+<p><strong>Prerequisite:</strong> Complete the working understanding and independent gate of Stage 10; revisit earlier primers as needed.</p>
+<h2 id="learn-then-do">Learn, then do</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Resource</th>
+<th>Evidence to produce</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Build intuition</td>
+<td><a href="../../lessons/11_lesson.md.html">Core lesson</a></td>
+<td>Explain the main idea with an example and a nonexample.</td>
+</tr>
+<tr>
+<td>2. Slow down the hard parts</td>
+<td><a href="../../workbooks/11_workbook.md.html">Beginner workbook</a></td>
+<td>Work its calculation and distinguish the objects being compared.</td>
+</tr>
+<tr>
+<td>3. Repair a prerequisite</td>
+<td><a href="../../foundations/03_linear_algebra_workshop.md.html">Foundation primer</a></td>
+<td>Translate unfamiliar notation or code into ordinary language.</td>
+</tr>
+<tr>
+<td>4. Predict and experiment</td>
+<td><a href="../../notebooks/11_lab.ipynb.html">Executed real-data lab</a></td>
+<td>Predict, run, modify one condition, and explain the result.</td>
+</tr>
+<tr>
+<td>5. Write it yourself</td>
+<td><a href="../../practice/learner/11_practice.ipynb.html">Five coding activities</a></td>
+<td>Replace the deliberate starters and pass their specified checks.</td>
+</tr>
+<tr>
+<td>6. Check after attempting</td>
+<td><a href="../../practice/11_solutions.md.html">Coding solutions</a> · <a href="../../practice/answers/11_practice.ipynb.html">Executed answers</a></td>
+<td>Identify differences in reasoning, not only output.</td>
+</tr>
+<tr>
+<td>7. Reason independently</td>
+<td>Conceptual exercises at the end of the lesson; <a href="../../solutions/11_solutions.md.html">solutions</a></td>
+<td>Submit your own explanation or proof before looking.</td>
+</tr>
+<tr>
+<td>8. Recall later</td>
+<td><a href="../../practice/retrieval.md.html">Delayed questions 11.R1–R3</a></td>
+<td>Work with notes closed and explain a changed example.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="this-stages-gate">This stage's gate</h2>
+<p>Build declared representations, explain Mapper and window availability, and select models using validation rather than test data.</p>
+<p>Use <a href="../../docs/LEARNING_SYSTEM_V2.md.html">the assessment rubric</a>; a passing software test is only one component. Record a real evidence file in <a href="../../docs/release/YOUR_WORK.md.html">your work folder</a>, then log a practice, assessment, or delayed-recall attempt. All learner records start unassessed.</p>
+<h2 id="do-not-lose-the-connection-to-the-full-course">Do not lose the connection to the full course</h2>
+<p><a href="../../docs/PROOF_ATLAS.md.html">Proof atlas</a> · <a href="../../docs/MATHEMATICAL_CONVENTIONS.md.html">Mathematical conventions</a> · <a href="../../docs/SOURCES.md.html">Source registry</a> · <a href="../../docs/START_YOUR_FIRST_SESSION.md.html">First-session guide</a></p>
+<p><a href="../12/README.md.html">Continue to Stage 12</a></p>
+<h2 id="version-4-guided-consolidation-and-transfer">Version 4: guided consolidation and transfer</h2>
+<p><a href="../../sessions/11_session.md.html">Beginner-paced guided session</a> · <a href="../../consolidation/11_lab.ipynb.html">Executed consolidation notebook</a> · <a href="../../curriculum/response_templates/11_response.md.html">Your response template</a></p>
+<p>This supplements, rather than replaces, the original lesson, workbook, independent practice and mastery gate. Data role: Real train/validation digit pixels and the bundled historical annual sunspot series; no new forecast claim.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

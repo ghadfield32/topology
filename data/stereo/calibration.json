@@ -1,0 +1,83 @@
+{
+  "source": "scikit-image 0.26.0 stereo_motorcycle; Middlebury 2014",
+  "image_shape_hw": [
+    500,
+    741
+  ],
+  "focal_px": 994.978,
+  "cx_left_px": 311.193,
+  "cy_px": 254.877,
+  "doffs_px": 31.086,
+  "baseline_m": 0.193001,
+  "baseline_upstream_mm": 193.001,
+  "length_unit": "metre",
+  "K_left": [
+    [
+      994.978,
+      0,
+      311.193
+    ],
+    [
+      0,
+      994.978,
+      254.877
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "K_right": [
+    [
+      994.978,
+      0,
+      342.279
+    ],
+    [
+      0,
+      994.978,
+      254.877
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "T_right_left": [
+    [
+      1,
+      0,
+      0,
+      -0.193001
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "disparity_definition": "u_left - u_right",
+  "depth_definition": "positive optical-axis Z",
+  "formula": "Z_m = baseline_m * focal_px / (disparity_px + doffs_px)",
+  "coordinates": "undistorted rectified cameras; x right, y down, z forward; pixel u column, v row",
+  "source_urls": [
+    "https://scikit-image.org/docs/stable/api/skimage.data.html#skimage.data.stereo_motorcycle",
+    "https://vision.middlebury.edu/stereo/data/scenes2014/"
+  ],
+  "missing": "Raw reference contains nonfinite values, including NaN and +infinity; only finite values with positive denominator are eligible."
+}

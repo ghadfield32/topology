@@ -1,0 +1,140 @@
+{
+  "scope": "exploratory_only",
+  "source_note": "Bundled corrected Iris snapshot; exploratory teaching example",
+  "units": "centimetres",
+  "input_sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f",
+  "input_rows": 150,
+  "selected_columns": [
+    "sepal_length_cm",
+    "sepal_width_cm",
+    "petal_length_cm",
+    "petal_width_cm"
+  ],
+  "row_positions_zero_based": [
+    5,
+    12,
+    29,
+    36,
+    44,
+    49,
+    51,
+    59,
+    63,
+    68,
+    73,
+    85,
+    108,
+    109,
+    110,
+    124,
+    125,
+    128,
+    129,
+    131
+  ],
+  "sample_count": 20,
+  "seed": 20260920,
+  "scale": "none",
+  "scale_parameters": {},
+  "duplicate_coordinate_rows_in_sample": 0,
+  "metric": "Euclidean on stated coordinates; duplicate IDs give a pseudometric.",
+  "coefficient_field": 2,
+  "max_simplex_dimension": 2,
+  "rips_parameter": "maximum edge length",
+  "diagrams": {
+    "H0": [
+      [
+        0.0,
+        0.22360679774997896
+      ],
+      [
+        0.0,
+        0.31622776601683805
+      ],
+      [
+        0.0,
+        0.3464101615137756
+      ],
+      [
+        0.0,
+        0.374165738677394
+      ],
+      [
+        0.0,
+        0.3741657386773947
+      ],
+      [
+        0.0,
+        0.4582575694955842
+      ],
+      [
+        0.0,
+        0.47958315233127263
+      ],
+      [
+        0.0,
+        0.5477225575051662
+      ],
+      [
+        0.0,
+        0.5567764362830021
+      ],
+      [
+        0.0,
+        0.5916079783099616
+      ],
+      [
+        0.0,
+        0.6082762530298218
+      ],
+      [
+        0.0,
+        0.6480740698407865
+      ],
+      [
+        0.0,
+        0.6633249580710799
+      ],
+      [
+        0.0,
+        0.7071067811865475
+      ],
+      [
+        0.0,
+        0.7874007874011808
+      ],
+      [
+        0.0,
+        0.8124038404635958
+      ],
+      [
+        0.0,
+        0.9327379053088818
+      ],
+      [
+        0.0,
+        1.22065556157337
+      ],
+      [
+        0.0,
+        2.493992782667985
+      ],
+      [
+        0.0,
+        null
+      ]
+    ],
+    "H1": [
+      [
+        0.7348469228349535,
+        0.8602325267042624
+      ],
+      [
+        0.7416198487095663,
+        0.806225774829855
+      ]
+    ]
+  },
+  "unpaired_death_encoding": "null means survives the supplied filtration",
+  "claim_limit": "No underlying-space recovery, confidence, causality, or predictive improvement is established."
+}

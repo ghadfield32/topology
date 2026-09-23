@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Data, industries and sports: one current index · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/DATA_AND_SPORTS.md">docs/release/DATA_AND_SPORTS.md</a> · Readable source notation; no online math renderer.</p><h1 id="data-industries-and-sports-one-current-index">Data, industries and sports: one current index</h1>
+<h2 id="how-to-choose-a-dataset">How to choose a dataset</h2>
+<p>Choose a source because its observation type, measurement definitions, rights, sample structure and reference information suit the question. Newer is not automatically better for teaching fundamentals; a small well-documented table is often more inspectable than a large opaque video collection. This release adds implementation reliability rather than another unverified payload.</p>
+<p>The course retains observed examples in biological measurements, handwritten images, calibrated stereo, astronomy, materials, clinical image-summary measurements, food chemistry, manufacturing, business panels, atmosphere, water, marine climate, travel choice, agriculture and concrete. Constructed shapes, copied-row leakage controls, oscillator/PDE examples and model predictions remain labeled separately from observed data.</p>
+<h2 id="canonical-detailed-cards">Canonical detailed cards</h2>
+<ul>
+<li><a href="../v7/DATA_CATALOG.md.html">Cross-industry catalogue and field definitions</a></li>
+<li><a href="../v6/DATA_CATALOG.md.html">Earlier provenance and selected snapshots</a></li>
+<li><a href="../v8/SPORTS_DATASETS.md.html">Modern sports dataset selection guide</a></li>
+<li><a href="../../sports_v9/lesson.md.html">Current ACB metadata case</a></li>
+<li><a href="../../sports_v8/README.md.html">Sports excerpt data cards</a></li>
+<li><a href="../v6/OPTIONAL_DATA.md.html">Optional larger datasets</a></li>
+</ul>
+<p>The original source dates and verification limitations in those documents remain historical evidence. This v12 packaging work does not silently relabel every optional source as freshly acquired or executed.</p>
+<h2 id="what-is-runnable-now">What is runnable now</h2>
+<p>Use <code>python course.py cases</code> for the named experiments. The registry links each command to the actual existing notebook, lesson, observation status and scope; it does not create a second copy of the lesson. Default runs do not download data.</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Observations and teaching use</th>
+<th>Important limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wdbc</code></td>
+<td>Image-derived measurements and classification</td>
+<td>Not raw pathology images or clinical validation.</td>
+</tr>
+<tr>
+<td><code>wine</code></td>
+<td>Chemical features and descriptor comparisons</td>
+<td>Cultivars, not wine quality; small exposed teaching split.</td>
+</tr>
+<tr>
+<td><code>stackloss</code></td>
+<td>Plant measurements and regression</td>
+<td>Tiny historical sample and source-specific units.</td>
+</tr>
+<tr>
+<td><code>grunfeld</code></td>
+<td>Firm-year observations</td>
+<td>Repeated firms and chronological information matter.</td>
+</tr>
+<tr>
+<td><code>co2</code>, <code>elnino</code>, <code>nile</code></td>
+<td>Historical environmental time series</td>
+<td>Missingness, calendar construction and prediction horizon are explicit.</td>
+</tr>
+<tr>
+<td><code>modechoice</code></td>
+<td>Complete traveler choice sets</td>
+<td>Alternative rows are not independent travelers.</td>
+</tr>
+<tr>
+<td><code>seeds</code>, <code>concrete_slump</code></td>
+<td>Agricultural geometry and material response</td>
+<td>Source-text transcriptions retain pending upstream byte-comparison limits.</td>
+</tr>
+<tr>
+<td><code>leakage</code>, <code>claims</code></td>
+<td>Deliberately constructed failure controls</td>
+<td>Not newly collected observations or provider benchmark reproductions.</td>
+</tr>
+<tr>
+<td><code>s00</code>–<code>s06</code></td>
+<td>Selected SPL trial frames and SkillCorner soccer profile excerpts</td>
+<td>Sparse selections; not full athlete/session generalization.</td>
+</tr>
+<tr>
+<td><code>acb</code></td>
+<td>Ten ACB 2025–26 game metadata records</td>
+<td>No full tracking/events/season aggregates analyzed by this case.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sports-reference-check--september-22-2026">Sports reference check — September 22, 2026</h2>
+<p>The official SkillCorner basketball repository still describes ten sample games from ACB 2025–26, tracking at 25 frames per second, and separate offensive aggregates over 293 games. Those are source descriptions, not payloads newly loaded in this release. Official source: <a href="https://github.com/SkillCorner/opendata-basketball">https://github.com/SkillCorner/opendata-basketball</a> . Review its PRIMER, data dictionary, known issues and license before acquiring or interpreting the larger data.</p>
+<p>Do not infer metric player jump height from an XY tracking product, recompute season aggregates from a ten-game sample, combine total rows with component team rows, or split alias identifiers as if they were distinct athletes. The existing ACB lesson teaches the metadata/identity boundary and preserves its provider-hash record.</p>
+<p>SPL's included free-throw material is a selected excerpt, with feet for scene positions and different units for hoop-local quantities. Its noncommercial/share-alike data terms are separate from course-code terms. Optional modern multiview, wearable, tracking and baseball sources stay optional acquisition plans until their actual artifacts, rights and identity checks are satisfied. In particular, OpenBiomechanics restrictions must be checked before commercial/team use.</p>
+<h2 id="what-to-record-when-replacing-an-excerpt-with-full-data">What to record when replacing an excerpt with full data</h2>
+<p>Record the provider URL and version/revision, exact acquisition timestamp, license/access agreement, full byte hash, schema, units, frame and clock conventions, participant/session/game IDs, inclusion rules, missingness and detection flags. Keep raw bytes immutable; place derived subsets in a separate directory and record the derivation. Add a schema test, a source hash test and a group/time split test before changing a model.</p>
+<p>A checksum proves agreement with the bytes you hashed. It does not establish that a provider's measurements are physically correct. A provider-hash match is a stronger source-identity check than hashing a local transcription alone, but still not independent ground truth.</p>
+<h2 id="data-rights-and-public-git">Data rights and public Git</h2>
+<p>Start with a private study repository when usage rights are unclear. Do not upload optional licensed videos or weights into Git automatically. The delivered permission for original course code does not override the separate data cards or upstream terms. See <a href="GIT_IMPORT.md.html">the publication review</a> and <a href="../../LICENSE.md.html">the package attribution record</a>.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

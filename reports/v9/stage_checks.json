@@ -1,0 +1,223 @@
+{
+  "mode": "fresh copy",
+  "passed": 31,
+  "records": [
+    {
+      "stage": "00",
+      "returncode": 0,
+      "stdout": "210 observations; 7 selected features; 1 label and 1 source ID excluded.\n",
+      "stderr": "",
+      "seconds": 5.075
+    },
+    {
+      "stage": "01",
+      "returncode": 0,
+      "stdout": "Rank over R: 2; rank over F2: 1.\n",
+      "stderr": "",
+      "seconds": 3.991
+    },
+    {
+      "stage": "02",
+      "returncode": 0,
+      "stdout": "Squared distance: 4 > 1 + 1, so it is not a metric on R.\n",
+      "stderr": "",
+      "seconds": 5.92
+    },
+    {
+      "stage": "03",
+      "returncode": 0,
+      "stdout": "The identity is a continuous bijection in one direction, not a homeomorphism.\n",
+      "stderr": "",
+      "seconds": 5.205
+    },
+    {
+      "stage": "04",
+      "returncode": 0,
+      "stdout": "RF= [[0 1]\n [1 0]] FR= [[ 0 -1]\n [-1  0]]\n",
+      "stderr": "",
+      "seconds": 4.008
+    },
+    {
+      "stage": "05",
+      "returncode": 0,
+      "stdout": "Missing faces rejected as expected.\n",
+      "stderr": "",
+      "seconds": 6.766
+    },
+    {
+      "stage": "06",
+      "returncode": 0,
+      "stdout": "Outline beta=[1,1]; filled beta=[1,0]; boundary of boundary is zero.\n",
+      "stderr": "",
+      "seconds": 4.833
+    },
+    {
+      "stage": "07",
+      "returncode": 0,
+      "stdout": "Pairwise touching radius: 0.5 common-intersection threshold: 0.5773502691896258\n",
+      "stderr": "",
+      "seconds": 4.775
+    },
+    {
+      "stage": "08",
+      "returncode": 0,
+      "stdout": "Finite H1 interval: [1.         1.41421356]\n",
+      "stderr": "",
+      "seconds": 6.016
+    },
+    {
+      "stage": "09",
+      "returncode": 0,
+      "stdout": "Finite component death at 1; one surviving component. Pairs: {1: 2}\n",
+      "stderr": "",
+      "seconds": 5.858
+    },
+    {
+      "stage": "10",
+      "returncode": 0,
+      "stdout": "Deletion cost 1.0; matched shift cost 0.1.\n",
+      "stderr": "",
+      "seconds": 5.945
+    },
+    {
+      "stage": "11",
+      "returncode": 0,
+      "stdout": "Training mean 1, scale 1; future value becomes 99.\n",
+      "stderr": "",
+      "seconds": 5.737
+    },
+    {
+      "stage": "12",
+      "returncode": 0,
+      "stdout": "{'row_disjoint': True, 'unit_disjoint': False, 'partition_sizes': {'train': 2, 'test': 2}, 'pairs': {'train|test': {'shared_rows': [], 'shared_units': ['A', 'B']}}}\n",
+      "stderr": "",
+      "seconds": 4.046
+    },
+    {
+      "stage": "13",
+      "returncode": 0,
+      "stdout": "Sphere point: [ 0.48 -0.64 -0.6 ] round trip: [ 0.3 -0.4]\n",
+      "stderr": "",
+      "seconds": 5.342
+    },
+    {
+      "stage": "14",
+      "returncode": 0,
+      "stdout": "Forward: [1. 3. 3.] inverse: [1. 0. 0.]\n",
+      "stderr": "",
+      "seconds": 5.132
+    },
+    {
+      "stage": "15",
+      "returncode": 0,
+      "stdout": "Depth: 4.0 local metres/pixel: -0.16\n",
+      "stderr": "",
+      "seconds": 5.782
+    },
+    {
+      "stage": "16",
+      "returncode": 0,
+      "stdout": "Weights: [0.5 0.5] weighted values: [0.5 1. ]\n",
+      "stderr": "",
+      "seconds": 3.718
+    },
+    {
+      "stage": "17",
+      "returncode": 0,
+      "stdout": "Fitted scale/offset: 1.9999999999999996 2.9999999999999996 held-out prediction: 8.999999999999998\n",
+      "stderr": "",
+      "seconds": 5.8
+    },
+    {
+      "stage": "18",
+      "returncode": 0,
+      "stdout": "Simulated result ages (seconds): [np.float64(0.06), np.float64(0.087), np.float64(0.11399999999999999), np.float64(0.141), np.float64(0.16799999999999998), np.float64(0.19499999999999998), np.float64(0.22199999999999998), np.float64(0.24899999999999997)]\n",
+      "stderr": "",
+      "seconds": 6.23
+    },
+    {
+      "stage": "19",
+      "returncode": 0,
+      "stdout": "Candidate onset: 1 confirmation: 3 delay: 0.04\n",
+      "stderr": "",
+      "seconds": 4.261
+    },
+    {
+      "stage": "20",
+      "returncode": 0,
+      "stdout": "Unchanged bytes match; changed bytes differ. Correctness is a separate question.\n",
+      "stderr": "",
+      "seconds": 6.945
+    },
+    {
+      "stage": "21",
+      "returncode": 0,
+      "stdout": "Central difference for t\u00b2 at t=2: 3.9999999999995595\n",
+      "stderr": "",
+      "seconds": 5.478
+    },
+    {
+      "stage": "22",
+      "returncode": 0,
+      "stdout": "Valid round trip: 0.5 0.5555555555555556 0.5 blow-up time: 2.0\n",
+      "stderr": "",
+      "seconds": 5.985
+    },
+    {
+      "stage": "23",
+      "returncode": 0,
+      "stdout": "Momentum: 0.8 Hamiltonian: 0.29500000000000004\n",
+      "stderr": "",
+      "seconds": 4.926
+    },
+    {
+      "stage": "24",
+      "returncode": 0,
+      "stdout": "Symplectic condition passes; exact-energy condition does not.\n",
+      "stderr": "",
+      "seconds": 4.751
+    },
+    {
+      "stage": "25",
+      "returncode": 0,
+      "stdout": "One linearized correction: [1.25 0.  ] remaining residual: 0.5625\n",
+      "stderr": "",
+      "seconds": 3.918
+    },
+    {
+      "stage": "26",
+      "returncode": 0,
+      "stdout": "Same interior equation; different boundary values.\n",
+      "stderr": "",
+      "seconds": 5.95
+    },
+    {
+      "stage": "27",
+      "returncode": 0,
+      "stdout": "Opposite gradients admit no strictly common first-order descent direction.\n",
+      "stderr": "",
+      "seconds": 8.25
+    },
+    {
+      "stage": "28",
+      "returncode": 0,
+      "stdout": "Mode-1 amplitude: 0.9048374180359595 mode-2 amplitude: 0.6703200460356393\n",
+      "stderr": "",
+      "seconds": 7.733
+    },
+    {
+      "stage": "29",
+      "returncode": 0,
+      "stdout": "Sensitivity: -1.0976232721880528 finite difference: -1.0976232722614832\n",
+      "stderr": "",
+      "seconds": 9.076
+    },
+    {
+      "stage": "30",
+      "returncode": 0,
+      "stdout": "The requested extreme coverage is uninformative at this calibration size under the stated rule.\n",
+      "stderr": "",
+      "seconds": 6.067
+    }
+  ]
+}

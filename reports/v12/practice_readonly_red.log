@@ -1,0 +1,31 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+__________ test_private_practice_from_readonly_reference_is_editable ___________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-13/test_private_practice_from_rea0')
+
+    def test_private_practice_from_readonly_reference_is_editable(tmp_path):
+        import stat
+        from shape_lab.practice_workspace import prepare_practice
+        root=tmp_path/'course';(root/'curriculum').mkdir(parents=True)
+        source=root/'practice.ipynb';source.write_text('{"cells": []}');source.chmod(0o444)
+        (root/'lesson.md').write_text('Lesson')
+        (root/'curriculum/experiments.json').write_text(json.dumps({'experiments':[{'id':'sample','title':'Sample','learner':'practice.ipynb','lesson':'lesson.md'}]}))
+        out=tmp_path/'answer'
+        try:
+            prepare_practice(root,'sample',out)
+>           assert (out/'learner.ipynb').stat().st_mode & stat.S_IWUSR
+E           AssertionError: assert (33060 & 128)
+E            +  where 33060 = os.stat_result(st_mode=33060, st_ino=1316210, st_dev=28, st_nlink=1, st_uid=0, st_gid=0, st_size=13, st_atime=1790088319, st_mtime=1790088319, st_ctime=1790088319).st_mode
+E            +    where os.stat_result(st_mode=33060, st_ino=1316210, st_dev=28, st_nlink=1, st_uid=0, st_gid=0, st_size=13, st_atime=1790088319, st_mtime=1790088319, st_ctime=1790088319) = stat()
+E            +      where stat = (PosixPath('/tmp/pytest-of-root/pytest-13/test_private_practice_from_rea0/answer') / 'learner.ipynb').stat
+E            +  and   128 = <module 'stat' (frozen)>.S_IWUSR
+
+tests/test_integration_v12.py:191: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_integration_v12.py::test_private_practice_from_readonly_reference_is_editable - AssertionError: assert (33060 & 128)
+ +  where 33060 = os.stat_result(st_mode=33060, st_ino=1316210, st_dev=28, st_nlink=1, st_uid=0, st_gid=0, st_size=13, st_atime=1790088319, st_mtime=1790088319, st_ctime=1790088319).st_mode
+ +    where os.stat_result(st_mode=33060, st_ino=1316210, st_dev=28, st_nlink=1, st_uid=0, st_gid=0, st_size=13, st_atime=1790088319, st_mtime=1790088319, st_ctime=1790088319) = stat()
+ +      where stat = (PosixPath('/tmp/pytest-of-root/pytest-13/test_private_practice_from_rea0/answer') / 'learner.ipynb').stat
+ +  and   128 = <module 'stat' (frozen)>.S_IWUSR
+1 failed, 52 deselected in 0.11s

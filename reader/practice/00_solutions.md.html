@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 00 — coding practice solutions · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../practice/00_solutions.md">practice/00_solutions.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-00--coding-practice-solutions">Stage 00 — coding practice solutions</h1>
+<p>Attempt the learner notebook first. The following code and checks are the canonical reference, with limited declared input assumptions.</p>
+<h2 id="00c1--read-the-dimensions">00.C1 — Read the dimensions</h2>
+<p>Return (number of observations, number of features) for a nonempty rectangular list. Do not count labels as features.</p>
+<pre><code class="language-python">def table_shape(rows):
+    return len(rows), len(rows[0])
+</code></pre>
+<p>A table has two different dimensions. The 150 rows are samples; the four columns are measurements of each sample. A two-dimensional array can therefore represent points in four-dimensional feature space.</p>
+<h3 id="visible-checks">Visible checks</h3>
+<pre><code class="language-python">assert table_shape([[1,2],[3,4],[5,6]]) == (3,2)
+X=load_iris_data().iloc[:,1:5].to_numpy()
+assert table_shape(X.tolist()) == (150,4)
+print("Measured Iris feature table:",table_shape(X.tolist()))
+</code></pre>
+<h2 id="00c2--calculate-a-mean-without-a-library">00.C2 — Calculate a mean without a library</h2>
+<p>For a nonempty rectangular numeric table, calculate the arithmetic mean of column j using a loop and division.</p>
+<pre><code class="language-python">def column_mean(rows, j):
+    total=0.0
+    for row in rows:
+        total += row[j]
+    return total/len(rows)
+</code></pre>
+<p>The loop visits observations, not features. The result summarizes this supplied dataset. It does not establish the mean for every flower in the population.</p>
+<h3 id="visible-checks-1">Visible checks</h3>
+<pre><code class="language-python">assert column_mean([[1,9],[3,7]],0)==2
+X=load_iris_data().iloc[:,1:5].to_numpy()
+assert np.isclose(column_mean(X,0),np.mean(X[:,0]))
+print("Mean sepal length in this snapshot (cm):",column_mean(X,0))
+</code></pre>
+<h2 id="00c3--turn-ink-into-an-entrance-value">00.C3 — Turn ink into an entrance value</h2>
+<p>The supplied digits have intensity 0..16. Return f=1-image/16 as a floating-point array so dark ink enters a sublevel filtration first.</p>
+<pre><code class="language-python">def ink_entrance(image):
+    return 1.0-np.asarray(image,dtype=float)/16.0
+</code></pre>
+<p>This uses the documented physical encoding range, not a mean or maximum fitted using test observations. The word sublevel means that cells with smaller values enter earlier.</p>
+<h3 id="visible-checks-2">Visible checks</h3>
+<pre><code class="language-python">assert np.allclose(ink_entrance([[0,8,16]]),[[1,.5,0]])
+image,sample_id=digit_example(0)
+f=ink_entrance(image)
+assert f.shape==(8,8) and f.min()&gt;=0 and f.max()&lt;=1
+print("Training image",sample_id,"entrance range:",float(f.min()),float(f.max()))
+</code></pre>
+<h2 id="00c4--separate-measurements-from-labels">00.C4 — Separate measurements from labels</h2>
+<p>Return X and y from the bundled Iris DataFrame. X contains exactly the four *_cm measurements; y is the label. Do not include sample_id or species in X.</p>
+<pre><code class="language-python">def iris_xy(frame):
+    names=['sepal_length_cm','sepal_width_cm','petal_length_cm','petal_width_cm']
+    return frame[names].to_numpy(dtype=float),frame['label'].to_numpy()
+</code></pre>
+<p>An identifier is useful for provenance, not automatically a coordinate. A label is a prediction target or an annotation. Inserting it into a supposedly unsupervised distance calculation changes the question.</p>
+<h3 id="visible-checks-3">Visible checks</h3>
+<pre><code class="language-python">X,y=iris_xy(load_iris_data())
+assert X.shape==(150,4) and y.shape==(150,)
+assert np.array_equal(np.unique(y),[0,1,2])
+print("X shape",X.shape,"y shape",y.shape)
+</code></pre>
+<h2 id="00c5--count-a-recorded-category">00.C5 — Count a recorded category</h2>
+<p>Count how many entries of a one-dimensional label array equal a requested value. Use the training split only in the real-data check.</p>
+<pre><code class="language-python">def count_label(labels, wanted):
+    return sum(int(label==wanted) for label in labels)
+</code></pre>
+<p>Class counts help you understand the sample distribution before a model is fitted. The check does not open the held-out images.</p>
+<h3 id="visible-checks-4">Visible checks</h3>
+<pre><code class="language-python">assert count_label([0,1,0,2],0)==2
+images,labels,ids=load_digit_data('train')
+counts=[count_label(labels,k) for k in range(10)]
+assert sum(counts)==1077
+print("Training class counts:",counts)
+</code></pre>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

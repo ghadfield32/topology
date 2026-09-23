@@ -1,0 +1,25 @@
+{
+  "observed_games": 10,
+  "distinct_teams": 17,
+  "split_counts": {
+    "fit": 6,
+    "validation": 2,
+    "test": 2
+  },
+  "split_game_ids": {
+    "114243": "fit",
+    "114234": "fit",
+    "114169": "fit",
+    "114099": "fit",
+    "114086": "fit",
+    "178442": "fit",
+    "179612": "validation",
+    "184439": "validation",
+    "188630": "test",
+    "191313": "test"
+  },
+  "source_integrity": "connector Git blob and local SHA-256 verified",
+  "model_trained": false,
+  "raw_tracking_included": false,
+  "inference_limit": "No season-wide, unseen-team or physical-tracking validation."
+}

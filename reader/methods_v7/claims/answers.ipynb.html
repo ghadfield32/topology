@@ -1,0 +1,70 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Methods: source claims and counterexamples — independent coding · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../methods_v7/claims/answers.ipynb">methods_v7/claims/answers.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="methods-source-claims-and-counterexamples--independent-coding">Methods: source claims and counterexamples — independent coding</h1>
+<p>Four small assignments. Try the learner version first. Reading a reference answer is not independent completion. All checks are illustrative tests, not a guarantee for every input.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json
+ROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / &#x27;src/shape_lab&#x27;).is_dir())
+if str(ROOT / &#x27;src&#x27;) not in sys.path: sys.path.insert(0, str(ROOT / &#x27;src&#x27;))
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from shape_lab.evidence_v7 import load_snapshot, conformal_rank, conformal_radius, coverage, overlap_report
+from shape_lab.display import show_and_save, save_json
+</code></pre><div class="output"></div></section><h2 id="claimsc1--oscillator_energy">claims.C1 — <code>oscillator_energy</code></h2>
+<p>Return (q²+p²)/2 for a finite two-component vector.</p>
+<p>Predict one result by hand before running the check.</p>
+<details><summary>Hint</summary>A dot product computes the sum of squares.</details>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>def oscillator_energy(z):
+    &quot;&quot;&quot;Nondimensional unit harmonic oscillator H=(q**2+p**2)/2.&quot;&quot;&quot;
+    z=np.asarray(z,float)
+    if z.shape!=(2,) or not np.isfinite(z).all():raise ValueError(&#x27;One finite (q,p) vector required&#x27;)
+    return float(z@z/2)
+</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>assert np.isclose(oscillator_energy([.96,-.2]),.4808)
+print(&#x27;claims.C1: reference check passed&#x27;)</code></pre><div class="output"><pre>claims.C1: reference check passed
+</pre></div></section><h2 id="claimsc2--symplectic_defect">claims.C2 — <code>symplectic_defect</code></h2>
+<p>Compute the Frobenius norm of A.T J A-J for a 2x2 map.</p>
+<p>Predict one result by hand before running the check.</p>
+<details><summary>Hint</summary>J is the canonical skew-symmetric matrix, not the identity.</details>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>def symplectic_defect(matrix):
+    &quot;&quot;&quot;Frobenius norm of A.T J A - J for a canonical two-dimensional map.&quot;&quot;&quot;
+    a=np.asarray(matrix,float)
+    if a.shape!=(2,2) or not np.isfinite(a).all():raise ValueError(&#x27;A finite 2x2 map is required&#x27;)
+    j=np.array([[0.,1.],[-1.,0.]])
+    return float(np.linalg.norm(a.T@j@a-j))
+</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>assert symplectic_defect([[.96,.2],[-.2,1.]]) &lt; 1e-14
+print(&#x27;claims.C2: reference check passed&#x27;)</code></pre><div class="output"><pre>claims.C2: reference check passed
+</pre></div></section><h2 id="claimsc3--sphere_newton_step">claims.C3 — <code>sphere_newton_step</code></h2>
+<p>Apply one linearized correction for x.x=1, rejecting x=0.</p>
+<p>Predict one result by hand before running the check.</p>
+<details><summary>Hint</summary>This is not radial normalization; preserve the intended formula.</details>
+<section class="cell"><p class="cell-label">Code · execution 7</p><pre><code>def sphere_newton_step(x):
+    &quot;&quot;&quot;One linearized correction for C(x)=x.x-1; not exact radial projection.&quot;&quot;&quot;
+    a=np.asarray(x,float)
+    if a.ndim!=1 or not a.size or not np.isfinite(a).all() or a@a==0:raise ValueError(&#x27;Nonzero finite vector required&#x27;)
+    return a-((a@a-1)/(2*(a@a)))*a
+</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 8</p><pre><code>x=sphere_newton_step([2.,0.])
+assert np.allclose(x,[1.25,0.])
+print(&#x27;claims.C3: reference check passed&#x27;)</code></pre><div class="output"><pre>claims.C3: reference check passed
+</pre></div></section><h2 id="claimsc4--gradient_inner_product">claims.C4 — <code>gradient_inner_product</code></h2>
+<p>Compute the dot product of matching objective gradients.</p>
+<p>Predict one result by hand before running the check.</p>
+<details><summary>Hint</summary>A negative value signals a local conflict, not its universal cure.</details>
+<section class="cell"><p class="cell-label">Code · execution 9</p><pre><code>def gradient_inner_product(g1,g2):
+    &quot;&quot;&quot;A negative inner product indicates conflicting first-order objectives.&quot;&quot;&quot;
+    a=np.asarray(g1,float);b=np.asarray(g2,float)
+    if a.ndim!=1 or a.shape!=b.shape or not a.size or not np.isfinite(a).all() or not np.isfinite(b).all():raise ValueError(&#x27;Matching finite gradients required&#x27;)
+    return float(a@b)
+</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 10</p><pre><code>assert gradient_inner_product([1,0],[-1,0]) == -1
+print(&#x27;claims.C4: reference check passed&#x27;)</code></pre><div class="output"><pre>claims.C4: reference check passed
+</pre></div></section><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

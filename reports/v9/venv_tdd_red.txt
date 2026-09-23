@@ -1,0 +1,25 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________ test_input_copy_does_not_copy_installed_virtual_environment __________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0')
+
+    def test_input_copy_does_not_copy_installed_virtual_environment(tmp_path):
+        from shape_lab.course import copy_inputs
+        source=tmp_path/'source';source.mkdir()
+        for name in ['.venv','venv']:
+            p=source/name/'lib';p.mkdir(parents=True);(p/'installed_dependency.txt').write_text('large installed environment')
+        copy_inputs(source,tmp_path/'copy')
+>       assert not list((tmp_path/'copy').rglob('installed_dependency.txt'))
+E       AssertionError: assert not [PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0/copy/venv/lib/installed_dependency.txt'), PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0/copy/.venv/lib/installed_dependency.txt')]
+E        +  where [PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0/copy/venv/lib/installed_dependency.txt'), PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0/copy/.venv/lib/installed_dependency.txt')] = list(<map object at 0x7f7ce4146ec0>)
+E        +    where <map object at 0x7f7ce4146ec0> = rglob('installed_dependency.txt')
+E        +      where rglob = (PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0') / 'copy').rglob
+
+tests/test_course_v9.py:122: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_course_v9.py::test_input_copy_does_not_copy_installed_virtual_environment - AssertionError: assert not [PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0/copy/venv/lib/installed_dependency.txt'), PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0/copy/.venv/lib/installed_dependency.txt')]
+ +  where [PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0/copy/venv/lib/installed_dependency.txt'), PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0/copy/.venv/lib/installed_dependency.txt')] = list(<map object at 0x7f7ce4146ec0>)
+ +    where <map object at 0x7f7ce4146ec0> = rglob('installed_dependency.txt')
+ +      where rglob = (PosixPath('/tmp/pytest-of-root/pytest-6/test_input_copy_does_not_copy_0') / 'copy').rglob
+1 failed in 0.14s

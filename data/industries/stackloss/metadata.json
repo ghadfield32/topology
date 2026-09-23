@@ -1,0 +1,80 @@
+{
+  "id": "stackloss",
+  "sector": "manufacturing",
+  "title": "Small-sample process monitoring",
+  "provider": "statsmodels",
+  "provider_version": "0.14.6",
+  "source_url": "https://www.statsmodels.org/stable/datasets/generated/stackloss.html",
+  "source_doi": null,
+  "citation": "Brownlee (1965), Statistical Theory and Methodology in Science and Engineering; statsmodels distribution.",
+  "license": "Public domain (dataset distributor statement)",
+  "license_evidence_url": "https://www.statsmodels.org/stable/datasets/generated/stackloss.html",
+  "license_url": "https://www.statsmodels.org/stable/datasets/generated/stackloss.html",
+  "observation_unit": "One operating-day measurement in the historical plant table; original timestamps are unavailable.",
+  "scope_limitations": "21 records. Cannot support a broad plant-deployment claim or certify a mechanistic model.",
+  "rows": 21,
+  "columns": [
+    "row_id",
+    "STACKLOSS",
+    "AIRFLOW",
+    "WATERTEMP",
+    "ACIDCONC"
+  ],
+  "label_map": {},
+  "data_kind": "observed",
+  "acquisition": "offline export from installed package distribution; no invented records",
+  "source_review_date": "2026-09-20",
+  "data_file": "data/industries/stackloss/data.csv",
+  "data_sha256": "6c1de720cdef48f9b5193459e4b584295f9b7fa2c042e70e1e65bbccbe362d60",
+  "source_file": "data/industries/stackloss/source_distribution.csv",
+  "source_sha256": "7395953d62eec7abab783ae9603ff82f091d04a4689780e455c239f0f5509f64",
+  "missing_by_column": {
+    "row_id": 0,
+    "STACKLOSS": 0,
+    "AIRFLOW": 0,
+    "WATERTEMP": 0,
+    "ACIDCONC": 0
+  },
+  "transforms": [
+    "Preserved loaded values and row order; added zero-based row_id.",
+    "Calendar fields cast to integers; CO2 datetime index exported as ISO date.",
+    "Missing CO2 observations remain blank, never zero."
+  ],
+  "schema": [
+    {
+      "name": "row_id",
+      "role": "metadata",
+      "dtype": "int64",
+      "units": "source scale; see data card (not guessed)",
+      "description": "row id"
+    },
+    {
+      "name": "STACKLOSS",
+      "role": "response_or_signal",
+      "dtype": "float64",
+      "units": "10 × percent",
+      "description": "Ammonia escaping the absorption column on the source encoded scale."
+    },
+    {
+      "name": "AIRFLOW",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source process-rate scale",
+      "description": "Rate of plant operation; do not invent a flow unit."
+    },
+    {
+      "name": "WATERTEMP",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "source temperature scale",
+      "description": "Cooling-water temperature; no calibrated unit is asserted here."
+    },
+    {
+      "name": "ACIDCONC",
+      "role": "feature",
+      "dtype": "float64",
+      "units": "encoded concentration",
+      "description": "Source wording of offset/scaling is ambiguous; preserve encoded values, do not invert the transform."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "mode": "set_content",
+  "cases": [
+    {
+      "threshold": 0.8,
+      "edges": 0,
+      "description": "Components (\u03b2\u2080): 4 \u00b7 Independent loops (\u03b2\u2081): 0.",
+      "passed": true
+    },
+    {
+      "threshold": 1.0,
+      "edges": 4,
+      "description": "Components (\u03b2\u2080): 1 \u00b7 Independent loops (\u03b2\u2081): 1.",
+      "passed": true
+    },
+    {
+      "threshold": 1.5,
+      "edges": 6,
+      "description": "Components (\u03b2\u2080): 1 \u00b7 Independent loops (\u03b2\u2081): 0.",
+      "passed": true
+    }
+  ],
+  "passed": true
+}

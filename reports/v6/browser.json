@@ -1,0 +1,13 @@
+{
+  "status": "passed_rendering_and_interaction",
+  "checks": [
+    "39 stage/case cards; live filter narrows results",
+    "Executed wine notebook image loads",
+    "Learner assignment distinguished from reference execution",
+    "56 practice/recall cards; exact filter and answer reveal work",
+    "Home, primer, wide-schema data card and stage fit a 390px viewport"
+  ],
+  "navigation": "not_verified_environment_navigation_failed",
+  "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/v6_build/listening_to_shape_lab/START_HERE.html\nCall log:\n  - navigating to \"file:///mnt/data/v6_build/listening_to_shape_lab/START_HERE.html\", waiting until \"load\"\n",
+  "page_errors": []
+}

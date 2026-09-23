@@ -1,0 +1,31 @@
+{
+  "schema_version": 6,
+  "track": "industry",
+  "scope": "Self-reported evidence, not automated grading.",
+  "cases": {
+    "wdbc": {
+      "attempts": []
+    },
+    "wine": {
+      "attempts": []
+    },
+    "stackloss": {
+      "attempts": []
+    },
+    "grunfeld": {
+      "attempts": []
+    },
+    "co2": {
+      "attempts": []
+    },
+    "nile": {
+      "attempts": []
+    },
+    "elnino": {
+      "attempts": []
+    },
+    "modechoice": {
+      "attempts": []
+    }
+  }
+}

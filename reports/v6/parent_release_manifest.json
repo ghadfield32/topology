@@ -1,0 +1,36 @@
+{
+  "release": "5.0.0",
+  "review_date": "2026-09-20",
+  "kind": "complete combined learning package, not a patch",
+  "base_archive_sha256": "2678b8da455dbe7f178b7b4653a528807ddbb16d1079fdaebd4c46b88c581adb",
+  "counts": {
+    "stages": 31,
+    "reference_notebooks": 83,
+    "executed_reference_code_cells": 482,
+    "embedded_png_outputs": 55,
+    "learner_notebooks_intentionally_unexecuted": 31,
+    "coding_exercises": 119,
+    "concept_questions": 210,
+    "transfer_questions": 42,
+    "delayed_recall_questions": 93,
+    "primers": 8,
+    "observed_data_sources": 5
+  },
+  "tests": {
+    "passed": 366,
+    "skipped": 2,
+    "failed": 0,
+    "skips": [
+      "ripser",
+      "gudhi"
+    ]
+  },
+  "book_text_audited": false,
+  "trained_vggt_executed": false,
+  "independent_physical_validation": false,
+  "full_paper_benchmarks_reproduced": false,
+  "learner_stages_assessed": 0,
+  "files_in_archive": 1408,
+  "checksum_manifest": "MANIFEST.sha256",
+  "entry_point": "START_HERE.html"
+}

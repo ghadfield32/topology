@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SkillCorner ACB sample match catalog · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../sports_v9/DATA_CARD.md">sports_v9/DATA_CARD.md</a> · Readable source notation; no online math renderer.</p><h1 id="skillcorner-acb-sample-match-catalog">SkillCorner ACB sample match catalog</h1>
+<p><strong>Provider:</strong> SkillCorner. <strong>Snapshot reviewed:</strong> September 21, 2026. <strong>Season:</strong> 2025–2026. <strong>Observation unit:</strong> one published sample game. <strong>Rows:</strong> 10. <strong>Use in this course:</strong> metadata validation and chronological grouping, not predictive modeling.</p>
+<h2 id="authoritative-links">Authoritative links</h2>
+<ul>
+<li><a href="https://github.com/SkillCorner/opendata-basketball">Repository and scope</a></li>
+<li><a href="https://github.com/SkillCorner/opendata-basketball/blob/main/data/matches.json">Exact source path</a></li>
+<li><a href="https://github.com/SkillCorner/opendata-basketball/blob/main/docs/PRIMER.md">Current primer: grain, coordinates, clocks</a></li>
+<li><a href="https://github.com/SkillCorner/opendata-basketball/blob/main/docs/KNOWN_ISSUES.md">Known issues</a></li>
+<li><a href="https://github.com/SkillCorner/opendata-basketball/blob/main/LICENSE">Repository MIT license</a></li>
+</ul>
+<p>The source path is mutable. The acquired file is identified by the Git blob SHA-1 and SHA-256 in <code>data/provenance.json</code>, not by assuming <code>main</code> never changes. Exact text reconstruction matched the connector-returned Git hash. Full tracking, events, aggregate CSVs and alias tables were not acquired. Raw data downloads remain optional and require their own complete manifest.</p>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Availability or limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>Provider game identifier</td>
+<td>Not a temporal ordering key.</td>
+</tr>
+<tr>
+<td><code>date_time</code></td>
+<td>Scheduled tip-off, UTC</td>
+<td>Not actual first frame arrival.</td>
+</tr>
+<tr>
+<td><code>home_team</code>, <code>away_team</code></td>
+<td>Provider IDs and names</td>
+<td>Team identity may recur across splits.</td>
+</tr>
+<tr>
+<td><code>home_score</code>, <code>away_score</code></td>
+<td>Recorded final integer points</td>
+<td>Outcomes, unavailable before the game finishes.</td>
+</tr>
+<tr>
+<td><code>competition_id</code>, <code>competition_edition_id</code>, <code>season_id</code></td>
+<td>Provider catalog IDs</td>
+<td>Not measurements or ordered covariates.</td>
+</tr>
+<tr>
+<td><code>season</code></td>
+<td>Season label</td>
+<td>Does not imply full coverage.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Provider record status</td>
+<td>All selected records are closed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rights-and-scope">Rights and scope</h2>
+<p>Copyright (c) 2026 SkillCorner. The repository includes an MIT license, reproduced in <code>data/LICENSE_SKILLCORNER.txt</code>. This metadata lesson credits SkillCorner. Check the current terms of each future payload rather than inferring rights from another dataset's license. The older SPL excerpt has separate noncommercial/share-alike terms.</p>
+<h2 id="split-protocol">Split protocol</h2>
+<p>Sort aware UTC timestamps; use six fit, two validation, two test games. Repeated games, ties at a split boundary, invalid timestamps and modified source bytes are rejected by the relevant checks. The ten-game sample is deliberately small and nonrandom. No model is trained here; this is not season-wide or unseen-team validation. Final scores must not become pregame features.</p>
+<h2 id="how-this-expands-the-existing-catalogue">How this expands the existing catalogue</h2>
+<p>For activity recognition and wearables, retain the BasketHAR plan. For multiview footage, retain MUVS. For tracking evaluation, retain UVY/TrackID3x3/SoccerNet. For baseball biomechanics, retain OpenBiomechanics and its special rights restrictions. No one product substitutes for the others: select data by the observation needed to test your claim, not by the newest release date.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

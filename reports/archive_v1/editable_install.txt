@@ -1,0 +1,14 @@
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Obtaining file:///mnt/data/listening_to_shape_lab
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: listening-to-shape-lab
+  Building editable for listening-to-shape-lab (pyproject.toml): started
+  Building editable for listening-to-shape-lab (pyproject.toml): finished with status 'done'
+  Created wheel for listening-to-shape-lab: filename=listening_to_shape_lab-1.0.0-0.editable-py3-none-any.whl size=5437 sha256=428cee949f26cada92536614f1a0b24f335f8a78ebbd1cbf10c3ca799814cb13
+  Stored in directory: /tmp/pip-ephem-wheel-cache-x92w0vwd/wheels/da/63/9c/f85ac4d165f12a172389504573f7c03ab9b02150672d83cc8d
+Successfully built listening-to-shape-lab
+Installing collected packages: listening-to-shape-lab
+Successfully installed listening-to-shape-lab-1.0.0

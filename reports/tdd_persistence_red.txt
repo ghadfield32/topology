@@ -1,0 +1,430 @@
+FFFFFFFFFFFFFFFFFFFFF                                                    [100%]
+=================================== FAILURES ===================================
+_______________________________ test_square_bar ________________________________
+
+    def test_square_bar():
+>       assert np.allclose(dgm(rips_filtration(SQUARE),1), [[1,np.sqrt(2)]])
+                               ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:12: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0., 0.],
+       [1., 0.],
+       [1., 1.],
+       [0., 1.]]),)
+kwargs = {}
+
+    def rips_filtration(*args, **kwargs):
+>       raise NotImplementedError('Rips filtration is not yet implemented')
+E       NotImplementedError: Rips filtration is not yet implemented
+
+src/shape_lab/persistence.py:2: NotImplementedError
+________________________________ test_square_h0 ________________________________
+
+    def test_square_h0():
+>       bars=dgm(rips_filtration(SQUARE),0)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:15: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0., 0.],
+       [1., 0.],
+       [1., 1.],
+       [0., 1.]]),)
+kwargs = {}
+
+    def rips_filtration(*args, **kwargs):
+>       raise NotImplementedError('Rips filtration is not yet implemented')
+E       NotImplementedError: Rips filtration is not yet implemented
+
+src/shape_lab/persistence.py:2: NotImplementedError
+______________________ test_full_triangle_no_positive_h1 _______________________
+
+    def test_full_triangle_no_positive_h1():
+        x=np.array([[0,0],[1,0],[0,1]])
+>       assert dgm(rips_filtration(x),1)==[]
+                   ^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0, 0],
+       [1, 0],
+       [0, 1]]),), kwargs = {}
+
+    def rips_filtration(*args, **kwargs):
+>       raise NotImplementedError('Rips filtration is not yet implemented')
+E       NotImplementedError: Rips filtration is not yet implemented
+
+src/shape_lab/persistence.py:2: NotImplementedError
+____________________ test_permutation_translation_rotation _____________________
+
+    def test_permutation_translation_rotation():
+>       a=dgm(rips_filtration(SQUARE),1)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:23: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0., 0.],
+       [1., 0.],
+       [1., 1.],
+       [0., 1.]]),)
+kwargs = {}
+
+    def rips_filtration(*args, **kwargs):
+>       raise NotImplementedError('Rips filtration is not yet implemented')
+E       NotImplementedError: Rips filtration is not yet implemented
+
+src/shape_lab/persistence.py:2: NotImplementedError
+___________________________ test_scale_equivariance ____________________________
+
+    def test_scale_equivariance():
+>       assert np.allclose(dgm(rips_filtration(SQUARE*3),1),np.array(dgm(rips_filtration(SQUARE),1))*3)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:28: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0., 0.],
+       [3., 0.],
+       [3., 3.],
+       [0., 3.]]),)
+kwargs = {}
+
+    def rips_filtration(*args, **kwargs):
+>       raise NotImplementedError('Rips filtration is not yet implemented')
+E       NotImplementedError: Rips filtration is not yet implemented
+
+src/shape_lab/persistence.py:2: NotImplementedError
+________ test_duplicate_observations_allowed_and_zero_bars_not_reported ________
+
+    def test_duplicate_observations_allowed_and_zero_bars_not_reported():
+>       assert dgm(rips_filtration(np.array([[0.],[0.],[1.]])),0)==[(0,1),(0,np.inf)]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0.],
+       [0.],
+       [1.]]),), kwargs = {}
+
+    def rips_filtration(*args, **kwargs):
+>       raise NotImplementedError('Rips filtration is not yet implemented')
+E       NotImplementedError: Rips filtration is not yet implemented
+
+src/shape_lab/persistence.py:2: NotImplementedError
+_ test_truncated_loop_has_infinite_endpoint_but_not_full_filtration_essential __
+
+    def test_truncated_loop_has_infinite_endpoint_but_not_full_filtration_essential():
+>       assert dgm(rips_filtration(SQUARE,max_edge=1.1),1)==[(1,np.inf)]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:34: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0., 0.],
+       [1., 0.],
+       [1., 1.],
+       [0., 1.]]),)
+kwargs = {'max_edge': 1.1}
+
+    def rips_filtration(*args, **kwargs):
+>       raise NotImplementedError('Rips filtration is not yet implemented')
+E       NotImplementedError: Rips filtration is not yet implemented
+
+src/shape_lab/persistence.py:2: NotImplementedError
+______________________ test_faces_precede_cofaces_at_ties ______________________
+
+    def test_faces_precede_cofaces_at_ties():
+>       f=ordered_filtration([((0,1),0),((1,),0),((0,),0)])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:37: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([((0, 1), 0), ((1,), 0), ((0,), 0)],), kwargs = {}
+
+    def ordered_filtration(*args, **kwargs):
+>       raise NotImplementedError('Filtration validation is not yet implemented')
+E       NotImplementedError: Filtration validation is not yet implemented
+
+src/shape_lab/persistence.py:6: NotImplementedError
+______________________ test_bad_filtrations_rejected[f0] _______________________
+
+f = [((0,), 2), ((1,), 0), ((0, 1), 1)]
+
+    @pytest.mark.parametrize('f', [[((0,),2),((1,),0),((0,1),1)], [((0,1),1)], [((0,),0),((0,),0)], [((0,),float('nan'))]])
+    def test_bad_filtrations_rejected(f):
+>       with pytest.raises(ValueError): ordered_filtration(f)
+                                        ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([((0,), 2), ((1,), 0), ((0, 1), 1)],), kwargs = {}
+
+    def ordered_filtration(*args, **kwargs):
+>       raise NotImplementedError('Filtration validation is not yet implemented')
+E       NotImplementedError: Filtration validation is not yet implemented
+
+src/shape_lab/persistence.py:6: NotImplementedError
+______________________ test_bad_filtrations_rejected[f1] _______________________
+
+f = [((0, 1), 1)]
+
+    @pytest.mark.parametrize('f', [[((0,),2),((1,),0),((0,1),1)], [((0,1),1)], [((0,),0),((0,),0)], [((0,),float('nan'))]])
+    def test_bad_filtrations_rejected(f):
+>       with pytest.raises(ValueError): ordered_filtration(f)
+                                        ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([((0, 1), 1)],), kwargs = {}
+
+    def ordered_filtration(*args, **kwargs):
+>       raise NotImplementedError('Filtration validation is not yet implemented')
+E       NotImplementedError: Filtration validation is not yet implemented
+
+src/shape_lab/persistence.py:6: NotImplementedError
+______________________ test_bad_filtrations_rejected[f2] _______________________
+
+f = [((0,), 0), ((0,), 0)]
+
+    @pytest.mark.parametrize('f', [[((0,),2),((1,),0),((0,1),1)], [((0,1),1)], [((0,),0),((0,),0)], [((0,),float('nan'))]])
+    def test_bad_filtrations_rejected(f):
+>       with pytest.raises(ValueError): ordered_filtration(f)
+                                        ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([((0,), 0), ((0,), 0)],), kwargs = {}
+
+    def ordered_filtration(*args, **kwargs):
+>       raise NotImplementedError('Filtration validation is not yet implemented')
+E       NotImplementedError: Filtration validation is not yet implemented
+
+src/shape_lab/persistence.py:6: NotImplementedError
+______________________ test_bad_filtrations_rejected[f3] _______________________
+
+f = [((0,), nan)]
+
+    @pytest.mark.parametrize('f', [[((0,),2),((1,),0),((0,1),1)], [((0,1),1)], [((0,),0),((0,),0)], [((0,),float('nan'))]])
+    def test_bad_filtrations_rejected(f):
+>       with pytest.raises(ValueError): ordered_filtration(f)
+                                        ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:42: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([((0,), nan)],), kwargs = {}
+
+    def ordered_filtration(*args, **kwargs):
+>       raise NotImplementedError('Filtration validation is not yet implemented')
+E       NotImplementedError: Filtration validation is not yet implemented
+
+src/shape_lab/persistence.py:6: NotImplementedError
+________________ test_betti_from_intervals_matches_direct_ranks ________________
+
+    def test_betti_from_intervals_matches_direct_ranks():
+        x=np.random.default_rng(5).normal(size=(7,2))
+>       f=rips_filtration(x)
+          ^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[-0.80193143, -1.324359  ],
+       [-0.24836162,  0.42044524],
+       [ 1.13604653,  0.1097064 ],
+       [-0.5....78478036],
+       [ 0.74874577,  1.63478304],
+       [ 0.27276878, -1.23332866],
+       [-0.95826521,  1.60001909]]),)
+kwargs = {}
+
+    def rips_filtration(*args, **kwargs):
+>       raise NotImplementedError('Rips filtration is not yet implemented')
+E       NotImplementedError: Rips filtration is not yet implemented
+
+src/shape_lab/persistence.py:2: NotImplementedError
+___________________________ test_bottleneck[a0-b0-0] ___________________________
+
+a = [], b = [], expected = 0
+
+    @pytest.mark.parametrize('a,b,expected', [([],[],0), ([[0,2]],[],1), ([[0,2]],[[.1,2.1]],.1), ([[0,2],[0,2]],[[0,2]],1)])
+    def test_bottleneck(a,b,expected):
+>       assert finite_bottleneck(a,b)==pytest.approx(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([], []), kwargs = {}
+
+    def finite_bottleneck(*args, **kwargs):
+>       raise NotImplementedError('Bottleneck is not yet implemented')
+E       NotImplementedError: Bottleneck is not yet implemented
+
+src/shape_lab/persistence.py:8: NotImplementedError
+___________________________ test_bottleneck[a1-b1-1] ___________________________
+
+a = [[0, 2]], b = [], expected = 1
+
+    @pytest.mark.parametrize('a,b,expected', [([],[],0), ([[0,2]],[],1), ([[0,2]],[[.1,2.1]],.1), ([[0,2],[0,2]],[[0,2]],1)])
+    def test_bottleneck(a,b,expected):
+>       assert finite_bottleneck(a,b)==pytest.approx(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[0, 2]], []), kwargs = {}
+
+    def finite_bottleneck(*args, **kwargs):
+>       raise NotImplementedError('Bottleneck is not yet implemented')
+E       NotImplementedError: Bottleneck is not yet implemented
+
+src/shape_lab/persistence.py:8: NotImplementedError
+__________________________ test_bottleneck[a2-b2-0.1] __________________________
+
+a = [[0, 2]], b = [[0.1, 2.1]], expected = 0.1
+
+    @pytest.mark.parametrize('a,b,expected', [([],[],0), ([[0,2]],[],1), ([[0,2]],[[.1,2.1]],.1), ([[0,2],[0,2]],[[0,2]],1)])
+    def test_bottleneck(a,b,expected):
+>       assert finite_bottleneck(a,b)==pytest.approx(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[0, 2]], [[0.1, 2.1]]), kwargs = {}
+
+    def finite_bottleneck(*args, **kwargs):
+>       raise NotImplementedError('Bottleneck is not yet implemented')
+E       NotImplementedError: Bottleneck is not yet implemented
+
+src/shape_lab/persistence.py:8: NotImplementedError
+___________________________ test_bottleneck[a3-b3-1] ___________________________
+
+a = [[0, 2], [0, 2]], b = [[0, 2]], expected = 1
+
+    @pytest.mark.parametrize('a,b,expected', [([],[],0), ([[0,2]],[],1), ([[0,2]],[[.1,2.1]],.1), ([[0,2],[0,2]],[[0,2]],1)])
+    def test_bottleneck(a,b,expected):
+>       assert finite_bottleneck(a,b)==pytest.approx(expected)
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:54: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[0, 2], [0, 2]], [[0, 2]]), kwargs = {}
+
+    def finite_bottleneck(*args, **kwargs):
+>       raise NotImplementedError('Bottleneck is not yet implemented')
+E       NotImplementedError: Bottleneck is not yet implemented
+
+src/shape_lab/persistence.py:8: NotImplementedError
+_______________________ test_bottleneck_rejects_infinity _______________________
+
+    def test_bottleneck_rejects_infinity():
+>       with pytest.raises(ValueError): finite_bottleneck([[0,np.inf]],[])
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = ([[0, inf]], []), kwargs = {}
+
+    def finite_bottleneck(*args, **kwargs):
+>       raise NotImplementedError('Bottleneck is not yet implemented')
+E       NotImplementedError: Bottleneck is not yet implemented
+
+src/shape_lab/persistence.py:8: NotImplementedError
+______________________ test_pixel_ring_bar_and_full_grid _______________________
+
+    def test_pixel_ring_bar_and_full_grid():
+        values=np.zeros((3,3)); values[1,1]=1
+>       f=pixel_filtration(values)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:61: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 0.]]),)
+kwargs = {}
+
+    def pixel_filtration(*args, **kwargs):
+>       raise NotImplementedError('Pixels are not yet implemented')
+E       NotImplementedError: Pixels are not yet implemented
+
+src/shape_lab/persistence.py:10: NotImplementedError
+_________________ test_pixels_touching_at_corner_are_connected _________________
+
+    def test_pixels_touching_at_corner_are_connected():
+        values=np.array([[0,1],[1,0]])
+>       f=pixel_filtration(values)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:67: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0, 1],
+       [1, 0]]),), kwargs = {}
+
+    def pixel_filtration(*args, **kwargs):
+>       raise NotImplementedError('Pixels are not yet implemented')
+E       NotImplementedError: Pixels are not yet implemented
+
+src/shape_lab/persistence.py:10: NotImplementedError
+_____________________ test_pixel_h1_stability_on_same_grid _____________________
+
+    def test_pixel_h1_stability_on_same_grid():
+        rng=np.random.default_rng(42)
+        a=rng.uniform(size=(4,4)); b=a+rng.uniform(-.04,.04,size=(4,4))
+>       assert finite_bottleneck(dgm(pixel_filtration(a),1), dgm(pixel_filtration(b),1)) <= np.max(abs(a-b))+1e-12
+                                     ^^^^^^^^^^^^^^^^^^^
+
+tests/test_persistence.py:73: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+args = (array([[0.77395605, 0.43887844, 0.85859792, 0.69736803],
+       [0.09417735, 0.97562235, 0.7611397 , 0.78606431],
+       [0.12811363, 0.45038594, 0.37079802, 0.92676499],
+       [0.64386512, 0.82276161, 0.4434142 , 0.22723872]]),)
+kwargs = {}
+
+    def pixel_filtration(*args, **kwargs):
+>       raise NotImplementedError('Pixels are not yet implemented')
+E       NotImplementedError: Pixels are not yet implemented
+
+src/shape_lab/persistence.py:10: NotImplementedError
+=========================== short test summary info ============================
+FAILED tests/test_persistence.py::test_square_bar - NotImplementedError: Rips filtration is not yet implemented
+FAILED tests/test_persistence.py::test_square_h0 - NotImplementedError: Rips filtration is not yet implemented
+FAILED tests/test_persistence.py::test_full_triangle_no_positive_h1 - NotImplementedError: Rips filtration is not yet implemented
+FAILED tests/test_persistence.py::test_permutation_translation_rotation - NotImplementedError: Rips filtration is not yet implemented
+FAILED tests/test_persistence.py::test_scale_equivariance - NotImplementedError: Rips filtration is not yet implemented
+FAILED tests/test_persistence.py::test_duplicate_observations_allowed_and_zero_bars_not_reported - NotImplementedError: Rips filtration is not yet implemented
+FAILED tests/test_persistence.py::test_truncated_loop_has_infinite_endpoint_but_not_full_filtration_essential - NotImplementedError: Rips filtration is not yet implemented
+FAILED tests/test_persistence.py::test_faces_precede_cofaces_at_ties - NotImplementedError: Filtration validation is not yet implemented
+FAILED tests/test_persistence.py::test_bad_filtrations_rejected[f0] - NotImplementedError: Filtration validation is not yet implemented
+FAILED tests/test_persistence.py::test_bad_filtrations_rejected[f1] - NotImplementedError: Filtration validation is not yet implemented
+FAILED tests/test_persistence.py::test_bad_filtrations_rejected[f2] - NotImplementedError: Filtration validation is not yet implemented
+FAILED tests/test_persistence.py::test_bad_filtrations_rejected[f3] - NotImplementedError: Filtration validation is not yet implemented
+FAILED tests/test_persistence.py::test_betti_from_intervals_matches_direct_ranks - NotImplementedError: Rips filtration is not yet implemented
+FAILED tests/test_persistence.py::test_bottleneck[a0-b0-0] - NotImplementedError: Bottleneck is not yet implemented
+FAILED tests/test_persistence.py::test_bottleneck[a1-b1-1] - NotImplementedError: Bottleneck is not yet implemented
+FAILED tests/test_persistence.py::test_bottleneck[a2-b2-0.1] - NotImplementedError: Bottleneck is not yet implemented
+FAILED tests/test_persistence.py::test_bottleneck[a3-b3-1] - NotImplementedError: Bottleneck is not yet implemented
+FAILED tests/test_persistence.py::test_bottleneck_rejects_infinity - NotImplementedError: Bottleneck is not yet implemented
+FAILED tests/test_persistence.py::test_pixel_ring_bar_and_full_grid - NotImplementedError: Pixels are not yet implemented
+FAILED tests/test_persistence.py::test_pixels_touching_at_corner_are_connected - NotImplementedError: Pixels are not yet implemented
+FAILED tests/test_persistence.py::test_pixel_h1_stability_on_same_grid - NotImplementedError: Pixels are not yet implemented
+21 failed in 0.12s

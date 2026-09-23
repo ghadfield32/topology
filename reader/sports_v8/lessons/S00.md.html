@@ -1,0 +1,103 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>S00 — Begin with one observation, not a model · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../sports_v8/lessons/S00.md">sports_v8/lessons/S00.md</a> · Readable source notation; no online math renderer.</p><h1 id="s00--begin-with-one-observation-not-a-model">S00 — Begin with one observation, not a model</h1>
+<h2 id="your-destination">Your destination</h2>
+<p>By the end, you can open a sports record, explain every selected field, convert
+its units, and identify what it cannot tell you. No topology vocabulary is needed
+at the start. Read core Stage 00 for arrays and Stage 01 for functions when needed.</p>
+<h2 id="first-picture-in-words">First picture in words</h2>
+<p>Imagine pausing a free-throw video. A processing system estimates the centre of
+the ball and several body landmarks. Each landmark has three numbers. The first
+number is not “how good the shot was”; it is a coordinate along one chosen axis.
+Changing the origin changes coordinates without necessarily changing distances.</p>
+<p>An <strong>observation</strong> is one recorded item. A <strong>feature</strong> is a value we calculate or
+select to describe an item. A <strong>label</strong> is the outcome or annotation we intend to
+explain. A <strong>group</strong> identifies related items, such as all frames of one shot or
+all shots from one person. These are different roles, even when all are stored
+in one JSON file. JSON means nested named values and lists; a CSV is a table.</p>
+<p>Our selected SPL records come from one trial, T0001, participant P0001, session
+2025-12-18. They are twelve deliberately selected frames, not twelve independent
+athletes and not the complete 458-trial session. The provider's free-throw README
+is dated March 2026 and lists this session at 60 frames per second. The collection
+date and documentation date are different facts. See the <a href="../cards/spl.md.html">SPL card</a>.</p>
+<p>The second excerpt contains twelve football physical-profile rows. Player 2858
+appears in three positions. “Twelve rows” therefore does not mean “twelve people.”
+The first twelve source rows are a convenience excerpt, not a random sample of
+a league. See the <a href="../cards/skillcorner.md.html">SkillCorner card</a>.</p>
+<h2 id="numbers-become-quantities-only-after-units-and-frames-are-known">Numbers become quantities only after units and frames are known</h2>
+<p>A vector is an ordered list. For example, <code>(x,y,z)</code> specifies three coordinates.
+The SPL position values are in feet. Their origin is the court centre. The
+outcome's <code>landing_x</code> and <code>landing_y</code> use a different hoop-local system and are
+in inches. <code>entry_angle</code> is in degrees. Converting units does not by itself
+transform between those two origins.</p>
+<p>Use the international-foot conversion:</p>
+<pre><code>metres = feet × 0.3048
+metres = inches × 0.0254
+</code></pre>
+<p>Thus ten feet is 3.048 metres, and twelve inches is 0.3048 metres. A coordinate
+reported as 18.8 feet is 5.73024 metres in the same frame. To change the origin,
+we would also need the appropriate translation, and perhaps a rotation. Unknown
+camera geometry cannot be supplied by multiplying a column.</p>
+<p>The free-throw result <code>made</code> applies to the shot, not each frame. Putting the
+same result on many frames can be a useful storage operation, but it creates no
+new independent outcomes. The landing location and final entry angle are not
+available before the ball reaches the hoop; they must not become pre-release
+predictor inputs merely because they share a file with the pose.</p>
+<h2 id="your-first-code">Your first code</h2>
+<p>Run the worked notebook <code>sports_v8/notebooks/S00.ipynb</code>. It loads local snapshots,
+not the network. The following is the essential pattern:</p>
+<pre><code class="language-python">from pathlib import Path
+from shape_lab.sports_v8 import load_sports, to_metres
+spl, profiles = load_sports(Path.cwd())  # run from the project root
+first = spl['records'][0]
+ball_m = to_metres(first['ball'], spl['xyz_unit'])
+print(first['frame'], ball_m)
+print(len(profiles), profiles['player_id'].nunique())
+</code></pre>
+<p><code>first['ball']</code> gets the value named <code>ball</code>. The function returns an array of
+three coordinates. <code>.nunique()</code> counts distinct identifiers, not table rows.
+The notebook prints the result before calculating anything more ambitious.
+Predict which count will be smaller before running it.</p>
+<h2 id="the-first-accuracy-check">The first accuracy check</h2>
+<p>Convert metres back to feet and compare with the input. This checks arithmetic,
+not whether the camera measurement is correct. Check the local file hash. This
+checks whether our local file changed, not whether a transcription matches the
+provider. These are separate levels of evidence.</p>
+<p>Because direct downloads failed in the build environment, the two sports
+excerpts were transcribed from selected official numeric text. Source URLs,
+Git blob hashes and selection rules are included. An optional local verifier
+compares full original bytes and selected values; it was not executed remotely
+here. The observed-source status must never be changed to “independently verified
+measurement” by passing a local checksum test.</p>
+<h2 id="what-to-learn-quickly-and-what-to-revisit-deeply">What to learn quickly, and what to revisit deeply</h2>
+<p>For the first pass, learn observation, feature, label, group, coordinate frame,
+unit, provenance and subset. For the deep pass, write a data contract: permitted
+units, required columns, identity keys, valid time order, missing-value policy,
+and a source revision. A contract makes an assumption executable. It does not
+prove that all assumptions are correct.</p>
+<h2 id="exercises--stop-before-the-answers">Exercises — stop before the answers</h2>
+<ol>
+<li>Twelve frames from one shot all have result <code>made</code>. How many shot outcomes
+are represented? Could you estimate prediction accuracy for unseen shooters?</li>
+<li>Convert a two-foot wrist displacement and a two-inch hoop offset to metres.
+Explain why their equal numeric input does not imply equal distance.</li>
+<li>The football table has repeated player IDs. Propose a key that distinguishes
+rows while retaining the player ID needed to keep a person in one partition.</li>
+<li>Why do neither a hash match nor a unit round trip validate markerless geometry?</li>
+</ol>
+<h2 id="worked-answers">Worked answers</h2>
+<ol>
+<li>One shot outcome. No unseen-shooter evaluation is possible from one shooter
+and one selected trial; more frames cannot fix that design limitation.</li>
+<li>0.6096 m and 0.0508 m. The first is twelve times the second. They also refer to
+different frames and quantities; conversion alone does not align the hoop frame.</li>
+<li>A candidate is player, team, season and position, with the source row retained
+for audit. Verify uniqueness in the full release before assuming it. Split by
+player rather than the finer row key for an unseen-player question.</li>
+<li>A hash addresses file identity. A round trip addresses reversible arithmetic.
+Measurement accuracy needs independent references and a declared error metric.</li>
+</ol>
+<h2 id="mastery-gate-and-delayed-recall">Mastery gate and delayed recall</h2>
+<p>Explain the two records without opening a model notebook. Independently solve
+the three coding exercises. Tomorrow, explain why collection date, release date
+and analysis date cannot substitute for one another. Record one limitation in
+your own words in <code>my_work/S00.md</code>; do not mark mastery solely from running code.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

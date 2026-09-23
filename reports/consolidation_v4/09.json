@@ -1,0 +1,10 @@
+{
+  "original_records": 15,
+  "with_duplicate": 16,
+  "h0_tree_reduction_agreement": true,
+  "zero_weight_merges": 1,
+  "h1_independently_verified_by_this_test": false,
+  "stage": 9,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real Iris cloud with a deliberately duplicated observation and a deterministic permutation control."
+}

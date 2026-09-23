@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 20 — Reference coding solutions · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../practice/answers/20_practice.ipynb">practice/answers/20_practice.ipynb</a> · Readable source notation; no online math renderer.</p><h1>Reference answers</h1><p>Attempt the independent work first.</p><details><summary>Reveal worked answers and outputs</summary><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><section class="cell"><p class="cell-label">Code · execution 1</p><pre><code># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</code></pre><div class="output"><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/opt/pyvenv/bin/python&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-q90rdcpz/course/src/shape_lab/__init__.py&quot;}
+</pre></div></section><h1 id="stage-20--reference-coding-solutions">Stage 20 — Reference coding solutions</h1>
+<p>Three exercises. Read the lesson and workbook first. Learner functions intentionally raise <code>NotImplementedError</code> until you write them. Reference execution is not your assessment.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys
+import numpy as np
+ROOT = next(p for p in [Path.cwd(), *Path.cwd().parents] if (p / &quot;src/shape_lab&quot;).is_dir())
+if str(ROOT/&quot;src&quot;) not in sys.path:sys.path.insert(0,str(ROOT/&quot;src&quot;))
+</code></pre><div class="output"></div></section><h2 id="20c1--sha256_file">20.C1 — <code>sha256_file</code></h2>
+<p>Compute SHA-256 incrementally from an existing file.</p>
+<p><strong>Before coding:</strong> work a small example on paper.</p>
+<p><strong>Hint:</strong> Read byte chunks; do not hash a filename string in place of its contents.</p>
+<section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>def sha256_file(path):
+    import hashlib
+    h=hashlib.sha256()
+    with Path(path).open(&#x27;rb&#x27;) as f:
+        for chunk in iter(lambda:f.read(1024*1024),b&#x27;&#x27;):h.update(chunk)
+    return h.hexdigest()</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 4</p><pre><code>import hashlib
+path=ROOT/&#x27;data/stereo/calibration.json&#x27;
+assert sha256_file(path)==hashlib.sha256(path.read_bytes()).hexdigest()
+assert len(sha256_file(path))==64
+print(&quot;20.C1: checks passed&quot;)</code></pre><div class="output"><pre>20.C1: checks passed
+</pre></div></section><p><strong>Why this works and where it stops:</strong> A hash identifies bytes and detects change. It does not prove a file is accurate, licensed or benign.</p>
+<h2 id="20c2--validate_geometry_rows">20.C2 — <code>validate_geometry_rows</code></h2>
+<p>Validate a finite nonempty Nx3 point table with one unique source ID per row. Return the row count.</p>
+<p><strong>Before coding:</strong> work a small example on paper.</p>
+<p><strong>Hint:</strong> Geometry without its observation identifiers cannot safely be joined back to pixels.</p>
+<section class="cell"><p class="cell-label">Code · execution 5</p><pre><code>def validate_geometry_rows(points, source_ids):
+    p=np.asarray(points,float);ids=list(source_ids)
+    if p.ndim!=2 or p.shape[1]!=3 or not len(p) or not np.isfinite(p).all() or len(ids)!=len(p) or len(set(ids))!=len(ids):raise ValueError(&quot;Finite XYZ with unique row-aligned IDs required.&quot;)
+    return len(p)</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 6</p><pre><code>assert validate_geometry_rows([[1,2,3],[4,5,6]],[&#x27;frame0:1:2&#x27;,&#x27;frame0:1:3&#x27;])==2
+try:validate_geometry_rows([[1,2,3],[4,5,6]],[&#x27;same&#x27;,&#x27;same&#x27;])
+except ValueError:pass
+else:raise AssertionError(&quot;Duplicate observation IDs must not pass.&quot;)
+print(&quot;20.C2: checks passed&quot;)</code></pre><div class="output"><pre>20.C2: checks passed
+</pre></div></section><p><strong>Why this works and where it stops:</strong> IDs establish row alignment. Coordinate frame, units, timestamp, preprocessing and source revision are additional required metadata, not implied by this validator.</p>
+<h2 id="20c3--evidence_status">20.C3 — <code>evidence_status</code></h2>
+<p>Implement a deliberately narrow reporting rule: not_executed if no run, exploratory if no independent holdout, otherwise pass/fail by a finite nonnegative error and predeclared threshold.</p>
+<p><strong>Before coding:</strong> work a small example on paper.</p>
+<p><strong>Hint:</strong> Do not let a low error from a non-run or training example imply acceptance.</p>
+<section class="cell"><p class="cell-label">Code · execution 7</p><pre><code>def evidence_status(model_run, independent_holdout, error, threshold):
+    if not model_run:return &#x27;not_executed&#x27;
+    if not independent_holdout:return &#x27;exploratory&#x27;
+    if error is None or not np.isfinite([error,threshold]).all() or error&lt;0 or threshold&lt;0:raise ValueError(&quot;Finite nonnegative metric and threshold required.&quot;)
+    return &#x27;passes_declared_metric&#x27; if error&lt;=threshold else &#x27;fails_declared_metric&#x27;</code></pre><div class="output"></div></section><section class="cell"><p class="cell-label">Code · execution 8</p><pre><code>assert evidence_status(False,False,None,.01)==&#x27;not_executed&#x27;
+assert evidence_status(True,False,0,.01)==&#x27;exploratory&#x27;
+assert evidence_status(True,True,.02,.01)==&#x27;fails_declared_metric&#x27;
+assert evidence_status(True,True,.005,.01)==&#x27;passes_declared_metric&#x27;
+print(&quot;20.C3: checks passed&quot;)</code></pre><div class="output"><pre>20.C3: checks passed
+</pre></div></section><p><strong>Why this works and where it stops:</strong> Passing one declared metric is not overall scientific validation or deployment approval. This toy rule teaches the evidence boundary, not an exhaustive acceptance system.</p>
+</details><a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

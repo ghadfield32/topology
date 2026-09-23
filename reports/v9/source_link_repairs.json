@@ -1,0 +1,18 @@
+[
+  {
+    "path": "docs/V4_README_PRESERVED.md",
+    "change": "correct root-relative links after historical README relocation; prose unchanged"
+  },
+  {
+    "path": "docs/v6/README_v5_preserved.md",
+    "change": "correct root-relative links after historical README relocation; prose unchanged"
+  },
+  {
+    "path": "docs/v7/README_v6_preserved.md",
+    "change": "correct root-relative links after historical README relocation; prose unchanged"
+  },
+  {
+    "path": "docs/v8/INHERITED_README_V7.md",
+    "change": "correct root-relative links after historical README relocation; prose unchanged"
+  }
+]

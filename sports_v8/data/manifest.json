@@ -1,0 +1,84 @@
+{
+  "version": 8,
+  "checked_on": "2026-09-21",
+  "acquisition": "Manually selected numeric transcription from official web/GitHub tool outputs. Full source bytes were not downloaded. No independent remote equality check executed.",
+  "sources": [
+    {
+      "id": "spl",
+      "file": "spl_selected_frames.json",
+      "url": "https://raw.githubusercontent.com/Sport-Performance-Lab/SPL-Open-Data/main/basketball/freethrow/data/2025-12-18/P0001/BB_FT_P0001_T0001.json",
+      "expected_git_blob_sha1": "7ca18fac37806137fd3cd559f5c0ecd8339db5aa",
+      "source_bytes": 2385805,
+      "license": "CC BY-NC-SA 4.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "attribution": "Maple Leaf Sports & Entertainment Sport Performance Lab (SPL Open Data). Selected, reformatted excerpt; this derivative excerpt is CC BY-NC-SA 4.0.",
+      "selection": {
+        "frames": [
+          0,
+          1,
+          90,
+          110,
+          115,
+          120,
+          125,
+          130,
+          135,
+          140,
+          180,
+          210
+        ],
+        "fields": [
+          "ball",
+          "RIGHT_SHOULDER",
+          "RIGHT_ELBOW",
+          "RIGHT_WRIST"
+        ]
+      },
+      "independent_units": 1,
+      "unit": "one selected trial from one participant, 12 nonuniformly selected frames; not the full release",
+      "local_sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc"
+    },
+    {
+      "id": "skillcorner",
+      "file": "skillcorner_selected_profiles.csv",
+      "url": "https://raw.githubusercontent.com/SkillCorner/opendata/master/data/aggregates/aus1league_physicalaggregates_20242025.csv",
+      "expected_git_blob_sha1": "b80308d7662c8923dc82e0721e0b6f17df827d2e",
+      "source_bytes": 167312,
+      "license": "MIT (repository license)",
+      "license_url": "https://github.com/SkillCorner/opendata/blob/master/LICENSE",
+      "attribution": "SkillCorner, with PySport. Selected original columns and first 12 data rows, names and birthdates omitted.",
+      "selection": {
+        "source_rows": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "columns": [
+          "player_id",
+          "team_id",
+          "season_id",
+          "position_group",
+          "minutes_full_all",
+          "count_match",
+          "total_distance_full_all",
+          "total_metersperminute_full_all",
+          "running_distance_full_all",
+          "hsr_distance_full_all",
+          "sprint_distance_full_all"
+        ]
+      },
+      "independent_units": 8,
+      "unit": "12 player/team/season/position records from 8 player IDs; season aggregates, not time-indexed tracks",
+      "local_sha256": "fe4096d511e4f8811f5c504f633767ef5848c91043369d5643e57165e34303a2"
+    }
+  ]
+}

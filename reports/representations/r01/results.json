@@ -1,0 +1,44 @@
+{
+  "observed_source": "bundled Iris; first 100 rows fit, final 50 demonstration only",
+  "features": [
+    "sepal_length_cm",
+    "sepal_width_cm",
+    "petal_length_cm",
+    "petal_width_cm"
+  ],
+  "train_before": {
+    "n": 100,
+    "dimension": 4,
+    "mean_norm": 6.952608071795793,
+    "mean_coordinate_std": 0.7837846994273638,
+    "covariance_identity_frobenius": 2.369614400354564,
+    "effective_rank": 1.4495344551560747
+  },
+  "train_after": {
+    "n": 100,
+    "dimension": 4,
+    "mean_norm": 3.880427132682969e-15,
+    "mean_coordinate_std": 0.9999999999999962,
+    "covariance_identity_frobenius": 2.6510062659904207e-14,
+    "effective_rank": 4.0
+  },
+  "heldout_after_train_transform": {
+    "n": 50,
+    "dimension": 4,
+    "mean_norm": 2.764227036955555,
+    "mean_coordinate_std": 1.3831335751143181,
+    "covariance_identity_frobenius": 5.557611488791727,
+    "effective_rank": 2.2296241612613676
+  },
+  "constructed_discrete_whitened": {
+    "n": 128,
+    "dimension": 2,
+    "mean_norm": 0.0,
+    "mean_coordinate_std": 0.9999999999999999,
+    "covariance_identity_frobenius": 1.5701058596159312e-16,
+    "effective_rank": 2.0
+  },
+  "constructed_discrete_sigreg": 6.340269513964058,
+  "constructed_gaussian_sigreg": 0.752848809562371,
+  "interpretation": "Identity sample covariance is a moment property, not Gaussianity or semantic usefulness. Iris file order is not randomized; this is a transform check, not a generalization estimate."
+}

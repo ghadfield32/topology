@@ -1,0 +1,42 @@
+{
+  "sample_id": 0,
+  "image_counts": [
+    [
+      0.0,
+      0,
+      0
+    ],
+    [
+      0.25,
+      4,
+      0
+    ],
+    [
+      0.5,
+      1,
+      1
+    ],
+    [
+      0.75,
+      1,
+      1
+    ],
+    [
+      1.0,
+      1,
+      0
+    ]
+  ],
+  "square_complete_h1": [
+    [
+      1.0,
+      1.4142135623730951
+    ]
+  ],
+  "truncated_square_h1_survives_end": true,
+  "truncated_max_edge": 1.2,
+  "global_essential_claim": false,
+  "stage": 8,
+  "execution_role": "reference_consolidation",
+  "data_role": "Real digit intensity filtration and an exact complete/truncated square control."
+}

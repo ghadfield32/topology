@@ -1,0 +1,8 @@
+{'path': 'industry/notebooks/co2.ipynb', 'status': 'executed', 'seconds': 3.5820958000000473, 'code_cells': 4}
+{'path': 'industry/notebooks/elnino.ipynb', 'status': 'executed', 'seconds': 3.102311365999981, 'code_cells': 4}
+{'path': 'industry/notebooks/grunfeld.ipynb', 'status': 'executed', 'seconds': 2.9529737799999793, 'code_cells': 4}
+{'path': 'industry/notebooks/modechoice.ipynb', 'status': 'executed', 'seconds': 3.1377010850000033, 'code_cells': 4}
+{'path': 'industry/notebooks/nile.ipynb', 'status': 'executed', 'seconds': 3.035224853000045, 'code_cells': 4}
+{'path': 'industry/notebooks/stackloss.ipynb', 'status': 'executed', 'seconds': 2.8666767849999815, 'code_cells': 4}
+{'path': 'industry/notebooks/wdbc.ipynb', 'status': 'executed', 'seconds': 3.066450388000021, 'code_cells': 4}
+{'path': 'industry/notebooks/wine.ipynb', 'status': 'executed', 'seconds': 2.969444727999985, 'code_cells': 5}

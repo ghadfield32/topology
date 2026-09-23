@@ -1,0 +1,95 @@
+{
+  "mapper_sensitivity": [
+    {
+      "overlap": 0.2,
+      "nodes": 21,
+      "edges": 9
+    },
+    {
+      "overlap": 0.4,
+      "nodes": 23,
+      "edges": 11
+    }
+  ],
+  "validation": {
+    "fingerprint": "fb3302d94ba88f6f7cbe598ba8d277518e6c56cea8f4e94fbee506cc7661f663",
+    "selected_C": {
+      "pixels": 1.0,
+      "topology": 1.0,
+      "combined": 0.1
+    },
+    "validation_results": [
+      {
+        "representation": "pixels",
+        "C": 0.1,
+        "validation_accuracy": 0.9472222222222222
+      },
+      {
+        "representation": "pixels",
+        "C": 1.0,
+        "validation_accuracy": 0.9638888888888889
+      },
+      {
+        "representation": "pixels",
+        "C": 10.0,
+        "validation_accuracy": 0.9555555555555556
+      },
+      {
+        "representation": "topology",
+        "C": 0.1,
+        "validation_accuracy": 0.4305555555555556
+      },
+      {
+        "representation": "topology",
+        "C": 1.0,
+        "validation_accuracy": 0.44722222222222224
+      },
+      {
+        "representation": "topology",
+        "C": 10.0,
+        "validation_accuracy": 0.4305555555555556
+      },
+      {
+        "representation": "combined",
+        "C": 0.1,
+        "validation_accuracy": 0.9694444444444444
+      },
+      {
+        "representation": "combined",
+        "C": 1.0,
+        "validation_accuracy": 0.9666666666666667
+      },
+      {
+        "representation": "combined",
+        "C": 10.0,
+        "validation_accuracy": 0.9694444444444444
+      }
+    ],
+    "train_count": 1077,
+    "validation_count": 360,
+    "test_used": false,
+    "feature_names": [
+      "H0_finite_count",
+      "H0_max_lifetime",
+      "H0_sum_lifetime",
+      "H0_mean_lifetime",
+      "H0_sum_squared_lifetime",
+      "H0_betti_at_0",
+      "H0_betti_at_0.25",
+      "H0_betti_at_0.5",
+      "H0_betti_at_0.75",
+      "H0_betti_at_1",
+      "H1_finite_count",
+      "H1_max_lifetime",
+      "H1_sum_lifetime",
+      "H1_mean_lifetime",
+      "H1_sum_squared_lifetime",
+      "H1_betti_at_0",
+      "H1_betti_at_0.25",
+      "H1_betti_at_0.5",
+      "H1_betti_at_0.75",
+      "H1_betti_at_1"
+    ],
+    "split_limitation": "Per-image, not writer-disjoint."
+  }
+}

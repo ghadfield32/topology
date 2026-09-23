@@ -1,0 +1,592 @@
+FFFFFFFFFFFFFFFFFFFF.....FFFFFFFFFFFFFFFFFFFF                            [100%]
+=================================== FAILURES ===================================
+____________ test_every_named_case_exposes_existing_practice[wdbc] _____________
+
+case = {'data_status': 'Bundled observed historical snapshot', 'id': 'wdbc', 'lesson': 'industry/lessons/wdbc.md', 'notebook': 'industry/notebooks/wdbc.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_0')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'wdbc', 'lesson': 'industry/lessons/wdbc.md', 'notebook': 'industry/notebooks/wdbc.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+____________ test_every_named_case_exposes_existing_practice[wine] _____________
+
+case = {'data_status': 'Bundled observed historical snapshot', 'id': 'wine', 'lesson': 'industry/lessons/wine.md', 'notebook': 'industry/notebooks/wine.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_1')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'wine', 'lesson': 'industry/lessons/wine.md', 'notebook': 'industry/notebooks/wine.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+__________ test_every_named_case_exposes_existing_practice[stackloss] __________
+
+case = {'data_status': 'Bundled observed historical snapshot', 'id': 'stackloss', 'lesson': 'industry/lessons/stackloss.md', 'notebook': 'industry/notebooks/stackloss.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_2')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'stackloss', 'lesson': 'industry/lessons/stackloss.md', 'notebook': 'industry/notebooks/stackloss.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+__________ test_every_named_case_exposes_existing_practice[grunfeld] ___________
+
+case = {'data_status': 'Bundled observed historical snapshot', 'id': 'grunfeld', 'lesson': 'industry/lessons/grunfeld.md', 'notebook': 'industry/notebooks/grunfeld.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_3')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'grunfeld', 'lesson': 'industry/lessons/grunfeld.md', 'notebook': 'industry/notebooks/grunfeld.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[co2] _____________
+
+case = {'data_status': 'Bundled observed historical snapshot', 'id': 'co2', 'lesson': 'industry/lessons/co2.md', 'notebook': 'industry/notebooks/co2.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_4')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'co2', 'lesson': 'industry/lessons/co2.md', 'notebook': 'industry/notebooks/co2.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+____________ test_every_named_case_exposes_existing_practice[nile] _____________
+
+case = {'data_status': 'Bundled observed historical snapshot', 'id': 'nile', 'lesson': 'industry/lessons/nile.md', 'notebook': 'industry/notebooks/nile.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_5')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'nile', 'lesson': 'industry/lessons/nile.md', 'notebook': 'industry/notebooks/nile.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+___________ test_every_named_case_exposes_existing_practice[elnino] ____________
+
+case = {'data_status': 'Bundled observed historical snapshot', 'id': 'elnino', 'lesson': 'industry/lessons/elnino.md', 'notebook': 'industry/notebooks/elnino.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_6')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'elnino', 'lesson': 'industry/lessons/elnino.md', 'notebook': 'industry/notebooks/elnino.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_________ test_every_named_case_exposes_existing_practice[modechoice] __________
+
+case = {'data_status': 'Bundled observed historical snapshot', 'id': 'modechoice', 'lesson': 'industry/lessons/modechoice.md', 'notebook': 'industry/notebooks/modechoice.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_7')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'modechoice', 'lesson': 'industry/lessons/modechoice.md', 'notebook': 'industry/notebooks/modechoice.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+____________ test_every_named_case_exposes_existing_practice[seeds] ____________
+
+case = {'data_status': 'Bundled observed table transcribed from source text', 'id': 'seeds', 'lesson': 'applications_v7/seeds/lesson.md', 'notebook': 'applications_v7/seeds/lab.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_8')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed table transcribed from source text', 'id': 'seeds', 'lesson': 'applications_v7/seeds/lesson.md', 'notebook': 'applications_v7/seeds/lab.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_______ test_every_named_case_exposes_existing_practice[concrete_slump] ________
+
+case = {'data_status': 'Bundled observed table transcribed from source text', 'id': 'concrete_slump', 'lesson': 'applications_v7/concrete_slump/lesson.md', 'notebook': 'applications_v7/concrete_slump/lab.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_9')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled observed table transcribed from source text', 'id': 'concrete_slump', 'lesson': 'applications_v7/concrete_slump/lesson.md', 'notebook': 'applications_v7/concrete_slump/lab.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+___________ test_every_named_case_exposes_existing_practice[leakage] ___________
+
+case = {'data_status': 'Constructed control; not a new observed dataset', 'id': 'leakage', 'lesson': 'methods_v7/leakage/lesson.md', 'notebook': 'methods_v7/leakage/lab.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_10')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Constructed control; not a new observed dataset', 'id': 'leakage', 'lesson': 'methods_v7/leakage/lesson.md', 'notebook': 'methods_v7/leakage/lab.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+___________ test_every_named_case_exposes_existing_practice[claims] ____________
+
+case = {'data_status': 'Constructed control; not a new observed dataset', 'id': 'claims', 'lesson': 'methods_v7/claims/lesson.md', 'notebook': 'methods_v7/claims/lab.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_11')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Constructed control; not a new observed dataset', 'id': 'claims', 'lesson': 'methods_v7/claims/lesson.md', 'notebook': 'methods_v7/claims/lab.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[s00] _____________
+
+case = {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's00', 'lesson': 'sports_v8/lessons/S00.md', 'notebook': 'sports_v8/notebooks/S00.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_12')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's00', 'lesson': 'sports_v8/lessons/S00.md', 'notebook': 'sports_v8/notebooks/S00.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[s01] _____________
+
+case = {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's01', 'lesson': 'sports_v8/lessons/S01.md', 'notebook': 'sports_v8/notebooks/S01.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_13')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's01', 'lesson': 'sports_v8/lessons/S01.md', 'notebook': 'sports_v8/notebooks/S01.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[s02] _____________
+
+case = {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's02', 'lesson': 'sports_v8/lessons/S02.md', 'notebook': 'sports_v8/notebooks/S02.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_14')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's02', 'lesson': 'sports_v8/lessons/S02.md', 'notebook': 'sports_v8/notebooks/S02.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[s03] _____________
+
+case = {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's03', 'lesson': 'sports_v8/lessons/S03.md', 'notebook': 'sports_v8/notebooks/S03.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_15')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's03', 'lesson': 'sports_v8/lessons/S03.md', 'notebook': 'sports_v8/notebooks/S03.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[s04] _____________
+
+case = {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's04', 'lesson': 'sports_v8/lessons/S04.md', 'notebook': 'sports_v8/notebooks/S04.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_16')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's04', 'lesson': 'sports_v8/lessons/S04.md', 'notebook': 'sports_v8/notebooks/S04.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[s05] _____________
+
+case = {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's05', 'lesson': 'sports_v8/lessons/S05.md', 'notebook': 'sports_v8/notebooks/S05.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_17')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's05', 'lesson': 'sports_v8/lessons/S05.md', 'notebook': 'sports_v8/notebooks/S05.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[s06] _____________
+
+case = {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's06', 'lesson': 'sports_v8/lessons/S06.md', 'notebook': 'sports_v8/notebooks/S06.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_18')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's06', 'lesson': 'sports_v8/lessons/S06.md', 'notebook': 'sports_v8/notebooks/S06.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+_____________ test_every_named_case_exposes_existing_practice[acb] _____________
+
+case = {'data_status': 'Bundled 10-game metadata with recorded source blob hash', 'id': 'acb', 'lesson': 'sports_v9/lesson.md', 'notebook': 'sports_v9/notebooks/acb_readiness.ipynb', ...}
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-1/test_every_named_case_exposes_19')
+
+    @pytest.mark.parametrize('case', CASES, ids=lambda c: c['id'])
+    def test_every_named_case_exposes_existing_practice(case, tmp_path):
+        from shape_lab.practice_workspace import prepare_practice
+>       assert 'learner' in case and 'answers' in case
+E       AssertionError: assert ('learner' in {'data_status': 'Bundled 10-game metadata with recorded source blob hash', 'id': 'acb', 'lesson': 'sports_v9/lesson.md', 'notebook': 'sports_v9/notebooks/acb_readiness.ipynb', ...})
+
+tests/test_integration_v12.py:14: AssertionError
+__________________ test_installed_wrong_version_is_not_ready ___________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f5cf8752650>
+
+    def test_installed_wrong_version_is_not_ready(monkeypatch):
+        from shape_lab import release
+        real = release.md.version
+        monkeypatch.setattr(release.md, 'version', lambda name: '0.1.0' if name == 'numpy' else real(name))
+        status = release.environment_status(ROOT, 'core')
+>       assert status['compatible'] is False
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'compatible'
+
+tests/test_integration_v12.py:27: KeyError
+___________________ test_cpu_local_torch_version_compatible ____________________
+
+    def test_cpu_local_torch_version_compatible():
+        from shape_lab.release import environment_status
+        status = environment_status(ROOT, 'physics')
+>       assert status['compatible'] is True
+               ^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'compatible'
+
+tests/test_integration_v12.py:35: KeyError
+_____________________ test_reader_does_not_attach_work_pvc _____________________
+
+    def test_reader_does_not_attach_work_pvc():
+        from shape_lab.deployment import resources
+        obj = resources('course:12', 'shape-tests')
+        dep = next(x for x in obj['items'] if x['kind'] == 'Deployment')
+        pod = dep['spec']['template']['spec']
+>       assert not any('persistentVolumeClaim' in v for v in pod['volumes'])
+E       assert not True
+E        +  where True = any(<generator object test_reader_does_not_attach_work_pvc.<locals>.<genexpr> at 0x7f5cfb84ca00>)
+
+tests/test_integration_v12.py:44: AssertionError
+______ test_kube_policy_catches_unsafe_or_ambiguous_resources[privileged] ______
+
+change = 'privileged'
+
+    @pytest.mark.parametrize('change', ['privileged', 'hostNetwork', 'hostPath', 'root', 'seccomp', 'namespace', 'duplicate'])
+    def test_kube_policy_catches_unsafe_or_ambiguous_resources(change):
+        from shape_lab.deployment import resources, validate_resources
+        obj = resources('course:12', 'shape-tests')
+        item = next(x for x in obj['items'] if x['kind'] == 'Job')
+        pod = item['spec']['template']['spec']
+        if change == 'privileged': pod['containers'][0]['securityContext']['privileged'] = True
+        elif change == 'hostNetwork': pod['hostNetwork'] = True
+        elif change == 'hostPath': pod['volumes'].append({'name': 'host', 'hostPath': {'path': '/'}})
+        elif change == 'root': pod['securityContext']['runAsUser'] = 0
+        elif change == 'seccomp': pod['securityContext']['seccompProfile'] = {'type': 'Unconfined'}
+        elif change == 'namespace': item['metadata']['namespace'] = 'other'
+        elif change == 'duplicate': obj['items'].append(copy.deepcopy(item))
+>       assert validate_resources(obj), change
+E       AssertionError: privileged
+E       assert []
+E        +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+
+tests/test_integration_v12.py:61: AssertionError
+_____ test_kube_policy_catches_unsafe_or_ambiguous_resources[hostNetwork] ______
+
+change = 'hostNetwork'
+
+    @pytest.mark.parametrize('change', ['privileged', 'hostNetwork', 'hostPath', 'root', 'seccomp', 'namespace', 'duplicate'])
+    def test_kube_policy_catches_unsafe_or_ambiguous_resources(change):
+        from shape_lab.deployment import resources, validate_resources
+        obj = resources('course:12', 'shape-tests')
+        item = next(x for x in obj['items'] if x['kind'] == 'Job')
+        pod = item['spec']['template']['spec']
+        if change == 'privileged': pod['containers'][0]['securityContext']['privileged'] = True
+        elif change == 'hostNetwork': pod['hostNetwork'] = True
+        elif change == 'hostPath': pod['volumes'].append({'name': 'host', 'hostPath': {'path': '/'}})
+        elif change == 'root': pod['securityContext']['runAsUser'] = 0
+        elif change == 'seccomp': pod['securityContext']['seccompProfile'] = {'type': 'Unconfined'}
+        elif change == 'namespace': item['metadata']['namespace'] = 'other'
+        elif change == 'duplicate': obj['items'].append(copy.deepcopy(item))
+>       assert validate_resources(obj), change
+E       AssertionError: hostNetwork
+E       assert []
+E        +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...viceAccountToken': False, 'containers': [...], 'hostNetwork': True, 'restartPolicy': 'Never', ...}}}}], 'kind': 'List'})
+
+tests/test_integration_v12.py:61: AssertionError
+_______ test_kube_policy_catches_unsafe_or_ambiguous_resources[hostPath] _______
+
+change = 'hostPath'
+
+    @pytest.mark.parametrize('change', ['privileged', 'hostNetwork', 'hostPath', 'root', 'seccomp', 'namespace', 'duplicate'])
+    def test_kube_policy_catches_unsafe_or_ambiguous_resources(change):
+        from shape_lab.deployment import resources, validate_resources
+        obj = resources('course:12', 'shape-tests')
+        item = next(x for x in obj['items'] if x['kind'] == 'Job')
+        pod = item['spec']['template']['spec']
+        if change == 'privileged': pod['containers'][0]['securityContext']['privileged'] = True
+        elif change == 'hostNetwork': pod['hostNetwork'] = True
+        elif change == 'hostPath': pod['volumes'].append({'name': 'host', 'hostPath': {'path': '/'}})
+        elif change == 'root': pod['securityContext']['runAsUser'] = 0
+        elif change == 'seccomp': pod['securityContext']['seccompProfile'] = {'type': 'Unconfined'}
+        elif change == 'namespace': item['metadata']['namespace'] = 'other'
+        elif change == 'duplicate': obj['items'].append(copy.deepcopy(item))
+>       assert validate_resources(obj), change
+E       AssertionError: hostPath
+E       assert []
+E        +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+
+tests/test_integration_v12.py:61: AssertionError
+_________ test_kube_policy_catches_unsafe_or_ambiguous_resources[root] _________
+
+change = 'root'
+
+    @pytest.mark.parametrize('change', ['privileged', 'hostNetwork', 'hostPath', 'root', 'seccomp', 'namespace', 'duplicate'])
+    def test_kube_policy_catches_unsafe_or_ambiguous_resources(change):
+        from shape_lab.deployment import resources, validate_resources
+        obj = resources('course:12', 'shape-tests')
+        item = next(x for x in obj['items'] if x['kind'] == 'Job')
+        pod = item['spec']['template']['spec']
+        if change == 'privileged': pod['containers'][0]['securityContext']['privileged'] = True
+        elif change == 'hostNetwork': pod['hostNetwork'] = True
+        elif change == 'hostPath': pod['volumes'].append({'name': 'host', 'hostPath': {'path': '/'}})
+        elif change == 'root': pod['securityContext']['runAsUser'] = 0
+        elif change == 'seccomp': pod['securityContext']['seccompProfile'] = {'type': 'Unconfined'}
+        elif change == 'namespace': item['metadata']['namespace'] = 'other'
+        elif change == 'duplicate': obj['items'].append(copy.deepcopy(item))
+>       assert validate_resources(obj), change
+E       AssertionError: root
+E       assert []
+E        +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+
+tests/test_integration_v12.py:61: AssertionError
+_______ test_kube_policy_catches_unsafe_or_ambiguous_resources[seccomp] ________
+
+change = 'seccomp'
+
+    @pytest.mark.parametrize('change', ['privileged', 'hostNetwork', 'hostPath', 'root', 'seccomp', 'namespace', 'duplicate'])
+    def test_kube_policy_catches_unsafe_or_ambiguous_resources(change):
+        from shape_lab.deployment import resources, validate_resources
+        obj = resources('course:12', 'shape-tests')
+        item = next(x for x in obj['items'] if x['kind'] == 'Job')
+        pod = item['spec']['template']['spec']
+        if change == 'privileged': pod['containers'][0]['securityContext']['privileged'] = True
+        elif change == 'hostNetwork': pod['hostNetwork'] = True
+        elif change == 'hostPath': pod['volumes'].append({'name': 'host', 'hostPath': {'path': '/'}})
+        elif change == 'root': pod['securityContext']['runAsUser'] = 0
+        elif change == 'seccomp': pod['securityContext']['seccompProfile'] = {'type': 'Unconfined'}
+        elif change == 'namespace': item['metadata']['namespace'] = 'other'
+        elif change == 'duplicate': obj['items'].append(copy.deepcopy(item))
+>       assert validate_resources(obj), change
+E       AssertionError: seccomp
+E       assert []
+E        +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+
+tests/test_integration_v12.py:61: AssertionError
+______ test_kube_policy_catches_unsafe_or_ambiguous_resources[namespace] _______
+
+change = 'namespace'
+
+    @pytest.mark.parametrize('change', ['privileged', 'hostNetwork', 'hostPath', 'root', 'seccomp', 'namespace', 'duplicate'])
+    def test_kube_policy_catches_unsafe_or_ambiguous_resources(change):
+        from shape_lab.deployment import resources, validate_resources
+        obj = resources('course:12', 'shape-tests')
+        item = next(x for x in obj['items'] if x['kind'] == 'Job')
+        pod = item['spec']['template']['spec']
+        if change == 'privileged': pod['containers'][0]['securityContext']['privileged'] = True
+        elif change == 'hostNetwork': pod['hostNetwork'] = True
+        elif change == 'hostPath': pod['volumes'].append({'name': 'host', 'hostPath': {'path': '/'}})
+        elif change == 'root': pod['securityContext']['runAsUser'] = 0
+        elif change == 'seccomp': pod['securityContext']['seccompProfile'] = {'type': 'Unconfined'}
+        elif change == 'namespace': item['metadata']['namespace'] = 'other'
+        elif change == 'duplicate': obj['items'].append(copy.deepcopy(item))
+>       assert validate_resources(obj), change
+E       AssertionError: namespace
+E       assert []
+E        +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+
+tests/test_integration_v12.py:61: AssertionError
+______ test_kube_policy_catches_unsafe_or_ambiguous_resources[duplicate] _______
+
+change = 'duplicate'
+
+    @pytest.mark.parametrize('change', ['privileged', 'hostNetwork', 'hostPath', 'root', 'seccomp', 'namespace', 'duplicate'])
+    def test_kube_policy_catches_unsafe_or_ambiguous_resources(change):
+        from shape_lab.deployment import resources, validate_resources
+        obj = resources('course:12', 'shape-tests')
+        item = next(x for x in obj['items'] if x['kind'] == 'Job')
+        pod = item['spec']['template']['spec']
+        if change == 'privileged': pod['containers'][0]['securityContext']['privileged'] = True
+        elif change == 'hostNetwork': pod['hostNetwork'] = True
+        elif change == 'hostPath': pod['volumes'].append({'name': 'host', 'hostPath': {'path': '/'}})
+        elif change == 'root': pod['securityContext']['runAsUser'] = 0
+        elif change == 'seccomp': pod['securityContext']['seccompProfile'] = {'type': 'Unconfined'}
+        elif change == 'namespace': item['metadata']['namespace'] = 'other'
+        elif change == 'duplicate': obj['items'].append(copy.deepcopy(item))
+>       assert validate_resources(obj), change
+E       AssertionError: duplicate
+E       assert []
+E        +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+
+tests/test_integration_v12.py:61: AssertionError
+___________ test_evidence_requires_child_details_not_just_zero_exit ____________
+
+    def test_evidence_requires_child_details_not_just_zero_exit():
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:73: ModuleNotFoundError
+________________ test_evidence_rejects_contradictions[profile] _________________
+
+change = 'profile'
+
+    @pytest.mark.parametrize('change', ['profile','skips_full','totals','failed','duplicate','missing','tamper','prior_reports'])
+    def test_evidence_rejects_contradictions(change):
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:81: ModuleNotFoundError
+_______________ test_evidence_rejects_contradictions[skips_full] _______________
+
+change = 'skips_full'
+
+    @pytest.mark.parametrize('change', ['profile','skips_full','totals','failed','duplicate','missing','tamper','prior_reports'])
+    def test_evidence_rejects_contradictions(change):
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:81: ModuleNotFoundError
+_________________ test_evidence_rejects_contradictions[totals] _________________
+
+change = 'totals'
+
+    @pytest.mark.parametrize('change', ['profile','skips_full','totals','failed','duplicate','missing','tamper','prior_reports'])
+    def test_evidence_rejects_contradictions(change):
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:81: ModuleNotFoundError
+_________________ test_evidence_rejects_contradictions[failed] _________________
+
+change = 'failed'
+
+    @pytest.mark.parametrize('change', ['profile','skips_full','totals','failed','duplicate','missing','tamper','prior_reports'])
+    def test_evidence_rejects_contradictions(change):
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:81: ModuleNotFoundError
+_______________ test_evidence_rejects_contradictions[duplicate] ________________
+
+change = 'duplicate'
+
+    @pytest.mark.parametrize('change', ['profile','skips_full','totals','failed','duplicate','missing','tamper','prior_reports'])
+    def test_evidence_rejects_contradictions(change):
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:81: ModuleNotFoundError
+________________ test_evidence_rejects_contradictions[missing] _________________
+
+change = 'missing'
+
+    @pytest.mark.parametrize('change', ['profile','skips_full','totals','failed','duplicate','missing','tamper','prior_reports'])
+    def test_evidence_rejects_contradictions(change):
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:81: ModuleNotFoundError
+_________________ test_evidence_rejects_contradictions[tamper] _________________
+
+change = 'tamper'
+
+    @pytest.mark.parametrize('change', ['profile','skips_full','totals','failed','duplicate','missing','tamper','prior_reports'])
+    def test_evidence_rejects_contradictions(change):
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:81: ModuleNotFoundError
+_____________ test_evidence_rejects_contradictions[prior_reports] ______________
+
+change = 'prior_reports'
+
+    @pytest.mark.parametrize('change', ['profile','skips_full','totals','failed','duplicate','missing','tamper','prior_reports'])
+    def test_evidence_rejects_contradictions(change):
+>       from shape_lab.acceptance import validate_native_evidence
+E       ModuleNotFoundError: No module named 'shape_lab.acceptance'
+
+tests/test_integration_v12.py:81: ModuleNotFoundError
+________________ test_kit_has_one_case_practice_route_per_case _________________
+
+    def test_kit_has_one_case_practice_route_per_case():
+        cases = json.loads((ROOT / 'curriculum/experiments.json').read_text())['experiments']
+>       assert len({x['learner'] for x in cases}) == len(cases) == 25
+                    ^^^^^^^^^^^^
+E       KeyError: 'learner'
+
+tests/test_integration_v12.py:96: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[wdbc] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'wdbc', 'lesson': 'industry/lessons/wdbc.md', 'notebook': 'industry/notebooks/wdbc.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[wine] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'wine', 'lesson': 'industry/lessons/wine.md', 'notebook': 'industry/notebooks/wine.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[stackloss] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'stackloss', 'lesson': 'industry/lessons/stackloss.md', 'notebook': 'industry/notebooks/stackloss.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[grunfeld] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'grunfeld', 'lesson': 'industry/lessons/grunfeld.md', 'notebook': 'industry/notebooks/grunfeld.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[co2] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'co2', 'lesson': 'industry/lessons/co2.md', 'notebook': 'industry/notebooks/co2.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[nile] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'nile', 'lesson': 'industry/lessons/nile.md', 'notebook': 'industry/notebooks/nile.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[elnino] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'elnino', 'lesson': 'industry/lessons/elnino.md', 'notebook': 'industry/notebooks/elnino.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[modechoice] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed historical snapshot', 'id': 'modechoice', 'lesson': 'industry/lessons/modechoice.md', 'notebook': 'industry/notebooks/modechoice.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[seeds] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed table transcribed from source text', 'id': 'seeds', 'lesson': 'applications_v7/seeds/lesson.md', 'notebook': 'applications_v7/seeds/lab.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[concrete_slump] - AssertionError: assert ('learner' in {'data_status': 'Bundled observed table transcribed from source text', 'id': 'concrete_slump', 'lesson': 'applications_v7/concrete_slump/lesson.md', 'notebook': 'applications_v7/concrete_slump/lab.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[leakage] - AssertionError: assert ('learner' in {'data_status': 'Constructed control; not a new observed dataset', 'id': 'leakage', 'lesson': 'methods_v7/leakage/lesson.md', 'notebook': 'methods_v7/leakage/lab.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[claims] - AssertionError: assert ('learner' in {'data_status': 'Constructed control; not a new observed dataset', 'id': 'claims', 'lesson': 'methods_v7/claims/lesson.md', 'notebook': 'methods_v7/claims/lab.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[s00] - AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's00', 'lesson': 'sports_v8/lessons/S00.md', 'notebook': 'sports_v8/notebooks/S00.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[s01] - AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's01', 'lesson': 'sports_v8/lessons/S01.md', 'notebook': 'sports_v8/notebooks/S01.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[s02] - AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's02', 'lesson': 'sports_v8/lessons/S02.md', 'notebook': 'sports_v8/notebooks/S02.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[s03] - AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's03', 'lesson': 'sports_v8/lessons/S03.md', 'notebook': 'sports_v8/notebooks/S03.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[s04] - AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's04', 'lesson': 'sports_v8/lessons/S04.md', 'notebook': 'sports_v8/notebooks/S04.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[s05] - AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's05', 'lesson': 'sports_v8/lessons/S05.md', 'notebook': 'sports_v8/notebooks/S05.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[s06] - AssertionError: assert ('learner' in {'data_status': 'Selected SPL/SkillCorner excerpts and labeled controls', 'id': 's06', 'lesson': 'sports_v8/lessons/S06.md', 'notebook': 'sports_v8/notebooks/S06.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_every_named_case_exposes_existing_practice[acb] - AssertionError: assert ('learner' in {'data_status': 'Bundled 10-game metadata with recorded source blob hash', 'id': 'acb', 'lesson': 'sports_v9/lesson.md', 'notebook': 'sports_v9/notebooks/acb_readiness.ipynb', ...})
+FAILED tests/test_integration_v12.py::test_installed_wrong_version_is_not_ready - KeyError: 'compatible'
+FAILED tests/test_integration_v12.py::test_cpu_local_torch_version_compatible - KeyError: 'compatible'
+FAILED tests/test_integration_v12.py::test_reader_does_not_attach_work_pvc - assert not True
+ +  where True = any(<generator object test_reader_does_not_attach_work_pvc.<locals>.<genexpr> at 0x7f5cfb84ca00>)
+FAILED tests/test_integration_v12.py::test_kube_policy_catches_unsafe_or_ambiguous_resources[privileged] - AssertionError: privileged
+assert []
+ +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+FAILED tests/test_integration_v12.py::test_kube_policy_catches_unsafe_or_ambiguous_resources[hostNetwork] - AssertionError: hostNetwork
+assert []
+ +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...viceAccountToken': False, 'containers': [...], 'hostNetwork': True, 'restartPolicy': 'Never', ...}}}}], 'kind': 'List'})
+FAILED tests/test_integration_v12.py::test_kube_policy_catches_unsafe_or_ambiguous_resources[hostPath] - AssertionError: hostPath
+assert []
+ +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+FAILED tests/test_integration_v12.py::test_kube_policy_catches_unsafe_or_ambiguous_resources[root] - AssertionError: root
+assert []
+ +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+FAILED tests/test_integration_v12.py::test_kube_policy_catches_unsafe_or_ambiguous_resources[seccomp] - AssertionError: seccomp
+assert []
+ +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+FAILED tests/test_integration_v12.py::test_kube_policy_catches_unsafe_or_ambiguous_resources[namespace] - AssertionError: namespace
+assert []
+ +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+FAILED tests/test_integration_v12.py::test_kube_policy_catches_unsafe_or_ambiguous_resources[duplicate] - AssertionError: duplicate
+assert []
+ +  where [] = <function validate_resources at 0x7f5cf870f4c0>({'apiVersion': 'v1', 'items': [{'apiVersion': 'v1', 'kind': 'Namespace', 'metadata': {'labels': {'pod-security.kuberne...ccountToken': False, 'containers': [...], 'restartPolicy': 'Never', 'securityContext': {...}, ...}}}}], 'kind': 'List'})
+FAILED tests/test_integration_v12.py::test_evidence_requires_child_details_not_just_zero_exit - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_evidence_rejects_contradictions[profile] - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_evidence_rejects_contradictions[skips_full] - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_evidence_rejects_contradictions[totals] - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_evidence_rejects_contradictions[failed] - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_evidence_rejects_contradictions[duplicate] - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_evidence_rejects_contradictions[missing] - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_evidence_rejects_contradictions[tamper] - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_evidence_rejects_contradictions[prior_reports] - ModuleNotFoundError: No module named 'shape_lab.acceptance'
+FAILED tests/test_integration_v12.py::test_kit_has_one_case_practice_route_per_case - KeyError: 'learner'
+40 failed, 5 passed in 0.25s

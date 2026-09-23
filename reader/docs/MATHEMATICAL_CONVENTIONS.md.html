@@ -1,0 +1,101 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mathematical and computational conventions · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../docs/MATHEMATICAL_CONVENTIONS.md">docs/MATHEMATICAL_CONVENTIONS.md</a> · Readable source notation; no online math renderer.</p><h1 id="mathematical-and-computational-conventions">Mathematical and computational conventions</h1>
+<p>These are binding for comparing the notebook results. Changing one creates a different analysis unless a theorem shows equivalence.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Convention in the executable core</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Observation identity</td>
+<td>Original dataset row IDs retained; labels are excluded from geometry unless the experiment explicitly models labels.</td>
+</tr>
+<tr>
+<td>Distances</td>
+<td>Euclidean distances on declared features; stage-specific rescaling always stated. Distinct IDs with identical coordinates give a pseudometric on IDs.</td>
+</tr>
+<tr>
+<td>Complex</td>
+<td>Finite abstract simplices stored as sorted nonempty tuples of distinct integer vertex IDs.</td>
+</tr>
+<tr>
+<td>Face condition</td>
+<td>Every nonempty face must be present. Validation rejects missing faces; closure deliberately constructs them.</td>
+</tr>
+<tr>
+<td>Coefficients</td>
+<td>F₂; row and column arithmetic modulo two, implemented with XOR.</td>
+</tr>
+<tr>
+<td>Homology</td>
+<td>Ordinary simplicial homology, not reduced homology. A point has β₀=1.</td>
+</tr>
+<tr>
+<td>Rips parameter</td>
+<td>ε is maximum allowed pairwise edge length, not radius. The complex includes simplices whose diameter is ≤ε.</td>
+</tr>
+<tr>
+<td>Dimension</td>
+<td>To report Hₖ of a Rips model, build through dimension k+1. The returned maximum homology dimension is separately stated.</td>
+</tr>
+<tr>
+<td>Ties</td>
+<td>Sort by filtration value, then simplex dimension, then vertex tuple. Faces precede cofaces at equal values.</td>
+</tr>
+<tr>
+<td>Intervals</td>
+<td>Half-open [birth,death); exactly zero-length intervals omitted by default. No arbitrary denoising cutoff is silently applied.</td>
+</tr>
+<tr>
+<td>Infinity</td>
+<td>An unpaired class survives the supplied filtration. Infinity may mean truncation, not a globally essential class.</td>
+</tr>
+<tr>
+<td>JSON</td>
+<td>Nonfinite endpoints encode as null, with the report noting the convention. Finite results are never serialized as invalid JSON NaN or Infinity.</td>
+</tr>
+<tr>
+<td>Pixel object</td>
+<td>Union of closed squares; corner-touching squares are connected; no periodic boundary or padded exterior.</td>
+</tr>
+<tr>
+<td>Pixel scalar</td>
+<td>f=1−intensity/16 for digits. Both triangles of a square enter at the square value; shared faces receive the minimum incident value.</td>
+</tr>
+<tr>
+<td>Pixel triangulation</td>
+<td>Filtration-preserving subdivision of the declared square-cell union, not a general physical surface reconstruction.</td>
+</tr>
+<tr>
+<td>Diagram distance</td>
+<td><code>finite_bottleneck</code> uses maximum-norm matching with diagonal matches and rejects essential intervals. Stage 10 uses completed finite H₁.</td>
+</tr>
+<tr>
+<td>Features</td>
+<td>Fixed per-image 20-vector; finite lifetime summaries plus Betti counts including essential classes. Dataset-learned scaling occurs only inside model pipelines.</td>
+</tr>
+<tr>
+<td>Mapper</td>
+<td>Scalar-lens cover, DBSCAN with min_samples=1, nodes = local clusters, edges = shared original observations. Only the nerve's 1-skeleton is plotted.</td>
+</tr>
+<tr>
+<td>Delay windows</td>
+<td>Forward windows are available only at the last included sample. A spatial image profile is not described as temporal data.</td>
+</tr>
+<tr>
+<td>ML split</td>
+<td>Frozen per-image training/validation/test split; no writer IDs; no claim of writer independence.</td>
+</tr>
+<tr>
+<td>Library comparisons</td>
+<td>Match field, scale, dimension, cutoffs, zero-length policy and tolerance. Optional checks not executed here remain pending.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="important-clarifications-to-earlier-intuition">Important clarifications to earlier intuition</h2>
+<p>“Same number of holes” is not sufficient to establish a homeomorphism. A torus <strong>surface</strong> has two independent H₁ classes; a solid torus has the homotopy type of a circle. “Enclosed void” is not a general definition of H₂. In arbitrary spaces, H₀ counts path components in the relevant homology framework; the finite simplicial examples make connected and path-connected components coincide.</p>
+<p>A topology can be defined without a metric. A finite metric sample of distinct points is discrete even when it resembles a curve. Rips persistence encodes numerical distance scale and is not invariant under every homeomorphism of a generating shape.</p>
+<p>These are explicit course clarifications and expansions of the supplied outline. The original attachment is preserved unchanged; no revision is attributed to the book's author.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>
