@@ -1,0 +1,62 @@
+name: Native v16 toolchain validation
+on:
+  push:
+    branches: [learning/native-parity-v16]
+    paths: [.github/workflows/native-v16-validation.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  reproducible-toolchain:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Install pinned official Rust toolchain
+        run: |
+          set -euo pipefail
+          rustup toolchain install 1.90.0 --profile minimal --component rustfmt
+          rustup run 1.90.0 rustc --version --verbose
+          rustup run 1.90.0 cargo --version
+      - name: Resolve native-course reader dependencies
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/native-reader/src /tmp/course-tools
+          cd /tmp/native-reader
+          cat > Cargo.toml <<'EOF'
+          [package]
+          name = "shape-native"
+          version = "16.0.0"
+          edition = "2021"
+          rust-version = "1.83"
+          [dependencies]
+          serde = { version = "=1.0.228", features = ["derive"] }
+          serde_json = "=1.0.145"
+          csv = "=1.3.1"
+          sha2 = "=0.10.9"
+          zip = { version = "=0.6.6", default-features = false, features = ["deflate"] }
+          png = "=0.17.16"
+          EOF
+          printf 'fn main() { println!("toolchain smoke only, not course acceptance"); }\n' > src/main.rs
+          rustup run 1.90.0 cargo generate-lockfile
+          rustup run 1.90.0 cargo test --locked
+          rustup run 1.90.0 cargo vendor --locked /tmp/course-tools/vendor > /tmp/course-tools/vendor-config.toml
+          cp Cargo.toml Cargo.lock /tmp/course-tools/
+          toolchain=$(rustup run 1.90.0 rustc --print sysroot)
+          cp -a "$toolchain" /tmp/course-tools/rust-toolchain
+          rustup run 1.90.0 rustc --version --verbose > /tmp/course-tools/VERSIONS.txt
+          rustup run 1.90.0 cargo --version >> /tmp/course-tools/VERSIONS.txt
+          printf '\nThis artifact proves compiler provisioning only. It does not certify the learning labs.\n' >> /tmp/course-tools/VERSIONS.txt
+          cd /tmp/course-tools
+          find vendor -type f -print0 | sort -z | xargs -0 sha256sum > VENDOR_SHA256.txt
+          tar -cJf /tmp/native-toolchain.tar.xz .
+          sha256sum /tmp/native-toolchain.tar.xz > /tmp/native-toolchain.sha256
+      - name: Retain bounded verification tools
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-v16-verification-tools
+          path: |
+            /tmp/native-toolchain.tar.xz
+            /tmp/native-toolchain.sha256
+          retention-days: 7
+          compression-level: 0
+          if-no-files-found: error
