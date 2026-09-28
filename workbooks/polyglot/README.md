@@ -7,6 +7,30 @@ then Rust. See [the guide](../../native/guides/LEARNING_PATHS.md) and the
 
 Each notebook is **unassessed**. Nothing here is a second mandatory curriculum.
 
+## Find your way around (the folders have different jobs)
+
+This trips people up, because several folders hold Go or Rust code:
+
+| Path | What it is | Do you edit it? |
+|---|---|---|
+| `workbooks/polyglot/python/` | **notebooks** that run the canonical Python reference | no |
+| `workbooks/polyglot/go/` | **notebooks** that run the real Go program | no |
+| `workbooks/polyglot/rust/` | **notebooks** that run the real Rust program | no |
+| `native/go/`, `native/rust/` | the **reference source** those notebooks compile | no — read-only reference |
+| `my_work/<session>/native/go|rust/` | **your** copy from `native_course.py prepare` | **yes — here** |
+| `notebooks/`, `lessons/`, `practice/` | the original course labs and assignments | your learner notebook |
+
+`notebooks/` is the *original course*. It has no `go` or `rust` folder, and it
+is not where these notebooks live. There are 57 notebooks per language
+(171 in total) under `workbooks/polyglot/`.
+
+```powershell
+# the three Stage 01 notebooks, one per language
+workbooks/polyglot/python/stage01.ipynb
+workbooks/polyglot/go/stage01.ipynb
+workbooks/polyglot/rust/stage01.ipynb
+```
+
 | Lab | Title | Python | Go | Rust |
 |---|---|---|---|---|
 | `stage00` | Start here: how to learn, run, and question the results | [py](python/stage00.ipynb) | [go](go/stage00.ipynb) | [rust](rust/stage00.ipynb) |

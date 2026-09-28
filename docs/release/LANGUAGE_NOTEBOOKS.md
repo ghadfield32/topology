@@ -7,6 +7,31 @@ Every one of the 57 native16 learning units now has an interactive notebook in
 Index: [`workbooks/polyglot/index.html`](../../workbooks/polyglot/index.html)
 (plain text: [`README.md`](../../workbooks/polyglot/README.md)).
 
+## Where things live (this is the usual point of confusion)
+
+Several folders contain Go or Rust material, and they are **not** the same thing:
+
+| Path | What it is | Do you edit it? |
+|---|---|---|
+| `workbooks/polyglot/python/` | notebooks that run the canonical Python reference | no |
+| `workbooks/polyglot/go/` | notebooks that run the real Go program | no |
+| `workbooks/polyglot/rust/` | notebooks that run the real Rust program | no |
+| `native/go/`, `native/rust/` | the **reference source** those notebooks compile | no — read-only reference |
+| `my_work/<session>/native/go\|rust/` | **your** copy from `native_course.py prepare` | **yes — here** |
+| `notebooks/`, `lessons/`, `practice/` | the original course labs and assignments | your learner notebook |
+
+**`notebooks/` is the original course.** It has no `go` or `rust` folder and does
+not contain these notebooks. The 171 notebooks live under `workbooks/polyglot/`;
+each language folder has its own `README.md` so it is self-guiding when opened.
+
+For Stage 01 the three notebooks are:
+
+```text
+workbooks/polyglot/python/stage01.ipynb
+workbooks/polyglot/go/stage01.ipynb
+workbooks/polyglot/rust/stage01.ipynb
+```
+
 ## The three notebooks do different jobs
 
 | Route | Notebook | What it actually does |

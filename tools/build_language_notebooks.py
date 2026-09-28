@@ -765,6 +765,21 @@ code{{background:#f4f4f4;padding:1px 4px;border-radius:3px}}
 <h1>Learn any lab in Python, Go or Rust</h1>
 <p>One notebook triad per learning unit: the same lab, the same registered inputs,
 the same comparison, in three languages. Start with Python, then Go, then Rust.</p>
+<h2>Where things live</h2>
+<p>Several folders contain Go or Rust material, and they are not the same thing:</p>
+<table>
+<thead><tr><th>Path</th><th>What it is</th><th>Do you edit it?</th></tr></thead>
+<tbody>
+<tr><td><code>workbooks/polyglot/python/</code></td><td>notebooks that run the canonical Python reference</td><td>no</td></tr>
+<tr><td><code>workbooks/polyglot/go/</code></td><td>notebooks that run the real Go program</td><td>no</td></tr>
+<tr><td><code>workbooks/polyglot/rust/</code></td><td>notebooks that run the real Rust program</td><td>no</td></tr>
+<tr><td><code>native/go/</code>, <code>native/rust/</code></td><td>the <strong>reference source</strong> those notebooks compile</td><td>no — read-only reference</td></tr>
+<tr><td><code>my_work/&lt;session&gt;/native/go|rust/</code></td><td><strong>your</strong> copy from <code>native_course.py prepare</code></td><td><strong>yes — here</strong></td></tr>
+<tr><td><code>notebooks/</code>, <code>lessons/</code>, <code>practice/</code></td><td>the original course labs and assignments</td><td>your learner notebook</td></tr>
+</tbody></table>
+<p><strong><code>notebooks/</code> is the original course.</strong> It has no <code>go</code> or
+<code>rust</code> folder and does not contain these notebooks. For Stage 01 the three
+notebooks are <code>workbooks/polyglot/&#123;python,go,rust&#125;/stage01.ipynb</code>.</p>
 <div class="notice">
 <strong>Unassessed.</strong> These notebooks add an interactive route through the
 same {len(labs)} native teaching units. They are not a second curriculum, they do
@@ -787,6 +802,94 @@ Read <a href="../../docs/release/LANGUAGE_NOTEBOOKS.md">the guide</a> and
 '''
 
 
+def language_readme(lang: str) -> str:
+    """A README inside each language folder, so it is self-guiding when opened.
+
+    Generated on purpose: `--check` treats any unregistered file under
+    workbooks/polyglot as "unexpected", so a hand-added README would fail the
+    check. Adding it here keeps the generator the single source of output.
+    """
+    title = LANG_TITLES[lang]
+    what = {
+        "python": (
+            "runs the **canonical Python reference** for one learning unit in a fresh\n"
+            "kernel inside an isolated copy of the source, then audits that lab's\n"
+            "registered inputs and one specific native run. It is not a Python\n"
+            "re-implementation of the native lab."
+        ),
+        "go": (
+            "compiles and runs the **real Go program** for one native learning unit.\n"
+            "Python is only the driver: it builds the binary, launches it, and compares\n"
+            "the result. The mathematics happens in Go."
+        ),
+        "rust": (
+            "compiles and runs the **real Rust program** for one native learning unit.\n"
+            "Python is only the driver: it builds the binary, launches it, and compares\n"
+            "the result. The mathematics happens in Rust."
+        ),
+    }[lang]
+
+    others = "\n".join(
+        f"- {LANG_TITLES[o]} equivalents: [`../{o}/`](../{o}/)"
+        for o in LANGS
+        if o != lang
+    )
+    reference = (
+        f"- Reference source (read-only): [`../../native/{lang}/`](../../native/{lang}/)"
+        if lang != "python"
+        else "- Independent data and scientific checks: [`../../native/python/`](../../native/python/)"
+    )
+    session = "python" if lang == "python" else lang
+    run_hint = (
+        f"    uv run --no-sync python course.py run --stage 1 --output my_work/stage01_ref01"
+        if lang == "python"
+        else f"    uv run --no-sync python native_course.py compare --lab stage01 --output my_work/stage01_{lang}01"
+    )
+    private_note = (
+        "Your own Python work belongs in the learner notebook produced by\n"
+        "`course.py practice`, not in the reference notebook."
+        if lang == "python"
+        else (
+            "Two different places, and the difference matters:\n\n"
+            f"| Path | Role |\n|---|---|\n"
+            f"| `native/{lang}/` | the **reference** implementation, committed and read-only |\n"
+            f"| `my_work/<session>/native/{lang}/` | **your** editable copy, created by `prepare` |\n\n"
+            "To make changes that actually get compiled and tested:\n\n"
+            f"    uv run --no-sync python native_course.py prepare --lab stage01 --output my_work/stage01_practice01\n\n"
+            f"Then edit inside `my_work/stage01_practice01/{lang}/`. Editing\n"
+            f"`native/{lang}/` changes the shared reference for every lab, which is not\n"
+            "the assignment."
+        )
+    )
+
+    return f"""# {title} notebooks ({len(load_runner().available_labs(ROOT))})
+
+Each `.ipynb` here {what}
+
+- **Index of all three languages:** [../index.html](../index.html) or [../README.md](../README.md)
+{others}
+{reference}
+
+## Run one
+
+    uv run --no-sync jupyter nbconvert --to notebook --execute `
+      --output-dir my_work/nb_run workbooks/polyglot/{lang}/stage01.ipynb
+
+Or open it in VS Code or JupyterLab and run the cells top to bottom.
+
+To produce the reference result the notebook compares against:
+
+{run_hint}
+
+## Where the {title} code lives
+
+{private_note}
+
+These notebooks are **unassessed**, and they are not a second curriculum: the
+31-stage route in `curriculum/catalog.json` remains the only required one.
+""".rstrip() + "\n"
+
+
 def index_markdown(labs: list[dict]) -> str:
     lines = [
         "# Learn any lab in Python, Go or Rust",
@@ -797,6 +900,30 @@ def index_markdown(labs: list[dict]) -> str:
         "[import record](../../docs/release/LANGUAGE_NOTEBOOKS.md).",
         "",
         "Each notebook is **unassessed**. Nothing here is a second mandatory curriculum.",
+        "",
+        "## Find your way around (the folders have different jobs)",
+        "",
+        "This trips people up, because several folders hold Go or Rust code:",
+        "",
+        "| Path | What it is | Do you edit it? |",
+        "|---|---|---|",
+        "| `workbooks/polyglot/python/` | **notebooks** that run the canonical Python reference | no |",
+        "| `workbooks/polyglot/go/` | **notebooks** that run the real Go program | no |",
+        "| `workbooks/polyglot/rust/` | **notebooks** that run the real Rust program | no |",
+        "| `native/go/`, `native/rust/` | the **reference source** those notebooks compile | no — read-only reference |",
+        "| `my_work/<session>/native/go|rust/` | **your** copy from `native_course.py prepare` | **yes — here** |",
+        "| `notebooks/`, `lessons/`, `practice/` | the original course labs and assignments | your learner notebook |",
+        "",
+        f"`notebooks/` is the *original course*. It has no `go` or `rust` folder, and it",
+        f"is not where these notebooks live. There are {len(labs)} notebooks per language",
+        f"({len(labs) * 3} in total) under `workbooks/polyglot/`.",
+        "",
+        "```powershell",
+        "# the three Stage 01 notebooks, one per language",
+        "workbooks/polyglot/python/stage01.ipynb",
+        "workbooks/polyglot/go/stage01.ipynb",
+        "workbooks/polyglot/rust/stage01.ipynb",
+        "```",
         "",
         "| Lab | Title | Python | Go | Rust |",
         "|---|---|---|---|---|",
@@ -830,6 +957,8 @@ def render(labs: list[dict]) -> dict[str, str]:
         files[f"rust/{lab['key']}.ipynb"] = nb_text(native_notebook(lab, "rust"))
     files["README.md"] = index_markdown(labs)
     files["index.html"] = index_html(labs)
+    for lang in LANGS:
+        files[f"{lang}/README.md"] = language_readme(lang)
     return files
 
 

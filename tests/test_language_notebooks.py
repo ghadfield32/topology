@@ -191,6 +191,36 @@ def test_notebooks_keep_the_lab_identity_and_boundaries():
         assert "native/guides/LEARNING_PATHS.md" in blob
 
 
+def test_each_language_folder_is_self_guiding():
+    """A user opening workbooks/polyglot/<lang>/ must be able to orient there."""
+    for lang in ("python", "go", "rust"):
+        readme = NB_ROOT / lang / "README.md"
+        assert readme.is_file(), f"{lang}/ has no README; the folder is not self-guiding"
+        text = readme.read_text(encoding="utf-8")
+        assert "../index.html" in text, f"{lang}/README.md does not link back to the index"
+        assert "../../native/" in text, f"{lang}/README.md does not point at the native source"
+        assert "unassessed" in text.lower()
+        if lang != "python":
+            # The reference-vs-your-copy distinction is the thing people get wrong.
+            assert "native_course.py prepare" in text, (
+                f"{lang}/README.md must show how to make an editable private copy"
+            )
+            assert "my_work/" in text
+            assert "reference" in text.lower()
+            assert "editable copy" in text.lower()
+
+
+def test_index_explains_where_go_and_rust_live():
+    """The index must pre-empt the 'notebooks/ has no go or rust folder' confusion."""
+    text = (NB_ROOT / "README.md").read_text(encoding="utf-8")
+    assert "notebooks/" in text
+    assert "no `go` or `rust` folder" in text
+    for lang in ("python", "go", "rust"):
+        assert f"workbooks/polyglot/{lang}/" in text
+    assert "native/go/" in text and "native/rust/" in text
+    assert "reference source" in text
+
+
 def test_index_lists_every_lab_and_states_the_total():
     text = (NB_ROOT / "README.md").read_text(encoding="utf-8")
     for key in KEYS:
@@ -250,7 +280,8 @@ def test_generator_renders_every_artifact_without_touching_disk(tmp_path):
     """render() is the single source of output and must be side-effect free."""
     gen = load_generator()
     files = gen.render(LABS)
-    assert len(files) == 171 + 2
+    # 57 labs x 3 languages, plus the root index pair and one README per language.
+    assert len(files) == 171 + 2 + 3
     assert not any(tmp_path.iterdir()), "render must not write to disk"
     for rel, content in files.items():
         assert content.endswith("\n"), rel

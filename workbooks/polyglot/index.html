@@ -12,6 +12,21 @@ code{background:#f4f4f4;padding:1px 4px;border-radius:3px}
 <h1>Learn any lab in Python, Go or Rust</h1>
 <p>One notebook triad per learning unit: the same lab, the same registered inputs,
 the same comparison, in three languages. Start with Python, then Go, then Rust.</p>
+<h2>Where things live</h2>
+<p>Several folders contain Go or Rust material, and they are not the same thing:</p>
+<table>
+<thead><tr><th>Path</th><th>What it is</th><th>Do you edit it?</th></tr></thead>
+<tbody>
+<tr><td><code>workbooks/polyglot/python/</code></td><td>notebooks that run the canonical Python reference</td><td>no</td></tr>
+<tr><td><code>workbooks/polyglot/go/</code></td><td>notebooks that run the real Go program</td><td>no</td></tr>
+<tr><td><code>workbooks/polyglot/rust/</code></td><td>notebooks that run the real Rust program</td><td>no</td></tr>
+<tr><td><code>native/go/</code>, <code>native/rust/</code></td><td>the <strong>reference source</strong> those notebooks compile</td><td>no — read-only reference</td></tr>
+<tr><td><code>my_work/&lt;session&gt;/native/go|rust/</code></td><td><strong>your</strong> copy from <code>native_course.py prepare</code></td><td><strong>yes — here</strong></td></tr>
+<tr><td><code>notebooks/</code>, <code>lessons/</code>, <code>practice/</code></td><td>the original course labs and assignments</td><td>your learner notebook</td></tr>
+</tbody></table>
+<p><strong><code>notebooks/</code> is the original course.</strong> It has no <code>go</code> or
+<code>rust</code> folder and does not contain these notebooks. For Stage 01 the three
+notebooks are <code>workbooks/polyglot/&#123;python,go,rust&#125;/stage01.ipynb</code>.</p>
 <div class="notice">
 <strong>Unassessed.</strong> These notebooks add an interactive route through the
 same 57 native teaching units. They are not a second curriculum, they do
