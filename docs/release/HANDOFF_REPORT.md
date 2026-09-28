@@ -1,7 +1,11 @@
 # Handoff completion report
 
 Branch: `review/native16-notebooks`. Base revision: `52aa1b6`, which is also
-`origin/main`. Nothing has been committed, pushed, or merged.
+`origin/main`.
+
+The integration is committed on this branch as **`fe2542b`**. It has not been
+pushed or merged. A fresh export of that revision reproduces the generated
+inventory exactly (see *Fresh checkout* below).
 
 ## Second handoff: premises checked against the actual repo
 
@@ -151,7 +155,7 @@ output what none of them establish. Observed here:
 | Check | Result |
 |---|---|
 | `contracts` | passed, 3.2 s |
-| `python` | passed, 811 passed / 4 skipped |
+| `python` | passed, 816 passed / 4 skipped (817 / 3 with the opt-in Rust mutation) |
 | `readers` | passed (110 decoder comparisons) |
 | `native` | passed (Go 34, Rust 28, 0 failed) |
 | `science` | passed (57+57 labs, 110 data, 64 fixture, 220 scientific) |
@@ -201,11 +205,50 @@ workflow. It does **not** derive the null vector. It uses the changed redundant
 column `5*x0 + 2*x1` and requires the learner to derive the null vector first.
 Its canonical command was executed to confirm it works.
 
+## Committed revision and fresh-checkout reproducibility
+
+Commit **`fe2542b`** on `review/native16-notebooks`, 2491 files. Not pushed.
+
+Staged by an explicit path list (`tools/stage_native16_commit.ps1`), never
+`git add -A` / `git add .`. Deliberately **excluded**:
+
+- `my_work/` (git-ignored private evidence),
+- `notebooks/00..02_lab.ipynb` — learner edits,
+- `reports/stage_00`, `reports/stage_02` — reference outputs,
+- the root `COMPLETE_COURSE_V2..V7.md` deletions.
+
+Those four groups deserve separate, reasoned commits, so they were left out.
+Verified absent from the staged set: secrets, learner work, root deletions.
+
+`tools/verify_fresh_checkout.ps1` exports `HEAD` with `git archive` and checks
+the result:
+
+| Check | Result |
+|---|---|
+| notebooks in the fresh export | 171 |
+| `native/protocols/labs.json`, `curriculum/catalog.json`, `native_course.py`, generator, verifier, evidence pointer, `uv.lock` | all present |
+| `generator --check` against the fresh export | **exit 0** — committed workbooks match the generator |
+
+Note: piping a binary tar through PowerShell's text pipeline corrupts it; the
+script writes the archive to a file first.
+
+### Test identities, not a frozen total
+
+The two suite totals above differ by exactly one test, and the reason is
+identified rather than left as noise: `tests/test_learner_mutation.py` collects
+three tests, one of which is gated behind `SHAPE_TEST_RUST_MUTATION=1` because it
+builds the Rust workspace. Disabled → 816 passed / 4 skipped. Enabled → 3 passed
+in that file and no skip → 817 passed / 3 skipped. It was run enabled and passed.
+
+Do not carry a historical total (774, 821, …) across platforms. Compare the
+collected tests and justify each skip.
+
 ## Current tested / not tested
 
 | Claim | Status |
 |---|---|
-| Python suite | 811 passed, 4 skipped, 0 failed |
+| Python suite (default) | **816 passed, 4 skipped, 0 failed** |
+| Python suite with `SHAPE_TEST_RUST_MUTATION=1` | **817 passed, 3 skipped, 0 failed** |
 | Native Go/Rust tests | 34 / 28 passed, 0 failed |
 | Native data decoders | 110 comparisons passed |
 | Independent scientific oracles | 220 passed |
