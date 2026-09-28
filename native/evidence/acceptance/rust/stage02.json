@@ -1,0 +1,75 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "data/raw/iris.csv": {
+      "bytes": 4676,
+      "sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f"
+    },
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage02",
+  "language": "rust",
+  "metrics": {
+    "component_counts": [
+      23,
+      10,
+      1,
+      1
+    ],
+    "distances_L1_L2_Linf": [
+      [
+        1.3458556790672125,
+        1.0858574724170784,
+        1.0426728164875012
+      ],
+      [
+        1.3006833980309684,
+        0.8739456395635085,
+        0.6256036898925004
+      ],
+      [
+        1.6608093926183263,
+        1.1291622061973157,
+        0.8341382531900008
+      ],
+      [
+        0.36012599458735595,
+        0.2578112218856778,
+        0.20853456329750042
+      ],
+      [
+        1.8455244163934053,
+        1.0334069634049796,
+        0.8341382531900009
+      ],
+      [
+        1.1417266799451309,
+        0.8054148039228454,
+        0.7579571564492805
+      ],
+      [
+        0.4288399775664009,
+        0.26681123961900605,
+        0.20853456329750042
+      ]
+    ],
+    "radii": [
+      0.2,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "scope": "scaled sample geometry, not biological topology proof",
+    "squared_distance_counterexample": [
+      4,
+      2
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

@@ -1,0 +1,12 @@
+{
+  "lab": "seeds",
+  "title": "Agriculture feature-space geometry",
+  "metrics": {
+    "columns": 9,
+    "data_rows": 210,
+    "rows_including_header": 211
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

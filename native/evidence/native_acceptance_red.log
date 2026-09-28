@@ -1,0 +1,24 @@
+?   	shape-native/cmd/shape-go	[no test files]
+--- FAIL: TestBottleneckEssential (0.00s)
+panic: essential-class count mismatch; distance infinite [recovered]
+	panic: essential-class count mismatch; distance infinite
+
+goroutine 35 [running]:
+testing.tRunner.func1.2({0x555740, 0xc00010c2e0})
+	/usr/local/go/src/testing/testing.go:1632 +0x230
+testing.tRunner.func1()
+	/usr/local/go/src/testing/testing.go:1635 +0x35e
+panic({0x555740?, 0xc00010c2e0?})
+	/usr/local/go/src/runtime/panic.go:785 +0x132
+shape-native/engine.require(...)
+	/mnt/data/v16_build/listening_to_shape_lab/native/go/engine/math.go:13
+shape-native/engine.Bottleneck({0xc000046748?, 0x4da4c0?, 0x6891d0?}, {0x0, 0x0, 0x4da2fc?})
+	/mnt/data/v16_build/listening_to_shape_lab/native/go/engine/topology.go:388 +0x965
+shape-native/engine.TestBottleneckEssential(0xc000105d40)
+	/mnt/data/v16_build/listening_to_shape_lab/native/go/engine/acceptance_test.go:96 +0x4b
+testing.tRunner(0xc000105d40, 0x592888)
+	/usr/local/go/src/testing/testing.go:1690 +0xf4
+created by testing.(*T).Run in goroutine 1
+	/usr/local/go/src/testing/testing.go:1743 +0x390
+FAIL	shape-native/engine	0.004s
+FAIL

@@ -1,0 +1,11 @@
+{
+  "lab": "stage02",
+  "title": "Metrics",
+  "metrics": {
+    "euclidean": 5,
+    "manhattan": 7
+  },
+  "notes": [
+    "A metric choice changes neighborhoods."
+  ]
+}

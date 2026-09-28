@@ -1,0 +1,78 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "data/raw/digits.npz": {
+      "bytes": 48351,
+      "sha256": "2642e38b91971a422addc7bfa3474649f0b69ad6736f1a9700079a57bfb8135a"
+    },
+    "data/splits.json": {
+      "bytes": 16917,
+      "sha256": "895b1092a9813d596166337e29caf7f0a5d9c7352445c5067b67ff984b8f86bd"
+    },
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage05",
+  "language": "rust",
+  "metrics": {
+    "coefficient_field": "F2",
+    "filled_tetrahedron_betti": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "filled_triangle_betti": [
+      1,
+      0,
+      0
+    ],
+    "real_digit_closed_pixel_betti": [
+      1,
+      1
+    ],
+    "real_digit_persistence": [
+      {
+        "birth": -15.0,
+        "death": -10.0,
+        "dimension": 0
+      },
+      {
+        "birth": -15.0,
+        "death": null,
+        "dimension": 0
+      },
+      {
+        "birth": -14.0,
+        "death": -8.0,
+        "dimension": 0
+      },
+      {
+        "birth": -12.0,
+        "death": -10.0,
+        "dimension": 0
+      },
+      {
+        "birth": -8.0,
+        "death": -0.0,
+        "dimension": 1
+      }
+    ],
+    "scope": "explicit finite complexes and an observed image; interpretation requires pixel convention",
+    "tetrahedron_surface_betti": [
+      1,
+      0,
+      1
+    ],
+    "triangle_boundary_betti": [
+      1,
+      1
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

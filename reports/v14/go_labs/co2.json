@@ -1,0 +1,12 @@
+{
+  "lab": "co2",
+  "title": "Atmospheric observations and windows",
+  "metrics": {
+    "columns": 3,
+    "data_rows": 2284,
+    "rows_including_header": 2285
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

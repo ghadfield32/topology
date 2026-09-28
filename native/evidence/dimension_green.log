@@ -1,0 +1,48 @@
+   Compiling shape-native v16.0.0 (/mnt/data/v16_build/listening_to_shape_lab/native/rust)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.77s
+     Running unittests src/lib.rs (/mnt/data/v16_evidence/cargo-target/debug/deps/shape_native-69a485993db1e975)
+
+running 28 tests
+test acceptance_tests::ad_composite ... ok
+test acceptance_tests::bottleneck_diagonal ... ok
+test acceptance_tests::bottleneck_essential ... ok
+test acceptance_tests::betti_examples ... ok
+test acceptance_tests::boundary_squared ... ok
+test acceptance_tests::closed_pixels ... ok
+test acceptance_tests::covariance_values ... ok
+test acceptance_tests::eigen_residual ... ok
+test acceptance_tests::groups_disjoint ... ok
+test acceptance_tests::gaussian_gradient ... ok
+test acceptance_tests::jets_parameter_second_derivative ... ok
+test acceptance_tests::mst_h0 ... ok
+test acceptance_tests::classifier_probability ... ok
+test acceptance_tests::rank_preserves ... ok
+test acceptance_tests::reported_homology_dimension ... ok
+test acceptance_tests::ridge_linear ... ok
+test acceptance_tests::matrix_invalid ... ok
+test acceptance_tests::singular_solve ... ok
+test acceptance_tests::train_only_scaler ... ok
+test acceptance_tests::square_invariance ... ok
+test acceptance_tests::truncation ... ok
+test tests::gradient ... ok
+test acceptance_tests::noninteger_f2 ... ok
+test tests::rank_fields ... ok
+test tests::solve_control ... ok
+test acceptance_tests::invalid_complexes ... ok
+test tests::empty_mean_rejected - should panic ... ok
+test tests::square_persistence ... ok
+
+test result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/main.rs (/mnt/data/v16_evidence/cargo-target/debug/deps/shape_rust-b0787e1e1fe924de)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests shape_native
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

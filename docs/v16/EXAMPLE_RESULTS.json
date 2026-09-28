@@ -1,0 +1,85 @@
+{
+  "scope": "Measured outputs of native16 teaching protocols, not original Python-notebook parity or new external domain validation",
+  "stage01": {
+    "augmented_rank": 4,
+    "centered_scaled_rank": 4,
+    "f2_rank": 2,
+    "finite_preimage_of_square_1_to_9": [
+      -3,
+      -2,
+      -1,
+      1,
+      2,
+      3
+    ],
+    "iris_rank": 4,
+    "kernel_residual_max": 0,
+    "known_kernel": [
+      -2,
+      3,
+      0,
+      0,
+      1
+    ],
+    "real_rank": 3
+  },
+  "poux_bridge": {
+    "centroid_m": [
+      4.031211893377345,
+      -7.6953969094303085,
+      2.76572456960666
+    ],
+    "equal_chunk_centroid_m": [
+      4.803531031080386,
+      -7.734473429528235,
+      1.9522066411894918
+    ],
+    "equal_chunk_displacement_m": 1.122414916482088,
+    "order_reversal_error": 1.3322676295501878e-15,
+    "rows": 12,
+    "scope": "selected nonuniform rows, not time average, release point, or static LiDAR scan",
+    "weighted_centroid_m": [
+      4.031211893377345,
+      -7.6953969094303085,
+      2.7657245696066592
+    ]
+  },
+  "stereo": {
+    "eligible_pixels": 77,
+    "disparity_mae_px": 3.312001438883992,
+    "disparity_median_abs_px": 0.4267921447753906,
+    "bad_over_2px_fraction": 0.23376623376623376,
+    "depth_mae_m": 0.17924328005106965,
+    "patch_width": 5,
+    "max_disparity_px": 90
+  },
+  "pinn": {
+    "data": "manufactured Poisson equation with analytical sine solution",
+    "epochs": 180,
+    "initial_loss": 54.111846540050934,
+    "last_recorded_loss": 0.11742884021795788,
+    "grid_rmse": 0.004846942665214054
+  },
+  "wine": {
+    "protocol": "native-16: stratified xorshift split; fixed unlabelled training reference; softmax GD,160 epochs,lr=.15,L2=.01",
+    "models": {
+      "combined": {
+        "accuracy": 1,
+        "test_rows": 37
+      },
+      "raw_all_training": {
+        "accuracy": 1,
+        "test_rows": 37
+      },
+      "raw_same_supervised_rows": {
+        "accuracy": 1,
+        "test_rows": 37
+      },
+      "topology": {
+        "accuracy": 0.7837837837837838,
+        "test_rows": 37
+      }
+    },
+    "interpretation": "Different native split and solver from older notebooks; do not compare versions as language speed/quality experiments."
+  }
+}

@@ -1,0 +1,103 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SETUP</title><style>*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:#1e293b;font:17px/1.6 system-ui,sans-serif}header{background:#11243b;color:white;padding:28px max(24px,calc((100vw - 1120px)/2))}header a{color:#bfdcff}main{max-width:1168px;margin:28px auto;padding:0 24px}h1{font-size:clamp(28px,4vw,44px);line-height:1.15}h2{line-height:1.25;margin-top:32px}h3{line-height:1.3}a{color:#075ca8;overflow-wrap:anywhere}p{max-width:100ch}.intro,.notice,.card,.metrics{background:white;border:1px solid #d9e0e8;border-radius:10px;padding:22px;margin:18px 0}.notice{border-left:5px solid #b7771b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:16px}.card{margin:0;min-width:0}.small{font-size:14px;color:#506075}.tag{font-size:13px;font-weight:700;letter-spacing:.08em}pre{overflow:auto;background:#eaf0f6;padding:16px;border-radius:6px;font-size:14px}code{overflow-wrap:anywhere}table{display:block;max-width:100%;overflow:auto;border-collapse:collapse;background:white}th,td{padding:10px;text-align:left;border-bottom:1px solid #dae1ea;vertical-align:top}input{width:100%;font:inherit;padding:13px;border:1px solid #aab8c7;border-radius:6px}.metrics{display:flex;gap:32px;flex-wrap:wrap}.metrics strong{font-size:28px;display:block}.actions{display:flex;flex-wrap:wrap;gap:16px}details{background:white;padding:10px;margin:12px 0}summary{cursor:pointer}img{max-width:100%}footer{margin:32px 0;font-size:14px;color:#506075} .hidden{display:none!important} @media(max-width:500px){main{padding:0 14px}header{padding:24px 16px}.card,.intro,.notice{padding:16px}}</style></head><body><header><div class="tag">LISTENING TO SHAPE · NATIVE16</div><nav><a href="../../START_NATIVE.html">Native learning home</a> · <a href="../../START_HERE.html">Original course</a></nav></header><main><h1>Install once; keep your current learning progress</h1>
+<p>This is the combined native16 edition built from the available v14 archive, not from an unverified v15 link. It preserves the Python course and the Poux addition. It adds <code>native/</code> and <code>native_course.py</code>; it does not require restarting Stage 00. Geoff's current learning position is Stage 01.</p>
+<h2>1. What each tool does</h2>
+<p><strong>Python/uv</strong> supply the existing course environment and the comparison driver. <strong>Go</strong> compiles the native Go program. <strong>rustup</strong> installs Rust toolchains; <strong>Cargo</strong> resolves/builds/tests Rust crates. <strong>Docker</strong> packages a program and its runtime files into an image. <strong>Kubernetes</strong> schedules an image and manages work and storage. A successful native run does not prove a container or cluster ran.</p>
+<p>Go and Rust do their own computation and data decoding. The Python driver invokes the binaries and checks outputs. It does not secretly implement their models for them. The independent Python reference checks use NumPy/Pillow, the original Python topology implementation, and PyTorch as separate checks.</p>
+<h2>2. Preserve your working repository</h2>
+<p>Extract the full ZIP beside your current repository. Create a review branch in your existing repo; inspect <code>git status</code> before copying anything. Do not unzip over the repository blindly. Preserve <code>.git/</code>, your real <code>uv.lock</code>, <code>my_work/</code>, edited learner notebooks, active progress logs, <code>.local-bin/</code>, <code>.uv-cache/</code>, <code>.uv-python/</code>, local setup notes, and existing PVCs.</p>
+<p>The intended additive paths are <code>native/</code>, <code>native_course.py</code>, <code>START_NATIVE.html</code>, <code>docs/v16/</code>, and <code>tests/test_native_v16.py</code>. The top-level <code>polyglot.py</code> compatibility entry redirects old <code>run/list/verify</code> requests to the new native workspace. Keep the prior Go/Rust companion sources for comparison but treat them as historical, not the required execution route. Poux remains under <code>curriculum/extensions/poux_spatial_ai/</code>.</p>
+<p>No new Python dependencies are required by the native CLI itself. Data comparison needs the existing NumPy/Pillow course environment, and <code>--science</code> additionally needs PyTorch. The archive does not invent a Python lockfile; preserve and validate the one already resolved in your repo. <code>uv run --no-sync</code> deliberately uses your prepared environment without silently changing dependency resolution.</p>
+<h2>3. Native toolchains</h2>
+<p>This delivery actually executed <strong>Go 1.23.2</strong> and <strong>Rust/Cargo 1.90.0</strong>, on Linux x86_64. These are tested reference versions, not a claim to be the newest or suitable for exposed production services. Use current security-maintained tools for production after running the acceptance matrix.</p>
+<p>Install Go through https://go.dev/doc/install and Rust through https://rustup.rs/ . On Windows, the standard MSVC Rust target also needs Microsoft's C++ linker/build tools when not already installed. Do not assume Python/uv installed a C++ linker. On macOS, install the platform command-line developer tools if the linker is missing.</p>
+<p>For the tested Rust compiler:</p>
+<pre><code>rustup toolchain install 1.90.0 --profile minimal
+</code></pre>
+<p><code>native/rust/rust-toolchain.toml</code> selects it in that workspace. The source requires Rust &gt;=1.83, but this delivery certifies 1.90.0 only. Rust dependencies have a genuine Cargo.lock and <strong>36 vendored source crates</strong>, including their license files. After compiler installation, <code>cargo test --offline --locked</code> does not need crates.io for those crates. Vendored dependencies do not include the Rust compiler, system linker or Docker base images.</p>
+<p>Go uses only the standard library. There is no fake or unnecessary go.sum. <code>go.mod</code> is still the module/version contract.</p>
+<h2>4. Windows PowerShell: first native acceptance</h2>
+<p>From the course root:</p>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+# Preserve these settings when using your existing local uv installation:
+$env:UV_CACHE_DIR = Join-Path $PWD.Path '.uv-cache'
+$env:UV_PYTHON_INSTALL_DIR = Join-Path $PWD.Path '.uv-python'
+
+go version
+rustc --version
+cargo --version
+uv run --no-sync python native_course.py doctor
+uv run --no-sync python native_course.py build --lang all --output my_work/native_build01
+uv run --no-sync python native_course.py test --lang all --output my_work/native_tests01
+uv run --no-sync python native_course.py compare --lab stage01 --output my_work/native_stage01_01
+</code></pre>
+<p>Open <code>my_work/native_stage01_01/index.html</code>, <code>execution.json</code> and the two <code>stage01.json</code> files. Each result records what it consumed and what it computed. No stage is marked assessed.</p>
+<h2>5. macOS/Linux</h2>
+<p>Use the same <code>python native_course.py ...</code> commands through your existing uv environment. Do not copy a Windows <code>.venv</code> to macOS or Linux. The native code has no required CUDA path, so the mathematical labs do not need an RTX card. This delivery did not execute macOS or Windows native acceptance; run it on your machine rather than interpreting cross-platform source as a cross-platform test result.</p>
+<h2>6. Entire native inventory and data checks</h2>
+<pre><code>uv run --no-sync python native_course.py list
+uv run --no-sync python native_course.py data list
+uv run --no-sync python native_course.py data verify --lang all --output my_work/native_data01
+uv run --no-sync python native_course.py verify --science --output my_work/native_acceptance01
+</code></pre>
+<p><code>verify --science</code> runs both native test suites, every native unit, decoded-source comparisons, valid/invalid parser fixtures, and selected independent NumPy/Python/PyTorch checks. It does not replay all 133 original notebooks. Its result states that scope explicitly.</p>
+<p><code>--require-original-parity</code> intentionally refuses a full-original equivalence claim while the coverage ledger contains gaps. Do not remove that check just to make a screen green.</p>
+<h2>7. Run a binary without a Python launcher</h2>
+<p>From <code>native/go</code>:</p>
+<pre><code>go test -count=1 ./...
+go run ./cmd/shape-go --repo ../.. --lab stage01
+</code></pre>
+<p>From <code>native/rust</code>:</p>
+<pre><code>cargo test --offline --locked
+cargo run --offline --locked --release --bin shape-rust -- --repo ../.. --lab stage01
+</code></pre>
+<p>Run Cargo from its workspace so it discovers <code>.cargo/config.toml</code>. Merely passing a manifest path from an unrelated directory does not necessarily discover that workspace's Cargo configuration. Both native CLIs also support <code>--decode RELATIVE_FILE</code>, <code>--list</code>, and <code>--output NEW_DIRECTORY</code>.</p>
+<h2>8. Typical failures</h2>
+<table>
+<thead>
+<tr>
+  <th>Failure</th>
+  <th>What to inspect; do not hide it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>cargo</code>/<code>rustc</code> missing</td>
+  <td>Toolchain installation and PATH; a Rust source file is not a compiled program.</td>
+</tr>
+<tr>
+  <td>C++ linker unavailable</td>
+  <td>Windows build-tools installation; not a math error.</td>
+</tr>
+<tr>
+  <td>Offline crate not found</td>
+  <td>Run from <code>native/rust</code>; preserve vendor and its config. Never delete the lock to force resolution.</td>
+</tr>
+<tr>
+  <td>Python package missing</td>
+  <td>Use the existing course environment; native compilation is separate from NumPy/PyTorch audit dependencies.</td>
+</tr>
+<tr>
+  <td>Output directory exists</td>
+  <td>Choose a new attempt name. Do not erase earlier evidence automatically.</td>
+</tr>
+<tr>
+  <td>Dataset hash mismatch</td>
+  <td>Stop and inspect the changed source. Do not simply rewrite the expected hash.</td>
+</tr>
+<tr>
+  <td>Native mismatch</td>
+  <td>Compare input IDs, units, dtype, algorithm, parameter choices, tolerances and intermediates.</td>
+</tr>
+<tr>
+  <td>Model does worse than baseline</td>
+  <td>Preserve the result and investigate the protocol; a bad model score is not a compiler failure.</td>
+</tr>
+</tbody>
+</table>
+<h2>9. First real learning session</h2>
+<pre><code>uv run --no-sync python native_course.py show stage01
+uv run --no-sync python native_course.py prepare --lab stage01 --output my_work/stage01_native_practice01
+</code></pre>
+<p>Read the primary Python lesson once. Make the hand prediction. The private workspace contains editable native source and three independent challenges, not an automatically graded completion. Follow its START.md. A copied reference solution is guided practice, not independent mastery.</p>
+<p>After Stage 01, try <code>poux_bridge</code>: count-weighted means from selected basketball observations. Then continue to Stage 02. Do not perform a full environment reinstall for each lesson.</p>
+<footer>One mathematical curriculum. Native agreement, scientific validity and independent learner mastery are different requirements.</footer></main></body></html>

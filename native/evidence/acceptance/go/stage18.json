@@ -1,0 +1,40 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    },
+    "sports_v8/data/spl_selected_frames.json": {
+      "bytes": 6528,
+      "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc"
+    }
+  },
+  "lab": "stage18",
+  "language": "go",
+  "metrics": {
+    "centroid_m": [
+      4.031211893377345,
+      -7.6953969094303085,
+      2.76572456960666
+    ],
+    "equal_chunk_centroid_m": [
+      4.803531031080386,
+      -7.734473429528235,
+      1.9522066411894918
+    ],
+    "equal_chunk_displacement_m": 1.122414916482088,
+    "order_reversal_error": 1.3322676295501878e-15,
+    "rows": 12,
+    "scope": "selected nonuniform rows, not time average, release point, or static LiDAR scan",
+    "weighted_centroid_m": [
+      4.031211893377345,
+      -7.6953969094303085,
+      2.7657245696066592
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

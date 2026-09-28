@@ -1,0 +1,14 @@
+{
+  "lab": "stage01",
+  "title": "Mathematical language, proofs, and linear algebra",
+  "metrics": {
+    "f2_rank": 2,
+    "kernel_check": [
+      0,
+      0
+    ]
+  },
+  "notes": [
+    "Same stored matrix can have different rank over R and F2."
+  ]
+}

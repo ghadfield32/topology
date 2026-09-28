@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/go/shape-go",
+    "--repo",
+    "/mnt/data/v16_build/listening_to_shape_lab",
+    "--lab",
+    "r03"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.001971943999706127,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"r03\",\n  \"language\": \"go\",\n  \"metrics\": {\n    \"collapsed_gradient_norm\": 0,\n    \"collapsed_projection_penalty\": 0.07125178343249218,\n    \"invariance_mse\": 0.009999999999999998,\n    \"offdiagonal_covariance_penalty\": 0.0072000000000000015,\n    \"scope\": \"finite objective controls; positive penalty can have zero gradient at collapse\",\n    \"variance_hinge\": 0.22200273078368415\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

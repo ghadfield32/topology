@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/go/shape-go",
+    "--repo",
+    "/mnt/data/v16_build/listening_to_shape_lab",
+    "--lab",
+    "stage22"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.003507059999719786,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage22\",\n  \"language\": \"go\",\n  \"metrics\": {\n    \"finite_blowup_time\": 5,\n    \"flow\": 0.33333333333333337,\n    \"initial\": 0.2,\n    \"inverse\": 0.2,\n    \"scope\": \"x'=x\u00b2 exact local flow, defined only before blowup\",\n    \"time\": 2\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

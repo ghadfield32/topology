@@ -1,0 +1,9 @@
+{
+  "status": "verified_cache",
+  "key": {
+    "source_sha256": "09972b765afa81b5fe3fe8345af708abda236ecbd5e4b81fd51eb222539f2d1f",
+    "compiler": "go version go1.23.2 linux/amd64",
+    "platform": "linux"
+  },
+  "binary_sha256": "d710af1114b692206be81dac72216590e8a42c3ddea704643903df7b57ac4dd2"
+}

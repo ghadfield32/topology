@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/go/shape-go",
+    "--repo",
+    "/mnt/data/v16_build/listening_to_shape_lab",
+    "--lab",
+    "acb"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.002393050000137009,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    },\n    \"sports_v9/data/matches.json\": {\n      \"bytes\": 4324,\n      \"sha256\": \"5a6f2ee5b55aff806e0f13c9c90b47f19bc1734a6ed7d26b7682dd4bcc7ca063\"\n    }\n  },\n  \"lab\": \"acb\",\n  \"language\": \"go\",\n  \"metrics\": {\n    \"chronological_match_ids\": [\n      114243,\n      114234,\n      114169,\n      114099,\n      114086,\n      178442,\n      179612,\n      184439,\n      188630,\n      191313\n    ],\n    \"home_wins\": 4,\n    \"mean_total_points\": 171.9,\n    \"scope\": \"ten selected metadata records, not all-season tracking or forecasting\",\n    \"test_match_ids\": [\n      188630,\n      191313\n    ],\n    \"total_points\": [\n      151,\n      172,\n      157,\n      148,\n      172,\n      200,\n      185,\n      185,\n      160,\n      189\n    ],\n    \"train_match_ids\": [\n      114243,\n      114234,\n      114169,\n      114099,\n      114086,\n      178442\n    ],\n    \"validation_match_ids\": [\n      179612,\n      184439\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

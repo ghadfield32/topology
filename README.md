@@ -6,6 +6,36 @@ A beginner-first course from topology to geometry, dynamics and representation l
 
 **Read:** extract everything and open `START_HERE.html`. **Start:** [first-run guide](docs/release/FIRST_RUN.md). **Evidence:** [verification](docs/release/VERIFICATION.md). **Import:** [Git guide](docs/release/GIT_IMPORT.md). **Repository assistant:** [copy/paste handoff](docs/release/AGENT_HANDOFF.md).
 
+## Native16 addition (Go and Rust)
+
+Open [START_NATIVE.html](START_NATIVE.html) for the additive native track: 57 learning units implemented in both Go and Rust, each with a guide, three independent challenges and inspectable evidence. The [import record](docs/release/NATIVE16_IMPORT.md) states exactly what was imported, what was deferred, and what executed on this machine.
+
+```powershell
+$env:PYTHONUTF8 = '1'
+uv run --no-sync python native_course.py doctor
+uv run --no-sync python native_course.py build --lang all --output my_work/native_build01
+uv run --no-sync python native_course.py compare --lab stage01 --output my_work/native_stage01_01
+uv run --no-sync python native_course.py verify --science --output my_work/native_acceptance01
+```
+
+Go and Rust do their own decoding, mathematics and training; the Python launcher only coordinates and compares. This is **not** certified as operation-for-operation parity with all 133 original Python notebooks, and `verify --require-original-parity` deliberately refuses that claim.
+
+### Notebooks: learn any lab in any of the three languages
+
+Prefer notebooks to the command line? Every one of the 57 labs has a matched set:
+
+| Route | What it does |
+|---|---|
+| `workbooks/polyglot/python/<lab>.ipynb` | inspects the real registered inputs and an existing native run |
+| `workbooks/polyglot/go/<lab>.ipynb` | compiles and runs the **real Go program**, then compares |
+| `workbooks/polyglot/rust/<lab>.ipynb` | compiles and runs the **real Rust program**, then compares |
+
+Start at [the index](workbooks/polyglot/index.html) (or the [plain text](workbooks/polyglot/README.md)). Regenerate with `python tools/build_language_notebooks.py`. These are unassessed and are not a second curriculum — the Python lesson stays canonical.
+
+Verify them, all 171 of them, with `python tools/verify_language_notebooks.py --output my_work/nb_verify01`. It exits non-zero unless coverage is complete.
+
+**Guides:** [notebook guide](docs/release/LANGUAGE_NOTEBOOKS.md) · [Stage 01 walkthrough](docs/release/STAGE01_WALKTHROUGH.md) · [separate checks](docs/release/CHECKS.md)
+
 ## Native setup
 
 Install uv through its official instructions, then run from this folder:

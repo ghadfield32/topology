@@ -1,0 +1,11 @@
+{
+  "lab": "stage29",
+  "title": "Differentiable simulation",
+  "metrics": {
+    "fd_sensitivity": -0.7602275317930561,
+    "final_state": 0.7374241268949281
+  },
+  "notes": [
+    "Finite-difference sensitivity is a check, not automatic autodiff validation."
+  ]
+}

@@ -1,0 +1,96 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VERIFICATION</title><style>*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:#1e293b;font:17px/1.6 system-ui,sans-serif}header{background:#11243b;color:white;padding:28px max(24px,calc((100vw - 1120px)/2))}header a{color:#bfdcff}main{max-width:1168px;margin:28px auto;padding:0 24px}h1{font-size:clamp(28px,4vw,44px);line-height:1.15}h2{line-height:1.25;margin-top:32px}h3{line-height:1.3}a{color:#075ca8;overflow-wrap:anywhere}p{max-width:100ch}.intro,.notice,.card,.metrics{background:white;border:1px solid #d9e0e8;border-radius:10px;padding:22px;margin:18px 0}.notice{border-left:5px solid #b7771b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:16px}.card{margin:0;min-width:0}.small{font-size:14px;color:#506075}.tag{font-size:13px;font-weight:700;letter-spacing:.08em}pre{overflow:auto;background:#eaf0f6;padding:16px;border-radius:6px;font-size:14px}code{overflow-wrap:anywhere}table{display:block;max-width:100%;overflow:auto;border-collapse:collapse;background:white}th,td{padding:10px;text-align:left;border-bottom:1px solid #dae1ea;vertical-align:top}input{width:100%;font:inherit;padding:13px;border:1px solid #aab8c7;border-radius:6px}.metrics{display:flex;gap:32px;flex-wrap:wrap}.metrics strong{font-size:28px;display:block}.actions{display:flex;flex-wrap:wrap;gap:16px}details{background:white;padding:10px;margin:12px 0}summary{cursor:pointer}img{max-width:100%}footer{margin:32px 0;font-size:14px;color:#506075} .hidden{display:none!important} @media(max-width:500px){main{padding:0 14px}header{padding:24px 16px}.card,.intro,.notice{padding:16px}}</style></head><body><header><div class="tag">LISTENING TO SHAPE · NATIVE16</div><nav><a href="../../START_NATIVE.html">Native learning home</a> · <a href="../../START_HERE.html">Original course</a></nav></header><main><h1>Native16 verification and coverage record</h1>
+<p>Prepared 26 September 2026. This is a new execution record, not a relabeling of previous archives. The baseline was the actual mounted v14 combined archive; no v15 archive was available to verify. The retained Python teaching material remains in the archive. The native addition is a separate workspace and does not require resetting the 31-stage course.</p>
+<h2>Executed results</h2>
+<table>
+<thead>
+<tr>
+  <th>Check</th>
+  <th>Observed result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Combined root Python tests</td>
+  <td>821 passed, 2 optional-library skips, zero failures</td>
+</tr>
+<tr>
+  <td>Go native tests</td>
+  <td>34 passing named tests/subtests; zero failing assertions</td>
+</tr>
+<tr>
+  <td>Rust native tests</td>
+  <td>28 passed, zero failed or ignored</td>
+</tr>
+<tr>
+  <td>Native lab execution</td>
+  <td>57 Go + 57 Rust runs, all completed</td>
+</tr>
+<tr>
+  <td>Go/Rust result comparisons</td>
+  <td>57 passed; input hashes also agree</td>
+</tr>
+<tr>
+  <td>Registered data decoding</td>
+  <td>55 source files in each language: 110 full-value comparisons passed</td>
+</tr>
+<tr>
+  <td>Numeric values compared by source decoder</td>
+  <td>9,896,088; CSV fields/text/IDs also compared exactly</td>
+</tr>
+<tr>
+  <td>Valid/invalid reader fixture checks</td>
+  <td>64 passed across both languages</td>
+</tr>
+<tr>
+  <td>Independent scientific comparisons</td>
+  <td>220 passed using NumPy, retained Python topology and PyTorch</td>
+</tr>
+<tr>
+  <td>Protected native/data inputs during acceptance</td>
+  <td>90, unchanged</td>
+</tr>
+<tr>
+  <td>Editable practice copies</td>
+  <td>Stage 01 and Wine prepared; Stage 01 Go and Rust private workspaces compiled/tested</td>
+</tr>
+<tr>
+  <td>Full original Python notebook replay in this turn</td>
+  <td>Not run; saved previous outputs retained</td>
+</tr>
+<tr>
+  <td>New Docker images / Kubernetes Jobs</td>
+  <td>Configurations provided and policy-checked; not built/deployed here</td>
+</tr>
+</tbody>
+</table>
+<p>The 34 Go count includes named subtests; a command package with no test files is not counted as a passed test. The Rust binary/doc-test groups have zero tests and are not added to the 28 library tests. The 820 Python tests include existing course tests and 11 native-runner contracts; counts from different suites are not a measure of mathematical completeness.</p>
+<h2>What agreement means</h2>
+<p>The Go and Rust programs implement the same <strong>native16 teaching protocols</strong>. They perform their own data reading, mathematics, optimization and serialization. They do not call a Python program to obtain their scientific results. The Python runner builds/invokes the binaries and compares evidence. The independent Python checks are separate calculations, including full classifier coefficients/predictions and HNN/restricted LNN/PINN training under the matching native protocol.</p>
+<p>Integer results compare exactly. Floating-point native metrics use absolute tolerance 1e-8 and relative tolerance 1e-7; the maximum observed absolute difference across the current lab comparisons was 2.32830643654e-10. Source decoding compares values with zero numerical tolerance, plus shape/order/dtype, IDs, text, missingness and source hashes. Numeric counts include repeated storage forms and metadata; they are not counts of independent observations.</p>
+<h2>Full data access versus every possible dataset</h2>
+<p>The registry covers every listed bundled input under <code>data/</code>, <code>sports_v8/data/</code> and <code>sports_v9/data/</code> in the supported forms. CSV, JSON, NPY/NPZ, PNG and text metadata/terms are included in the source audit; PFM is independently tested with manufactured endian/scale fixtures. The parsers deliberately reject unsupported encodings, object arrays and unsafe/oversized inputs. They are bounded learning readers, not hardened arbitrary-upload services.</p>
+<p>No new external dataset payload was acquired. Original source cards and license/transcription/sample-selection limits remain applicable. Selected SPL frames are not a new independent set of shots; soccer season profiles are not pitch trajectories; ACB metadata is not a full tracking corpus. The recorded observed-image stereo calculation remains separate from manufactured dynamics.</p>
+<h2>What is NOT certified</h2>
+<p>Full operation-for-operation equivalence to all 133 original Python notebooks is <strong>not certified</strong>. <code>native/COVERAGE.md</code> states every unit's native work and original-protocol difference. Some classifiers use a new declared split and solver, some geometric labs are smaller controls, the LNN fixes mass and learns a potential, and the spectral learner is a small Fourier-multiplier model rather than a full multilayer FNO. General Delaunay/alpha construction, pretrained VGGT, full PointNet/reconstruction/semantic-scene pipelines, original-paper benchmarks, independent measured validation and the actual book audit are not completed by these checks.</p>
+<p>The command <code>verify --require-original-parity</code> refuses that larger claim. A successful comparison is software evidence, not a guarantee of scientific meaning or learner mastery. The new study records are unassessed.</p>
+<h2>Actual compiler and environment provenance</h2>
+<p>Executed on Linux x86_64 with Python 3.13.5, Go 1.23.2 and Rust/Cargo 1.90.0. These are the tested versions, not a newest-version recommendation. Rust was previously absent. A scoped workflow on the isolated <code>learning/native-parity-v16</code> branch provisioned the official compiler and resolved/vendorized reader dependencies. Its artifact checksum was verified; the actual course compiled and ran locally using those tools. The remote smoke alone did not certify the course. <code>main</code> was not changed and new native source was not pushed. The artifact/compiler binaries are not bundled; 36 dependency source crates and their licenses are.</p>
+<p>The branch push also ran the earlier repository's core CI on Linux/macOS/Windows, which succeeded; that is separate evidence about the existing remote source, not platform certification of this ZIP. Its full/Docker job skipped. The new full-native workflow is supplied in the ZIP but has not run remotely. Mac, Windows, GPU, clean Python dependency installation, new container runtime and new cluster deployment are not claimed. Preserve the genuine Python lock already resolved on the user's machine; no fabricated uv.lock is added here.</p>
+<h2>Failures were corrected, not hidden</h2>
+<p>The initial regression runs exposed missing behavior and compile errors. Rust's default decimal JSON conversion differed by one ULP for selected source numbers; round-trip float parsing corrected it. PNG conversion through premultiplied channels lost original values; direct channel decoding corrected it. Boolean/Unicode/endian/Fortran arrays and palette/alpha images now have explicit fixtures. Essential diagram-cardinality mismatch now yields infinite bottleneck distance instead of a panic. Public Rips H0/H1 reports no longer misreport H2 classes created by a dimension-truncated complex. Ridge intercept calculation now centers arbitrary input features internally. A packaging check also caught cache-hit logging replacing the original compiler record; the runner now retains first-build and reuse records separately, with a regression test. Failed and passing scoped logs are preserved beside the final records.</p>
+<h2>Reader checks and configuration checks</h2>
+<p>Static checks found no missing or escaping targets among 830 native-reader local links. Actual HTTP checks returned 200 for the home, Stage 01 guide and its Go result, and 403 for private-work and Git paths. Chromium is absent here, so no new visual/browser-navigation result is claimed. Older screenshots are historical.</p>
+<p>The deployment YAML parsed; two Jobs passed project-specific security and resource checks. This is not Kubernetes OpenAPI admission or Docker/cluster execution. Target-platform acceptance remains explicit.</p>
+<h2>Inspect and rerun</h2>
+<ul>
+<li><code>native/evidence/acceptance/acceptance.json</code>: whole native acceptance scope.</li>
+<li><code>native/evidence/acceptance/execution.json</code>: all native runs, comparisons and input hashes.</li>
+<li><code>native/evidence/acceptance/go/</code> and <code>rust/</code>: exact parameters, losses, predictions and output fields.</li>
+<li><code>native/evidence/acceptance/data_comparison.json</code>: all registered source comparisons.</li>
+<li><code>native/evidence/acceptance/reader_fixtures.json</code>: malformed and edge-case inputs.</li>
+<li><code>native/evidence/acceptance/scientific_checks.json</code>: independent scientific checks.</li>
+<li><code>native/evidence/python_final.xml</code> and <code>.log</code>: combined Python suite.</li>
+<li><code>native/evidence/toolchain_provenance.json</code>: remote provisioning versus local execution.</li>
+</ul>
+<p>Fresh extracted-archive checks and the final archive hash are delivered alongside the ZIP, because an archive cannot embed its own final hash. Rerun <code>python native_course.py verify --science --output my_work/native_acceptance01</code> on the target machine and retain the actual logs. Use a new output directory; never erase earlier evidence just to obtain a green screen.</p>
+<footer>One mathematical curriculum. Native agreement, scientific validity and independent learner mastery are different requirements.</footer></main></body></html>

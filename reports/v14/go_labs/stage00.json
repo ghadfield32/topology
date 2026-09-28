@@ -1,0 +1,11 @@
+{
+  "lab": "stage00",
+  "title": "Start here",
+  "metrics": {
+    "iris_columns": 7,
+    "iris_rows": 150
+  },
+  "notes": [
+    "One row is one measured flower record in this snapshot."
+  ]
+}

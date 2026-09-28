@@ -1,0 +1,10 @@
+{
+  "lab": "stage15",
+  "title": "Stereo depth",
+  "metrics": {
+    "depth_m": 6
+  },
+  "notes": [
+    "This simplified formula assumes compatible calibration conventions."
+  ]
+}

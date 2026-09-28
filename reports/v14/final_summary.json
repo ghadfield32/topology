@@ -1,0 +1,53 @@
+{
+  "release": "14.0.0",
+  "scope": {
+    "core_stages": 31,
+    "named_cases": 25,
+    "poux_bridge": 1,
+    "polyglot_companion_labs": 57,
+    "languages": [
+      "python",
+      "go",
+      "rust"
+    ]
+  },
+  "python": {
+    "tests_passed": 810,
+    "tests_skipped": 2,
+    "skips": [
+      "ripser unavailable",
+      "gudhi unavailable"
+    ]
+  },
+  "poux": {
+    "bridge_tests_passed": 20
+  },
+  "go": {
+    "version": "go version go1.23.2 linux/amd64",
+    "tests_passed": true,
+    "smoke_labs_passed": 57,
+    "smoke_labs_total": 57
+  },
+  "rust": {
+    "compiled_in_build_environment": false,
+    "blocked_reason": "rustc/cargo not found; compile via rustup, Docker, or CI",
+    "static_source_checks": "passed",
+    "lab_modules": 57
+  },
+  "kubernetes": {
+    "polyglot_manifest_static_policy": "passed",
+    "documents": 2,
+    "live_jobs_run_in_build_environment": false
+  },
+  "docker": {
+    "polyglot_images_built_in_build_environment": false
+  },
+  "uv_lock": {
+    "included": false,
+    "reason": "v14 project metadata changed; do not fabricate or silently reuse an older resolver output. Preserve/re-resolve a genuine local uv.lock."
+  },
+  "notes": [
+    "Python remains the full scientific reference implementation.",
+    "Go/Rust companions reproduce the hand-checkable algorithmic core and data/schema controls; they are not fake translations of every third-party library workflow."
+  ]
+}

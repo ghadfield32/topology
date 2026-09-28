@@ -1,0 +1,661 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "data/stereo/calibration.json": {
+      "bytes": 1430,
+      "sha256": "a7a891043f15e04614a15712d158dc5727a80cc32951ff9d0610f30ac2bd55c5"
+    },
+    "data/stereo/left.png": {
+      "bytes": 642528,
+      "sha256": "8d645c6ca405cc3cb9a991b0fb5a964571bf8183f88cd8ffcde59706a30a76c2"
+    },
+    "data/stereo/motorcycle.npz": {
+      "bytes": 3042273,
+      "sha256": "2ec813e33f86bcb4d1eb1bd90245f438b0841fd5b1ab9136a0132f0b28dfe469"
+    },
+    "data/stereo/right.png": {
+      "bytes": 638205,
+      "sha256": "009ee402204b3c54ebd714f739b6394e9455d9d33a9dcdab58ef4ec5bee4c43a"
+    },
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage15",
+  "language": "rust",
+  "metrics": {
+    "bad_over_2px_fraction": 0.23376623376623376,
+    "convention": "Z=fB/(d+doffs); rectified positive optical-axis depth",
+    "depth_mae_m": 0.17924328005106965,
+    "disparity_mae_px": 3.312001438883992,
+    "disparity_median_abs_px": 0.4267921447753906,
+    "eligible_pixels": 77,
+    "max_disparity_px": 90,
+    "patch_width": 5,
+    "predictions": [
+      {
+        "predicted_depth_m": 4.562841538231241,
+        "predicted_disparity_px": 11.0,
+        "truth_depth_m": 4.6130724907737575,
+        "truth_disparity_px": 10.541732788085938,
+        "u": 110,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 4.562841538231241,
+        "predicted_disparity_px": 11.0,
+        "truth_depth_m": 4.524981103562678,
+        "truth_disparity_px": 11.352132797241211,
+        "u": 171,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 5.984907716075547,
+        "predicted_disparity_px": 1.0,
+        "truth_depth_m": 4.4131543561242035,
+        "truth_disparity_px": 12.427490234375,
+        "u": 232,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 4.259232333274187,
+        "predicted_disparity_px": 14.0,
+        "truth_depth_m": 4.333254890822845,
+        "truth_disparity_px": 13.22982120513916,
+        "u": 293,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 4.078319436308032,
+        "predicted_disparity_px": 16.0,
+        "truth_depth_m": 4.120404128227861,
+        "truth_disparity_px": 15.519076347351074,
+        "u": 354,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 4.259232333274187,
+        "predicted_disparity_px": 14.0,
+        "truth_depth_m": 4.2539348114578175,
+        "truth_disparity_px": 14.056146621704102,
+        "u": 415,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 3.5504890170839034,
+        "predicted_disparity_px": 23.0,
+        "truth_depth_m": 4.057101133878414,
+        "truth_disparity_px": 16.24625587463379,
+        "u": 476,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 3.7589897227811924,
+        "predicted_disparity_px": 20.0,
+        "truth_depth_m": 3.8780564896907608,
+        "truth_disparity_px": 18.431522369384766,
+        "u": 537,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 3.9935064047331865,
+        "predicted_disparity_px": 17.0,
+        "truth_depth_m": 4.022134959935749,
+        "truth_disparity_px": 16.65773582458496,
+        "u": 598,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 3.9121490644582977,
+        "predicted_disparity_px": 18.0,
+        "truth_depth_m": 3.8858650578051073,
+        "truth_disparity_px": 18.33201789855957,
+        "u": 659,
+        "v": 30
+      },
+      {
+        "predicted_depth_m": 4.673897409774619,
+        "predicted_disparity_px": 10.0,
+        "truth_depth_m": 4.7760657072890975,
+        "truth_disparity_px": 9.121099472045898,
+        "u": 110,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 4.562841538231241,
+        "predicted_disparity_px": 11.0,
+        "truth_depth_m": 4.601138159700977,
+        "truth_disparity_px": 10.64970588684082,
+        "u": 171,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 5.178011890686513,
+        "predicted_disparity_px": 6.0,
+        "truth_depth_m": 4.491040847935543,
+        "truth_disparity_px": 11.6728515625,
+        "u": 232,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 4.456940745903542,
+        "predicted_disparity_px": 12.0,
+        "truth_depth_m": 4.404833797279052,
+        "truth_disparity_px": 12.509685516357422,
+        "u": 293,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 3.9121490644582977,
+        "predicted_disparity_px": 18.0,
+        "truth_depth_m": 3.8995160039770353,
+        "truth_disparity_px": 18.159021377563477,
+        "u": 354,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 3.834040430020365,
+        "predicted_disparity_px": 19.0,
+        "truth_depth_m": 3.8414337980279294,
+        "truth_disparity_px": 18.903602600097656,
+        "u": 415,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 3.4238802727596904,
+        "predicted_disparity_px": 25.0,
+        "truth_depth_m": 3.661886708468819,
+        "truth_disparity_px": 21.354658126831055,
+        "u": 537,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 3.617370850657424,
+        "predicted_disparity_px": 22.0,
+        "truth_depth_m": 3.59029626811977,
+        "truth_disparity_px": 22.40032386779785,
+        "u": 598,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 3.5504890170839034,
+        "predicted_disparity_px": 23.0,
+        "truth_depth_m": 3.5327608288244177,
+        "truth_disparity_px": 23.27141571044922,
+        "u": 659,
+        "v": 85
+      },
+      {
+        "predicted_depth_m": 4.456940745903542,
+        "predicted_disparity_px": 12.0,
+        "truth_depth_m": 4.497741128030973,
+        "truth_disparity_px": 11.609153747558594,
+        "u": 110,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 4.790494162001696,
+        "predicted_disparity_px": 9.0,
+        "truth_depth_m": 4.679112534962096,
+        "truth_disparity_px": 9.954207420349121,
+        "u": 171,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 3.834040430020365,
+        "predicted_disparity_px": 19.0,
+        "truth_depth_m": 3.834375396829431,
+        "truth_disparity_px": 18.995624542236328,
+        "u": 232,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 1.9985403594488271,
+        "predicted_disparity_px": 65.0,
+        "truth_depth_m": 4.479473379827346,
+        "truth_disparity_px": 11.783268928527832,
+        "u": 293,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 2.2306966170805937,
+        "predicted_disparity_px": 55.0,
+        "truth_depth_m": 2.231544561217555,
+        "truth_disparity_px": 54.967288970947266,
+        "u": 415,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 2.180048463751334,
+        "predicted_disparity_px": 57.0,
+        "truth_depth_m": 2.1845268389821593,
+        "truth_disparity_px": 56.819419860839844,
+        "u": 476,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 2.2306966170805937,
+        "predicted_disparity_px": 55.0,
+        "truth_depth_m": 2.1443953349210143,
+        "truth_disparity_px": 58.464534759521484,
+        "u": 537,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 3.686820815151864,
+        "predicted_disparity_px": 21.0,
+        "truth_depth_m": 3.877452053003681,
+        "truth_disparity_px": 18.439241409301758,
+        "u": 598,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 3.4238802727596904,
+        "predicted_disparity_px": 25.0,
+        "truth_depth_m": 3.6320066130409026,
+        "truth_disparity_px": 21.786081314086914,
+        "u": 659,
+        "v": 140
+      },
+      {
+        "predicted_depth_m": 2.5574907303358816,
+        "predicted_disparity_px": 44.0,
+        "truth_depth_m": 2.6068498258400856,
+        "truth_disparity_px": 42.57829284667969,
+        "u": 110,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 2.428138342791392,
+        "predicted_disparity_px": 48.0,
+        "truth_depth_m": 2.426924992697267,
+        "truth_disparity_px": 48.0395393371582,
+        "u": 171,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 2.368247897022914,
+        "predicted_disparity_px": 50.0,
+        "truth_depth_m": 2.3830443541910338,
+        "truth_disparity_px": 49.49653244018555,
+        "u": 232,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 2.5238775724574825,
+        "predicted_disparity_px": 45.0,
+        "truth_depth_m": 2.491726899800132,
+        "truth_disparity_px": 45.98173522949219,
+        "u": 293,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 2.1555771835978716,
+        "predicted_disparity_px": 58.0,
+        "truth_depth_m": 2.412272343591371,
+        "truth_disparity_px": 48.520164489746094,
+        "u": 354,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 2.2837541205194682,
+        "predicted_disparity_px": 53.0,
+        "truth_depth_m": 2.275242800298358,
+        "truth_disparity_px": 53.314552307128906,
+        "u": 415,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 2.13164919052905,
+        "predicted_disparity_px": 59.0,
+        "truth_depth_m": 2.123955446547762,
+        "truth_disparity_px": 59.326324462890625,
+        "u": 476,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 2.2837541205194682,
+        "predicted_disparity_px": 53.0,
+        "truth_depth_m": 2.2782567790280694,
+        "truth_disparity_px": 53.20289611816406,
+        "u": 537,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 3.686820815151864,
+        "predicted_disparity_px": 21.0,
+        "truth_depth_m": 3.6936943327923184,
+        "truth_disparity_px": 20.903074264526367,
+        "u": 598,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 3.617370850657424,
+        "predicted_disparity_px": 22.0,
+        "truth_depth_m": 3.6099817143526622,
+        "truth_disparity_px": 22.108659744262695,
+        "u": 659,
+        "v": 195
+      },
+      {
+        "predicted_depth_m": 2.5574907303358816,
+        "predicted_disparity_px": 44.0,
+        "truth_depth_m": 2.61399984174298,
+        "truth_disparity_px": 42.376800537109375,
+        "u": 110,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 2.5238775724574825,
+        "predicted_disparity_px": 45.0,
+        "truth_depth_m": 2.5209412439078416,
+        "truth_disparity_px": 45.088623046875,
+        "u": 171,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 2.4911365095866955,
+        "predicted_disparity_px": 46.0,
+        "truth_depth_m": 2.5033808513225897,
+        "truth_disparity_px": 45.622962951660156,
+        "u": 232,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 2.3978192065779287,
+        "predicted_disparity_px": 49.0,
+        "truth_depth_m": 2.3782373806815613,
+        "truth_disparity_px": 49.65940856933594,
+        "u": 293,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 2.368247897022914,
+        "predicted_disparity_px": 50.0,
+        "truth_depth_m": 2.4001694081215783,
+        "truth_disparity_px": 48.92158126831055,
+        "u": 354,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 2.428138342791392,
+        "predicted_disparity_px": 48.0,
+        "truth_depth_m": 2.3332646381674125,
+        "truth_disparity_px": 51.21574401855469,
+        "u": 415,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 2.4592340365494456,
+        "predicted_disparity_px": 47.0,
+        "truth_depth_m": 3.8764701518565596,
+        "truth_disparity_px": 18.451786041259766,
+        "u": 476,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 2.950430952555081,
+        "predicted_disparity_px": 34.0,
+        "truth_depth_m": 3.890989413738988,
+        "truth_disparity_px": 18.266935348510742,
+        "u": 537,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 3.686820815151864,
+        "predicted_disparity_px": 21.0,
+        "truth_depth_m": 3.6775767977271876,
+        "truth_disparity_px": 21.130924224853516,
+        "u": 659,
+        "v": 250
+      },
+      {
+        "predicted_depth_m": 2.6639257134256304,
+        "predicted_disparity_px": 41.0,
+        "truth_depth_m": 3.513063030284075,
+        "truth_disparity_px": 23.57619857788086,
+        "u": 110,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.428138342791392,
+        "predicted_disparity_px": 48.0,
+        "truth_depth_m": 3.5197606961565593,
+        "truth_disparity_px": 23.472183227539062,
+        "u": 171,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.7014004020200884,
+        "predicted_disparity_px": 40.0,
+        "truth_depth_m": 2.6542368682085646,
+        "truth_disparity_px": 41.26313781738281,
+        "u": 232,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.4592340365494456,
+        "predicted_disparity_px": 47.0,
+        "truth_depth_m": 2.4303598117909053,
+        "truth_disparity_px": 47.927711486816406,
+        "u": 293,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.3978192065779287,
+        "predicted_disparity_px": 49.0,
+        "truth_depth_m": 2.3889273807754496,
+        "truth_disparity_px": 49.29808807373047,
+        "u": 354,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.368247897022914,
+        "predicted_disparity_px": 50.0,
+        "truth_depth_m": 2.3708375454275266,
+        "truth_disparity_px": 49.91143035888672,
+        "u": 415,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.4911365095866955,
+        "predicted_disparity_px": 46.0,
+        "truth_depth_m": 2.5003531412656277,
+        "truth_disparity_px": 45.715850830078125,
+        "u": 476,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.3112407502828396,
+        "predicted_disparity_px": 52.0,
+        "truth_depth_m": 2.302962750069978,
+        "truth_disparity_px": 52.29865264892578,
+        "u": 537,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.2050817465264223,
+        "predicted_disparity_px": 56.0,
+        "truth_depth_m": 2.203395882325319,
+        "truth_disparity_px": 56.06663131713867,
+        "u": 598,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 3.9935064047331865,
+        "predicted_disparity_px": 17.0,
+        "truth_depth_m": 3.5366807336111252,
+        "truth_disparity_px": 23.21116828918457,
+        "u": 659,
+        "v": 305
+      },
+      {
+        "predicted_depth_m": 2.950430952555081,
+        "predicted_disparity_px": 34.0,
+        "truth_depth_m": 2.994859633513364,
+        "truth_disparity_px": 33.03445053100586,
+        "u": 110,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 2.627476520510084,
+        "predicted_disparity_px": 42.0,
+        "truth_depth_m": 2.634312871599133,
+        "truth_disparity_px": 41.810333251953125,
+        "u": 171,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 2.592011297384121,
+        "predicted_disparity_px": 43.0,
+        "truth_depth_m": 2.61260032883546,
+        "truth_disparity_px": 42.41615295410156,
+        "u": 232,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 2.4592340365494456,
+        "predicted_disparity_px": 47.0,
+        "truth_depth_m": 2.435734357353645,
+        "truth_disparity_px": 47.75336456298828,
+        "u": 293,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 2.428138342791392,
+        "predicted_disparity_px": 48.0,
+        "truth_depth_m": 2.427260020651539,
+        "truth_disparity_px": 48.02861785888672,
+        "u": 354,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 2.3978192065779287,
+        "predicted_disparity_px": 49.0,
+        "truth_depth_m": 2.3928475152129574,
+        "truth_disparity_px": 49.16639709472656,
+        "u": 415,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 3.0929959890796637,
+        "predicted_disparity_px": 31.0,
+        "truth_depth_m": 3.015653891749087,
+        "truth_disparity_px": 32.59231185913086,
+        "u": 476,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 2.4911365095866955,
+        "predicted_disparity_px": 46.0,
+        "truth_depth_m": 2.5185363101195035,
+        "truth_disparity_px": 45.16136169433594,
+        "u": 537,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 2.2837541205194682,
+        "predicted_disparity_px": 53.0,
+        "truth_depth_m": 2.279622437816007,
+        "truth_disparity_px": 53.152400970458984,
+        "u": 598,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 2.1555771835978716,
+        "predicted_disparity_px": 58.0,
+        "truth_depth_m": 2.1493964640878755,
+        "truth_disparity_px": 58.25617218017578,
+        "u": 659,
+        "v": 360
+      },
+      {
+        "predicted_depth_m": 3.3639026902918405,
+        "predicted_disparity_px": 26.0,
+        "truth_depth_m": 2.6007919765253176,
+        "truth_disparity_px": 42.749874114990234,
+        "u": 110,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.2306966170805937,
+        "predicted_disparity_px": 55.0,
+        "truth_depth_m": 2.6121074105562614,
+        "truth_disparity_px": 42.430023193359375,
+        "u": 171,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.7796043913093826,
+        "predicted_disparity_px": 38.0,
+        "truth_depth_m": 2.619043223415459,
+        "truth_disparity_px": 42.23533630371094,
+        "u": 232,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.627476520510084,
+        "predicted_disparity_px": 42.0,
+        "truth_depth_m": 2.6265725292638122,
+        "truth_disparity_px": 42.02515411376953,
+        "u": 293,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.627476520510084,
+        "predicted_disparity_px": 42.0,
+        "truth_depth_m": 2.628858934823059,
+        "truth_disparity_px": 41.96156692504883,
+        "u": 354,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.627476520510084,
+        "predicted_disparity_px": 42.0,
+        "truth_depth_m": 2.632831628490053,
+        "truth_disparity_px": 41.85134506225586,
+        "u": 415,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.627476520510084,
+        "predicted_disparity_px": 42.0,
+        "truth_depth_m": 2.630499547211904,
+        "truth_disparity_px": 41.91600799560547,
+        "u": 476,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.627476520510084,
+        "predicted_disparity_px": 42.0,
+        "truth_depth_m": 2.6264726266512493,
+        "truth_disparity_px": 42.02793502807617,
+        "u": 537,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.4592340365494456,
+        "predicted_disparity_px": 47.0,
+        "truth_depth_m": 2.448995520275377,
+        "truth_disparity_px": 47.326454162597656,
+        "u": 598,
+        "v": 415
+      },
+      {
+        "predicted_depth_m": 2.2050817465264223,
+        "predicted_disparity_px": 56.0,
+        "truth_depth_m": 2.2159416607963207,
+        "truth_disparity_px": 55.57320785522461,
+        "u": 659,
+        "v": 415
+      }
+    ],
+    "requested_pixels": 80,
+    "scope": "fixed selected pixels, not full-image or camera-calibration validation"
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

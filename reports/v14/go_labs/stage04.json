@@ -1,0 +1,15 @@
+{
+  "lab": "stage04",
+  "title": "Symmetry",
+  "metrics": {
+    "norm": 1,
+    "rotated": [
+      6.123233995736757e-17,
+      1,
+      0
+    ]
+  },
+  "notes": [
+    "Rotation preserves Euclidean length."
+  ]
+}

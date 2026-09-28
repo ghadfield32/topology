@@ -1,0 +1,12 @@
+{
+  "lab": "stackloss",
+  "title": "Manufacturing regression",
+  "metrics": {
+    "columns": 5,
+    "data_rows": 21,
+    "rows_including_header": 22
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

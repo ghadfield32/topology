@@ -1,0 +1,17 @@
+services:
+  go-lab:
+    image: listening-to-shape-go:14
+    build:
+      context: ..
+      dockerfile: polyglot/Dockerfile.go
+    volumes:
+      - ..:/course:ro
+    command: ["--repo", "/course", "--lab", "${LAB:-stage01}"]
+  rust-lab:
+    image: listening-to-shape-rust:14
+    build:
+      context: ..
+      dockerfile: polyglot/Dockerfile.rust
+    volumes:
+      - ..:/course:ro
+    command: ["--repo", "/course", "--lab", "${LAB:-stage01}"]

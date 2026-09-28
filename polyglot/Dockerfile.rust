@@ -1,0 +1,15 @@
+FROM rust:1.83-bookworm AS build
+WORKDIR /src
+COPY polyglot/rust ./polyglot/rust
+WORKDIR /src/polyglot/rust
+RUN cargo test
+RUN cargo build --release --bin shape-rust
+WORKDIR /course
+COPY data ./data
+COPY sports_v8 ./sports_v8
+
+FROM gcr.io/distroless/cc-debian12:nonroot
+COPY --from=build /src/polyglot/rust/target/release/shape-rust /usr/local/bin/shape-rust
+COPY --from=build /course /course
+WORKDIR /course
+ENTRYPOINT ["/usr/local/bin/shape-rust"]

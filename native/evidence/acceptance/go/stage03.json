@@ -1,0 +1,28 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "data/raw/iris.csv": {
+      "bytes": 4676,
+      "sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f"
+    },
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage03",
+  "language": "go",
+  "metrics": {
+    "domain": "all 256 candidate collections of subsets of a labeled three-element set",
+    "identity_map_discrete_to_indiscrete_continuous": true,
+    "identity_map_indiscrete_to_discrete_continuous": false,
+    "original_rows": 150,
+    "projected_distinct_vectors": 117,
+    "scope": "finite checks and a noninjective projection; not a general continuity theorem",
+    "three_point_topologies": 29
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

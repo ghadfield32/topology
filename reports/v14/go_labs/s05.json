@@ -1,0 +1,12 @@
+{
+  "lab": "s05",
+  "title": "Athlete-group evaluation",
+  "metrics": {
+    "columns": 12,
+    "data_rows": 12,
+    "rows_including_header": 13
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

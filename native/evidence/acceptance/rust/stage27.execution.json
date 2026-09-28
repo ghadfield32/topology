@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/rust/shape-rust",
+    "--repo",
+    "/mnt/data/v16_build/listening_to_shape_lab",
+    "--lab",
+    "stage27"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0015803140004209126,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage27\",\n  \"language\": \"rust\",\n  \"metrics\": {\n    \"input_gradients\": [\n      [\n        1.0,\n        0.0\n      ],\n      [\n        -0.4,\n        1.0\n      ],\n      [\n        0.2,\n        -0.6\n      ]\n    ],\n    \"mean_normalized_after_projection\": [\n      0.32296330173858984,\n      0.08702161855985632\n    ],\n    \"mean_projected\": [\n      0.3816091954022988,\n      0.12643678160919541\n    ],\n    \"opposite_gradients\": [\n      [\n        1,\n        0\n      ],\n      [\n        -1,\n        0\n      ]\n    ],\n    \"projected_gradients\": [\n      [\n        0.8793103448275861,\n        0.2931034482758621\n      ],\n      [\n        0.3,\n        0.1000000000000002\n      ],\n      [\n        -0.034482758620689585,\n        -0.013793103448276\n      ]\n    ],\n    \"scope\": \"ordered gradient operations, not a reproduction of full domain-decomposition benchmarks\",\n    \"zero_sum\": [\n      0,\n      0\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

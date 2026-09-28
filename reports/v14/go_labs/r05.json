@@ -1,0 +1,10 @@
+{
+  "lab": "r05",
+  "title": "Transfer diagnostics without inventing a sports world model",
+  "metrics": {
+    "implemented": true
+  },
+  "notes": [
+    "Dependency-light companion; see the lab README for the Python parity boundary."
+  ]
+}

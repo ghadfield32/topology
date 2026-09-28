@@ -1,0 +1,32 @@
+name: Native course v16
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ['native/**', 'native_course.py', '.github/workflows/native-course-v16.yml']
+permissions:
+  contents: read
+jobs:
+  native-protocols:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23.2'
+          cache: false
+      - name: Pin tested Rust compiler
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Test both native implementations
+        run: python3 native_course.py test --lang all --output my_work/ci-tests
+      - name: Compare all native units
+        run: python3 native_course.py compare --all --output my_work/ci-comparison
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-protocol-evidence
+          path: |
+            my_work/ci-tests
+            my_work/ci-comparison
+          if-no-files-found: error
+          retention-days: 7

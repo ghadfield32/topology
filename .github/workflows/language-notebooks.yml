@@ -1,0 +1,140 @@
+name: Language notebooks
+
+# Two speeds, deliberately:
+#   - push / pull_request: FAST contracts only (generator freshness, notebook
+#     contracts, verifier contracts). No native build, no notebook execution.
+#   - manual dispatch: the FULL sweep (native build + all 171 notebooks).
+# Routine learning sessions must not rebuild or retrain everything.
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: "fast | full"
+        required: true
+        default: full
+        type: choice
+        options: [fast, full]
+      lang:
+        description: "Restrict the full sweep to one language (all | python | go | rust)"
+        required: true
+        default: all
+        type: choice
+        options: [all, python, go, rust]
+  pull_request:
+    paths:
+      - 'workbooks/polyglot/**'
+      - 'tools/build_language_notebooks.py'
+      - 'tools/verify_language_notebooks.py'
+      - 'tools/check_matrix.py'
+      - 'tests/test_language_notebooks.py'
+      - 'tests/test_notebook_verifier.py'
+      - 'native/protocols/labs.json'
+      - '.github/workflows/language-notebooks.yml'
+  push:
+    paths:
+      - 'workbooks/polyglot/**'
+      - 'tools/build_language_notebooks.py'
+      - 'tools/verify_language_notebooks.py'
+      - 'native/protocols/labs.json'
+
+permissions:
+  contents: read
+
+env:
+  PYTHONUTF8: "1"
+
+concurrency:
+  group: language-notebooks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  contracts:
+    name: Fast notebook and generator contracts
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.10.0"
+          python-version: "3.13.5"
+      - name: Sync the existing lock
+        run: uv run --no-project python tools/bootstrap.py --profile core
+      - name: Generator freshness and notebook contracts
+        run: >-
+          uv run --no-sync python -m pytest -q -ra
+          tests/test_language_notebooks.py
+          tests/test_notebook_verifier.py
+
+  sweep:
+    name: Full notebook sweep (all 171, fresh kernels, serial)
+    if: github.event_name == 'workflow_dispatch' && inputs.scope == 'full'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.10.0"
+          python-version: "3.13.5"
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache: false
+      - name: Pin the tested Rust compiler
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Sync the existing lock
+        run: uv run --no-project python tools/bootstrap.py --profile core
+      - name: Confirm generator freshness before executing
+        run: >-
+          uv run --no-sync python -m pytest -q
+          tests/test_language_notebooks.py::test_committed_tree_matches_a_fresh_generation
+      - name: Run the sweep
+        # Incomplete coverage exits non-zero on purpose. Do not add a flag to
+        # make this green, and never use allow-errors to obtain a pass.
+        run: >-
+          uv run --no-sync python tools/verify_language_notebooks.py
+          --output my_work/ci-nb-verify
+          --lang ${{ inputs.lang }}
+      - name: Preserve sweep evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: notebook-sweep-evidence
+          path: my_work/ci-nb-verify
+          if-no-files-found: error
+          retention-days: 14
+
+  native-science:
+    name: Native algorithms and independent oracles
+    if: github.event_name == 'workflow_dispatch' && inputs.scope == 'full'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.10.0"
+          python-version: "3.13.5"
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.23'
+          cache: false
+      - name: Pin the tested Rust compiler
+        run: rustup toolchain install 1.90.0 --profile minimal
+      - name: Sync the existing lock
+        run: uv run --no-project python tools/bootstrap.py --profile core
+      - name: Native data decoders against the Python oracle
+        run: uv run --no-sync python native_course.py data verify --lang all --output my_work/ci-data
+      - name: Native tests and selected independent scientific checks
+        run: uv run --no-sync python native_course.py verify --science --output my_work/ci-native
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-science-evidence
+          path: |
+            my_work/ci-data
+            my_work/ci-native
+          if-no-files-found: error
+          retention-days: 14

@@ -1,0 +1,15 @@
+{
+  "lab": "s06",
+  "title": "Independent sports investigation",
+  "metrics": {
+    "centroid_m": [
+      4.031211893377345,
+      -7.695396909430308,
+      2.7657245696066592
+    ],
+    "selected_ball_points": 12
+  },
+  "notes": [
+    "Selected excerpt; not a full tracking corpus."
+  ]
+}

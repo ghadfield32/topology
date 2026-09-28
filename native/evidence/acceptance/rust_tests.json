@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/mnt/data/rust-verification-toolchain/rust-toolchain/bin/cargo",
+    "test",
+    "--offline",
+    "--locked"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab/native/rust",
+  "exit_code": 0,
+  "seconds": 0.13195488399924216,
+  "stdout": "\nrunning 28 tests\ntest acceptance_tests::ad_composite ... ok\ntest acceptance_tests::bottleneck_diagonal ... ok\ntest acceptance_tests::bottleneck_essential ... ok\ntest acceptance_tests::boundary_squared ... ok\ntest acceptance_tests::closed_pixels ... ok\ntest acceptance_tests::covariance_values ... ok\ntest acceptance_tests::betti_examples ... ok\ntest acceptance_tests::eigen_residual ... ok\ntest acceptance_tests::groups_disjoint ... ok\ntest acceptance_tests::gaussian_gradient ... ok\ntest acceptance_tests::jets_parameter_second_derivative ... ok\ntest acceptance_tests::classifier_probability ... ok\ntest acceptance_tests::mst_h0 ... ok\ntest acceptance_tests::rank_preserves ... ok\ntest acceptance_tests::reported_homology_dimension ... ok\ntest acceptance_tests::ridge_linear ... ok\ntest acceptance_tests::matrix_invalid ... ok\ntest acceptance_tests::noninteger_f2 ... ok\ntest acceptance_tests::train_only_scaler ... ok\ntest acceptance_tests::singular_solve ... ok\ntest acceptance_tests::square_invariance ... ok\ntest acceptance_tests::invalid_complexes ... ok\ntest acceptance_tests::truncation ... ok\ntest tests::gradient ... ok\ntest tests::rank_fields ... ok\ntest tests::empty_mean_rejected - should panic ... ok\ntest tests::solve_control ... ok\ntest tests::square_persistence ... ok\n\ntest result: ok. 28 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+  "stderr": "    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.03s\n     Running unittests src/lib.rs (/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/rust/target/debug/deps/shape_native-69a485993db1e975)\n     Running unittests src/main.rs (/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/rust/target/debug/deps/shape_rust-b0787e1e1fe924de)\n   Doc-tests shape_native\n"
+}

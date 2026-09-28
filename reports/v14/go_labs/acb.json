@@ -1,0 +1,10 @@
+{
+  "lab": "acb",
+  "title": "ACB 2025–26 source and identity readiness",
+  "metrics": {
+    "implemented": true
+  },
+  "notes": [
+    "Dependency-light companion; see the lab README for the Python parity boundary."
+  ]
+}

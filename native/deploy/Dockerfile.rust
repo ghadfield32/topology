@@ -1,0 +1,15 @@
+FROM rust:1.90.0-bookworm AS build
+WORKDIR /src
+COPY native/rust/ ./
+RUN cargo test --offline --locked && cargo build --offline --locked --release
+FROM debian:bookworm-slim
+RUN mkdir -p /course /work && chown 10001:10001 /work
+COPY --from=build /src/target/release/shape-rust /usr/local/bin/shape-rust
+COPY data/ /course/data/
+COPY sports_v8/data/ /course/sports_v8/data/
+COPY sports_v9/data/ /course/sports_v9/data/
+COPY native/protocols/ /course/native/protocols/
+WORKDIR /course
+USER 10001:10001
+ENTRYPOINT ["/usr/local/bin/shape-rust", "--repo", "/course"]
+CMD ["--lab", "stage01"]

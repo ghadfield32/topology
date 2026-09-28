@@ -1,0 +1,130 @@
+pub mod helpers;
+pub mod stage00;
+pub mod stage01;
+pub mod stage02;
+pub mod stage03;
+pub mod stage04;
+pub mod stage05;
+pub mod stage06;
+pub mod stage07;
+pub mod stage08;
+pub mod stage09;
+pub mod stage10;
+pub mod stage11;
+pub mod stage12;
+pub mod stage13;
+pub mod stage14;
+pub mod stage15;
+pub mod stage16;
+pub mod stage17;
+pub mod stage18;
+pub mod stage19;
+pub mod stage20;
+pub mod stage21;
+pub mod stage22;
+pub mod stage23;
+pub mod stage24;
+pub mod stage25;
+pub mod stage26;
+pub mod stage27;
+pub mod stage28;
+pub mod stage29;
+pub mod stage30;
+pub mod wdbc;
+pub mod wine;
+pub mod stackloss;
+pub mod grunfeld;
+pub mod co2;
+pub mod nile;
+pub mod elnino;
+pub mod modechoice;
+pub mod seeds;
+pub mod concrete_slump;
+pub mod leakage;
+pub mod claims;
+pub mod s00;
+pub mod s01;
+pub mod s02;
+pub mod s03;
+pub mod s04;
+pub mod s05;
+pub mod s06;
+pub mod acb;
+pub mod r01;
+pub mod r02;
+pub mod r03;
+pub mod r04;
+pub mod r05;
+pub mod poux_bridge;
+use std::path::Path;
+use helpers::LabResult;
+pub fn run(repo:&Path,id:&str)->Result<LabResult,String>{match id{
+        "stage00" => stage00::run(repo),
+        "stage01" => stage01::run(repo),
+        "stage02" => stage02::run(repo),
+        "stage03" => stage03::run(repo),
+        "stage04" => stage04::run(repo),
+        "stage05" => stage05::run(repo),
+        "stage06" => stage06::run(repo),
+        "stage07" => stage07::run(repo),
+        "stage08" => stage08::run(repo),
+        "stage09" => stage09::run(repo),
+        "stage10" => stage10::run(repo),
+        "stage11" => stage11::run(repo),
+        "stage12" => stage12::run(repo),
+        "stage13" => stage13::run(repo),
+        "stage14" => stage14::run(repo),
+        "stage15" => stage15::run(repo),
+        "stage16" => stage16::run(repo),
+        "stage17" => stage17::run(repo),
+        "stage18" => stage18::run(repo),
+        "stage19" => stage19::run(repo),
+        "stage20" => stage20::run(repo),
+        "stage21" => stage21::run(repo),
+        "stage22" => stage22::run(repo),
+        "stage23" => stage23::run(repo),
+        "stage24" => stage24::run(repo),
+        "stage25" => stage25::run(repo),
+        "stage26" => stage26::run(repo),
+        "stage27" => stage27::run(repo),
+        "stage28" => stage28::run(repo),
+        "stage29" => stage29::run(repo),
+        "stage30" => stage30::run(repo),
+        "wdbc" => wdbc::run(repo),
+        "wine" => wine::run(repo),
+        "stackloss" => stackloss::run(repo),
+        "grunfeld" => grunfeld::run(repo),
+        "co2" => co2::run(repo),
+        "nile" => nile::run(repo),
+        "elnino" => elnino::run(repo),
+        "modechoice" => modechoice::run(repo),
+        "seeds" => seeds::run(repo),
+        "concrete_slump" => concrete_slump::run(repo),
+        "leakage" => leakage::run(repo),
+        "claims" => claims::run(repo),
+        "s00" => s00::run(repo),
+        "s01" => s01::run(repo),
+        "s02" => s02::run(repo),
+        "s03" => s03::run(repo),
+        "s04" => s04::run(repo),
+        "s05" => s05::run(repo),
+        "s06" => s06::run(repo),
+        "acb" => acb::run(repo),
+        "r01" => r01::run(repo),
+        "r02" => r02::run(repo),
+        "r03" => r03::run(repo),
+        "r04" => r04::run(repo),
+        "r05" => r05::run(repo),
+        "poux_bridge" => poux_bridge::run(repo),
+        _=>Err(format!("unknown lab {id}")),
+    }}
+pub fn ids()->Vec<&'static str>{vec![
+"stage00","stage01","stage02","stage03","stage04","stage05","stage06","stage07","stage08","stage09","stage10","stage11","stage12","stage13","stage14","stage15","stage16","stage17","stage18","stage19","stage20","stage21","stage22","stage23","stage24","stage25","stage26","stage27","stage28","stage29","stage30","wdbc","wine","stackloss","grunfeld","co2","nile","elnino","modechoice","seeds","concrete_slump","leakage","claims","s00","s01","s02","s03","s04","s05","s06","acb","r01","r02","r03","r04","r05","poux_bridge"]}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test] fn all_registered(){assert_eq!(ids().len(),57);}
+    #[test] fn f2_rank(){assert_eq!(helpers::rank_mod2(&vec![vec![1,1,0],vec![1,0,1],vec![0,1,1]]),2);}
+    #[test] fn weighted(){let m=helpers::weighted_mean(&vec![vec![vec![0.0]],vec![vec![3.0],vec![6.0],vec![9.0]]]);assert!((m[0]-4.5).abs()<1e-12);}
+}

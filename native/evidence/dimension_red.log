@@ -1,0 +1,5 @@
+# shape-native/engine [shape-native/engine.test]
+engine/acceptance_test.go:204:95: undefined: ReportH01
+?   	shape-native/cmd/shape-go	[no test files]
+FAIL	shape-native/engine [build failed]
+FAIL

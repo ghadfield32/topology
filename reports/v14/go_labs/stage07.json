@@ -1,0 +1,11 @@
+{
+  "lab": "stage07",
+  "title": "Rips",
+  "metrics": {
+    "edges": 4,
+    "epsilon": 1.01
+  },
+  "notes": [
+    "At this scale the unit square has perimeter edges but no diagonals."
+  ]
+}

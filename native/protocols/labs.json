@@ -1,0 +1,1473 @@
+{
+  "schema": "shape.native-protocols.v16",
+  "lab_count": 57,
+  "parity_tolerances": {
+    "absolute": 1e-08,
+    "relative": 1e-07,
+    "integer": "exact",
+    "decoder": "exact"
+  },
+  "labs": [
+    {
+      "id": "00",
+      "key": "stage00",
+      "kind": "stage",
+      "title": "Start here: how to learn, run, and question the results",
+      "lesson": "lessons/00_lesson.md",
+      "reference": "notebooks/00_lab.ipynb",
+      "learner": "practice/learner/00_practice.ipynb",
+      "gate": "Explain what one row can and cannot establish.",
+      "native_protocol": "native16",
+      "native_goal": "Read Seeds measurements, exclude the source ID and class label, calculate column means and class counts.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Dataset inspection is not a trained classifier or independent learning assessment.",
+      "source_files": [
+        "data/v7/seeds/table.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Reorder the rows and explain which outputs should change.",
+        "Introduce an empty selected numeric value in a private fixture; specify reject versus exclude.",
+        "Explain why row count is not a count of independent experiments."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "01",
+      "key": "stage01",
+      "kind": "stage",
+      "title": "Mathematical language, proofs, and linear algebra",
+      "lesson": "lessons/01_lesson.md",
+      "reference": "notebooks/01_lab.ipynb",
+      "learner": "practice/learner/01_practice.ipynb",
+      "gate": "Calculate the result by hand before using an array.",
+      "native_protocol": "native16",
+      "native_goal": "Calculate real and F2 rank, construct the augmented Iris column 2*x0-3*x1, and test its null vector.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "The fixed numerical tolerance is not calibrated biological measurement uncertainty.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive the null vector before running: the last column is 2*x0-3*x1.",
+        "Replace a pivot with a nearly dependent value and study tolerance sensitivity.",
+        "In Go explain outer versus inner slice copies; in Rust explain who owns the elimination matrix."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "02",
+      "key": "stage02",
+      "kind": "stage",
+      "title": "Closeness, metrics, neighborhoods, and topologies",
+      "lesson": "lessons/02_lesson.md",
+      "reference": "notebooks/02_lab.ipynb",
+      "learner": "practice/learner/02_practice.ipynb",
+      "gate": "State the metric, units and meaning of closeness.",
+      "native_protocol": "native16",
+      "native_goal": "Compare L1, L2, and L-infinity distances and radius-graph components on 24 scaled Iris records. Scaling is fitted on the first 90 records.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "This is descriptive geometry of selected feature vectors, not a discovered biological manifold.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive the squared-distance triangle-inequality counterexample.",
+        "Scale only one feature and predict its effect on neighbors.",
+        "Check translation invariance without refitting unrelated preprocessing."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "03",
+      "key": "stage03",
+      "kind": "stage",
+      "title": "Continuity, homeomorphisms, connectedness, and compactness",
+      "lesson": "lessons/03_lesson.md",
+      "reference": "notebooks/03_lab.ipynb",
+      "learner": "practice/learner/03_practice.ipynb",
+      "gate": "Give a map that loses information and explain which.",
+      "native_protocol": "native16",
+      "native_goal": "Enumerate topologies on a labeled three-element set and count collisions after projecting Iris to two columns.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Finite exhaustive checks do not prove an arbitrary continuity or compactness theorem.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Explain why there are eight subsets before enumerating candidate families.",
+        "Construct a projection that is not injective.",
+        "Prove the inverse-image intersection identity without relying on a finite test."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "04",
+      "key": "stage04",
+      "kind": "stage",
+      "title": "Groups, symmetries, paths, loops, and homotopy",
+      "lesson": "lessons/04_lesson.md",
+      "reference": "notebooks/04_lab.ipynb",
+      "learner": "practice/learner/04_practice.ipynb",
+      "gate": "Distinguish geometric invariance from label invariance.",
+      "native_protocol": "native16",
+      "native_goal": "Rotate an observed digit and compare its pixels and closed-pixel Betti numbers.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "A geometric invariance is not necessarily a class-label invariance. General homotopy proofs remain written assignments.",
+      "source_files": [
+        "data/raw/digits.npz",
+        "data/splits.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Specify the rotation index map by hand.",
+        "Compare a reflection and a rotation for one digit.",
+        "Explain which transformation of a labeled 6 or 9 could invalidate the label."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "05",
+      "key": "stage05",
+      "kind": "stage",
+      "title": "Surfaces, simplices, triangulations, and pixel geometry",
+      "lesson": "lessons/05_lesson.md",
+      "reference": "notebooks/05_lab.ipynb",
+      "learner": "practice/learner/05_practice.ipynb",
+      "gate": "Explain when a three-cycle becomes a boundary.",
+      "native_protocol": "native16",
+      "native_goal": "Construct triangular and tetrahedral boundaries/interiors and compute their ordinary F2 Betti numbers; inspect an observed pixel complex.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Surface-classification proofs and arbitrary mesh reconstruction are not implemented by this small complex builder.",
+      "source_files": [
+        "data/raw/digits.npz",
+        "data/splits.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Remove a required face and predict the validation error.",
+        "Explain how adding a triangular face changes H1.",
+        "Contrast a tetrahedron boundary with a filled tetrahedron."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "06",
+      "key": "stage06",
+      "kind": "stage",
+      "title": "Chains, boundaries, homology, and Betti numbers",
+      "lesson": "lessons/06_lesson.md",
+      "reference": "notebooks/06_lab.ipynb",
+      "learner": "practice/learner/06_practice.ipynb",
+      "gate": "Show boundary-of-boundary and a hand Betti calculation.",
+      "native_protocol": "native16",
+      "native_goal": "Construct boundary matrices, compute their ranks over F2, verify boundary-of-boundary zero, and inspect digit persistence.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "The displayed binary matrices use F2, not real signed-boundary homology.",
+      "source_files": [
+        "data/raw/digits.npz",
+        "data/splits.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Prove boundary-of-boundary zero on one oriented triangle.",
+        "Compute cycle and boundary dimensions before calling rank.",
+        "Make a one-edge complex and distinguish its cycle space from connected components."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "07",
+      "key": "stage07",
+      "kind": "stage",
+      "title": "From data to shape: Rips, \u010cech, alpha, and filtrations",
+      "lesson": "lessons/07_lesson.md",
+      "reference": "notebooks/07_lab.ipynb",
+      "learner": "practice/learner/07_practice.ipynb",
+      "gate": "Distinguish filtration parameter from time index.",
+      "native_protocol": "native16",
+      "native_goal": "Build a bounded Rips filtration on selected real measurements and compare exact pairwise/common-intersection thresholds for an equilateral triangle.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "No general native Cech/alpha/Delaunay construction is claimed. Top-dimensional truncated-complex classes are not recovered H2 evidence.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Explain why pairwise ball overlap is weaker than common overlap.",
+        "Derive radius 2/sqrt(3) for the side-two equilateral control.",
+        "Change the Rips edge cutoff and report surviving-at-cutoff classes separately."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "08",
+      "key": "stage08",
+      "kind": "stage",
+      "title": "Persistent homology, persistence modules, and reading diagrams",
+      "lesson": "lessons/08_lesson.md",
+      "reference": "notebooks/08_lab.ipynb",
+      "learner": "practice/learner/08_practice.ipynb",
+      "gate": "Name birth, death and an unsupported interpretation.",
+      "native_protocol": "native16",
+      "native_goal": "Reduce a square and a real-data Rips complex, reporting intervals and independent MST H0 death times.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Persistence outside the constructed filtration is unknown; an essential-at-cutoff bar is not eternal truth.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Predict the square H1 interval [1,sqrt(2)).",
+        "Explain how multiplicity is preserved in a diagram.",
+        "Reorder points and compare interval multisets, not simplex IDs."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "09",
+      "key": "stage09",
+      "kind": "stage",
+      "title": "Implement persistence, trace the algorithm, and test it independently",
+      "lesson": "lessons/09_lesson.md",
+      "reference": "notebooks/09_lab.ipynb",
+      "learner": "practice/learner/09_practice.ipynb",
+      "gate": "Compare exact controls; leave absent external packages as skips.",
+      "native_protocol": "native16",
+      "native_goal": "Execute sparse F2 boundary-column reduction and compare H0 intervals with a separate Prim spanning-tree implementation.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "This educational enumerator caps input and simplex counts; it is not a replacement for an optimized large-scale persistence library.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Trace every XOR operation on a small filtration.",
+        "Build a malformed filtration and explain the rejected invariant.",
+        "Compare with the retained Python implementation and explain shared-bug risk."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "10",
+      "key": "stage10",
+      "kind": "stage",
+      "title": "Stability, diagram distances, noise, and scientific uncertainty",
+      "lesson": "lessons/10_lesson.md",
+      "reference": "notebooks/10_lab.ipynb",
+      "learner": "practice/learner/10_practice.ipynb",
+      "gate": "List correspondence/metric assumptions behind the bound.",
+      "native_protocol": "native16",
+      "native_goal": "Perturb the same observed image intensity function and measure diagram bottleneck distances in H0/H1.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "The same-complex sublevel-set bound does not validate arbitrary preprocessing, correspondence, or semantic significance.",
+      "source_files": [
+        "data/raw/digits.npz",
+        "data/splits.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive the sup-norm perturbation bound.",
+        "Compare a diagram with the empty diagram, accounting for diagonal matching.",
+        "Explain why unequal essential-class counts lead to infinite extended distance."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "11",
+      "key": "stage11",
+      "kind": "stage",
+      "title": "Useful representations, Mapper, time windows, and honest machine learning",
+      "lesson": "lessons/11_lesson.md",
+      "reference": "notebooks/11_lab.ipynb",
+      "learner": "practice/learner/11_practice.ipynb",
+      "gate": "Explain why a descriptor can add no predictive value.",
+      "native_protocol": "native16",
+      "native_goal": "Construct a Mapper nerve from a scalar lens, overlapping cover, and radius-connected clusters of Iris samples.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Mapper is not persistent homology; no equivalence to an underlying Reeb graph is certified.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Change only cover overlap and retain every other parameter.",
+        "Construct an edge from overlap in observation IDs.",
+        "Explain why a pretty Mapper graph alone does not establish predictive utility."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "12",
+      "key": "stage12",
+      "kind": "stage",
+      "title": "Capstone: reproduce, defend, transfer, and audit the book",
+      "lesson": "lessons/12_lesson.md",
+      "reference": "notebooks/12_lab.ipynb",
+      "learner": "practice/learner/12_practice.ipynb",
+      "gate": "Defend result and limitations without claiming tutorial replication is discovery.",
+      "native_protocol": "native16",
+      "native_goal": "Train native softmax baselines on the supplied digit split: pixels, closed-pixel summaries, and their combination.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "This new optimizer and seven-feature descriptor do not reproduce the original scikit-learn notebook protocol. The exposed split lacks writer IDs.",
+      "source_files": [
+        "data/raw/digits.npz",
+        "data/splits.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Audit the exact train/validation/test IDs.",
+        "Derive the cross-entropy gradient and verify a finite difference.",
+        "Write a conclusion that allows the raw baseline to be best."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "13",
+      "key": "stage13",
+      "kind": "stage",
+      "title": "From topology to smooth manifolds",
+      "lesson": "lessons/13_lesson.md",
+      "reference": "notebooks/13_lab.ipynb",
+      "learner": "practice/learner/13_practice.ipynb",
+      "gate": "Explain where the chart analogy ceases to apply.",
+      "native_protocol": "native16",
+      "native_goal": "Calculate a stereographic sphere chart and its inverse on manufactured points.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "The excluded pole remains excluded. Perspective cameras are not invertible charts of a full 3D scene.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Name the chart domain and codomain precisely.",
+        "Move toward the excluded pole and inspect conditioning.",
+        "Derive one Jacobian entry and compare a centered difference."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "14",
+      "key": "stage14",
+      "kind": "stage",
+      "title": "Rotations, rigid transforms, and the camera model",
+      "lesson": "lessons/14_lesson.md",
+      "reference": "notebooks/14_lab.ipynb",
+      "learner": "practice/learner/14_practice.ipynb",
+      "gate": "Separate frame change, unit change and calibration.",
+      "native_protocol": "native16",
+      "native_goal": "Normalize a quaternion, compute its rotation matrix, and project/unproject a manufactured point with supplied stereo intrinsics.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Unprojection requires supplied depth. This does not recover depth from a single pixel.",
+      "source_files": [
+        "data/stereo/calibration.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Verify R-transpose R=I and determinant +1.",
+        "Reverse transform composition order and explain the different result.",
+        "Convert units without accidentally changing dimensionless pixel quantities."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "15",
+      "key": "stage15",
+      "kind": "stage",
+      "title": "Measured stereo, calibration, and uncertainty",
+      "lesson": "lessons/15_lesson.md",
+      "reference": "notebooks/15_lab.ipynb",
+      "learner": "practice/learner/15_practice.ipynb",
+      "gate": "State what the independent reference measures.",
+      "native_protocol": "native16",
+      "native_goal": "Decode real RGB PNGs and NPZ reference disparity natively, run 5x5 SAD on 80 requested pixels, and compare eligible predictions.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "This is an intentionally weak local matcher, not full-image reconstruction, calibration recovery, or uncertainty-certified depth.",
+      "source_files": [
+        "data/stereo/calibration.json",
+        "data/stereo/left.png",
+        "data/stereo/motorcycle.npz",
+        "data/stereo/right.png"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Compare requested, eligible, and successful measurement counts.",
+        "Remove the principal-point correction only in a private control.",
+        "Report mean, median and bad-pixel rate instead of one favorable summary."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "16",
+      "key": "stage16",
+      "kind": "stage",
+      "title": "Attention and VGGT, from pixels to proposed geometry",
+      "lesson": "lessons/16_lesson.md",
+      "reference": "notebooks/16_lab.ipynb",
+      "learner": "practice/learner/16_practice.ipynb",
+      "gate": "Separate model prediction, registration and validation.",
+      "native_protocol": "native16",
+      "native_goal": "Compute scaled dot-product attention from selected feature vectors and inspect row-normalized weights.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "No VGGT, Omega, pretrained image model, or video tracking inference is run by this unit.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive the dimensions of QK-transpose and attention*V.",
+        "Change an input token and inspect the affected outputs.",
+        "Explain why normalized weights are not physical conservation or metric calibration."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "17",
+      "key": "stage17",
+      "kind": "stage",
+      "title": "Register, validate, and ask topology the right question",
+      "lesson": "lessons/17_lesson.md",
+      "reference": "notebooks/17_lab.ipynb",
+      "learner": "practice/learner/17_practice.ipynb",
+      "gate": "Explain gauge freedom and independent metric checks.",
+      "native_protocol": "native16",
+      "native_goal": "Recover a known similarity transformation by Horn quaternion alignment; fit 12 points and evaluate 12 different points.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "These points and transformation are manufactured controls, not independent surveyed coordinates.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Recover scale, proper rotation and translation separately.",
+        "Use collinear points to investigate identifiability.",
+        "Keep registration fitting references out of the evaluation set."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "18",
+      "key": "stage18",
+      "kind": "stage",
+      "title": "Make the pipeline efficient without changing the evidence",
+      "lesson": "lessons/18_lesson.md",
+      "reference": "notebooks/18_lab.ipynb",
+      "learner": "practice/learner/18_practice.ipynb",
+      "gate": "Report sample age and reject unavailable evidence.",
+      "native_protocol": "native16",
+      "native_goal": "Compute whole-stream and count-weighted chunk means on the selected sports point records.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "The JSON is loaded before accumulation; this is not industrial streaming I/O, a latency benchmark, or big-LiDAR validation.",
+      "source_files": [
+        "sports_v8/data/spl_selected_frames.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Combine unequal chunk sizes with counts.",
+        "Record file decode time separately from numerical kernel time.",
+        "Design a bounded queue before attempting concurrency; preserve row IDs."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "19",
+      "key": "stage19",
+      "kind": "stage",
+      "title": "From geometry to cautious interaction hypotheses",
+      "lesson": "lessons/19_lesson.md",
+      "reference": "notebooks/19_lab.ipynb",
+      "learner": "practice/learner/19_practice.ipynb",
+      "gate": "Declare live versus offline availability.",
+      "native_protocol": "native16",
+      "native_goal": "Execute a past-only sample-hold rule on a labeled manufactured event sequence with stale-data rejection.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Proximity and a threshold crossing do not prove possession or contact; no observed event precision/recall benchmark is claimed.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Create a hand-near-ball hard negative.",
+        "Move a future observation and verify it cannot change a past-only decision.",
+        "Track onset time separately from confirmation time."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "20",
+      "key": "stage20",
+      "kind": "stage",
+      "title": "Independent spatial capstone and continuing mastery",
+      "lesson": "lessons/20_lesson.md",
+      "reference": "notebooks/20_lab.ipynb",
+      "learner": "practice/learner/20_practice.ipynb",
+      "gate": "Produce a bounded, reproducible acceptance protocol.",
+      "native_protocol": "native16",
+      "native_goal": "Combine registration controls with derived SPL arm and motion summaries while keeping their source frames distinct.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Independent static-scene acquisition, camera calibration, and physical holdouts remain the learner capstone.",
+      "source_files": [
+        "sports_v8/data/spl_selected_frames.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Write an observation-to-claim table.",
+        "Identify which coordinate frames cannot be combined without registration.",
+        "Predeclare a useful baseline and a result that would reject the proposed method."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "21",
+      "key": "stage21",
+      "kind": "stage",
+      "title": "Rates, equations, units and what data can identify",
+      "lesson": "physics/lessons/21.md",
+      "reference": "physics/notebooks/21_lab.ipynb",
+      "learner": "physics/practice/learner/21_practice.ipynb",
+      "gate": "Detect metre/foot and second/frame mistakes.",
+      "native_protocol": "native16",
+      "native_goal": "Fit a small observed copper-response ridge baseline and check analytic-versus-finite-difference derivatives.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "The copper excerpt is not a PDE field dataset; a regression slope is not automatically an identified physical parameter.",
+      "source_files": [
+        "data/physics/hahn1_excerpt.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Vary finite-difference step and explain truncation versus rounding.",
+        "State the predictor units and which response convention is unresolved.",
+        "Design two parameter choices that observations cannot distinguish."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "22",
+      "key": "stage22",
+      "kind": "stage",
+      "title": "Smooth flows, coordinate changes and invertible networks",
+      "lesson": "physics/lessons/22.md",
+      "reference": "physics/notebooks/22_lab.ipynb",
+      "learner": "physics/practice/learner/22_practice.ipynb",
+      "gate": "Give an example where an interpolated path is not newly measured.",
+      "native_protocol": "native16",
+      "native_goal": "Evaluate and invert the exact local flow of x-prime=x-squared before its blow-up time.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "This is not a general ODE solver or trained normalizing-flow model.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive x(t)=x0/(1-t*x0).",
+        "Explain the maximal time domain for positive x0.",
+        "Compare exact-flow invertibility with an arbitrary numerical step."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "23",
+      "key": "stage23",
+      "kind": "stage",
+      "title": "Mechanics, Hamiltonian networks and Lagrangian networks",
+      "lesson": "physics/lessons/23.md",
+      "reference": "physics/notebooks/23_lab.ipynb",
+      "learner": "physics/practice/learner/23_practice.ipynb",
+      "gate": "State missing labels and dynamics assumptions for real sports transfer.",
+      "native_protocol": "native16",
+      "native_goal": "Train tanh networks with derivatives obtained by forward second-order jets over a reverse-mode parameter tape. HNN fits both Hamiltonian derivatives; LNN fixes unit mass and learns potential.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Manufactured oscillator data and small architectures; no general velocity-dependent Lagrangian, constraint solver, or full-paper replication.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Check one parameter gradient against finite differences.",
+        "Inspect derivative fit error separately from long-rollout error.",
+        "Explain which Legendre-transform regularity assumption this restricted model avoids."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "24",
+      "key": "stage24",
+      "kind": "stage",
+      "title": "Symplectic integration, energy, phase and long rollouts",
+      "lesson": "physics/lessons/24.md",
+      "reference": "physics/notebooks/24_lab.ipynb",
+      "learner": "physics/practice/learner/24_practice.ipynb",
+      "gate": "Distinguish model conservation from integrator properties.",
+      "native_protocol": "native16",
+      "native_goal": "Compare explicit Euler, symplectic Euler, Verlet, implicit midpoint and RK4 for the same harmonic oscillator.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Symplecticity and exact energy conservation are different; a harmonic control does not validate arbitrary dissipative systems.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive the first symplectic Euler step.",
+        "Compare phase error and energy error separately.",
+        "Increase the step size until a method fails and report it honestly."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "25",
+      "key": "stage25",
+      "kind": "stage",
+      "title": "Constraints, projections, retractions and rank failure",
+      "lesson": "physics/lessons/25.md",
+      "reference": "physics/notebooks/25_lab.ipynb",
+      "learner": "physics/practice/learner/25_practice.ipynb",
+      "gate": "Identify which constraint was enforced and residual remaining.",
+      "native_protocol": "native16",
+      "native_goal": "Apply iterative linearized corrections to a sphere constraint and record residual changes.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "One correction is not a general exact projection or geodesic; singular constraint Jacobians require an explicit policy.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Calculate the residual after one step from (2,0).",
+        "Compare the Newton correction with radial normalization.",
+        "Construct a singular starting point and reject an unsupported inverse."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "26",
+      "key": "stage26",
+      "kind": "stage",
+      "title": "Physics-informed learning and inverse problems",
+      "lesson": "physics/lessons/26.md",
+      "reference": "physics/notebooks/26_lab.ipynb",
+      "learner": "physics/practice/learner/26_practice.ipynb",
+      "gate": "Show that low residual can coexist with wrong clock/scale.",
+      "native_protocol": "native16",
+      "native_goal": "Train a native scalar Poisson PINN with hard endpoint factors and compare its solution with the manufactured analytic sine solution.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Not an inverse real-data PDE, multidomain solver, or full PIKAN/XPINN benchmark.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive the forcing and boundary conditions.",
+        "Test second derivatives independently before training.",
+        "Compare residual, solution error, and a finite-difference baseline."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "27",
+      "key": "stage27",
+      "kind": "stage",
+      "title": "Conflicting gradients, interfaces, separability and PIKANs",
+      "lesson": "physics/lessons/27.md",
+      "reference": "physics/notebooks/27_lab.ipynb",
+      "learner": "physics/practice/learner/27_practice.ipynb",
+      "gate": "Keep source-author benchmark claims distinct from our tests.",
+      "native_protocol": "native16",
+      "native_goal": "Calculate gradient dot products, conflict projections and normalization on exact vector controls.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "The original Norm-PCGrad, ConFIG, SPINN, XPINN and PIKAN studies are not reproduced in full.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Show that opposite nonzero gradients have no common strict first-order descent direction.",
+        "Check what happens to a zero projected vector.",
+        "Separate an incorrect interface condition from an optimization conflict."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "28",
+      "key": "stage28",
+      "kind": "stage",
+      "title": "Functions to functions: DeepONet, Fourier operators and baselines",
+      "lesson": "physics/lessons/28.md",
+      "reference": "physics/notebooks/28_lab.ipynb",
+      "learner": "physics/practice/learner/28_practice.ipynb",
+      "gate": "Do not fit a field operator from unrelated aggregate rows.",
+      "native_protocol": "native16",
+      "native_goal": "Train a small DeepONet and a three-mode spectral multiplier plus bias on manufactured periodic heat solutions.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "The spectral learner is one real Fourier layer, not a multilayer FNO benchmark; function-level split and architecture differences remain explicit.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive the heat attenuation of each Fourier mode.",
+        "Hold out whole functions, not random points from the same function.",
+        "Compare both learners with an exact operator and a zero/persistence baseline."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "29",
+      "key": "stage29",
+      "kind": "stage",
+      "title": "Differentiable simulation, graph physics and attention constraints",
+      "lesson": "physics/lessons/29.md",
+      "reference": "physics/notebooks/29_lab.ipynb",
+      "learner": "physics/practice/learner/29_practice.ipynb",
+      "gate": "Explain how wrong time scale can fit the same trajectory.",
+      "native_protocol": "native16",
+      "native_goal": "Fit damping through a native differentiable scalar flow and test a row-stochastic mass counterexample.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "No trained physics-informed GNN or transformer, and no real noisy-system identification is claimed.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Derive the state sensitivity to damping.",
+        "Check finite differences of the parameter gradient.",
+        "Explain why row-stochastic attention does not necessarily preserve total mass."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "30",
+      "key": "stage30",
+      "kind": "stage",
+      "title": "An independent world-model study: evidence before adoption",
+      "lesson": "physics/lessons/30.md",
+      "reference": "physics/notebooks/30_lab.ipynb",
+      "learner": "physics/practice/learner/30_practice.ipynb",
+      "gate": "Make no adoption claim without matching validation evidence.",
+      "native_protocol": "native16",
+      "native_goal": "Run trained damping and nonlinear-constraint controls as executable prerequisites for a separately designed observed-system study.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Passing these controls does not complete an independent world-model research project.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Freeze the question, data split and metric before the final experiment.",
+        "Document where the proposed physical law can fail.",
+        "Report a negative result without changing the claimed task afterward."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "wdbc",
+      "key": "wdbc",
+      "kind": "case",
+      "title": "Healthcare image-summary classification",
+      "lesson": "industry/lessons/wdbc.md",
+      "reference": "industry/notebooks/wdbc.ipynb",
+      "learner": "industry/learner/wdbc.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation.",
+      "native_protocol": "native16",
+      "native_goal": "Classification from image-derived scalar measurements with training-only scaling and local topology.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Not the source images, patient-level clinical validation or a diagnostic service.",
+      "source_files": [
+        "data/industries/wdbc/data.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for healthcare feature records and identify repeated groups.",
+        "Change one declared parameter in classification from image-derived scalar measurements with training-only scaling and local topology. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Not the source images, patient-level clinical validation or a diagnostic service."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "wine",
+      "key": "wine",
+      "kind": "case",
+      "title": "Food chemistry and topology",
+      "lesson": "industry/lessons/wine.md",
+      "reference": "industry/notebooks/wine.ipynb",
+      "learner": "industry/learner/wine.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation.",
+      "native_protocol": "native16",
+      "native_goal": "Cultivar classification with native softmax and local topological descriptors.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Different split/solver from the original notebook; fixed exposed demonstration only.",
+      "source_files": [
+        "data/industries/wine/data.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for chemical profiles and identify repeated groups.",
+        "Change one declared parameter in cultivar classification with native softmax and local topological descriptors. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Different split/solver from the original notebook; fixed exposed demonstration only."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "stackloss",
+      "key": "stackloss",
+      "kind": "case",
+      "title": "Manufacturing regression",
+      "lesson": "industry/lessons/stackloss.md",
+      "reference": "industry/notebooks/stackloss.ipynb",
+      "learner": "industry/learner/stackloss.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation.",
+      "native_protocol": "native16",
+      "native_goal": "Fit ridge regression to the small observed plant-day table and compare a training-mean baseline.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Few observations and a random split do not establish future operational forecasting.",
+      "source_files": [
+        "data/industries/stackloss/data.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for manufacturing days and identify repeated groups.",
+        "Change one declared parameter in fit ridge regression to the small observed plant-day table and compare a training-mean baseline. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Few observations and a random split do not establish future operational forecasting."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "grunfeld",
+      "key": "grunfeld",
+      "kind": "case",
+      "title": "Firm-year panel measurements",
+      "lesson": "industry/lessons/grunfeld.md",
+      "reference": "industry/notebooks/grunfeld.ipynb",
+      "learner": "industry/learner/grunfeld.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation.",
+      "native_protocol": "native16",
+      "native_goal": "Construct within-firm lagged observations and temporal partitions for ridge prediction.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Repeated firm identity is intentional; no causal investment claim.",
+      "source_files": [
+        "data/industries/grunfeld/data.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for firm-year panels and identify repeated groups.",
+        "Change one declared parameter in construct within-firm lagged observations and temporal partitions for ridge prediction. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Repeated firm identity is intentional; no causal investment claim."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "co2",
+      "key": "co2",
+      "kind": "case",
+      "title": "Atmospheric observations and windows",
+      "lesson": "industry/lessons/co2.md",
+      "reference": "industry/notebooks/co2.ipynb",
+      "learner": "industry/learner/co2.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation.",
+      "native_protocol": "native16",
+      "native_goal": "Build complete past-only six-lag windows, keeping whole windows within chronological partitions.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Historical data with missingness; no current atmospheric estimate or causal attribution.",
+      "source_files": [
+        "data/industries/co2/data.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for atmospheric time series and identify repeated groups.",
+        "Change one declared parameter in build complete past-only six-lag windows, keeping whole windows within chronological partitions. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Historical data with missingness; no current atmospheric estimate or causal attribution."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "nile",
+      "key": "nile",
+      "kind": "case",
+      "title": "Water-infrastructure time series",
+      "lesson": "industry/lessons/nile.md",
+      "reference": "industry/notebooks/nile.ipynb",
+      "learner": "industry/learner/nile.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation.",
+      "native_protocol": "native16",
+      "native_goal": "Use six past annual measurements for chronological ridge forecasts and compare a mean baseline.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Volume units and annual aggregation matter; predictive change does not establish cause.",
+      "source_files": [
+        "data/industries/nile/data.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for water time series and identify repeated groups.",
+        "Change one declared parameter in use six past annual measurements for chronological ridge forecasts and compare a mean baseline. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Volume units and annual aggregation matter; predictive change does not establish cause."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "elnino",
+      "key": "elnino",
+      "kind": "case",
+      "title": "Marine climate",
+      "lesson": "industry/lessons/elnino.md",
+      "reference": "industry/notebooks/elnino.ipynb",
+      "learner": "industry/learner/elnino.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation.",
+      "native_protocol": "native16",
+      "native_goal": "Reshape the monthly historical series and construct leakage-conscious lagged forecasts.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "No multivariate climate model or chronological-period generality is certified.",
+      "source_files": [
+        "data/industries/elnino/data.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for marine climate and identify repeated groups.",
+        "Change one declared parameter in reshape the monthly historical series and construct leakage-conscious lagged forecasts. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: No multivariate climate model or chronological-period generality is certified."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "modechoice",
+      "key": "modechoice",
+      "kind": "case",
+      "title": "Traveler-level choice sets",
+      "lesson": "industry/lessons/modechoice.md",
+      "reference": "industry/notebooks/modechoice.ipynb",
+      "learner": "industry/learner/modechoice.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation.",
+      "native_protocol": "native16",
+      "native_goal": "Train a conditional choice softmax while keeping complete alternative sets grouped by traveler.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Choice-based sampling and unidentified population parameters limit interpretation.",
+      "source_files": [
+        "data/industries/modechoice/data.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for grouped transport alternatives and identify repeated groups.",
+        "Change one declared parameter in train a conditional choice softmax while keeping complete alternative sets grouped by traveler. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Choice-based sampling and unidentified population parameters limit interpretation."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "seeds",
+      "key": "seeds",
+      "kind": "case",
+      "title": "Agriculture feature-space geometry",
+      "lesson": "applications_v7/seeds/lesson.md",
+      "reference": "applications_v7/seeds/lab.ipynb",
+      "learner": "applications_v7/seeds/learner.ipynb",
+      "gate": "Selected provider transcription; independent upstream byte comparison remains pending.",
+      "native_protocol": "native16",
+      "native_goal": "Classify measured kernel profiles; compare ordinary features and local shape summaries.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "A feature-space loop is not a physical hole in a kernel.",
+      "source_files": [
+        "data/v7/seeds/table.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for agricultural kernels and identify repeated groups.",
+        "Change one declared parameter in classify measured kernel profiles and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: A feature-space loop is not a physical hole in a kernel."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "concrete_slump",
+      "key": "concrete_slump",
+      "kind": "case",
+      "title": "Materials measurements and intervals",
+      "lesson": "applications_v7/concrete_slump/lesson.md",
+      "reference": "applications_v7/concrete_slump/lab.ipynb",
+      "learner": "applications_v7/concrete_slump/learner.ipynb",
+      "gate": "Selected provider transcription; independent upstream byte comparison remains pending.",
+      "native_protocol": "native16",
+      "native_goal": "Train a ridge predictor and calibrate finite-sample absolute-residual intervals on separate rows.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Marginal illustrative coverage is not conditional coverage for every recipe or future batch.",
+      "source_files": [
+        "data/v7/concrete_slump/table.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for materials measurements and identify repeated groups.",
+        "Change one declared parameter in train a ridge predictor and calibrate finite-sample absolute-residual intervals on separate rows. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Marginal illustrative coverage is not conditional coverage for every recipe or future batch."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "leakage",
+      "key": "leakage",
+      "kind": "case",
+      "title": "Identity leakage controls",
+      "lesson": "methods_v7/leakage/lesson.md",
+      "reference": "methods_v7/leakage/lab.ipynb",
+      "learner": "methods_v7/leakage/learner.ipynb",
+      "gate": "Exposes a failure mechanism, not population benefit.",
+      "native_protocol": "native16",
+      "native_goal": "Copy observed Seeds rows three times and contrast row versus source-group partitions.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Copies are constructed records, not newly observed independent kernels.",
+      "source_files": [
+        "data/v7/seeds/table.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for constructed leakage control and identify repeated groups.",
+        "Change one declared parameter in copy observed seeds rows three times and contrast row versus source-group partitions. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Copies are constructed records, not newly observed independent kernels."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "claims",
+      "key": "claims",
+      "kind": "case",
+      "title": "Physical-claim counterexamples",
+      "lesson": "methods_v7/claims/lesson.md",
+      "reference": "methods_v7/claims/lab.ipynb",
+      "learner": "methods_v7/claims/learner.ipynb",
+      "gate": "Exposes a failure mechanism, not population benefit.",
+      "native_protocol": "native16",
+      "native_goal": "Combine oscillator, constraint and conflicting-gradient controls to examine broad guarantees.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "An isolated counterexample refutes a universal statement but does not rank every architecture.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for claims versus counterexamples and identify repeated groups.",
+        "Change one declared parameter in combine oscillator, constraint and conflicting-gradient controls to examine broad guarantees. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: An isolated counterexample refutes a universal statement but does not rank every architecture."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "s00",
+      "key": "s00",
+      "kind": "case",
+      "title": "Sports observations and units",
+      "lesson": "sports_v8/lessons/S00.md",
+      "reference": "sports_v8/notebooks/S00.ipynb",
+      "learner": "sports_v8/practice/S00.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "native_protocol": "native16",
+      "native_goal": "Read SPL landmarks and ball positions, convert feet/inches to metres, retain source identities and mixed-unit distinctions.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Twelve selected frames from one trial are not twelve independent outcome experiments.",
+      "source_files": [
+        "sports_v8/data/spl_selected_frames.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for sports observation contracts and identify repeated groups.",
+        "Change one declared parameter in read spl landmarks and ball positions, convert feet/inches to metres, retain source identities and mixed-unit distinctions. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Twelve selected frames from one trial are not twelve independent outcome experiments."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "s01",
+      "key": "s01",
+      "kind": "case",
+      "title": "Landmark angles and velocity",
+      "lesson": "sports_v8/lessons/S01.md",
+      "reference": "sports_v8/notebooks/S01.ipynb",
+      "learner": "sports_v8/practice/S01.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "native_protocol": "native16",
+      "native_goal": "Calculate joint angles and interval velocities on nonuniformly selected observed frames.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Intervals with large gaps are rejected; derived velocity is not an independent sensor measurement.",
+      "source_files": [
+        "sports_v8/data/spl_selected_frames.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for sports motion and identify repeated groups.",
+        "Change one declared parameter in calculate joint angles and interval velocities on nonuniformly selected observed frames. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Intervals with large gaps are rejected; derived velocity is not an independent sensor measurement."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "s02",
+      "key": "s02",
+      "kind": "case",
+      "title": "Ball-flight model adequacy",
+      "lesson": "sports_v8/lessons/S02.md",
+      "reference": "sports_v8/notebooks/S02.ipynb",
+      "learner": "sports_v8/practice/S02.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "native_protocol": "native16",
+      "native_goal": "Fit free and fixed-gravity parabolas and compare later same-shot points with a simple height baseline.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "No validated release detector or out-of-athlete generalization; selected points may not be pure free flight.",
+      "source_files": [
+        "sports_v8/data/spl_selected_frames.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for ball flight adequacy and identify repeated groups.",
+        "Change one declared parameter in fit free and fixed-gravity parabolas and compare later same-shot points with a simple height baseline. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: No validated release detector or out-of-athlete generalization; selected points may not be pure free flight."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "s03",
+      "key": "s03",
+      "kind": "case",
+      "title": "Soccer profile topology",
+      "lesson": "sports_v8/lessons/S03.md",
+      "reference": "sports_v8/notebooks/S03.ipynb",
+      "learner": "sports_v8/practice/S03.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "native_protocol": "native16",
+      "native_goal": "Standardize selected soccer profiles and compute descriptive Rips intervals.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Profiles aggregate seasons/positions; they are not time-indexed pitch coordinates.",
+      "source_files": [
+        "sports_v8/data/skillcorner_selected_profiles.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for player profile topology and identify repeated groups.",
+        "Change one declared parameter in standardize selected soccer profiles and compute descriptive rips intervals. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Profiles aggregate seasons/positions; they are not time-indexed pitch coordinates."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "s04",
+      "key": "s04",
+      "kind": "case",
+      "title": "Timing and uncertainty",
+      "lesson": "sports_v8/lessons/S04.md",
+      "reference": "sports_v8/notebooks/S04.ipynb",
+      "learner": "sports_v8/practice/S04.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "native_protocol": "native16",
+      "native_goal": "Compare a causal manufactured temporal rule with controlled point perturbations.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Constructed visibility/event tests are not measured event accuracy.",
+      "source_files": [
+        "sports_v8/data/spl_selected_frames.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for missingness and sensitivity and identify repeated groups.",
+        "Change one declared parameter in compare a causal manufactured temporal rule with controlled point perturbations. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Constructed visibility/event tests are not measured event accuracy."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "s05",
+      "key": "s05",
+      "kind": "case",
+      "title": "Athlete-group evaluation",
+      "lesson": "sports_v8/lessons/S05.md",
+      "reference": "sports_v8/notebooks/S05.ipynb",
+      "learner": "sports_v8/practice/S05.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "native_protocol": "native16",
+      "native_goal": "Keep repeated player identifiers together and fit preprocessing only on designated groups.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Eight selected athletes are insufficient for a broad population claim.",
+      "source_files": [
+        "sports_v8/data/skillcorner_selected_profiles.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for athlete-group separation and identify repeated groups.",
+        "Change one declared parameter in keep repeated player identifiers together and fit preprocessing only on designated groups. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Eight selected athletes are insufficient for a broad population claim."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "s06",
+      "key": "s06",
+      "kind": "case",
+      "title": "Independent sports investigation",
+      "lesson": "sports_v8/lessons/S06.md",
+      "reference": "sports_v8/notebooks/S06.ipynb",
+      "learner": "sports_v8/practice/S06.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark.",
+      "native_protocol": "native16",
+      "native_goal": "Inspect motion, grouping and source contracts as prerequisites for an independent sports experiment.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "No full sports corpus or unseen-event label benchmark is acquired by this unit.",
+      "source_files": [
+        "sports_v8/data/spl_selected_frames.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for sports study design and identify repeated groups.",
+        "Change one declared parameter in inspect motion, grouping and source contracts as prerequisites for an independent sports experiment. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: No full sports corpus or unseen-event label benchmark is acquired by this unit."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "acb",
+      "key": "acb",
+      "kind": "case",
+      "title": "ACB 2025\u201326 source and identity readiness",
+      "lesson": "sports_v9/lesson.md",
+      "reference": "sports_v9/notebooks/acb_readiness.ipynb",
+      "learner": "sports_v9/practice/acb_readiness.ipynb",
+      "gate": "No full ACB tracking, events or season aggregates in this case.",
+      "native_protocol": "native16",
+      "native_goal": "Read the ten-game source catalog, retain chronology and explicit competition identifiers.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Metadata is not full tracking/events/season aggregates; no hidden acquisition occurs.",
+      "source_files": [
+        "sports_v9/data/matches.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for basketball metadata and identify repeated groups.",
+        "Change one declared parameter in read the ten-game source catalog, retain chronology and explicit competition identifiers. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Metadata is not full tracking/events/season aggregates; no hidden acquisition occurs."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "r01",
+      "key": "r01",
+      "kind": "case",
+      "title": "Distributions, moments, and whitening",
+      "lesson": "representations/lessons/R01.md",
+      "reference": "representations/notebooks/r01.ipynb",
+      "learner": "representations/learner/r01.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking.",
+      "native_protocol": "native16",
+      "native_goal": "Compute a symmetric eigensystem and whitening transform from designated Iris training observations.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "White covariance does not imply Gaussianity, semantic content or successful generalization.",
+      "source_files": [
+        "data/raw/iris.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for covariance and whitening and identify repeated groups.",
+        "Change one declared parameter in compute a symmetric eigensystem and whitening transform from designated iris training observations. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: White covariance does not imply Gaussianity, semantic content or successful generalization."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "r02",
+      "key": "r02",
+      "kind": "case",
+      "title": "Projections, characteristic functions, and SIGReg",
+      "lesson": "representations/lessons/R02.md",
+      "reference": "representations/notebooks/r02.ipynb",
+      "learner": "representations/learner/r02.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking.",
+      "native_protocol": "native16",
+      "native_goal": "Compute finite characteristic-function Gaussian penalties and gradients on explicit manufactured Gaussian/collapsed controls.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Finite directions and frequencies do not prove a full multivariate distribution or prevent every zero-gradient pathology.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for projected distribution diagnostics and identify repeated groups.",
+        "Change one declared parameter in compute finite characteristic-function gaussian penalties and gradients on explicit manufactured gaussian/collapsed controls. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Finite directions and frequencies do not prove a full multivariate distribution or prevent every zero-gradient pathology."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "r03",
+      "key": "r03",
+      "kind": "case",
+      "title": "Anti-collapse objectives and gradient paths",
+      "lesson": "representations/lessons/R03.md",
+      "reference": "representations/notebooks/r03.ipynb",
+      "learner": "representations/learner/r03.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking.",
+      "native_protocol": "native16",
+      "native_goal": "Calculate agreement and distribution/gradient controls with explicit targets.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Not a complete BYOL, DINO, Barlow Twins or contrastive pretraining reproduction.",
+      "source_files": [],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for representation objectives and identify repeated groups.",
+        "Change one declared parameter in calculate agreement and distribution/gradient controls with explicit targets. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Not a complete BYOL, DINO, Barlow Twins or contrastive pretraining reproduction."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "r04",
+      "key": "r04",
+      "kind": "case",
+      "title": "Train a representation and evaluate frozen probes",
+      "lesson": "representations/lessons/R04.md",
+      "reference": "representations/notebooks/r04.ipynb",
+      "learner": "representations/learner/r04.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking.",
+      "native_protocol": "native16",
+      "native_goal": "Train small 64-16-8 encoders on observed digits with agreement-only and projected-Gaussian objectives, then fit frozen linear probes.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "New native eight-epoch protocol, not the original Python encoder architecture; labels enter probes only, and writer IDs are unavailable.",
+      "source_files": [
+        "data/raw/digits.npz",
+        "data/splits.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for actual native representation training and identify repeated groups.",
+        "Change one declared parameter in train small 64-16-8 encoders on observed digits with agreement-only and projected-gaussian objectives, then fit frozen linear probes. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: New native eight-epoch protocol, not the original Python encoder architecture; labels enter probes only, and writer IDs are unavailable."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "r05",
+      "key": "r05",
+      "kind": "case",
+      "title": "Transfer diagnostics without inventing a sports world model",
+      "lesson": "representations/lessons/R05.md",
+      "reference": "representations/notebooks/r05.ipynb",
+      "learner": "representations/learner/r05.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking.",
+      "native_protocol": "native16",
+      "native_goal": "Fit covariance and whitening on training athlete groups and retain separate validation/test row identities.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Small selected profile diagnostics, not a trained sports world model or semantic-label claim.",
+      "source_files": [
+        "sports_v8/data/skillcorner_selected_profiles.csv"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for sports representation transfer and identify repeated groups.",
+        "Change one declared parameter in fit covariance and whitening on training athlete groups and retain separate validation/test row identities. and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Small selected profile diagnostics, not a trained sports world model or semantic-label claim."
+      ],
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "poux_bridge",
+      "key": "poux_bridge",
+      "kind": "extension",
+      "title": "Poux spatial-AI Stage 01 weighted-streaming bridge",
+      "lesson": "curriculum/extensions/poux_spatial_ai/README.md",
+      "reference": "curriculum/extensions/poux_spatial_ai/bridge.py",
+      "learner": "curriculum/extensions/poux_spatial_ai/LESSONS.md",
+      "gate": "Derive weighted chunk means and state what aggregation loses.",
+      "native_protocol": "native16",
+      "native_goal": "Combine unequal batches of the existing SPL point excerpt with correct count weights; compare the wrong equal-weight mean.",
+      "native_parity": "Go/Rust numerical or exact common-protocol comparison",
+      "original_python_parity": "not_certified",
+      "original_scope_gaps": "Accumulator streaming is not file-streaming validation; selected-frame mean is not a time-average or release point.",
+      "source_files": [
+        "sports_v8/data/spl_selected_frames.json"
+      ],
+      "go_dispatch": "native/go/engine/labs.go",
+      "rust_dispatch": "native/rust/src/labs.rs",
+      "challenges": [
+        "Define the independent observation unit for streaming arithmetic and information and identify repeated groups.",
+        "Change one declared parameter in combine unequal batches of the existing spl point excerpt with correct count weights and predict its effect before running.",
+        "Design a comparison that could reject the claimed benefit; explain this limitation: Accumulator streaming is not file-streaming validation; selected-frame mean is not a time-average or release point."
+      ],
+      "assessment": "not_assessed"
+    }
+  ]
+}

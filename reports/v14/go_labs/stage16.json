@@ -1,0 +1,15 @@
+{
+  "lab": "stage16",
+  "title": "Attention",
+  "metrics": {
+    "softmax": [
+      0.09003057317038046,
+      0.24472847105479764,
+      0.6652409557748218
+    ],
+    "sum": 0.9999999999999999
+  },
+  "notes": [
+    "Attention weights are normalized affinities, not calibrated geometric truth."
+  ]
+}

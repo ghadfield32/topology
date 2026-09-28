@@ -1,0 +1,24 @@
+{
+  "scope": "Remote job provisions official Rust and dependency sources; actual course tests then ran locally",
+  "repository": "ghadfield32/topology",
+  "branch": "learning/native-parity-v16",
+  "commit": "ab77074a6f8c1deb032d5c2518a262d5d0e66cbc",
+  "workflow_run": 36275357538,
+  "job": 108496931911,
+  "conclusion": "success",
+  "artifact_id": 10917232053,
+  "artifact_sha256": "2eed6be93e4f0ea0a3e0a46617eae13f4ceb3c2c3ab9c466cc8ae10ceaef887f",
+  "rust_version": "1.90.0",
+  "vendor_crates": 36,
+  "compiler_bundled": false,
+  "main_changed": false,
+  "new_native_source_pushed": false,
+  "incidental_existing_workflow": {
+    "run": 36275357595,
+    "scope": "unchanged earlier repository, not new native16 code",
+    "ubuntu": "success",
+    "macos": "success",
+    "windows": "success",
+    "full_and_docker": "skipped"
+  }
+}

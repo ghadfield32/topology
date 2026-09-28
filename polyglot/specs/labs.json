@@ -1,0 +1,576 @@
+{
+  "schema": 1,
+  "count": 57,
+  "labs": [
+    {
+      "id": "00",
+      "key": "stage00",
+      "kind": "stage",
+      "title": "Start here: how to learn, run, and question the results",
+      "lesson": "lessons/00_lesson.md",
+      "reference": "notebooks/00_lab.ipynb",
+      "learner": "practice/learner/00_practice.ipynb",
+      "gate": "Explain what one row can and cannot establish."
+    },
+    {
+      "id": "01",
+      "key": "stage01",
+      "kind": "stage",
+      "title": "Mathematical language, proofs, and linear algebra",
+      "lesson": "lessons/01_lesson.md",
+      "reference": "notebooks/01_lab.ipynb",
+      "learner": "practice/learner/01_practice.ipynb",
+      "gate": "Calculate the result by hand before using an array."
+    },
+    {
+      "id": "02",
+      "key": "stage02",
+      "kind": "stage",
+      "title": "Closeness, metrics, neighborhoods, and topologies",
+      "lesson": "lessons/02_lesson.md",
+      "reference": "notebooks/02_lab.ipynb",
+      "learner": "practice/learner/02_practice.ipynb",
+      "gate": "State the metric, units and meaning of closeness."
+    },
+    {
+      "id": "03",
+      "key": "stage03",
+      "kind": "stage",
+      "title": "Continuity, homeomorphisms, connectedness, and compactness",
+      "lesson": "lessons/03_lesson.md",
+      "reference": "notebooks/03_lab.ipynb",
+      "learner": "practice/learner/03_practice.ipynb",
+      "gate": "Give a map that loses information and explain which."
+    },
+    {
+      "id": "04",
+      "key": "stage04",
+      "kind": "stage",
+      "title": "Groups, symmetries, paths, loops, and homotopy",
+      "lesson": "lessons/04_lesson.md",
+      "reference": "notebooks/04_lab.ipynb",
+      "learner": "practice/learner/04_practice.ipynb",
+      "gate": "Distinguish geometric invariance from label invariance."
+    },
+    {
+      "id": "05",
+      "key": "stage05",
+      "kind": "stage",
+      "title": "Surfaces, simplices, triangulations, and pixel geometry",
+      "lesson": "lessons/05_lesson.md",
+      "reference": "notebooks/05_lab.ipynb",
+      "learner": "practice/learner/05_practice.ipynb",
+      "gate": "Explain when a three-cycle becomes a boundary."
+    },
+    {
+      "id": "06",
+      "key": "stage06",
+      "kind": "stage",
+      "title": "Chains, boundaries, homology, and Betti numbers",
+      "lesson": "lessons/06_lesson.md",
+      "reference": "notebooks/06_lab.ipynb",
+      "learner": "practice/learner/06_practice.ipynb",
+      "gate": "Show boundary-of-boundary and a hand Betti calculation."
+    },
+    {
+      "id": "07",
+      "key": "stage07",
+      "kind": "stage",
+      "title": "From data to shape: Rips, \u010cech, alpha, and filtrations",
+      "lesson": "lessons/07_lesson.md",
+      "reference": "notebooks/07_lab.ipynb",
+      "learner": "practice/learner/07_practice.ipynb",
+      "gate": "Distinguish filtration parameter from time index."
+    },
+    {
+      "id": "08",
+      "key": "stage08",
+      "kind": "stage",
+      "title": "Persistent homology, persistence modules, and reading diagrams",
+      "lesson": "lessons/08_lesson.md",
+      "reference": "notebooks/08_lab.ipynb",
+      "learner": "practice/learner/08_practice.ipynb",
+      "gate": "Name birth, death and an unsupported interpretation."
+    },
+    {
+      "id": "09",
+      "key": "stage09",
+      "kind": "stage",
+      "title": "Implement persistence, trace the algorithm, and test it independently",
+      "lesson": "lessons/09_lesson.md",
+      "reference": "notebooks/09_lab.ipynb",
+      "learner": "practice/learner/09_practice.ipynb",
+      "gate": "Compare exact controls; leave absent external packages as skips."
+    },
+    {
+      "id": "10",
+      "key": "stage10",
+      "kind": "stage",
+      "title": "Stability, diagram distances, noise, and scientific uncertainty",
+      "lesson": "lessons/10_lesson.md",
+      "reference": "notebooks/10_lab.ipynb",
+      "learner": "practice/learner/10_practice.ipynb",
+      "gate": "List correspondence/metric assumptions behind the bound."
+    },
+    {
+      "id": "11",
+      "key": "stage11",
+      "kind": "stage",
+      "title": "Useful representations, Mapper, time windows, and honest machine learning",
+      "lesson": "lessons/11_lesson.md",
+      "reference": "notebooks/11_lab.ipynb",
+      "learner": "practice/learner/11_practice.ipynb",
+      "gate": "Explain why a descriptor can add no predictive value."
+    },
+    {
+      "id": "12",
+      "key": "stage12",
+      "kind": "stage",
+      "title": "Capstone: reproduce, defend, transfer, and audit the book",
+      "lesson": "lessons/12_lesson.md",
+      "reference": "notebooks/12_lab.ipynb",
+      "learner": "practice/learner/12_practice.ipynb",
+      "gate": "Defend result and limitations without claiming tutorial replication is discovery."
+    },
+    {
+      "id": "13",
+      "key": "stage13",
+      "kind": "stage",
+      "title": "From topology to smooth manifolds",
+      "lesson": "lessons/13_lesson.md",
+      "reference": "notebooks/13_lab.ipynb",
+      "learner": "practice/learner/13_practice.ipynb",
+      "gate": "Explain where the chart analogy ceases to apply."
+    },
+    {
+      "id": "14",
+      "key": "stage14",
+      "kind": "stage",
+      "title": "Rotations, rigid transforms, and the camera model",
+      "lesson": "lessons/14_lesson.md",
+      "reference": "notebooks/14_lab.ipynb",
+      "learner": "practice/learner/14_practice.ipynb",
+      "gate": "Separate frame change, unit change and calibration."
+    },
+    {
+      "id": "15",
+      "key": "stage15",
+      "kind": "stage",
+      "title": "Measured stereo, calibration, and uncertainty",
+      "lesson": "lessons/15_lesson.md",
+      "reference": "notebooks/15_lab.ipynb",
+      "learner": "practice/learner/15_practice.ipynb",
+      "gate": "State what the independent reference measures."
+    },
+    {
+      "id": "16",
+      "key": "stage16",
+      "kind": "stage",
+      "title": "Attention and VGGT, from pixels to proposed geometry",
+      "lesson": "lessons/16_lesson.md",
+      "reference": "notebooks/16_lab.ipynb",
+      "learner": "practice/learner/16_practice.ipynb",
+      "gate": "Separate model prediction, registration and validation."
+    },
+    {
+      "id": "17",
+      "key": "stage17",
+      "kind": "stage",
+      "title": "Register, validate, and ask topology the right question",
+      "lesson": "lessons/17_lesson.md",
+      "reference": "notebooks/17_lab.ipynb",
+      "learner": "practice/learner/17_practice.ipynb",
+      "gate": "Explain gauge freedom and independent metric checks."
+    },
+    {
+      "id": "18",
+      "key": "stage18",
+      "kind": "stage",
+      "title": "Make the pipeline efficient without changing the evidence",
+      "lesson": "lessons/18_lesson.md",
+      "reference": "notebooks/18_lab.ipynb",
+      "learner": "practice/learner/18_practice.ipynb",
+      "gate": "Report sample age and reject unavailable evidence."
+    },
+    {
+      "id": "19",
+      "key": "stage19",
+      "kind": "stage",
+      "title": "From geometry to cautious interaction hypotheses",
+      "lesson": "lessons/19_lesson.md",
+      "reference": "notebooks/19_lab.ipynb",
+      "learner": "practice/learner/19_practice.ipynb",
+      "gate": "Declare live versus offline availability."
+    },
+    {
+      "id": "20",
+      "key": "stage20",
+      "kind": "stage",
+      "title": "Independent spatial capstone and continuing mastery",
+      "lesson": "lessons/20_lesson.md",
+      "reference": "notebooks/20_lab.ipynb",
+      "learner": "practice/learner/20_practice.ipynb",
+      "gate": "Produce a bounded, reproducible acceptance protocol."
+    },
+    {
+      "id": "21",
+      "key": "stage21",
+      "kind": "stage",
+      "title": "Rates, equations, units and what data can identify",
+      "lesson": "physics/lessons/21.md",
+      "reference": "physics/notebooks/21_lab.ipynb",
+      "learner": "physics/practice/learner/21_practice.ipynb",
+      "gate": "Detect metre/foot and second/frame mistakes."
+    },
+    {
+      "id": "22",
+      "key": "stage22",
+      "kind": "stage",
+      "title": "Smooth flows, coordinate changes and invertible networks",
+      "lesson": "physics/lessons/22.md",
+      "reference": "physics/notebooks/22_lab.ipynb",
+      "learner": "physics/practice/learner/22_practice.ipynb",
+      "gate": "Give an example where an interpolated path is not newly measured."
+    },
+    {
+      "id": "23",
+      "key": "stage23",
+      "kind": "stage",
+      "title": "Mechanics, Hamiltonian networks and Lagrangian networks",
+      "lesson": "physics/lessons/23.md",
+      "reference": "physics/notebooks/23_lab.ipynb",
+      "learner": "physics/practice/learner/23_practice.ipynb",
+      "gate": "State missing labels and dynamics assumptions for real sports transfer."
+    },
+    {
+      "id": "24",
+      "key": "stage24",
+      "kind": "stage",
+      "title": "Symplectic integration, energy, phase and long rollouts",
+      "lesson": "physics/lessons/24.md",
+      "reference": "physics/notebooks/24_lab.ipynb",
+      "learner": "physics/practice/learner/24_practice.ipynb",
+      "gate": "Distinguish model conservation from integrator properties."
+    },
+    {
+      "id": "25",
+      "key": "stage25",
+      "kind": "stage",
+      "title": "Constraints, projections, retractions and rank failure",
+      "lesson": "physics/lessons/25.md",
+      "reference": "physics/notebooks/25_lab.ipynb",
+      "learner": "physics/practice/learner/25_practice.ipynb",
+      "gate": "Identify which constraint was enforced and residual remaining."
+    },
+    {
+      "id": "26",
+      "key": "stage26",
+      "kind": "stage",
+      "title": "Physics-informed learning and inverse problems",
+      "lesson": "physics/lessons/26.md",
+      "reference": "physics/notebooks/26_lab.ipynb",
+      "learner": "physics/practice/learner/26_practice.ipynb",
+      "gate": "Show that low residual can coexist with wrong clock/scale."
+    },
+    {
+      "id": "27",
+      "key": "stage27",
+      "kind": "stage",
+      "title": "Conflicting gradients, interfaces, separability and PIKANs",
+      "lesson": "physics/lessons/27.md",
+      "reference": "physics/notebooks/27_lab.ipynb",
+      "learner": "physics/practice/learner/27_practice.ipynb",
+      "gate": "Keep source-author benchmark claims distinct from our tests."
+    },
+    {
+      "id": "28",
+      "key": "stage28",
+      "kind": "stage",
+      "title": "Functions to functions: DeepONet, Fourier operators and baselines",
+      "lesson": "physics/lessons/28.md",
+      "reference": "physics/notebooks/28_lab.ipynb",
+      "learner": "physics/practice/learner/28_practice.ipynb",
+      "gate": "Do not fit a field operator from unrelated aggregate rows."
+    },
+    {
+      "id": "29",
+      "key": "stage29",
+      "kind": "stage",
+      "title": "Differentiable simulation, graph physics and attention constraints",
+      "lesson": "physics/lessons/29.md",
+      "reference": "physics/notebooks/29_lab.ipynb",
+      "learner": "physics/practice/learner/29_practice.ipynb",
+      "gate": "Explain how wrong time scale can fit the same trajectory."
+    },
+    {
+      "id": "30",
+      "key": "stage30",
+      "kind": "stage",
+      "title": "An independent world-model study: evidence before adoption",
+      "lesson": "physics/lessons/30.md",
+      "reference": "physics/notebooks/30_lab.ipynb",
+      "learner": "physics/practice/learner/30_practice.ipynb",
+      "gate": "Make no adoption claim without matching validation evidence."
+    },
+    {
+      "id": "wdbc",
+      "key": "wdbc",
+      "kind": "case",
+      "title": "Healthcare image-summary classification",
+      "lesson": "industry/lessons/wdbc.md",
+      "reference": "industry/notebooks/wdbc.ipynb",
+      "learner": "industry/learner/wdbc.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation."
+    },
+    {
+      "id": "wine",
+      "key": "wine",
+      "kind": "case",
+      "title": "Food chemistry and topology",
+      "lesson": "industry/lessons/wine.md",
+      "reference": "industry/notebooks/wine.ipynb",
+      "learner": "industry/learner/wine.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation."
+    },
+    {
+      "id": "stackloss",
+      "key": "stackloss",
+      "kind": "case",
+      "title": "Manufacturing regression",
+      "lesson": "industry/lessons/stackloss.md",
+      "reference": "industry/notebooks/stackloss.ipynb",
+      "learner": "industry/learner/stackloss.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation."
+    },
+    {
+      "id": "grunfeld",
+      "key": "grunfeld",
+      "kind": "case",
+      "title": "Firm-year panel measurements",
+      "lesson": "industry/lessons/grunfeld.md",
+      "reference": "industry/notebooks/grunfeld.ipynb",
+      "learner": "industry/learner/grunfeld.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation."
+    },
+    {
+      "id": "co2",
+      "key": "co2",
+      "kind": "case",
+      "title": "Atmospheric observations and windows",
+      "lesson": "industry/lessons/co2.md",
+      "reference": "industry/notebooks/co2.ipynb",
+      "learner": "industry/learner/co2.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation."
+    },
+    {
+      "id": "nile",
+      "key": "nile",
+      "kind": "case",
+      "title": "Water-infrastructure time series",
+      "lesson": "industry/lessons/nile.md",
+      "reference": "industry/notebooks/nile.ipynb",
+      "learner": "industry/learner/nile.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation."
+    },
+    {
+      "id": "elnino",
+      "key": "elnino",
+      "kind": "case",
+      "title": "Marine climate",
+      "lesson": "industry/lessons/elnino.md",
+      "reference": "industry/notebooks/elnino.ipynb",
+      "learner": "industry/learner/elnino.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation."
+    },
+    {
+      "id": "modechoice",
+      "key": "modechoice",
+      "kind": "case",
+      "title": "Traveler-level choice sets",
+      "lesson": "industry/lessons/modechoice.md",
+      "reference": "industry/notebooks/modechoice.ipynb",
+      "learner": "industry/learner/modechoice.ipynb",
+      "gate": "Teaching split and analysis; not domain deployment validation."
+    },
+    {
+      "id": "seeds",
+      "key": "seeds",
+      "kind": "case",
+      "title": "Agriculture feature-space geometry",
+      "lesson": "applications_v7/seeds/lesson.md",
+      "reference": "applications_v7/seeds/lab.ipynb",
+      "learner": "applications_v7/seeds/learner.ipynb",
+      "gate": "Selected provider transcription; independent upstream byte comparison remains pending."
+    },
+    {
+      "id": "concrete_slump",
+      "key": "concrete_slump",
+      "kind": "case",
+      "title": "Materials measurements and intervals",
+      "lesson": "applications_v7/concrete_slump/lesson.md",
+      "reference": "applications_v7/concrete_slump/lab.ipynb",
+      "learner": "applications_v7/concrete_slump/learner.ipynb",
+      "gate": "Selected provider transcription; independent upstream byte comparison remains pending."
+    },
+    {
+      "id": "leakage",
+      "key": "leakage",
+      "kind": "case",
+      "title": "Identity leakage controls",
+      "lesson": "methods_v7/leakage/lesson.md",
+      "reference": "methods_v7/leakage/lab.ipynb",
+      "learner": "methods_v7/leakage/learner.ipynb",
+      "gate": "Exposes a failure mechanism, not population benefit."
+    },
+    {
+      "id": "claims",
+      "key": "claims",
+      "kind": "case",
+      "title": "Physical-claim counterexamples",
+      "lesson": "methods_v7/claims/lesson.md",
+      "reference": "methods_v7/claims/lab.ipynb",
+      "learner": "methods_v7/claims/learner.ipynb",
+      "gate": "Exposes a failure mechanism, not population benefit."
+    },
+    {
+      "id": "s00",
+      "key": "s00",
+      "kind": "case",
+      "title": "Sports observations and units",
+      "lesson": "sports_v8/lessons/S00.md",
+      "reference": "sports_v8/notebooks/S00.ipynb",
+      "learner": "sports_v8/practice/S00.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark."
+    },
+    {
+      "id": "s01",
+      "key": "s01",
+      "kind": "case",
+      "title": "Landmark angles and velocity",
+      "lesson": "sports_v8/lessons/S01.md",
+      "reference": "sports_v8/notebooks/S01.ipynb",
+      "learner": "sports_v8/practice/S01.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark."
+    },
+    {
+      "id": "s02",
+      "key": "s02",
+      "kind": "case",
+      "title": "Ball-flight model adequacy",
+      "lesson": "sports_v8/lessons/S02.md",
+      "reference": "sports_v8/notebooks/S02.ipynb",
+      "learner": "sports_v8/practice/S02.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark."
+    },
+    {
+      "id": "s03",
+      "key": "s03",
+      "kind": "case",
+      "title": "Soccer profile topology",
+      "lesson": "sports_v8/lessons/S03.md",
+      "reference": "sports_v8/notebooks/S03.ipynb",
+      "learner": "sports_v8/practice/S03.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark."
+    },
+    {
+      "id": "s04",
+      "key": "s04",
+      "kind": "case",
+      "title": "Timing and uncertainty",
+      "lesson": "sports_v8/lessons/S04.md",
+      "reference": "sports_v8/notebooks/S04.ipynb",
+      "learner": "sports_v8/practice/S04.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark."
+    },
+    {
+      "id": "s05",
+      "key": "s05",
+      "kind": "case",
+      "title": "Athlete-group evaluation",
+      "lesson": "sports_v8/lessons/S05.md",
+      "reference": "sports_v8/notebooks/S05.ipynb",
+      "learner": "sports_v8/practice/S05.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark."
+    },
+    {
+      "id": "s06",
+      "key": "s06",
+      "kind": "case",
+      "title": "Independent sports investigation",
+      "lesson": "sports_v8/lessons/S06.md",
+      "reference": "sports_v8/notebooks/S06.ipynb",
+      "learner": "sports_v8/practice/S06.ipynb",
+      "gate": "One-shot sparse frames or selected profile rows; not a sports benchmark."
+    },
+    {
+      "id": "acb",
+      "key": "acb",
+      "kind": "case",
+      "title": "ACB 2025\u201326 source and identity readiness",
+      "lesson": "sports_v9/lesson.md",
+      "reference": "sports_v9/notebooks/acb_readiness.ipynb",
+      "learner": "sports_v9/practice/acb_readiness.ipynb",
+      "gate": "No full ACB tracking, events or season aggregates in this case."
+    },
+    {
+      "id": "r01",
+      "key": "r01",
+      "kind": "case",
+      "title": "Distributions, moments, and whitening",
+      "lesson": "representations/lessons/R01.md",
+      "reference": "representations/notebooks/r01.ipynb",
+      "learner": "representations/learner/r01.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r02",
+      "key": "r02",
+      "kind": "case",
+      "title": "Projections, characteristic functions, and SIGReg",
+      "lesson": "representations/lessons/R02.md",
+      "reference": "representations/notebooks/r02.ipynb",
+      "learner": "representations/learner/r02.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r03",
+      "key": "r03",
+      "kind": "case",
+      "title": "Anti-collapse objectives and gradient paths",
+      "lesson": "representations/lessons/R03.md",
+      "reference": "representations/notebooks/r03.ipynb",
+      "learner": "representations/learner/r03.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r04",
+      "key": "r04",
+      "kind": "case",
+      "title": "Train a representation and evaluate frozen probes",
+      "lesson": "representations/lessons/R04.md",
+      "reference": "representations/notebooks/r04.ipynb",
+      "learner": "representations/learner/r04.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "r05",
+      "key": "r05",
+      "kind": "case",
+      "title": "Transfer diagnostics without inventing a sports world model",
+      "lesson": "representations/lessons/R05.md",
+      "reference": "representations/notebooks/r05.ipynb",
+      "learner": "representations/learner/r05.ipynb",
+      "gate": "Original CPU teaching experiment, not a full primary-paper reproduction, sports model, or universal method ranking."
+    },
+    {
+      "id": "poux_bridge",
+      "key": "poux_bridge",
+      "kind": "extension",
+      "title": "Poux spatial-AI Stage 01 weighted-streaming bridge",
+      "lesson": "curriculum/extensions/poux_spatial_ai/README.md",
+      "reference": "curriculum/extensions/poux_spatial_ai/bridge.py",
+      "learner": "curriculum/extensions/poux_spatial_ai/LESSONS.md",
+      "gate": "Derive weighted chunk means and state what aggregation loses."
+    }
+  ]
+}

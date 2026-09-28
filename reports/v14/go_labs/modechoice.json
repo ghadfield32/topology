@@ -1,0 +1,12 @@
+{
+  "lab": "modechoice",
+  "title": "Traveler-level choice sets",
+  "metrics": {
+    "columns": 10,
+    "data_rows": 840,
+    "rows_including_header": 841
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

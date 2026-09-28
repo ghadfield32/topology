@@ -1,0 +1,11 @@
+{
+  "lab": "stage22",
+  "title": "Smooth flows",
+  "metrics": {
+    "inverse": 2,
+    "x_t": 3.2974425414002564
+  },
+  "notes": [
+    "The exact flow of x'=x is invertible for finite t."
+  ]
+}

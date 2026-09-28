@@ -1,0 +1,10 @@
+{
+  "lab": "stage28",
+  "title": "Operator/Fourier control",
+  "metrics": {
+    "cosine_projection": 0.5
+  },
+  "notes": [
+    "Small DFT-style control; use Python reference for neural-operator training."
+  ]
+}

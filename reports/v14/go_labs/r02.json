@@ -1,0 +1,10 @@
+{
+  "lab": "r02",
+  "title": "Projections, characteristic functions, and SIGReg",
+  "metrics": {
+    "implemented": true
+  },
+  "notes": [
+    "Dependency-light companion; see the lab README for the Python parity boundary."
+  ]
+}

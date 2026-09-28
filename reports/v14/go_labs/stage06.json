@@ -1,0 +1,13 @@
+{
+  "lab": "stage06",
+  "title": "Simplicial structure",
+  "metrics": {
+    "edges": 3,
+    "euler": 1,
+    "faces": 1,
+    "vertices": 3
+  },
+  "notes": [
+    "Triangle boundary and filled triangle are different complexes."
+  ]
+}

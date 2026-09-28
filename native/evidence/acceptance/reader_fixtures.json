@@ -1,0 +1,613 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/L.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 24,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/LA.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 44,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/RGB.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 64,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/RGBA.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 84,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/arrays.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 48,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/big.pfm",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 22,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/big_float.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 7,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/big_unicode.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/boolean.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/bytes.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/decimal.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/empty.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/fortran_float.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 28,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/gray16.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 24,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/integer.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 5,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/little.pfm",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 22,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/little_float.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 5,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/mono.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 10,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/palette.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 28,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/palette_alpha.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 28,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/quoted.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/rgb_trns.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 20,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/scalar.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/scalar_unicode.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/semicolon.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/unicode.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/invalid_duplicate.npz",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/invalid_large_int.npy",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/invalid_object.npy",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/invalid_trailing.json",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/invalid_traversal.npz",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "go",
+      "path": "native/tests/fixtures/invalid_truncated.npy",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/L.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 24,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/LA.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 44,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/RGB.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 64,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/RGBA.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 84,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/arrays.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 48,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/big.pfm",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 22,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/big_float.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 7,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/big_unicode.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/boolean.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/bytes.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/decimal.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/empty.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/fortran_float.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 28,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/gray16.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 24,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/integer.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 5,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/little.pfm",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 22,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/little_float.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 5,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/mono.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 10,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/palette.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 28,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/palette_alpha.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 28,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/quoted.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/rgb_trns.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 20,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/scalar.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/scalar_unicode.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/semicolon.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/unicode.npy",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/invalid_duplicate.npz",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/invalid_large_int.npy",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/invalid_object.npy",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/invalid_trailing.json",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/invalid_traversal.npz",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    },
+    {
+      "language": "rust",
+      "path": "native/tests/fixtures/invalid_truncated.npy",
+      "expected": "reject",
+      "passed": true,
+      "exit_code": 1
+    }
+  ],
+  "checks_count": 64,
+  "full_value_equality": true,
+  "numeric_values_compared": 962,
+  "sources_unchanged": true
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "path": "/START_NATIVE.html",
+    "status": 200,
+    "expected": 200,
+    "passed": true
+  },
+  {
+    "path": "/native/guides/labs/stage01.md.html",
+    "status": 200,
+    "expected": 200,
+    "passed": true
+  },
+  {
+    "path": "/native/evidence/acceptance/go/stage01.json",
+    "status": 200,
+    "expected": 200,
+    "passed": true
+  },
+  {
+    "path": "/my_work/",
+    "status": 403,
+    "expected": 403,
+    "passed": true
+  },
+  {
+    "path": "/.git/config",
+    "status": 403,
+    "expected": 403,
+    "passed": true
+  }
+]

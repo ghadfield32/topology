@@ -1,0 +1,1109 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "language": "go",
+      "path": "data/industries/catalog.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 98,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/co2/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/co2/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 5,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/co2/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/elnino/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/elnino/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 16,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/elnino/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/grunfeld/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/grunfeld/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 8,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/grunfeld/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/modechoice/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/modechoice/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 12,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/modechoice/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/nile/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/nile/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 5,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/nile/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/stackloss/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/stackloss/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 7,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/stackloss/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/wdbc/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/wdbc/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 34,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/wdbc/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/wine/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/wine/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 17,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/industries/wine/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 15,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/physics/hahn1_excerpt.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/physics/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/processed/digits_features_test.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 7564,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/processed/digits_features_train.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 22621,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/processed/digits_features_validation.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 7564,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/raw/digits.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 118608,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/raw/iris.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/splits.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1798,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/stereo/SCIKIT_IMAGE_LICENSE.txt",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/stereo/calibration.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 43,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/stereo/left.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1111504,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/stereo/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 11,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/stereo/motorcycle.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2566283,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/stereo/right.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1111504,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/time_series/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 4,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/time_series/sunspots_yearly.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/v7/concrete_slump/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/v7/concrete_slump/source_numeric.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/v7/concrete_slump/table.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/v7/seeds/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/v7/seeds/source_numeric.txt",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "data/v7/seeds/table.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "sports_v8/data/LICENSE_SKILLCORNER.txt",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "sports_v8/data/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 30,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "sports_v8/data/skillcorner_selected_profiles.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "sports_v8/data/spl_selected_frames.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 173,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "sports_v9/data/LICENSE_SKILLCORNER.txt",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "sports_v9/data/matches.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 81,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "go",
+      "path": "sports_v9/data/provenance.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/catalog.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 98,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/co2/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/co2/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 5,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/co2/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/elnino/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/elnino/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 16,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/elnino/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/grunfeld/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/grunfeld/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 8,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/grunfeld/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/modechoice/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/modechoice/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 12,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/modechoice/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/nile/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/nile/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 5,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/nile/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/stackloss/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/stackloss/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 7,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/stackloss/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/wdbc/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/wdbc/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 34,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/wdbc/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/wine/data.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/wine/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 17,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/industries/wine/source_distribution.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 15,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/physics/hahn1_excerpt.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/physics/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/processed/digits_features_test.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 7564,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/processed/digits_features_train.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 22621,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/processed/digits_features_validation.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 7564,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/raw/digits.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 118608,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/raw/iris.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/splits.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1798,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/stereo/SCIKIT_IMAGE_LICENSE.txt",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/stereo/calibration.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 43,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/stereo/left.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1111504,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/stereo/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 11,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/stereo/motorcycle.npz",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 2566283,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/stereo/right.png",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1111504,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/time_series/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 4,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/time_series/sunspots_yearly.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/v7/concrete_slump/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/v7/concrete_slump/source_numeric.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/v7/concrete_slump/table.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/v7/seeds/metadata.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/v7/seeds/source_numeric.txt",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "data/v7/seeds/table.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "sports_v8/data/LICENSE_SKILLCORNER.txt",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "sports_v8/data/manifest.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 30,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "sports_v8/data/skillcorner_selected_profiles.csv",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "sports_v8/data/spl_selected_frames.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 173,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "sports_v9/data/LICENSE_SKILLCORNER.txt",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 1,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "sports_v9/data/matches.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 81,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    },
+    {
+      "language": "rust",
+      "path": "sports_v9/data/provenance.json",
+      "exit_code": 0,
+      "passed": true,
+      "numeric_values_compared": 3,
+      "max_absolute_difference": 0.0,
+      "discrepancy_count": 0,
+      "discrepancies": []
+    }
+  ],
+  "checks_count": 110,
+  "full_value_equality": true,
+  "numeric_values_compared": 9896088,
+  "sources_unchanged": true
+}

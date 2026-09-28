@@ -1,0 +1,10 @@
+{
+  "lab": "r01",
+  "title": "Distributions, moments, and whitening",
+  "metrics": {
+    "implemented": true
+  },
+  "notes": [
+    "Dependency-light companion; see the lab README for the Python parity boundary."
+  ]
+}

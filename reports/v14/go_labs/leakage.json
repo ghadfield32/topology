@@ -1,0 +1,10 @@
+{
+  "lab": "leakage",
+  "title": "Identity leakage controls",
+  "metrics": {
+    "implemented": true
+  },
+  "notes": [
+    "Dependency-light companion; see the lab README for the Python parity boundary."
+  ]
+}

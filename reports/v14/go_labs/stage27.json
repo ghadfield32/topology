@@ -1,0 +1,11 @@
+{
+  "lab": "stage27",
+  "title": "Gradient conflict",
+  "metrics": {
+    "conflict": true,
+    "dot": -1
+  },
+  "notes": [
+    "Opposite gradients expose an incompatible first-order objective pair."
+  ]
+}

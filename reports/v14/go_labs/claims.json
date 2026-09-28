@@ -1,0 +1,12 @@
+{
+  "lab": "claims",
+  "title": "Symplectic counterexample",
+  "metrics": {
+    "delta": -0.019199999999999995,
+    "energy_after": 0.4808,
+    "energy_before": 0.5
+  },
+  "notes": [
+    "Symplectic does not imply exact energy conservation at each discrete step."
+  ]
+}

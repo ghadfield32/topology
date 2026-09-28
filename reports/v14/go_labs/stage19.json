@@ -1,0 +1,11 @@
+{
+  "lab": "stage19",
+  "title": "Interaction hypotheses",
+  "metrics": {
+    "distance_m": 0.15,
+    "near": true
+  },
+  "notes": [
+    "Proximity alone cannot certify contact or possession."
+  ]
+}

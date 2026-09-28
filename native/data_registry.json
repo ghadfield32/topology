@@ -1,0 +1,446 @@
+{
+  "schema": "shape.dataset-registry.v16",
+  "selection": "Every bundled file below data/, sports_v8/data/, sports_v9/data/ with listed data/document format; no reference result files.",
+  "files": [
+    {
+      "id": "data__industries__catalog.json",
+      "path": "data/industries/catalog.json",
+      "format": "json",
+      "bytes": 41599,
+      "sha256": "c9e8e337deea7023bcd1906e8f4cae3710b58b023911570824417406092e1b44",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__co2__data.csv",
+      "path": "data/industries/co2/data.csv",
+      "format": "csv",
+      "bytes": 48369,
+      "sha256": "b67fef114ef5c027ad8b5e0aeae76525f218184df64bbf289a7d299a13c14277",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__co2__metadata.json",
+      "path": "data/industries/co2/metadata.json",
+      "format": "json",
+      "bytes": 2262,
+      "sha256": "badc3c436b42a8ac1d038e952da6ba548de92a840c4298a56ccbc505b871a4fa",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__co2__source_distribution.csv",
+      "path": "data/industries/co2/source_distribution.csv",
+      "format": "csv",
+      "bytes": 33974,
+      "sha256": "16695fa2786e53414e5a6b54767a3fdf5de99cfbc68617f69d1362d92776a92f",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__elnino__data.csv",
+      "path": "data/industries/elnino/data.csv",
+      "format": "csv",
+      "bytes": 4848,
+      "sha256": "8c15911802ce2973931db0c3d822ae6abe961bfa6bd507cae5eb400beeee9af7",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__elnino__metadata.json",
+      "path": "data/industries/elnino/metadata.json",
+      "format": "json",
+      "bytes": 4841,
+      "sha256": "a75d59a5b8e801397841c30854d39680fbff95f017c4b50d3d4592cf417c5ab7",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__elnino__source_distribution.csv",
+      "path": "data/industries/elnino/source_distribution.csv",
+      "format": "csv",
+      "bytes": 5508,
+      "sha256": "b647be00e0fd264be9764e317e6b963f35030014ecca2b21b204521716e463ad",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__grunfeld__data.csv",
+      "path": "data/industries/grunfeld/data.csv",
+      "format": "csv",
+      "bytes": 8406,
+      "sha256": "69c2ae99098dbc3735e5a10d1855341ea3db6160b1c9890cc33236dca9914df6",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__grunfeld__metadata.json",
+      "path": "data/industries/grunfeld/metadata.json",
+      "format": "json",
+      "bytes": 2971,
+      "sha256": "4fd58ec1de39c9ad993c13184016a93a7d52d311f544b5367e8c34645cd6f231",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__grunfeld__source_distribution.csv",
+      "path": "data/industries/grunfeld/source_distribution.csv",
+      "format": "csv",
+      "bytes": 7629,
+      "sha256": "6f6ca138e645eeee6ff3e54fe5b9b498f7ddb5c484237d2a8489c524b3c94098",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__modechoice__data.csv",
+      "path": "data/industries/modechoice/data.csv",
+      "format": "csv",
+      "bytes": 24823,
+      "sha256": "be6deb2170ab4c0b4a09319308ec6098a07a1f9ef4418380cfc7bcc6331c3556",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__modechoice__metadata.json",
+      "path": "data/industries/modechoice/metadata.json",
+      "format": "json",
+      "bytes": 3826,
+      "sha256": "d7c94f1c510acc22a3926ba03c554226db7b8b555ed42c9599e211ec136955b8",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__modechoice__source_distribution.csv",
+      "path": "data/industries/modechoice/source_distribution.csv",
+      "format": "csv",
+      "bytes": 21566,
+      "sha256": "d2d72c1db440f8ffce01f58ed39fc1145569ec1703970dac1636c154fc01fd8e",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__nile__data.csv",
+      "path": "data/industries/nile/data.csv",
+      "format": "csv",
+      "bytes": 1239,
+      "sha256": "fa4813b7d95f16c78ca32a909e2de1979ed99959352e29850bcaab1dd8eab982",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__nile__metadata.json",
+      "path": "data/industries/nile/metadata.json",
+      "format": "json",
+      "bytes": 2254,
+      "sha256": "c3f239f98a04655a608ab5abe56db236bffcf529e75d25f3d2c7fe8d887c54e6",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__nile__source_distribution.csv",
+      "path": "data/industries/nile/source_distribution.csv",
+      "format": "csv",
+      "bytes": 942,
+      "sha256": "88e97bea7249e5832a85e41aec6ce4b8f7b1b14aae930c8363da7f193286b598",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__stackloss__data.csv",
+      "path": "data/industries/stackloss/data.csv",
+      "format": "csv",
+      "bytes": 344,
+      "sha256": "6c1de720cdef48f9b5193459e4b584295f9b7fa2c042e70e1e65bbccbe362d60",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__stackloss__metadata.json",
+      "path": "data/industries/stackloss/metadata.json",
+      "format": "json",
+      "bytes": 2923,
+      "sha256": "a5a1917b80e4f5508d4a820df9ac761f64c6e7f3a1c85775b52af9fc8f9dc582",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__stackloss__source_distribution.csv",
+      "path": "data/industries/stackloss/source_distribution.csv",
+      "format": "csv",
+      "bytes": 292,
+      "sha256": "7395953d62eec7abab783ae9603ff82f091d04a4689780e455c239f0f5509f64",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__wdbc__data.csv",
+      "path": "data/industries/wdbc/data.csv",
+      "format": "csv",
+      "bytes": 122553,
+      "sha256": "67a1bb2aa650da2ba7c76b5f64e1a180e00f50dcb0e91a2650be35d6251116dd",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__wdbc__metadata.json",
+      "path": "data/industries/wdbc/metadata.json",
+      "format": "json",
+      "bytes": 12178,
+      "sha256": "046c4a99cebedda2a92e6c78d5cc264a23cce93016f12610303b36d23c96d11c",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__wdbc__source_distribution.csv",
+      "path": "data/industries/wdbc/source_distribution.csv",
+      "format": "csv",
+      "bytes": 119913,
+      "sha256": "fed3eb72d0575ef6192293f5093c6e801b1476b577d0386bf4455504522172ed",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__wine__data.csv",
+      "path": "data/industries/wine/data.csv",
+      "format": "csv",
+      "bytes": 11911,
+      "sha256": "2f6d6d39c2ba1898b9d254feb78ae575383fac1f9ed735c9aaa9308293568aac",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__industries__wine__metadata.json",
+      "path": "data/industries/wine/metadata.json",
+      "format": "json",
+      "bytes": 5954,
+      "sha256": "449b4fafdd9d69c420a9a8fa17fc9a17894fb4402213f2ba7eb5a813ccbffa7e",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__industries__wine__source_distribution.csv",
+      "path": "data/industries/wine/source_distribution.csv",
+      "format": "csv",
+      "bytes": 11157,
+      "sha256": "10e8a802908b34f86e5da8ce962f3c806694bc98450a18f61851af59f324bede",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__manifest.json",
+      "path": "data/manifest.json",
+      "format": "json",
+      "bytes": 959,
+      "sha256": "6eaa27b155715a73f680fd9d86ba0f4a617e73ddf688c63f7b8159a99f86deaa",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__physics__hahn1_excerpt.csv",
+      "path": "data/physics/hahn1_excerpt.csv",
+      "format": "csv",
+      "bytes": 1027,
+      "sha256": "abcdeee10337f548d7072ce2284f6760e00cab3107bae472f1074efd9ab270b9",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__physics__manifest.json",
+      "path": "data/physics/manifest.json",
+      "format": "json",
+      "bytes": 1110,
+      "sha256": "6d62522bd9cf9430e447a9fd2ec6d7c1957b29793705fb966ffadf5df5e2855e",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__processed__digits_features_test.npz",
+      "path": "data/processed/digits_features_test.npz",
+      "format": "npz",
+      "bytes": 4827,
+      "sha256": "caa954d87cc0267f149febf1149857f184d5f22b0c2ea75e4998a2413ac200de",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__processed__digits_features_train.npz",
+      "path": "data/processed/digits_features_train.npz",
+      "format": "npz",
+      "bytes": 12146,
+      "sha256": "b6ea2fb1052dd4f3d475def2188c5df0579978033760cae47053a5a5790dd00b",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__processed__digits_features_validation.npz",
+      "path": "data/processed/digits_features_validation.npz",
+      "format": "npz",
+      "bytes": 4838,
+      "sha256": "2bce9dd0217267ca2e57941fa3967c0de52622a912ebd2ee1c55a976f51f299e",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__raw__digits.npz",
+      "path": "data/raw/digits.npz",
+      "format": "npz",
+      "bytes": 48351,
+      "sha256": "2642e38b91971a422addc7bfa3474649f0b69ad6736f1a9700079a57bfb8135a",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__raw__iris.csv",
+      "path": "data/raw/iris.csv",
+      "format": "csv",
+      "bytes": 4676,
+      "sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__splits.json",
+      "path": "data/splits.json",
+      "format": "json",
+      "bytes": 16917,
+      "sha256": "895b1092a9813d596166337e29caf7f0a5d9c7352445c5067b67ff984b8f86bd",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__stereo__SCIKIT_IMAGE_LICENSE.txt",
+      "path": "data/stereo/SCIKIT_IMAGE_LICENSE.txt",
+      "format": "txt",
+      "bytes": 6435,
+      "sha256": "611d3207504dcb4a808df209d2e7c9b4f2e89fe690f84735c0d548160966b527",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__stereo__calibration.json",
+      "path": "data/stereo/calibration.json",
+      "format": "json",
+      "bytes": 1430,
+      "sha256": "a7a891043f15e04614a15712d158dc5727a80cc32951ff9d0610f30ac2bd55c5",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__stereo__left.png",
+      "path": "data/stereo/left.png",
+      "format": "png",
+      "bytes": 642528,
+      "sha256": "8d645c6ca405cc3cb9a991b0fb5a964571bf8183f88cd8ffcde59706a30a76c2",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__stereo__manifest.json",
+      "path": "data/stereo/manifest.json",
+      "format": "json",
+      "bytes": 1039,
+      "sha256": "c1b10d61a52617edb3be5286ba30b71ae262cf24d9ad80e73dc350452556d3f8",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__stereo__motorcycle.npz",
+      "path": "data/stereo/motorcycle.npz",
+      "format": "npz",
+      "bytes": 3042273,
+      "sha256": "2ec813e33f86bcb4d1eb1bd90245f438b0841fd5b1ab9136a0132f0b28dfe469",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__stereo__right.png",
+      "path": "data/stereo/right.png",
+      "format": "png",
+      "bytes": 638205,
+      "sha256": "009ee402204b3c54ebd714f739b6394e9455d9d33a9dcdab58ef4ec5bee4c43a",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__time_series__manifest.json",
+      "path": "data/time_series/manifest.json",
+      "format": "json",
+      "bytes": 654,
+      "sha256": "c71dcb9563597e9f3debeefb07fefb35dc5550cb4d899c295805e2f14bbc334d",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__time_series__sunspots_yearly.csv",
+      "path": "data/time_series/sunspots_yearly.csv",
+      "format": "csv",
+      "bytes": 3104,
+      "sha256": "7dac2f45399b4d3b335823db9884c4b6d7f79509f94aed6de20da6a431ae5900",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__v7__concrete_slump__metadata.json",
+      "path": "data/v7/concrete_slump/metadata.json",
+      "format": "json",
+      "bytes": 2619,
+      "sha256": "cd074a08965e44ef9906487603b70f53096e2ee29a043953bd10667f6ca43cdc",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__v7__concrete_slump__source_numeric.csv",
+      "path": "data/v7/concrete_slump/source_numeric.csv",
+      "format": "csv",
+      "bytes": 4654,
+      "sha256": "6745397c9c9d9aa37c59c554d6d866f7975decddeb3a140a485b0862fca11d70",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__v7__concrete_slump__table.csv",
+      "path": "data/v7/concrete_slump/table.csv",
+      "format": "csv",
+      "bytes": 6119,
+      "sha256": "282fb8b00d2677068b42c1b902805f5db40f8be73d6150cf50bee96044783964",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "data__v7__seeds__metadata.json",
+      "path": "data/v7/seeds/metadata.json",
+      "format": "json",
+      "bytes": 2791,
+      "sha256": "1b5a3352ae31353c5f49ca0961c519cb64450e89368fb5bba138e05a1f9de6e9",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__v7__seeds__source_numeric.txt",
+      "path": "data/v7/seeds/source_numeric.txt",
+      "format": "txt",
+      "bytes": 9288,
+      "sha256": "a446a4c7387482632a3d07318bc645d62e2ea148486cf30d0d6b3d55b53982c0",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "data__v7__seeds__table.csv",
+      "path": "data/v7/seeds/table.csv",
+      "format": "csv",
+      "bytes": 10128,
+      "sha256": "9269dec683e9c29dd80f85603e425e3d9dd3939bc83945ef6aaf84c318f4274c",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "sports_v8__data__LICENSE_SKILLCORNER.txt",
+      "path": "sports_v8/data/LICENSE_SKILLCORNER.txt",
+      "format": "txt",
+      "bytes": 1097,
+      "sha256": "3384cc66ffd008209759af5e6328677eabded72756fb1f56f4f82e68e9b3c6eb",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "sports_v8__data__manifest.json",
+      "path": "sports_v8/data/manifest.json",
+      "format": "json",
+      "bytes": 2893,
+      "sha256": "440152c8a97868e264cecaeacba87befd9f3cba470ba5c82e5105e6bba93db1e",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "sports_v8__data__skillcorner_selected_profiles.csv",
+      "path": "sports_v8/data/skillcorner_selected_profiles.csv",
+      "format": "csv",
+      "bytes": 1078,
+      "sha256": "fe4096d511e4f8811f5c504f633767ef5848c91043369d5643e57165e34303a2",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "sports_v8__data__spl_selected_frames.json",
+      "path": "sports_v8/data/spl_selected_frames.json",
+      "format": "json",
+      "bytes": 6528,
+      "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "sports_v9__data__LICENSE_SKILLCORNER.txt",
+      "path": "sports_v9/data/LICENSE_SKILLCORNER.txt",
+      "format": "txt",
+      "bytes": 1097,
+      "sha256": "61487d7c808239847755401b75efbfba1ed0568bf5e409b96e6273a1a8866824",
+      "role": "metadata_or_terms"
+    },
+    {
+      "id": "sports_v9__data__matches.json",
+      "path": "sports_v9/data/matches.json",
+      "format": "json",
+      "bytes": 4324,
+      "sha256": "5a6f2ee5b55aff806e0f13c9c90b47f19bc1734a6ed7d26b7682dd4bcc7ca063",
+      "role": "observations_or_registered_derivative"
+    },
+    {
+      "id": "sports_v9__data__provenance.json",
+      "path": "sports_v9/data/provenance.json",
+      "format": "json",
+      "bytes": 847,
+      "sha256": "e0243ca1c946fd396be7cf911308cb85d6443128d2c7c400c697379ffac264e4",
+      "role": "metadata_or_terms"
+    }
+  ]
+}

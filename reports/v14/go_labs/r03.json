@@ -1,0 +1,10 @@
+{
+  "lab": "r03",
+  "title": "Anti-collapse objectives and gradient paths",
+  "metrics": {
+    "implemented": true
+  },
+  "notes": [
+    "Dependency-light companion; see the lab README for the Python parity boundary."
+  ]
+}

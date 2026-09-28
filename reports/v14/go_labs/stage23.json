@@ -1,0 +1,12 @@
+{
+  "lab": "stage23",
+  "title": "Hamiltonian mechanics",
+  "metrics": {
+    "dpdt": -1,
+    "dqdt": 0.5,
+    "energy": 0.625
+  },
+  "notes": [
+    "This harmonic oscillator is a manufactured control."
+  ]
+}

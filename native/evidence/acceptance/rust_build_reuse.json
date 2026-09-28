@@ -1,0 +1,9 @@
+{
+  "status": "verified_cache",
+  "key": {
+    "source_sha256": "6f490831e91db998c1514d13d7c48d5e063e882797986231c4d82e6991348372",
+    "compiler": "cargo 1.90.0 (840b83a10 2025-07-30)",
+    "platform": "linux"
+  },
+  "binary_sha256": "11bb8b75360c1e81221e123931132d06d5e887a64b5e8fdfc4ab3f9f6e6e42af"
+}

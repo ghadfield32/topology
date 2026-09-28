@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "/mnt/data/v16_build/listening_to_shape_lab/native/python/scientific_checks.py",
+    "--repo",
+    "/mnt/data/v16_build/listening_to_shape_lab",
+    "--runs",
+    "/mnt/data/v16_evidence/final_native02",
+    "--output",
+    "/mnt/data/v16_evidence/final_native02/scientific_checks.json"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 2.370937096000489,
+  "stdout": "passed 220\n",
+  "stderr": ""
+}

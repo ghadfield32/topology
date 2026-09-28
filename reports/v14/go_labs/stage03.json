@@ -1,0 +1,10 @@
+{
+  "lab": "stage03",
+  "title": "Continuity and maps",
+  "metrics": {
+    "projection_same": true
+  },
+  "notes": [
+    "Projection can be continuous while losing information."
+  ]
+}

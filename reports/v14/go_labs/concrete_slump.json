@@ -1,0 +1,12 @@
+{
+  "lab": "concrete_slump",
+  "title": "Materials measurements and intervals",
+  "metrics": {
+    "columns": 11,
+    "data_rows": 103,
+    "rows_including_header": 104
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

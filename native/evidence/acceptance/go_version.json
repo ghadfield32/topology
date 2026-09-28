@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/usr/local/go/bin/go",
+    "version"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.003342060999784735,
+  "stdout": "go version go1.23.2 linux/amd64\n",
+  "stderr": ""
+}

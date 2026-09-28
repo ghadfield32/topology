@@ -1,0 +1,89 @@
+# Create the explicit disposable namespace separately; never target a production context.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: native-results
+  namespace: shape-native-study
+spec:
+  accessModes: [ReadWriteOnce]
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: native-go-stage01-
+  namespace: shape-native-study
+  labels: {course: shape-native, language: go}
+spec:
+  backoffLimit: 0
+  activeDeadlineSeconds: 900
+  template:
+    metadata:
+      labels: {course: shape-native, language: go}
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: lab
+          image: shape-native-go:16
+          imagePullPolicy: Never
+          args: [--lab, stage01, --output, /work/go-$(POD_UID)]
+          env:
+            - name: POD_UID
+              valueFrom: {fieldRef: {fieldPath: metadata.uid}}
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities: {drop: [ALL]}
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits: {cpu: '1', memory: 512Mi}
+          volumeMounts: [{name: results, mountPath: /work}]
+      volumes: [{name: results, persistentVolumeClaim: {claimName: native-results}}]
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: native-rust-stage01-
+  namespace: shape-native-study
+  labels: {course: shape-native, language: rust}
+spec:
+  backoffLimit: 0
+  activeDeadlineSeconds: 900
+  template:
+    metadata:
+      labels: {course: shape-native, language: rust}
+    spec:
+      restartPolicy: Never
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: lab
+          image: shape-native-rust:16
+          imagePullPolicy: Never
+          args: [--lab, stage01, --output, /work/rust-$(POD_UID)]
+          env:
+            - name: POD_UID
+              valueFrom: {fieldRef: {fieldPath: metadata.uid}}
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities: {drop: [ALL]}
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits: {cpu: '1', memory: 512Mi}
+          volumeMounts: [{name: results, mountPath: /work}]
+      volumes: [{name: results, persistentVolumeClaim: {claimName: native-results}}]

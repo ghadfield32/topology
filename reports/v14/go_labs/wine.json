@@ -1,0 +1,12 @@
+{
+  "lab": "wine",
+  "title": "Food chemistry and topology",
+  "metrics": {
+    "columns": 15,
+    "data_rows": 178,
+    "rows_including_header": 179
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

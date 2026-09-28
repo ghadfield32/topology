@@ -1,0 +1,12 @@
+{
+  "lab": "wdbc",
+  "title": "Healthcare image-summary classification",
+  "metrics": {
+    "columns": 32,
+    "data_rows": 569,
+    "rows_including_header": 570
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

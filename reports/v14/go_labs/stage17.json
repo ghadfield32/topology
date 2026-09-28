@@ -1,0 +1,14 @@
+{
+  "lab": "stage17",
+  "title": "Registration",
+  "metrics": {
+    "translation": [
+      2,
+      3,
+      0
+    ]
+  },
+  "notes": [
+    "Fit on one reference set and evaluate on different holdouts."
+  ]
+}

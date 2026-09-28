@@ -1,0 +1,10 @@
+{
+  "lab": "stage26",
+  "title": "PINN residual control",
+  "metrics": {
+    "analytic_residual": 0
+  },
+  "notes": [
+    "Known solution provides a control before neural optimization."
+  ]
+}

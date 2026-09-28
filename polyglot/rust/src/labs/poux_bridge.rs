@@ -1,0 +1,3 @@
+use super::helpers::*;
+use std::path::Path;
+pub fn run(repo:&Path)->Result<LabResult,String>{let pts=load_spl_ball(repo)?;if pts.len()<2{return Err("need >=2 points".into())};let chunks=vec![pts[..1].to_vec(),pts[1..].to_vec()];let w=weighted_mean(&chunks);let e=equal_mean_chunk_means(&chunks);Ok(LabResult{lab:"poux_bridge".into(),title:"Poux weighted streaming bridge".into(),metrics:vec![metric_int("points",pts.len()),metric_vec("weighted_mean_m",&w),metric_vec("equal_chunk_mean_m",&e),metric_num("centroid_shift_m",l2(&w,&e))],notes:vec!["Selected nonuniform frames: centroid is not a time average or release point.".into()]})}

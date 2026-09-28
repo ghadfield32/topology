@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/rust/shape-rust",
+    "--repo",
+    "/mnt/data/v16_build/listening_to_shape_lab",
+    "--lab",
+    "stage03"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0017027780004355009,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"data/raw/iris.csv\": {\n      \"bytes\": 4676,\n      \"sha256\": \"160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f\"\n    },\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage03\",\n  \"language\": \"rust\",\n  \"metrics\": {\n    \"domain\": \"all 256 candidate collections of subsets of a labeled three-element set\",\n    \"identity_map_discrete_to_indiscrete_continuous\": true,\n    \"identity_map_indiscrete_to_discrete_continuous\": false,\n    \"original_rows\": 150,\n    \"projected_distinct_vectors\": 117,\n    \"scope\": \"finite checks and a noninjective projection; not a general continuity theorem\",\n    \"three_point_topologies\": 29\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

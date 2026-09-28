@@ -1,0 +1,68 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage27",
+  "language": "go",
+  "metrics": {
+    "input_gradients": [
+      [
+        1,
+        0
+      ],
+      [
+        -0.4,
+        1
+      ],
+      [
+        0.2,
+        -0.6
+      ]
+    ],
+    "mean_normalized_after_projection": [
+      0.32296330173858984,
+      0.08702161855985632
+    ],
+    "mean_projected": [
+      0.3816091954022988,
+      0.12643678160919541
+    ],
+    "opposite_gradients": [
+      [
+        1,
+        0
+      ],
+      [
+        -1,
+        0
+      ]
+    ],
+    "projected_gradients": [
+      [
+        0.8793103448275861,
+        0.2931034482758621
+      ],
+      [
+        0.3,
+        0.1000000000000002
+      ],
+      [
+        -0.034482758620689585,
+        -0.013793103448276
+      ]
+    ],
+    "scope": "ordered gradient operations, not a reproduction of full domain-decomposition benchmarks",
+    "zero_sum": [
+      0,
+      0
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

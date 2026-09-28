@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "scope": "native-16 shared teaching protocols",
+  "tests": [
+    {
+      "language": "go",
+      "passed": 34,
+      "exit_code": 0
+    },
+    {
+      "language": "rust",
+      "passed": 28,
+      "exit_code": 0
+    }
+  ],
+  "lab_count": 57,
+  "data_checks": 110,
+  "fixture_checks": 64,
+  "scientific_checks": "passed",
+  "original_notebook_parity": "not_certified",
+  "python_reference_replay": "not_run",
+  "docker_runtime": "not_run",
+  "kubernetes_runtime": "not_run",
+  "root_python_tests": {
+    "passed": 821,
+    "skipped": 2,
+    "failed": 0
+  },
+  "scientific_comparisons": 220,
+  "protected_inputs": 90,
+  "largest_native_metric_abs_difference": 2.3283064365386963e-10,
+  "data_numeric_values_compared": 9896088,
+  "source_files": 55,
+  "independent_exercise_prompts": 171,
+  "platform": "Linux x86_64",
+  "python": "3.13.5",
+  "go": "1.23.2",
+  "rust": "1.90.0",
+  "new_native_platforms_not_tested": [
+    "Windows",
+    "macOS"
+  ],
+  "baseline": "mounted v14 combined archive",
+  "original_python_reference_notebooks_retained": 133,
+  "original_python_notebooks_freshly_replayed": 0
+}

@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "scope": "YAML parse and project policy only",
+  "jobs": 2,
+  "docker_runtime": "not_run",
+  "kubernetes_runtime": "not_run",
+  "new_full_native_CI": "not_run"
+}

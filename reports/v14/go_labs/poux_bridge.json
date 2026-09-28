@@ -1,0 +1,21 @@
+{
+  "lab": "poux_bridge",
+  "title": "Poux weighted streaming bridge",
+  "metrics": {
+    "centroid_shift_m": 1.1224149164820876,
+    "equal_chunk_mean_m": [
+      4.803531031080386,
+      -7.734473429528233,
+      1.9522066411894916
+    ],
+    "points": 12,
+    "weighted_mean_m": [
+      4.031211893377345,
+      -7.695396909430308,
+      2.7657245696066592
+    ]
+  },
+  "notes": [
+    "Selected nonuniform frames: centroid is not a time average or release point."
+  ]
+}

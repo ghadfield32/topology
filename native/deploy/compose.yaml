@@ -1,0 +1,23 @@
+x-limits: &limits
+  user: "${COURSE_UID:-10001}:${COURSE_GID:-10001}"
+  read_only: true
+  network_mode: none
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  tmpfs: [/tmp:rw,nosuid,nodev,size=128m]
+  volumes: [../../my_work/native_containers:/work]
+services:
+  go:
+    <<: *limits
+    image: shape-native-go:16
+    build:
+      context: ../..
+      dockerfile: native/deploy/Dockerfile.go
+    command: [--lab, stage01]
+  rust:
+    <<: *limits
+    image: shape-native-rust:16
+    build:
+      context: ../..
+      dockerfile: native/deploy/Dockerfile.rust
+    command: [--lab, stage01]

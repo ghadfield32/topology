@@ -1,0 +1,32 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "r02",
+  "language": "go",
+  "metrics": {
+    "collapsed_gradient_first_row": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "collapsed_penalty": 0.07125178343249218,
+    "normal_control_gradient_first_row": [
+      -6.198251990115843e-06,
+      -3.966198011215364e-05,
+      1.3294673848163978e-05,
+      1.3037678949940576e-05
+    ],
+    "normal_control_penalty": 0.001307722182436113,
+    "scope": "finite-frequency/projection diagnostics, not proof of multivariate Gaussianity"
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

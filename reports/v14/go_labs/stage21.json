@@ -1,0 +1,10 @@
+{
+  "lab": "stage21",
+  "title": "Finite differences",
+  "metrics": {
+    "forward_derivative": 2.0999999999999996
+  },
+  "notes": [
+    "Derivative estimate depends on spacing and noise."
+  ]
+}

@@ -1,0 +1,72 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_________________ test_cache_reuse_keeps_first_compiler_record _________________
+
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-6/test_cache_reuse_keeps_first_c0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fa50a134640>
+
+    def test_cache_reuse_keeps_first_compiler_record(tmp_path,monkeypatch):
+        m=load();out=m.new_directory(tmp_path/'evidence');cache=tmp_path/'my_work/native_build/go';cache.mkdir(parents=True)
+        exe=cache/('shape-go.exe' if m.os.name=='nt'else'shape-go');exe.write_bytes(b'fixture-binary')
+        key={'source_sha256':'fixture-source','compiler':'fixture-go','platform':m.sys.platform}
+        m.write_json(cache/'build.json',{'key':key,'binary_sha256':m.digest(exe)})
+        first={'status':'compiled','exit_code':0,'scope':'test fixture'};m.write_json(out/'go_build.json',first)
+        monkeypatch.setattr(m,'source_id',lambda lang,root:'fixture-source')
+        monkeypatch.setattr(m.shutil,'which',lambda name:'fixture-go')
+        monkeypatch.setattr(m,'command',lambda *args,**kwargs:{'stdout':'fixture-go'})
+        assert m.build('go',out,root=tmp_path)==exe
+>       assert m.read_json(out/'go_build.json')==first
+E       AssertionError: assert {'binary_sha2...rified_cache'} == {'exit_code':...': 'compiled'}
+E         
+E         Differing items:
+E         {'status': 'verified_cache'} != {'status': 'compiled'}
+E         Left contains 2 more items:
+E         {'binary_sha256': '74dd6752f5b83360c8fb780f06d74e5edb2712ea55a59b02a263584b091993a4',
+E          'key': {'compiler': 'fixture-go',
+E                  'platform': 'linux',
+E                  'source_sha256': 'fixture-source'}}
+E         Right contains 2 more items:
+E         {'exit_code': 0, 'scope': 'test fixture'}
+E         
+E         Full diff:
+E           {
+E         -     'exit_code': 0,
+E         -     'scope': 'test fixture',
+E         -     'status': 'compiled',
+E         +     'binary_sha256': '74dd6752f5b83360c8fb780f06d74e5edb2712ea55a59b02a263584b091993a4',
+E         +     'key': {
+E         +         'compiler': 'fixture-go',
+E         +         'platform': 'linux',
+E         +         'source_sha256': 'fixture-source',
+E         +     },
+E         +     'status': 'verified_cache',
+E           }
+
+tests/test_native_v16.py:89: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_native_v16.py::test_cache_reuse_keeps_first_compiler_record - AssertionError: assert {'binary_sha2...rified_cache'} == {'exit_code':...': 'compiled'}
+  
+  Differing items:
+  {'status': 'verified_cache'} != {'status': 'compiled'}
+  Left contains 2 more items:
+  {'binary_sha256': '74dd6752f5b83360c8fb780f06d74e5edb2712ea55a59b02a263584b091993a4',
+   'key': {'compiler': 'fixture-go',
+           'platform': 'linux',
+           'source_sha256': 'fixture-source'}}
+  Right contains 2 more items:
+  {'exit_code': 0, 'scope': 'test fixture'}
+  
+  Full diff:
+    {
+  -     'exit_code': 0,
+  -     'scope': 'test fixture',
+  -     'status': 'compiled',
+  +     'binary_sha256': '74dd6752f5b83360c8fb780f06d74e5edb2712ea55a59b02a263584b091993a4',
+  +     'key': {
+  +         'compiler': 'fixture-go',
+  +         'platform': 'linux',
+  +         'source_sha256': 'fixture-source',
+  +     },
+  +     'status': 'verified_cache',
+    }
+1 failed in 0.07s

@@ -1,0 +1,12 @@
+{
+  "lab": "grunfeld",
+  "title": "Firm-year panel measurements",
+  "metrics": {
+    "columns": 6,
+    "data_rows": 220,
+    "rows_including_header": 221
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

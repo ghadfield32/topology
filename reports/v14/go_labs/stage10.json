@@ -1,0 +1,10 @@
+{
+  "lab": "stage10",
+  "title": "Stability",
+  "metrics": {
+    "perturbation_linf": 0.02
+  },
+  "notes": [
+    "A perturbation magnitude is not by itself a significance statement."
+  ]
+}

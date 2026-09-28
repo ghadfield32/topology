@@ -1,0 +1,15 @@
+{
+  "lab": "stage13",
+  "title": "Manifold chart",
+  "metrics": {
+    "norm": 0.9999999999999999,
+    "sphere_point": [
+      0.38095238095238093,
+      -0.19047619047619047,
+      -0.9047619047619047
+    ]
+  },
+  "notes": [
+    "Stereographic-style coordinates provide a local representation."
+  ]
+}

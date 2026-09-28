@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "scope": "native-16 shared teaching protocols",
+  "tests": [
+    {
+      "language": "go",
+      "passed": 34,
+      "exit_code": 0
+    },
+    {
+      "language": "rust",
+      "passed": 28,
+      "exit_code": 0
+    }
+  ],
+  "lab_count": 57,
+  "data_checks": 110,
+  "fixture_checks": 64,
+  "scientific_checks": "passed",
+  "original_notebook_parity": "not_certified",
+  "python_reference_replay": "not_run",
+  "docker_runtime": "not_run",
+  "kubernetes_runtime": "not_run"
+}

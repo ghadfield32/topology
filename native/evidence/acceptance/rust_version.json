@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/mnt/data/rust-verification-toolchain/rust-toolchain/bin/cargo",
+    "--version"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0037413730005937396,
+  "stdout": "cargo 1.90.0 (840b83a10 2025-07-30)\n",
+  "stderr": ""
+}

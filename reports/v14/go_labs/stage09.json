@@ -1,0 +1,10 @@
+{
+  "lab": "stage09",
+  "title": "Persistence algorithm",
+  "metrics": {
+    "f2_rank_example": 2
+  },
+  "notes": [
+    "Use Python/Ripser/GUDHI for the full persistence cross-check."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "lab": "stage14",
+  "title": "Rigid transforms",
+  "metrics": {
+    "det_rotation": 1,
+    "point": [
+      0.3642960758029269,
+      2.2061931849125513,
+      3
+    ]
+  },
+  "notes": [
+    "Rigid rotations preserve length; translation is a separate operation."
+  ]
+}

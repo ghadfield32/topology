@@ -1,0 +1,10 @@
+{
+  "lab": "stage25",
+  "title": "Constraint projection",
+  "metrics": {
+    "residual_after": 0.5625
+  },
+  "notes": [
+    "One linearized correction need not satisfy a nonlinear constraint exactly."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/go/shape-go",
+    "--repo",
+    "/mnt/data/v16_build/listening_to_shape_lab",
+    "--lab",
+    "stage00"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.004000394000286178,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"data/v7/seeds/table.csv\": {\n      \"bytes\": 10128,\n      \"sha256\": \"9269dec683e9c29dd80f85603e425e3d9dd3939bc83945ef6aaf84c318f4274c\"\n    },\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage00\",\n  \"language\": \"go\",\n  \"metrics\": {\n    \"column_means\": [\n      14.847523809523805,\n      14.559285714285718,\n      0.8709985714285716,\n      5.6285333333333325,\n      3.2586047619047642,\n      3.7002009523809507,\n      5.408071428571428\n    ],\n    \"distinct_vectors\": 210,\n    \"features\": [\n      \"area\",\n      \"perimeter\",\n      \"compactness\",\n      \"kernel_length\",\n      \"kernel_width\",\n      \"asymmetry\",\n      \"groove_length\"\n    ],\n    \"label_counts\": {\n      \"1\": 70,\n      \"2\": 70,\n      \"3\": 70\n    },\n    \"observations\": 210,\n    \"scope\": \"observed kernels; feature rows are not photographs\"\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

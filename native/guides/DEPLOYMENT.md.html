@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DEPLOYMENT</title><style>*{box-sizing:border-box}body{margin:0;background:#f4f6f9;color:#1e293b;font:17px/1.6 system-ui,sans-serif}header{background:#11243b;color:white;padding:28px max(24px,calc((100vw - 1120px)/2))}header a{color:#bfdcff}main{max-width:1168px;margin:28px auto;padding:0 24px}h1{font-size:clamp(28px,4vw,44px);line-height:1.15}h2{line-height:1.25;margin-top:32px}h3{line-height:1.3}a{color:#075ca8;overflow-wrap:anywhere}p{max-width:100ch}.intro,.notice,.card,.metrics{background:white;border:1px solid #d9e0e8;border-radius:10px;padding:22px;margin:18px 0}.notice{border-left:5px solid #b7771b}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:16px}.card{margin:0;min-width:0}.small{font-size:14px;color:#506075}.tag{font-size:13px;font-weight:700;letter-spacing:.08em}pre{overflow:auto;background:#eaf0f6;padding:16px;border-radius:6px;font-size:14px}code{overflow-wrap:anywhere}table{display:block;max-width:100%;overflow:auto;border-collapse:collapse;background:white}th,td{padding:10px;text-align:left;border-bottom:1px solid #dae1ea;vertical-align:top}input{width:100%;font:inherit;padding:13px;border:1px solid #aab8c7;border-radius:6px}.metrics{display:flex;gap:32px;flex-wrap:wrap}.metrics strong{font-size:28px;display:block}.actions{display:flex;flex-wrap:wrap;gap:16px}details{background:white;padding:10px;margin:12px 0}summary{cursor:pointer}img{max-width:100%}footer{margin:32px 0;font-size:14px;color:#506075} .hidden{display:none!important} @media(max-width:500px){main{padding:0 14px}header{padding:24px 16px}.card,.intro,.notice{padding:16px}}</style></head><body><header><div class="tag">LISTENING TO SHAPE · NATIVE16</div><nav><a href="../../START_NATIVE.html">Native learning home</a> · <a href="../../START_HERE.html">Original course</a></nav></header><main><h1>Learn the deployment chain without confusing its acceptance levels</h1>
+<p>Native compilation and execution passed in the delivery environment. Docker and a live Kubernetes deployment of these new images did <strong>not</strong> run there. This guide supplies reproducible definitions and explicit acceptance steps, not a fictional deployment record. Historical tests of your earlier Python image do not validate a new native image.</p>
+<h2>Native → image → Job → evidence</h2>
+<p>A compiler turns source into an executable. A Docker image packages that executable and input files. Kubernetes schedules a Pod using the image. A Job tracks work intended to complete. A PVC supplies storage that can outlive an individual Pod. These objects solve different problems; none automatically establishes scientific correctness.</p>
+<h3>Build the actual images</h3>
+<p>From the course root:</p>
+<pre><code>docker build -f native/deploy/Dockerfile.go -t shape-native-go:16 .
+docker build -f native/deploy/Dockerfile.rust -t shape-native-rust:16 .
+docker run --rm --read-only --network none --cap-drop ALL --security-opt no-new-privileges shape-native-go:16 --lab stage01
+docker run --rm --read-only --network none --cap-drop ALL --security-opt no-new-privileges shape-native-rust:16 --lab stage01
+</code></pre>
+<p>Both Dockerfiles run their native tests during the build. Rust dependencies are vendored; base-image acquisition still requires a registry connection or cache. Native programs do not need a Python runtime. The container user is non-root. Use the existing Python image separately when running the Python reference or Python-based data audit.</p>
+<h3>Persist results with Compose</h3>
+<p>Create <code>my_work/native_containers</code> on the host. On Linux, match the bind mount user to your host UID/GID using COURSE_UID/COURSE_GID, or deliberately provision permissions; do not solve a permission error with <code>chmod 777</code> on the entire repository.</p>
+<pre><code>docker compose -f native/deploy/compose.yaml config
+docker compose -f native/deploy/compose.yaml run --rm go --lab stage01 --output /work/go-stage01-01
+docker compose -f native/deploy/compose.yaml run --rm rust --lab stage01 --output /work/rust-stage01-01
+</code></pre>
+<p>Use new output names. Keep build logs, image IDs/digests and result files. Compare output metrics and consumed source hashes. A successful image build alone is not a successful experiment run.</p>
+<h2>Local Kubernetes, explicitly selected</h2>
+<p>Use your existing disposable context only after checking it. Never replace the context below with a production cluster merely to run a lesson.</p>
+<pre><code>kind load docker-image shape-native-go:16 --name shape-learning
+kind load docker-image shape-native-rust:16 --name shape-learning
+kubectl --context kind-shape-learning get nodes
+kubectl --context kind-shape-learning create namespace shape-native-study
+kubectl --context kind-shape-learning -n shape-native-study create --dry-run=server -f native/deploy/jobs.yaml
+</code></pre>
+<p>If the namespace already exists, inspect it before deciding to reuse it; do not delete it automatically. The YAML contains a PVC and two Jobs with generated names. If the PVC already exists, create only the Job documents for a new run. <code>create</code> is deliberate: <code>generateName</code> is not an idempotent application identifier.</p>
+<p>After inspection:</p>
+<pre><code>kubectl --context kind-shape-learning -n shape-native-study create -f native/deploy/jobs.yaml
+kubectl --context kind-shape-learning -n shape-native-study get pods,jobs,pvc
+kubectl --context kind-shape-learning -n shape-native-study wait --for=condition=complete job -l course=shape-native --timeout=900s
+</code></pre>
+<p>Retrieve logs by the actual generated Job name returned by Kubernetes. Always include the context and namespace. Output folders contain the Pod UID, so a fresh Job cannot overwrite the previous run. <code>backoffLimit: 0</code> avoids retrying failed work into an ambiguous output folder.</p>
+<p>Both Jobs use the same claim, read-only roots, no service-account token, dropped capabilities, runtime-default seccomp, CPU/memory limits and unique output paths. The claim is ReadWriteOnce: this constrains how storage is attached, not a promise of one Pod or a backup. A local single-node kind cluster is the intended exercise.</p>
+<h3>Export before cleanup</h3>
+<p><code>/work</code> in the Pod refers to the PVC, not automatically your Windows directory. Use your repository's established read-only export-Pod procedure to copy both result.json files into separate local evidence folders. Record their hashes and the running image IDs. Verify them before any deliberate cleanup. No automatic namespace, PVC or cluster deletion is provided.</p>
+<h3>Interpret failures at the right layer</h3>
+<p>Pending: inspect events, requests and PVC binding. ImagePullBackOff: verify the loaded image tag and context. Failed Job: inspect the container termination status and logs. Completed Job with no host files: inspect the PVC and export path. A model with poor accuracy: inspect the scientific protocol rather than rebuilding the cluster.</p>
+<h2>CI scope</h2>
+<p>The supplied optional native workflow compiles and tests Go/Rust, then compares all 57 native units. It does not claim full original-notebook equivalence. Remote execution of this complete native-source workflow is not claimed in the delivery report.</p>
+<p>A separate toolchain-provisioning workflow did run successfully on the branch <code>learning/native-parity-v16</code>, providing the official Rust compiler and vendor sources used for local verification. That remote toolchain job did not execute this full course. Main was not changed.</p>
+<footer>One mathematical curriculum. Native agreement, scientific validity and independent learner mastery are different requirements.</footer></main></body></html>

@@ -1,0 +1,707 @@
+{
+  "count": 57,
+  "labs": {
+    "acb": {
+      "lab": "acb",
+      "title": "ACB 2025\u201326 source and identity readiness",
+      "metrics": {
+        "implemented": true
+      },
+      "notes": [
+        "Dependency-light companion; see the lab README for the Python parity boundary."
+      ]
+    },
+    "claims": {
+      "lab": "claims",
+      "title": "Symplectic counterexample",
+      "metrics": {
+        "delta": -0.019199999999999995,
+        "energy_after": 0.4808,
+        "energy_before": 0.5
+      },
+      "notes": [
+        "Symplectic does not imply exact energy conservation at each discrete step."
+      ]
+    },
+    "co2": {
+      "lab": "co2",
+      "title": "Atmospheric observations and windows",
+      "metrics": {
+        "columns": 3,
+        "data_rows": 2284,
+        "rows_including_header": 2285
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "concrete_slump": {
+      "lab": "concrete_slump",
+      "title": "Materials measurements and intervals",
+      "metrics": {
+        "columns": 11,
+        "data_rows": 103,
+        "rows_including_header": 104
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "elnino": {
+      "lab": "elnino",
+      "title": "Marine climate",
+      "metrics": {
+        "columns": 14,
+        "data_rows": 61,
+        "rows_including_header": 62
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "grunfeld": {
+      "lab": "grunfeld",
+      "title": "Firm-year panel measurements",
+      "metrics": {
+        "columns": 6,
+        "data_rows": 220,
+        "rows_including_header": 221
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "leakage": {
+      "lab": "leakage",
+      "title": "Identity leakage controls",
+      "metrics": {
+        "implemented": true
+      },
+      "notes": [
+        "Dependency-light companion; see the lab README for the Python parity boundary."
+      ]
+    },
+    "modechoice": {
+      "lab": "modechoice",
+      "title": "Traveler-level choice sets",
+      "metrics": {
+        "columns": 10,
+        "data_rows": 840,
+        "rows_including_header": 841
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "nile": {
+      "lab": "nile",
+      "title": "Water-infrastructure time series",
+      "metrics": {
+        "columns": 3,
+        "data_rows": 100,
+        "rows_including_header": 101
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "poux_bridge": {
+      "lab": "poux_bridge",
+      "title": "Poux weighted streaming bridge",
+      "metrics": {
+        "centroid_shift_m": 1.1224149164820876,
+        "equal_chunk_mean_m": [
+          4.803531031080386,
+          -7.734473429528233,
+          1.9522066411894916
+        ],
+        "points": 12,
+        "weighted_mean_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ]
+      },
+      "notes": [
+        "Selected nonuniform frames: centroid is not a time average or release point."
+      ]
+    },
+    "r01": {
+      "lab": "r01",
+      "title": "Distributions, moments, and whitening",
+      "metrics": {
+        "implemented": true
+      },
+      "notes": [
+        "Dependency-light companion; see the lab README for the Python parity boundary."
+      ]
+    },
+    "r02": {
+      "lab": "r02",
+      "title": "Projections, characteristic functions, and SIGReg",
+      "metrics": {
+        "implemented": true
+      },
+      "notes": [
+        "Dependency-light companion; see the lab README for the Python parity boundary."
+      ]
+    },
+    "r03": {
+      "lab": "r03",
+      "title": "Anti-collapse objectives and gradient paths",
+      "metrics": {
+        "implemented": true
+      },
+      "notes": [
+        "Dependency-light companion; see the lab README for the Python parity boundary."
+      ]
+    },
+    "r04": {
+      "lab": "r04",
+      "title": "Train a representation and evaluate frozen probes",
+      "metrics": {
+        "implemented": true
+      },
+      "notes": [
+        "Dependency-light companion; see the lab README for the Python parity boundary."
+      ]
+    },
+    "r05": {
+      "lab": "r05",
+      "title": "Transfer diagnostics without inventing a sports world model",
+      "metrics": {
+        "implemented": true
+      },
+      "notes": [
+        "Dependency-light companion; see the lab README for the Python parity boundary."
+      ]
+    },
+    "s00": {
+      "lab": "s00",
+      "title": "Sports observations and units",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "s01": {
+      "lab": "s01",
+      "title": "Landmark angles and velocity",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "s02": {
+      "lab": "s02",
+      "title": "Ball-flight model adequacy",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "s03": {
+      "lab": "s03",
+      "title": "Soccer profile topology",
+      "metrics": {
+        "columns": 12,
+        "data_rows": 12,
+        "rows_including_header": 13
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "s04": {
+      "lab": "s04",
+      "title": "Timing and uncertainty",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "s05": {
+      "lab": "s05",
+      "title": "Athlete-group evaluation",
+      "metrics": {
+        "columns": 12,
+        "data_rows": 12,
+        "rows_including_header": 13
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "s06": {
+      "lab": "s06",
+      "title": "Independent sports investigation",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "seeds": {
+      "lab": "seeds",
+      "title": "Agriculture feature-space geometry",
+      "metrics": {
+        "columns": 9,
+        "data_rows": 210,
+        "rows_including_header": 211
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "stackloss": {
+      "lab": "stackloss",
+      "title": "Manufacturing regression",
+      "metrics": {
+        "columns": 5,
+        "data_rows": 21,
+        "rows_including_header": 22
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "stage00": {
+      "lab": "stage00",
+      "title": "Start here",
+      "metrics": {
+        "iris_columns": 7,
+        "iris_rows": 150
+      },
+      "notes": [
+        "One row is one measured flower record in this snapshot."
+      ]
+    },
+    "stage01": {
+      "lab": "stage01",
+      "title": "Mathematical language, proofs, and linear algebra",
+      "metrics": {
+        "f2_rank": 2,
+        "kernel_check": [
+          0,
+          0
+        ]
+      },
+      "notes": [
+        "Same stored matrix can have different rank over R and F2."
+      ]
+    },
+    "stage02": {
+      "lab": "stage02",
+      "title": "Metrics",
+      "metrics": {
+        "euclidean": 5,
+        "manhattan": 7
+      },
+      "notes": [
+        "A metric choice changes neighborhoods."
+      ]
+    },
+    "stage03": {
+      "lab": "stage03",
+      "title": "Continuity and maps",
+      "metrics": {
+        "projection_same": true
+      },
+      "notes": [
+        "Projection can be continuous while losing information."
+      ]
+    },
+    "stage04": {
+      "lab": "stage04",
+      "title": "Symmetry",
+      "metrics": {
+        "norm": 1,
+        "rotated": [
+          6.123233995736757e-17,
+          1,
+          0
+        ]
+      },
+      "notes": [
+        "Rotation preserves Euclidean length."
+      ]
+    },
+    "stage05": {
+      "lab": "stage05",
+      "title": "Simplicial structure",
+      "metrics": {
+        "edges": 3,
+        "euler": 0,
+        "faces": 0,
+        "vertices": 3
+      },
+      "notes": [
+        "Triangle boundary and filled triangle are different complexes."
+      ]
+    },
+    "stage06": {
+      "lab": "stage06",
+      "title": "Simplicial structure",
+      "metrics": {
+        "edges": 3,
+        "euler": 1,
+        "faces": 1,
+        "vertices": 3
+      },
+      "notes": [
+        "Triangle boundary and filled triangle are different complexes."
+      ]
+    },
+    "stage07": {
+      "lab": "stage07",
+      "title": "Rips",
+      "metrics": {
+        "edges": 4,
+        "epsilon": 1.01
+      },
+      "notes": [
+        "At this scale the unit square has perimeter edges but no diagonals."
+      ]
+    },
+    "stage08": {
+      "lab": "stage08",
+      "title": "Persistence",
+      "metrics": {
+        "square_h1_birth": 1,
+        "square_h1_death": 1.4142135623730951
+      },
+      "notes": [
+        "Exact under the course Rips convention."
+      ]
+    },
+    "stage09": {
+      "lab": "stage09",
+      "title": "Persistence algorithm",
+      "metrics": {
+        "f2_rank_example": 2
+      },
+      "notes": [
+        "Use Python/Ripser/GUDHI for the full persistence cross-check."
+      ]
+    },
+    "stage10": {
+      "lab": "stage10",
+      "title": "Stability",
+      "metrics": {
+        "perturbation_linf": 0.02
+      },
+      "notes": [
+        "A perturbation magnitude is not by itself a significance statement."
+      ]
+    },
+    "stage11": {
+      "lab": "stage11",
+      "title": "Useful representations, Mapper, time windows, and honest machine learning",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "stage12": {
+      "lab": "stage12",
+      "title": "Capstone: reproduce, defend, transfer, and audit the book",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "stage13": {
+      "lab": "stage13",
+      "title": "Manifold chart",
+      "metrics": {
+        "norm": 0.9999999999999999,
+        "sphere_point": [
+          0.38095238095238093,
+          -0.19047619047619047,
+          -0.9047619047619047
+        ]
+      },
+      "notes": [
+        "Stereographic-style coordinates provide a local representation."
+      ]
+    },
+    "stage14": {
+      "lab": "stage14",
+      "title": "Rigid transforms",
+      "metrics": {
+        "det_rotation": 1,
+        "point": [
+          0.3642960758029269,
+          2.2061931849125513,
+          3
+        ]
+      },
+      "notes": [
+        "Rigid rotations preserve length; translation is a separate operation."
+      ]
+    },
+    "stage15": {
+      "lab": "stage15",
+      "title": "Stereo depth",
+      "metrics": {
+        "depth_m": 6
+      },
+      "notes": [
+        "This simplified formula assumes compatible calibration conventions."
+      ]
+    },
+    "stage16": {
+      "lab": "stage16",
+      "title": "Attention",
+      "metrics": {
+        "softmax": [
+          0.09003057317038046,
+          0.24472847105479764,
+          0.6652409557748218
+        ],
+        "sum": 0.9999999999999999
+      },
+      "notes": [
+        "Attention weights are normalized affinities, not calibrated geometric truth."
+      ]
+    },
+    "stage17": {
+      "lab": "stage17",
+      "title": "Registration",
+      "metrics": {
+        "translation": [
+          2,
+          3,
+          0
+        ]
+      },
+      "notes": [
+        "Fit on one reference set and evaluate on different holdouts."
+      ]
+    },
+    "stage18": {
+      "lab": "stage18",
+      "title": "Streaming",
+      "metrics": {
+        "mean": [
+          4,
+          5,
+          6
+        ]
+      },
+      "notes": [
+        "Count-weighted streaming summaries must match whole-data summaries."
+      ]
+    },
+    "stage19": {
+      "lab": "stage19",
+      "title": "Interaction hypotheses",
+      "metrics": {
+        "distance_m": 0.15,
+        "near": true
+      },
+      "notes": [
+        "Proximity alone cannot certify contact or possession."
+      ]
+    },
+    "stage20": {
+      "lab": "stage20",
+      "title": "Independent spatial capstone and continuing mastery",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "stage21": {
+      "lab": "stage21",
+      "title": "Finite differences",
+      "metrics": {
+        "forward_derivative": 2.0999999999999996
+      },
+      "notes": [
+        "Derivative estimate depends on spacing and noise."
+      ]
+    },
+    "stage22": {
+      "lab": "stage22",
+      "title": "Smooth flows",
+      "metrics": {
+        "inverse": 2,
+        "x_t": 3.2974425414002564
+      },
+      "notes": [
+        "The exact flow of x'=x is invertible for finite t."
+      ]
+    },
+    "stage23": {
+      "lab": "stage23",
+      "title": "Hamiltonian mechanics",
+      "metrics": {
+        "dpdt": -1,
+        "dqdt": 0.5,
+        "energy": 0.625
+      },
+      "notes": [
+        "This harmonic oscillator is a manufactured control."
+      ]
+    },
+    "stage24": {
+      "lab": "stage24",
+      "title": "Symplectic counterexample",
+      "metrics": {
+        "delta": -0.019199999999999995,
+        "energy_after": 0.4808,
+        "energy_before": 0.5
+      },
+      "notes": [
+        "Symplectic does not imply exact energy conservation at each discrete step."
+      ]
+    },
+    "stage25": {
+      "lab": "stage25",
+      "title": "Constraint projection",
+      "metrics": {
+        "residual_after": 0.5625
+      },
+      "notes": [
+        "One linearized correction need not satisfy a nonlinear constraint exactly."
+      ]
+    },
+    "stage26": {
+      "lab": "stage26",
+      "title": "PINN residual control",
+      "metrics": {
+        "analytic_residual": 0
+      },
+      "notes": [
+        "Known solution provides a control before neural optimization."
+      ]
+    },
+    "stage27": {
+      "lab": "stage27",
+      "title": "Gradient conflict",
+      "metrics": {
+        "conflict": true,
+        "dot": -1
+      },
+      "notes": [
+        "Opposite gradients expose an incompatible first-order objective pair."
+      ]
+    },
+    "stage28": {
+      "lab": "stage28",
+      "title": "Operator/Fourier control",
+      "metrics": {
+        "cosine_projection": 0.5
+      },
+      "notes": [
+        "Small DFT-style control; use Python reference for neural-operator training."
+      ]
+    },
+    "stage29": {
+      "lab": "stage29",
+      "title": "Differentiable simulation",
+      "metrics": {
+        "fd_sensitivity": -0.7602275317930561,
+        "final_state": 0.7374241268949281
+      },
+      "notes": [
+        "Finite-difference sensitivity is a check, not automatic autodiff validation."
+      ]
+    },
+    "stage30": {
+      "lab": "stage30",
+      "title": "An independent world-model study: evidence before adoption",
+      "metrics": {
+        "centroid_m": [
+          4.031211893377345,
+          -7.695396909430308,
+          2.7657245696066592
+        ],
+        "selected_ball_points": 12
+      },
+      "notes": [
+        "Selected excerpt; not a full tracking corpus."
+      ]
+    },
+    "wdbc": {
+      "lab": "wdbc",
+      "title": "Healthcare image-summary classification",
+      "metrics": {
+        "columns": 32,
+        "data_rows": 569,
+        "rows_including_header": 570
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    },
+    "wine": {
+      "lab": "wine",
+      "title": "Food chemistry and topology",
+      "metrics": {
+        "columns": 15,
+        "data_rows": 178,
+        "rows_including_header": 179
+      },
+      "notes": [
+        "Schema/count check only; use the Python reference for the complete statistical protocol."
+      ]
+    }
+  }
+}

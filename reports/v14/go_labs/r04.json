@@ -1,0 +1,10 @@
+{
+  "lab": "r04",
+  "title": "Train a representation and evaluate frozen probes",
+  "metrics": {
+    "implemented": true
+  },
+  "notes": [
+    "Dependency-light companion; see the lab README for the Python parity boundary."
+  ]
+}

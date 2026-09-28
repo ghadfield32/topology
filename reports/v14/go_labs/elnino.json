@@ -1,0 +1,12 @@
+{
+  "lab": "elnino",
+  "title": "Marine climate",
+  "metrics": {
+    "columns": 14,
+    "data_rows": 61,
+    "rows_including_header": 62
+  },
+  "notes": [
+    "Schema/count check only; use the Python reference for the complete statistical protocol."
+  ]
+}

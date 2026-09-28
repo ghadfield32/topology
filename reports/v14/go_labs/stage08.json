@@ -1,0 +1,11 @@
+{
+  "lab": "stage08",
+  "title": "Persistence",
+  "metrics": {
+    "square_h1_birth": 1,
+    "square_h1_death": 1.4142135623730951
+  },
+  "notes": [
+    "Exact under the course Rips convention."
+  ]
+}

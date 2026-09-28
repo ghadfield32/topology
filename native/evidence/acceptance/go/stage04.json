@@ -1,0 +1,36 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "data/raw/digits.npz": {
+      "bytes": 48351,
+      "sha256": "2642e38b91971a422addc7bfa3474649f0b69ad6736f1a9700079a57bfb8135a"
+    },
+    "data/splits.json": {
+      "bytes": 16917,
+      "sha256": "895b1092a9813d596166337e29caf7f0a5d9c7352445c5067b67ff984b8f86bd"
+    },
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage04",
+  "language": "go",
+  "metrics": {
+    "dihedral_square_group_size": 8,
+    "original_betti": [
+      1,
+      1
+    ],
+    "rotated_betti": [
+      1,
+      1
+    ],
+    "rotation_pixel_distance": 51.633322573702344,
+    "scope": "rotation preserves this pixel-complex topology, not necessarily the digit class label"
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

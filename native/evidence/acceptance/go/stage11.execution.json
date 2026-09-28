@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/v16_build/listening_to_shape_lab/my_work/native_build/go/shape-go",
+    "--repo",
+    "/mnt/data/v16_build/listening_to_shape_lab",
+    "--lab",
+    "stage11"
+  ],
+  "cwd": "/mnt/data/v16_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0024801509998724214,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"data/raw/iris.csv\": {\n      \"bytes\": 4676,\n      \"sha256\": \"160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f\"\n    },\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage11\",\n  \"language\": \"go\",\n  \"metrics\": {\n    \"cluster_radius\": 0.5,\n    \"cover_bins\": 5,\n    \"edges\": [\n      [\n        0,\n        4\n      ],\n      [\n        1,\n        4\n      ],\n      [\n        3,\n        5\n      ],\n      [\n        4,\n        7\n      ]\n    ],\n    \"nodes\": [\n      [\n        3\n      ],\n      [\n        6\n      ],\n      [\n        8,\n        13\n      ],\n      [\n        22\n      ],\n      [\n        1,\n        2,\n        3,\n        6,\n        9,\n        11,\n        12\n      ],\n      [\n        22\n      ],\n      [\n        0,\n        4,\n        7,\n        17,\n        19,\n        21\n      ],\n      [\n        1,\n        9\n      ],\n      [\n        23\n      ],\n      [\n        5,\n        16\n      ],\n      [\n        10\n      ],\n      [\n        20\n      ],\n      [\n        14\n      ],\n      [\n        15\n      ],\n      [\n        18\n      ]\n    ],\n    \"overlap_fraction\": 0.3\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}
