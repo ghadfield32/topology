@@ -7,6 +7,29 @@ Every one of the 57 native16 learning units now has an interactive notebook in
 Index: [`workbooks/polyglot/index.html`](../../workbooks/polyglot/index.html)
 (plain text: [`README.md`](../../workbooks/polyglot/README.md)).
 
+## Every notebook opens with a path legend
+
+The notebooks sit three levels deep, so a root-relative path in prose is a dead
+link. Each notebook therefore starts with a **"Where every path points"** cell
+that defines the shared vocabulary once:
+
+- the owner files (`curriculum/catalog.json`, `native/protocols/labs.json`),
+- the course folders (`lessons/`, `notebooks/`, `practice/`),
+- the native folders (`native/go/`, `native/rust/`, `native/python/`, `native/guides/`),
+- the tooling and generated paths (`tools/`, `workbooks/polyglot/`),
+- `my_work/` as **yours**,
+- the reference-vs-your-copy distinction,
+- and the relative links to the other two languages, the index, and the guides.
+
+A test asserts that every markdown link in every notebook resolves **from that
+notebook's own directory**, and that the legend defines the paths it mentions.
+This guards a real regression: the lesson link used to be emitted as
+`lessons/01_lesson.md`, which cannot resolve from `workbooks/polyglot/<lang>/`
+(57 broken links, now 1308 resolving links and zero broken).
+
+Repository-wide definitions live in
+[REPOSITORY_LAYOUT.md](REPOSITORY_LAYOUT.md).
+
 ## Where things live (this is the usual point of confusion)
 
 Several folders contain Go or Rust material, and they are **not** the same thing:
@@ -88,7 +111,6 @@ an `identity` block in `execution.json`, so stale evidence cannot masquerade as
 current.
 
 ## What these notebooks deliberately do not do
-
 - **They do not compute the science in Python.** A test asserts the Go/Rust
   notebooks never import NumPy/Torch/SciPy/sklearn and always call
   `runner.build(...)` and `runner.execute_lab(...)`. Python is the driver only.

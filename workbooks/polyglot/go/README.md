@@ -8,6 +8,7 @@ the result. The mathematics happens in Go.
 - Python equivalents: [`../python/`](../python/)
 - Rust equivalents: [`../rust/`](../rust/)
 - Reference source (read-only): [`../../native/go/`](../../native/go/)
+- Full repository map: [`../../docs/release/REPOSITORY_LAYOUT.md`](../../docs/release/REPOSITORY_LAYOUT.md)
 
 ## Run one
 

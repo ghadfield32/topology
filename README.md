@@ -6,6 +6,45 @@ A beginner-first course from topology to geometry, dynamics and representation l
 
 **Read:** extract everything and open `START_HERE.html`. **Start:** [first-run guide](docs/release/FIRST_RUN.md). **Evidence:** [verification](docs/release/VERIFICATION.md). **Import:** [Git guide](docs/release/GIT_IMPORT.md). **Repository assistant:** [copy/paste handoff](docs/release/AGENT_HANDOFF.md).
 
+## Repository map
+
+Six kinds of thing live here, and they have different owners. Full definitions:
+[docs/release/REPOSITORY_LAYOUT.md](docs/release/REPOSITORY_LAYOUT.md).
+
+| Path | What it is | You edit it? |
+|---|---|---|
+| `curriculum/catalog.json` | **the** owner of the 31-stage lesson order | no |
+| `lessons/`, `notebooks/`, `practice/` | canonical explanations, worked Python labs, learner assignments | your learner notebook |
+| `course.py` | the canonical Python course workflow | no |
+| `native/protocols/labs.json` | **the** owner of the 57 native experiment definitions | no |
+| `native/go/`, `native/rust/` | reference Go and Rust implementations | no — read-only reference |
+| `native/python/` | independent data and scientific checks | no |
+| `native/guides/` | language and implementation guidance | no |
+| `native_course.py` | builds and compares the native labs | no |
+| `tools/build_language_notebooks.py` | **the** owner of `workbooks/polyglot/` | no |
+| `workbooks/polyglot/{python,go,rust}/` | 171 generated teaching notebooks | no — regenerate instead |
+| `docs/release/` | verification, checks, layout and import records | no |
+| `my_work/` | your private attempts and evidence (git-ignored) | **yes** |
+
+Four rules keep this from drifting:
+
+1. **Lesson order** is changed in `curriculum/catalog.json` only.
+2. **Native experiment definitions** are changed in `native/protocols/labs.json` only.
+3. **Generated notebooks** are never hand-edited: fix `tools/build_language_notebooks.py`, then
+   run it and `--check`.
+4. **Your answers and experiments** go in `my_work/`, never into a reference file.
+
+## Where do I start?
+
+| I want to… | Go to |
+|---|---|
+| begin the course | [START_HERE.html](START_HERE.html) or `course.py next` |
+| learn a lab in Python, Go and Rust | [workbooks/polyglot/index.html](workbooks/polyglot/index.html) |
+| understand the Go/Rust track | [START_NATIVE.html](START_NATIVE.html) |
+| do Stage 01 now | [docs/release/STAGE01_WALKTHROUGH.md](docs/release/STAGE01_WALKTHROUGH.md) |
+| know what actually ran | [docs/release/CHECKS.md](docs/release/CHECKS.md) |
+| deploy natively | [native/guides/DEPLOYMENT.md](native/guides/DEPLOYMENT.md) |
+
 ## Native16 addition (Go and Rust)
 
 Open [START_NATIVE.html](START_NATIVE.html) for the additive native track: 57 learning units implemented in both Go and Rust, each with a guide, three independent challenges and inspectable evidence. The [import record](docs/release/NATIVE16_IMPORT.md) states exactly what was imported, what was deferred, and what executed on this machine.

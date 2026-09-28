@@ -42,6 +42,7 @@ $paths = @(
     'docs/release/CHECKS.md'
     'docs/release/STAGE01_WALKTHROUGH.md'
     'docs/release/HANDOFF_REPORT.md'
+    'docs/release/REPOSITORY_LAYOUT.md'
 
     'tools/build_language_notebooks.py'
     'tools/verify_language_notebooks.py'
@@ -50,6 +51,8 @@ $paths = @(
     'tools/native_deploy_verify.py'
     'tools/checkpoint_current_state.py'
     'tools/polyglot_verify.py'
+    'tools/stage_native16_commit.ps1'
+    'tools/verify_fresh_checkout.ps1'
 
     'tests/test_native_v16.py'
     'tests/test_polyglot_v14.py'
@@ -58,6 +61,7 @@ $paths = @(
     'tests/test_learner_mutation.py'
     'tests/test_check_matrix_and_deploy.py'
     'tests/test_ci_workflows.py'
+    'tests/test_repository_layout.py'
 
     '.github/workflows/native-course-v16.yml'
     '.github/workflows/polyglot.yml'

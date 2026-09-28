@@ -191,6 +191,55 @@ def test_notebooks_keep_the_lab_identity_and_boundaries():
         assert "native/guides/LEARNING_PATHS.md" in blob
 
 
+def test_every_markdown_link_resolves_from_its_own_notebook():
+    """The notebooks sit three levels deep, so root-relative links die there.
+
+    This guards a real regression: the lesson link was emitted as
+    `lessons/01_lesson.md`, which cannot resolve from workbooks/polyglot/<lang>/.
+    """
+    import re
+
+    pattern = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+    broken = []
+    checked = 0
+    for path in sorted(NB_ROOT.rglob("*.ipynb")):
+        nb = read_nb(path)
+        for cell in nb["cells"]:
+            if cell["cell_type"] != "markdown":
+                continue
+            for target in pattern.findall("".join(cell["source"])):
+                if target.startswith(("http", "#", "mailto:", "data:")):
+                    continue
+                frag = target.split("#")[0]
+                if not frag:
+                    continue
+                checked += 1
+                if not (path.parent / frag).exists():
+                    broken.append(f"{path.relative_to(ROOT).as_posix()} -> {target}")
+    assert checked > 1000, f"expected many links to check, found {checked}"
+    assert not broken, "broken markdown links:\n  " + "\n  ".join(broken[:20])
+
+
+def test_every_notebook_defines_the_paths_it_mentions():
+    """A single legend cell must define the shared path vocabulary."""
+    for lang in ("python", "go", "rust"):
+        for path in sorted((NB_ROOT / lang).glob("*.ipynb")):
+            markdown = "\n".join(
+                "".join(c["source"]) for c in read_nb(path)["cells"] if c["cell_type"] == "markdown"
+            )
+            assert "## Where every path points" in markdown, f"{path} has no path legend"
+            for token in (
+                "curriculum/catalog.json",
+                "native/protocols/labs.json",
+                "native/go/",
+                "native/rust/",
+                "my_work/",
+            ):
+                assert token in markdown, f"{path} legend does not define {token}"
+            if lang != "python":
+                assert "reference" in markdown and "your copy" in markdown
+
+
 def test_each_language_folder_is_self_guiding():
     """A user opening workbooks/polyglot/<lang>/ must be able to orient there."""
     for lang in ("python", "go", "rust"):

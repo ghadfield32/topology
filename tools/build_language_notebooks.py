@@ -84,6 +84,64 @@ def reference_label(lab: dict) -> str:
     }[reference_kind(lab)]
 
 
+def up(lang: str) -> str:
+    """Href prefix from workbooks/polyglot/<lang>/ back to the repository root."""
+    return "../" * 3
+
+
+def paths_legend_cell(lab: dict, lang: str) -> str:
+    """One table that defines every path the notebook mentions.
+
+    The notebooks live three levels deep, so a bare `lessons/01_lesson.md` is a
+    dead link here. Links below are root-anchored; backticked paths are labels
+    that the legend defines.
+    """
+    p = up(lang)
+    other = "rust" if lang == "go" else "go"
+    reference_row = (
+        f"| [`{lab['reference']}`]({p}{lab['reference']}) | this lab's canonical reference | course |\n"
+        if reference_kind(lab) == "notebook"
+        else f"| `{lab['reference']}` | this lab's canonical reference (a **script**, not a notebook) | course |\n"
+    )
+    return f"""
+## Where every path points
+
+This notebook is `workbooks/polyglot/{lang}/{lab['key']}.ipynb`. Paths below are
+defined once, here, so the same names mean the same thing in every lab.
+
+| Path | What it is | Who owns it |
+|---|---|---|
+| `curriculum/catalog.json` | the single owner of the 31-stage lesson order | course |
+| `native/protocols/labs.json` | the single owner of the 57 native experiment definitions | course |
+| `lessons/` | canonical written explanations | course |
+| `notebooks/` | original worked Python labs (**no** Go or Rust here) | course |
+| `practice/` | original learner assignments | course |
+{reference_row}| `native/go/`, `native/rust/` | reference implementations the notebooks compile | read-only |
+| `native/python/` | independent data and scientific checks | read-only |
+| `native/guides/` | language and implementation guidance | read-only |
+| [`native/guides/labs/{lab['key']}.md`]({p}native/guides/labs/{lab['key']}.md) | this lab's implementation guide | read-only |
+| `tools/build_language_notebooks.py` | the generator that owns `workbooks/polyglot/` | tooling |
+| `workbooks/polyglot/` | these generated teaching notebooks | generated |
+| `my_work/` | your private attempts and evidence (git-ignored) | **you** |
+
+### The one that matters most
+
+| | |
+|---|---|
+| `native/{lang}/` | the **reference**. Committed and shared. Do not edit. |
+| `my_work/<session>/native/{lang}/` | **your copy**, from `native_course.py prepare`. Edit here. |
+
+### Relative to this notebook
+
+| From here | Points at |
+|---|---|
+| [`../{other}/{lab['key']}.ipynb`](../{other}/{lab['key']}.ipynb) | the {LANG_TITLES[other]} version of this lab |
+| [`../README.md`](../README.md) | the index of all {len(load_runner().available_labs(ROOT))} labs, three languages |
+| [`../../native/guides/LEARNING_PATHS.md`]({p}native/guides/LEARNING_PATHS.md) | the language learning paths |
+| [`../../docs/release/LANGUAGE_NOTEBOOKS.md`]({p}docs/release/LANGUAGE_NOTEBOOKS.md) | how these notebooks work |
+"""
+
+
 def md(text: str) -> dict:
     body = text.strip("\n")
     return {
@@ -641,7 +699,7 @@ def python_notebook(lab: dict) -> dict:
 **Python route** · lab `{lab["key"]}` · {lab["kind"]}
 
 Make your hand prediction first, then open {reference_label(lab)}
-(`{lab["reference"]}`) and the [lesson]({lab["lesson"]}).
+(`{lab["reference"]}`) and the [lesson]({up("python")}{lab["lesson"]}).
 The canonical course is `lessons/` + references; this notebook adds an
 interactive route through the native16 evidence, not a second curriculum.
 
@@ -653,6 +711,7 @@ interactive route through the native16 evidence, not a second curriculum.
 
 {lab["original_scope_gaps"]}
 '''),
+        md(paths_legend_cell(lab, "python")),
         md("## 1. Setup"),
         code(bootstrap_cell(lab, "python")),
         md("## 2. Run the canonical Python experiment"),
@@ -661,7 +720,7 @@ interactive route through the native16 evidence, not a second curriculum.
         code(freshness_cell(lab, "python")),
         md("## 4. Inspect the real input data (input audit)"),
         code(python_inputs_cell(lab)),
-        md("## 5. Find a real native run to inspect (output audit)"),
+        md("## 5. Resolve the native evidence to inspect (output audit)"),
         code(python_compare_cell(lab)),
         md("## 6. Compare Go against Rust, and re-check the input hashes (output audit)"),
         code(python_verify_cell(lab)),
@@ -694,6 +753,9 @@ This notebook compiles and runs the **real {title} program**. Python is only the
 driver: it builds the binary, launches it and compares results. The mathematics
 happens in {title}.
 
+Read the [lesson]({up(lang)}{lab["lesson"]}) and this lab's
+[implementation guide]({up(lang)}native/guides/labs/{lab["key"]}.md) first.
+
 ## The native experiment for this lab
 
 {lab["native_goal"]}
@@ -702,6 +764,7 @@ happens in {title}.
 
 {lab["original_scope_gaps"]}
 '''),
+        md(paths_legend_cell(lab, lang)),
         md("## 1. Setup"),
         code(native_bootstrap_cell(lab, lang)),
         md("## 2. Toolchain check"),
@@ -839,6 +902,10 @@ def language_readme(lang: str) -> str:
         if lang != "python"
         else "- Independent data and scientific checks: [`../../native/python/`](../../native/python/)"
     )
+    reference += (
+        "\n- Full repository map: "
+        "[`../../docs/release/REPOSITORY_LAYOUT.md`](../../docs/release/REPOSITORY_LAYOUT.md)"
+    )
     session = "python" if lang == "python" else lang
     run_hint = (
         f"    uv run --no-sync python course.py run --stage 1 --output my_work/stage01_ref01"
@@ -917,6 +984,12 @@ def index_markdown(labs: list[dict]) -> str:
         f"`notebooks/` is the *original course*. It has no `go` or `rust` folder, and it",
         f"is not where these notebooks live. There are {len(labs)} notebooks per language",
         f"({len(labs) * 3} in total) under `workbooks/polyglot/`.",
+        "",
+        "Full definitions of every path: "
+        "[docs/release/REPOSITORY_LAYOUT.md](../../docs/release/REPOSITORY_LAYOUT.md).",
+        "",
+        "Full definitions of every path: "
+        "[docs/release/REPOSITORY_LAYOUT.md](../../docs/release/REPOSITORY_LAYOUT.md).",
         "",
         "```powershell",
         "# the three Stage 01 notebooks, one per language",

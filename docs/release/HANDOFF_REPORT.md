@@ -155,7 +155,7 @@ output what none of them establish. Observed here:
 | Check | Result |
 |---|---|
 | `contracts` | passed, 3.2 s |
-| `python` | passed, 816 passed / 4 skipped (817 / 3 with the opt-in Rust mutation) |
+| `python` | passed, 824 passed / 4 skipped (825 / 3 with the opt-in Rust mutation) |
 | `readers` | passed (110 decoder comparisons) |
 | `native` | passed (Go 34, Rust 28, 0 failed) |
 | `science` | passed (57+57 labs, 110 data, 64 fixture, 220 scientific) |
@@ -205,6 +205,32 @@ workflow. It does **not** derive the null vector. It uses the changed redundant
 column `5*x0 + 2*x1` and requires the learner to derive the null vector first.
 Its canonical command was executed to confirm it works.
 
+## Organization pass (paths and finding things)
+
+Prompted by "these need to be organized better". An audit of every markdown link
+in the generated notebooks found a **real bug**: all 57 Python notebooks linked
+the lesson as `lessons/01_lesson.md`, which cannot resolve from
+`workbooks/polyglot/<lang>/` three levels down. **Zero** notebook links resolved;
+57 were broken.
+
+Fixed and hardened:
+
+- Links are now root-anchored (`../../../lessons/...`), so **1308 links resolve
+  and 0 are broken**.
+- Every notebook opens with a **"Where every path points"** legend that defines
+  the shared vocabulary once: the owner files, the course folders, the native
+  folders, the tooling and generated paths, `my_work/` as yours, and the
+  reference-vs-your-copy distinction.
+- `docs/release/REPOSITORY_LAYOUT.md` defines every path repo-wide, with the four
+  ownership rules and a "which file do I change?" table.
+- `README.md` gained a repository map and a "where do I start?" table.
+- Tests enforce that every notebook link resolves **from that notebook's own
+  directory**, that every notebook carries the legend, that each language folder
+  is self-guiding, and that the layout doc only asserts paths that exist.
+
+This pass changed the generated notebooks, so the earlier sweep was invalidated
+and re-run: **sweep #6, 171/171, coverage complete.**
+
 ## Committed revision and fresh-checkout reproducibility
 
 Commit **`fe2542b`** on `review/native16-notebooks`, 2491 files. Not pushed.
@@ -247,14 +273,15 @@ collected tests and justify each skip.
 
 | Claim | Status |
 |---|---|
-| Python suite (default) | **816 passed, 4 skipped, 0 failed** |
-| Python suite with `SHAPE_TEST_RUST_MUTATION=1` | **817 passed, 3 skipped, 0 failed** |
+| Python suite (default) | **824 passed, 4 skipped, 0 failed** |
+| Python suite with `SHAPE_TEST_RUST_MUTATION=1` | **825 passed, 3 skipped, 0 failed** |
 | Native Go/Rust tests | 34 / 28 passed, 0 failed |
 | Native data decoders | 110 comparisons passed |
 | Independent scientific oracles | 220 passed |
 | Language notebooks, full sweep | see `my_work/nb_verify_full02/coverage.json` |
 | Native images build + run | passed |
 | Language notebooks, full sweep | **171 / 171 passed**, coverage complete, tree unchanged |
+| Markdown links inside notebooks | 1308 resolve from their own folder, **0 broken** |
 | Native Jobs in disposable kind | passed |
 | Docker/Compose Python image, full course | not re-run in this session |
 | Live cluster of the **Python** course image | not re-run; earlier evidence retained |

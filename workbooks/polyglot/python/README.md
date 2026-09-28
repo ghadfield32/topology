@@ -9,6 +9,7 @@ re-implementation of the native lab.
 - Go equivalents: [`../go/`](../go/)
 - Rust equivalents: [`../rust/`](../rust/)
 - Independent data and scientific checks: [`../../native/python/`](../../native/python/)
+- Full repository map: [`../../docs/release/REPOSITORY_LAYOUT.md`](../../docs/release/REPOSITORY_LAYOUT.md)
 
 ## Run one
 

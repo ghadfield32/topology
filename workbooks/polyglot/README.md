@@ -24,6 +24,10 @@ This trips people up, because several folders hold Go or Rust code:
 is not where these notebooks live. There are 57 notebooks per language
 (171 in total) under `workbooks/polyglot/`.
 
+Full definitions of every path: [docs/release/REPOSITORY_LAYOUT.md](../../docs/release/REPOSITORY_LAYOUT.md).
+
+Full definitions of every path: [docs/release/REPOSITORY_LAYOUT.md](../../docs/release/REPOSITORY_LAYOUT.md).
+
 ```powershell
 # the three Stage 01 notebooks, one per language
 workbooks/polyglot/python/stage01.ipynb
