@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/go/shape-go",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "r02"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.004590220000068257,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"r02\",\n  \"language\": \"go\",\n  \"metrics\": {\n    \"collapsed_gradient_first_row\": [\n      0,\n      0,\n      0,\n      0\n    ],\n    \"collapsed_penalty\": 0.07125178343249218,\n    \"normal_control_gradient_first_row\": [\n      -0.000006198251990115843,\n      -0.00003966198011215364,\n      0.000013294673848163978,\n      0.000013037678949940576\n    ],\n    \"normal_control_penalty\": 0.001307722182436113,\n    \"scope\": \"finite-frequency/projection diagnostics, not proof of multivariate Gaussianity\"\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

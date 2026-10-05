@@ -1,0 +1,200 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stage 01 walkthrough: change one redundant column · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/STAGE01_WALKTHROUGH.md">docs/release/STAGE01_WALKTHROUGH.md</a> · Readable source notation; no online math renderer.</p><h1 id="stage-01-walkthrough-change-one-redundant-column">Stage 01 walkthrough: change one redundant column</h1>
+<p>Stage 00 is complete and you are on Stage 01. This page is the one-session route:
+<strong>prediction → canonical Python → real Go → real Rust → your own change → evidence</strong>.</p>
+<p>The point of Stage 01 is that a stored column can be <em>redundant</em>. The native lab
+already shows this with the column <code>2*x0 - 3*x1</code>. Your independent work is to
+repeat it with a column of your own and explain the result.</p>
+<blockquote>
+<p>This page does <strong>not</strong> do the mathematics for you. Derive the null vector
+yourself first. If someone hands you the answer, the exercise is gone.</p>
+</blockquote>
+<h2 id="0-before-you-start">0. Before you start</h2>
+<p>Open a terminal in the repository root and set the environment once:</p>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+$env:UV_CACHE_DIR = Join-Path $PWD.Path '.uv-cache'
+$env:UV_PYTHON_INSTALL_DIR = Join-Path $PWD.Path '.uv-python'
+</code></pre>
+<p><strong>Check exit codes explicitly.</strong> A native program can fail while PowerShell
+continues happily; <code>$ErrorActionPreference</code> does not reliably turn that into an
+exception. Watch <code>$LASTEXITCODE</code>, or read the JSON the runner writes.</p>
+<h2 id="1-predict-before-you-run-write-this-down">1. Predict before you run (write this down)</h2>
+<p>The augmented Iris matrix appends the column <code>2*x0 - 3*x1</code>, i.e. weights
+<code>[2, -3]</code> on the first two stored features.</p>
+<p>For your own change, use the weights <code>[5, 2]</code> — the column <code>5*x0 + 2*x1</code>.</p>
+<p>Before running anything, write:</p>
+<ol>
+<li>The definition of the column you are adding.</li>
+<li>A hand derivation of a vector in the null space of the <strong>five-column</strong> matrix.
+(A null vector <code>v</code> satisfies <code>X_aug · v = 0</code>.)</li>
+<li>Your predicted <code>real_rank</code> and <code>f2_rank</code> for the 3×3 control matrix
+<code>A = [[1,1,0],[1,0,1],[0,1,1]]</code>.</li>
+<li>Your prediction for <code>augmented_rank</code> once any redundant column is added.</li>
+</ol>
+<p>Your prediction is evidence. Keep it even if it turns out wrong.</p>
+<h2 id="2-run-the-canonical-python-reference">2. Run the canonical Python reference</h2>
+<pre><code class="language-powershell">uv run --no-sync python course.py run --stage 1 --output my_work/stage01_ref01
+</code></pre>
+<p>Read the executed notebook under <code>my_work/stage01_ref01/</code>. That is the original
+course experiment. It is <strong>not</strong> the same thing as the native Go/Rust labs: the
+native units are matching <em>teaching protocols</em>, and <code>native/COVERAGE.md</code> records
+where they differ from the original notebooks.</p>
+<h2 id="3-run-the-real-native-go-and-rust-implementations">3. Run the real native Go and Rust implementations</h2>
+<pre><code class="language-powershell">uv run --no-sync python native_course.py compare --lab stage01 --output my_work/stage01_native01
+</code></pre>
+<p>Then open <code>my_work/stage01_native01/index.html</code> and the two files</p>
+<pre><code>my_work/stage01_native01/go/stage01.json
+my_work/stage01_native01/rust/stage01.json
+</code></pre>
+<p><strong>Where the metrics live:</strong> each result file has a <code>metrics</code> object. For Stage 01
+it currently contains <code>real_rank</code>, <code>f2_rank</code>, <code>iris_rank</code>,
+<code>centered_scaled_rank</code>, <code>augmented_rank</code>, <code>known_kernel</code>, <code>kernel_residual_max</code>
+and <code>finite_preimage_of_square_1_to_9</code>. The run's <code>execution.json</code> also records
+the <code>identity</code> block: the source hash and binary hash for each language, and a
+fingerprint of every input consumed.</p>
+<p>You can also run it as notebooks:</p>
+<pre><code>workbooks/polyglot/python/stage01.ipynb
+workbooks/polyglot/go/stage01.ipynb
+workbooks/polyglot/rust/stage01.ipynb
+</code></pre>
+<h2 id="4-read-the-code-you-are-about-to-change">4. Read the code you are about to change</h2>
+<ul>
+<li>Go dispatch: <code>native/go/engine/labs.go</code>, arm <code>case "stage01":</code></li>
+<li>Go linear algebra: <code>native/go/engine/math.go</code>, functions <code>Rank</code> and <code>Rank2</code></li>
+<li>Rust dispatch: <code>native/rust/src/labs.rs</code>, arm <code>"stage01" =&gt; {</code></li>
+<li>Rust linear algebra: <code>native/rust/src/math.rs</code>, the same two operations</li>
+</ul>
+<p>In the Go arm, notice:</p>
+<pre><code class="language-go">aug := clone(x)
+for i := range aug {
+    aug[i] = append(aug[i], 2*x[i][0]-3*x[i][1])
+}
+</code></pre>
+<p><strong>This is not an aliasing bug in the current code, and the guide should be read
+carefully rather than assuming one.</strong> <code>clone</code> is a genuine deep copy:</p>
+<pre><code class="language-go">func clone(a [][]float64) [][]float64 {
+    b := make([][]float64, len(a))
+    for i := range a {
+        b[i] = append([]float64(nil), a[i]...)
+    }
+    return b
+}
+</code></pre>
+<p>Each row is copied into a fresh backing array, so <code>append</code> on <code>aug[i]</code> cannot
+reach <code>x</code>. The row-aliasing lesson is about what would happen <strong>without</strong> the
+<code>clone</code>: Go slices share their backing array, so if <code>aug[i]</code> still referred to
+<code>x[i]</code>'s storage, that <code>append</code> could write into the caller's matrix whenever the
+row had spare capacity.</p>
+<p>Your exercise is to <em>prove</em> this rather than take it on trust. Delete the <code>clone</code>
+in your private copy — or replace it with a shallow outer copy such as
+<code>aug := append([][]float64(nil), x...)</code> — and observe whether
+<code>Rank</code>'s "preserves its input" test still passes. Restore it afterwards.</p>
+<p>In Rust, find which function takes <code>&amp;[[f64]]</code> (borrows) and which returns an owned
+<code>Vec&lt;Vec&lt;f64&gt;&gt;</code>. Then explain why the caller's <code>x</code> is unchanged, and whether the
+<code>clone</code> there is required by the type system or only by the algorithm.</p>
+<h2 id="5-your-independent-change-this-is-the-actual-assignment">5. Your independent change (this is the actual assignment)</h2>
+<p>Make a <strong>private</strong> copy so the canonical source stays untouched:</p>
+<pre><code class="language-powershell">uv run --no-sync python native_course.py prepare --lab stage01 --output my_work/stage01_practice01
+</code></pre>
+<p>That gives you <code>my_work/stage01_practice01/go</code> and <code>.../rust</code> — editable working
+source, plus <code>START.md</code>, <code>study.json</code> and an <code>answer.md</code> template. This is
+<strong>unassessed</strong>; nothing here grades you.</p>
+<p>Now change the weights. In both languages, replace the <code>[2, -3]</code> coefficients
+with <code>[5, 2]</code> in the augmented column. Then:</p>
+<p><strong>Go:</strong></p>
+<pre><code class="language-powershell">cd my_work/stage01_practice01/go
+go test -count=1 ./...
+"GO_EXIT=$LASTEXITCODE"
+go run ./cmd/shape-go --repo ../.. --lab stage01
+"RUN_EXIT=$LASTEXITCODE"
+</code></pre>
+<p><strong>Rust:</strong></p>
+<pre><code class="language-powershell">cd my_work/stage01_practice01/rust
+cargo test --offline --locked
+"CARGO_EXIT=$LASTEXITCODE"
+cargo run --offline --locked --release --bin shape-rust -- --repo ../.. --lab stage01
+"RUN_EXIT=$LASTEXITCODE"
+</code></pre>
+<h3 id="where-to-look-when-it-fails">Where to look when it fails</h3>
+<ul>
+<li><code>cargo</code> or <code>rustc</code> missing → toolchain/PATH problem, not a maths problem.
+See <code>native/guides/SETUP.md</code>.</li>
+<li>A linker error on Windows → you need the MSVC C++ build tools.</li>
+<li>"offline crate not found" → run from <code>my_work/stage01_practice01/rust</code> and keep
+the copy's <code>.cargo</code> vendor pointer intact. Never delete <code>Cargo.lock</code> to force a
+resolution.</li>
+<li>Output directory already exists → choose a new attempt name. Do not erase
+earlier evidence.</li>
+<li>A dataset hash mismatch → stop and inspect the changed input. Do not rewrite
+the expected hash.</li>
+</ul>
+<p>Run <code>go test</code> and <code>cargo test</code> <strong>after</strong> your edit. Your change should still be
+internally consistent. If you break the algebra on purpose to see what a failure
+looks like, note in <code>answer.md</code> exactly which test failed and why — a preserved
+failure is evidence, not a stain on the record.</p>
+<p><code>tests/test_learner_mutation.py</code> in this repository demonstrates the principle:
+editing the learner copy to use OR instead of XOR makes <code>TestRankField</code> fail
+while the canonical source stays byte-identical.</p>
+<h2 id="6-verify-your-evidence-is-current">6. Verify your evidence is current</h2>
+<p>After your change, check that nothing canonical moved underneath you:</p>
+<pre><code class="language-powershell">git status --short
+git diff --stat
+</code></pre>
+<p>If the canonical <code>native/</code> source changed while you worked, you cannot compare
+old and new results. Also check a run's <code>execution.json</code> <code>identity</code> block: if the
+<code>source_sha256</code> recorded there differs from the current source, that run is
+stale.</p>
+<p>Notebooks enforce this. The Python notebook refuses to silently use old evidence:
+in <strong>review mode</strong> it says so out loud, with <code>REVIEW = True</code> at the top of the
+cell. Set <code>REVIEW = False</code> to require a run with a bound identity.</p>
+<h2 id="7-what-your-result-cannot-establish">7. What your result cannot establish</h2>
+<p>Say one of these in <code>answer.md</code>, in your own words:</p>
+<ul>
+<li>An <code>augmented_rank</code> of 4 over five stored columns is a statement about a
+matrix, not about biology. A numerical rank does not identify a manifold
+dimension.</li>
+<li><code>rank_F2 = 2</code> is not "the same" as <code>rank_R = 3</code>. They are different fields.</li>
+<li>The fixed tolerance (<code>1e-10</code> in the native code) is a numerical choice, not a
+calibrated measurement uncertainty.</li>
+<li>Go and Rust agreeing is software evidence. It is not three independent
+datasets, and it is not proof that the algorithm is the right one.</li>
+<li>The native16 protocol is not certified as an operation-for-operation port of
+the original notebook. See <code>native/COVERAGE.md</code>.</li>
+</ul>
+<h2 id="8-record-it">8. Record it</h2>
+<p>Fill in <code>my_work/stage01_practice01/answer.md</code>:</p>
+<ul>
+<li>Question and observation unit</li>
+<li>Your prediction (from step 1) and your hand derivation</li>
+<li>The Go change, and what Go made explicit about copying and row storage</li>
+<li>The Rust change, and what the borrow checker made explicit</li>
+<li>Your observed output, including the tolerance and any discrepancy</li>
+<li>One conclusion your observations <strong>do</strong> support</li>
+<li>One conclusion they do <strong>not</strong> support</li>
+<li>What needed help</li>
+<li>A changed example to revisit after a delay</li>
+</ul>
+<h2 id="9-optional-the-poux-bridge">9. Optional: the Poux bridge</h2>
+<p>The Stage 01 companion is the Poux weighted-mean bridge. Its canonical reference
+is a <strong>script</strong> (<code>curriculum/extensions/poux_spatial_ai/bridge.py</code>), not a
+notebook, so it is handled separately. Derive the count-weighted mean and explain
+why equal-weighting unequal batches is wrong, then explain why a mean over
+selected non-uniform basketball frames is neither a release location nor a time
+average.</p>
+<h2 id="daily-workflow-short-form">Daily workflow (short form)</h2>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+rtk uv run --no-sync python course.py next            # what is next
+rtk uv run --no-sync python native_course.py list     # the 57 native units
+rtk uv run --no-sync python native_course.py show stageNN
+rtk uv run --no-sync python native_course.py compare --lab stageNN --output my_work/&lt;new_name&gt;01
+</code></pre>
+<p>Fast checks before you move on:</p>
+<pre><code class="language-powershell">uv run --no-sync python tools/check_matrix.py --fast
+</code></pre>
+<p>Full separate checks before a larger claim:</p>
+<pre><code class="language-powershell">uv run --no-sync python tools/check_matrix.py --only contracts,python,readers,native
+uv run --no-sync python tools/check_matrix.py --only science --output my_work/checks01
+</code></pre>
+<p>A pass in <code>contracts</code> says nothing about <code>science</code>, nothing about Docker or
+Kubernetes, and nothing about your mastery. Those gates are separate and are
+listed in the final report.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

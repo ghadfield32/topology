@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><style>body{font:18px/1.65 system-ui;max-width:960px;padding:28px;margin:auto;color:#172733}h1{line-height:1.2}pre{overflow:auto;padding:18px;background:#f0f3f2}code{font-size:.88em}table{border-collapse:collapse;display:block;overflow:auto}td,th{border-bottom:1px solid #ddd;padding:9px}a{color:#175b75;overflow-wrap:anywhere}</style><p><a href="../../LEARN_TOPOLOGY.html">← Course home</a> · <a href="README.md">Markdown source</a></p><h1>Orchestration is the final layer, not a prerequisite for topology</h1>
+<p>This supplemental worker image and Deployment are <strong>configuration only until built and run on your machine</strong>. Existing native/deploy Jobs and historical Python cluster evidence do not prove this new image ran. The standalone HTTP/native integration and queue tests are separate evidence.</p>
+<h2>Docker first</h2>
+<p>From the course root:</p>
+<pre><code>docker compose -f systems/deploy/compose.yaml config
+docker compose -f systems/deploy/compose.yaml build
+docker compose -f systems/deploy/compose.yaml up worker
+</code></pre>
+<p>The service is on127.0.0.1:8090 only. Submit <code>{&quot;lab&quot;:&quot;stage01&quot;}</code> to POST /jobs, poll GET /jobs/{id}, and explicitly save its JSON. No authentication, persistent result store or automatic eviction is provided. The retention bound refuses further work instead of growing indefinitely. Restart loses all retained jobs. One worker process launches a separate native executable per job; no arbitrary shell command is accepted over HTTP.</p>
+<p>Export results before stopping/replacing a Pod. The Deployment's emptyDir is temporary, not a learner PVC or backup. It does not mount your existing learner volumes. Never rely on an in-memory response as the sole record of an experiment.</p>
+<h2>Then a disposable kind namespace</h2>
+<p>Use your already installed client and explicitly inspect the context. Do not change the global current-context as a shortcut.</p>
+<pre><code>kubectl --context kind-shape-learning get namespaces
+kind load docker-image shape-systems-worker:17 --name shape-learning
+</code></pre>
+<p>Choose a NEW namespace. The supplied manifest uses shape-systems-study; if it already exists, use a separately reviewed copy with a new namespace. Do not overwrite another exercise.</p>
+<pre><code>kubectl --context kind-shape-learning create namespace shape-systems-study
+kubectl --context kind-shape-learning apply --dry-run=server -f systems/deploy/worker.yaml
+kubectl --context kind-shape-learning apply -f systems/deploy/worker.yaml
+kubectl --context kind-shape-learning -n shape-systems-study rollout status deployment/shape-worker
+kubectl --context kind-shape-learning -n shape-systems-study port-forward service/shape-worker 18090:8090
+</code></pre>
+<p>The API is now temporarily available on localport18090. Port-forward does not make it a public service. ClusterIP is not authentication; do not put this exercise in a shared/production cluster. Stop forwarding with Ctrl+C. Namespace/cluster/volume deletion is a separate deliberate action and is not automated here.</p>
+<p>Use native/deploy's batch Jobs for finite Go/Rust lab execution; use this Deployment for the request/queue/service lesson. Static YAML parsing, server validation, scheduling, service readiness, completed work and independently checked results are different acceptance levels.</p>
+<h2>CPU/GPU environment</h2>
+<p>No GPU runtime is requested. GPU container work needs actual NVIDIA/WSL capability, a compatible runtime, resource declarations and its own profiler evidence. A CPU fallback must never be labeled a CUDA benchmark. No Windows/Linux driver or cluster-runtime installation is performed by the course.</p>
+</html>

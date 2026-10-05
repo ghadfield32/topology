@@ -1,0 +1,14 @@
+{
+  "command": [
+    "cmake",
+    "--build",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys00/check01/build",
+    "--config",
+    "Debug"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys00",
+  "exit_code": 0,
+  "seconds": 0.3030659169999126,
+  "stdout": "[ 16%] Building C object CMakeFiles/trajectory_reader_lib.dir/src/trajectory.c.o\n[ 33%] Linking C static library libtrajectory_reader_lib.a\n[ 33%] Built target trajectory_reader_lib\n[ 50%] Building C object CMakeFiles/trajectory_reader.dir/src/main.c.o\n[ 66%] Linking C executable trajectory_reader\n[ 66%] Built target trajectory_reader\n[ 83%] Building C object CMakeFiles/memory_demo.dir/src/memory_demo.c.o\n[100%] Linking C executable memory_demo\n[100%] Built target memory_demo\n",
+  "stderr": ""
+}

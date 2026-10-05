@@ -1,0 +1,118 @@
+{
+  "schema": "shape.systems.path.v17",
+  "source": "Pasted text(20261004-164420).txt",
+  "core_catalog_unchanged": true,
+  "units": [
+    {
+      "id": "sys00",
+      "title": "What is the computer actually doing?",
+      "role": "Computer architecture",
+      "core_connection": "01",
+      "projects": [
+        "c"
+      ],
+      "lesson": "systems/lessons/sys00.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys01",
+      "title": "C: machine-facing fundamentals",
+      "role": "C / portable binary reader",
+      "core_connection": "01",
+      "projects": [
+        "c"
+      ],
+      "lesson": "systems/lessons/sys01.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys02",
+      "title": "Modern C++",
+      "role": "C++20 / trajectory and topology kernels",
+      "core_connection": "06",
+      "projects": [
+        "cpp"
+      ],
+      "lesson": "systems/lessons/sys02.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys03",
+      "title": "C++ \u2194 Python",
+      "role": "pybind11 / measured numerical comparison",
+      "core_connection": "06",
+      "projects": [
+        "cpp"
+      ],
+      "lesson": "systems/lessons/sys03.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys04",
+      "title": "OpenCV and native computer vision",
+      "role": "C++ / Python image geometry",
+      "core_connection": "14",
+      "projects": [
+        "cpp"
+      ],
+      "lesson": "systems/lessons/sys04.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys05",
+      "title": "GPU engineering",
+      "role": "PyTorch \u2192 Triton \u2192 CUDA",
+      "core_connection": "18",
+      "projects": [
+        "gpu"
+      ],
+      "lesson": "systems/lessons/sys05.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys06",
+      "title": "TypeScript",
+      "role": "Runtime-validated trajectory viewer",
+      "core_connection": "11",
+      "projects": [
+        "typescript"
+      ],
+      "lesson": "systems/lessons/sys06.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys07",
+      "title": "Rust",
+      "role": "Capture validator / ownership",
+      "core_connection": "01",
+      "projects": [
+        "rust_validator"
+      ],
+      "lesson": "systems/lessons/sys07.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys08",
+      "title": "Python \u2194 Rust",
+      "role": "PyO3 / typed errors across the boundary",
+      "core_connection": "01",
+      "projects": [
+        "pyo3",
+        "rust_validator"
+      ],
+      "lesson": "systems/lessons/sys08.md",
+      "assessment": "not_assessed"
+    },
+    {
+      "id": "sys09",
+      "title": "Go",
+      "role": "Bounded native-analysis job service",
+      "core_connection": "18",
+      "projects": [
+        "go_service"
+      ],
+      "lesson": "systems/lessons/sys09.md",
+      "assessment": "not_assessed"
+    }
+  ]
+}

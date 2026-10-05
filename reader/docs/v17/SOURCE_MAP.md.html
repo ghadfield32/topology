@@ -1,0 +1,108 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source-derived structure, integration choices, and execution limits · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v17/SOURCE_MAP.md">docs/v17/SOURCE_MAP.md</a> · Readable source notation; no online math renderer.</p><h1 id="source-derived-structure-integration-choices-and-execution-limits">Source-derived structure, integration choices, and execution limits</h1>
+<h2 id="requested-basis">Requested basis</h2>
+<p>The new source is the user-provided <code>Pasted text(20261004-164420).txt</code>. Its key rule is <strong>Notebook → understand it. Project → prove you can engineer it.</strong> Its repeated learning cycle is <strong>Explain → Predict → Implement → Break → Apply</strong>. The provided implementation transcript is a different source: it reports a local 171-workbook generator and a successful Stage 01 triad; it explicitly says the complete 171-workbook sweep was not run.</p>
+<p>The source introduction says "nine stages" but its actual headings run from Stage 0 through Stage 9. This package preserves all ten headings as <code>sys00</code>–<code>sys09</code>, without renumbering topology Stage 00–30. That is a numbering clarification, not an omitted topic.</p>
+<p>The supplied v16 archive is the executable base. All its original paths are retained. The new <code>learning/</code> view is generated from the existing 57-unit native registry and 31-stage core catalogue, not a new competing mathematics syllabus. The missing local workbook generator was not present in the archive or readable on the remote branch. These interfaces are reconstructed from the supplied contract, not recovered unpublished edits.</p>
+<h2 id="exact-topic-families-and-where-they-go">Exact topic families and where they go</h2>
+<table>
+<thead>
+<tr>
+<th>Source heading</th>
+<th>Preserved learning topics</th>
+<th>Implementation and limits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Environment</td>
+<td>VS Code, WSL2/Linux, Git, real compilers, research versus engineering layers</td>
+<td>FIRST_RUN.md and MIGRATION.md; no Windows/WSL upgrade or installation was performed on your computer.</td>
+</tr>
+<tr>
+<td>Stage 0</td>
+<td>Binary/hex, signed/unsigned, floating point, registers, stack/heap, virtual memory, processes/threads, caches/SIMD, compile/link/libraries/syscalls</td>
+<td>sys00; portable byte contract, C memory experiment, debugger/profiling assignments. Not a measured hardware microarchitecture course.</td>
+</tr>
+<tr>
+<td>Stage 1 C</td>
+<td>Preprocessing through linking; primitive types; pointers; arrays/buffers; malloc/free; structs; leaks/double-free/UAF/bounds/null</td>
+<td>sys01; real bounded binary reader, exact format, tests, actual sanitizer failure fixture. Other unsafe examples are learner tasks, not silently executed by normal runs.</td>
+</tr>
+<tr>
+<td>Stage 2 C++</td>
+<td>Values/references/const, vector/array/string/maps/optional/variant, RAII, unique/shared ownership, copy/move, templates, algorithms, CMake, debugger, sanitizers, profiling</td>
+<td>sys02; C++20 trajectory and MST core plus concept tests. Debugger session, ThreadSanitizer and full OpenCV engine are not recorded as executed.</td>
+</tr>
+<tr>
+<td>Stage 3 C++/Python</td>
+<td>pybind11, same inputs, numerical error, latency/throughput/memory</td>
+<td>sys03; actual extension and numerical checks. Installed PyTorch's real pybind11 headers were explicitly selected in this build; clean pybind11 package installation was not performed. No speedup claim.</td>
+</tr>
+<tr>
+<td>Stage 4 OpenCV</td>
+<td>Mat/channels/stride/copy, intrinsics/distortion/projection/PnP/triangulation/stereo</td>
+<td>sys04 maps to existing Stages14–17 and native stereo; Python OpenCV experiment runs. New C++ OpenCV probe needs development headers and is blocked here. General PnP/calibration remains a guided extension.</td>
+</tr>
+<tr>
+<td>Stage 5 GPU</td>
+<td>PyTorch profiler, device placement, transfers, vectorization, compile, FP32/FP16/BF16/TF32, Triton, CUDA, SM/warp/block/grid/memory, Nsight</td>
+<td>sys05; CPU profiling on repeated real measurements runs. GPU/Triton/CUDA and Nsight/precision comparisons are source-backed projects, not CPU results relabeled as GPU execution.</td>
+</tr>
+<tr>
+<td>Stage 6 TypeScript</td>
+<td>JS execution, Promise/async, primitives/interfaces/unions/generics/narrowing/unknown, runtime data, viewer</td>
+<td>sys06; strict TS project and actual offline viewer of observed/predicted 3D coordinates via a labeled 2D projection. No hidden Three.js or full uncertainty ellipsoids. Deno notebook option linked, not required.</td>
+</tr>
+<tr>
+<td>Stage 7 Rust</td>
+<td>let/mut/struct/enum/match, ownership/borrowing/lifetimes, Option/Result, traits/iterators, Cargo/fmt/clippy</td>
+<td>sys07 plus retained native Rust guides; actual capture validator and compiler failures. Clippy/fmt are learning commands unless execution records show them run.</td>
+</tr>
+<tr>
+<td>Stage 8 Rust/Python</td>
+<td>PyO3 extension over Rust validation</td>
+<td>sys08 actual source over the tested Rust library. PyO3/maturin not resolved or compiled here; explicit blocked gate.</td>
+</tr>
+<tr>
+<td>Stage 9 Go</td>
+<td>Struct/interface/error/defer, goroutine/channel/context, HTTP/JSON/timeouts/cancellation/worker pools/shutdown</td>
+<td>sys09; tested bounded service invokes compiled native Go only through an allowlisted lab. Actual local HTTP request recorded; not durable or production-authenticated orchestration.</td>
+</tr>
+<tr>
+<td>Integrated capstone</td>
+<td>Capture→Rust validation→Python science→C++ bottleneck→GPU optional→TS viewer; Go orchestration</td>
+<td>run_demo implements C/Rust ingestion, Python fit, C++ trajectory, SQL audit, TS display; Go HTTP service tested separately with native Stage01. GPU and PyO3 are not connected without their own gates.</td>
+</tr>
+<tr>
+<td>Support priorities</td>
+<td>SQL, Swift as needed, exploratory Julia/Zig/Mojo, T-shaped depth</td>
+<td>SQL joins/windows are in the worked experiment. Swift/Julia/Zig/Mojo remain explicitly exploratory and are not newly promised full language courses.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="deliberate-integration-decisions-our-design-not-quotations-from-the-source">Deliberate integration decisions (our design, not quotations from the source)</h2>
+<ul>
+<li>Keep Geoff on topology Stage 01. The source's systems Stage0 is an optional prerequisite repair, not a reason to redo completed topology orientation.</li>
+<li>Retain the already-built Go/Rust mathematics routes. The source's "Go later" guidance governs the service capstone, not a retroactive removal of existing Go labs.</li>
+<li>Do not require C++, GPU or Kubernetes before learning continuity or homology. The two layers advance when a useful project needs them.</li>
+<li>Keep Python as a scientific reference, Go/Rust as actual native calculations, C as byte/resource anatomy, C++ as geometry/topology kernel work, TypeScript as a validated display, and GPU as a measured optional acceleration path.</li>
+<li>Preserve old source/evidence files; create one new navigation layer rather than physically breaking imports and notebook data paths.</li>
+<li>Use one existing observed SPL excerpt across project boundaries. Its finite selected-frame average, ideal frame clock and tracking estimates are not independent physical ground truth.</li>
+</ul>
+<h2 id="qualifications-not-silently-copied-from-the-source">Qualifications not silently copied from the source</h2>
+<p>The unused two-<code>&amp;mut</code> snippet in the source can compile under non-lexical lifetimes. Our failure fixture actually uses both borrows after creating the second, so the compiler conflict is demonstrated rather than assumed. <code>std::move</code> requests a move-compatible operation; it is not proof that no copy occurs for every type. A C struct's ABI layout is not our portable wire format. TypeScript types alone do not validate JSON.</p>
+<p>The source includes dates, software-version statements, Windows lifecycle advice, tool recommendations and illustrative durations. This package does not independently certify every time-sensitive sentence. Installation references below were consulted for specific setup decisions; durations are study suggestions, not measured mastery or completion promises. No full external article, paid tutorial, model weights, private LinkedIn/account material, or compiler binary is republished here.</p>
+<h2 id="official-implementation-references-consulted">Official implementation references consulted</h2>
+<ul>
+<li>WSL environment/filesystem guidance: <a href="https://learn.microsoft.com/en-us/windows/wsl/setup/environment">https://learn.microsoft.com/en-us/windows/wsl/setup/environment</a></li>
+<li>CUDA on WSL driver model: <a href="https://docs.nvidia.com/cuda/wsl-user-guide/index.html">https://docs.nvidia.com/cuda/wsl-user-guide/index.html</a></li>
+<li>CMake tutorial: <a href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">https://cmake.org/cmake/help/latest/guide/tutorial/index.html</a></li>
+<li>pybind11 build helpers: <a href="https://pybind11.readthedocs.io/en/stable/compiling.html">https://pybind11.readthedocs.io/en/stable/compiling.html</a></li>
+<li>PyO3 pinned source API: <a href="https://pyo3.rs/v0.23.5/getting-started">https://pyo3.rs/v0.23.5/getting-started</a></li>
+<li>PyTorch profiler: <a href="https://docs.pytorch.org/tutorials/recipes/recipes/profiler_recipe.html">https://docs.pytorch.org/tutorials/recipes/recipes/profiler_recipe.html</a></li>
+<li>Rust ownership/borrowing: <a href="https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html">https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html</a></li>
+<li>Go effective practices: <a href="https://go.dev/doc/effective_go">https://go.dev/doc/effective_go</a></li>
+<li>Deno notebooks (optional): <a href="https://docs.deno.com/runtime/reference/cli/jupyter/">https://docs.deno.com/runtime/reference/cli/jupyter/</a></li>
+</ul>
+<p>The original topology references, book-coverage audit, Poux register and native16 coverage ledger remain authoritative for their own scope. This source map adds no claims of full scientific equivalence or automatic learner mastery.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

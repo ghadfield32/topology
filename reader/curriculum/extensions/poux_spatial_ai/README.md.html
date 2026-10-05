@@ -1,0 +1,85 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Poux’s 3D Spatial AI map — an optional course extension · Listening to Shape</title><link rel="stylesheet" href="../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../START_HERE.html">Course home</a><a href="../../SITUATIONS.md.html">Choose a situation</a><a href="../../APPLICATIONS.md.html">Datasets & cases</a><a href="../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../curriculum/extensions/poux_spatial_ai/README.md">curriculum/extensions/poux_spatial_ai/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="pouxs-3d-spatial-ai-map--an-optional-course-extension">Poux’s 3D Spatial AI map — an optional course extension</h1>
+<p><strong>Current learner position: Stage 01. No restart.</strong> This addition is based on the supplied Florent Poux article and LinkedIn post. It adds application pathways to the existing Listening to Shape course rather than creating a replacement curriculum. The 31 primary stages, five representation units, existing tests, source data, <code>uv.lock</code>, deployment files and progress records are unchanged.</p>
+<p>Poux organizes the field as <strong>Capture → Understand → Deliver</strong>, with six named hubs. Keep that organization as the source map. His central lesson is to connect the pipeline: errors introduced at capture can become apparent structure in later products. This is a useful integration principle, not proof that every linked technique works for every scene.</p>
+<h2 id="read-one-map-then-take-one-appropriate-next-step">Read one map, then take one appropriate next step</h2>
+<table>
+<thead>
+<tr>
+<th>Source hub</th>
+<th>Reuse from your course</th>
+<th>New application work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P01 LiDAR &amp; Point Cloud Processing</td>
+<td>Stages 01, 02, 18</td>
+<td>Coordinate/data contracts, formats, chunking, sampling, spatial indexing, tile boundaries, geospatial fusion and terrain products</td>
+</tr>
+<tr>
+<td>P02 3D Reconstruction</td>
+<td>Stages 14–17</td>
+<td>Capture design, SfM/MVS, bounded COLMAP/Meshroom comparison, depth proposals, Gaussian splats and virtual-camera rendering</td>
+</tr>
+<tr>
+<td>P03 Segmentation &amp; Clustering</td>
+<td>Stages 02, 05–11, 17</td>
+<td>Radius graphs, voxel aggregation, RANSAC, density clustering, geometric versus semantic segmentation</td>
+</tr>
+<tr>
+<td>P04 3D Deep Learning</td>
+<td>Stages 11, 16 and R01–R04</td>
+<td>Point-set networks, permutation properties, pointwise supervision, block preparation and scene-level splits</td>
+</tr>
+<tr>
+<td>P05 Semantic &amp; Spatial AI</td>
+<td>Stages 16, 19, 29 and R01–R05</td>
+<td>2D-to-3D feature grounding, reviewed labels, scene relations, OpenUSD and evidence-grounded queries</td>
+</tr>
+<tr>
+<td>P06 Capture, Meshing &amp; Visualization</td>
+<td>Stages 05, 06, 10, 14, 15, 17, 18, 20</td>
+<td>Sensor selection, normals, scalar fields, meshing, topology/coverage checks, change detection and level-of-detail delivery</td>
+</tr>
+</tbody>
+</table>
+<p>These stage mappings are our integration decisions. They do not certify that the current core lessons completely teach each new hub. Foundational definitions remain owned by their existing stage; the extension supplies application questions and acceptance requirements.</p>
+<h2 id="what-was-added-and-what-has-not-been-implemented">What was added, and what has not been implemented</h2>
+<ul>
+<li><a href="TUTORIALS.md.html">Tutorial register</a>: <strong>37</strong> distinct source-index links, in the author’s six groups, each with an original proposed learning outcome.</li>
+<li><a href="LESSONS.md.html">Six hub lesson plans</a>: prerequisites, vocabulary, ordered practical work, evaluation, failure experiments, cross-sector transfer and completion gates.</li>
+<li><a href="SOURCES_AND_LIMITS.md.html">Sources and limitations</a>: source-derived assertions versus independently checked documentation and our proposed guardrails.</li>
+<li><a href="#stage-01-bridge">Stage 01 bridge</a>: executable weighted-chunk exercise using the <strong>existing selected SPL motion records</strong>, plus 20 isolated tests.</li>
+<li><a href="VERIFICATION.md.html">Verification</a>: actual scope, results and instructions to reproduce them.</li>
+</ul>
+<p>The hub plans are learning and implementation specifications, <strong>not six completed software pipelines</strong>. All 37 full-article reviews and the advanced experiments remain explicitly pending. No paid content is needed to run the bridge. No dependency installation, new data download, training, renderer, Docker build or cluster deployment was performed by this extension.</p>
+<h2 id="stage-01-bridge">Stage 01 bridge</h2>
+<p>The immediate connection is not “install every 3D library.” It is: <strong>a set of records, a mathematical operation on those records, and the information that operation throws away.</strong> Read the existing <a href="../../../lessons/01_lesson.md.html">Stage 01 primary lesson</a> first.</p>
+<p>Suppose batch A has <code>n</code> points and centroid <code>a</code>, while batch B has <code>m</code> points and centroid <code>b</code>. The combined centroid is</p>
+<pre><code class="language-text">c = (n*a + m*b) / (n+m).
+</code></pre>
+<p>It is generally <strong>not</strong> <code>(a+b)/2</code>. Work the exact example before coding: one point at x=0 and three points at x=3, 6, 9 have overall mean 4.5. The equally averaged batch means give 3. That is a weighting mistake, not floating-point noise.</p>
+<p>From the repository root, after copying or merging this extension:</p>
+<pre><code class="language-powershell">uv run --no-sync python curriculum/extensions/poux_spatial_ai/test_bridge.py
+uv run --no-sync python curriculum/extensions/poux_spatial_ai/bridge.py --repo . --output my_work/poux_bridge01
+</code></pre>
+<p>The bridge uses only Python’s standard library; it does not change the locked environment. <code>my_work/poux_bridge01</code> must not exist. The script checks the existing sports source against its existing manifest, refuses missing/unknown units and nonfinite coordinates, and saves <code>results.json</code>. It does <strong>not</strong> update learner status or register a new <code>course.py</code> case.</p>
+<h3 id="interpret-the-output-correctly">Interpret the output correctly</h3>
+<p>The existing excerpt has 12 ball positions from <strong>one selected trial</strong>, not 12 independent trials and not a simultaneous static scan. The arithmetic centroid is over these selected rows. Their times are nonuniformly selected, so it is not a time average. Reversing the row order preserves the centroid while changing the ordering of motion. Pooling loses information.</p>
+<p>The small JSON is loaded as a whole. The centroid accumulator is streamed, but this run is <strong>not</strong> evidence of out-of-core LAS processing or city-scale performance. No additional sports data are copied into this extension. Existing source terms and transcription limitations remain applicable.</p>
+<h3 id="your-independent-evidence-file">Your independent evidence file</h3>
+<p>Save a new <code>answer.md</code> in your output directory. Derive the two-batch formula, predict what changes when the second batch doubles in size, explain why reversing order does not affect the mean, and give a sports question the centroid cannot answer. Then replace chunk sizes 1+11 with another unequal partition and compare within a justified numerical tolerance.</p>
+<p>Do not mark the exercise independently completed just because the supplied reference works. Reconstruct it without the answer after a delay.</p>
+<h2 id="learning-order-without-duplicate-introductions">Learning order without duplicate introductions</h2>
+<ol>
+<li>Finish Stage 01; use the bridge once. At Stage 02, compare distances, scaling and neighborhood definitions.</li>
+<li>Use P01 to acquire one bounded physical point cloud and one coordinate contract. Do not start with the largest downloadable tile.</li>
+<li>Use P03’s geometric baseline before P04’s learned segmentation. P02 provides the alternative capture route for photos, after camera foundations.</li>
+<li>Use P06’s sensor-selection subsection before capture; save its advanced meshing/viewing work until the geometric output is understood.</li>
+<li>Add P04 and then P05 after labeled evaluation exists. Finish with one P06/P05 end-to-end capstone, not six disconnected demos.</li>
+</ol>
+<p>The author’s hub numbering is preserved; this order is our prerequisite-aware execution route. Keep the existing course as the main route and return to its relevant primary lesson instead of copying definitions into another compulsory chapter.</p>
+<h2 id="repository-and-deployment-boundaries">Repository and deployment boundaries</h2>
+<p>Copy this directory to <code>curriculum/extensions/poux_spatial_ai/</code> and add one link under the existing optional continuations in <code>curriculum/START.md</code>. A review branch/PR may contain that exact change. Do not overwrite the repository root, existing <code>MANIFEST.sha256</code>, data manifests, package constraints, Docker/Kubernetes settings, answers or progress files. Old release manifests remain historical baselines; deliberate new files should be recorded as additions rather than certified by old hashes.</p>
+<p>For later large-data experiments, retain the existing native → container → disposable cluster acceptance sequence. CPU chunk processing, GPU reconstruction and model training are distinct jobs with distinct resource needs. Each should write a new run directory and record input hashes, coordinate versions, random seeds, parameters, peak memory, timings and failure evidence. A static YAML validation is not a completed Job; an index of tutorials is not proof of their execution.</p>
+<a class="back" href="../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

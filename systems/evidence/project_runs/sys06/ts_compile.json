@@ -1,0 +1,14 @@
+{
+  "command": [
+    "tsc",
+    "-p",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys06/project/typescript",
+    "--outFile",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys06/check01/shape.js"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys06",
+  "exit_code": 0,
+  "seconds": 0.848549839000043,
+  "stdout": "",
+  "stderr": ""
+}

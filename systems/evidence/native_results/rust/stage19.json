@@ -1,0 +1,37 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage19",
+  "language": "rust",
+  "metrics": {
+    "confirmed_candidate_frames": [],
+    "distance_m": [
+      0.04,
+      0.05,
+      0.06,
+      0.2,
+      0.3,
+      0.4,
+      0.1
+    ],
+    "scope": "manufactured thresholds; proximity is not contact, gaps break confirmation",
+    "visible": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      true,
+      true
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

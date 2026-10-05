@@ -11,7 +11,7 @@ from shape_lab.deployment import resources,validate_resources,preflight
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--image',default='listening-to-shape:12');p.add_argument('--namespace',default='shape-learning-v12')
+    p.add_argument('--image',default='listening-to-shape:14');p.add_argument('--namespace',default='shape-learning-v14')
     p.add_argument('--profile',choices=['core','physics','full'],default='core')
     p.add_argument('--context',default='kind-shape-learning');p.add_argument('--apply',action='store_true')
     p.add_argument('--static',action='store_true');p.add_argument('--output',type=Path,required=True)

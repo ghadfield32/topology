@@ -1,0 +1,150 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/memchr/README.md">native/rust/vendor/memchr/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="memchr">memchr</h1>
+<p>This library provides heavily optimized routines for string search primitives.</p>
+<p><a href="https://github.com/BurntSushi/memchr/actions"><img alt="Build status" src="https://github.com/BurntSushi/memchr/workflows/ci/badge.svg"/></a>
+<a href="https://crates.io/crates/memchr"><img alt="Crates.io" src="https://img.shields.io/crates/v/memchr.svg"/></a></p>
+<p>Dual-licensed under MIT or the <a href="https://unlicense.org/">UNLICENSE</a>.</p>
+<h3 id="documentation">Documentation</h3>
+<p><a href="https://docs.rs/memchr">https://docs.rs/memchr</a></p>
+<h3 id="overview">Overview</h3>
+<ul>
+<li>The top-level module provides routines for searching for 1, 2 or 3 bytes
+in the forward or reverse direction. When searching for more than one byte,
+positions are considered a match if the byte at that position matches any
+of the bytes.</li>
+<li>The <code>memmem</code> sub-module provides forward and reverse substring search
+routines.</li>
+</ul>
+<p>In all such cases, routines operate on <code>&amp;[u8]</code> without regard to encoding. This
+is exactly what you want when searching either UTF-8 or arbitrary bytes.</p>
+<h3 id="compiling-without-the-standard-library">Compiling without the standard library</h3>
+<p>memchr links to the standard library by default, but you can disable the
+<code>std</code> feature if you want to use it in a <code>#![no_std]</code> crate:</p>
+<pre><code class="language-toml">[dependencies]
+memchr = { version = "2", default-features = false }
+</code></pre>
+<p>On <code>x86_64</code> platforms, when the <code>std</code> feature is disabled, the SSE2 accelerated
+implementations will be used. When <code>std</code> is enabled, AVX2 accelerated
+implementations will be used if the CPU is determined to support it at runtime.</p>
+<p>SIMD accelerated routines are also available on the <code>wasm32</code> and <code>aarch64</code>
+targets. The <code>std</code> feature is not required to use them.</p>
+<p>When a SIMD version is not available, then this crate falls back to
+<a href="https://en.wikipedia.org/wiki/SWAR">SWAR</a> techniques.</p>
+<h3 id="minimum-rust-version-policy">Minimum Rust version policy</h3>
+<p>This crate's minimum supported <code>rustc</code> version is <code>1.61.0</code>.</p>
+<p>The current policy is that the minimum Rust version required to use this crate
+can be increased in minor version updates. For example, if <code>crate 1.0</code> requires
+Rust 1.20.0, then <code>crate 1.0.z</code> for all values of <code>z</code> will also require Rust
+1.20.0 or newer. However, <code>crate 1.y</code> for <code>y &gt; 0</code> may require a newer minimum
+version of Rust.</p>
+<p>In general, this crate will be conservative with respect to the minimum
+supported version of Rust.</p>
+<h3 id="testing-strategy">Testing strategy</h3>
+<p>Given the complexity of the code in this crate, along with the pervasive use
+of <code>unsafe</code>, this crate has an extensive testing strategy. It combines multiple
+approaches:</p>
+<ul>
+<li>Hand-written tests.</li>
+<li>Exhaustive-style testing meant to exercise all possible branching and offset
+calculations.</li>
+<li>Property based testing through <a href="https://github.com/BurntSushi/quickcheck"><code>quickcheck</code></a>.</li>
+<li>Fuzz testing through <a href="https://github.com/rust-fuzz/cargo-fuzz"><code>cargo fuzz</code></a>.</li>
+<li>A huge suite of benchmarks that are also run as tests. Benchmarks always
+confirm that the expected result occurs.</li>
+</ul>
+<p>Improvements to the testing infrastructure are very welcome.</p>
+<h3 id="algorithms-used">Algorithms used</h3>
+<p>At time of writing, this crate's implementation of substring search actually
+has a few different algorithms to choose from depending on the situation.</p>
+<ul>
+<li>For very small haystacks,
+<a href="https://en.wikipedia.org/wiki/Rabin%E2%80%93Karp_algorithm">Rabin-Karp</a>
+is used to reduce latency. Rabin-Karp has very small overhead and can often
+complete before other searchers have even been constructed.</li>
+<li>For small needles, a variant of the
+<a href="http://0x80.pl/articles/simd-strfind.html#algorithm-1-generic-simd">"Generic SIMD"</a>
+algorithm is used. Instead of using the first and last bytes, a heuristic is
+used to select bytes based on a background distribution of byte frequencies.</li>
+<li>In all other cases,
+<a href="https://en.wikipedia.org/wiki/Two-way_string-matching_algorithm">Two-Way</a>
+is used. If possible, a prefilter based on the "Generic SIMD" algorithm
+linked above is used to find candidates quickly. A dynamic heuristic is used
+to detect if the prefilter is ineffective, and if so, disables it.</li>
+</ul>
+<h3 id="why-is-the-standard-librarys-substring-search-so-much-slower">Why is the standard library's substring search so much slower?</h3>
+<p>We'll start by establishing what the difference in performance actually
+is. There are two relevant benchmark classes to consider: <code>prebuilt</code> and
+<code>oneshot</code>. The <code>prebuilt</code> benchmarks are designed to measure---to the extent
+possible---search time only. That is, the benchmark first starts by building a
+searcher and then only tracking the time for <em>using</em> the searcher:</p>
+<pre><code>$ rebar rank benchmarks/record/x86_64/2023-08-26.csv --intersection -e memchr/memmem/prebuilt -e std/memmem/prebuilt
+Engine                       Version                   Geometric mean of speed ratios  Benchmark count
+------                       -------                   ------------------------------  ---------------
+rust/memchr/memmem/prebuilt  2.5.0                     1.03                            53
+rust/std/memmem/prebuilt     1.73.0-nightly 180dffba1  6.50                            53
+</code></pre>
+<p>Conversely, the <code>oneshot</code> benchmark class measures the time it takes to both
+build the searcher <em>and</em> use it:</p>
+<pre><code>$ rebar rank benchmarks/record/x86_64/2023-08-26.csv --intersection -e memchr/memmem/oneshot -e std/memmem/oneshot
+Engine                      Version                   Geometric mean of speed ratios  Benchmark count
+------                      -------                   ------------------------------  ---------------
+rust/memchr/memmem/oneshot  2.5.0                     1.04                            53
+rust/std/memmem/oneshot     1.73.0-nightly 180dffba1  5.26                            53
+</code></pre>
+<p><strong>NOTE:</strong> Replace <code>rebar rank</code> with <code>rebar cmp</code> in the above commands to
+explore the specific benchmarks and their differences.</p>
+<p>So in both cases, this crate is quite a bit faster over a broad sampling of
+benchmarks regardless of whether you measure only search time or search time
+plus construction time. The difference is a little smaller when you include
+construction time in your measurements.</p>
+<p>These two different types of benchmark classes make for a nice segue into
+one reason why the standard library's substring search can be slower: API
+design. In the standard library, the only APIs available to you require
+one to re-construct the searcher for every search. While you can benefit
+from building a searcher once and iterating over all matches in a single
+string, you cannot reuse that searcher to search other strings. This might
+come up when, for example, searching a file one line at a time. You'll need
+to re-build the searcher for every line searched, and this can <a href="https://blog.burntsushi.net/bstr/#motivation-based-on-performance">really
+matter</a>.</p>
+<p><strong>NOTE:</strong> The <code>prebuilt</code> benchmark for the standard library can't actually
+avoid measuring searcher construction at some level, because there is no API
+for it. Instead, the benchmark consists of building the searcher once and then
+finding all matches in a single string via an iterator. This tends to
+approximate a benchmark where searcher construction isn't measured, but it
+isn't perfect. While this means the comparison is not strictly
+apples-to-apples, it does reflect what is maximally possible with the standard
+library, and thus reflects the best that one could do in a real world scenario.</p>
+<p>While there is more to the story than just API design here, it's important to
+point out that even if the standard library's substring search were a precise
+clone of this crate internally, it would still be at a disadvantage in some
+workloads because of its API. (The same also applies to C's standard library
+<code>memmem</code> function. There is no way to amortize construction of the searcher.
+You need to pay for it on every call.)</p>
+<p>The other reason for the difference in performance is that
+the standard library has trouble using SIMD. In particular, substring search
+is implemented in the <code>core</code> library, where platform specific code generally
+can't exist. That's an issue because in order to utilize SIMD beyond SSE2
+while maintaining portable binaries, one needs to use <a href="https://doc.rust-lang.org/std/arch/index.html#dynamic-cpu-feature-detection">dynamic CPU feature
+detection</a>, and that in turn requires platform specific code.
+While there is <a href="https://github.com/rust-lang/rfcs/pull/3469">an RFC for enabling target feature detection in
+<code>core</code></a>, it doesn't yet exist.</p>
+<p>The bottom line here is that <code>core</code>'s substring search implementation is
+limited to making use of SSE2, but not AVX.</p>
+<p>Still though, this crate does accelerate substring search even when only SSE2
+is available. The standard library could therefore adopt the techniques in this
+crate just for SSE2. The reason why that hasn't happened yet isn't totally
+clear to me. It likely needs a champion to push it through. The standard
+library tends to be more conservative in these things. With that said, the
+standard library does use some <a href="https://github.com/rust-lang/rust/blob/bf9229a2e366b4c311f059014a4aa08af16de5d8/library/core/src/str/pattern.rs#L1719-L1857">SSE2 acceleration on <code>x86-64</code></a> added
+in <a href="https://github.com/rust-lang/rust/pull/103779">this PR</a>. However, at the time of writing, it is only used
+for short needles and doesn't use the frequency based heuristics found in this
+crate.</p>
+<p><strong>NOTE:</strong> Another thing worth mentioning is that the standard library's
+substring search routine requires that both the needle and haystack have type
+<code>&amp;str</code>. Unless you can assume that your data is valid UTF-8, building a <code>&amp;str</code>
+will come with the overhead of UTF-8 validation. This may in turn result in
+overall slower searching depending on your workload. In contrast, the <code>memchr</code>
+crate permits both the needle and the haystack to have type <code>&amp;[u8]</code>, where
+<code>&amp;[u8]</code> can be created from a <code>&amp;str</code> with zero cost. Therefore, the substring
+search in this crate is strictly more flexible than what the standard library
+provides.</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

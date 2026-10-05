@@ -1,0 +1,30 @@
+[
+  {
+    "path": "/START_HERE.html",
+    "status": 200
+  },
+  {
+    "path": "/reports/v13/example_report/index.html",
+    "status": 200
+  },
+  {
+    "path": "/my_work/",
+    "status": 403
+  },
+  {
+    "path": "/.git/config",
+    "status": 403
+  },
+  {
+    "path": "/%2e%2e/etc/passwd",
+    "status": 403
+  },
+  {
+    "path": "/progress/learning_log_v5.json",
+    "status": 403
+  },
+  {
+    "path": "/src/",
+    "status": 403
+  }
+]

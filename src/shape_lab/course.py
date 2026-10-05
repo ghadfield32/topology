@@ -215,4 +215,6 @@ def run_references(root: Path, targets: Iterable[str], destination: Path, jobs: 
     status['source_inputs_unchanged']=(after==before)
     status['changed_source_inputs']=[p for p in sorted(set(before)|set(after)) if before.get(p)!=after.get(p)]
     if after!=before:status['failed']+=1
+    from .result_packet import seal_run
+    seal_run(dest,status)
     save();return status

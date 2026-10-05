@@ -1,10 +1,19 @@
-# Listening to Shape — repository edition v12
+# Listening to Shape — repository edition v14
 
-A beginner-first course from topology to geometry, dynamics and representation learning. **One primary route:** 31 core stages, 5 representation units, 25 named cases, 133 worked references and 56 independent learner notebooks. Industry and sports sources retain their own provenance and terms.
+A beginner-first course from topology to geometry, dynamics and representation learning. **One primary route:** 31 core stages, 5 representation units, 25 named cases, 133 worked references and 56 independent learner notebooks. Industry and sports sources retain their own provenance and terms. Version 14 adds a connected **engineering layer** (real C/C++/Rust/Go/TypeScript/GPU projects) on top of the existing research layer; it does not replace the 31-stage curriculum.
 
-**This checkout:** [local setup, verification, and learning route](docs/LOCAL_SETUP.md).
+**New front door:** open [LEARN_TOPOLOGY.html](LEARN_TOPOLOGY.html) for the navigation page that joins the two layers. **Ordered journey:** [docs/release/START_TO_FINISH.md](docs/release/START_TO_FINISH.md). **Read:** open [START_HERE.html](START_HERE.html) for the offline reader. **Start:** [first-run guide](docs/release/FIRST_RUN.md) · [v17 first run](docs/v17/FIRST_RUN.md). **Evidence:** [verification](docs/release/VERIFICATION.md) · [v17 integration record](docs/release/V17_INTEGRATION.md). **Import:** [Git guide](docs/release/GIT_IMPORT.md). **Repository assistant:** [copy/paste handoff](docs/release/AGENT_HANDOFF.md).
 
-**Read:** extract everything and open `START_HERE.html`. **Start:** [first-run guide](docs/release/FIRST_RUN.md). **Evidence:** [verification](docs/release/VERIFICATION.md). **Import:** [Git guide](docs/release/GIT_IMPORT.md). **Repository assistant:** [copy/paste handoff](docs/release/AGENT_HANDOFF.md).
+## Two connected layers, one curriculum
+
+**Notebook → understand it. Project → prove you can engineer it.** Each lesson follows **Explain → Predict → Implement → Break → Apply**.
+
+| Layer | Purpose | Where you work |
+|---|---|---|
+| Mathematical and research | Learn definitions, derive results, inspect data, run experiments, explain limitations | the 31 topology lessons, Python references and language workbooks |
+| Engineering | Build, debug, test, profile and integrate real programs | `systems/` CMake/Cargo/Go/TypeScript projects |
+
+The engineering units run **sys00–sys09** (source-mapped from the supplied Stage 0–9 headings); they never renumber topology Stage 00–30.
 
 ## Repository map
 
@@ -23,6 +32,9 @@ Six kinds of thing live here, and they have different owners. Full definitions:
 | `native_course.py` | builds and compares the native labs | no |
 | `tools/build_language_notebooks.py` | **the** owner of `workbooks/polyglot/` | no |
 | `workbooks/polyglot/{python,go,rust}/` | 171 generated teaching notebooks | no — regenerate instead |
+| `systems/` | real engineering projects, source-mapped lessons and evidence | your private copy under `my_work/` |
+| `learning/` | generated reference interfaces and the navigation view | no — regenerate instead |
+| `learn.py` | the engineering front door (sessions, projects, demo) | no |
 | `docs/release/` | verification, checks, layout and import records | no |
 | `my_work/` | your private attempts and evidence (git-ignored) | **yes** |
 
@@ -38,12 +50,27 @@ Four rules keep this from drifting:
 
 | I want to… | Go to |
 |---|---|
+| see the whole journey | [LEARN_TOPOLOGY.html](LEARN_TOPOLOGY.html) |
 | begin the course | [START_HERE.html](START_HERE.html) or `course.py next` |
+| start a guided session (predict → run → reflect → report) | [docs/release/RESULTS_WORKFLOW.md](docs/release/RESULTS_WORKFLOW.md) |
 | learn a lab in Python, Go and Rust | [workbooks/polyglot/index.html](workbooks/polyglot/index.html) |
 | understand the Go/Rust track | [START_NATIVE.html](START_NATIVE.html) |
+| build a real engineering project | [docs/v17/FIRST_RUN.md](docs/v17/FIRST_RUN.md) · `learn.py project --unit sys01` |
 | do Stage 01 now | [docs/release/STAGE01_WALKTHROUGH.md](docs/release/STAGE01_WALKTHROUGH.md) |
 | know what actually ran | [docs/release/CHECKS.md](docs/release/CHECKS.md) |
 | deploy natively | [native/guides/DEPLOYMENT.md](native/guides/DEPLOYMENT.md) |
+
+## The engineering front door (`learn.py`)
+
+```powershell
+uv run --no-sync python learn.py doctor        # which toolchains exist (no installs)
+uv run --no-sync python learn.py list          # existing applications + sys00–sys09
+uv run --no-sync python learn.py project --unit sys01 --output my_work/c_reader01
+uv run --no-sync python learn.py check-project --workspace my_work/c_reader01 --output my_work/c_reader01/attempt01
+uv run --no-sync python learn.py demo --output my_work/integrated_demo01
+```
+
+`check-project` compiles **your private copy**, not the reference source, so editing and breaking it is the point. A missing optional dependency returns status `blocked` (exit 3); a compiler or assertion error is `failed` (exit 1). See [docs/v17/FIRST_RUN.md](docs/v17/FIRST_RUN.md) for the full journey and [docs/release/RESULTS_WORKFLOW.md](docs/release/RESULTS_WORKFLOW.md) for the study/report loop.
 
 ## Native16 addition (Go and Rust)
 
@@ -106,8 +133,12 @@ A run directory must be new. Experiments copy clean source inputs, not old repor
 
 Follow [Docker](docs/release/DOCKER.md) then [Kubernetes](docs/release/KUBERNETES.md). Static configuration/policy tests are not image builds or live cluster execution. This host lacked those runtimes. Live application requires an explicitly selected disposable context and new namespace; no automatic cluster/namespace/PVC deletion occurs.
 
-## What changed in v12
+## What changed in v14
 
-All 25 case practice routes are now registered. Direct dependency version mismatches block readiness. Acceptance checks child JUnit totals and exact reference identities, not just exit codes. Read-only source copying is made writable only in the disposable workspace. Kubernetes denies unsafe/mixed objects; its reader no longer mounts private result storage. Docker lab references are read-only with separately writable learner work. Serial execution is the default after a recorded parallel kernel startup failure. Read the exact current evidence and remaining limits before presenting results.
+Version 14 reconciles the repository with the v17 archive and completes the previously-deferred version upgrade. It imports the **systems learning layer** (`systems/`, `learning/`, `learn.py`, `LEARN_TOPOLOGY.html`, `docs/v17/`), the **study-and-report workflow** (`course.py study` / `course.py report`, output sealing, `docs/release/RESULTS_WORKFLOW.md`), the ten deferred v13 tests, and the `reports/v13` evidence the reader uses. It also fixes a real Windows portability bug the archive had: a package-manager command shim (`tsc.cmd`) is now resolved to a shell-free argv instead of failing with `WinError 2`.
+
+It preserves, rather than overwrites, the genuine re-resolved `uv.lock`, the `workbooks/polyglot/` notebooks and generator, the local `NATIVE16_IMPORT.md` record, `native_course.py`'s `run_identity` evidence binding, and existing learner notebook edits. The import record states exactly what ran and what did not: [docs/release/NATIVE16_IMPORT.md](docs/release/NATIVE16_IMPORT.md).
+
+All 25 case practice routes are registered. Direct dependency version mismatches block readiness. Acceptance checks child JUnit totals and exact reference identities, not just exit codes, and now also validates sealed run outputs and container child evidence. Read-only source copying is made writable only in the disposable workspace. Kubernetes denies unsafe/mixed objects; its reader no longer mounts private result storage. Serial execution is the default after a recorded parallel kernel startup failure. Read the exact current evidence and remaining limits before presenting results.
 
 Use each lesson once, repair only the missing prerequisite, attempt your own solution, then return for delayed recall. A test pass is not a proof of mastery, clinical or sports validity, complete-book coverage, or universal physical fidelity. See [source coverage](docs/release/SOURCE_COVERAGE.md) and [license/attribution](LICENSE.md).

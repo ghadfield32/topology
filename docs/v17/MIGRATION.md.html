@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><style>body{font:18px/1.65 system-ui;max-width:960px;padding:28px;margin:auto;color:#172733}h1{line-height:1.2}pre{overflow:auto;padding:18px;background:#f0f3f2}code{font-size:.88em}table{border-collapse:collapse;display:block;overflow:auto}td,th{border-bottom:1px solid #ddd;padding:9px}a{color:#175b75;overflow-wrap:anywhere}</style><p><a href="../../LEARN_TOPOLOGY.html">← Course home</a> · <a href="MIGRATION.md">Markdown source</a></p><h1>Integrate without discarding your work</h1>
+<p>This package is the supplied v16 course plus a new systems learning/navigation layer. It does not claim to contain unpublished files from your Windows checkout. The earlier log reports a local generator and171workbooks; the inspected remote did not expose that generator. New interfaces therefore live under <code>learning/workbooks/</code>, leaving your <code>workbooks/polyglot/</code> untouched.</p>
+<ol>
+<li>Extract beside the existing repo. Inspect <code>git status --short --branch</code> and checkpoint intended local work on a review branch. Do not run reset/clean or force-unzip.</li>
+<li>Preserve <code>.git</code>, real uv.lock, local setup docs, platform fixes, learner notebooks, progress, local tools and caches, downloaded data, and Kubernetes PVCs.</li>
+<li>Add <code>systems/</code>, <code>learning/</code>, <code>learn.py</code>, <code>LEARN_TOPOLOGY.html</code>, <code>docs/v17/</code>, and the optional new workflow/devcontainer files only after reviewing collisions. The legacy v16 files are retained byte-for-byte in this archive; their historical version numbers are not new execution claims.</li>
+<li>The old <code>course.py</code>, <code>native_course.py</code>, native protocol registry, data manifests and core catalogue remain execution authorities. The new front door delegates rather than copying their logic.</li>
+<li>Preserve your real lock and run <code>uv lock --check</code>. A stale lock requires a reviewed resolver run, not copying a hand-written lock. Do not replace your production package/deployment files.</li>
+<li>Test the new isolated suite, private source editing, Stage01 triad, and full-source result evidence. Then deliberately decide whether to run all171workbook interfaces and fullnativeacceptance.</li>
+<li>Inspect <code>git diff --stat</code> before committing. Do not publish private answers, in-memory service captures, arbitrary absolute paths or derived noncommercial data without reviewing their rights.</li>
+</ol>
+<h2>New source ownership</h2>
+<ul>
+<li><code>systems/catalog.json</code>: maps the supplied systems Stage0–9 to sys00–sys09; it does not redefine core stage order.</li>
+<li><code>systems/lessons</code>: one primary systems explanation per source heading.</li>
+<li><code>systems/c</code>, <code>cpp</code>, <code>go_service</code>, <code>rust_validator</code>, <code>pyo3</code>, <code>gpu</code>, <code>typescript</code>: real independent projects.</li>
+<li><code>systems/python</code>: data contract, original Python calculations, verification and preparation.</li>
+<li><code>systems/tools</code>: reproducible generation, workbook sweep, service probe.</li>
+<li><code>learning</code>: navigation and generated interfaces. Generated reference workbooks are not learner submissions.</li>
+<li><code>my_work</code>: all new private attempts, output artifacts and compiler products.</li>
+</ul>
+<h2>Do not transplant environments</h2>
+<p>Windows binaries/venvs are not Linux toolchains. Recreate the environment in WSL rather than copying it. The course's native Rust sources use a vendored registry; copied private project configs point explicitly back to it. Recreate private copies after moving the entire parent course or update that path deliberately.</p>
+<p>The default archive is a teaching repository, not an automatic production update. No remote commit, push, cluster apply, namespace removal or volume deletion is performed by opening it.</p>
+<h2>Validate the extracted package before integration</h2>
+<pre><code>python tools/verify_v17_archive.py
+</code></pre>
+<p>This checks the original extracted archive. It is not designed to declare your intentionally modified existing repo corrupt. Review legitimate local differences rather than replacing the manifest or erasing work to make that command green after a merge.</p>
+</html>

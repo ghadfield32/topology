@@ -23,6 +23,27 @@ uv run --no-sync python tools/check_matrix.py --only notebooks --output my_work/
 Each run writes `check_matrix.json` listing every check's scope, argv, exit code,
 timing, output tail and (for `python`) the skip reasons.
 
+## New in v14: the systems layer has its own separated checks
+
+The engineering layer is checked separately from the mathematical reference
+sweep, so a pass in one cannot be read as a pass in the other:
+
+```powershell
+uv run --no-sync python -m unittest discover -s systems/tests -p 'test_*.py'   # contracts, projects, navigation, workflow
+uv run --no-sync python learn.py workbooks --check                            # 181 generated interfaces, no drift
+uv run --no-sync python learn.py project --unit sys01 --output my_work/c_reader01
+uv run --no-sync python learn.py check-project --workspace my_work/c_reader01 --output my_work/c_reader01/attempt01
+uv run --no-sync python learn.py demo --output my_work/integrated_demo01
+uv run --no-sync python learn.py verify-projects --output my_work/projects_acceptance01
+```
+
+Exit codes follow the same convention: `0` passed, `3` blocked by an absent
+optional dependency, `1` a real build or assertion failure. `verify-projects`
+returns `3` when any requested unit is blocked — that is a truthful partial, not
+an all-pass. The systems sweep that actually executes the generated interfaces is
+`systems/tools/sweep_workbooks.py`; it is a reference sweep, not learner
+assessment, and each fresh kernel is shut down explicitly even after failure.
+
 ## What no check establishes
 
 Stated in the tool's own output, and repeated here so it cannot be missed:
@@ -33,7 +54,8 @@ Stated in the tool's own output, and repeated here so it cannot be missed:
   Do not remove that guard to make a screen green.
 - Docker/OCI image build and runtime acceptance.
 - Live Kubernetes admission, scheduling or a completed Job.
-- macOS, GPU or remote CI execution.
+- macOS, GPU/Triton/CUDA execution, PyO3/maturin packaging, or the remote
+  systems CI workflow.
 - Learner mastery. Every generated notebook is `not_assessed`.
 
 ## Protocol parity: say which kind it is

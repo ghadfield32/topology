@@ -1,0 +1,26 @@
+{
+  "method": "Inline implementation and targeted adversarial review; no independent reviewer agent available or claimed.",
+  "reviewed": [
+    "Output inventory/path boundaries",
+    "Unexecuted or erroneous notebook outputs",
+    "Reflection escaping and mandatory fields",
+    "Identical primary lessons reused by all sessions",
+    "Docker exit-zero versus child files",
+    "Native read-only full-distribution execution",
+    "Rights and source/measurement/interpretation distinction"
+  ],
+  "fixed_regressions": [
+    "Missing study/report features",
+    "Boolean numbers accepted in evidence",
+    "Docker exit codes without checked output evidence",
+    "Kubernetes actual-output validation omission"
+  ],
+  "remaining": [
+    "Clean uv installation and real lock",
+    "Docker runtime",
+    "Live Kubernetes",
+    "Mac/Windows/GPU and remote CI",
+    "External Ripser/GUDHI agreement",
+    "Independent learner/domain validation"
+  ]
+}

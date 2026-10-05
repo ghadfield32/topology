@@ -1,0 +1,236 @@
+FEEEEEEEEEEEEEEEEEEEEEEEEEEFFFFFFFFFFF                                   [100%]
+==================================== ERRORS ====================================
+____________________ ERROR at setup of test_seal_validates _____________________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+_______________ ERROR at setup of test_changed_notebook_refused ________________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+_______________ ERROR at setup of test_changed_artifact_refused ________________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+_______________ ERROR at setup of test_unlisted_artifact_refused _______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change0] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change1] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change2] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change3] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change4] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change5] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change6] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change7] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_bad_ledger_refused[change8] ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+_________________ ERROR at setup of test_missing_file_refused __________________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+__________ ERROR at setup of test_error_output_refused_even_resealed ___________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+________________ ERROR at setup of test_symlink_escape_refused _________________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+___________________ ERROR at setup of test_packet_local_only ___________________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+________________ ERROR at setup of test_packet_refuses_existing ________________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+_________ ERROR at setup of test_packet_requires_reflection[question] __________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+_____ ERROR at setup of test_packet_requires_reflection[observation_unit] ______
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+__________ ERROR at setup of test_packet_requires_reflection[method] ___________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+___ ERROR at setup of test_packet_requires_reflection[result_interpretation] ___
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+________ ERROR at setup of test_packet_requires_reflection[limitation] _________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______ ERROR at setup of test_packet_requires_reflection[next_experiment] ______
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+__________________ ERROR at setup of test_packet_escapes_html __________________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+______________ ERROR at setup of test_packet_refuses_stale_output ______________
+tests/test_results_v13.py:26: in run
+    packet.seal_run(run,report)
+    ^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+=================================== FAILURES ===================================
+___________________________ test_new_modules_present ___________________________
+tests/test_results_v13.py:39: in test_new_modules_present
+    assert callable(getattr(packet,'seal_run',None))
+E   AssertionError: assert False
+E    +  where False = callable(None)
+E    +    where None = getattr(packet, 'seal_run', None)
+____________________ test_study_resolves_existing_routes[0] ____________________
+tests/test_results_v13.py:109: in test_study_resolves_existing_routes
+    r=study.prepare_study(ROOT,key,out)
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+___________________ test_study_resolves_existing_routes[06] ____________________
+tests/test_results_v13.py:109: in test_study_resolves_existing_routes
+    r=study.prepare_study(ROOT,key,out)
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+___________________ test_study_resolves_existing_routes[30] ____________________
+tests/test_results_v13.py:109: in test_study_resolves_existing_routes
+    r=study.prepare_study(ROOT,key,out)
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+__________________ test_study_resolves_existing_routes[wine] ___________________
+tests/test_results_v13.py:109: in test_study_resolves_existing_routes
+    r=study.prepare_study(ROOT,key,out)
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+___________________ test_study_resolves_existing_routes[s00] ___________________
+tests/test_results_v13.py:109: in test_study_resolves_existing_routes
+    r=study.prepare_study(ROOT,key,out)
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+___________________ test_study_resolves_existing_routes[r01] ___________________
+tests/test_results_v13.py:109: in test_study_resolves_existing_routes
+    r=study.prepare_study(ROOT,key,out)
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+___________________ test_study_resolves_existing_routes[r05] ___________________
+tests/test_results_v13.py:109: in test_study_resolves_existing_routes
+    r=study.prepare_study(ROOT,key,out)
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+___________________ test_study_resolves_existing_routes[acb] ___________________
+tests/test_results_v13.py:109: in test_study_resolves_existing_routes
+    r=study.prepare_study(ROOT,key,out)
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+____________________ test_study_invalid_key_no_destination _____________________
+tests/test_results_v13.py:117: in test_study_invalid_key_no_destination
+    with pytest.raises(ValueError):study.prepare_study(ROOT,'no-such-course',tmp_path/'out')
+                                   ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+_________________________ test_study_never_overwrites __________________________
+tests/test_results_v13.py:121: in test_study_never_overwrites
+    study.prepare_study(ROOT,'0',tmp_path/'session')
+    ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+_____________________ test_study_uses_same_primary_lesson ______________________
+tests/test_results_v13.py:125: in test_study_uses_same_primary_lesson
+    r=study.prepare_study(ROOT,'6',tmp_path/'session')
+      ^^^^^^^^^^^^^^^^^^^
+E   AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+=========================== short test summary info ============================
+FAILED tests/test_results_v13.py::test_new_modules_present - AssertionError: assert False
+ +  where False = callable(None)
+ +    where None = getattr(packet, 'seal_run', None)
+FAILED tests/test_results_v13.py::test_study_resolves_existing_routes[0] - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_resolves_existing_routes[06] - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_resolves_existing_routes[30] - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_resolves_existing_routes[wine] - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_resolves_existing_routes[s00] - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_resolves_existing_routes[r01] - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_resolves_existing_routes[r05] - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_resolves_existing_routes[acb] - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_invalid_key_no_destination - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_never_overwrites - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+FAILED tests/test_results_v13.py::test_study_uses_same_primary_lesson - AttributeError: module 'shape_lab.study_session' has no attribute 'prepare_study'
+ERROR tests/test_results_v13.py::test_seal_validates - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_changed_notebook_refused - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_changed_artifact_refused - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_unlisted_artifact_refused - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change0] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change1] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change2] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change3] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change4] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change5] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change6] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change7] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_bad_ledger_refused[change8] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_missing_file_refused - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_error_output_refused_even_resealed - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_symlink_escape_refused - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_local_only - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_refuses_existing - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_requires_reflection[question] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_requires_reflection[observation_unit] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_requires_reflection[method] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_requires_reflection[result_interpretation] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_requires_reflection[limitation] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_requires_reflection[next_experiment] - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_escapes_html - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+ERROR tests/test_results_v13.py::test_packet_refuses_stale_output - AttributeError: module 'shape_lab.result_packet' has no attribute 'seal_run'
+12 failed, 26 errors in 1.27s

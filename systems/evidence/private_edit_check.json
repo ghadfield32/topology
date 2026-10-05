@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "private_changes": [
+    "passed",
+    "failed",
+    "passed"
+  ],
+  "source_unchanged": true,
+  "assessment": "not_assessed",
+  "note": "Assistant-authored controlled mutation, not user coursework."
+}

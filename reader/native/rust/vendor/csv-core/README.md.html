@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/csv-core/README.md">native/rust/vendor/csv-core/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="csv-core">csv-core</h1>
+<p>A fast CSV reader and write for use in a <code>no_std</code> context. This crate will
+never use the Rust standard library.</p>
+<p><a href="https://travis-ci.org/BurntSushi/rust-csv"><img alt="Linux build status" src="https://api.travis-ci.org/BurntSushi/rust-csv.png"/></a>
+<a href="https://ci.appveyor.com/project/BurntSushi/rust-csv"><img alt="Windows build status" src="https://ci.appveyor.com/api/projects/status/github/BurntSushi/rust-csv?svg=true"/></a>
+<a href="https://crates.io/crates/csv-core"><img alt="" src="http://meritbadge.herokuapp.com/csv-core"/></a></p>
+<p>Dual-licensed under MIT or the <a href="http://unlicense.org">UNLICENSE</a>.</p>
+<h3 id="documentation">Documentation</h3>
+<p><a href="https://docs.rs/csv-core">https://docs.rs/csv-core</a></p>
+<h3 id="usage">Usage</h3>
+<p>Add this to your <code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">[dependencies]
+csv-core = "0.1.6"
+</code></pre>
+<h3 id="build-features">Build features</h3>
+<p>This crate by default links with <code>libc</code>, which is done via the <code>libc</code> feature.
+Disabling this feature will drop <code>csv-core</code>'s dependency on <code>libc</code>.</p>
+<h3 id="example-reading-csv">Example: reading CSV</h3>
+<p>This example shows how to count the number of fields and records in CSV data.</p>
+<pre><code class="language-rust">use csv_core::{Reader, ReadFieldResult};
+
+let data = "
+foo,bar,baz
+a,b,c
+xxx,yyy,zzz
+";
+
+let mut rdr = Reader::new();
+let mut bytes = data.as_bytes();
+let mut count_fields = 0;
+let mut count_records = 0;
+loop {
+    // We skip handling the output since we don't need it for counting.
+    let (result, nin, _) = rdr.read_field(bytes, &amp;mut [0; 1024]);
+    bytes = &amp;bytes[nin..];
+    match result {
+        ReadFieldResult::InputEmpty =&gt; {},
+        ReadFieldResult::OutputFull =&gt; panic!("field too large"),
+        ReadFieldResult::Field { record_end } =&gt; {
+            count_fields += 1;
+            if record_end {
+                count_records += 1;
+            }
+        }
+        ReadFieldResult::End =&gt; break,
+    }
+}
+assert_eq!(3, count_records);
+assert_eq!(9, count_fields);
+</code></pre>
+<h3 id="example-writing-csv">Example: writing CSV</h3>
+<p>This example shows how to use the <code>Writer</code> API to write valid CSV data. Proper
+quoting is handled automatically.</p>
+<pre><code class="language-rust">use csv_core::Writer;
+
+// This is where we'll write out CSV data.
+let mut out = &amp;mut [0; 1024];
+// The number of bytes we've written to `out`.
+let mut nout = 0;
+// Create a CSV writer with a default configuration.
+let mut wtr = Writer::new();
+
+// Write a single field. Note that we ignore the `WriteResult` and the number
+// of input bytes consumed since we're doing this by hand.
+let (_, _, n) = wtr.field(&amp;b"foo"[..], &amp;mut out[nout..]);
+nout += n;
+
+// Write a delimiter and then another field that requires quotes.
+let (_, n) = wtr.delimiter(&amp;mut out[nout..]);
+nout += n;
+let (_, _, n) = wtr.field(&amp;b"bar,baz"[..], &amp;mut out[nout..]);
+nout += n;
+let (_, n) = wtr.terminator(&amp;mut out[nout..]);
+nout += n;
+
+// Now write another record.
+let (_, _, n) = wtr.field(&amp;b"a \"b\" c"[..], &amp;mut out[nout..]);
+nout += n;
+let (_, n) = wtr.delimiter(&amp;mut out[nout..]);
+nout += n;
+let (_, _, n) = wtr.field(&amp;b"quux"[..], &amp;mut out[nout..]);
+nout += n;
+
+// We must always call finish once done writing.
+// This ensures that any closing quotes are written.
+let (_, n) = wtr.finish(&amp;mut out[nout..]);
+nout += n;
+
+assert_eq!(&amp;out[..nout], &amp;b"\
+foo,\"bar,baz\"
+\"a \"\"b\"\" c\",quux"[..]);
+</code></pre>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

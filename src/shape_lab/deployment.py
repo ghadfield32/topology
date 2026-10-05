@@ -39,6 +39,8 @@ profile=os.environ['COURSE_PROFILE']
 tests=json.loads((out/'tests/tests.json').read_text()) if (out/'tests/tests.json').is_file() else {}
 refs=json.loads((out/'stage00/execution.json').read_text()) if (out/'stage00/execution.json').is_file() else {}
 errors=validate_native_evidence(tests,refs,profile,['notebooks/00_lab.ipynb'])
+from shape_lab.result_packet import validate_run
+errors.extend(validate_run(out/'stage00'))
 status={'status':'passed' if len(results)==2 and all(x['returncode']==0 for x in results) and not errors else 'failed',
  'commands':results,'output':str(out),'profile':profile,'errors':errors,'tests':tests,
  'reference_evidence':{k:refs.get(k) for k in ['order','records','passed','failed','source_inputs_unchanged','required_prior_reports_copied']}}

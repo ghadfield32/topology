@@ -4,7 +4,7 @@
 
 An **image** is a filesystem plus execution configuration. A **container** is a running instance. A **bind mount** exposes a chosen host directory. **Compose** coordinates local services. A native Python test does not prove an image can build or run.
 
-Version 12 ships a Dockerfile using explicit Python 3.13.5 and uv 0.10.0 tags. Tags can move; they are not immutable image digests. Record the resolved image ID and base digest when you actually build. The host `.venv`, private work and secrets are excluded by `.dockerignore`. Dependencies are installed into `/opt/venv`, separate from `/course` and writable work.
+Version 14 ships a Dockerfile using explicit Python 3.13.5 and uv 0.10.0 tags. Tags can move; they are not immutable image digests. Record the resolved image ID and base digest when you actually build. The host `.venv`, private work and secrets are excluded by `.dockerignore`. Dependencies are installed into `/opt/venv`, separate from `/course` and writable work.
 
 ## First complete native setup
 

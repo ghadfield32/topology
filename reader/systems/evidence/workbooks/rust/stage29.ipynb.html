@@ -1,0 +1,229 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Differentiable simulation, graph physics and attention constraints — rust · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../systems/evidence/workbooks/rust/stage29.ipynb">systems/evidence/workbooks/rust/stage29.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><h1 id="differentiable-simulation-graph-physics-and-attention-constraints--rust">Differentiable simulation, graph physics and attention constraints — rust</h1>
+<p>One mathematical lesson: <code>physics/lessons/29.md</code>. Read it once. This is a reference-execution interface, not a completed independent assignment.</p>
+<p><strong>Explain → Predict → Implement → Break → Apply.</strong> Write your prediction before executing. The kernel is Python; the compiled rust program does the computation.</p>
+<p><strong>Protocol boundary:</strong> No trained physics-informed GNN or transformer, and no real noisy-system identification is claimed.</p>
+<section class="cell"><p class="cell-label">Code · execution 1</p><pre><code>from pathlib import Path
+import sys, json
+ROOT = next((p for p in (Path.cwd(), *Path.cwd().parents) if (p / &#x27;systems/catalog.json&#x27;).exists() and (p / &#x27;native/protocols/labs.json&#x27;).exists()), None)
+if ROOT is None:
+    raise RuntimeError(&#x27;Open this workbook inside the extracted course repository.&#x27;)
+sys.path.insert(0, str(ROOT))
+print(&#x27;Course:&#x27;, ROOT)
+print(&#x27;Interpreter:&#x27;, sys.executable)
+</code></pre><div class="output"><pre>Course: /mnt/data/shape17_build/listening_to_shape_lab
+Interpreter: /opt/pyvenv/bin/python
+</pre></div></section><h2 id="fresh-execution">Fresh execution</h2>
+<p>This creates a new run and never searches for old results. It may take longer when the original experiment rebuilds prerequisites. The complete stdout and stderr remain in its command record.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from systems.python.notebook_runner import run_reference, read_metrics
+summary = run_reference(&#x27;stage29&#x27;, &#x27;rust&#x27;)
+print(json.dumps(summary, indent=2))</code></pre><div class="output"><pre>{
+  &quot;lab&quot;: &quot;stage29&quot;,
+  &quot;language&quot;: &quot;rust&quot;,
+  &quot;exit_code&quot;: 0,
+  &quot;output&quot;: &quot;/mnt/data/shape17_build/listening_to_shape_lab/my_work/learning_references/stage29-rust-f602ee5918e548579ebe6920bef02044&quot;,
+  &quot;command_log&quot;: &quot;/mnt/data/shape17_build/listening_to_shape_lab/my_work/learning_references/stage29-rust-f602ee5918e548579ebe6920bef02044.command.json&quot;,
+  &quot;assessment&quot;: &quot;not_assessed&quot;,
+  &quot;json_artifacts&quot;: [
+    &quot;rust_build_reuse.json&quot;,
+    &quot;rust_version.json&quot;,
+    &quot;execution.json&quot;,
+    &quot;rust/stage29.json&quot;,
+    &quot;rust/stage29.execution.json&quot;
+  ],
+  &quot;scope&quot;: &quot;Python executes the original reference. Go/Rust execute native16 protocols; see coverage differences.&quot;
+}
+</pre></div></section><section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>metrics = read_metrics(summary)
+print(json.dumps(metrics, indent=2)[:24000])
+print(&#x27;Full values are retained in the output files; printing is truncated only for readability.&#x27;)</code></pre><div class="output"><pre>{
+  &quot;metrics&quot;: {
+    &quot;differentiable_scalar_flow_fit&quot;: {
+      &quot;fitted_gamma&quot;: 0.3000000000451504,
+      &quot;loss_history&quot;: [
+        0.11779649145394068,
+        0.10899552810817009,
+        0.10001443971649139,
+        0.09090779976725442,
+        0.08174589784105234,
+        0.07261590329737022,
+        0.06362186324368024,
+        0.05488289997294167,
+        0.04652896606184242,
+        0.038693705236068084,
+        0.0315044442691028,
+        0.025070126424807607,
+        0.019468955102426536,
+        0.014738304165459222,
+        0.01086959157349025,
+        0.0078099462169478745,
+        0.00547071197610396,
+        0.0037407932369312525,
+        0.002501497496640339,
+        0.0016394987165754826,
+        0.001055714752648389,
+        0.0006695401328140586,
+        0.0004192101218729197,
+        0.0002596933074462675,
+        0.00015947978188493995,
+        9.725053629638633e-05,
+        5.896992021030837e-05,
+        3.559799433471094e-05,
+        2.1413477680154488e-05,
+        1.2845332278022805e-05,
+        7.688871071581358e-06,
+        4.594587774601909e-06,
+        2.7419560640150175e-06,
+        1.6346777039055308e-06,
+        9.73780616242438e-07,
+        5.79728893472216e-07,
+        3.449719273036465e-07,
+        2.0520321973264924e-07,
+        1.2202878205795245e-07,
+        7.255142976508846e-08,
+        4.3127752616019866e-08,
+        2.563371101576544e-08,
+        1.523431030060691e-08,
+        9.053170216068124e-09,
+        5.379634890037489e-09,
+        3.1965760838270483e-09,
+        1.8993367439958508e-09,
+        1.1285143445266648e-09,
+        6.705066552965533e-10,
+        3.983750066577638e-10,
+        2.366876863204954e-10,
+        1.406225842040661e-10,
+        8.354707898398625e-11,
+        4.963693865834466e-11,
+        2.9490137454032396e-11,
+        1.7520525682719406e-11,
+        1.0409175568710664e-11,
+        6.184216148856352e-12,
+        3.674111336015902e-12,
+        2.182827644393886e-12,
+        1.2968393432513205e-12,
+        7.704644442291314e-13,
+        4.577399177266402e-13,
+        2.719473233161729e-13,
+        1.615662522493582e-13,
+        9.598788098356418e-14,
+        5.702720298197312e-14,
+        3.388033328369501e-14,
+        2.0128584034724973e-14,
+        1.195855601120358e-14,
+        7.104675026784879e-15,
+        4.2209449915095045e-15,
+        2.5076973140760575e-15,
+        1.4898432178559616e-15,
+        8.851278382088803e-16,
+        5.258615455562266e-16,
+        3.1241851454434716e-16,
+        1.8561034765214295e-16,
+        1.1027260417306841e-16,
+        6.551383993113376e-17,
+        3.8922283904619105e-17,
+        2.3124042074532853e-17,
+        1.3738177208748331e-17,
+        8.161962138519458e-18,
+        4.849089135622968e-18,
+        2.880883653890444e-18,
+        1.7115537483717954e-18,
+        1.0168484511894448e-18,
+        6.041165078719189e-19,
+        3.5891005884623315e-19,
+        2.1323242792639523e-19,
+        1.2668316272994143e-19,
+        7.526296046943072e-20,
+        4.4714432979109896e-20,
+        2.65651224995534e-20,
+        1.5782684590419268e-20,
+        9.376557210173818e-21,
+        5.5707661479988136e-21,
+        3.3095700367694866e-21,
+        1.966274331223683e-21
+      ],
+      &quot;observations&quot;: [
+        1.0,
+        0.9851119396030626,
+        0.9704455335485082,
+        0.9559974818331,
+        0.9417645335842487,
+        0.9277434863285529,
+        0.9139311852712282,
+        0.9003245225862656,
+        0.8869204367171575,
+        0.8737159116880344,
+        0.8607079764250578,
+        0.8478937040879159,
+        0.835270211411272,
+        0.8228346580560184,
+        0.8105842459701871,
+        0.7985162187593771,
+        0.7866278610665535,
+        0.774916497961081,
+        0.7633794943368533,
+        0.7520142543193826,
+        0.7408182206817179,
+        0.7297888742690568,
+        0.7189237334319262,
+        0.7082203534678,
+        0.697676326071031,
+        0.6872892787909722,
+        0.6770568744981647,
+        0.6669768108584744,
+        0.6570468198150567,
+        0.6472646670780347,
+        0.6376281516217733,
+        0.6281351051896409,
+        0.6187833918061408,
+        0.6095709072963093,
+        0.6004955788122659,
+        0.5915553643668151,
+        0.5827482523739898,
+        0.574072261196436,
+        0.5655254386995371,
+        0.5571058618121739,
+        0.5488116360940264
+      ],
+      &quot;origin&quot;: &quot;manufactured exact damped scalar flow&quot;,
+      &quot;scope&quot;: &quot;no noisy real-system parameter-identification claim&quot;,
+      &quot;time_step&quot;: 0.05,
+      &quot;true_gamma&quot;: 0.3
+    },
+    &quot;input&quot;: [
+      1,
+      3
+    ],
+    &quot;input_sum&quot;: 4,
+    &quot;output&quot;: [
+      1,
+      1
+    ],
+    &quot;output_sum&quot;: 2,
+    &quot;row_stochastic_matrix&quot;: [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    &quot;scope&quot;: &quot;row-stochastic attention alone is not a mass-conservation law&quot;
+  },
+  &quot;inputs&quot;: {
+    &quot;native/protocols/labs.json&quot;: {
+      &quot;bytes&quot;: 77988,
+      &quot;sha256&quot;: &quot;94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753&quot;
+    }
+  }
+}
+Full values are retained in the output files; printing is truncated only for readability.
+</pre></div></section><h2 id="independent-work">Independent work</h2>
+<p>Use <code>python learn.py session --lab stage29 --output my_work/stage29_attempt01</code> to obtain private projects. Native source edits must be compiled from the copied workspace, not the reference root.</p>
+<ol>
+<li>Derive the state sensitivity to damping.</li>
+<li>Check finite differences of the parameter gradient.</li>
+<li>Explain why row-stochastic attention does not necessarily preserve total mass.</li>
+</ol>
+<p>Record what required help; no automatic mastery credit. Compare protocols before comparing scores.</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

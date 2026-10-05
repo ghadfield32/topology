@@ -1,0 +1,17 @@
+?   	shape-job-service/cmd/job-service	[no test files]
+=== RUN   TestSuccess
+--- PASS: TestSuccess (0.01s)
+=== RUN   TestUnknown
+--- PASS: TestUnknown (0.00s)
+=== RUN   TestCancel
+--- PASS: TestCancel (0.00s)
+=== RUN   TestTimeout
+--- PASS: TestTimeout (0.02s)
+=== RUN   TestQueueBound
+--- PASS: TestQueueBound (0.00s)
+=== RUN   TestHTTPValidation
+--- PASS: TestHTTPValidation (0.00s)
+=== RUN   TestCloseRefuses
+--- PASS: TestCloseRefuses (0.00s)
+PASS
+ok  	shape-job-service/service	1.037s

@@ -1,0 +1,20 @@
+# New educational service image. Actual image execution is a separate acceptance gate.
+FROM golang:1.23.2-bookworm AS build
+ENV GOTOOLCHAIN=local GOWORK=off
+WORKDIR /src
+COPY native/go/ /src/native/go/
+COPY systems/go_service/ /src/systems/go_service/
+RUN cd /src/native/go && go test -count=1 ./... && CGO_ENABLED=0 go build -trimpath -o /shape-go ./cmd/shape-go
+RUN cd /src/systems/go_service && go test -race -count=1 ./... && CGO_ENABLED=0 go build -trimpath -o /job-service ./cmd/job-service
+FROM debian:bookworm-slim
+WORKDIR /course
+COPY --from=build /shape-go /usr/local/bin/shape-go
+COPY --from=build /job-service /usr/local/bin/job-service
+COPY data/ /course/data/
+COPY sports_v8/data/ /course/sports_v8/data/
+COPY sports_v9/data/ /course/sports_v9/data/
+COPY native/protocols/ /course/native/protocols/
+USER 10001:10001
+EXPOSE 8090
+ENTRYPOINT ["/usr/local/bin/job-service", "--repo", "/course", "--binary", "/usr/local/bin/shape-go"]
+CMD ["--listen", "0.0.0.0:8090", "--workers", "1", "--capacity", "2"]

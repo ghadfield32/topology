@@ -1,0 +1,30 @@
+{
+  "item": "wine",
+  "title": "Food chemistry and topology",
+  "lesson": "industry/lessons/wine.md",
+  "source_notebook": "industry/notebooks/wine.ipynb",
+  "assessment": "not_assessed",
+  "reference_executed": false,
+  "run_command": [
+    "/mnt/data/v13_uv_check/.venv/bin/python3",
+    "/mnt/data/v13_uv_check/course.py",
+    "run",
+    "--case",
+    "wine",
+    "--output",
+    "/mnt/data/v13_evidence/wine_session/run01"
+  ],
+  "report_command": [
+    "/mnt/data/v13_uv_check/.venv/bin/python3",
+    "/mnt/data/v13_uv_check/course.py",
+    "report",
+    "--run",
+    "/mnt/data/v13_evidence/wine_session/run01",
+    "--reflection",
+    "/mnt/data/v13_evidence/wine_session/reflection.json",
+    "--output",
+    "/mnt/data/v13_evidence/wine_session/report01"
+  ],
+  "output": "/mnt/data/v13_evidence/wine_session",
+  "scope": "Teaching split and analysis; not domain deployment validation."
+}

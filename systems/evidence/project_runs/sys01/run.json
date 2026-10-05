@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys01/check01/build/trajectory_reader",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys01/data/trajectory.bin"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys01",
+  "exit_code": 0,
+  "seconds": 0.0009881539999696543,
+  "stdout": "{\"count\":12,\"known_confidence\":0,\"start\":0,\"end\":3.5,\"mean\":[4.0312118933773453,-7.6953969094303076,2.7657245696066588]}\n",
+  "stderr": ""
+}

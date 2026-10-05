@@ -1,0 +1,24 @@
+# sys05 — GPU engineering: measure before specializing
+**Source:** Stage 5. Preserve its order: PyTorch profiling → placement/transfers → vectorization → torch.compile → mixed precision → Triton → CUDA C++. The aim is to understand optimized libraries, not rewrite PyTorch.
+
+## Explain the machine
+GPU SMs execute groups of threads; thread/block/grid are work-organization concepts. Registers are thread-local resources, shared memory is block-local storage and synchronization requires attention to scope. VRAM and memory bandwidth are not interchangeable with arithmetic throughput. A kernel can be bandwidth-bound even if the GPU has unused arithmetic capability. CPU/GPU transfer, allocator overhead and synchronization can dominate a tiny calculation.
+
+FP32, FP16, BF16 and TF32 represent different precision/range/implementation choices; never select one only because a timing improved. Define error tolerances against an appropriate reference and inspect outliers, not only averages. In asynchronous execution, a CPU clock around a launch may measure enqueue time rather than completion. State when synchronization occurs.
+
+## Small experiments
+Begin with vector addition as the first custom-kernel exercise; then study the supplied elementwise transform y=1.25*x+0.5 and reduction/point-distance exercises. `profile.py` loads real Iris measurements, repeats them into a benchmark buffer and explicitly records that repetition does not create new observations. It measures transfer, cold invocation and synchronized repeated calls, exports a profiler trace, and checks numerical error.
+
+Run CPU first. `--device cuda` requires a real CUDA device; `--compile` selects torch.compile; `--triton` selects the supplied Triton transform on CUDA. Missing hardware returns BLOCKED with exit code 3, not a substituted CPU benchmark. This archive's executed baseline is CPU-only. The CUDA C++ transform source is included but `nvcc`/GPU execution was unavailable. No GPU speed or memory gain is reported.
+
+## Investigate the pipeline
+Read the profiler table and trace. Ask whether transfers dominate, whether many tiny operations appear, and whether CPU work starves the accelerator. Separate allocation from a preallocated-buffer experiment. For more realistic tests, carry source IDs and timestamps through capture, queue, conversion, transfer, model, fusion, serialization and display. The current microbenchmark is not that complete sports pipeline.
+
+## Break safely
+Give a kernel a length not divisible by block size and check its mask. Compare strided and contiguous input only when the kernel's contract states which is supported. Introduce a private bounds bug in a small controlled example and use CUDA's appropriate checking tools on a real device; do not run fault experiments on production data. A passing CPU test does not certify a GPU kernel's indexing.
+
+## WSL boundary
+Use the Windows NVIDIA driver exposed into WSL. NVIDIA warns not to install a separate Linux display driver inside WSL. Install the appropriate toolkit only after checking the host and WSL requirements. Do not replace your known working Python environment with an arbitrary GPU wheel or driver stack. Record versions and test the exact device path. On a Mac, lack of CUDA is an expected platform boundary, not a reason to fabricate results.
+
+## Capstone and exit
+Select a measured bottleneck. Record baseline, profile, hypothesis, change, new timing, memory and numerical error, then decide whether to retain it. Report cold and steady behavior. Nsight Systems/Compute, raw shared-memory kernels and larger reductions are deeper exercises; the trace exported here is the first inspectable artifact, not certification of that entire discipline.

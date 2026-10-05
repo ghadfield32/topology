@@ -1,0 +1,64 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    },
+    "sports_v9/data/matches.json": {
+      "bytes": 4324,
+      "sha256": "5a6f2ee5b55aff806e0f13c9c90b47f19bc1734a6ed7d26b7682dd4bcc7ca063"
+    }
+  },
+  "lab": "acb",
+  "language": "rust",
+  "metrics": {
+    "chronological_match_ids": [
+      114243,
+      114234,
+      114169,
+      114099,
+      114086,
+      178442,
+      179612,
+      184439,
+      188630,
+      191313
+    ],
+    "home_wins": 4,
+    "mean_total_points": 171.9,
+    "scope": "ten selected metadata records, not all-season tracking or forecasting",
+    "test_match_ids": [
+      188630,
+      191313
+    ],
+    "total_points": [
+      151.0,
+      172.0,
+      157.0,
+      148.0,
+      172.0,
+      200.0,
+      185.0,
+      185.0,
+      160.0,
+      189.0
+    ],
+    "train_match_ids": [
+      114243,
+      114234,
+      114169,
+      114099,
+      114086,
+      178442
+    ],
+    "validation_match_ids": [
+      179612,
+      184439
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

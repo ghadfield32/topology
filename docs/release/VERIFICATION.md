@@ -1,4 +1,34 @@
-# Version 12 verification: evidence and its scope
+# Version 14 verification: evidence and its scope
+
+**Current release: 14.0.0.** The v17 systems-learning layer and the study/report
+workflow were integrated on 4 October 2026; the file-by-file merge, what was
+preserved, and the exact commands executed on this Windows host are recorded in
+[V17_INTEGRATION.md](V17_INTEGRATION.md). Read that page first for this
+checkout's executed totals; the version-12 report below remains the historical
+record for the mathematical reference replay and its scope.
+
+## Version 14 executed here (short form)
+
+| Check | Observed result here |
+|---|---|
+| `uv lock --check` | resolved; lock and manifest agree at 14.0.0 |
+| Full repository Python suite | 876 passed, 6 skipped, 0 failed (Windows; skips are host symlink/POSIX-mode and one opt-in Rust mutation) |
+| New systems isolated suite | 24 passed |
+| `learn.py workbooks --check` | 182 files, 181 notebooks, no mismatches |
+| `learn.py project`/`check-project` sys01 | passed |
+| `learn.py demo` | passed on the real selected SPL excerpt |
+| `learn.py verify-projects` | 8 passed, 0 failed, 2 blocked (sys04 OpenCV, sys08 PyO3) |
+
+The real-data demonstration reproduced the documented numbers: C++/Python max
+difference 8.881784197001252e-16 m, fitting RMSE 0.017536917337837687 m,
+two-point later MAE 0.04881247418842305 m, and last-height baseline MAE
+0.0446230812746351 m — which is **better** than the fitted model on those two
+points and is kept visible. Docker, live Kubernetes, GPU/Triton/CUDA, C++
+OpenCV and PyO3 were not executed and are reported blocked, not passed.
+
+---
+
+# Version 12 verification: evidence and its scope (historical)
 
 Prepared 22 September 2026. This report is the current release record; older version reports remain historical. The final ZIP extraction check is supplied alongside the archive, because a file cannot embed its own final ZIP hash. A local Git commit/archive export was separately tested: 751 passed, two optional skips. Private work and active logs were not tracked; blank templates were retained. The initial export caught a missing compatibility field in the environment-status report; it was repaired and the export rerun.
 

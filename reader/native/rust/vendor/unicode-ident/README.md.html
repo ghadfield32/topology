@@ -1,0 +1,250 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/unicode-ident/README.md">native/rust/vendor/unicode-ident/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="unicode-ident">Unicode ident</h1>
+<p><a href="https://github.com/dtolnay/unicode-ident"><img alt="github" height="20" src="https://img.shields.io/badge/github-dtolnay/unicode--ident-8da0cb?style=for-the-badge&amp;labelColor=555555&amp;logo=github"/></a>
+<a href="https://crates.io/crates/unicode-ident"><img alt="crates.io" height="20" src="https://img.shields.io/crates/v/unicode-ident.svg?style=for-the-badge&amp;color=fc8d62&amp;logo=rust"/></a>
+<a href="https://docs.rs/unicode-ident"><img alt="docs.rs" height="20" src="https://img.shields.io/badge/docs.rs-unicode--ident-66c2a5?style=for-the-badge&amp;labelColor=555555&amp;logo=docs.rs"/></a>
+<a href="https://github.com/dtolnay/unicode-ident/actions?query=branch%3Amaster"><img alt="build status" height="20" src="https://img.shields.io/github/actions/workflow/status/dtolnay/unicode-ident/ci.yml?branch=master&amp;style=for-the-badge"/></a></p>
+<p>Implementation of <a href="https://www.unicode.org/reports/tr31/">Unicode Standard Annex #31</a> for determining which
+<code>char</code> values are valid in programming language identifiers.</p>
+<p>This crate is a better optimized implementation of the older <code>unicode-xid</code>
+crate. This crate uses less static storage, and is able to classify both ASCII
+and non-ASCII codepoints with better performance, 6× faster than
+<code>unicode-xid</code>.</p>
+<br/>
+<h2 id="comparison-of-performance">Comparison of performance</h2>
+<p>The following table shows a comparison between five Unicode identifier
+implementations.</p>
+<ul>
+<li><code>unicode-ident</code> is this crate;</li>
+<li><a href="https://github.com/unicode-rs/unicode-xid"><code>unicode-xid</code></a> is a widely used crate run by the "unicode-rs" org;</li>
+<li><code>ucd-trie</code> and <code>fst</code> are two data structures supported by the <a href="https://github.com/BurntSushi/ucd-generate"><code>ucd-generate</code></a> tool;</li>
+<li><a href="https://github.com/RoaringBitmap/roaring-rs"><code>roaring</code></a> is a Rust implementation of Roaring bitmap.</li>
+</ul>
+<p>The <em>static storage</em> column shows the total size of <code>static</code> tables that the
+crate bakes into your binary, measured in 1000s of bytes.</p>
+<p>The remaining columns show the <strong>cost per call</strong> to evaluate whether a single
+<code>char</code> has the XID_Start or XID_Continue Unicode property, comparing across
+different ratios of ASCII to non-ASCII codepoints in the input data.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>static storage</th>
+<th>0% nonascii</th>
+<th>1%</th>
+<th>10%</th>
+<th>100% nonascii</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><code>unicode-ident</code></strong></td>
+<td>10.3 K</td>
+<td>0.36 ns</td>
+<td>0.37 ns</td>
+<td>0.37 ns</td>
+<td>0.43 ns</td>
+</tr>
+<tr>
+<td><strong><code>unicode-xid</code></strong></td>
+<td>12.2 K</td>
+<td>1.63 ns</td>
+<td>1.70 ns</td>
+<td>1.82 ns</td>
+<td>4.56 ns</td>
+</tr>
+<tr>
+<td><strong><code>ucd-trie</code></strong></td>
+<td>10.8 K</td>
+<td>1.01 ns</td>
+<td>0.73 ns</td>
+<td>0.97 ns</td>
+<td>1.09 ns</td>
+</tr>
+<tr>
+<td><strong><code>fst</code></strong></td>
+<td>149 K</td>
+<td>22.0 ns</td>
+<td>21.9 ns</td>
+<td>20.9 ns</td>
+<td>10.5 ns</td>
+</tr>
+<tr>
+<td><strong><code>roaring</code></strong></td>
+<td>66.1 K</td>
+<td>1.91 ns</td>
+<td>1.90 ns</td>
+<td>1.94 ns</td>
+<td>2.67 ns</td>
+</tr>
+</tbody>
+</table>
+<p>Source code for the benchmark is provided in the <em>bench</em> directory of this repo
+and may be repeated by running <code>cargo criterion</code>.</p>
+<br/>
+<h2 id="comparison-of-data-structures">Comparison of data structures</h2>
+<h4 id="unicode-xid">unicode-xid</h4>
+<p>They use a sorted array of character ranges, and do a binary search to look up
+whether a given character lands inside one of those ranges.</p>
+<pre><code class="language-rust">static XID_Continue_table: [(char, char); 763] = [
+    ('\u{30}', '\u{39}'),  // 0-9
+    ('\u{41}', '\u{5a}'),  // A-Z
+    …
+    ('\u{e0100}', '\u{e01ef}'),
+];
+</code></pre>
+<p>The static storage used by this data structure scales with the number of
+contiguous ranges of identifier codepoints in Unicode. Every table entry
+consumes 8 bytes, because it consists of a pair of 32-bit <code>char</code> values.</p>
+<p>In some ranges of the Unicode codepoint space, this is quite a sparse
+representation – there are some ranges where tens of thousands of adjacent
+codepoints are all valid identifier characters. In other places, the
+representation is quite inefficient. A characater like <code>µ</code> (U+00B5) which is
+surrounded by non-identifier codepoints consumes 64 bits in the table, while it
+would be just 1 bit in a dense bitmap.</p>
+<p>On a system with 64-byte cache lines, binary searching the table touches 7 cache
+lines on average. Each cache line fits only 8 table entries. Additionally, the
+branching performed during the binary search is probably mostly unpredictable to
+the branch predictor.</p>
+<p>Overall, the crate ends up being about 6× slower on non-ASCII input
+compared to the fastest crate.</p>
+<p>A potential improvement would be to pack the table entries more compactly.
+Rust's <code>char</code> type is a 21-bit integer padded to 32 bits, which means every
+table entry is holding 22 bits of wasted space, adding up to 3.9 K. They could
+instead fit every table entry into 6 bytes, leaving out some of the padding, for
+a 25% improvement in space used. With some cleverness it may be possible to fit
+in 5 bytes or even 4 bytes by storing a low char and an extent, instead of low
+char and high char. I don't expect that performance would improve much but this
+could be the most efficient for space across all the libraries, needing only
+about 7 K to store.</p>
+<h4 id="ucd-trie">ucd-trie</h4>
+<p>Their data structure is a compressed trie set specifically tailored for Unicode
+codepoints. The design is credited to Raph Levien in <a href="https://github.com/rust-lang/rust/pull/33098">rust-lang/rust#33098</a>.</p>
+<pre><code class="language-rust">pub struct TrieSet {
+    tree1_level1: &amp;'static [u64; 32],
+    tree2_level1: &amp;'static [u8; 992],
+    tree2_level2: &amp;'static [u64],
+    tree3_level1: &amp;'static [u8; 256],
+    tree3_level2: &amp;'static [u8],
+    tree3_level3: &amp;'static [u64],
+}
+</code></pre>
+<p>It represents codepoint sets using a trie to achieve prefix compression. The
+final states of the trie are embedded in leaves or "chunks", where each chunk is
+a 64-bit integer. Each bit position of the integer corresponds to whether a
+particular codepoint is in the set or not. These chunks are not just a compact
+representation of the final states of the trie, but are also a form of suffix
+compression. In particular, if multiple ranges of 64 contiguous codepoints have
+the same Unicode properties, then they all map to the same chunk in the final
+level of the trie.</p>
+<p>Being tailored for Unicode codepoints, this trie is partitioned into three
+disjoint sets: tree1, tree2, tree3. The first set corresponds to codepoints [0,
+0x800), the second [0x800, 0x10000) and the third [0x10000, 0x110000). These
+partitions conveniently correspond to the space of 1 or 2 byte UTF-8 encoded
+codepoints, 3 byte UTF-8 encoded codepoints and 4 byte UTF-8 encoded codepoints,
+respectively.</p>
+<p>Lookups in this data structure are significantly more efficient than binary
+search. A lookup touches either 1, 2, or 3 cache lines based on which of the
+trie partitions is being accessed.</p>
+<p>One possible performance improvement would be for this crate to expose a way to
+query based on a UTF-8 encoded string, returning the Unicode property
+corresponding to the first character in the string. Without such an API, the
+caller is required to tokenize their UTF-8 encoded input data into <code>char</code>, hand
+the <code>char</code> into <code>ucd-trie</code>, only for <code>ucd-trie</code> to undo that work by converting
+back into the variable-length representation for trie traversal.</p>
+<h4 id="fst">fst</h4>
+<p>Uses a <a href="https://github.com/BurntSushi/fst">finite state transducer</a>. This representation is built into
+<a href="https://github.com/BurntSushi/ucd-generate">ucd-generate</a> but I am not aware of any advantage over the <code>ucd-trie</code>
+representation. In particular <code>ucd-trie</code> is optimized for storing Unicode
+properties while <code>fst</code> is not.</p>
+<p>As far as I can tell, the main thing that causes <code>fst</code> to have large size and
+slow lookups for this use case relative to <code>ucd-trie</code> is that it does not
+specialize for the fact that only 21 of the 32 bits in a <code>char</code> are meaningful.
+There are some dense arrays in the structure with large ranges that could never
+possibly be used.</p>
+<h4 id="roaring">roaring</h4>
+<p>This crate is a pure-Rust implementation of <a href="https://roaringbitmap.org/about/">Roaring Bitmap</a>, a data structure
+designed for storing sets of 32-bit unsigned integers.</p>
+<p>Roaring bitmaps are compressed bitmaps which tend to outperform conventional
+compressed bitmaps such as WAH, EWAH or Concise. In some instances, they can be
+hundreds of times faster and they often offer significantly better compression.</p>
+<p>In this use case the performance was reasonably competitive but still
+substantially slower than the Unicode-optimized crates. Meanwhile the
+compression was significantly worse, requiring 6× as much storage for the
+data structure.</p>
+<p>I also benchmarked the <a href="https://crates.io/crates/croaring"><code>croaring</code></a> crate which is an FFI wrapper around the C
+reference implementation of Roaring Bitmap. This crate was consistently about
+15% slower than pure-Rust <code>roaring</code>, which could just be FFI overhead. I did not
+investigate further.</p>
+<h4 id="unicode-ident-1">unicode-ident</h4>
+<p>This crate is most similar to the <code>ucd-trie</code> library, in that it's based on
+bitmaps stored in the leafs of a trie representation, achieving both prefix
+compression and suffix compression.</p>
+<p>The key differences are:</p>
+<ul>
+<li>Uses a single 2-level trie, rather than 3 disjoint partitions of different
+depth each.</li>
+<li>Uses significantly larger chunks: 512 bits rather than 64 bits.</li>
+<li>Compresses the XID_Start and XID_Continue properties together
+simultaneously, rather than duplicating identical trie leaf chunks across the
+two.</li>
+</ul>
+<p>The following diagram show the XID_Start and XID_Continue Unicode boolean
+properties in uncompressed form, in row-major order:</p>
+<table>
+<tr><th>XID_Start</th><th>XID_Continue</th></tr>
+<tr>
+<td><img alt="XID_Start bitmap" src="https://user-images.githubusercontent.com/1940490/168647353-c6eeb922-afec-49b2-9ef5-c03e9d1e0760.png" width="256"/></td>
+<td><img alt="XID_Continue bitmap" src="https://user-images.githubusercontent.com/1940490/168647367-f447cca7-2362-4d7d-8cd7-d21c011d329b.png" width="256"/></td>
+</tr>
+</table>
+<p>Uncompressed, these would take 140 K to store, which is beyond what would be
+reasonable. However, as you can see there is a large degree of similarity
+between the two bitmaps and across the rows, which lends well to compression.</p>
+<p>This crate stores one 512-bit "row" of the above bitmaps in the leaf level of a
+trie, and a single additional level to index into the leafs. There are 134
+unique 512-bit chunks across the two bitmaps.</p>
+<p>The chunk size of 512 bits is selected as the size that minimizes the total size
+of the data structure. A smaller chunk, like 256 or 128 bits, would achieve
+better deduplication but require a larger index. A larger chunk would increase
+redundancy in the leaf bitmaps. 512 bit chunks are the optimum for total size of
+the index plus leaf bitmaps.</p>
+<p>The chunk data is compressed using the Kuhn–Munkres algorithm for bipartite
+matching to eliminate redundancies between the second half of any chunk and the
+first half of any other chunk. This achieves an additional 9% compression of the
+leaf level, leaving 122 chunks that can be indexed at the half-chunk level using
+an 8-bit index. Note that this is not the same as using chunks which are half
+the size, because it does not necessitate raising the size of the trie's first
+level.</p>
+<p>In contrast to binary search or the <code>ucd-trie</code> crate, performing lookups in this
+data structure is straight-line code with no need for branching.</p>
+<pre><code class="language-asm">is_xid_start:
+	mov eax, edi
+	shr eax, 9
+	cmp edi, 261632
+	mov ecx, offset unicode_ident::tables::TRIE_START+17
+	lea rax, [rax + unicode_ident::tables::TRIE_START]
+	cmovb rcx, rax
+	movzx eax, byte ptr [rcx]
+	mov ecx, 1539
+	bextr ecx, edi, ecx
+	and edi, 7
+	shl eax, 5
+	movzx eax, byte ptr [rax + rcx + unicode_ident::tables::LEAF]
+	bt eax, edi
+	setb al
+	ret
+</code></pre>
+<br/>
+<h2 id="license">License</h2>
+<p>Use of the Unicode Character Database, as this crate does, is governed by the <a href="../../../../../native/rust/vendor/unicode-ident/LICENSE-UNICODE">Unicode license</a>.</p>
+<p>All intellectual property within this crate that is <strong>not generated</strong> using the
+Unicode Character Database as input is licensed under either of <a href="../../../../../native/rust/vendor/unicode-ident/LICENSE-APACHE">Apache License, Version 2.0</a> or <a href="../../../../../native/rust/vendor/unicode-ident/LICENSE-MIT">MIT license</a> at your option.</p>
+<p>The <strong>generated</strong> files incorporate tabular data derived from the Unicode
+Character Database, together with intellectual property from the original source
+code content of the crate. One must comply with the terms of both the Unicode
+License Agreement and either of the Apache license or MIT license when those
+generated files are involved.</p>
+<p>Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
+be licensed as just described, without any additional terms or conditions.</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

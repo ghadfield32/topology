@@ -1,0 +1,4 @@
+error: failed to parse manifest at `/mnt/data/shape17_build/listening_to_shape_lab/systems/rust_validator/Cargo.toml`
+
+Caused by:
+  can't find library `capture_validator`, rename file to `src/lib.rs` or specify lib.path

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "cmake",
+    "-S",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys02/project/cpp",
+    "-B",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys02/check01/build",
+    "-DCMAKE_BUILD_TYPE=Debug"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys02",
+  "exit_code": 0,
+  "seconds": 0.21499695200009228,
+  "stdout": "-- The CXX compiler identification is GNU 14.2.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: /mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys02/check01/build\n",
+  "stderr": ""
+}

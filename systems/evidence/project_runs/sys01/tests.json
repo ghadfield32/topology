@@ -1,0 +1,15 @@
+{
+  "command": [
+    "ctest",
+    "--test-dir",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys01/check01/build",
+    "-C",
+    "Debug",
+    "--output-on-failure"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys01",
+  "exit_code": 0,
+  "seconds": 0.012397144000260596,
+  "stdout": "Internal ctest changing into directory: /mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys01/check01/build\nTest project /mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys01/check01/build\n    Start 1: rejects_missing_input\n1/2 Test #1: rejects_missing_input ............   Passed    0.00 sec\n    Start 2: pointer_and_layout\n2/2 Test #2: pointer_and_layout ...............   Passed    0.00 sec\n\n100% tests passed, 0 tests failed out of 2\n\nTotal Test time (real) =   0.00 sec\n",
+  "stderr": ""
+}

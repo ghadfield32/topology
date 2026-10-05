@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Separate checks, and what each one actually claims · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/CHECKS.md">docs/release/CHECKS.md</a> · Readable source notation; no online math renderer.</p><h1 id="separate-checks-and-what-each-one-actually-claims">Separate checks, and what each one actually claims</h1>
+<p>One blended "all green" number hides which claim was tested. These checks are
+deliberately separate. Run them individually with <code>tools/check_matrix.py</code>.</p>
+<pre><code class="language-powershell">uv run --no-sync python tools/check_matrix.py --list
+uv run --no-sync python tools/check_matrix.py --fast
+uv run --no-sync python tools/check_matrix.py --only contracts,python,readers,native
+uv run --no-sync python tools/check_matrix.py --only science --output my_work/checks01
+uv run --no-sync python tools/check_matrix.py --only notebooks --output my_work/nb_verify01
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Scope</th>
+<th>Typical cost</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contracts</code></td>
+<td>generator freshness, notebook contracts, verifier contracts</td>
+<td>seconds</td>
+</tr>
+<tr>
+<td><code>python</code></td>
+<td>the current Python test suite, with skip reasons collected</td>
+<td>~1 min</td>
+</tr>
+<tr>
+<td><code>readers</code></td>
+<td>native data decoders vs the independent Python oracle</td>
+<td>~30 s</td>
+</tr>
+<tr>
+<td><code>native</code></td>
+<td>native algorithm suites (Go and Rust unit tests)</td>
+<td>~10 s</td>
+</tr>
+<tr>
+<td><code>science</code></td>
+<td>native acceptance plus selected independent NumPy/PyTorch oracles</td>
+<td>~1 min</td>
+</tr>
+<tr>
+<td><code>notebooks</code></td>
+<td>the generated workbook runtime sweep, all 171 entries</td>
+<td>tens of minutes</td>
+</tr>
+</tbody>
+</table>
+<p>Each run writes <code>check_matrix.json</code> listing every check's scope, argv, exit code,
+timing, output tail and (for <code>python</code>) the skip reasons.</p>
+<h2 id="what-no-check-establishes">What no check establishes</h2>
+<p>Stated in the tool's own output, and repeated here so it cannot be missed:</p>
+<ul>
+<li><strong>Original 133-notebook native parity is NOT certified.</strong> <code>native/COVERAGE.md</code>
+records each unit's difference, and
+<code>native_course.py verify --require-original-parity</code> refuses the claim on purpose.
+Do not remove that guard to make a screen green.</li>
+<li>Docker/OCI image build and runtime acceptance.</li>
+<li>Live Kubernetes admission, scheduling or a completed Job.</li>
+<li>macOS, GPU or remote CI execution.</li>
+<li>Learner mastery. Every generated notebook is <code>not_assessed</code>.</li>
+</ul>
+<h2 id="protocol-parity-say-which-kind-it-is">Protocol parity: say which kind it is</h2>
+<p>When two implementations are compared, state the category rather than implying
+equality:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Meaning</th>
+<th>Where it applies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exact</td>
+<td>integer/structural identity, zero tolerance</td>
+<td>rank, counts, IDs, F2</td>
+</tr>
+<tr>
+<td>numerical</td>
+<td>agrees within a stated tolerance</td>
+<td><code>1e-8</code> absolute, <code>1e-7</code> relative for native f64</td>
+</tr>
+<tr>
+<td>same-protocol optimization</td>
+<td>same architecture, split and seed on both sides</td>
+<td>the native16 small models</td>
+</tr>
+<tr>
+<td>related control</td>
+<td>analogous but not identical construction</td>
+<td>several geometry and operator labs</td>
+</tr>
+<tr>
+<td>not implemented</td>
+<td>outside the native16 scope</td>
+<td>full FNO, VGGT inference, alpha/Delaunay</td>
+</tr>
+</tbody>
+</table>
+<p>A different Wine split or a different neural architecture between the original
+notebook and the native unit is <strong>not</strong> a language performance comparison. It is
+a protocol difference, and <code>native/COVERAGE.md</code> says so explicitly.</p>
+<h2 id="test-identity-tracking-not-a-frozen-count">Test-identity tracking, not a frozen count</h2>
+<p>Do not carry a historical pass count across platforms as if it were a constant.
+Compare the collected test identities and justify each skip. The current local
+result and its three platform skips are recorded by the <code>python</code> check, and the
+skip reasons differ from the Linux reference host's (which skips Ripser/GUDHI
+instead).</p>
+<h2 id="deploy-gates">Deploy gates</h2>
+<p><code>tools/native_deploy_verify.py</code> handles the new native images and Jobs. Static
+YAML parsing is reported as <code>static_only</code> and is <strong>not</strong> runtime evidence.
+Building images and running Jobs require explicit flags, and the cluster gate
+refuses to run unless you pass a disposable context (<code>kind-</code> by default). The
+cleanup path deletes only the namespace that run created and never deletes PVCs.</p>
+<p>Exit codes: <code>0</code> every requested gate passed, <code>2</code> blocked/not-run, <code>1</code> a gate ran
+and failed.</p>
+<h3 id="what-actually-ran-here">What actually ran here</h3>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>static policy parse</td>
+<td>passed: <code>read_only_rootfs</code>, <code>network_disabled</code>, <code>no_new_privileges</code>, 2 Jobs with deadlines and pinned namespaces</td>
+</tr>
+<tr>
+<td>docker runtime</td>
+<td>passed: server 29.7.2</td>
+</tr>
+<tr>
+<td><code>--build</code> (Go + Rust images)</td>
+<td><strong>passed</strong>: both Dockerfiles built, including their in-build native tests, exit 0</td>
+</tr>
+<tr>
+<td>hardened <code>docker run</code></td>
+<td><strong>passed</strong>: exit 0 for both; the Go container reported <code>real_rank 3</code>, <code>f2_rank 2</code></td>
+</tr>
+<tr>
+<td><code>--jobs</code> in <code>kind-shape-learning</code></td>
+<td><strong>passed</strong>: both Jobs reached <code>condition met</code>, a verify Pod read the PVC, and both <code>result.json</code> files parsed with <code>lab stage01</code>, <code>status completed</code></td>
+</tr>
+</tbody>
+</table>
+<p>The verifier caught a real defect while doing this: <code>kubectl apply</code> rejects a Job
+that uses <code>generateName</code>. The fix uses <code>create</code>, matching the deployment guide,
+and waits for the PVC to bind before waiting on the Job.</p>
+<p>The learner namespace and its PVC were never touched. Only namespaces created by
+these verification runs were removed, and only after exporting their evidence.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

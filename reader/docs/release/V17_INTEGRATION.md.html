@@ -1,0 +1,261 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>v17 integration record — what was merged, preserved, and executed here · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/V17_INTEGRATION.md">docs/release/V17_INTEGRATION.md</a> · Readable source notation; no online math renderer.</p><h1 id="v17-integration-record--what-was-merged-preserved-and-executed-here">v17 integration record — what was merged, preserved, and executed here</h1>
+<p>Prepared 4 October 2026. This records how
+<code>Listening_to_Shape_Learning_System_v17.zip</code> (41.8 MiB, 6,665 files, edition 17,
+base v16) was merged into this repository, what was deliberately preserved, and
+what was actually executed on this Windows machine. It complements
+<a href="NATIVE16_IMPORT.md.html">NATIVE16_IMPORT.md</a>, which records the earlier native16
+import and the version reconciliation this change completed.</p>
+<p>The archive's own records remain the source of its own claims:
+<a href="../../../docs/v17">docs/v17/</a>, <a href="../../../PACKAGE_V17.json">PACKAGE_V17.json</a> and
+[LISTENING_TO_SHAPE_V17 in the archive]. Nothing here relabels an archive result
+as a local one, and nothing here presents a blocked dependency as a pass.</p>
+<h2 id="what-the-archive-adds">What the archive adds</h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>systems/</code></td>
+<td>Source-mapped engineering projects sys00–sys09: real C, C++20, pybind11, OpenCV, GPU/Triton, TypeScript, Rust, PyO3 and Go code with lessons, contracts, tools, tests and executed evidence</td>
+</tr>
+<tr>
+<td><code>learning/</code></td>
+<td>Generated language interfaces (57 units × Python/Go/Rust + ten project interfaces) and their index — regenerated, never hand-edited</td>
+</tr>
+<tr>
+<td><code>learn.py</code></td>
+<td>The engineering front door: <code>doctor</code>, <code>list</code>, <code>show</code>, <code>session</code>, <code>project</code>, <code>check-project</code>, <code>demo</code>, <code>verify-projects</code>, <code>workbooks</code></td>
+</tr>
+<tr>
+<td><code>LEARN_TOPOLOGY.html</code></td>
+<td>The single navigation page for both layers</td>
+</tr>
+<tr>
+<td><code>docs/v17/</code></td>
+<td>The archive's FIRST_RUN, SOURCE_MAP, MIGRATION, DESIGN, VERIFICATION and AGENT_HANDOFF records</td>
+</tr>
+<tr>
+<td><code>src/shape_lab/result_packet.py</code>, <code>study_session.py</code></td>
+<td>Output sealing and the study/report route</td>
+</tr>
+<tr>
+<td>v13 edits to <code>acceptance.py</code>, <code>cli.py</code>, <code>course.py</code>, <code>deployment.py</code></td>
+<td>On-disk child-evidence validation and the <code>study</code>/<code>report</code> CLI commands</td>
+</tr>
+<tr>
+<td><code>docs/release/RESULTS_WORKFLOW.md</code>, <code>IMPLEMENTATION_V13.md</code></td>
+<td>The learning-to-results workflow</td>
+</tr>
+<tr>
+<td><code>reports/v13/</code></td>
+<td>The archive's v13 evidence records used by the results workflow and the reader</td>
+</tr>
+<tr>
+<td><code>tools/verify_v17_archive.py</code>, <code>MANIFEST_V17.sha256</code></td>
+<td>Verification of the separately extracted archive</td>
+</tr>
+<tr>
+<td><code>.github/workflows/systems-learning.yml</code>, <code>.vscode/tasks.v17.example.json</code>, <code>.devcontainer/README.v17.md</code></td>
+<td>Optional systems CI and editor/container examples (not executed here)</td>
+</tr>
+</tbody>
+</table>
+<p>The archive's <code>systems/</code>, <code>learning/</code>, <code>learn.py</code> and <code>LEARN_TOPOLOGY.html</code> did
+not previously exist in this repository: the earlier import had deliberately
+deferred them because they were part of a coordinated version change. That
+change is now completed.</p>
+<h2 id="what-was-merged-files-the-archive-ships-a-newer-version-of">What was merged (files the archive ships a newer version of)</h2>
+<ul>
+<li><code>src/shape_lab/{cli,acceptance,course,deployment}.py</code> — the v13 additions.</li>
+<li><code>tools/{docker_verify.py,k8s_verify.py,build_reader.py}</code> and
+<code>tests/test_repository_v10.py</code> — container child-evidence validation and the
+version relabels.</li>
+<li><code>docs/release/{FIRST_RUN,VERIFICATION,DOCKER,KUBERNETES,DATA_AND_SPORTS,SPORTS_REFRESH,AGENT_HANDOFF}.md</code>
+and <code>docs/release/ENVIRONMENT_STATUS.json</code> — the archive's current release
+text.</li>
+<li><code>deploy/kubernetes/resources.json</code>, <code>compose.yaml</code>, <code>.github/workflows/course-ci.yml</code>,
+<code>curriculum/{catalog,experiments}.json</code>, <code>curriculum/START.md</code> —
+version/image/namespace relabels.</li>
+<li><code>reports/v14/summary.json</code> (new) — the reader's evidence source, derived from
+the archive's <code>reports/v13/summary.json</code> and explicitly marked as an archive
+execution record, not this checkout's totals. <code>reports/v12/*</code> historical
+records are untouched.</li>
+</ul>
+<p>The 130 archive notebook files that differ from this repository carry refreshed
+saved outputs only; their teaching source cells were verified identical to this
+repository's, so they were <strong>not</strong> overwritten. The three notebooks with genuine
+local source edits were likewise preserved.</p>
+<h2 id="what-was-deliberately-preserved-not-overwritten">What was deliberately preserved (not overwritten)</h2>
+<ul>
+<li><code>uv.lock</code> — the genuine, working local lock. It was re-resolved with normal
+<code>uv lock</code> so its root package agrees with the 14.0.0 manifest; the resolution
+succeeded against the configured package index.</li>
+<li><code>workbooks/polyglot/</code> and <code>tools/build_language_notebooks.py</code> — the local,
+fuller three-language notebook set and its generator.</li>
+<li><code>native_course.py</code>'s <code>run_identity(...)</code> evidence binding, which the archive
+lacked. This was kept rather than regressed.</li>
+<li><code>docs/release/NATIVE16_IMPORT.md</code> — extended with a reconciliation section
+instead of being replaced by the archive's shorter root README.</li>
+<li>Root <code>AGENTS.md</code>/<code>README.md</code> — the repository's own, richer guidance was kept
+and updated, not replaced by the archive's thinner generic versions.</li>
+<li>The repository's fuller <code>docs/release/FIRST_RUN.md</code> and <code>COMPLETE_COURSE.md</code>.</li>
+<li>All of <code>my_work/</code>, existing progress logs, learner notebooks and datasets.</li>
+<li><code>.gitignore</code>/<code>.dockerignore</code> — the local entries for ignored delivery ZIPs,
+<code>.uv-python/</code> and <code>.local-bin/</code> were kept.</li>
+</ul>
+<h2 id="version-reconciliation-now-1400">Version reconciliation (now 14.0.0)</h2>
+<p><code>pyproject.toml</code>, <code>src/shape_lab/__init__.py</code>, <code>tests/test_release_version_v3.py</code>,
+<code>curriculum/catalog.json</code>, <code>RELEASE_MANIFEST.json</code> and
+<code>docs/release/ENVIRONMENT_STATUS.json</code> identify <strong>14.0.0</strong>. Container and
+Kubernetes references use <code>listening-to-shape:14</code> and namespace
+<code>shape-learning-v14</code>. <code>deploy/kubernetes/resources.json</code> keeps the archive's
+<code>core</code> profile default.</p>
+<h2 id="a-real-portability-fix-our-change-not-the-archives">A real portability fix (our change, not the archive's)</h2>
+<p>The archive's <code>systems/python/workflow.py:command()</code> ran <code>tsc</code> by bare name.
+On Windows a package-manager install is a <code>.cmd</code> shim that <code>CreateProcess</code>
+cannot locate, so the integrated demonstration failed with
+<code>[WinError 2] The system cannot find the file specified</code>. <code>command()</code> now
+resolves the executable (including a <code>.cmd</code>/<code>.bat</code> shim through <code>%COMSPEC%</code>) to
+an absolute, shell-free argv. Regression tests were added in
+<code>systems/tests/test_workflow.py</code>. The same latent problem existed for any
+npm/global shim; it is fixed centrally rather than per call site.</p>
+<p>Two imported v13 tests created symlinks unconditionally and failed on a Windows
+host that disallows symlink creation (as the repository's own tests already
+handled). Both now skip with an explicit <code>Host disallows symlinks</code> reason, so
+the check still runs on hosts that permit symlinks.</p>
+<h2 id="what-executed-on-this-machine">What executed on this machine</h2>
+<p>Environment: Windows x86-64, Python 3.13.5, uv 0.12.5, GCC/G++ 14.2.0 (MSYS2),
+CMake, Go 1.27.1, Rust/Cargo 1.97.1, Node 22.23.2, TypeScript 5.8.3
+(<code>npm install --global typescript@5.8.3</code>), CUDA <code>nvcc</code> present. <code>PYTHONUTF8=1</code>
+is required for the non-ASCII lesson text on this host.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Observed result here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uv lock --check</code></td>
+<td>Resolved; lock and manifest agree at 14.0.0</td>
+</tr>
+<tr>
+<td>Full repository Python suite</td>
+<td><strong>876 passed, 6 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td>New systems isolated suite</td>
+<td><strong>24 passed</strong> (21 imported + 3 added regression tests)</td>
+</tr>
+<tr>
+<td><code>learn.py doctor</code></td>
+<td>Toolchains reported; availability explicitly not acceptance</td>
+</tr>
+<tr>
+<td><code>learn.py list</code></td>
+<td>57 application/native keys + sys00–sys09 listed</td>
+</tr>
+<tr>
+<td><code>learn.py workbooks --check</code></td>
+<td>182 files, 181 notebooks, no mismatches</td>
+</tr>
+<tr>
+<td><code>learn.py project --unit sys01</code> + <code>check-project</code></td>
+<td>Copied project built and tested: <strong>passed</strong></td>
+</tr>
+<tr>
+<td><code>courses.py run --stage 1</code></td>
+<td>1/1 notebook passed; inputs unchanged</td>
+</tr>
+<tr>
+<td><code>native_course.py compare --lab stage01</code></td>
+<td>Go ≡ Rust ≡ Python; <code>run_identity</code> present; inputs unchanged</td>
+</tr>
+<tr>
+<td><code>learn.py demo</code></td>
+<td><strong>passed</strong>; real selected SPL excerpt (12 frames)</td>
+</tr>
+<tr>
+<td><code>learn.py verify-projects</code> (all ten)</td>
+<td><strong>8 passed, 0 failed, 2 blocked</strong> (sys04 OpenCV, sys08 PyO3)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-measured-data-demonstration-this-run">The measured-data demonstration (this run)</h3>
+<p>Source: the bundled selected SPL tracking excerpt, one participant, one trial,
+12 frames. Coordinates are a unit conversion of the selected source tracking;
+time is an ideal frame/sample-rate clock; confidence was not supplied and stays
+unknown. Five selected points fit the initial state under fixed g = 9.81 m/s²;
+two later same-shot points evaluate it.</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Measured value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C++ vs Python max prediction difference</td>
+<td>8.881784197001252e-16 m</td>
+</tr>
+<tr>
+<td>Height fitting RMSE</td>
+<td>0.017536917337837687 m</td>
+</tr>
+<tr>
+<td>Two-point later height MAE</td>
+<td>0.04881247418842305 m</td>
+</tr>
+<tr>
+<td>Last-observed-height baseline MAE</td>
+<td>0.0446230812746351 m</td>
+</tr>
+<tr>
+<td>Fitting-mean height baseline MAE</td>
+<td>0.25015376535622336 m</td>
+</tr>
+<tr>
+<td>Portable binary size</td>
+<td>588 bytes (12-byte header + 12 × 48)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The simple last-height baseline beats this fitted model on those two later
+points.</strong> The course keeps that result visible instead of presenting only the
+weaker mean baseline. No release detection, significance or out-of-athlete
+generalisation is established.</p>
+<h2 id="not-run-here-do-not-read-as-passes">Not run here (do not read as passes)</h2>
+<ul>
+<li>Docker image build/run and live Kubernetes admission/Job were not executed.
+<code>docker_verify.py</code> and <code>k8s_verify.py</code> report readiness from the local daemon
+only; they never emulate a pass.</li>
+<li>GPU/Triton/CUDA kernels, Nsight and mixed-precision comparisons were not
+executed. The CUDA probe is source with an explicit gate.</li>
+<li>C++ OpenCV (sys04) needs a development package not present here; the Python
+OpenCV probe is not C++ equivalence.</li>
+<li>PyO3/maturin (sys08) are not resolved; no PyO3 lock is fabricated.</li>
+<li>The 133 original Python reference notebooks were not replayed in full, and
+<code>original_notebook_parity</code> remains <code>not_certified</code>.</li>
+<li>The remote <code>systems-learning.yml</code> workflow was not run on GitHub.</li>
+</ul>
+<h2 id="how-to-reproduce-this-verification">How to reproduce this verification</h2>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+uv lock --check
+uv run --no-sync python -m pytest -q -ra
+uv run --no-sync python -m unittest discover -s systems/tests -p 'test_*.py'
+uv run --no-sync python learn.py doctor
+uv run --no-sync python learn.py workbooks --check
+uv run --no-sync python learn.py project --unit sys01 --output my_work/c_reader01
+uv run --no-sync python learn.py check-project --workspace my_work/c_reader01 --output my_work/c_reader01/attempt01
+uv run --no-sync python learn.py demo --output my_work/integrated_demo01
+uv run --no-sync python learn.py verify-projects --output my_work/projects_acceptance01
+</code></pre>
+<p>Use a new output directory for every attempt; existing results are never
+overwritten. This records local execution, not learner mastery.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

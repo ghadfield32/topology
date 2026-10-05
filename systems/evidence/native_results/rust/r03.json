@@ -1,0 +1,23 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "r03",
+  "language": "rust",
+  "metrics": {
+    "collapsed_gradient_norm": 0.0,
+    "collapsed_projection_penalty": 0.07125178343249218,
+    "invariance_mse": 0.009999999999999998,
+    "offdiagonal_covariance_penalty": 0.0072000000000000015,
+    "scope": "finite objective controls; positive penalty can have zero gradient at collapse",
+    "variance_hinge": 0.22200273078368415
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

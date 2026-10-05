@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Changelog · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/digest/CHANGELOG.md">native/rust/vendor/digest/CHANGELOG.md</a> · Readable source notation; no online math renderer.</p><h1 id="changelog">Changelog</h1>
+<p>All notable changes to this project will be documented in this file.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<h2 id="0107-2023-05-19">0.10.7 (2023-05-19)</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Loosen <code>subtle</code> version requirement (<a href="https://github.com/RustCrypto/traits/pull/1260">#1260</a>)</li>
+</ul>
+<h2 id="0106-2022-11-17">0.10.6 (2022-11-17)</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li><code>Mac::verify_reset</code> and <code>Mac::verify_slice_reset</code> methods (<a href="https://github.com/RustCrypto/traits/pull/1154">#1154</a>)</li>
+</ul>
+<h2 id="0105-2022-09-16">0.10.5 (2022-09-16)</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>MSRV build (<a href="https://github.com/RustCrypto/traits/pull/1117">#1117</a>)</li>
+</ul>
+<h2 id="0104-2022-09-16">0.10.4 (2022-09-16)</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>Feature-gated implementation of the <code>const_oid::AssociatedOid</code> trait
+for the core wrappers. (<a href="https://github.com/RustCrypto/traits/pull/1098">#1098</a>)</li>
+</ul>
+<h2 id="0103-2022-02-16">0.10.3 (2022-02-16)</h2>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Minimal versions build (<a href="https://github.com/RustCrypto/traits/pull/940">#940</a>)</li>
+</ul>
+<h2 id="0102-2022-02-10">0.10.2 (2022-02-10)</h2>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Relax bounds on the <code>Mac</code> trait (<a href="https://github.com/RustCrypto/traits/pull/849">#849</a>)</li>
+</ul>
+<h2 id="0101-2021-12-14-yanked">0.10.1 (2021-12-14) [YANKED]</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li><code>Update::chain</code> and <code>Digest::new_with_prefix</code> methods. (<a href="https://github.com/RustCrypto/traits/pull/846">#846</a>)</li>
+<li><code>Mac::generate_key</code> method. (<a href="https://github.com/RustCrypto/traits/pull/847">#847</a>)</li>
+</ul>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Doc cfg attribute for <code>CtOutput</code> and <code>MacError</code>. (<a href="https://github.com/RustCrypto/traits/pull/842">#842</a>)</li>
+<li>Expose <code>KeyInit::generate_key</code> method in docs. (<a href="https://github.com/RustCrypto/traits/pull/847">#847</a>)</li>
+</ul>
+<h2 id="0100-2021-12-07-yanked">0.10.0 (2021-12-07) [YANKED]</h2>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>Dirty traits are removed and instead block-level traits are introduced.
+Variable output traits reworked and now support both run and compile time selection of output size. (<a href="https://github.com/RustCrypto/traits/pull/380">#380</a>, <a href="https://github.com/RustCrypto/traits/pull/819">#819</a>)</li>
+<li>The <code>crypto-mac</code> traits are reworked and merged in. (<a href="https://github.com/RustCrypto/traits/pull/819">#819</a>)</li>
+</ul>
+<h2 id="090-2020-06-09">0.9.0 (2020-06-09)</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li><code>ExtendableOutputDirty</code> and <code>VariableOutputDirty</code> traits (<a href="https://github.com/RustCrypto/traits/pull/183">#183</a>)</li>
+<li><code>FixedOutputDirty</code> trait + <code>finalize_into*</code> (<a href="https://github.com/RustCrypto/traits/pull/180">#180</a>)</li>
+<li><code>XofReader::read_boxed</code> method (<a href="https://github.com/RustCrypto/traits/pull/178">#178</a>, <a href="https://github.com/RustCrypto/traits/pull/181">#181</a>, <a href="https://github.com/RustCrypto/traits/pull/182">#182</a>)</li>
+<li><code>alloc</code> feature (<a href="https://github.com/RustCrypto/traits/pull/163">#163</a>)</li>
+<li>Re-export <code>typenum::consts</code> as <code>consts</code> (<a href="https://github.com/RustCrypto/traits/pull/123">#123</a>)</li>
+<li><code>Output</code> type alias (<a href="https://github.com/RustCrypto/traits/pull/115">#115</a>)</li>
+</ul>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>Rename <code>*result*</code> methods to <code>finalize</code> ala IUF (<a href="https://github.com/RustCrypto/traits/pull/161">#161</a>)</li>
+<li>Use <code>impl AsRef&lt;[u8]&gt;</code> instead of generic params on methods (<a href="https://github.com/RustCrypto/traits/pull/112">#112</a>)</li>
+<li>Rename <code>Input::input</code> to <code>Update::update</code> ala IUF (<a href="https://github.com/RustCrypto/traits/pull/111">#111</a>)</li>
+<li>Upgrade to Rust 2018 edition (<a href="https://github.com/RustCrypto/traits/pull/109">#109</a>)</li>
+<li>Bump <code>generic-array</code> to v0.14 (<a href="https://github.com/RustCrypto/traits/pull/95">#95</a>)</li>
+</ul>
+<h2 id="081-2019-06-30">0.8.1 (2019-06-30)</h2>
+<h2 id="080-2018-10-01">0.8.0 (2018-10-01)</h2>
+<h2 id="076-2018-09-21">0.7.6 (2018-09-21)</h2>
+<h2 id="075-2018-07-13">0.7.5 (2018-07-13)</h2>
+<h2 id="074-2018-06-21">0.7.4 (2018-06-21)</h2>
+<h2 id="073-2018-06-20">0.7.3 (2018-06-20)</h2>
+<h2 id="072-2017-11-17">0.7.2 (2017-11-17)</h2>
+<h2 id="071-2017-11-15">0.7.1 (2017-11-15)</h2>
+<h2 id="070-2017-11-14">0.7.0 (2017-11-14)</h2>
+<h2 id="062-2017-07-24">0.6.2 (2017-07-24)</h2>
+<h2 id="061-2017-06-18">0.6.1 (2017-06-18)</h2>
+<h2 id="060-2017-06-12">0.6.0 (2017-06-12)</h2>
+<h2 id="052-2017-05-02">0.5.2 (2017-05-02)</h2>
+<h2 id="051-2017-05-02">0.5.1 (2017-05-02)</h2>
+<h2 id="050-2017-04-06">0.5.0 (2017-04-06)</h2>
+<h2 id="040-2016-12-24">0.4.0 (2016-12-24)</h2>
+<h2 id="031-2016-12-16">0.3.1 (2016-12-16)</h2>
+<h2 id="030-2016-11-17">0.3.0 (2016-11-17)</h2>
+<h2 id="021-2016-10-14">0.2.1 (2016-10-14)</h2>
+<h2 id="020-2016-10-14">0.2.0 (2016-10-14)</h2>
+<h2 id="010-2016-10-06">0.1.0 (2016-10-06)</h2>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

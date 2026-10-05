@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>1.3.2 · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/bitflags/CHANGELOG.md">native/rust/vendor/bitflags/CHANGELOG.md</a> · Readable source notation; no online math renderer.</p><h1 id="132">1.3.2</h1>
+<ul>
+<li>Allow <code>non_snake_case</code> in generated flags types ([#256])</li>
+</ul>
+<h1 id="131">1.3.1</h1>
+<ul>
+<li>Revert unconditional <code>#[repr(transparent)]</code> (<a href="https://github.com/bitflags/bitflags/pull/256">#252</a>)</li>
+</ul>
+<h1 id="130-yanked">1.3.0 (yanked)</h1>
+<ul>
+<li><p>Add <code>#[repr(transparent)]</code> (<a href="https://github.com/bitflags/bitflags/pull/187">#187</a>)</p>
+</li>
+<li><p>End <code>empty</code> doc comment with full stop (<a href="https://github.com/bitflags/bitflags/pull/202">#202</a>)</p>
+</li>
+<li><p>Fix typo in crate root docs (<a href="https://github.com/bitflags/bitflags/pull/206">#206</a>)</p>
+</li>
+<li><p>Document from_bits_unchecked unsafety (<a href="https://github.com/bitflags/bitflags/pull/207">#207</a>)</p>
+</li>
+<li><p>Let <code>is_all</code> ignore extra bits (<a href="https://github.com/bitflags/bitflags/pull/211">#211</a>)</p>
+</li>
+<li><p>Allows empty flag definition (<a href="https://github.com/bitflags/bitflags/pull/225">#225</a>)</p>
+</li>
+<li><p>Making crate accessible from std (<a href="https://github.com/bitflags/bitflags/pull/227">#227</a>)</p>
+</li>
+<li><p>Make <code>from_bits</code> a const fn (<a href="https://github.com/bitflags/bitflags/pull/229">#229</a>)</p>
+</li>
+<li><p>Allow multiple bitflags structs in one macro invocation (<a href="https://github.com/bitflags/bitflags/pull/235">#235</a>)</p>
+</li>
+<li><p>Add named functions to perform set operations (<a href="https://github.com/bitflags/bitflags/pull/244">#244</a>)</p>
+</li>
+<li><p>Fix typos in method docs (<a href="https://github.com/bitflags/bitflags/pull/245">#245</a>)</p>
+</li>
+<li><p>Modernization of the <code>bitflags</code> macro to take advantage of newer features and 2018 idioms (<a href="https://github.com/bitflags/bitflags/pull/246">#246</a>)</p>
+</li>
+<li><p>Fix regression (in an unreleased feature) and simplify tests (<a href="https://github.com/bitflags/bitflags/pull/247">#247</a>)</p>
+</li>
+<li><p>Use <code>Self</code> and fix bug when overriding <code>stringify!</code> (<a href="https://github.com/bitflags/bitflags/pull/249">#249</a>)</p>
+</li>
+</ul>
+<h1 id="121">1.2.1</h1>
+<ul>
+<li>Remove extraneous <code>#[inline]</code> attributes (<a href="https://github.com/bitflags/bitflags/pull/194">#194</a>)</li>
+</ul>
+<h1 id="120">1.2.0</h1>
+<ul>
+<li><p>Fix typo: {Lower, Upper}Exp - {Lower, Upper}Hex (<a href="https://github.com/rust-lang-nursery/bitflags/pull/183">#183</a>)</p>
+</li>
+<li><p>Add support for "unknown" bits (<a href="https://github.com/rust-lang-nursery/bitflags/pull/188">#188</a>)</p>
+</li>
+</ul>
+<h1 id="110">1.1.0</h1>
+<p>This is a re-release of <code>1.0.5</code>, which was yanked due to a bug in the RLS.</p>
+<h1 id="105">1.0.5</h1>
+<ul>
+<li><p>Use compiletest_rs flags supported by stable toolchain (<a href="https://github.com/rust-lang-nursery/bitflags/pull/171">#171</a>)</p>
+</li>
+<li><p>Put the user provided attributes first (<a href="https://github.com/rust-lang-nursery/bitflags/pull/173">#173</a>)</p>
+</li>
+<li><p>Make bitflags methods <code>const</code> on newer compilers (<a href="https://github.com/rust-lang-nursery/bitflags/pull/175">#175</a>)</p>
+</li>
+</ul>
+<h1 id="104">1.0.4</h1>
+<ul>
+<li><p>Support Rust 2018 style macro imports (<a href="https://github.com/rust-lang-nursery/bitflags/pull/165">#165</a>)</p>
+<pre><code class="language-rust">use bitflags::bitflags;
+</code></pre>
+</li>
+</ul>
+<h1 id="103">1.0.3</h1>
+<ul>
+<li>Improve zero value flag handling and documentation (<a href="https://github.com/rust-lang-nursery/bitflags/pull/157">#157</a>)</li>
+</ul>
+<h1 id="102">1.0.2</h1>
+<ul>
+<li><p>30% improvement in compile time of bitflags crate (<a href="https://github.com/rust-lang-nursery/bitflags/pull/156">#156</a>)</p>
+</li>
+<li><p>Documentation improvements (<a href="https://github.com/rust-lang-nursery/bitflags/pull/153">#153</a>)</p>
+</li>
+<li><p>Implementation cleanup (<a href="https://github.com/rust-lang-nursery/bitflags/pull/149">#149</a>)</p>
+</li>
+</ul>
+<h1 id="101">1.0.1</h1>
+<ul>
+<li>Add support for <code>pub(restricted)</code> specifier on the bitflags struct (<a href="https://github.com/rust-lang-nursery/bitflags/pull/135">#135</a>)</li>
+<li>Optimize performance of <code>all()</code> when called from a separate crate (<a href="https://github.com/rust-lang-nursery/bitflags/pull/136">#136</a>)</li>
+</ul>
+<h1 id="100">1.0.0</h1>
+<ul>
+<li><p><strong>[breaking change]</strong> Macro now generates <a href="https://doc.rust-lang.org/reference/items.html#associated-constants">associated constants</a> (<a href="https://github.com/rust-lang-nursery/bitflags/pull/24">#24</a>)</p>
+</li>
+<li><p><strong>[breaking change]</strong> Minimum supported version is Rust <strong>1.20</strong>, due to usage of associated constants</p>
+</li>
+<li><p>After being broken in 0.9, the <code>#[deprecated]</code> attribute is now supported again (<a href="https://github.com/rust-lang-nursery/bitflags/pull/112">#112</a>)</p>
+</li>
+<li><p>Other improvements to unit tests and documentation (<a href="https://github.com/rust-lang-nursery/bitflags/pull/106">#106</a> and <a href="https://github.com/rust-lang-nursery/bitflags/pull/115">#115</a>)</p>
+</li>
+</ul>
+<h2 id="how-to-update-your-code-to-use-associated-constants">How to update your code to use associated constants</h2>
+<p>Assuming the following structure definition:</p>
+<pre><code class="language-rust">bitflags! {
+  struct Something: u8 {
+     const FOO = 0b01,
+     const BAR = 0b10
+  }
+}
+</code></pre>
+<p>In 0.9 and older you could do:</p>
+<pre><code class="language-rust">let x = FOO.bits | BAR.bits;
+</code></pre>
+<p>Now you must use:</p>
+<pre><code class="language-rust">let x = Something::FOO.bits | Something::BAR.bits;
+</code></pre>
+<h1 id="091">0.9.1</h1>
+<ul>
+<li>Fix the implementation of <code>Formatting</code> traits when other formatting traits were present in scope (<a href="https://github.com/rust-lang-nursery/bitflags/pull/105">#105</a>)</li>
+</ul>
+<h1 id="090">0.9.0</h1>
+<ul>
+<li><p><strong>[breaking change]</strong> Use struct keyword instead of flags to define bitflag types (<a href="https://github.com/rust-lang-nursery/bitflags/pull/84">#84</a>)</p>
+</li>
+<li><p><strong>[breaking change]</strong> Terminate const items with semicolons instead of commas (<a href="https://github.com/rust-lang-nursery/bitflags/pull/87">#87</a>)</p>
+</li>
+<li><p>Implement the <code>Hex</code>, <code>Octal</code>, and <code>Binary</code> formatting traits (<a href="https://github.com/rust-lang-nursery/bitflags/pull/86">#86</a>)</p>
+</li>
+<li><p>Printing an empty flag value with the <code>Debug</code> trait now prints "(empty)" instead of nothing (<a href="https://github.com/rust-lang-nursery/bitflags/pull/85">#85</a>)</p>
+</li>
+<li><p>The <code>bitflags!</code> macro can now be used inside of a fn body, to define a type local to that function (<a href="https://github.com/rust-lang-nursery/bitflags/pull/74">#74</a>)</p>
+</li>
+</ul>
+<h1 id="082">0.8.2</h1>
+<ul>
+<li>Update feature flag used when building bitflags as a dependency of the Rust toolchain</li>
+</ul>
+<h1 id="081">0.8.1</h1>
+<ul>
+<li>Allow bitflags to be used as a dependency of the Rust toolchain</li>
+</ul>
+<h1 id="080">0.8.0</h1>
+<ul>
+<li>Add support for the experimental <code>i128</code> and <code>u128</code> integer types (<a href="https://github.com/rust-lang-nursery/bitflags/pull/57">#57</a>)</li>
+<li>Add set method: <code>flags.set(SOME_FLAG, true)</code> or <code>flags.set(SOME_FLAG, false)</code> (<a href="https://github.com/rust-lang-nursery/bitflags/pull/55">#55</a>)
+This may break code that defines its own set method</li>
+</ul>
+<h1 id="071">0.7.1</h1>
+<p><em>(yanked)</em></p>
+<h1 id="070">0.7.0</h1>
+<ul>
+<li>Implement the Extend trait (<a href="https://github.com/rust-lang-nursery/bitflags/pull/49">#49</a>)</li>
+<li>Allow definitions inside the <code>bitflags!</code> macro to refer to items imported from other modules (<a href="https://github.com/rust-lang-nursery/bitflags/pull/51">#51</a>)</li>
+</ul>
+<h1 id="060">0.6.0</h1>
+<ul>
+<li>The <code>no_std</code> feature was removed as it is now the default</li>
+<li>The <code>assignment_operators</code> feature was remove as it is now enabled by default</li>
+<li>Some clippy suggestions have been applied</li>
+</ul>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

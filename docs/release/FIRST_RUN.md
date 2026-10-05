@@ -1,6 +1,8 @@
 # Start once, learn in order, preserve your evidence
 
-Version 12 • beginner-first repository edition • 22 September 2026
+Version 14 • repository edition • 4 October 2026
+
+**The whole journey has two connected layers.** This page covers the mathematical/research layer (stages, references, native Go/Rust). For the engineering layer (real C/C++/Rust/Go/TypeScript/GPU projects) start at [the v17 first run](../v17/FIRST_RUN.md), and for the single navigation page that joins them open [LEARN_TOPOLOGY.html](../../LEARN_TOPOLOGY.html). For the guided predict → run → reflect → report loop see [RESULTS_WORKFLOW.md](RESULTS_WORKFLOW.md).
 
 ## What this folder is
 

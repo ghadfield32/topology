@@ -1,0 +1,145 @@
+{
+  "schema": "shape.systems.trajectory.v1",
+  "units": "m",
+  "observed": [
+    {
+      "frame": 110,
+      "time": 1.8333333333333333,
+      "x": 4.8243547275025955,
+      "y": -7.943240964899474,
+      "z": 3.250704932288135,
+      "confidence": null
+    },
+    {
+      "frame": 115,
+      "time": 1.9166666666666667,
+      "x": 4.505979218483631,
+      "y": -7.891439635152015,
+      "z": 3.5896520455595424,
+      "confidence": null
+    },
+    {
+      "frame": 120,
+      "time": 2.0,
+      "x": 4.159151320508301,
+      "y": -7.8742422390826725,
+      "z": 3.8002875698715983,
+      "confidence": null
+    },
+    {
+      "frame": 125,
+      "time": 2.0833333333333335,
+      "x": 3.7813208135230036,
+      "y": -7.870905972220013,
+      "z": 3.939907850360581,
+      "confidence": null
+    },
+    {
+      "frame": 130,
+      "time": 2.1666666666666665,
+      "x": 3.4065996658866284,
+      "y": -7.866775321161718,
+      "z": 4.0136091578085376,
+      "confidence": null
+    },
+    {
+      "frame": 135,
+      "time": 2.25,
+      "x": 3.066030645994016,
+      "y": -7.8589631599075105,
+      "z": 4.005589648845731,
+      "confidence": null
+    },
+    {
+      "frame": 140,
+      "time": 2.3333333333333335,
+      "x": 2.736783907986088,
+      "y": -7.844707315715824,
+      "z": 3.9323825042220735,
+      "confidence": null
+    }
+  ],
+  "predicted": [
+    {
+      "time": 1.8333333333333333,
+      "x": 4.847514854819344,
+      "y": -7.9240138165846785,
+      "z": 3.275494460009308,
+      "confidence": null
+    },
+    {
+      "time": 1.9166666666666667,
+      "x": 4.491498002000087,
+      "y": -7.906667321543928,
+      "z": 3.565288385593493,
+      "confidence": null
+    },
+    {
+      "time": 2.0,
+      "x": 4.135481149180832,
+      "y": -7.889320826503178,
+      "z": 3.786957311177678,
+      "confidence": null
+    },
+    {
+      "time": 2.0833333333333335,
+      "x": 3.779464296361575,
+      "y": -7.871974331462428,
+      "z": 3.940501236761863,
+      "confidence": null
+    },
+    {
+      "time": 2.1666666666666665,
+      "x": 3.4234474435423192,
+      "y": -7.8546278364216775,
+      "z": 4.025920162346048,
+      "confidence": null
+    },
+    {
+      "time": 2.25,
+      "x": 3.0674305907230632,
+      "y": -7.837281341380927,
+      "z": 4.043214087930233,
+      "confidence": null
+    },
+    {
+      "time": 2.3333333333333335,
+      "x": 2.711413737903807,
+      "y": -7.8199348463401765,
+      "z": 3.9923830135144174,
+      "confidence": null
+    }
+  ],
+  "metadata": {
+    "source": {
+      "path": "sports_v8/data/spl_selected_frames.json",
+      "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc",
+      "participant": "P0001",
+      "trial": "T0001",
+      "position_status": "derived_unit_conversion_of_selected_source_tracking",
+      "time_status": "ideal frame/sample-rate clock; not synchronized camera PTS",
+      "confidence_status": "not supplied; preserved unknown",
+      "independent_trials": 1
+    },
+    "model": "fixed-gravity initial-state least squares",
+    "train_frames": [
+      110,
+      115,
+      120,
+      125,
+      130
+    ],
+    "test_frames": [
+      135,
+      140
+    ],
+    "limitations": [
+      "One selected trial from one participant; no independent athlete generalization.",
+      "The underlying excerpt is a selected numeric transcription; source-provider byte equality is not established here.",
+      "Times use an ideal frame/sample-rate clock, not measured synchronized camera PTS.",
+      "Confidence was not provided and remains null, not a predicted zero probability.",
+      "Fixed g=9.81 m/s^2, no spin/drag/contact; selected observations need not be pure free flight.",
+      "First five selected positions fit the initial state; two later same-shot positions evaluate this exposed teaching protocol."
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+.EE
+======================================================================
+ERROR: test_generator (systems.tests.test_navigation.Navigation.test_generator)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/shape17_build/listening_to_shape_lab/systems/tests/test_navigation.py", line 7, in test_generator
+    s=importlib.util.spec_from_file_location('gen17',p);m=importlib.util.module_from_spec(s);s.loader.exec_module(m)
+                                                                                             ~~~~~~~~~~~~~~~~~~~~^^^
+  File "<frozen importlib._bootstrap_external>", line 1022, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1159, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1217, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/shape17_build/listening_to_shape_lab/systems/tools/generate_workbooks.py'
+
+======================================================================
+ERROR: test_routes_execute_not_reuse_results (systems.tests.test_navigation.Navigation.test_routes_execute_not_reuse_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/shape17_build/listening_to_shape_lab/systems/tests/test_navigation.py", line 17, in test_routes_execute_not_reuse_results
+    from systems.python.notebook_runner import commands
+ModuleNotFoundError: No module named 'systems.python.notebook_runner'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (errors=2)

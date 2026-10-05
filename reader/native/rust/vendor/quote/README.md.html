@@ -1,0 +1,189 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/quote/README.md">native/rust/vendor/quote/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="rust-quasi-quoting">Rust Quasi-Quoting</h1>
+<p><a href="https://github.com/dtolnay/quote"><img alt="github" height="20" src="https://img.shields.io/badge/github-dtolnay/quote-8da0cb?style=for-the-badge&amp;labelColor=555555&amp;logo=github"/></a>
+<a href="https://crates.io/crates/quote"><img alt="crates.io" height="20" src="https://img.shields.io/crates/v/quote.svg?style=for-the-badge&amp;color=fc8d62&amp;logo=rust"/></a>
+<a href="https://docs.rs/quote"><img alt="docs.rs" height="20" src="https://img.shields.io/badge/docs.rs-quote-66c2a5?style=for-the-badge&amp;labelColor=555555&amp;logo=docs.rs"/></a>
+<a href="https://github.com/dtolnay/quote/actions?query=branch%3Amaster"><img alt="build status" height="20" src="https://img.shields.io/github/actions/workflow/status/dtolnay/quote/ci.yml?branch=master&amp;style=for-the-badge"/></a></p>
+<p>This crate provides the <a href="https://docs.rs/quote/1.0/quote/macro.quote.html"><code>quote!</code></a> macro for turning Rust syntax tree data
+structures into tokens of source code.</p>
+<p>Procedural macros in Rust receive a stream of tokens as input, execute arbitrary
+Rust code to determine how to manipulate those tokens, and produce a stream of
+tokens to hand back to the compiler to compile into the caller's crate.
+Quasi-quoting is a solution to one piece of that — producing tokens to
+return to the compiler.</p>
+<p>The idea of quasi-quoting is that we write <em>code</em> that we treat as <em>data</em>.
+Within the <code>quote!</code> macro, we can write what looks like code to our text editor
+or IDE. We get all the benefits of the editor's brace matching, syntax
+highlighting, indentation, and maybe autocompletion. But rather than compiling
+that as code into the current crate, we can treat it as data, pass it around,
+mutate it, and eventually hand it back to the compiler as tokens to compile into
+the macro caller's crate.</p>
+<p>This crate is motivated by the procedural macro use case, but is a
+general-purpose Rust quasi-quoting library and is not specific to procedural
+macros.</p>
+<pre><code class="language-toml">[dependencies]
+quote = "1.0"
+</code></pre>
+<p><a href="https://github.com/dtolnay/quote/releases"><em>Release notes</em></a></p>
+<br/>
+<h2 id="syntax">Syntax</h2>
+<p>The quote crate provides a <a href="https://docs.rs/quote/1.0/quote/macro.quote.html"><code>quote!</code></a> macro within which you can write Rust code
+that gets packaged into a <a href="https://docs.rs/proc-macro2/1.0/proc_macro2/struct.TokenStream.html"><code>TokenStream</code></a> and can be treated as data. You should
+think of <code>TokenStream</code> as representing a fragment of Rust source code.</p>
+<p>Within the <code>quote!</code> macro, interpolation is done with <code>#var</code>. Any type
+implementing the <a href="https://docs.rs/quote/1.0/quote/trait.ToTokens.html"><code>quote::ToTokens</code></a> trait can be interpolated. This includes
+most Rust primitive types as well as most of the syntax tree types from <a href="https://github.com/dtolnay/syn"><code>syn</code></a>.</p>
+<pre><code class="language-rust">let tokens = quote! {
+    struct SerializeWith #generics #where_clause {
+        value: &amp;'a #field_ty,
+        phantom: core::marker::PhantomData&lt;#item_ty&gt;,
+    }
+
+    impl #generics serde::Serialize for SerializeWith #generics #where_clause {
+        fn serialize&lt;S&gt;(&amp;self, serializer: S) -&gt; Result&lt;S::Ok, S::Error&gt;
+        where
+            S: serde::Serializer,
+        {
+            #path(self.value, serializer)
+        }
+    }
+
+    SerializeWith {
+        value: #value,
+        phantom: core::marker::PhantomData::&lt;#item_ty&gt;,
+    }
+};
+</code></pre>
+<br/>
+<h2 id="repetition">Repetition</h2>
+<p>Repetition is done using <code>#(...)*</code> or <code>#(...),*</code> similar to <code>macro_rules!</code>. This
+iterates through the elements of any variable interpolated within the repetition
+and inserts a copy of the repetition body for each one. The variables in an
+interpolation may be a <code>Vec</code>, slice, <code>BTreeSet</code>, or any <code>Iterator</code>.</p>
+<ul>
+<li><code>#(#var)*</code> — no separators</li>
+<li><code>#(#var),*</code> — the character before the asterisk is used as a separator</li>
+<li><code>#( struct #var; )*</code> — the repetition can contain other things</li>
+<li><code>#( #k =&gt; println!("{}", #v), )*</code> — even multiple interpolations</li>
+</ul>
+<p>Note that there is a difference between <code>#(#var ,)*</code> and <code>#(#var),*</code>—the latter
+does not produce a trailing comma. This matches the behavior of delimiters in
+<code>macro_rules!</code>.</p>
+<br/>
+<h2 id="returning-tokens-to-the-compiler">Returning tokens to the compiler</h2>
+<p>The <code>quote!</code> macro evaluates to an expression of type
+<code>proc_macro2::TokenStream</code>. Meanwhile Rust procedural macros are expected to
+return the type <code>proc_macro::TokenStream</code>.</p>
+<p>The difference between the two types is that <code>proc_macro</code> types are entirely
+specific to procedural macros and cannot ever exist in code outside of a
+procedural macro, while <code>proc_macro2</code> types may exist anywhere including tests
+and non-macro code like main.rs and build.rs. This is why even the procedural
+macro ecosystem is largely built around <code>proc_macro2</code>, because that ensures the
+libraries are unit testable and accessible in non-macro contexts.</p>
+<p>There is a <a href="https://doc.rust-lang.org/std/convert/trait.From.html"><code>From</code></a>-conversion in both directions so returning the output of
+<code>quote!</code> from a procedural macro usually looks like <code>tokens.into()</code> or
+<code>proc_macro::TokenStream::from(tokens)</code>.</p>
+<br/>
+<h2 id="examples">Examples</h2>
+<h3 id="combining-quoted-fragments">Combining quoted fragments</h3>
+<p>Usually you don't end up constructing an entire final <code>TokenStream</code> in one
+piece. Different parts may come from different helper functions. The tokens
+produced by <code>quote!</code> themselves implement <code>ToTokens</code> and so can be interpolated
+into later <code>quote!</code> invocations to build up a final result.</p>
+<pre><code class="language-rust">let type_definition = quote! {...};
+let methods = quote! {...};
+
+let tokens = quote! {
+    #type_definition
+    #methods
+};
+</code></pre>
+<h3 id="constructing-identifiers">Constructing identifiers</h3>
+<p>Suppose we have an identifier <code>ident</code> which came from somewhere in a macro
+input and we need to modify it in some way for the macro output. Let's consider
+prepending the identifier with an underscore.</p>
+<p>Simply interpolating the identifier next to an underscore will not have the
+behavior of concatenating them. The underscore and the identifier will continue
+to be two separate tokens as if you had written <code>_ x</code>.</p>
+<pre><code class="language-rust">// incorrect
+quote! {
+    let mut _#ident = 0;
+}
+</code></pre>
+<p>The solution is to build a new identifier token with the correct value. As this
+is such a common case, the <code>format_ident!</code> macro provides a convenient utility
+for doing so correctly.</p>
+<pre><code class="language-rust">let varname = format_ident!("_{}", ident);
+quote! {
+    let mut #varname = 0;
+}
+</code></pre>
+<p>Alternatively, the APIs provided by Syn and proc-macro2 can be used to directly
+build the identifier. This is roughly equivalent to the above, but will not
+handle <code>ident</code> being a raw identifier.</p>
+<pre><code class="language-rust">let concatenated = format!("_{}", ident);
+let varname = syn::Ident::new(&amp;concatenated, ident.span());
+quote! {
+    let mut #varname = 0;
+}
+</code></pre>
+<h3 id="making-method-calls">Making method calls</h3>
+<p>Let's say our macro requires some type specified in the macro input to have a
+constructor called <code>new</code>. We have the type in a variable called <code>field_type</code> of
+type <code>syn::Type</code> and want to invoke the constructor.</p>
+<pre><code class="language-rust">// incorrect
+quote! {
+    let value = #field_type::new();
+}
+</code></pre>
+<p>This works only sometimes. If <code>field_type</code> is <code>String</code>, the expanded code
+contains <code>String::new()</code> which is fine. But if <code>field_type</code> is something like
+<code>Vec&lt;i32&gt;</code> then the expanded code is <code>Vec&lt;i32&gt;::new()</code> which is invalid syntax.
+Ordinarily in handwritten Rust we would write <code>Vec::&lt;i32&gt;::new()</code> but for macros
+often the following is more convenient.</p>
+<pre><code class="language-rust">quote! {
+    let value = &lt;#field_type&gt;::new();
+}
+</code></pre>
+<p>This expands to <code>&lt;Vec&lt;i32&gt;&gt;::new()</code> which behaves correctly.</p>
+<p>A similar pattern is appropriate for trait methods.</p>
+<pre><code class="language-rust">quote! {
+    let value = &lt;#field_type as core::default::Default&gt;::default();
+}
+</code></pre>
+<br/>
+<h2 id="hygiene">Hygiene</h2>
+<p>Any interpolated tokens preserve the <code>Span</code> information provided by their
+<code>ToTokens</code> implementation. Tokens that originate within a <code>quote!</code> invocation
+are spanned with <a href="https://docs.rs/proc-macro2/1.0/proc_macro2/struct.Span.html#method.call_site"><code>Span::call_site()</code></a>.</p>
+<p>A different span can be provided explicitly through the <a href="https://docs.rs/quote/1.0/quote/macro.quote_spanned.html"><code>quote_spanned!</code></a>
+macro.</p>
+<br/>
+<h2 id="non-macro-code-generators">Non-macro code generators</h2>
+<p>When using <code>quote</code> in a build.rs or main.rs and writing the output out to a
+file, consider having the code generator pass the tokens through <a href="https://github.com/dtolnay/prettyplease">prettyplease</a>
+before writing. This way if an error occurs in the generated code it is
+convenient for a human to read and debug.</p>
+<p>Be aware that no kind of hygiene or span information is retained when tokens are
+written to a file; the conversion from tokens to source code is lossy.</p>
+<p>Example usage in build.rs:</p>
+<pre><code class="language-rust">let output = quote! { ... };
+let syntax_tree = syn::parse2(output).unwrap();
+let formatted = prettyplease::unparse(&amp;syntax_tree);
+
+let out_dir = env::var_os("OUT_DIR").unwrap();
+let dest_path = Path::new(&amp;out_dir).join("out.rs");
+fs::write(dest_path, formatted).unwrap();
+</code></pre>
+<br/>
+<h4 id="license">License</h4>
+<sup>
+Licensed under either of <a href="../../../../../native/rust/vendor/quote/LICENSE-APACHE">Apache License, Version
+2.0</a> or <a href="../../../../../native/rust/vendor/quote/LICENSE-MIT">MIT license</a> at your option.
+</sup>
+<br/>
+<sub>
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
+be dual licensed as above, without any additional terms or conditions.
+</sub>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

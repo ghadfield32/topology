@@ -1,6 +1,218 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Listening to Shape — repository edition v12 · Listening to Shape</title><link rel="stylesheet" href="assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../START_HERE.html">Course home</a><a href="curriculum/SITUATIONS.md.html">Choose a situation</a><a href="curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../README.md">README.md</a> · Readable source notation; no online math renderer.</p><h1 id="listening-to-shape--repository-edition-v12">Listening to Shape — repository edition v12</h1>
-<p>A beginner-first course from topology to geometry, dynamics and representation learning. <strong>One primary route:</strong> 31 core stages, 5 representation units, 25 named cases, 133 worked references and 56 independent learner notebooks. Industry and sports sources retain their own provenance and terms.</p>
-<p><strong>Read:</strong> extract everything and open <code>START_HERE.html</code>. <strong>Start:</strong> <a href="docs/release/FIRST_RUN.md.html">first-run guide</a>. <strong>Evidence:</strong> <a href="docs/release/VERIFICATION.md.html">verification</a>. <strong>Import:</strong> <a href="docs/release/GIT_IMPORT.md.html">Git guide</a>. <strong>Repository assistant:</strong> <a href="docs/release/AGENT_HANDOFF.md.html">copy/paste handoff</a>.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Listening to Shape — repository edition v14 · Listening to Shape</title><link rel="stylesheet" href="assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../START_HERE.html">Course home</a><a href="curriculum/SITUATIONS.md.html">Choose a situation</a><a href="curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../README.md">README.md</a> · Readable source notation; no online math renderer.</p><h1 id="listening-to-shape--repository-edition-v14">Listening to Shape — repository edition v14</h1>
+<p>A beginner-first course from topology to geometry, dynamics and representation learning. <strong>One primary route:</strong> 31 core stages, 5 representation units, 25 named cases, 133 worked references and 56 independent learner notebooks. Industry and sports sources retain their own provenance and terms. Version 14 adds a connected <strong>engineering layer</strong> (real C/C++/Rust/Go/TypeScript/GPU projects) on top of the existing research layer; it does not replace the 31-stage curriculum.</p>
+<p><strong>New front door:</strong> open <a href="../LEARN_TOPOLOGY.html">LEARN_TOPOLOGY.html</a> for the navigation page that joins the two layers. <strong>Ordered journey:</strong> <a href="docs/release/START_TO_FINISH.md.html">docs/release/START_TO_FINISH.md</a>. <strong>Read:</strong> open <a href="../START_HERE.html">START_HERE.html</a> for the offline reader. <strong>Start:</strong> <a href="docs/release/FIRST_RUN.md.html">first-run guide</a> · <a href="docs/v17/FIRST_RUN.md.html">v17 first run</a>. <strong>Evidence:</strong> <a href="docs/release/VERIFICATION.md.html">verification</a> · <a href="docs/release/V17_INTEGRATION.md.html">v17 integration record</a>. <strong>Import:</strong> <a href="docs/release/GIT_IMPORT.md.html">Git guide</a>. <strong>Repository assistant:</strong> <a href="docs/release/AGENT_HANDOFF.md.html">copy/paste handoff</a>.</p>
+<h2 id="two-connected-layers-one-curriculum">Two connected layers, one curriculum</h2>
+<p><strong>Notebook → understand it. Project → prove you can engineer it.</strong> Each lesson follows <strong>Explain → Predict → Implement → Break → Apply</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Purpose</th>
+<th>Where you work</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mathematical and research</td>
+<td>Learn definitions, derive results, inspect data, run experiments, explain limitations</td>
+<td>the 31 topology lessons, Python references and language workbooks</td>
+</tr>
+<tr>
+<td>Engineering</td>
+<td>Build, debug, test, profile and integrate real programs</td>
+<td><code>systems/</code> CMake/Cargo/Go/TypeScript projects</td>
+</tr>
+</tbody>
+</table>
+<p>The engineering units run <strong>sys00–sys09</strong> (source-mapped from the supplied Stage 0–9 headings); they never renumber topology Stage 00–30.</p>
+<h2 id="repository-map">Repository map</h2>
+<p>Six kinds of thing live here, and they have different owners. Full definitions:
+<a href="docs/release/REPOSITORY_LAYOUT.md.html">docs/release/REPOSITORY_LAYOUT.md</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it is</th>
+<th>You edit it?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curriculum/catalog.json</code></td>
+<td><strong>the</strong> owner of the 31-stage lesson order</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>lessons/</code>, <code>notebooks/</code>, <code>practice/</code></td>
+<td>canonical explanations, worked Python labs, learner assignments</td>
+<td>your learner notebook</td>
+</tr>
+<tr>
+<td><code>course.py</code></td>
+<td>the canonical Python course workflow</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>native/protocols/labs.json</code></td>
+<td><strong>the</strong> owner of the 57 native experiment definitions</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>native/go/</code>, <code>native/rust/</code></td>
+<td>reference Go and Rust implementations</td>
+<td>no — read-only reference</td>
+</tr>
+<tr>
+<td><code>native/python/</code></td>
+<td>independent data and scientific checks</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>native/guides/</code></td>
+<td>language and implementation guidance</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>native_course.py</code></td>
+<td>builds and compares the native labs</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>tools/build_language_notebooks.py</code></td>
+<td><strong>the</strong> owner of <code>workbooks/polyglot/</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/{python,go,rust}/</code></td>
+<td>171 generated teaching notebooks</td>
+<td>no — regenerate instead</td>
+</tr>
+<tr>
+<td><code>systems/</code></td>
+<td>real engineering projects, source-mapped lessons and evidence</td>
+<td>your private copy under <code>my_work/</code></td>
+</tr>
+<tr>
+<td><code>learning/</code></td>
+<td>generated reference interfaces and the navigation view</td>
+<td>no — regenerate instead</td>
+</tr>
+<tr>
+<td><code>learn.py</code></td>
+<td>the engineering front door (sessions, projects, demo)</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>docs/release/</code></td>
+<td>verification, checks, layout and import records</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>my_work/</code></td>
+<td>your private attempts and evidence (git-ignored)</td>
+<td><strong>yes</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Four rules keep this from drifting:</p>
+<ol>
+<li><strong>Lesson order</strong> is changed in <code>curriculum/catalog.json</code> only.</li>
+<li><strong>Native experiment definitions</strong> are changed in <code>native/protocols/labs.json</code> only.</li>
+<li><strong>Generated notebooks</strong> are never hand-edited: fix <code>tools/build_language_notebooks.py</code>, then
+run it and <code>--check</code>.</li>
+<li><strong>Your answers and experiments</strong> go in <code>my_work/</code>, never into a reference file.</li>
+</ol>
+<h2 id="where-do-i-start">Where do I start?</h2>
+<table>
+<thead>
+<tr>
+<th>I want to…</th>
+<th>Go to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>see the whole journey</td>
+<td><a href="../LEARN_TOPOLOGY.html">LEARN_TOPOLOGY.html</a></td>
+</tr>
+<tr>
+<td>begin the course</td>
+<td><a href="../START_HERE.html">START_HERE.html</a> or <code>course.py next</code></td>
+</tr>
+<tr>
+<td>start a guided session (predict → run → reflect → report)</td>
+<td><a href="docs/release/RESULTS_WORKFLOW.md.html">docs/release/RESULTS_WORKFLOW.md</a></td>
+</tr>
+<tr>
+<td>learn a lab in Python, Go and Rust</td>
+<td><a href="../workbooks/polyglot/index.html">workbooks/polyglot/index.html</a></td>
+</tr>
+<tr>
+<td>understand the Go/Rust track</td>
+<td><a href="../START_NATIVE.html">START_NATIVE.html</a></td>
+</tr>
+<tr>
+<td>build a real engineering project</td>
+<td><a href="docs/v17/FIRST_RUN.md.html">docs/v17/FIRST_RUN.md</a> · <code>learn.py project --unit sys01</code></td>
+</tr>
+<tr>
+<td>do Stage 01 now</td>
+<td><a href="docs/release/STAGE01_WALKTHROUGH.md.html">docs/release/STAGE01_WALKTHROUGH.md</a></td>
+</tr>
+<tr>
+<td>know what actually ran</td>
+<td><a href="docs/release/CHECKS.md.html">docs/release/CHECKS.md</a></td>
+</tr>
+<tr>
+<td>deploy natively</td>
+<td><a href="native/guides/DEPLOYMENT.md.html">native/guides/DEPLOYMENT.md</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-engineering-front-door-learnpy">The engineering front door (<code>learn.py</code>)</h2>
+<pre><code class="language-powershell">uv run --no-sync python learn.py doctor        # which toolchains exist (no installs)
+uv run --no-sync python learn.py list          # existing applications + sys00–sys09
+uv run --no-sync python learn.py project --unit sys01 --output my_work/c_reader01
+uv run --no-sync python learn.py check-project --workspace my_work/c_reader01 --output my_work/c_reader01/attempt01
+uv run --no-sync python learn.py demo --output my_work/integrated_demo01
+</code></pre>
+<p><code>check-project</code> compiles <strong>your private copy</strong>, not the reference source, so editing and breaking it is the point. A missing optional dependency returns status <code>blocked</code> (exit 3); a compiler or assertion error is <code>failed</code> (exit 1). See <a href="docs/v17/FIRST_RUN.md.html">docs/v17/FIRST_RUN.md</a> for the full journey and <a href="docs/release/RESULTS_WORKFLOW.md.html">docs/release/RESULTS_WORKFLOW.md</a> for the study/report loop.</p>
+<h2 id="native16-addition-go-and-rust">Native16 addition (Go and Rust)</h2>
+<p>Open <a href="../START_NATIVE.html">START_NATIVE.html</a> for the additive native track: 57 learning units implemented in both Go and Rust, each with a guide, three independent challenges and inspectable evidence. The <a href="docs/release/NATIVE16_IMPORT.md.html">import record</a> states exactly what was imported, what was deferred, and what executed on this machine.</p>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+uv run --no-sync python native_course.py doctor
+uv run --no-sync python native_course.py build --lang all --output my_work/native_build01
+uv run --no-sync python native_course.py compare --lab stage01 --output my_work/native_stage01_01
+uv run --no-sync python native_course.py verify --science --output my_work/native_acceptance01
+</code></pre>
+<p>Go and Rust do their own decoding, mathematics and training; the Python launcher only coordinates and compares. This is <strong>not</strong> certified as operation-for-operation parity with all 133 original Python notebooks, and <code>verify --require-original-parity</code> deliberately refuses that claim.</p>
+<h3 id="notebooks-learn-any-lab-in-any-of-the-three-languages">Notebooks: learn any lab in any of the three languages</h3>
+<p>Prefer notebooks to the command line? Every one of the 57 labs has a matched set:</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workbooks/polyglot/python/&lt;lab&gt;.ipynb</code></td>
+<td>inspects the real registered inputs and an existing native run</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/go/&lt;lab&gt;.ipynb</code></td>
+<td>compiles and runs the <strong>real Go program</strong>, then compares</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/rust/&lt;lab&gt;.ipynb</code></td>
+<td>compiles and runs the <strong>real Rust program</strong>, then compares</td>
+</tr>
+</tbody>
+</table>
+<p>Start at <a href="../workbooks/polyglot/index.html">the index</a> (or the <a href="workbooks/polyglot/README.md.html">plain text</a>). Regenerate with <code>python tools/build_language_notebooks.py</code>. These are unassessed and are not a second curriculum — the Python lesson stays canonical.</p>
+<p>Verify them, all 171 of them, with <code>python tools/verify_language_notebooks.py --output my_work/nb_verify01</code>. It exits non-zero unless coverage is complete.</p>
+<p><strong>Guides:</strong> <a href="docs/release/LANGUAGE_NOTEBOOKS.md.html">notebook guide</a> · <a href="docs/release/STAGE01_WALKTHROUGH.md.html">Stage 01 walkthrough</a> · <a href="docs/release/CHECKS.md.html">separate checks</a></p>
 <h2 id="native-setup">Native setup</h2>
 <p>Install uv through its official instructions, then run from this folder:</p>
 <pre><code class="language-bash">uv python install 3.13.5
@@ -21,7 +233,9 @@ uv run --no-sync python course.py acceptance --profile physics --references all 
 <p>A run directory must be new. Experiments copy clean source inputs, not old report caches; notebooks use fresh kernels with interpreter/source checks. Reference source can be read-only. Private answers and progress are not automatically graded or published.</p>
 <h2 id="container-and-cluster-practice">Container and cluster practice</h2>
 <p>Follow <a href="docs/release/DOCKER.md.html">Docker</a> then <a href="docs/release/KUBERNETES.md.html">Kubernetes</a>. Static configuration/policy tests are not image builds or live cluster execution. This host lacked those runtimes. Live application requires an explicitly selected disposable context and new namespace; no automatic cluster/namespace/PVC deletion occurs.</p>
-<h2 id="what-changed-in-v12">What changed in v12</h2>
-<p>All 25 case practice routes are now registered. Direct dependency version mismatches block readiness. Acceptance checks child JUnit totals and exact reference identities, not just exit codes. Read-only source copying is made writable only in the disposable workspace. Kubernetes denies unsafe/mixed objects; its reader no longer mounts private result storage. Docker lab references are read-only with separately writable learner work. Serial execution is the default after a recorded parallel kernel startup failure. Read the exact current evidence and remaining limits before presenting results.</p>
+<h2 id="what-changed-in-v14">What changed in v14</h2>
+<p>Version 14 reconciles the repository with the v17 archive and completes the previously-deferred version upgrade. It imports the <strong>systems learning layer</strong> (<code>systems/</code>, <code>learning/</code>, <code>learn.py</code>, <code>LEARN_TOPOLOGY.html</code>, <code>docs/v17/</code>), the <strong>study-and-report workflow</strong> (<code>course.py study</code> / <code>course.py report</code>, output sealing, <code>docs/release/RESULTS_WORKFLOW.md</code>), the ten deferred v13 tests, and the <code>reports/v13</code> evidence the reader uses. It also fixes a real Windows portability bug the archive had: a package-manager command shim (<code>tsc.cmd</code>) is now resolved to a shell-free argv instead of failing with <code>WinError 2</code>.</p>
+<p>It preserves, rather than overwrites, the genuine re-resolved <code>uv.lock</code>, the <code>workbooks/polyglot/</code> notebooks and generator, the local <code>NATIVE16_IMPORT.md</code> record, <code>native_course.py</code>'s <code>run_identity</code> evidence binding, and existing learner notebook edits. The import record states exactly what ran and what did not: <a href="docs/release/NATIVE16_IMPORT.md.html">docs/release/NATIVE16_IMPORT.md</a>.</p>
+<p>All 25 case practice routes are registered. Direct dependency version mismatches block readiness. Acceptance checks child JUnit totals and exact reference identities, not just exit codes, and now also validates sealed run outputs and container child evidence. Read-only source copying is made writable only in the disposable workspace. Kubernetes denies unsafe/mixed objects; its reader no longer mounts private result storage. Serial execution is the default after a recorded parallel kernel startup failure. Read the exact current evidence and remaining limits before presenting results.</p>
 <p>Use each lesson once, repair only the missing prerequisite, attempt your own solution, then return for delayed recall. A test pass is not a proof of mastery, clinical or sports validity, complete-book coverage, or universal physical fidelity. See <a href="docs/release/SOURCE_COVERAGE.md.html">source coverage</a> and <a href="LICENSE.md.html">license/attribution</a>.</p>
 <a class="back" href="../START_HERE.html">Back to the course home</a></main></div></body></html>

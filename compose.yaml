@@ -1,5 +1,5 @@
 x-course: &course
-  image: listening-to-shape:12
+  image: listening-to-shape:14
   build:
     context: .
     args:

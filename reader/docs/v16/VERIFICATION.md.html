@@ -1,0 +1,96 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Native16 verification and coverage record · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v16/VERIFICATION.md">docs/v16/VERIFICATION.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="native16-verification-and-coverage-record">Native16 verification and coverage record</h1>
+<p>Prepared 26 September 2026. This is a new execution record, not a relabeling of previous archives. The baseline was the actual mounted v14 combined archive; no v15 archive was available to verify. The retained Python teaching material remains in the archive. The native addition is a separate workspace and does not require resetting the 31-stage course.</p>
+<h2 id="executed-results">Executed results</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Observed result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Combined root Python tests</td>
+<td>821 passed, 2 optional-library skips, zero failures</td>
+</tr>
+<tr>
+<td>Go native tests</td>
+<td>34 passing named tests/subtests; zero failing assertions</td>
+</tr>
+<tr>
+<td>Rust native tests</td>
+<td>28 passed, zero failed or ignored</td>
+</tr>
+<tr>
+<td>Native lab execution</td>
+<td>57 Go + 57 Rust runs, all completed</td>
+</tr>
+<tr>
+<td>Go/Rust result comparisons</td>
+<td>57 passed; input hashes also agree</td>
+</tr>
+<tr>
+<td>Registered data decoding</td>
+<td>55 source files in each language: 110 full-value comparisons passed</td>
+</tr>
+<tr>
+<td>Numeric values compared by source decoder</td>
+<td>9,896,088; CSV fields/text/IDs also compared exactly</td>
+</tr>
+<tr>
+<td>Valid/invalid reader fixture checks</td>
+<td>64 passed across both languages</td>
+</tr>
+<tr>
+<td>Independent scientific comparisons</td>
+<td>220 passed using NumPy, retained Python topology and PyTorch</td>
+</tr>
+<tr>
+<td>Protected native/data inputs during acceptance</td>
+<td>90, unchanged</td>
+</tr>
+<tr>
+<td>Editable practice copies</td>
+<td>Stage 01 and Wine prepared; Stage 01 Go and Rust private workspaces compiled/tested</td>
+</tr>
+<tr>
+<td>Full original Python notebook replay in this turn</td>
+<td>Not run; saved previous outputs retained</td>
+</tr>
+<tr>
+<td>New Docker images / Kubernetes Jobs</td>
+<td>Configurations provided and policy-checked; not built/deployed here</td>
+</tr>
+</tbody>
+</table>
+<p>The 34 Go count includes named subtests; a command package with no test files is not counted as a passed test. The Rust binary/doc-test groups have zero tests and are not added to the 28 library tests. The 820 Python tests include existing course tests and 11 native-runner contracts; counts from different suites are not a measure of mathematical completeness.</p>
+<h2 id="what-agreement-means">What agreement means</h2>
+<p>The Go and Rust programs implement the same <strong>native16 teaching protocols</strong>. They perform their own data reading, mathematics, optimization and serialization. They do not call a Python program to obtain their scientific results. The Python runner builds/invokes the binaries and compares evidence. The independent Python checks are separate calculations, including full classifier coefficients/predictions and HNN/restricted LNN/PINN training under the matching native protocol.</p>
+<p>Integer results compare exactly. Floating-point native metrics use absolute tolerance 1e-8 and relative tolerance 1e-7; the maximum observed absolute difference across the current lab comparisons was 2.32830643654e-10. Source decoding compares values with zero numerical tolerance, plus shape/order/dtype, IDs, text, missingness and source hashes. Numeric counts include repeated storage forms and metadata; they are not counts of independent observations.</p>
+<h2 id="full-data-access-versus-every-possible-dataset">Full data access versus every possible dataset</h2>
+<p>The registry covers every listed bundled input under <code>data/</code>, <code>sports_v8/data/</code> and <code>sports_v9/data/</code> in the supported forms. CSV, JSON, NPY/NPZ, PNG and text metadata/terms are included in the source audit; PFM is independently tested with manufactured endian/scale fixtures. The parsers deliberately reject unsupported encodings, object arrays and unsafe/oversized inputs. They are bounded learning readers, not hardened arbitrary-upload services.</p>
+<p>No new external dataset payload was acquired. Original source cards and license/transcription/sample-selection limits remain applicable. Selected SPL frames are not a new independent set of shots; soccer season profiles are not pitch trajectories; ACB metadata is not a full tracking corpus. The recorded observed-image stereo calculation remains separate from manufactured dynamics.</p>
+<h2 id="what-is-not-certified">What is NOT certified</h2>
+<p>Full operation-for-operation equivalence to all 133 original Python notebooks is <strong>not certified</strong>. <code>native/COVERAGE.md</code> states every unit's native work and original-protocol difference. Some classifiers use a new declared split and solver, some geometric labs are smaller controls, the LNN fixes mass and learns a potential, and the spectral learner is a small Fourier-multiplier model rather than a full multilayer FNO. General Delaunay/alpha construction, pretrained VGGT, full PointNet/reconstruction/semantic-scene pipelines, original-paper benchmarks, independent measured validation and the actual book audit are not completed by these checks.</p>
+<p>The command <code>verify --require-original-parity</code> refuses that larger claim. A successful comparison is software evidence, not a guarantee of scientific meaning or learner mastery. The new study records are unassessed.</p>
+<h2 id="actual-compiler-and-environment-provenance">Actual compiler and environment provenance</h2>
+<p>Executed on Linux x86_64 with Python 3.13.5, Go 1.23.2 and Rust/Cargo 1.90.0. These are the tested versions, not a newest-version recommendation. Rust was previously absent. A scoped workflow on the isolated <code>learning/native-parity-v16</code> branch provisioned the official compiler and resolved/vendorized reader dependencies. Its artifact checksum was verified; the actual course compiled and ran locally using those tools. The remote smoke alone did not certify the course. <code>main</code> was not changed and new native source was not pushed. The artifact/compiler binaries are not bundled; 36 dependency source crates and their licenses are.</p>
+<p>The branch push also ran the earlier repository's core CI on Linux/macOS/Windows, which succeeded; that is separate evidence about the existing remote source, not platform certification of this ZIP. Its full/Docker job skipped. The new full-native workflow is supplied in the ZIP but has not run remotely. Mac, Windows, GPU, clean Python dependency installation, new container runtime and new cluster deployment are not claimed. Preserve the genuine Python lock already resolved on the user's machine; no fabricated uv.lock is added here.</p>
+<h2 id="failures-were-corrected-not-hidden">Failures were corrected, not hidden</h2>
+<p>The initial regression runs exposed missing behavior and compile errors. Rust's default decimal JSON conversion differed by one ULP for selected source numbers; round-trip float parsing corrected it. PNG conversion through premultiplied channels lost original values; direct channel decoding corrected it. Boolean/Unicode/endian/Fortran arrays and palette/alpha images now have explicit fixtures. Essential diagram-cardinality mismatch now yields infinite bottleneck distance instead of a panic. Public Rips H0/H1 reports no longer misreport H2 classes created by a dimension-truncated complex. Ridge intercept calculation now centers arbitrary input features internally. A packaging check also caught cache-hit logging replacing the original compiler record; the runner now retains first-build and reuse records separately, with a regression test. Failed and passing scoped logs are preserved beside the final records.</p>
+<h2 id="reader-checks-and-configuration-checks">Reader checks and configuration checks</h2>
+<p>Static checks found no missing or escaping targets among 830 native-reader local links. Actual HTTP checks returned 200 for the home, Stage 01 guide and its Go result, and 403 for private-work and Git paths. Chromium is absent here, so no new visual/browser-navigation result is claimed. Older screenshots are historical.</p>
+<p>The deployment YAML parsed; two Jobs passed project-specific security and resource checks. This is not Kubernetes OpenAPI admission or Docker/cluster execution. Target-platform acceptance remains explicit.</p>
+<h2 id="inspect-and-rerun">Inspect and rerun</h2>
+<ul>
+<li><code>native/evidence/acceptance/acceptance.json</code>: whole native acceptance scope.</li>
+<li><code>native/evidence/acceptance/execution.json</code>: all native runs, comparisons and input hashes.</li>
+<li><code>native/evidence/acceptance/go/</code> and <code>rust/</code>: exact parameters, losses, predictions and output fields.</li>
+<li><code>native/evidence/acceptance/data_comparison.json</code>: all registered source comparisons.</li>
+<li><code>native/evidence/acceptance/reader_fixtures.json</code>: malformed and edge-case inputs.</li>
+<li><code>native/evidence/acceptance/scientific_checks.json</code>: independent scientific checks.</li>
+<li><code>native/evidence/python_final.xml</code> and <code>.log</code>: combined Python suite.</li>
+<li><code>native/evidence/toolchain_provenance.json</code>: remote provisioning versus local execution.</li>
+</ul>
+<p>Fresh extracted-archive checks and the final archive hash are delivered alongside the ZIP, because an archive cannot embed its own final hash. Rerun <code>python native_course.py verify --science --output my_work/native_acceptance01</code> on the target machine and retain the actual logs. Use a new output directory; never erase earlier evidence just to obtain a green screen.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

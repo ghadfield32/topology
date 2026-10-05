@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/rust/shape-rust",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "stackloss"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.001584725999919101,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"data/industries/stackloss/data.csv\": {\n      \"bytes\": 344,\n      \"sha256\": \"6c1de720cdef48f9b5193459e4b584295f9b7fa2c042e70e1e65bbccbe362d60\"\n    },\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stackloss\",\n  \"language\": \"rust\",\n  \"metrics\": {\n    \"baseline_mae\": 7.616666666666665,\n    \"features\": [\n      \"AIRFLOW\",\n      \"WATERTEMP\",\n      \"ACIDCONC\"\n    ],\n    \"intercept\": 16.91666666666667,\n    \"mae\": 3.3047570400631017,\n    \"predictions\": [\n      23.482475097327292,\n      39.22552372653238,\n      8.381350884829397,\n      9.714662163957943,\n      23.482475097327292\n    ],\n    \"rmse\": 3.505571498189639,\n    \"scaler_mean\": [\n      60.08333333333333,\n      20.750000000000004,\n      86.08333333333333\n    ],\n    \"scaler_scale\": [\n      9.81884525910365,\n      2.802528620133373,\n      4.536120466752276\n    ],\n    \"scope\": \"fixed native ridge protocol; random split does not establish future-batch performance\",\n    \"source_rows\": [\n      0,\n      1,\n      2,\n      3,\n      4,\n      5,\n      6,\n      7,\n      8,\n      9,\n      10,\n      11,\n      12,\n      13,\n      14,\n      15,\n      16,\n      17,\n      18,\n      19,\n      20\n    ],\n    \"target\": \"STACKLOSS\",\n    \"test_rows\": [\n      6,\n      1,\n      11,\n      16,\n      7\n    ],\n    \"train_rows\": [\n      0,\n      5,\n      13,\n      2,\n      4,\n      15,\n      17,\n      18,\n      9,\n      20,\n      19,\n      14\n    ],\n    \"truth\": [\n      19.0,\n      37.0,\n      13.0,\n      8.0,\n      20.0\n    ],\n    \"validation_rows\": [\n      8,\n      3,\n      12,\n      10\n    ],\n    \"weights\": [\n      5.143016528772766,\n      5.414705248220063,\n      -0.4704742863314336\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

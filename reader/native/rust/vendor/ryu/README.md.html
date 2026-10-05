@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ryū · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/ryu/README.md">native/rust/vendor/ryu/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="ryū">Ryū</h1>
+<p><a href="https://github.com/dtolnay/ryu"><img alt="github" height="20" src="https://img.shields.io/badge/github-dtolnay/ryu-8da0cb?style=for-the-badge&amp;labelColor=555555&amp;logo=github"/></a>
+<a href="https://crates.io/crates/ryu"><img alt="crates.io" height="20" src="https://img.shields.io/crates/v/ryu.svg?style=for-the-badge&amp;color=fc8d62&amp;logo=rust"/></a>
+<a href="https://docs.rs/ryu"><img alt="docs.rs" height="20" src="https://img.shields.io/badge/docs.rs-ryu-66c2a5?style=for-the-badge&amp;labelColor=555555&amp;logo=docs.rs"/></a>
+<a href="https://github.com/dtolnay/ryu/actions?query=branch%3Amaster"><img alt="build status" height="20" src="https://img.shields.io/github/actions/workflow/status/dtolnay/ryu/ci.yml?branch=master&amp;style=for-the-badge"/></a></p>
+<p>Pure Rust implementation of Ryū, an algorithm to quickly convert floating point
+numbers to decimal strings.</p>
+<p>The PLDI'18 paper <a href="https://dl.acm.org/citation.cfm?id=3192369"><em>Ryū: fast float-to-string conversion</em></a> by Ulf Adams
+includes a complete correctness proof of the algorithm. The paper is available
+under the creative commons CC-BY-SA license.</p>
+<p>This Rust implementation is a line-by-line port of Ulf Adams' implementation in
+C, <a href="https://github.com/ulfjack/ryu/tree/e3e090c66efd258a0cee50ee93411ec99668d416">https://github.com/ulfjack/ryu</a>.</p>
+<pre><code class="language-toml">[dependencies]
+ryu = "1.0"
+</code></pre>
+<br/>
+<h2 id="example">Example</h2>
+<pre><code class="language-rust">fn main() {
+    let mut buffer = ryu::Buffer::new();
+    let printed = buffer.format(1.234);
+    assert_eq!(printed, "1.234");
+}
+</code></pre>
+<br/>
+<h2 id="performance">Performance</h2>
+<p>The <a href="https://github.com/dtolnay/dtoa-benchmark">dtoa-benchmark</a> compares this library and other Rust floating point
+formatting implementations across a range of precisions. The vertical axis in
+this chart shows nanoseconds taken by a single execution of
+<code>ryu::Buffer::new().format_finite(value)</code> so a lower result indicates a faster
+library.</p>
+<p><img alt="performance" src="https://raw.githubusercontent.com/dtolnay/ryu/master/dtoa-benchmark.png"/></p>
+<p>You can run upstream's benchmarks with:</p>
+<pre><code class="language-console">$ git clone https://github.com/ulfjack/ryu c-ryu
+$ cd c-ryu
+$ bazel run -c opt //ryu/benchmark:ryu_benchmark
+</code></pre>
+<p>And the same benchmark against our implementation with:</p>
+<pre><code class="language-console">$ git clone https://github.com/dtolnay/ryu rust-ryu
+$ cd rust-ryu
+$ cargo run --example upstream_benchmark --release
+</code></pre>
+<p>These benchmarks measure the average time to print a 32-bit float and average
+time to print a 64-bit float, where the inputs are distributed as uniform random
+bit patterns 32 and 64 bits wide.</p>
+<p>The upstream C code, the unsafe direct Rust port, and the safe pretty Rust API
+all perform the same, taking around 21 nanoseconds to format a 32-bit float and
+31 nanoseconds to format a 64-bit float.</p>
+<p>There is also a Rust-specific benchmark comparing this implementation to the
+standard library which you can run with:</p>
+<pre><code class="language-console">$ cargo bench
+</code></pre>
+<p>The benchmark shows Ryū approximately 2-5x faster than the standard library
+across a range of f32 and f64 inputs. Measurements are in nanoseconds per
+iteration; smaller is better.</p>
+<h2 id="formatting">Formatting</h2>
+<p>This library tends to produce more human-readable output than the standard
+library's to_string, which never uses scientific notation. Here are two
+examples:</p>
+<ul>
+<li><em>ryu:</em> 1.23e40, <em>std:</em> 12300000000000000000000000000000000000000</li>
+<li><em>ryu:</em> 1.23e-40, <em>std:</em> 0.000000000000000000000000000000000000000123</li>
+</ul>
+<p>Both libraries print short decimals such as 0.0000123 without scientific
+notation.</p>
+<br/>
+<h4 id="license">License</h4>
+<sup>
+Licensed under either of <a href="../../../../../native/rust/vendor/ryu/LICENSE-APACHE">Apache License, Version
+2.0</a> or <a href="../../../../../native/rust/vendor/ryu/LICENSE-BOOST">Boost Software License 1.0</a> at your
+option.
+</sup>
+<br/>
+<sub>
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
+be dual licensed as above, without any additional terms or conditions.
+</sub>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

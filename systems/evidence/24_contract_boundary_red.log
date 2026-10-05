@@ -1,0 +1,32 @@
+FFF
+======================================================================
+FAIL: test_confidence_runtime_rejected (systems.tests.test_contract.PayloadBoundary.test_confidence_runtime_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/shape17_build/listening_to_shape_lab/systems/tests/test_contract.py", line 47, in test_confidence_runtime_rejected
+    with self.assertRaises(ValueError):validate_payload(v)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_nontext_limit_rejected (systems.tests.test_contract.PayloadBoundary.test_nontext_limit_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/shape17_build/listening_to_shape_lab/systems/tests/test_contract.py", line 50, in test_nontext_limit_rejected
+    with self.assertRaises(ValueError):validate_payload(v)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_prediction_overflow (systems.tests.test_contract.PayloadBoundary.test_prediction_overflow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/shape17_build/listening_to_shape_lab/systems/tests/test_contract.py", line 52, in test_prediction_overflow
+    with self.assertRaises(ValueError):predict([0.,0.,0.],[1e308,0.,0.],1e308)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=3)

@@ -1,0 +1,443 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Learn any lab in Python, Go or Rust · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../workbooks/polyglot/README.md">workbooks/polyglot/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="learn-any-lab-in-python-go-or-rust">Learn any lab in Python, Go or Rust</h1>
+<p>One notebook triad per learning unit: the same lab, the same registered
+inputs, the same comparison — three languages. Start with Python, then Go,
+then Rust. See <a href="../../native/guides/LEARNING_PATHS.md.html">the guide</a> and the
+<a href="../../docs/release/LANGUAGE_NOTEBOOKS.md.html">import record</a>.</p>
+<p>Each notebook is <strong>unassessed</strong>. Nothing here is a second mandatory curriculum.</p>
+<h2 id="find-your-way-around-the-folders-have-different-jobs">Find your way around (the folders have different jobs)</h2>
+<p>This trips people up, because several folders hold Go or Rust code:</p>
+<p>| Path | What it is | Do you edit it? |
+|---|---|---|
+| <code>workbooks/polyglot/python/</code> | <strong>notebooks</strong> that run the canonical Python reference | no |
+| <code>workbooks/polyglot/go/</code> | <strong>notebooks</strong> that run the real Go program | no |
+| <code>workbooks/polyglot/rust/</code> | <strong>notebooks</strong> that run the real Rust program | no |
+| <code>native/go/</code>, <code>native/rust/</code> | the <strong>reference source</strong> those notebooks compile | no — read-only reference |
+| <code>my_work/&lt;session&gt;/native/go|rust/</code> | <strong>your</strong> copy from <code>native_course.py prepare</code> | <strong>yes — here</strong> |
+| <code>notebooks/</code>, <code>lessons/</code>, <code>practice/</code> | the original course labs and assignments | your learner notebook |</p>
+<p><code>notebooks/</code> is the <em>original course</em>. It has no <code>go</code> or <code>rust</code> folder, and it
+is not where these notebooks live. There are 57 notebooks per language
+(171 in total) under <code>workbooks/polyglot/</code>.</p>
+<p>Full definitions of every path: <a href="../../docs/release/REPOSITORY_LAYOUT.md.html">docs/release/REPOSITORY_LAYOUT.md</a>.</p>
+<p>Full definitions of every path: <a href="../../docs/release/REPOSITORY_LAYOUT.md.html">docs/release/REPOSITORY_LAYOUT.md</a>.</p>
+<pre><code class="language-powershell"># the three Stage 01 notebooks, one per language
+workbooks/polyglot/python/stage01.ipynb
+workbooks/polyglot/go/stage01.ipynb
+workbooks/polyglot/rust/stage01.ipynb
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Lab</th>
+<th>Title</th>
+<th>Python</th>
+<th>Go</th>
+<th>Rust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>stage00</code></td>
+<td>Start here: how to learn, run, and question the results</td>
+<td><a href="python/stage00.ipynb.html">py</a></td>
+<td><a href="go/stage00.ipynb.html">go</a></td>
+<td><a href="rust/stage00.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage01</code></td>
+<td>Mathematical language, proofs, and linear algebra</td>
+<td><a href="python/stage01.ipynb.html">py</a></td>
+<td><a href="go/stage01.ipynb.html">go</a></td>
+<td><a href="rust/stage01.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage02</code></td>
+<td>Closeness, metrics, neighborhoods, and topologies</td>
+<td><a href="python/stage02.ipynb.html">py</a></td>
+<td><a href="go/stage02.ipynb.html">go</a></td>
+<td><a href="rust/stage02.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage03</code></td>
+<td>Continuity, homeomorphisms, connectedness, and compactness</td>
+<td><a href="python/stage03.ipynb.html">py</a></td>
+<td><a href="go/stage03.ipynb.html">go</a></td>
+<td><a href="rust/stage03.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage04</code></td>
+<td>Groups, symmetries, paths, loops, and homotopy</td>
+<td><a href="python/stage04.ipynb.html">py</a></td>
+<td><a href="go/stage04.ipynb.html">go</a></td>
+<td><a href="rust/stage04.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage05</code></td>
+<td>Surfaces, simplices, triangulations, and pixel geometry</td>
+<td><a href="python/stage05.ipynb.html">py</a></td>
+<td><a href="go/stage05.ipynb.html">go</a></td>
+<td><a href="rust/stage05.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage06</code></td>
+<td>Chains, boundaries, homology, and Betti numbers</td>
+<td><a href="python/stage06.ipynb.html">py</a></td>
+<td><a href="go/stage06.ipynb.html">go</a></td>
+<td><a href="rust/stage06.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage07</code></td>
+<td>From data to shape: Rips, Čech, alpha, and filtrations</td>
+<td><a href="python/stage07.ipynb.html">py</a></td>
+<td><a href="go/stage07.ipynb.html">go</a></td>
+<td><a href="rust/stage07.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage08</code></td>
+<td>Persistent homology, persistence modules, and reading diagrams</td>
+<td><a href="python/stage08.ipynb.html">py</a></td>
+<td><a href="go/stage08.ipynb.html">go</a></td>
+<td><a href="rust/stage08.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage09</code></td>
+<td>Implement persistence, trace the algorithm, and test it independently</td>
+<td><a href="python/stage09.ipynb.html">py</a></td>
+<td><a href="go/stage09.ipynb.html">go</a></td>
+<td><a href="rust/stage09.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage10</code></td>
+<td>Stability, diagram distances, noise, and scientific uncertainty</td>
+<td><a href="python/stage10.ipynb.html">py</a></td>
+<td><a href="go/stage10.ipynb.html">go</a></td>
+<td><a href="rust/stage10.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage11</code></td>
+<td>Useful representations, Mapper, time windows, and honest machine learning</td>
+<td><a href="python/stage11.ipynb.html">py</a></td>
+<td><a href="go/stage11.ipynb.html">go</a></td>
+<td><a href="rust/stage11.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage12</code></td>
+<td>Capstone: reproduce, defend, transfer, and audit the book</td>
+<td><a href="python/stage12.ipynb.html">py</a></td>
+<td><a href="go/stage12.ipynb.html">go</a></td>
+<td><a href="rust/stage12.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage13</code></td>
+<td>From topology to smooth manifolds</td>
+<td><a href="python/stage13.ipynb.html">py</a></td>
+<td><a href="go/stage13.ipynb.html">go</a></td>
+<td><a href="rust/stage13.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage14</code></td>
+<td>Rotations, rigid transforms, and the camera model</td>
+<td><a href="python/stage14.ipynb.html">py</a></td>
+<td><a href="go/stage14.ipynb.html">go</a></td>
+<td><a href="rust/stage14.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage15</code></td>
+<td>Measured stereo, calibration, and uncertainty</td>
+<td><a href="python/stage15.ipynb.html">py</a></td>
+<td><a href="go/stage15.ipynb.html">go</a></td>
+<td><a href="rust/stage15.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage16</code></td>
+<td>Attention and VGGT, from pixels to proposed geometry</td>
+<td><a href="python/stage16.ipynb.html">py</a></td>
+<td><a href="go/stage16.ipynb.html">go</a></td>
+<td><a href="rust/stage16.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage17</code></td>
+<td>Register, validate, and ask topology the right question</td>
+<td><a href="python/stage17.ipynb.html">py</a></td>
+<td><a href="go/stage17.ipynb.html">go</a></td>
+<td><a href="rust/stage17.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage18</code></td>
+<td>Make the pipeline efficient without changing the evidence</td>
+<td><a href="python/stage18.ipynb.html">py</a></td>
+<td><a href="go/stage18.ipynb.html">go</a></td>
+<td><a href="rust/stage18.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage19</code></td>
+<td>From geometry to cautious interaction hypotheses</td>
+<td><a href="python/stage19.ipynb.html">py</a></td>
+<td><a href="go/stage19.ipynb.html">go</a></td>
+<td><a href="rust/stage19.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage20</code></td>
+<td>Independent spatial capstone and continuing mastery</td>
+<td><a href="python/stage20.ipynb.html">py</a></td>
+<td><a href="go/stage20.ipynb.html">go</a></td>
+<td><a href="rust/stage20.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage21</code></td>
+<td>Rates, equations, units and what data can identify</td>
+<td><a href="python/stage21.ipynb.html">py</a></td>
+<td><a href="go/stage21.ipynb.html">go</a></td>
+<td><a href="rust/stage21.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage22</code></td>
+<td>Smooth flows, coordinate changes and invertible networks</td>
+<td><a href="python/stage22.ipynb.html">py</a></td>
+<td><a href="go/stage22.ipynb.html">go</a></td>
+<td><a href="rust/stage22.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage23</code></td>
+<td>Mechanics, Hamiltonian networks and Lagrangian networks</td>
+<td><a href="python/stage23.ipynb.html">py</a></td>
+<td><a href="go/stage23.ipynb.html">go</a></td>
+<td><a href="rust/stage23.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage24</code></td>
+<td>Symplectic integration, energy, phase and long rollouts</td>
+<td><a href="python/stage24.ipynb.html">py</a></td>
+<td><a href="go/stage24.ipynb.html">go</a></td>
+<td><a href="rust/stage24.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage25</code></td>
+<td>Constraints, projections, retractions and rank failure</td>
+<td><a href="python/stage25.ipynb.html">py</a></td>
+<td><a href="go/stage25.ipynb.html">go</a></td>
+<td><a href="rust/stage25.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage26</code></td>
+<td>Physics-informed learning and inverse problems</td>
+<td><a href="python/stage26.ipynb.html">py</a></td>
+<td><a href="go/stage26.ipynb.html">go</a></td>
+<td><a href="rust/stage26.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage27</code></td>
+<td>Conflicting gradients, interfaces, separability and PIKANs</td>
+<td><a href="python/stage27.ipynb.html">py</a></td>
+<td><a href="go/stage27.ipynb.html">go</a></td>
+<td><a href="rust/stage27.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage28</code></td>
+<td>Functions to functions: DeepONet, Fourier operators and baselines</td>
+<td><a href="python/stage28.ipynb.html">py</a></td>
+<td><a href="go/stage28.ipynb.html">go</a></td>
+<td><a href="rust/stage28.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage29</code></td>
+<td>Differentiable simulation, graph physics and attention constraints</td>
+<td><a href="python/stage29.ipynb.html">py</a></td>
+<td><a href="go/stage29.ipynb.html">go</a></td>
+<td><a href="rust/stage29.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stage30</code></td>
+<td>An independent world-model study: evidence before adoption</td>
+<td><a href="python/stage30.ipynb.html">py</a></td>
+<td><a href="go/stage30.ipynb.html">go</a></td>
+<td><a href="rust/stage30.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>wdbc</code></td>
+<td>Healthcare image-summary classification</td>
+<td><a href="python/wdbc.ipynb.html">py</a></td>
+<td><a href="go/wdbc.ipynb.html">go</a></td>
+<td><a href="rust/wdbc.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>wine</code></td>
+<td>Food chemistry and topology</td>
+<td><a href="python/wine.ipynb.html">py</a></td>
+<td><a href="go/wine.ipynb.html">go</a></td>
+<td><a href="rust/wine.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>stackloss</code></td>
+<td>Manufacturing regression</td>
+<td><a href="python/stackloss.ipynb.html">py</a></td>
+<td><a href="go/stackloss.ipynb.html">go</a></td>
+<td><a href="rust/stackloss.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>grunfeld</code></td>
+<td>Firm-year panel measurements</td>
+<td><a href="python/grunfeld.ipynb.html">py</a></td>
+<td><a href="go/grunfeld.ipynb.html">go</a></td>
+<td><a href="rust/grunfeld.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>co2</code></td>
+<td>Atmospheric observations and windows</td>
+<td><a href="python/co2.ipynb.html">py</a></td>
+<td><a href="go/co2.ipynb.html">go</a></td>
+<td><a href="rust/co2.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>nile</code></td>
+<td>Water-infrastructure time series</td>
+<td><a href="python/nile.ipynb.html">py</a></td>
+<td><a href="go/nile.ipynb.html">go</a></td>
+<td><a href="rust/nile.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>elnino</code></td>
+<td>Marine climate</td>
+<td><a href="python/elnino.ipynb.html">py</a></td>
+<td><a href="go/elnino.ipynb.html">go</a></td>
+<td><a href="rust/elnino.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>modechoice</code></td>
+<td>Traveler-level choice sets</td>
+<td><a href="python/modechoice.ipynb.html">py</a></td>
+<td><a href="go/modechoice.ipynb.html">go</a></td>
+<td><a href="rust/modechoice.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>seeds</code></td>
+<td>Agriculture feature-space geometry</td>
+<td><a href="python/seeds.ipynb.html">py</a></td>
+<td><a href="go/seeds.ipynb.html">go</a></td>
+<td><a href="rust/seeds.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>concrete_slump</code></td>
+<td>Materials measurements and intervals</td>
+<td><a href="python/concrete_slump.ipynb.html">py</a></td>
+<td><a href="go/concrete_slump.ipynb.html">go</a></td>
+<td><a href="rust/concrete_slump.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>leakage</code></td>
+<td>Identity leakage controls</td>
+<td><a href="python/leakage.ipynb.html">py</a></td>
+<td><a href="go/leakage.ipynb.html">go</a></td>
+<td><a href="rust/leakage.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>claims</code></td>
+<td>Physical-claim counterexamples</td>
+<td><a href="python/claims.ipynb.html">py</a></td>
+<td><a href="go/claims.ipynb.html">go</a></td>
+<td><a href="rust/claims.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>s00</code></td>
+<td>Sports observations and units</td>
+<td><a href="python/s00.ipynb.html">py</a></td>
+<td><a href="go/s00.ipynb.html">go</a></td>
+<td><a href="rust/s00.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>s01</code></td>
+<td>Landmark angles and velocity</td>
+<td><a href="python/s01.ipynb.html">py</a></td>
+<td><a href="go/s01.ipynb.html">go</a></td>
+<td><a href="rust/s01.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>s02</code></td>
+<td>Ball-flight model adequacy</td>
+<td><a href="python/s02.ipynb.html">py</a></td>
+<td><a href="go/s02.ipynb.html">go</a></td>
+<td><a href="rust/s02.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>s03</code></td>
+<td>Soccer profile topology</td>
+<td><a href="python/s03.ipynb.html">py</a></td>
+<td><a href="go/s03.ipynb.html">go</a></td>
+<td><a href="rust/s03.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>s04</code></td>
+<td>Timing and uncertainty</td>
+<td><a href="python/s04.ipynb.html">py</a></td>
+<td><a href="go/s04.ipynb.html">go</a></td>
+<td><a href="rust/s04.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>s05</code></td>
+<td>Athlete-group evaluation</td>
+<td><a href="python/s05.ipynb.html">py</a></td>
+<td><a href="go/s05.ipynb.html">go</a></td>
+<td><a href="rust/s05.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>s06</code></td>
+<td>Independent sports investigation</td>
+<td><a href="python/s06.ipynb.html">py</a></td>
+<td><a href="go/s06.ipynb.html">go</a></td>
+<td><a href="rust/s06.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>acb</code></td>
+<td>ACB 2025–26 source and identity readiness</td>
+<td><a href="python/acb.ipynb.html">py</a></td>
+<td><a href="go/acb.ipynb.html">go</a></td>
+<td><a href="rust/acb.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>r01</code></td>
+<td>Distributions, moments, and whitening</td>
+<td><a href="python/r01.ipynb.html">py</a></td>
+<td><a href="go/r01.ipynb.html">go</a></td>
+<td><a href="rust/r01.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>r02</code></td>
+<td>Projections, characteristic functions, and SIGReg</td>
+<td><a href="python/r02.ipynb.html">py</a></td>
+<td><a href="go/r02.ipynb.html">go</a></td>
+<td><a href="rust/r02.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>r03</code></td>
+<td>Anti-collapse objectives and gradient paths</td>
+<td><a href="python/r03.ipynb.html">py</a></td>
+<td><a href="go/r03.ipynb.html">go</a></td>
+<td><a href="rust/r03.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>r04</code></td>
+<td>Train a representation and evaluate frozen probes</td>
+<td><a href="python/r04.ipynb.html">py</a></td>
+<td><a href="go/r04.ipynb.html">go</a></td>
+<td><a href="rust/r04.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>r05</code></td>
+<td>Transfer diagnostics without inventing a sports world model</td>
+<td><a href="python/r05.ipynb.html">py</a></td>
+<td><a href="go/r05.ipynb.html">go</a></td>
+<td><a href="rust/r05.ipynb.html">rust</a></td>
+</tr>
+<tr>
+<td><code>poux_bridge</code></td>
+<td>Poux spatial-AI Stage 01 weighted-streaming bridge</td>
+<td><a href="python/poux_bridge.ipynb.html">py</a></td>
+<td><a href="go/poux_bridge.ipynb.html">go</a></td>
+<td><a href="rust/poux_bridge.ipynb.html">rust</a></td>
+</tr>
+</tbody>
+</table>
+<p>Total: 57 labs × 3 languages = 171 notebooks.</p>
+<h2 id="run-a-lab-without-a-notebook">Run a lab without a notebook</h2>
+<pre><code>uv run --no-sync python native_course.py compare --lab stage01 --output my_work/native_stage01_01
+</code></pre>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

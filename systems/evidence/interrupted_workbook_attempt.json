@@ -1,0 +1,279 @@
+{
+  "status": "interrupted_failed",
+  "expected": 171,
+  "completed": 30,
+  "results": [
+    {
+      "lab": "stage00",
+      "language": "python",
+      "source": "learning/workbooks/python/stage00.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 7.618262994000133,
+      "notebook": "python/stage00.ipynb"
+    },
+    {
+      "lab": "stage00",
+      "language": "go",
+      "source": "learning/workbooks/go/stage00.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.8031721990000733,
+      "notebook": "go/stage00.ipynb"
+    },
+    {
+      "lab": "stage00",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage00.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.784205357000019,
+      "notebook": "rust/stage00.ipynb"
+    },
+    {
+      "lab": "stage01",
+      "language": "python",
+      "source": "learning/workbooks/python/stage01.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 5.699042946999953,
+      "notebook": "python/stage01.ipynb"
+    },
+    {
+      "lab": "stage01",
+      "language": "go",
+      "source": "learning/workbooks/go/stage01.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.626845602000003,
+      "notebook": "go/stage01.ipynb"
+    },
+    {
+      "lab": "stage01",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage01.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.6600842570001078,
+      "notebook": "rust/stage01.ipynb"
+    },
+    {
+      "lab": "stage02",
+      "language": "python",
+      "source": "learning/workbooks/python/stage02.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 6.83530916199993,
+      "notebook": "python/stage02.ipynb"
+    },
+    {
+      "lab": "stage02",
+      "language": "go",
+      "source": "learning/workbooks/go/stage02.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.8693219009999211,
+      "notebook": "go/stage02.ipynb"
+    },
+    {
+      "lab": "stage02",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage02.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 2.0019855129999087,
+      "notebook": "rust/stage02.ipynb"
+    },
+    {
+      "lab": "stage03",
+      "language": "python",
+      "source": "learning/workbooks/python/stage03.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 5.964532390999921,
+      "notebook": "python/stage03.ipynb"
+    },
+    {
+      "lab": "stage03",
+      "language": "go",
+      "source": "learning/workbooks/go/stage03.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.694592203999946,
+      "notebook": "go/stage03.ipynb"
+    },
+    {
+      "lab": "stage03",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage03.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.6639447509999172,
+      "notebook": "rust/stage03.ipynb"
+    },
+    {
+      "lab": "stage04",
+      "language": "python",
+      "source": "learning/workbooks/python/stage04.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 6.100045881000142,
+      "notebook": "python/stage04.ipynb"
+    },
+    {
+      "lab": "stage04",
+      "language": "go",
+      "source": "learning/workbooks/go/stage04.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.6537395519999336,
+      "notebook": "go/stage04.ipynb"
+    },
+    {
+      "lab": "stage04",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage04.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.665281092999976,
+      "notebook": "rust/stage04.ipynb"
+    },
+    {
+      "lab": "stage05",
+      "language": "python",
+      "source": "learning/workbooks/python/stage05.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 5.9229010690000905,
+      "notebook": "python/stage05.ipynb"
+    },
+    {
+      "lab": "stage05",
+      "language": "go",
+      "source": "learning/workbooks/go/stage05.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.8448477330000514,
+      "notebook": "go/stage05.ipynb"
+    },
+    {
+      "lab": "stage05",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage05.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.6804497699999956,
+      "notebook": "rust/stage05.ipynb"
+    },
+    {
+      "lab": "stage06",
+      "language": "python",
+      "source": "learning/workbooks/python/stage06.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 6.421984610999971,
+      "notebook": "python/stage06.ipynb"
+    },
+    {
+      "lab": "stage06",
+      "language": "go",
+      "source": "learning/workbooks/go/stage06.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.767168072000004,
+      "notebook": "go/stage06.ipynb"
+    },
+    {
+      "lab": "stage06",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage06.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.6632444909998867,
+      "notebook": "rust/stage06.ipynb"
+    },
+    {
+      "lab": "stage07",
+      "language": "python",
+      "source": "learning/workbooks/python/stage07.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 6.321847641999966,
+      "notebook": "python/stage07.ipynb"
+    },
+    {
+      "lab": "stage07",
+      "language": "go",
+      "source": "learning/workbooks/go/stage07.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.697694520000141,
+      "notebook": "go/stage07.ipynb"
+    },
+    {
+      "lab": "stage07",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage07.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.6058268159999898,
+      "notebook": "rust/stage07.ipynb"
+    },
+    {
+      "lab": "stage08",
+      "language": "python",
+      "source": "learning/workbooks/python/stage08.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 6.372221911999986,
+      "notebook": "python/stage08.ipynb"
+    },
+    {
+      "lab": "stage08",
+      "language": "go",
+      "source": "learning/workbooks/go/stage08.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.81682507000005,
+      "notebook": "go/stage08.ipynb"
+    },
+    {
+      "lab": "stage08",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage08.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.701630403000081,
+      "notebook": "rust/stage08.ipynb"
+    },
+    {
+      "lab": "stage09",
+      "language": "python",
+      "source": "learning/workbooks/python/stage09.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 6.298124894000011,
+      "notebook": "python/stage09.ipynb"
+    },
+    {
+      "lab": "stage09",
+      "language": "go",
+      "source": "learning/workbooks/go/stage09.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.725206825999976,
+      "notebook": "go/stage09.ipynb"
+    },
+    {
+      "lab": "stage09",
+      "language": "rust",
+      "source": "learning/workbooks/rust/stage09.ipynb",
+      "status": "passed",
+      "code_cells": 3,
+      "seconds": 1.78138296599991,
+      "notebook": "rust/stage09.ipynb"
+    }
+  ],
+  "assessment": "not_assessed",
+  "reason": "External KernelManager instances were not shutdown; process memory limit reached. Cleanup now explicit; full fresh rerun required."
+}

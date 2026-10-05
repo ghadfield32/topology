@@ -1,0 +1,219 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CHANGES · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/png/CHANGES.md">native/rust/vendor/png/CHANGES.md</a> · Readable source notation; no online math renderer.</p><h2 id="01715">0.17.15</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Add a public API to advance to the next frame in APNG decoder (<a href="https://github.com/image-rs/image-png/pull/518">#518</a>)</li>
+<li>Add APIs to write ICC and EXIF chunks (<a href="https://github.com/image-rs/image-png/pull/526">#526</a>)</li>
+<li>Add support for parsing the sBIT chunk (<a href="https://github.com/image-rs/image-png/pull/524">#524</a>)</li>
+<li>Add support for parsing the bKGD chunk (<a href="https://github.com/image-rs/image-png/pull/538">#538</a>)</li>
+<li>Add support for parsing the cICP chunk (<a href="https://github.com/image-rs/image-png/pull/529">#529</a>)</li>
+<li>Add support for parsing mDCv and cLLi chunks (<a href="https://github.com/image-rs/image-png/pull/528">#528</a>, (<a href="https://github.com/image-rs/image-png/pull/543">#543</a>))</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Improve performance of Paeth filter during decoding (<a href="https://github.com/image-rs/image-png/pull/512">#512</a>, <a href="https://github.com/image-rs/image-png/pull/539">#539</a>)</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Avoid an infinite loop when retrying after a fatal error using <code>StreamingDecoder</code> (<a href="https://github.com/image-rs/image-png/pull/520">#520</a>)</li>
+<li>Fixed chunk order in encoded files (<a href="https://github.com/image-rs/image-png/pull/526">#526</a>)</li>
+</ul>
+<h2 id="01714">0.17.14</h2>
+<ul>
+<li>Updated to miniz_oxide 0.8.0.</li>
+<li>Added public API to consume interlaced rows one by one (<a href="https://github.com/image-rs/image-png/pull/495">#495</a>)</li>
+<li>Improved support for resuming decoding after an <code>UnexpectedEof</code>, which lets you start parsing a file before it's fully received over the network (<a href="https://github.com/image-rs/image-png/pull/496">#496</a>)</li>
+<li>Fixed some broken links in documentation, improved some documentation comments</li>
+</ul>
+<h2 id="01713">0.17.13</h2>
+<ul>
+<li>Fix <code>Send</code> bound on <code>Reader</code>.</li>
+</ul>
+<h2 id="01712">0.17.12</h2>
+<ul>
+<li>Reject zero-sized frames.</li>
+<li>Optimized decoding of paletted images.</li>
+<li>Removed remaining uses of miniz_oxide for decoding.</li>
+<li>Correct lifetime used for <code>Info</code> struct.</li>
+<li>Fix build issue with <code>-Z minimal-versions</code>.</li>
+</ul>
+<h2 id="01711">0.17.11</h2>
+<ul>
+<li>Ignore subsequent iCCP chunks to match libpng behavior.</li>
+<li>Added an option to ignore ancillary chunks with invalid CRC.</li>
+<li>Added <code>new_with_info</code> constructor for encoder.</li>
+<li>Removed hard-coded memory limits.</li>
+<li>No longer allow zero sized images.</li>
+<li>Added <code>Reader::finish</code> to read all the auxiliary chunks that comes after the
+image.</li>
+</ul>
+<h2 id="01710">0.17.10</h2>
+<ul>
+<li>Added Transformations::ALPHA</li>
+<li>Enable encoding pixel dimensions</li>
+</ul>
+<h2 id="0179">0.17.9</h2>
+<ul>
+<li>Fixed a bug in ICC profile decompression.</li>
+<li>Improved unfilter performance.</li>
+</ul>
+<h2 id="0178">0.17.8</h2>
+<ul>
+<li>Increased MSRV to 1.57.0.</li>
+<li>Substantially optimized encoding and decoding:<ul>
+<li>Autovectorize filtering and unfiltering.</li>
+<li>Make the "fast" compression preset use fdeflate.</li>
+<li>Switch decompression to always use fdeflate.</li>
+<li>Updated to miniz_oxide 0.7.</li>
+<li>Added an option to ignore checksums.</li>
+</ul>
+</li>
+<li>Added corpus-bench example which measures the compression ratio and time to
+re-encode and subsequently decode a corpus of images.</li>
+<li>More fuzz testing.</li>
+</ul>
+<h2 id="0177">0.17.7</h2>
+<ul>
+<li>Fixed handling broken tRNS chunk.</li>
+<li>Updated to miniz_oxide 0.6.</li>
+</ul>
+<h2 id="0176">0.17.6</h2>
+<ul>
+<li>Added <code>Decoder::read_header_info</code> to query the information contained in the
+PNG header.</li>
+<li>Switched to using the flate2 crate for encoding.</li>
+</ul>
+<h2 id="0175">0.17.5</h2>
+<ul>
+<li>Fixed a regression, introduced by chunk validation, that made the decoder
+sensitive to the order of <code>gAMA</code>, <code>cHRM</code>, and <code>sRGB</code> chunks.</li>
+</ul>
+<h2 id="0174">0.17.4</h2>
+<ul>
+<li>Added <code>{Decoder,StreamDecoder}::set_ignore_text_chunk</code> to disable decoding of
+ancillary text chunks during the decoding process (chunks decoded by default).</li>
+<li>Added duplicate chunk checks. The decoder now enforces that standard chunks
+such as palette, gamma, … occur at most once as specified.</li>
+<li>Added <code>#[forbid(unsafe_code)]</code> again. This may come at a minor performance
+cost when decoding ASCII text for now.</li>
+<li>Fixed a bug where decoding of large chunks (&gt;32kB) failed to produce the
+correct result, or fail the image decoding. As new chunk types are decoded
+this introduced regressions relative to previous versions.</li>
+</ul>
+<h2 id="0173">0.17.3</h2>
+<ul>
+<li>Fixed a bug where <code>Writer::finish</code> would not drop the underlying writer. This
+would fail to flush and leak memory when using a buffered file writers.</li>
+<li>Calling <code>Writer::finish</code> will now eagerly flush the underlying writer,
+returning any error that this operation may result in.</li>
+<li>Errors in inflate are now diagnosed with more details.</li>
+<li>The color and depth combination is now checked in stream decoder.</li>
+</ul>
+<h2 id="0172">0.17.2</h2>
+<ul>
+<li>Added support for encoding and decoding tEXt/zTXt/iTXt chunks.</li>
+<li>Added <code>Encoder::validate_sequence</code> to enable validation of the written frame
+sequence, that is, if the number of written images is consistent with the
+animation state.</li>
+<li>Validation is now off by default. The basis of the new validation had been
+introduced in 0.17 but this fixes some cases where this validation was too
+aggressive compared to previous versions.</li>
+<li>Added <code>Writer::finish</code> to fully check the write of the end of an image
+instead of silently ignoring potential errors in <code>Drop</code>.</li>
+<li>The <code>Writer::write_chunk</code> method now validates that the computed chunk length
+does not overflow the limit set by PNG.</li>
+<li>Fix an issue where the library would panic or even abort the process when
+<code>flush</code> or <code>write</code> of an underlying writer panicked, or in some other uses of
+<code>StreamWriter</code>.</li>
+</ul>
+<h2 id="0171">0.17.1</h2>
+<ul>
+<li>Fix panic in adaptive filter method <code>sum_buffer</code></li>
+</ul>
+<h2 id="0170">0.17.0</h2>
+<ul>
+<li>Increased MSRV to 1.46.0</li>
+<li>Rework output info usage</li>
+<li>Implement APNG encoding</li>
+<li>Improve ergonomics of encoder set_palette and set_trns methods</li>
+<li>Make Info struct non-exhaustive</li>
+<li>Make encoder a core feature</li>
+<li>Default Transformations to Identity</li>
+<li>Add Adaptive filtering method for encoding</li>
+<li>Fix SCREAM_CASE on ColorType variants</li>
+<li>Forbid unsafe code</li>
+</ul>
+<h2 id="0167">0.16.7</h2>
+<ul>
+<li>Added <code>Encoder::set_trns</code> to register a transparency table to be written.</li>
+</ul>
+<h2 id="0166">0.16.6</h2>
+<ul>
+<li>Fixed silent integer overflows in buffer size calculation, resulting in
+panics from assertions and out-of-bounds accesses when actually decoding.
+This improves the stability of 32-bit and 16-bit targets and make decoding
+run as stable as on 64-bit.</li>
+<li>Reject invalid color/depth combinations. Some would lead to mismatched output
+buffer size and panics during decoding.</li>
+<li>Add <code>Clone</code> impl for <code>Info</code> struct.</li>
+</ul>
+<h2 id="0165">0.16.5</h2>
+<ul>
+<li>Decoding of APNG subframes is now officially supported and specified. Note
+that dispose ops and positioning in the image need to be done by the caller.</li>
+<li>Added encoding of indexed data.</li>
+<li>Switched to <code>miniz_oxide</code> for decompressing image data, with 30%-50% speedup
+in common cases and up to 200% in special ones.</li>
+<li>Fix accepting images only with consecutive IDAT chunks, rules out data loss.</li>
+</ul>
+<h2 id="0164">0.16.4</h2>
+<ul>
+<li>The fdAT frames are no longer inspected when the main image is read. This
+would previously be the case for non-interlaced images. This would lead to
+incorrect failure and, e.g. an error of the form <code>"invalid filter method"</code>.</li>
+<li>Fix always validating the last IDAT-chunks checksum, was sometimes ignored.</li>
+<li>Prevent encoding color/bit-depth combinations forbidden by the specification.</li>
+<li>The fixes for APNG/fdAT enable further implementation. The <em>next</em> release is
+expected to officially support APNG.</li>
+</ul>
+<h2 id="0163">0.16.3</h2>
+<ul>
+<li>Fix encoding with filtering methods Up, Avg, Paeth</li>
+<li>Optimize decoding throughput by up to +30%</li>
+</ul>
+<h2 id="0162">0.16.2</h2>
+<ul>
+<li>Added method constructing an owned stream encoder.</li>
+</ul>
+<h2 id="0161">0.16.1</h2>
+<ul>
+<li>Addressed files bloating the packed crate</li>
+</ul>
+<h2 id="0160">0.16.0</h2>
+<ul>
+<li>Fix a bug compressing images with deflate</li>
+<li>Address use of deprecated error interfaces</li>
+</ul>
+<h2 id="0153">0.15.3</h2>
+<ul>
+<li>Fix panic while trying to encode empty images. Such images are no longer
+accepted and error when calling <code>write_header</code> before any data has been
+written. The specification does not permit empty images.</li>
+</ul>
+<h2 id="0152">0.15.2</h2>
+<ul>
+<li>Fix <code>EXPAND</code> transformation to leave bit depths above 8 unchanged</li>
+</ul>
+<h2 id="0151">0.15.1</h2>
+<ul>
+<li>Fix encoding writing invalid chunks. Images written can be corrected: see
+<a href="https://github.com/image-rs/image/issues/1074">https://github.com/image-rs/image/issues/1074</a> for a recovery.</li>
+<li>Fix a panic in bit unpacking with checked arithmetic (e.g. in debug builds)</li>
+<li>Added better fuzzer integration</li>
+<li>Update <code>term</code>, <code>rand</code> dev-dependency</li>
+<li>Note: The <code>show</code> example program requires a newer compiler than 1.34.2 on
+some targets due to depending on <code>glium</code>. This is not considered a breaking
+bug.</li>
+</ul>
+<h2 id="015">0.15</h2>
+<p>Begin of changelog</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "published": false,
+  "learner_assessment": "not_assessed",
+  "source_ledger_sha256": "b005a9777ff958d1a22709cc832f7c073d1f47a3596325216e95f19a91cea599",
+  "notebooks": 1,
+  "files_sha256": {
+    "evidence/artifacts/reports/v6/industries/wine/comparison.png": "6dd5e846411c654cb526e78c93543dd3f92189e80a49e96b435c4a9157cabb39",
+    "evidence/artifacts/reports/v6/industries/wine/preprocessing.json": "4c380d795c9abf35e5d82544c1d0908d21c7355dfac60fba5768faeff5192489",
+    "evidence/artifacts/reports/v6/industries/wine/protocol.json": "acef98440b39c2f1c1d3a908a2ff3374b6be000e6f4dd5556bad258da7672503",
+    "evidence/artifacts/reports/v6/industries/wine/results.json": "dd3d8670d2697e4137f822bda12a3a0d2698ed4a9194f75120fe8a30abe65493",
+    "evidence/artifacts/reports/v6/industries/wine/split.csv": "18de5b72a957fb9ff95d443ff3b8464949661c6b636501048ab94484459ad39e",
+    "evidence/artifacts/reports/v6/industries/wine/test_predictions.csv": "aac7ccdebb990ee19de507afb31e67a21abbdc6dbc88ca84cf8f4244971a8bd5",
+    "evidence/artifacts/reports/v6/industries/wine/topological_features.csv": "502aa1431778c1ebd0128dbdaf43d24c0e7b05c800b1553f0059f0e0e54cdb17",
+    "evidence/artifacts/reports/v6/industries/wine/topology_preprocessing.json": "d0d3b9f5cbe2b61da2372eace571e6d5b34dcf07f2907ff39db2deb3957a2e27",
+    "evidence/executed/industry/notebooks/wine.ipynb": "6d9cc9155bf94d698576b0ac81d7b758f8678b9c9d9df8e784db3a3b20efc41c",
+    "evidence/execution.json": "b005a9777ff958d1a22709cc832f7c073d1f47a3596325216e95f19a91cea599",
+    "index.html": "a48b57f320f3e4dbb9bc3add0623e4df669eeb7a4c514694a89385ebf796c150",
+    "notebooks/industry/notebooks/wine-8-1.png": "e8689b8bb9fb669c9f6c1d2426dc1df9a03ca5e39494f1b7c57f4d2871991578",
+    "notebooks/industry/notebooks/wine.html": "bf2097c40b82c1c92841546bd2a5d7dcbc2a25aad732fd20c9ac8932b24a84cb",
+    "reflection.json": "6604d69c609c772f968d10d55271aa505e1d664bca7287715df713ad80992974"
+  },
+  "reflection_validation": "Completeness only; not truth or correctness.",
+  "scope": "Portable local evidence draft; output hashes establish continuity, not authorship or scientific validity."
+}

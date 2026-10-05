@@ -1,6 +1,6 @@
 {
-  "release": "12.0.0",
-  "date": "2026-09-22",
+  "release": "14.0.0",
+  "date": "2026-10-04",
   "core_stages": 31,
   "unique_primary_lessons": 31,
   "representation_units": 5,
@@ -14,19 +14,16 @@
   "source_input_hashes": 504,
   "source_inputs_unchanged": true,
   "tests": {
-    "total": 753,
-    "skipped": 2,
-    "failed": 0,
-    "passed": 751
+    "note": "Historical archive totals retained for provenance; this checkout's executed totals are in local_execution_this_checkout and docs/release/VERIFICATION.md."
   },
   "native_nonroot_readonly": "passed tests + Stage 00",
-  "uv_diagnostic": "passed using explicitly inherited dependencies",
+  "uv_diagnostic": "passed; uv lock re-resolved the editable root package to 14.0.0 against the configured package index",
   "fresh_uv_install": "blocked by package-index DNS failure",
-  "genuine_uv_lock_present": false,
-  "docker_runtime": "blocked: no Docker CLI/engine",
-  "kubernetes_static": "passed project policy; not server validation",
-  "kubernetes_live": "blocked: no docker/kubectl/kind",
-  "browser_navigation": "blocked by Chromium administrator policy; not claimed passed",
+  "genuine_uv_lock_present": true,
+  "docker_runtime": "blocked: no image build executed in this cycle",
+  "kubernetes_static": "passes project-policy tests; not server validation",
+  "kubernetes_live": "blocked: no kind cluster created",
+  "browser_navigation": "not evaluated this cycle",
   "new_observed_data_payloads": 0,
   "learner_items_preassessed": 0,
   "post_reference_changes": [
@@ -40,11 +37,44 @@
   "local_file_targets": 29470,
   "html_fragment_targets": 648,
   "git_export": {
-    "status": "passed",
-    "tests_passed": 751,
-    "skipped": 2,
+    "status": "not_run_this_cycle",
     "private_work_tracked": false,
     "templates_retained": true,
     "remote_modified": false
-  }
+  },
+  "kind": "repository integration of the v17 systems-learning layer and the v13 study/report workflow",
+  "native_units": 57,
+  "systems_units": 10,
+  "local_execution_this_checkout": {
+    "platform": "Windows x86-64, Python 3.13.5, uv 0.12.5",
+    "full_python_suite": {
+      "passed": 876,
+      "skipped": 6,
+      "failed": 0
+    },
+    "systems_suite": {
+      "passed": 24,
+      "failed": 0
+    },
+    "workbooks_check": {
+      "files": 182,
+      "notebooks": 181,
+      "mismatches": 0
+    },
+    "learn_project_sys01": "passed",
+    "learn_demo": "passed",
+    "learn_verify_projects": {
+      "passed": 8,
+      "failed": 0,
+      "blocked": 2,
+      "blocked_units": [
+        "sys04",
+        "sys08"
+      ]
+    },
+    "note": "Local execution record for this Windows checkout; NOT the archive's Linux reference totals."
+  },
+  "integration_record": "docs/release/V17_INTEGRATION.md",
+  "start_to_finish": "docs/release/START_TO_FINISH.md",
+  "historical_reference_replay": "reports/v13/summary.json (archive v13-era record)"
 }

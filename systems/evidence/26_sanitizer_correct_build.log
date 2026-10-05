@@ -1,0 +1,28 @@
+-- The C compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_sanitizers/c
+[ 16%] Building C object CMakeFiles/trajectory_reader_lib.dir/src/trajectory.c.o
+[ 33%] Linking C static library libtrajectory_reader_lib.a
+[ 33%] Built target trajectory_reader_lib
+[ 50%] Building C object CMakeFiles/trajectory_reader.dir/src/main.c.o
+[ 66%] Linking C executable trajectory_reader
+[ 66%] Built target trajectory_reader
+[ 83%] Building C object CMakeFiles/memory_demo.dir/src/memory_demo.c.o
+[100%] Linking C executable memory_demo
+[100%] Built target memory_demo
+Internal ctest changing into directory: /mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_sanitizers/c
+Test project /mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_sanitizers/c
+    Start 1: rejects_missing_input
+1/2 Test #1: rejects_missing_input ............   Passed    0.01 sec
+    Start 2: pointer_and_layout
+2/2 Test #2: pointer_and_layout ...............   Passed    0.00 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Total Test time (real) =   0.01 sec

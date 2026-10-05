@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Landmark angles and velocity — rust · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../systems/evidence/workbooks/rust/s01.ipynb">systems/evidence/workbooks/rust/s01.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><h1 id="landmark-angles-and-velocity--rust">Landmark angles and velocity — rust</h1>
+<p>One mathematical lesson: <code>sports_v8/lessons/S01.md</code>. Read it once. This is a reference-execution interface, not a completed independent assignment.</p>
+<p><strong>Explain → Predict → Implement → Break → Apply.</strong> Write your prediction before executing. The kernel is Python; the compiled rust program does the computation.</p>
+<p><strong>Protocol boundary:</strong> Intervals with large gaps are rejected; derived velocity is not an independent sensor measurement.</p>
+<section class="cell"><p class="cell-label">Code · execution 1</p><pre><code>from pathlib import Path
+import sys, json
+ROOT = next((p for p in (Path.cwd(), *Path.cwd().parents) if (p / &#x27;systems/catalog.json&#x27;).exists() and (p / &#x27;native/protocols/labs.json&#x27;).exists()), None)
+if ROOT is None:
+    raise RuntimeError(&#x27;Open this workbook inside the extracted course repository.&#x27;)
+sys.path.insert(0, str(ROOT))
+print(&#x27;Course:&#x27;, ROOT)
+print(&#x27;Interpreter:&#x27;, sys.executable)
+</code></pre><div class="output"><pre>Course: /mnt/data/shape17_build/listening_to_shape_lab
+Interpreter: /opt/pyvenv/bin/python
+</pre></div></section><h2 id="fresh-execution">Fresh execution</h2>
+<p>This creates a new run and never searches for old results. It may take longer when the original experiment rebuilds prerequisites. The complete stdout and stderr remain in its command record.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from systems.python.notebook_runner import run_reference, read_metrics
+summary = run_reference(&#x27;s01&#x27;, &#x27;rust&#x27;)
+print(json.dumps(summary, indent=2))</code></pre><div class="output"><pre>{
+  &quot;lab&quot;: &quot;s01&quot;,
+  &quot;language&quot;: &quot;rust&quot;,
+  &quot;exit_code&quot;: 0,
+  &quot;output&quot;: &quot;/mnt/data/shape17_build/listening_to_shape_lab/my_work/learning_references/s01-rust-de4b03e2aa864b6b9107a9d5ba4cac0c&quot;,
+  &quot;command_log&quot;: &quot;/mnt/data/shape17_build/listening_to_shape_lab/my_work/learning_references/s01-rust-de4b03e2aa864b6b9107a9d5ba4cac0c.command.json&quot;,
+  &quot;assessment&quot;: &quot;not_assessed&quot;,
+  &quot;json_artifacts&quot;: [
+    &quot;rust_build_reuse.json&quot;,
+    &quot;rust_version.json&quot;,
+    &quot;execution.json&quot;,
+    &quot;rust/s01.execution.json&quot;,
+    &quot;rust/s01.json&quot;
+  ],
+  &quot;scope&quot;: &quot;Python executes the original reference. Go/Rust execute native16 protocols; see coverage differences.&quot;
+}
+</pre></div></section><section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>metrics = read_metrics(summary)
+print(json.dumps(metrics, indent=2)[:24000])
+print(&#x27;Full values are retained in the output files; printing is truncated only for readability.&#x27;)</code></pre><div class="output"><pre>{
+  &quot;metrics&quot;: {
+    &quot;interval_velocities&quot;: [
+      {
+        &quot;dt&quot;: 0.016666666666666666,
+        &quot;row&quot;: 1,
+        &quot;valid&quot;: true,
+        &quot;velocity_m_s&quot;: [
+          0.029039992608801413,
+          0.06819948793269859,
+          -0.3008462924956956
+        ]
+      },
+      {
+        &quot;reason&quot;: &quot;gap exceeds 0.1 seconds&quot;,
+        &quot;row&quot;: 2,
+        &quot;valid&quot;: false
+      },
+      {
+        &quot;reason&quot;: &quot;gap exceeds 0.1 seconds&quot;,
+        &quot;row&quot;: 3,
+        &quot;valid&quot;: false
+      },
+      {
+        &quot;dt&quot;: 0.08333333333333348,
+        &quot;row&quot;: 4,
+        &quot;valid&quot;: true,
+        &quot;velocity_m_s&quot;: [
+          -3.820506108227566,
+          0.6216159569695161,
+          4.067365359256883
+        ]
+      },
+      {
+        &quot;dt&quot;: 0.08333333333333326,
+        &quot;row&quot;: 5,
+        &quot;valid&quot;: true,
+        &quot;velocity_m_s&quot;: [
+          -4.161934775703962,
+          0.20636875283210562,
+          2.527626291744673
+        ]
+      },
+      {
+        &quot;dt&quot;: 0.08333333333333348,
+        &quot;row&quot;: 6,
+        &quot;valid&quot;: true,
+        &quot;velocity_m_s&quot;: [
+          -4.533966083823564,
+          0.04003520235190898,
+          1.6754433658677879
+        ]
+      },
+      {
+        &quot;dt&quot;: 0.08333333333333304,
+        &quot;row&quot;: 7,
+        &quot;valid&quot;: true,
+        &quot;velocity_m_s&quot;: [
+          -4.4966537716365185,
+          0.049567812699543086,
+          0.8844156893754831
+        ]
+      },
+      {
+        &quot;dt&quot;: 0.08333333333333348,
+        &quot;row&quot;: 8,
+        &quot;valid&quot;: true,
+        &quot;velocity_m_s&quot;: [
+          -4.086828238711341,
+          0.09374593505049217,
+          -0.09623410755367329
+        ]
+      },
+      {
+        &quot;dt&quot;: 0.08333333333333348,
+        &quot;row&quot;: 9,
+        &quot;valid&quot;: true,
+        &quot;velocity_m_s&quot;: [
+          -3.9509608560951293,
+          0.1710701303002399,
+          -0.878485735483894
+        ]
+      },
+      {
+        &quot;reason&quot;: &quot;gap exceeds 0.1 seconds&quot;,
+        &quot;row&quot;: 10,
+        &quot;valid&quot;: false
+      },
+      {
+        &quot;reason&quot;: &quot;gap exceeds 0.1 seconds&quot;,
+        &quot;row&quot;: 11,
+        &quot;valid&quot;: false
+      }
+    ],
+    &quot;joint_angles_deg&quot;: [
+      109.48667874081843,
+      109.40825628668777,
+      89.29229202556823,
+      167.10815174477605,
+      165.84151456046973,
+      165.72059790060752,
+      165.4126750899895,
+      163.92718347061952,
+      163.00748637399397,
+      163.0870818642616,
+      67.67722401311178,
+      149.24980222897963
+    ],
+    &quot;scope&quot;: &quot;interval estimates on selected samples; not camera PTS or ground-truth release&quot;,
+    &quot;time_seconds&quot;: [
+      0.0,
+      0.016666666666666666,
+      1.5,
+      1.8333333333333333,
+      1.9166666666666667,
+      2.0,
+      2.0833333333333335,
+      2.1666666666666665,
+      2.25,
+      2.3333333333333335,
+      3.0,
+      3.5
+    ]
+  },
+  &quot;inputs&quot;: {
+    &quot;native/protocols/labs.json&quot;: {
+      &quot;bytes&quot;: 77988,
+      &quot;sha256&quot;: &quot;94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753&quot;
+    },
+    &quot;sports_v8/data/spl_selected_frames.json&quot;: {
+      &quot;bytes&quot;: 6528,
+      &quot;sha256&quot;: &quot;4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc&quot;
+    }
+  }
+}
+Full values are retained in the output files; printing is truncated only for readability.
+</pre></div></section><h2 id="independent-work">Independent work</h2>
+<p>Use <code>python learn.py session --lab s01 --output my_work/s01_attempt01</code> to obtain private projects. Native source edits must be compiled from the copied workspace, not the reference root.</p>
+<ol>
+<li>Define the independent observation unit for sports motion and identify repeated groups.</li>
+<li>Change one declared parameter in calculate joint angles and interval velocities on nonuniformly selected observed frames. and predict its effect before running.</li>
+<li>Design a comparison that could reject the claimed benefit; explain this limitation: Intervals with large gaps are rejected; derived velocity is not an independent sensor measurement.</li>
+</ol>
+<p>Record what required help; no automatic mastery credit. Compare protocols before comparing scores.</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "device": "cpu",
+  "mode": "eager",
+  "torch": "2.10.0+cpu",
+  "source": "/mnt/data/shape17_build/listening_to_shape_lab/data/raw/iris.csv",
+  "source_sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f",
+  "observed_rows": 150,
+  "buffer_repetitions": 1024,
+  "buffer_values": 614400,
+  "transfer_seconds": 1.6864999906829325e-05,
+  "cold_seconds": 0.0003297789999123779,
+  "steady_seconds": [
+    5.980100013402989e-05,
+    0.00039743099978295504,
+    0.00011798900004578172,
+    6.392700015567243e-05,
+    6.263500017666956e-05,
+    6.2184999933379e-05,
+    5.779699995400733e-05,
+    8.463799986202503e-05,
+    6.189299983816454e-05,
+    6.186300015542656e-05,
+    0.0002473439999448601,
+    6.692099987049005e-05,
+    6.206400030350778e-05,
+    7.59149997975328e-05,
+    5.755700021836674e-05,
+    6.173399970066384e-05,
+    5.789800025013392e-05,
+    6.132299995442736e-05,
+    5.814799988002051e-05,
+    6.206400030350778e-05
+  ],
+  "max_abs_error": 2.384185791015625e-07,
+  "peak_allocated_gpu_bytes": null,
+  "limitations": [
+    "Microbenchmark, not end-to-end sports pipeline performance.",
+    "Repeated rows do not enlarge the observed dataset.",
+    "CPU run is not evidence of CUDA/Triton performance.",
+    "Steady timings include allocation and explicit synchronization."
+  ]
+}

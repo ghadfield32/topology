@@ -1,0 +1,13 @@
+{
+  "command": [
+    "cargo",
+    "test",
+    "--offline",
+    "--locked"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/project/rust_validator",
+  "exit_code": 0,
+  "seconds": 4.001412698999957,
+  "stdout": "\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 10 tests\ntest bad_count ... ok\ntest bad_flags ... ok\ntest manifest_invalid_schema ... ok\ntest manifest_duplicate_frames ... ok\ntest manifest_path_escape ... ok\ntest nan ... ok\ntest manifest_unknown_camera ... ok\ntest trailing ... ok\ntest truncation ... ok\ntest valid ... ok\n\ntest result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n",
+  "stderr": "   Compiling version_check v0.9.5\n   Compiling proc-macro2 v1.0.107\n   Compiling typenum v1.20.1\n   Compiling quote v1.0.47\n   Compiling unicode-ident v1.0.26\n   Compiling serde_core v1.0.228\n   Compiling generic-array v0.14.7\n   Compiling serde v1.0.228\n   Compiling serde_json v1.0.145\n   Compiling syn v2.0.119\n   Compiling cpufeatures v0.2.17\n   Compiling memchr v2.8.3\n   Compiling crypto-common v0.1.7\n   Compiling block-buffer v0.10.4\n   Compiling digest v0.10.7\n   Compiling ryu v1.0.23\n   Compiling itoa v1.0.18\n   Compiling cfg-if v1.0.5\n   Compiling sha2 v0.10.9\n   Compiling serde_derive v1.0.228\n   Compiling capture-validator v0.1.0 (/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/project/rust_validator)\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.96s\n     Running unittests src/lib.rs (/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/check01/target/debug/deps/capture_validator-320e13ac21cd5ef8)\n     Running unittests src/main.rs (/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/check01/target/debug/deps/capture_validator-9127524c92b56b8d)\n     Running tests/contracts.rs (/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/check01/target/debug/deps/contracts-63ad9241028ce3e4)\n   Doc-tests capture_validator\n"
+}

@@ -1,0 +1,42 @@
+{
+  "raw": {
+    "validation": {
+      "accuracy": 0.9722222222222222,
+      "balanced_accuracy": 0.9777777777777779
+    },
+    "test": {
+      "accuracy": 0.8888888888888888,
+      "balanced_accuracy": 0.8952380952380952
+    }
+  },
+  "topology": {
+    "validation": {
+      "accuracy": 0.6666666666666666,
+      "balanced_accuracy": 0.7074074074074074
+    },
+    "test": {
+      "accuracy": 0.6388888888888888,
+      "balanced_accuracy": 0.669047619047619
+    }
+  },
+  "combined": {
+    "validation": {
+      "accuracy": 0.9722222222222222,
+      "balanced_accuracy": 0.9777777777777779
+    },
+    "test": {
+      "accuracy": 0.9444444444444444,
+      "balanced_accuracy": 0.942857142857143
+    }
+  },
+  "majority": {
+    "validation": {
+      "accuracy": 0.4166666666666667,
+      "balanced_accuracy": 0.3333333333333333
+    },
+    "test": {
+      "accuracy": 0.3888888888888889,
+      "balanced_accuracy": 0.3333333333333333
+    }
+  }
+}

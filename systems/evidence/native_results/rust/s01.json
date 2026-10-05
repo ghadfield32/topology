@@ -1,0 +1,142 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    },
+    "sports_v8/data/spl_selected_frames.json": {
+      "bytes": 6528,
+      "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc"
+    }
+  },
+  "lab": "s01",
+  "language": "rust",
+  "metrics": {
+    "interval_velocities": [
+      {
+        "dt": 0.016666666666666666,
+        "row": 1,
+        "valid": true,
+        "velocity_m_s": [
+          0.029039992608801413,
+          0.06819948793269859,
+          -0.3008462924956956
+        ]
+      },
+      {
+        "reason": "gap exceeds 0.1 seconds",
+        "row": 2,
+        "valid": false
+      },
+      {
+        "reason": "gap exceeds 0.1 seconds",
+        "row": 3,
+        "valid": false
+      },
+      {
+        "dt": 0.08333333333333348,
+        "row": 4,
+        "valid": true,
+        "velocity_m_s": [
+          -3.820506108227566,
+          0.6216159569695161,
+          4.067365359256883
+        ]
+      },
+      {
+        "dt": 0.08333333333333326,
+        "row": 5,
+        "valid": true,
+        "velocity_m_s": [
+          -4.161934775703962,
+          0.20636875283210562,
+          2.527626291744673
+        ]
+      },
+      {
+        "dt": 0.08333333333333348,
+        "row": 6,
+        "valid": true,
+        "velocity_m_s": [
+          -4.533966083823564,
+          0.04003520235190898,
+          1.6754433658677879
+        ]
+      },
+      {
+        "dt": 0.08333333333333304,
+        "row": 7,
+        "valid": true,
+        "velocity_m_s": [
+          -4.4966537716365185,
+          0.049567812699543086,
+          0.8844156893754831
+        ]
+      },
+      {
+        "dt": 0.08333333333333348,
+        "row": 8,
+        "valid": true,
+        "velocity_m_s": [
+          -4.086828238711341,
+          0.09374593505049217,
+          -0.09623410755367329
+        ]
+      },
+      {
+        "dt": 0.08333333333333348,
+        "row": 9,
+        "valid": true,
+        "velocity_m_s": [
+          -3.9509608560951293,
+          0.1710701303002399,
+          -0.878485735483894
+        ]
+      },
+      {
+        "reason": "gap exceeds 0.1 seconds",
+        "row": 10,
+        "valid": false
+      },
+      {
+        "reason": "gap exceeds 0.1 seconds",
+        "row": 11,
+        "valid": false
+      }
+    ],
+    "joint_angles_deg": [
+      109.48667874081843,
+      109.40825628668777,
+      89.29229202556823,
+      167.10815174477605,
+      165.84151456046973,
+      165.72059790060752,
+      165.4126750899895,
+      163.92718347061952,
+      163.00748637399397,
+      163.0870818642616,
+      67.67722401311178,
+      149.24980222897963
+    ],
+    "scope": "interval estimates on selected samples; not camera PTS or ground-truth release",
+    "time_seconds": [
+      0.0,
+      0.016666666666666666,
+      1.5,
+      1.8333333333333333,
+      1.9166666666666667,
+      2.0,
+      2.0833333333333335,
+      2.1666666666666665,
+      2.25,
+      2.3333333333333335,
+      3.0,
+      3.5
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

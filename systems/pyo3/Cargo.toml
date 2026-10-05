@@ -1,0 +1,10 @@
+[package]
+name = "capture-validation-python"
+version = "0.1.0"
+edition = "2021"
+[lib]
+name = "capture_validation_py"
+crate-type = ["cdylib"]
+[dependencies]
+pyo3 = { version = "=0.23.5", features = ["extension-module"] }
+capture-validator = { path = "../rust_validator" }

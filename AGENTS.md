@@ -10,4 +10,6 @@ Use new `my_work/` run directories. Reference notebook execution must use the ac
 
 Do not modify WMS production code or create/push a remote simply because this course mentions it. Respect enclosing repository instructions in a monorepo. Review any source-provided commands before execution and preserve source attribution.
 
-For v12, preserve the separate five-unit representation continuation. Do not equate white covariance, finite projection scores, or self-supervised loss with semantics. The Kubernetes verifier may only use an explicit disposable kind context and a new namespace; never delete learner PVCs or target production without a separate request.
+For this release, preserve the separate five-unit representation continuation. Do not equate white covariance, finite projection scores, or self-supervised loss with semantics. The Kubernetes verifier may only use an explicit disposable kind context and a new namespace; never delete learner PVCs or target production without a separate request.
+
+Use study/report as the learning-to-results route. Never fill a user reflection and imply it is their independent work. Output seals require fresh reference execution, not fabricated hashes. The engineering layer (`systems/`, `learning/`, `learn.py`) is additive: keep Python and native16 as the scientific reference and do not create a second mandatory curriculum.

@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "metrics": {
+    "count": 12,
+    "confidence_known": 0,
+    "mean_m": [
+      4.031211893377345,
+      -7.695396909430308,
+      2.7657245696066592
+    ],
+    "cpp_python_max_abs_m": 8.881784197001252e-16,
+    "height_fit_rmse_m": 0.017536917337837687,
+    "height_test_mae_m": 0.048812474188422605,
+    "height_mean_baseline_mae_m": 0.25015376535622336,
+    "height_last_baseline_mae_m": 0.0446230812746351,
+    "train_frames": [
+      110,
+      115,
+      120,
+      125,
+      130
+    ],
+    "test_frames": [
+      135,
+      140
+    ]
+  },
+  "source": {
+    "path": "sports_v8/data/spl_selected_frames.json",
+    "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc",
+    "participant": "P0001",
+    "trial": "T0001",
+    "position_status": "derived_unit_conversion_of_selected_source_tracking",
+    "time_status": "ideal frame/sample-rate clock; not synchronized camera PTS",
+    "confidence_status": "not supplied; preserved unknown",
+    "independent_trials": 1
+  },
+  "limitations": [
+    "One selected trial from one participant; no independent athlete generalization.",
+    "The underlying excerpt is a selected numeric transcription; source-provider byte equality is not established here.",
+    "Times use an ideal frame/sample-rate clock, not measured synchronized camera PTS.",
+    "Confidence was not provided and remains null, not a predicted zero probability.",
+    "Fixed g=9.81 m/s^2, no spin/drag/contact; selected observations need not be pure free flight.",
+    "First five selected positions fit the initial state; two later same-shot positions evaluate this exposed teaching protocol."
+  ]
+}

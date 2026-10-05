@@ -1,0 +1,11 @@
+# shape-job-service/service [shape-job-service/service.test]
+service/service_test.go:3:27: undefined: Manager
+service/service_test.go:4:35: undefined: New
+service/service_test.go:5:35: undefined: New
+service/service_test.go:6:34: undefined: New
+service/service_test.go:7:35: undefined: New
+service/service_test.go:8:67: undefined: New
+service/service_test.go:9:42: undefined: New
+service/service_test.go:10:40: undefined: New
+FAIL	shape-job-service/service [build failed]
+FAIL

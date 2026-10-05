@@ -1,0 +1,110 @@
+{
+  "source": {
+    "path": "sports_v8/data/spl_selected_frames.json",
+    "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc",
+    "participant": "P0001",
+    "trial": "T0001",
+    "position_status": "derived_unit_conversion_of_selected_source_tracking",
+    "time_status": "ideal frame/sample-rate clock; not synchronized camera PTS",
+    "confidence_status": "not supplied; preserved unknown",
+    "independent_trials": 1
+  },
+  "records": [
+    {
+      "frame": 0,
+      "time": 0.0,
+      "x": 5.730313996324034,
+      "y": -7.7813652536457445,
+      "z": 0.9759851270888907,
+      "confidence": null
+    },
+    {
+      "frame": 1,
+      "time": 0.016666666666666666,
+      "x": 5.730797996200847,
+      "y": -7.780228595513533,
+      "z": 0.9709710222139625,
+      "confidence": null
+    },
+    {
+      "frame": 90,
+      "time": 1.5,
+      "x": 5.907029366076567,
+      "y": -7.80013557020249,
+      "z": 2.0718540973816375,
+      "confidence": null
+    },
+    {
+      "frame": 110,
+      "time": 1.8333333333333333,
+      "x": 4.8243547275025955,
+      "y": -7.943240964899474,
+      "z": 3.250704932288135,
+      "confidence": null
+    },
+    {
+      "frame": 115,
+      "time": 1.9166666666666667,
+      "x": 4.505979218483631,
+      "y": -7.891439635152015,
+      "z": 3.5896520455595424,
+      "confidence": null
+    },
+    {
+      "frame": 120,
+      "time": 2.0,
+      "x": 4.159151320508301,
+      "y": -7.8742422390826725,
+      "z": 3.8002875698715983,
+      "confidence": null
+    },
+    {
+      "frame": 125,
+      "time": 2.0833333333333335,
+      "x": 3.7813208135230036,
+      "y": -7.870905972220013,
+      "z": 3.939907850360581,
+      "confidence": null
+    },
+    {
+      "frame": 130,
+      "time": 2.1666666666666665,
+      "x": 3.4065996658866284,
+      "y": -7.866775321161718,
+      "z": 4.0136091578085376,
+      "confidence": null
+    },
+    {
+      "frame": 135,
+      "time": 2.25,
+      "x": 3.066030645994016,
+      "y": -7.8589631599075105,
+      "z": 4.005589648845731,
+      "confidence": null
+    },
+    {
+      "frame": 140,
+      "time": 2.3333333333333335,
+      "x": 2.736783907986088,
+      "y": -7.844707315715824,
+      "z": 3.9323825042220735,
+      "confidence": null
+    },
+    {
+      "frame": 180,
+      "time": 3.0,
+      "x": 2.870266199178678,
+      "y": -6.659763702089526,
+      "z": 1.1845587773348458,
+      "confidence": null
+    },
+    {
+      "frame": 210,
+      "time": 3.5,
+      "x": 1.6559148628637563,
+      "y": -7.172995183573171,
+      "z": 1.4531921023043772,
+      "confidence": null
+    }
+  ]
+}

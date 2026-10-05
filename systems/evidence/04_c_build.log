@@ -1,0 +1,37 @@
+-- The C compiler identification is GNU 14.2.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /mnt/data/shape17_c_build
+[ 25%] Building C object CMakeFiles/trajectory_reader_lib.dir/src/trajectory.c.o
+/mnt/data/shape17_build/listening_to_shape_lab/systems/c/src/trajectory.c: In function 'fail':
+/mnt/data/shape17_build/listening_to_shape_lab/systems/c/src/trajectory.c:16:5: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   16 |     if(f) fclose(f); if(error && n) snprintf(error,n,"%s",message); return 1;
+      |     ^~
+/mnt/data/shape17_build/listening_to_shape_lab/systems/c/src/trajectory.c:16:22: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   16 |     if(f) fclose(f); if(error && n) snprintf(error,n,"%s",message); return 1;
+      |                      ^~
+/mnt/data/shape17_build/listening_to_shape_lab/systems/c/src/trajectory.c: In function 'trajectory_read':
+/mnt/data/shape17_build/listening_to_shape_lab/systems/c/src/trajectory.c:31:9: warning: this 'if' clause does not guard... [-Wmisleading-indentation]
+   31 |         if(i==0)s.start=t;s.end=t;s.known_confidence+=flags;
+      |         ^~
+/mnt/data/shape17_build/listening_to_shape_lab/systems/c/src/trajectory.c:31:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   31 |         if(i==0)s.start=t;s.end=t;s.known_confidence+=flags;
+      |                           ^
+[ 50%] Linking C static library libtrajectory_reader_lib.a
+[ 50%] Built target trajectory_reader_lib
+[ 75%] Building C object CMakeFiles/trajectory_reader.dir/src/main.c.o
+[100%] Linking C executable trajectory_reader
+[100%] Built target trajectory_reader
+Internal ctest changing into directory: /mnt/data/shape17_c_build
+Test project /mnt/data/shape17_c_build
+    Start 1: rejects_missing_input
+1/1 Test #1: rejects_missing_input ............   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 1
+
+Total Test time (real) =   0.04 sec

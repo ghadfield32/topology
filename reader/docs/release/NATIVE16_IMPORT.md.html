@@ -1,0 +1,320 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Native16 import record (Go/Rust native track) · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/NATIVE16_IMPORT.md">docs/release/NATIVE16_IMPORT.md</a> · Readable source notation; no online math renderer.</p><h1 id="native16-import-record-gorust-native-track">Native16 import record (Go/Rust native track)</h1>
+<p>Prepared 26 September 2026. This records what was imported from
+<code>Listening_to_Shape_Learning_System_v16.zip</code> into this repository, what was
+deliberately not imported, and what actually executed on this machine.</p>
+<p>This repository continues to identify as <strong>v12</strong> for its Python package. The
+native material is an <strong>additive extension</strong>, not a package upgrade. The
+archive's own <code>docs/v16/MIGRATION.md</code> scoped the additive import to the native
+paths and required preserving the genuine <code>uv.lock</code>, <code>pyproject.toml</code>, local
+Windows fixes and learner work — that scope was followed.</p>
+<h2 id="imported-additive-nothing-pre-existing-was-overwritten">Imported (additive; nothing pre-existing was overwritten)</h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Files</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>native/</code></td>
+<td>2008</td>
+<td>Go + Rust implementations, 57 lab guides, bounded data readers, tests and fixtures</td>
+</tr>
+<tr>
+<td><code>polyglot/</code></td>
+<td>191</td>
+<td>Historical v14 Go/Rust companion source and specs (superseded by <code>native/</code>; kept for comparison)</td>
+</tr>
+<tr>
+<td><code>curriculum/extensions/poux_spatial_ai/</code></td>
+<td>7</td>
+<td>Poux six-hub spatial-AI extension and its bridge test</td>
+</tr>
+<tr>
+<td><code>deploy/polyglot/</code></td>
+<td>2</td>
+<td>Companion Job example and README</td>
+</tr>
+<tr>
+<td><code>docs/v16/</code></td>
+<td>10</td>
+<td>Native16 migration, first session, data index, verification, status, example results</td>
+</tr>
+<tr>
+<td><code>docs/v14/</code></td>
+<td>4</td>
+<td>Polyglot-edition migration and readme</td>
+</tr>
+<tr>
+<td><code>reports/v14/</code></td>
+<td>62</td>
+<td>Archived v14 evidence records (historical inputs, so the polyglot tests can read them)</td>
+</tr>
+<tr>
+<td><code>native_course.py</code>, <code>polyglot.py</code>, <code>START_NATIVE.html</code></td>
+<td>3</td>
+<td>Launchers; <strong>stdlib-only</strong>, no new Python dependencies</td>
+</tr>
+<tr>
+<td><code>tests/test_native_v16.py</code>, <code>tests/test_polyglot_v14.py</code></td>
+<td>2</td>
+<td>Native-runner and polyglot-spec contracts</td>
+</tr>
+<tr>
+<td><code>tools/polyglot_verify.py</code></td>
+<td>1</td>
+<td>Polyglot smoke verifier</td>
+</tr>
+<tr>
+<td><code>.github/workflows/native-course-v16.yml</code>, <code>.github/workflows/polyglot.yml</code></td>
+<td>2</td>
+<td>Supplied workflows (not executed here)</td>
+</tr>
+</tbody>
+</table>
+<p><code>.gitignore</code> gained <code>Listening_to_Shape_Learning_System_v14.zip</code>,
+<code>Listening_to_Shape_Learning_System_v16.zip</code>, <code>**/target/</code> and
+<code>.native-cache/</code>. The vendored Rust source under <code>native/rust/vendor</code> (36
+crates with licenses) and <code>polyglot/rust</code> are <strong>source and remain tracked</strong>;
+only compiler output directories are ignored.</p>
+<h2 id="deliberately-not-imported-deferred-not-rejected">Deliberately not imported (deferred, not rejected)</h2>
+<p>The archive is a v13/v14 base wrapped around native16. The following were held
+back because they are a coordinated version change, not additive learning
+material, and the repository's <code>uv.lock</code> is a genuine, resolved lock tied to the
+current package version:</p>
+<ul>
+<li><code>src/shape_lab/result_packet.py</code>, <code>study_session.py</code> and the v13 edits to
+<code>acceptance.py</code>, <code>cli.py</code>, <code>course.py</code>, <code>deployment.py</code> (<code>course.py study</code> /
+<code>report</code> commands), with <code>tests/test_results_v13.py</code>,
+<code>tests/test_deployment_receipts_v13.py</code> and
+<code>docs/release/RESULTS_WORKFLOW.md</code>.</li>
+<li>Package version bump <code>12.0.0</code> → <code>14.0.0</code> in <code>pyproject.toml</code> and
+<code>src/shape_lab/__init__.py</code>.</li>
+<li>v12 → v13/v14 relabels in <code>curriculum/catalog.json</code>, <code>curriculum/START.md</code>,
+<code>RELEASE_MANIFEST.json</code>, <code>README.md</code>, <code>AGENTS.md</code>, root docs, the CI workflow
+(<code>image:12</code> → <code>13</code>) and <code>deploy/kubernetes/resources.json</code> (namespace
+<code>shape-learning-v12</code> → <code>v13</code>).</li>
+</ul>
+<p>Relabelling without bumping <code>pyproject.toml</code>/<code>__init__.py</code> and regenerating
+<code>uv.lock</code> together would have made <code>tests/test_release_version_v3.py</code> fail; the
+archive's own migration doc lists that reconciliation as optional step 5/6. A
+coordinated v14 reconciliation is a separate, reviewable change.</p>
+<p><code>notebooks/00_lab.ipynb</code>, <code>01_lab.ipynb</code> and <code>02_lab.ipynb</code> have genuine source
+edits in the working tree. Those are local learner work and were <strong>preserved</strong>,
+not reverted to the archive copies.</p>
+<p>The 130 other notebook differences in the archive are saved-output refreshes
+only; comparing stripped notebook source confirmed the teaching cells are
+identical, so nothing was overwritten.</p>
+<h2 id="completed-later-the-coordinated-v14-reconciliation--v17-systems-layer">Completed later: the coordinated v14 reconciliation + v17 systems layer</h2>
+<p>Everything the section above deferred has since been imported and reconciled,
+together with the new v17 engineering layer, from
+<code>Listening_to_Shape_Learning_System_v17.zip</code> (edition 17, base v16). This is the
+change the paragraph above called "a separate, reviewable change"; it is now
+done.</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it adds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>systems/</code>, <code>learning/</code>, <code>learn.py</code>, <code>LEARN_TOPOLOGY.html</code></td>
+<td>source-mapped engineering projects (sys00–sys09), generated language interfaces and the new front door</td>
+</tr>
+<tr>
+<td><code>docs/v17/</code></td>
+<td>the archive's own first-run, source-map, migration, design, verification and agent-handoff records</td>
+</tr>
+<tr>
+<td><code>src/shape_lab/result_packet.py</code>, <code>study_session.py</code></td>
+<td>output sealing and the <code>study</code>/<code>report</code> learning-to-results route</td>
+</tr>
+<tr>
+<td>v13 edits to <code>acceptance.py</code>, <code>cli.py</code>, <code>course.py</code>, <code>deployment.py</code></td>
+<td><code>validate_acceptance_directory</code>, on-disk child-evidence checks, <code>study</code>/<code>report</code> CLI commands</td>
+</tr>
+<tr>
+<td><code>tests/test_results_v13.py</code>, <code>tests/test_deployment_receipts_v13.py</code></td>
+<td>the ten deferred tests</td>
+</tr>
+<tr>
+<td><code>docs/release/RESULTS_WORKFLOW.md</code>, <code>IMPLEMENTATION_V13.md</code></td>
+<td>the results-and-reflection workflow</td>
+</tr>
+<tr>
+<td><code>reports/v13/</code></td>
+<td>archived v13 evidence used by the reader and results workflow</td>
+</tr>
+<tr>
+<td><code>tools/verify_v17_archive.py</code>, <code>MANIFEST_V17.sha256</code>, <code>PACKAGE_V17.json</code></td>
+<td>archive verification for the separately extracted package</td>
+</tr>
+<tr>
+<td><code>.github/workflows/systems-learning.yml</code>, <code>.vscode/tasks.v17.example.json</code>, <code>.devcontainer/README.v17.md</code></td>
+<td>optional systems CI and editor/container examples</td>
+</tr>
+</tbody>
+</table>
+<p>Version reconciliation: <code>pyproject.toml</code>, <code>src/shape_lab/__init__.py</code>,
+<code>tests/test_release_version_v3.py</code>, <code>curriculum/catalog.json</code>,
+<code>RELEASE_MANIFEST.json</code> and <code>docs/release/ENVIRONMENT_STATUS.json</code> identify
+<strong>14.0.0</strong>; container/Kubernetes image tags are <code>listening-to-shape:14</code> with
+namespace <code>shape-learning-v14</code>. The genuine <code>uv.lock</code> was re-resolved so its
+root package agrees with the manifest (normal <code>uv lock</code> resolution, not a
+hand-written lock).</p>
+<p>Deliberately preserved, not overwritten: the local <code>uv.lock</code>, the
+<code>workbooks/polyglot/</code> notebooks and <code>tools/build_language_notebooks.py</code>,
+<code>native_course.py</code>'s newer <code>run_identity</code> evidence binding (which the archive
+lacked), the local <code>docs/release/NATIVE16_IMPORT.md</code> record, and the working-tree
+notebook edits. The archive's <code>reports/v12</code> evidence is replaced by its
+<code>reports/v13</code> counterpart for the reader only; <code>reports/v12/*</code> historical
+records are untouched.</p>
+<h2 id="test-count-reconciliation-why-811-not-the-archives-821">Test-count reconciliation (why 811, not the archive's 821)</h2>
+<p>The archive reports <strong>821 passed, 2 skipped</strong> on its v13/v14 tree. This
+repository ran the v12 tree plus the additive native/polyglot, notebook,
+verification-tooling and CI/deploy tests, which was <strong>811 passed, 4 skipped</strong>
+<em>before</em> the reconciliation above. The deferred ten v13 test files are now
+imported; see the current totals in
+<a href="VERIFICATION.md.html">docs/release/VERIFICATION.md</a>, which is the authoritative
+record for this checkout. The skip difference was environmental: this host
+skips one symlink test and one POSIX mode-bit test that the Linux reference host
+ran, and the archive's Ripser/GUDHI skips are not among this run's skips.
+Neither number is a measure of mathematical completeness.</p>
+<h2 id="what-executed-on-this-machine">What executed on this machine</h2>
+<p>Environment: Windows x86-64, Python 3.13.5, Go 1.27.1, Rust/Cargo 1.97.1
+(stable) with the archive-pinned <strong>1.90.0</strong> toolchain provisioned by <code>rustup</code>
+and selected by <code>native/rust/rust-toolchain.toml</code>. The archive's tested
+reference versions were Linux x86-64, Go 1.23.2, Rust 1.90.0.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Observed result here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full repository Python suite (before notebooks)</td>
+<td><strong>766 passed, 3 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td>New native/polyglot tests only</td>
+<td><strong>16 passed</strong></td>
+</tr>
+<tr>
+<td>Full repository Python suite (after notebooks)</td>
+<td><strong>774 passed, 3 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td>Full repository Python suite (after verification tooling)</td>
+<td><strong>800 passed, 4 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td>Full repository Python suite (after CI/deploy tooling)</td>
+<td><strong>810 passed, 4 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td>Full repository Python suite (final)</td>
+<td><strong>811 passed, 4 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td><code>native_course.py doctor</code></td>
+<td>exit 0; toolchains found; all 55 registered data files pass</td>
+</tr>
+<tr>
+<td><code>native_course.py build --lang all</code></td>
+<td>Go exit 0; Rust exit 0 (offline, <code>--locked</code>, 36 vendored crates)</td>
+</tr>
+<tr>
+<td><code>native_course.py test --lang all</code></td>
+<td>Go <strong>34</strong> named tests/subtests pass, 0 fail; Rust <strong>28</strong> pass, 0 fail, 0 ignored</td>
+</tr>
+<tr>
+<td><code>native_course.py compare --lab stage01</code></td>
+<td>passed; 17 values compared, max absolute difference <strong>0.0</strong>, inputs unchanged</td>
+</tr>
+<tr>
+<td><code>native_course.py verify --science</code></td>
+<td><strong>passed</strong>: 57 Go + 57 Rust lab runs, <strong>57/57</strong> comparisons, <strong>110</strong> data checks, <strong>64</strong> fixture checks, <strong>220</strong> independent science checks; largest metric absolute difference <strong>2.3283064365386963e-10</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Stage 01 reproduced the documented results: <code>rank_R = 3</code>, <code>rank_F2 = 2</code>,
+augmented Iris rank <code>4</code>, kernel <code>(-2, 3, 0, 0, 1)</code>, residual 0, Go ≡ Rust.</p>
+<p>Evidence lives under <code>my_work/</code> (private, git-ignored):
+<code>native_build01/</code>, <code>native_tests01/</code>, <code>native_stage01_01/</code>,
+<code>native_acceptance01/</code>. Use a new output directory for every new attempt;
+existing results are never overwritten.</p>
+<h2 id="not-run-here-do-not-read-as-passes">Not run here (do not read as passes)</h2>
+<ul>
+<li>The 133 original Python reference notebooks were <strong>not</strong> replayed.</li>
+<li><code>original_notebook_parity</code> is <strong><code>not_certified</code></strong>; <code>verify --require-original-parity</code> refuses that claim by design and was left in place.</li>
+<li>Docker images, Kubernetes Jobs, macOS, GPU, and the remote CI workflows did
+not execute.</li>
+<li>No external large dataset or model-weight collection was downloaded for this
+import.</li>
+</ul>
+<h2 id="added-afterwards-three-language-learning-notebooks">Added afterwards: three-language learning notebooks</h2>
+<p>On top of the import above, <code>tools/build_language_notebooks.py</code> generates an
+interactive route through the same 57 native units:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Count</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workbooks/polyglot/python/*.ipynb</code></td>
+<td>57</td>
+<td>reads the real registered inputs and an existing native run, re-verifying input hashes</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/go/*.ipynb</code></td>
+<td>57</td>
+<td>compiles and runs the <strong>real Go program</strong>, then compares</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/rust/*.ipynb</code></td>
+<td>57</td>
+<td>compiles and runs the <strong>real Rust program</strong>, then compares</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/{index.html,README.md}</code></td>
+<td>2</td>
+<td>browsable index</td>
+</tr>
+<tr>
+<td><code>tools/build_language_notebooks.py</code></td>
+<td>1</td>
+<td>deterministic generator (stdlib only)</td>
+</tr>
+<tr>
+<td><code>tests/test_language_notebooks.py</code></td>
+<td>1</td>
+<td>completeness, freshness, parseability, no-Python-delegation</td>
+</tr>
+</tbody>
+</table>
+<p>Full guide: <a href="LANGUAGE_NOTEBOOKS.md.html">LANGUAGE_NOTEBOOKS.md</a>. Stage 01 was executed
+with fresh kernels in all three languages; the Go and Rust notebooks reproduced
+<code>real_rank 3</code>, <code>f2_rank 2</code>, <code>augmented_rank 4</code>, kernel <code>(-2, 3, 0, 0, 1)</code>, and
+cross-language agreement at max absolute difference <code>0.0</code> over 17 compared
+values. These notebooks compute nothing scientific in Python, are unassessed,
+and are not a second curriculum.</p>
+<h2 id="test-count-reconciliation-why-not-the-archives-821">Test-count reconciliation (why not the archive's 821)</h2>
+<p>The archive reports <strong>821 passed, 2 skipped</strong> on its v13/v14 tree. This
+repository runs its own tree plus the additive native/polyglot, notebook,
+verification-tooling, systems and CI/deploy tests. Its exact current totals are
+recorded in <a href="VERIFICATION.md.html">VERIFICATION.md</a> rather than restated here, so the
+count cannot drift. The historical skip difference was environmental: this host
+skips one symlink test and one POSIX mode-bit test the Linux reference host ran,
+and the archive's Ripser/GUDHI skips were not among this run's skips. Neither
+number is a measure of mathematical completeness.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

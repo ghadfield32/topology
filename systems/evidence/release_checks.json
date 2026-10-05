@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "pages": 24,
+  "local_targets": 382,
+  "broken_links": [],
+  "http": {
+    "/LEARN_TOPOLOGY.html": 200,
+    "/systems/lessons/sys01.md.html": 200,
+    "/systems/evidence/demo/viewer/index.html": 200,
+    "/my_work/": 403,
+    "/../.git/config": 403,
+    "/systems/python/": 403
+  },
+  "browser": {
+    "direct_file_navigation": "blocked: Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///mnt/data/shape17_build/listening_to_shape_lab/LEARN_TOPOLOGY.html\nCall log:\n  - navigating to \"file:///mnt/data/shape17_build/listening_to_shape_lab/LEARN_TOPOLOGY.html\", waiting until \"load\"\n",
+    "filter": "passed",
+    "real_json_view": "passed",
+    "invalid_json_rejected": "passed",
+    "old_result_cleared_after_error": true,
+    "browser_errors": []
+  },
+  "scope": "static current-route targets, native HTTP and separate rendered-browser checks; actual browser navigation blocked"
+}

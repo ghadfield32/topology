@@ -1,0 +1,302 @@
+FFFFFFFFFFF                                                              [100%]
+=================================== FAILURES ===================================
+____________________________ test_valid_child_files ____________________________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_valid_child_files0/receipt')
+
+    def test_valid_child_files(receipt):
+>       assert check(receipt)==[]
+               ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:31: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_valid_child_files0/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+_________ test_exit_zero_cannot_replace_missing_files[acceptance.json] _________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_exit_zero_cannot_replace_0/receipt')
+name = 'acceptance.json'
+
+    @pytest.mark.parametrize('name',['acceptance.json','tests/tests.json','tests/junit.xml','references/execution.json'])
+    def test_exit_zero_cannot_replace_missing_files(receipt,name):
+>       (receipt/name).unlink();assert check(receipt)
+                                       ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_exit_zero_cannot_replace_0/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+________ test_exit_zero_cannot_replace_missing_files[tests/tests.json] _________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_exit_zero_cannot_replace_1/receipt')
+name = 'tests/tests.json'
+
+    @pytest.mark.parametrize('name',['acceptance.json','tests/tests.json','tests/junit.xml','references/execution.json'])
+    def test_exit_zero_cannot_replace_missing_files(receipt,name):
+>       (receipt/name).unlink();assert check(receipt)
+                                       ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_exit_zero_cannot_replace_1/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+_________ test_exit_zero_cannot_replace_missing_files[tests/junit.xml] _________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_exit_zero_cannot_replace_2/receipt')
+name = 'tests/junit.xml'
+
+    @pytest.mark.parametrize('name',['acceptance.json','tests/tests.json','tests/junit.xml','references/execution.json'])
+    def test_exit_zero_cannot_replace_missing_files(receipt,name):
+>       (receipt/name).unlink();assert check(receipt)
+                                       ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_exit_zero_cannot_replace_2/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+____ test_exit_zero_cannot_replace_missing_files[references/execution.json] ____
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_exit_zero_cannot_replace_3/receipt')
+name = 'references/execution.json'
+
+    @pytest.mark.parametrize('name',['acceptance.json','tests/tests.json','tests/junit.xml','references/execution.json'])
+    def test_exit_zero_cannot_replace_missing_files(receipt,name):
+>       (receipt/name).unlink();assert check(receipt)
+                                       ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_exit_zero_cannot_replace_3/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+_______________________ test_xml_counts_must_match_json ________________________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_xml_counts_must_match_jso0/receipt')
+
+    def test_xml_counts_must_match_json(receipt):
+        (receipt/'tests/junit.xml').write_text('<testsuites><testsuite><testcase name="a"/></testsuite></testsuites>')
+>       assert check(receipt)
+               ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:39: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_xml_counts_must_match_jso0/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+_____________________ test_actual_notebook_tamper_rejected _____________________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_actual_notebook_tamper_re0/receipt')
+
+    def test_actual_notebook_tamper_rejected(receipt):
+        p=receipt/'references/executed/notebooks/00_lab.ipynb';p.write_text(p.read_text()+' ')
+>       assert check(receipt)
+               ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_actual_notebook_tamper_re0/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+________________________ test_requested_profile_checked ________________________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_requested_profile_checked0/receipt')
+
+    def test_requested_profile_checked(receipt):
+>       assert check(receipt,'full')
+               ^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:46: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_requested_profile_checked0/receipt')
+profile = 'full'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+_________________________ test_child_status_must_pass __________________________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_child_status_must_pass0/receipt')
+
+    def test_child_status_must_pass(receipt):
+>       p=receipt/'acceptance.json';r=json.loads(p.read_text());r['status']='failed';p.write_text(json.dumps(r));assert check(receipt)
+                                                                                                                        ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_child_status_must_pass0/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+______________________ test_unsafe_child_symlink_rejected ______________________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_unsafe_child_symlink_reje0/receipt')
+tmp_path = PosixPath('/tmp/pytest-of-root/pytest-3/test_unsafe_child_symlink_reje0')
+
+    def test_unsafe_child_symlink_rejected(receipt,tmp_path):
+        p=receipt/'tests/tests.json';s=p.read_text();p.unlink();external=tmp_path/'private';external.write_text(s);p.symlink_to(external)
+>       assert check(receipt)
+               ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:53: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_unsafe_child_symlink_reje0/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+______________________ test_malformed_child_json_rejected ______________________
+
+receipt = PosixPath('/tmp/pytest-of-root/pytest-3/test_malformed_child_json_reje0/receipt')
+
+    def test_malformed_child_json_rejected(receipt):
+>       (receipt/'tests/tests.json').write_text('null');assert check(receipt)
+                                                               ^^^^^^^^^^^^^^
+
+tests/test_deployment_receipts_v13.py:56: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+d = PosixPath('/tmp/pytest-of-root/pytest-3/test_malformed_child_json_reje0/receipt')
+profile = 'core'
+
+    def check(d,profile='core'):
+>       assert callable(getattr(acceptance,'validate_acceptance_directory',None)), 'Missing on-disk child-evidence validator'
+E       AssertionError: Missing on-disk child-evidence validator
+E       assert False
+E        +  where False = callable(None)
+E        +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+
+tests/test_deployment_receipts_v13.py:27: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_deployment_receipts_v13.py::test_valid_child_files - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_exit_zero_cannot_replace_missing_files[acceptance.json] - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_exit_zero_cannot_replace_missing_files[tests/tests.json] - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_exit_zero_cannot_replace_missing_files[tests/junit.xml] - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_exit_zero_cannot_replace_missing_files[references/execution.json] - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_xml_counts_must_match_json - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_actual_notebook_tamper_rejected - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_requested_profile_checked - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_child_status_must_pass - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_unsafe_child_symlink_rejected - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+FAILED tests/test_deployment_receipts_v13.py::test_malformed_child_json_rejected - AssertionError: Missing on-disk child-evidence validator
+assert False
+ +  where False = callable(None)
+ +    where None = getattr(acceptance, 'validate_acceptance_directory', None)
+11 failed in 1.00s

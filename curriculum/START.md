@@ -1,6 +1,6 @@
 # Listening to Shape — one learning route
 
-This is the consolidated v12 course. It builds on the previous material instead of adding another required copy of every explanation. The 31 core stages are unchanged. The sports and industry cases are applications of those foundations, not additional prerequisites for beginning topology.
+This is the consolidated v14 course. It builds on the previous material instead of adding another required copy of every explanation. The 31 core stages are unchanged. The sports and industry cases are applications of those foundations, not additional prerequisites for beginning topology.
 
 ## Start with one stage, not every file
 For each stage, open its **stage page**. Read its one primary lesson, predict and run its one primary reference lab, then attempt its learner notebook and reasoning questions. Answers stay separate. Only open a workbook, guided session or primer when the stage identifies a gap. These are optional repair resources, not three additional mandatory readings of the same concept.

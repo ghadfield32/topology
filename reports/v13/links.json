@@ -1,0 +1,8 @@
+{
+  "scope": "HTML pages reachable from current START_HERE, including redirects; external URLs not fetched by this scanner.",
+  "pages": 546,
+  "local_targets": 21976,
+  "fragments": 516,
+  "external_or_embedded": 267,
+  "errors": []
+}

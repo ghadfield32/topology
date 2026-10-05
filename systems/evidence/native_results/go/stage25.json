@@ -1,0 +1,62 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage25",
+  "language": "go",
+  "metrics": {
+    "constraint_residuals": [
+      0.5625,
+      0.05062499999999992,
+      0.0006098490481853958,
+      9.292229696811205e-08,
+      2.220446049250313e-15,
+      0,
+      0
+    ],
+    "first_residual": 0.5625,
+    "scope": "Newton-like normal corrections, not an exact one-step projection or a geodesic",
+    "trajectory": [
+      [
+        2,
+        0
+      ],
+      [
+        1.25,
+        0
+      ],
+      [
+        1.025,
+        0
+      ],
+      [
+        1.0003048780487804,
+        0
+      ],
+      [
+        1.0000000464611474,
+        0
+      ],
+      [
+        1.000000000000001,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ]
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

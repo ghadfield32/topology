@@ -1,0 +1,47 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    },
+    "sports_v8/data/spl_selected_frames.json": {
+      "bytes": 6528,
+      "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc"
+    }
+  },
+  "lab": "s00",
+  "language": "rust",
+  "metrics": {
+    "centroid_m": [
+      4.031211893377345,
+      -7.6953969094303085,
+      2.76572456960666
+    ],
+    "independent_trials": 1,
+    "landing_offset_m": [
+      -0.064516,
+      0.26542999999999994
+    ],
+    "scope": "mixed units converted, selected observations remain one trial",
+    "selected_frames": 12,
+    "time_seconds": [
+      0.0,
+      0.016666666666666666,
+      1.5,
+      1.8333333333333333,
+      1.9166666666666667,
+      2.0,
+      2.0833333333333335,
+      2.1666666666666665,
+      2.25,
+      2.3333333333333335,
+      3.0,
+      3.5
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

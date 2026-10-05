@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Python + Go + Rust learning track · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../polyglot/README.md">polyglot/README.md</a> · Readable source notation; no online math renderer.</p><blockquote>
+<p>Historical v14 companion documentation. Use <a href="../../START_NATIVE.html">the native16 route</a> and <code>native_course.py</code> for current substantive native implementations. The older code is retained for comparison, not assigned again.</p>
+</blockquote>
+<h1 id="python--go--rust-learning-track">Python + Go + Rust learning track</h1>
+<p>This directory adds two <strong>parallel implementation languages</strong> to the existing course without creating a second curriculum.</p>
+<ul>
+<li><strong>Python remains the canonical full reference</strong> because the course notebooks contain the complete data science / scientific ML workflows, figures, PyTorch models and external-library comparisons.</li>
+<li><strong>Go and Rust reproduce the algorithmic core</strong> of every core stage and every named application/method case using the same bundled files where practical.</li>
+<li>Every lab has one language-neutral page in <code>polyglot/specs/&lt;lab&gt;/README.md</code> linking back to its Python lesson/reference/practice and stating the parity boundary.</li>
+</ul>
+<p>The current manifest contains <strong>57 companion labs</strong>: 31 core stages, 25 named cases, and the Poux Stage-01 bridge.</p>
+<h2 id="why-use-three-languages">Why use three languages?</h2>
+<p>Python teaches the mathematics and scientific ecosystem. Go forces explicit data movement, errors, slices and concurrency-friendly systems habits. Rust adds ownership, borrowing, explicit numeric types and memory-safe systems programming. The goal is not to prove one language is "better"; it is to understand the same algorithm well enough to reimplement it.</p>
+<p>The source map motivating the spatial-AI extension recommends Python for the broad toolchain and explicitly notes that Rust can be useful when performance or real-time requirements justify a lower-level implementation. The course therefore keeps Python first and uses Rust/Go as second implementations, not replacements.</p>
+<h2 id="daily-workflow-for-a-stage-or-case">Daily workflow for a stage or case</h2>
+<ol>
+<li>Read the normal course lesson and make the hand prediction.</li>
+<li>Run the Python reference and save its evidence.</li>
+<li>Read <code>polyglot/specs/&lt;lab&gt;/README.md</code>.</li>
+<li>Run the Go companion.</li>
+<li>Reimplement one helper or lab calculation yourself in <code>my_work/polyglot/...</code>.</li>
+<li>Run the Rust companion after installing Rust.</li>
+<li>Compare output <em>meaning</em>, units, shapes and invariants. Do not expect identical plot files or floating-point formatting.</li>
+<li>Write what each language made explicit that another hid.</li>
+</ol>
+<p>Example for Stage 01:</p>
+<pre><code class="language-powershell"># Python reference
+uv run --no-sync python course.py run --stage 1 --output my_work/stage01_python01
+
+# Go
+Push-Location polyglot/go
+go test ./...
+go run ./cmd/shape-go --repo ../.. --lab stage01
+Pop-Location
+
+# Rust
+Push-Location polyglot/rust
+cargo test
+cargo run --bin shape-rust -- --repo ../.. --lab stage01
+Pop-Location
+</code></pre>
+<h2 id="toolchain-versions">Toolchain versions</h2>
+<ul>
+<li>Python: use the course's declared Python/uv setup.</li>
+<li>Go: <code>go.mod</code> declares Go 1.23. The build environment executed with Go 1.23.2.</li>
+<li>Rust: <code>Cargo.toml</code> declares Rust 1.83. Rust was <strong>not installed in the archive build environment</strong>, so the Rust source received static structure checks only here. CI and the Rust Dockerfile compile/test it on a machine with the toolchain.</li>
+</ul>
+<h2 id="what-all-labs-means">What "all labs" means</h2>
+<p><code>polyglot/specs/labs.json</code> is the source of truth. It includes every 31-stage entry and every 25 case entry from the existing course catalogs, plus <code>poux_bridge</code>. Each entry has:</p>
+<ul>
+<li>canonical lesson</li>
+<li>canonical Python reference notebook/script</li>
+<li>independent Python learner notebook or extension plan</li>
+<li>Go companion</li>
+<li>Rust companion</li>
+<li>completion gate / scope</li>
+</ul>
+<h2 id="important-parity-boundary">Important parity boundary</h2>
+<p>A language companion is not a fake translation of a library call. For example:</p>
+<ul>
+<li>Python may use scikit-learn for a full classifier; Go/Rust may implement the schema check, baseline statistic or hand-checkable distance calculation that validates the foundation.</li>
+<li>Python may train an HNN/PINN; Go/Rust implement the exact mechanics/PDE control that the learned model must respect.</li>
+<li>Python may use plotting and notebook display; Go/Rust return numerical summaries.</li>
+</ul>
+<p>Use the Python reference when the learning goal is specifically a third-party scientific library. Use the Go/Rust implementation when the learning goal is the underlying algorithm and systems behavior.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

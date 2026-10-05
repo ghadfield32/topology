@@ -1,0 +1,166 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Changelog · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/typenum/CHANGELOG.md">native/rust/vendor/typenum/CHANGELOG.md</a> · Readable source notation; no online math renderer.</p><h1 id="changelog">Changelog</h1>
+<p>This project follows semantic versioning.</p>
+<p>The MSRV (Minimum Supported Rust Version) is 1.37.0, and typenum is tested
+against this Rust version.</p>
+<h3 id="unreleased">Unreleased</h3>
+<h3 id="1201-2026-05-29">1.20.1 (2026-05-29)</h3>
+<ul>
+<li>[fixed] Fixed <code>tarr</code> import resolution</li>
+</ul>
+<h3 id="1200-2026-04-18">1.20.0 (2026-04-18)</h3>
+<ul>
+<li>[removed] Removed <code>no_std</code> feature flag (deprecated since 1.3.0)</li>
+<li>[removed] Removed <code>force_unix_path_separator</code> feature flag (deprecated since 1.17.0)</li>
+<li>[changed] Replaced <code>build.rs</code> script with pre-generated test files</li>
+<li>[added] Indexing into tuples</li>
+<li>[changed] MSRV now 1.41.0</li>
+</ul>
+<h3 id="1190-2025-10-01">1.19.0 (2025-10-01)</h3>
+<ul>
+<li>[fixed] Conflicting trait implementations with the <code>const-generics</code> feature
+on 16-bit targets</li>
+<li>[fixed] Remove deprecated feature flag</li>
+<li>[added] Support <code>core::fmt::Binary</code></li>
+<li>[added] Constants for 2^N - 1</li>
+<li>[added] Implemented <code>ToInt</code> for <code>isize</code>, <code>i128</code>, and <code>u128</code></li>
+</ul>
+<h3 id="1180-2025-02-17">1.18.0 (2025-02-17)</h3>
+<ul>
+<li>[changed] Remove build scripts; instead check-in the built code (PR #219)</li>
+<li>[added] Constants for 3600 (PR #220)</li>
+<li>[added] Elixir-style syntax for <code>tarr!</code> macro (PR #214)</li>
+<li>[added] <code>FoldAdd</code> and <code>FoldMul</code> to get the sum/product of an array (PR #209)</li>
+</ul>
+<h3 id="1170-2023-09-15">1.17.0 (2023-09-15)</h3>
+<ul>
+<li>[removed] Remove <code>force_unix_path_separator</code> feature, make it the default</li>
+<li>[added] docs.rs metadata and cfg options</li>
+<li>[added] Playground metadata</li>
+</ul>
+<h3 id="1160-2022-12-05">1.16.0 (2022-12-05)</h3>
+<ul>
+<li>[added] <code>const INT</code> field to the <code>ToInt</code> trait.</li>
+<li>[added] <code>const-generics</code> field with <code>U&lt;N&gt;</code> mapping where <code>N</code> is a const generic.</li>
+</ul>
+<h3 id="1150-2021-12-25">1.15.0 (2021-12-25)</h3>
+<ul>
+<li>[fixed] Cross-compilation issue due to doing math in build script. (PR #177)</li>
+<li>[added] New feature <code>scale_info</code> for using inside
+<a href="https://github.com/paritytech/substrate.git">Substrate</a>-based runtimes (PR
+#175)</li>
+</ul>
+<h3 id="1140-2021-09-01">1.14.0 (2021-09-01)</h3>
+<ul>
+<li>[changed] Sealed all marker traits. Documentation already stated that these
+should not be implemented outside the crate, so this is not considered a
+breaking change.</li>
+</ul>
+<h3 id="1130-2021-03-12">1.13.0 (2021-03-12)</h3>
+<ul>
+<li>[changed] MSRV from 1.22.0 to 1.37.0.</li>
+<li>[fixed] <code>op</code> macro with 2018 edition import.</li>
+<li>[changed] Allowed calling <code>assert_type_eq</code> and <code>assert_type</code> at top level.</li>
+<li>[added] Marker trait <code>Zero</code> for <code>Z0</code>, <code>U0</code>, and <code>B0</code>.</li>
+<li>[added] Implementation of <code>Pow</code> trait for f32 and f64 with negative exponent.</li>
+<li>[added] Trait <code>ToInt</code>.</li>
+</ul>
+<h3 id="1120-2020-04-13">1.12.0 (2020-04-13)</h3>
+<ul>
+<li>[added] Feature <code>force_unix_path_separator</code> to support building without Cargo.</li>
+<li>[added] Greatest common divisor operator <code>Gcd</code> with alias <code>Gcf</code>.</li>
+<li>[added] <code>gcd</code> to the <code>op!</code> macro.</li>
+<li>[changed] Added <code>Copy</code> bound to <code>Rhs</code> of <code>Mul&lt;Rhs&gt;</code> impl for <code>&lt;TArr&lt;V, A&gt;</code>.</li>
+<li>[changed] Added <code>Copy</code> bound to <code>Rhs</code> of <code>Div&lt;Rhs&gt;</code> impl for <code>&lt;TArr&lt;V, A&gt;</code>.</li>
+<li>[changed] Added <code>Copy</code> bound to <code>Rhs</code> of <code>PartialDiv&lt;Rhs&gt;</code> impl for <code>&lt;TArr&lt;V, A&gt;</code>.</li>
+<li>[changed] Added <code>Copy</code> bound to <code>Rhs</code> of <code>Rem&lt;Rhs&gt;</code> impl for <code>&lt;TArr&lt;V, A&gt;</code>.</li>
+<li>[fixed] Make all functions #[inline].</li>
+</ul>
+<h3 id="1112-2019-08-26">1.11.2 (2019-08-26)</h3>
+<ul>
+<li>[fixed] Cross compilation from Linux to Windows.</li>
+</ul>
+<h3 id="1111-2019-08-25">1.11.1 (2019-08-25)</h3>
+<ul>
+<li>[fixed] Builds on earlier Rust builds again and added Rust 1.22.0 to Travis to
+prevent future breakage.</li>
+</ul>
+<h3 id="1110-2019-08-25">1.11.0 (2019-08-25)</h3>
+<ul>
+<li>[added] Integer <code>log2</code> to the <code>op!</code> macro.</li>
+<li>[added] Integer binary logarithm operator <code>Logarithm2</code> with alias <code>Log2</code>.</li>
+<li>[changed] Removed <code>feature(i128_type)</code> when running with the <code>i128</code>
+feature. Kept the feature flag.  for typenum to maintain compatibility with
+old Rust versions.</li>
+<li>[added] Integer <code>sqrt</code> to the <code>op!</code> macro.</li>
+<li>[added] Integer square root operator <code>SquareRoot</code> with alias <code>Sqrt</code>.</li>
+<li>[fixed] Bug with attempting to create U1024 type alias twice.</li>
+</ul>
+<h3 id="1100-2018-03-11">1.10.0 (2018-03-11)</h3>
+<ul>
+<li>[added] The <code>PowerOfTwo</code> marker trait.</li>
+<li>[added] Associated constants for <code>Bit</code>, <code>Unsigned</code>, and <code>Integer</code>.</li>
+</ul>
+<h3 id="190-2017-05-14">1.9.0 (2017-05-14)</h3>
+<ul>
+<li>[added] The <code>Abs</code> type operator and corresponding <code>AbsVal</code> alias.</li>
+<li>[added] The feature <code>i128</code> that enables creating 128-bit integers from
+typenums.</li>
+<li>[added] The <code>assert_type!</code> and <code>assert_type_eq!</code> macros.</li>
+<li>[added] Operators to the <code>op!</code> macro, including those performed by <code>cmp!</code>.</li>
+<li>[fixed] Bug in <code>op!</code> macro involving functions and convoluted expressions.</li>
+<li>[deprecated] The <code>cmp!</code> macro.</li>
+</ul>
+<h3 id="180-2017-04-12">1.8.0 (2017-04-12)</h3>
+<ul>
+<li>[added] The <code>op!</code> macro for conveniently performing type-level operations.</li>
+<li>[added] The <code>cmp!</code> macro for conveniently performing type-level comparisons.</li>
+<li>[added] Some comparison type-operators that are used by the <code>cmp!</code> macro.</li>
+</ul>
+<h3 id="170-2017-03-24">1.7.0 (2017-03-24)</h3>
+<ul>
+<li>[added] Type operators <code>Min</code> and <code>Max</code> with accompanying aliases <code>Minimum</code> and
+<code>Maximum</code></li>
+</ul>
+<h3 id="160-2017-02-24">1.6.0 (2017-02-24)</h3>
+<ul>
+<li>[fixed] Bug in <code>Array</code> division.</li>
+<li>[fixed] Bug where <code>Rem</code> would sometimes exit early with the wrong answer.</li>
+<li>[added] <code>PartialDiv</code> operator that performs division as a partial function --
+it's defined only when there is no remainder.</li>
+</ul>
+<h3 id="152-2017-02-04">1.5.2 (2017-02-04)</h3>
+<ul>
+<li>[fixed] Bug between <code>Div</code> implementation and type system.</li>
+</ul>
+<h3 id="151-2016-11-08">1.5.1 (2016-11-08)</h3>
+<ul>
+<li>[fixed] Expanded implementation of <code>Pow</code> for primitives.</li>
+</ul>
+<h3 id="150-2016-11-03">1.5.0 (2016-11-03)</h3>
+<ul>
+<li>[added] Functions to the <code>Pow</code> and <code>Len</code> traits. This is <em>technically</em> a
+breaking change, but it would only break someone's code if they have a custom
+impl for <code>Pow</code>. I would be very surprised if that is anyone other than me.</li>
+</ul>
+<h3 id="140-2016-10-29">1.4.0 (2016-10-29)</h3>
+<ul>
+<li>[added] Type-level arrays of type-level integers. (PR #66)</li>
+<li>[added] The types in this crate are now instantiable. (Issue #67, PR #68)</li>
+</ul>
+<h3 id="131-2016-03-31">1.3.1 (2016-03-31)</h3>
+<ul>
+<li>[fixed] Bug with recent nightlies.</li>
+</ul>
+<h3 id="130-2016-02-07">1.3.0 (2016-02-07)</h3>
+<ul>
+<li>[changed] Removed dependency on libstd. (Issue #53, PR #55)</li>
+<li>[changed] Reorganized module structure. (PR #57)</li>
+</ul>
+<h3 id="120-2016-01-03">1.2.0 (2016-01-03)</h3>
+<ul>
+<li>[added] This change log!</li>
+<li>[added] Convenience type aliases for operators. (Issue #48, PR #50)</li>
+<li>[added] Types in this crate now derive all possible traits. (Issue #42, PR
+#51)</li>
+</ul>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

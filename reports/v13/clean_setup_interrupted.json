@@ -1,0 +1,8 @@
+{
+  "profile": "physics",
+  "mode": "uv_resolved_install",
+  "fresh_dependency_install": false,
+  "commands": [],
+  "status": "interrupted",
+  "reason": "Combined shell/tool deadline ended before the bootstrap command returned; no install or lock is claimed."
+}

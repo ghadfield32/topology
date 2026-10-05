@@ -1,0 +1,32 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "data/raw/digits.npz": {
+      "bytes": 48351,
+      "sha256": "2642e38b91971a422addc7bfa3474649f0b69ad6736f1a9700079a57bfb8135a"
+    },
+    "data/splits.json": {
+      "bytes": 16917,
+      "sha256": "895b1092a9813d596166337e29caf7f0a5d9c7352445c5067b67ff984b8f86bd"
+    },
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage10",
+  "language": "rust",
+  "metrics": {
+    "bottleneck_by_dimension": [
+      0.04933137960202494,
+      0.04958894267215579
+    ],
+    "bound_holds": true,
+    "input_linf": 0.04999951032753458,
+    "scope": "same pixel complex, sublevel functions of negative intensity; not arbitrary pipeline stability"
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

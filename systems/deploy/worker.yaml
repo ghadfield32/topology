@@ -1,0 +1,49 @@
+# Create a NEW namespace explicitly using the guide. This file never creates/deletes namespaces.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shape-worker
+  namespace: shape-systems-study
+spec:
+  replicas: 1
+  selector:
+    matchLabels: {app: shape-worker}
+  template:
+    metadata:
+      labels: {app: shape-worker}
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 15
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: worker
+          image: shape-systems-worker:17
+          imagePullPolicy: Never
+          ports: [{containerPort: 8090}]
+          securityContext:
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+            capabilities: {drop: [ALL]}
+          resources:
+            requests: {cpu: 100m, memory: 128Mi}
+            limits: {cpu: '1', memory: 1Gi}
+          readinessProbe:
+            httpGet: {path: /health, port: 8090}
+            initialDelaySeconds: 2
+          livenessProbe:
+            httpGet: {path: /health, port: 8090}
+            initialDelaySeconds: 10
+          volumeMounts: [{name: temporary, mountPath: /tmp}]
+      volumes: [{name: temporary, emptyDir: {sizeLimit: 64Mi}}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: shape-worker, namespace: shape-systems-study}
+spec:
+  type: ClusterIP
+  selector: {app: shape-worker}
+  ports: [{port: 8090, targetPort: 8090}]

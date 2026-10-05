@@ -1,0 +1,280 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Notebooks: one lab, three languages · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/LANGUAGE_NOTEBOOKS.md">docs/release/LANGUAGE_NOTEBOOKS.md</a> · Readable source notation; no online math renderer.</p><h1 id="notebooks-one-lab-three-languages">Notebooks: one lab, three languages</h1>
+<p>Every one of the 57 native16 learning units now has an interactive notebook in
+<strong>Python, Go and Rust</strong> — 171 notebooks in total. This answers the question
+"can I learn this in any language?" with a concrete, runnable route.</p>
+<p>Index: <a href="../../../workbooks/polyglot/index.html"><code>workbooks/polyglot/index.html</code></a>
+(plain text: <a href="../../workbooks/polyglot/README.md.html"><code>README.md</code></a>).</p>
+<h2 id="every-notebook-opens-with-a-path-legend">Every notebook opens with a path legend</h2>
+<p>The notebooks sit three levels deep, so a root-relative path in prose is a dead
+link. Each notebook therefore starts with a <strong>"Where every path points"</strong> cell
+that defines the shared vocabulary once:</p>
+<ul>
+<li>the owner files (<code>curriculum/catalog.json</code>, <code>native/protocols/labs.json</code>),</li>
+<li>the course folders (<code>lessons/</code>, <code>notebooks/</code>, <code>practice/</code>),</li>
+<li>the native folders (<code>native/go/</code>, <code>native/rust/</code>, <code>native/python/</code>, <code>native/guides/</code>),</li>
+<li>the tooling and generated paths (<code>tools/</code>, <code>workbooks/polyglot/</code>),</li>
+<li><code>my_work/</code> as <strong>yours</strong>,</li>
+<li>the reference-vs-your-copy distinction,</li>
+<li>and the relative links to the other two languages, the index, and the guides.</li>
+</ul>
+<p>A test asserts that every markdown link in every notebook resolves <strong>from that
+notebook's own directory</strong>, and that the legend defines the paths it mentions.
+This guards a real regression: the lesson link used to be emitted as
+<code>lessons/01_lesson.md</code>, which cannot resolve from <code>workbooks/polyglot/&lt;lang&gt;/</code>
+(57 broken links, now 1308 resolving links and zero broken).</p>
+<p>Repository-wide definitions live in
+<a href="REPOSITORY_LAYOUT.md.html">REPOSITORY_LAYOUT.md</a>.</p>
+<h2 id="where-things-live-this-is-the-usual-point-of-confusion">Where things live (this is the usual point of confusion)</h2>
+<p>Several folders contain Go or Rust material, and they are <strong>not</strong> the same thing:</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it is</th>
+<th>Do you edit it?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>workbooks/polyglot/python/</code></td>
+<td>notebooks that run the canonical Python reference</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/go/</code></td>
+<td>notebooks that run the real Go program</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/rust/</code></td>
+<td>notebooks that run the real Rust program</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>native/go/</code>, <code>native/rust/</code></td>
+<td>the <strong>reference source</strong> those notebooks compile</td>
+<td>no — read-only reference</td>
+</tr>
+<tr>
+<td><code>my_work/&lt;session&gt;/native/go\|rust/</code></td>
+<td><strong>your</strong> copy from <code>native_course.py prepare</code></td>
+<td><strong>yes — here</strong></td>
+</tr>
+<tr>
+<td><code>notebooks/</code>, <code>lessons/</code>, <code>practice/</code></td>
+<td>the original course labs and assignments</td>
+<td>your learner notebook</td>
+</tr>
+</tbody>
+</table>
+<p><strong><code>notebooks/</code> is the original course.</strong> It has no <code>go</code> or <code>rust</code> folder and does
+not contain these notebooks. The 171 notebooks live under <code>workbooks/polyglot/</code>;
+each language folder has its own <code>README.md</code> so it is self-guiding when opened.</p>
+<p>For Stage 01 the three notebooks are:</p>
+<pre><code class="language-text">workbooks/polyglot/python/stage01.ipynb
+workbooks/polyglot/go/stage01.ipynb
+workbooks/polyglot/rust/stage01.ipynb
+</code></pre>
+<h2 id="the-three-notebooks-do-different-jobs">The three notebooks do different jobs</h2>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>Notebook</th>
+<th>What it actually does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python</td>
+<td><code>workbooks/polyglot/python/&lt;lab&gt;.ipynb</code></td>
+<td><strong>Runs the canonical Python reference</strong> in a fresh kernel inside an isolated copied workspace, then audits the registered inputs and resolves a <em>specific</em> native run's outputs.</td>
+</tr>
+<tr>
+<td>Go</td>
+<td><code>workbooks/polyglot/go/&lt;lab&gt;.ipynb</code></td>
+<td>Checks the toolchain, shows the <strong>actual dispatch arm</strong> in <code>native/go/engine/labs.go</code>, compiles the Go program, runs only this lab, prints its metrics, and verifies input hashes.</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td><code>workbooks/polyglot/rust/&lt;lab&gt;.ipynb</code></td>
+<td>Same, for <code>native/rust/src/labs.rs</code>, plus the pinned-toolchain and ownership notes.</td>
+</tr>
+</tbody>
+</table>
+<p>The Go and Rust notebooks end by comparing against the other language using the
+runner's own tolerance rules (<code>1e-8</code> absolute, <code>1e-7</code> relative) and checking that
+both languages recorded identical input hashes.</p>
+<h3 id="the-python-route-runs-the-real-original-experiment">The Python route runs the real original experiment</h3>
+<p>The Python notebook calls <code>shape_lab.course.run_references(ROOT, [reference], out, jobs=1, timeout=300)</code> — the same execution path the course itself uses. It gets a
+fresh kernel, an isolated copy of the source, a runtime provenance probe, and
+<code>allow_errors=False</code>. It is <strong>not</strong> a lookalike calculation and it is not a
+Python re-implementation of the native unit.</p>
+<p>The reference is not always a notebook. The Poux lab's canonical reference is a
+script (<code>curriculum/extensions/poux_spatial_ai/bridge.py</code>), so it is labelled
+<code>script</code> and its companion test is run instead of pretending it is a notebook.
+A test asserts that a script lab is never handed to <code>run_references</code>.</p>
+<h3 id="sections-are-labelled-by-intent">Sections are labelled by intent</h3>
+<p>The Python notebook separates three things, and says which is which:</p>
+<ol>
+<li><strong>Run the canonical Python experiment</strong> — the original course material.</li>
+<li><strong>Input audit</strong> — which registered files this lab consumes, and their hashes.</li>
+<li><strong>Output audit</strong> — reads an existing native run; it does not recompute the lab.</li>
+</ol>
+<p>The native experiment itself runs in the Go and Rust notebooks.</p>
+<h2 id="evidence-is-resolved-explicitly-never-by-newest-file-wins">Evidence is resolved explicitly, never by "newest file wins"</h2>
+<p><code>tools/evidence_pointer.py</code> resolves which run a reader should look at:</p>
+<ol>
+<li>an explicit <code>run_dir</code>,</li>
+<li><code>my_work/native_evidence.json</code> (written by <code>evidence.write_manifest</code>),</li>
+<li>otherwise <strong>nothing</strong> in strict mode.</li>
+</ol>
+<p>The Python notebook exposes this as two explicit modes, set at the top of its
+evidence cell:</p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MODE = "fresh"</code> (default)</td>
+<td><strong>creates</strong> the evidence now by compiling and running the native Go and Rust labs into the notebook's own run directory, then verifies its identity. Nothing older is used.</td>
+</tr>
+<tr>
+<td><code>MODE = "review"</code></td>
+<td>opens a <strong>specific</strong> previous result from <code>PINNED_RUN</code> and labels it as previous execution. <code>PINNED_RUN</code> is required; there is no scanning fallback.</td>
+</tr>
+</tbody>
+</table>
+<p>Neither mode silently chooses the most recent plausible folder. Runs now record
+an <code>identity</code> block in <code>execution.json</code>, so stale evidence cannot masquerade as
+current.</p>
+<h2 id="what-these-notebooks-deliberately-do-not-do">What these notebooks deliberately do not do</h2>
+<ul>
+<li><strong>They do not compute the science in Python.</strong> A test asserts the Go/Rust
+notebooks never import NumPy/Torch/SciPy/sklearn and always call
+<code>runner.build(...)</code> and <code>runner.execute_lab(...)</code>. Python is the driver only.</li>
+<li><strong>They are not a second curriculum.</strong> <code>curriculum/catalog.json</code> still owns the
+31 stages; the notebooks carry no catalogue of their own.</li>
+<li><strong>They do not grade you.</strong> Every notebook is <code>not_assessed</code>, and each one keeps
+its lab's stated boundary ("what this lab does not establish").</li>
+<li><strong>They do not claim original-notebook parity.</strong> That remains
+<code>not_certified</code>; see <code>native/COVERAGE.md</code>.</li>
+</ul>
+<h2 id="run-them">Run them</h2>
+<p>In VS Code, open any notebook under <code>workbooks/polyglot/</code> and run the cells top
+to bottom. Or from the command line, from the repository root:</p>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+uv run --no-sync jupyter lab
+</code></pre>
+<p>Or execute headless (this is how they were verified):</p>
+<pre><code class="language-powershell">uv run --no-sync jupyter nbconvert --to notebook --execute `
+  --output-dir my_work/notebook_run `
+  workbooks/polyglot/python/stage01.ipynb
+</code></pre>
+<p>The Python notebook needs an existing native run to have something to read. The
+first time, create one:</p>
+<pre><code class="language-powershell">uv run --no-sync python native_course.py compare --lab stage01 --output my_work/notebook_stage01_first01
+</code></pre>
+<p>The Go and Rust notebooks build what they need themselves and write to
+<code>my_work/notebook_&lt;lab&gt;_&lt;language&gt;/</code>.</p>
+<h2 id="verified">Verified</h2>
+<p>Stage 01 was executed end-to-end with fresh kernels in all three languages:</p>
+<table>
+<thead>
+<tr>
+<th>Notebook</th>
+<th>Observed result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>python/stage01.ipynb</code></td>
+<td>ran the canonical <code>notebooks/01_lab.ipynb</code> (<code>1/1 passed</code>); read 150 Iris rows; resolved the native run; Go ≡ Rust, 17 values, max diff 0.0; input hashes OK</td>
+</tr>
+<tr>
+<td><code>go/stage01.ipynb</code></td>
+<td>showed <code>case "stage01"</code> at line 185 of <code>labs.go</code>; the <code>clone</code> call there deep-copies each row (<code>b[i] = append([]float64(nil), a[i]...)</code>) before the <code>append</code>, so the source matrix is <strong>not</strong> mutated; built and ran Go; <code>real_rank 3</code>, <code>f2_rank 2</code>, <code>augmented_rank 4</code>, kernel <code>(-2,3,0,0,1)</code>; hashes MATCH</td>
+</tr>
+<tr>
+<td><code>rust/stage01.ipynb</code></td>
+<td>built and ran Rust; same metrics with <code>0.0</code>-typed floats; compared against Go: agreement true, 17 values, max diff 0.0</td>
+</tr>
+</tbody>
+</table>
+<p>The full 171-entry sweep is run by <code>tools/verify_language_notebooks.py</code>, which
+derives the expected set from the registry, uses fresh kernels and explicit
+working directories, compiles each native binary once per source identity, runs
+<strong>serially</strong>, preserves failures, rejects missing/duplicate/stale entries, and
+<strong>returns non-zero unless coverage is complete</strong>. There is no flag to tolerate
+errors, and partial runs report <code>coverage.complete = false</code>.
+Observed full sweep (<code>my_work/nb_verify_full03/coverage.json</code>):</p>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expected / selected / executed</td>
+<td>171 / 171 / 171</td>
+</tr>
+<tr>
+<td>passed / failed</td>
+<td><strong>171 / 0</strong></td>
+</tr>
+<tr>
+<td>coverage complete</td>
+<td>true</td>
+</tr>
+<tr>
+<td>notebook tree unchanged during the run</td>
+<td>true</td>
+</tr>
+<tr>
+<td>set problems (missing/duplicate/unexpected)</td>
+<td>none</td>
+</tr>
+<tr>
+<td>executed code cells</td>
+<td>1311</td>
+</tr>
+<tr>
+<td>native binaries</td>
+<td>compiled once each; source + binary hashes recorded</td>
+</tr>
+</tbody>
+</table>
+<p>A "verify" result is not the same claim as "three smoke notebooks ran". See the
+sweep's <code>coverage.json</code> for the actual counts and every failure record.</p>
+<h2 id="regenerate">Regenerate</h2>
+<p>The notebooks are generated, not hand-edited, so they stay consistent when the
+lab catalogue changes:</p>
+<pre><code class="language-powershell">uv run --no-sync python tools/build_language_notebooks.py
+</code></pre>
+<p>Verify without writing anything:</p>
+<pre><code class="language-powershell">uv run --no-sync python tools/build_language_notebooks.py --check
+</code></pre>
+<p><code>--check</code> exits non-zero and names every missing, stale or unexpected artifact.
+It genuinely can fail: deleting an artifact, editing one by hand, or adding an
+unregistered notebook all make it return 1. Unknown flags are now a hard error
+rather than a silent full rewrite.</p>
+<p>Then run the test above; it fails if the committed tree is stale. The generator
+is <code>tools/build_language_notebooks.py</code> and reads <code>native/protocols/labs.json</code>
+plus the existing <code>native_course.py</code> runner API — no new dependency is added.</p>
+<p><strong>Do not regenerate while a verification sweep is running.</strong> The sweep hashes the
+whole notebook tree before and after, and reports <code>coverage.complete = false</code> if
+it changed, precisely so a mixed-source result cannot look green. Regenerate
+first, then sweep.</p>
+<h2 id="boundaries-that-remain">Boundaries that remain</h2>
+<p>The untested gates from the native import still stand: the 133 original
+notebooks were not replayed, and Docker, Kubernetes, macOS, GPU and the remote
+CI workflows did not execute here. These notebooks are a convenience layer over
+the same native16 evidence, not extra certification of it. See
+<a href="NATIVE16_IMPORT.md.html">NATIVE16_IMPORT.md</a>.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

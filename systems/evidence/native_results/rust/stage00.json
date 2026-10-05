@@ -1,0 +1,47 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "data/v7/seeds/table.csv": {
+      "bytes": 10128,
+      "sha256": "9269dec683e9c29dd80f85603e425e3d9dd3939bc83945ef6aaf84c318f4274c"
+    },
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage00",
+  "language": "rust",
+  "metrics": {
+    "column_means": [
+      14.847523809523805,
+      14.559285714285718,
+      0.8709985714285716,
+      5.6285333333333325,
+      3.2586047619047642,
+      3.7002009523809507,
+      5.408071428571428
+    ],
+    "distinct_vectors": 210,
+    "features": [
+      "area",
+      "perimeter",
+      "compactness",
+      "kernel_length",
+      "kernel_width",
+      "asymmetry",
+      "groove_length"
+    ],
+    "label_counts": {
+      "1": 70,
+      "2": 70,
+      "3": 70
+    },
+    "observations": 210,
+    "scope": "observed kernels; feature rows are not photographs"
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

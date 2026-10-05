@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "listening-to-shape-lab"
-version = "12.0.0"
+version = "14.0.0"
 description = "Beginner-first topology, persistence and validated geometry learning companion"
 readme = "README.md"
 requires-python = ">=3.13,<3.14"

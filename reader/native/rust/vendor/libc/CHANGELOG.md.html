@@ -1,0 +1,1154 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Changelog · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/libc/CHANGELOG.md">native/rust/vendor/libc/CHANGELOG.md</a> · Readable source notation; no online math renderer.</p><h1 id="changelog">Changelog</h1>
+<h2 id="02189---2026-07-21"><a href="https://github.com/rust-lang/libc/compare/0.2.188...0.2.189">0.2.189</a> - 2026-07-21</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Emscripten: Add <code>pthread_sigmask</code>, <code>sigwait</code>, <code>sigwaitinfo</code>, <code>sigtimedwait</code>, <code>faccessat</code>, and <code>pthread_kill</code> (<a href="https://github.com/rust-lang/libc/pull/5270">#5270</a>)</li>
+<li>Linux SPARC: Enable the <code>clone3</code> syscall (<a href="https://github.com/rust-lang/libc/pull/4980">#4980</a>)</li>
+<li>Solarish: Add <code>CLOCK_PROCESS_CPUTIME_ID</code> and <code>CLOCK_THREAD_CPUTIME_ID</code> (<a href="https://github.com/rust-lang/libc/pull/5274">#5274</a>)</li>
+</ul>
+<h3 id="deprecated">Deprecated</h3>
+<ul>
+<li>Deprecate <code>CLONE_INTO_CGROUP</code> and <code>CLONE_CLEAR_SIGHAND</code>. These overflow their types and will be changed to a larger size in the future. (<a href="https://github.com/rust-lang/libc/commit/8c6e6710458db4d6aa0766f6f84bbf13f640237e">8c6e6710458d</a>)</li>
+</ul>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Musl riscv32: Rename padding fields to avoid a conflict and fix the build (<a href="https://github.com/rust-lang/libc/commit/2499ff0ad9936a036e78a4e0991445efee383564">2499ff0ad993</a>)</li>
+<li>NuttX: Fix <code>wchar_t</code> definition under Arm (<a href="https://github.com/rust-lang/libc/pull/5245">#5245</a>)</li>
+<li>Windows: Add back link names for <code>time</code>-related symbols (<a href="https://github.com/rust-lang/libc/pull/5300">#5300</a>)</li>
+</ul>
+<h2 id="02188---2026-07-21"><a href="https://github.com/rust-lang/libc/compare/0.2.187...0.2.188">0.2.188</a> - 2026-07-21</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Restore <code>Send</code> and <code>Sync</code> for <code>DIR</code> (<a href="https://github.com/rust-lang/libc/commit/35b062263401733cd89065c6a553640f2ba51ff1">35b062263401</a>)</li>
+</ul>
+<p>These were removed in 0.2.187 because <code>libc</code> does not actually make <code>Send</code> and <code>Sync</code>
+guarantees about <code>DIR</code> (or other extern types), but this caused some crates to break.
+The traits are added back for now to allow time to migrate, but will be removed again
+in the future; please make sure your crates are not relying on <code>libc::DIR: Send</code> or
+<code>libc::DIR: Sync</code>.</p>
+<h2 id="02187---2026-07-20"><a href="https://github.com/rust-lang/libc/compare/0.2.186...0.2.187">0.2.187</a> - 2026-07-20</h2>
+<p>This release contains a number of improvements related to 64-bit <code>time_t</code> configuration.
+Of note the existing <code>RUST_LIBC_UNSTABLE_*</code> environment variables have been replaced
+with configuration options. The new way to use these is:</p>
+<pre><code class="language-sh">RUSTFLAGS='--cfg=libc_unstable_musl_v1_2_3' cargo ...
+RUSTFLAGS='--cfg=libc_unstable_gnu_time_bits="64"' cargo ...
+</code></pre>
+<p>Being able to set this via <code>RUSTFLAGS</code> makes it easier to only apply configuration to
+specific targets (and notably, not the host if build scripts are used).</p>
+<p>There are two other notable changes:</p>
+<ul>
+<li><p>The 32-bit <code>windows-gnu</code> targets now respect <code>libc_unstable_gnu_time_bits</code></p>
+</li>
+<li><p>uClibc now supports a similar configuration option:</p>
+<pre><code class="language-sh">RUSTFLAGS='--cfg=libc_unstable_uclibc_time64'
+</code></pre>
+</li>
+</ul>
+<p>As a reminder, these options are under active development and may change in the future
+(hence the "unstable" in the name). It likely that we will harmonize everything under a
+single configuration option before considering them stable.</p>
+<h3 id="support">Support</h3>
+<ul>
+<li>Add support for <code>aarch64-unknown-linux-pauthtest</code> (<a href="https://github.com/rust-lang/libc/pull/5065">#5065</a>)</li>
+<li>Add support for new QNX targets (<a href="https://github.com/rust-lang/libc/pull/5241">#5241</a>)</li>
+<li>Better document breaking change policy and recommended usage (<a href="https://github.com/rust-lang/libc/pull/5179">#5179</a>)</li>
+</ul>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>Android: Add <code>POSIX_SPAWN_*</code> constants (<a href="https://github.com/rust-lang/libc/pull/5104">#5104</a>)</li>
+<li>Android: Add <code>getpwent</code>, <code>setpwent</code>, and <code>endpwent</code> (<a href="https://github.com/rust-lang/libc/pull/5160">#5160</a>)</li>
+<li>Android: Add <code>preadv2</code> and <code>pwritev2</code> (<a href="https://github.com/rust-lang/libc/pull/5157">#5157</a>)</li>
+<li>Android: Add <code>seccomp_notif*</code> structures (<a href="https://github.com/rust-lang/libc/pull/5224">#5224</a>)</li>
+<li>Android: Add <code>timer_[create, delete, getoverrun, gettime, settime]</code> (<a href="https://github.com/rust-lang/libc/pull/5108">#5108</a>)</li>
+<li>Apple: Add <code>PROC_PIDT_SHORTBSDINFO</code> and <code>proc_bsdshortinfo</code> (<a href="https://github.com/rust-lang/libc/pull/5110">#5110</a>)</li>
+<li>Apple: Add <code>SIOC*</code> constants from <code>sockio.h</code> (<a href="https://github.com/rust-lang/libc/pull/5263">#5263</a>)</li>
+<li>Apple: Add <code>_IOR</code>, <code>_IOW</code>, <code>_IOWR</code> (<a href="https://github.com/rust-lang/libc/pull/5264">#5264</a>)</li>
+<li>Apple: Add <code>bpf_program</code> and <code>bpf_insn</code> (<a href="https://github.com/rust-lang/libc/pull/5235">#5235</a>)</li>
+<li>Apple: Add additional <code>kqueue</code> constants (<a href="https://github.com/rust-lang/libc/pull/5077">#5077</a>)</li>
+<li>Apple: Update <code>vm_statistics64</code> with recently added fields (<a href="https://github.com/rust-lang/libc/pull/5253">#5253</a>)</li>
+<li>Apple: add <code>IN6_IFF_*</code> and <code>SIOCGIFAFLAG_IN6</code> (<a href="https://github.com/rust-lang/libc/pull/5239">#5239</a>)</li>
+<li>Dragonfly: Add <code>O_*</code>, <code>POSIX_FADV_*</code>, <code>NI*</code>, and a few other missing constants (<a href="https://github.com/rust-lang/libc/pull/5116">#5116</a>)</li>
+<li>Dragonfly: add <code>fdatasync</code>, <code>dlvsym</code>, <code>reallocarray</code>, <code>qsort_r</code>, <code>pthread_*affinity_np</code>, <code>ftok</code>, <code>extattr_*</code>, and <code>dup3</code> (<a href="https://github.com/rust-lang/libc/pull/5116">#5116</a>)</li>
+<li>Emscripten: Add <code>in6_pktinfo</code> (<a href="https://github.com/rust-lang/libc/pull/5256">#5256</a>)</li>
+<li>FreeBSD: Add SOL_LOCAL (<a href="https://github.com/rust-lang/libc/pull/5185">#5185</a>)</li>
+<li>FreeBSD: Add <code>DLT_*</code> constants (<a href="https://github.com/rust-lang/libc/pull/5235">#5235</a>)</li>
+<li>FreeBSD: Add <code>PROC_LOGSIGEXIT_*</code> and <code>PPROT_*</code> (<a href="https://github.com/rust-lang/libc/pull/4657">#4657</a>)</li>
+<li>FreeBSD: Add <code>SO_RERROR</code> (<a href="https://github.com/rust-lang/libc/pull/5260">#5260</a>)</li>
+<li>FreeBSD: add <code>IN6_IFF_*</code>, <code>in6_ifreq</code>, and <code>SIOCGIFAFLAG_IN6</code> (<a href="https://github.com/rust-lang/libc/pull/5239">#5239</a>)</li>
+<li>FreeBSD: add <code>_IO*</code> helpers from <code>sys/ioccom.h</code> (<a href="https://github.com/rust-lang/libc/pull/5239">#5239</a>)</li>
+<li>Glibc: Add <code>PTHREAD_*_MUTEX_INITIALIZER_NP</code> for riscv64 (<a href="https://github.com/rust-lang/libc/pull/5094">#5094</a>)</li>
+<li>Glibc: Add new fields to <code>struct tcp_info</code> (<a href="https://github.com/rust-lang/libc/pull/5215">#5215</a>)</li>
+<li>Linux: Add <code>OPEN_TREE_NAMESPACE</code> (<a href="https://github.com/rust-lang/libc/pull/5145">#5145</a>)</li>
+<li>Linux: Add <code>SECCOMP_IOCTL_*</code> constants (<a href="https://github.com/rust-lang/libc/pull/5224">#5224</a>)</li>
+<li>Linux: Add <code>SO_DETACH_REUSEPORT_BPF</code> (<a href="https://github.com/rust-lang/libc/pull/5081">#5081</a>)</li>
+<li>Linux: Add <code>futex_waitv</code> (<a href="https://github.com/rust-lang/libc/pull/5125">#5125</a>)</li>
+<li>Linux: Add constants for <code>fsopen</code>, <code>fsconfig</code>, <code>fsmount</code>, and <code>fspick</code> (<a href="https://github.com/rust-lang/libc/pull/5145">#5145</a>)</li>
+<li>Linux: Add fields to <code>statx</code> present since 6.16 (<a href="https://github.com/rust-lang/libc/pull/4621">#4621</a>)</li>
+<li>Linux: Add network entry API (<a href="https://github.com/rust-lang/libc/pull/5049">#5049</a>)</li>
+<li>Linux: add <code>ifaddrmsg</code> and <code>rtattr</code> (<a href="https://github.com/rust-lang/libc/pull/5234">#5234</a>)</li>
+<li>Linux: add <code>sockaddr_iucv</code> (<a href="https://github.com/rust-lang/libc/pull/5041">#5041</a>)</li>
+<li>MacOS: Add <code>ENOTCAPABLE</code> (<a href="https://github.com/rust-lang/libc/pull/4925">#4925</a>)</li>
+<li>Musl: Add <code>renameat2</code> (<a href="https://github.com/rust-lang/libc/pull/5113">#5113</a>)</li>
+<li>NuttX: Add <code>F_SETFD</code> (<a href="https://github.com/rust-lang/libc/pull/5258">#5258</a>)</li>
+<li>NuttX: Add <code>POLLRD*</code> and <code>POLLWR*</code> constants (<a href="https://github.com/rust-lang/libc/pull/5258">#5258</a>)</li>
+<li>NuttX: Add <code>SO_KEEPALIVE</code> and TCP keepalive constants (<a href="https://github.com/rust-lang/libc/pull/5111">#5111</a>)</li>
+<li>NuttX: Add <code>TCP_MAXSEG</code> (<a href="https://github.com/rust-lang/libc/pull/5258">#5258</a>)</li>
+<li>NuttX: Add <code>eventfd</code> and <code>EFD_*</code> constants (<a href="https://github.com/rust-lang/libc/pull/5258">#5258</a>)</li>
+<li>NuttX: Add <code>pipe2</code> (<a href="https://github.com/rust-lang/libc/pull/5258">#5258</a>)</li>
+<li>NuttX: Add <code>strerror_r</code> (<a href="https://github.com/rust-lang/libc/pull/5258">#5258</a>)</li>
+<li>NuttX: Add <code>netinet</code> structs and constants (<a href="https://github.com/rust-lang/libc/pull/5258">#5258</a>)</li>
+<li>NuttX: Add socket structs, functions and constants (<a href="https://github.com/rust-lang/libc/pull/5258">#5258</a>)</li>
+<li>QuRT: Add POSIX timer functions (<a href="https://github.com/rust-lang/libc/pull/5091">#5091</a>)</li>
+<li>QuRT: Add missing pthread functions from QuRT SDK headers (<a href="https://github.com/rust-lang/libc/pull/5091">#5091</a>)</li>
+<li>QuRT: Add missing unistd process and file functions (<a href="https://github.com/rust-lang/libc/pull/5091">#5091</a>)</li>
+<li>QuRT: Add mqueue subsystem (message queues, select/pselect) (<a href="https://github.com/rust-lang/libc/pull/5091">#5091</a>)</li>
+<li>Redox: Add <code>*at</code> and <code>dirent</code> functions (<a href="https://github.com/rust-lang/libc/pull/5117">#5117</a>)</li>
+<li>Solarish: Add IP TTL and IPv6 Hop Limit consts (<a href="https://github.com/rust-lang/libc/pull/5089">#5089</a>)</li>
+<li>Solarish: Add <code>port_alert</code> and <code>PORT_ALERT*</code> constants (<a href="https://github.com/rust-lang/libc/pull/5203">#5203</a>)</li>
+<li>Solarish: add AI_CANONNAME (<a href="https://github.com/rust-lang/libc/pull/5085">#5085</a>)</li>
+<li>aarch64: Add SYS_sendfile and SYS_fadvise64 constants (<a href="https://github.com/rust-lang/libc/pull/5133">#5133</a>)</li>
+</ul>
+<h3 id="deprecated-1">Deprecated</h3>
+<ul>
+<li>Dragonfly: Deprecate compatibility aliases <code>CPUCTL_RSMSR</code> and <code>UTX_DB_LASTLOG</code> (<a href="https://github.com/rust-lang/libc/pull/5116">#5116</a>)</li>
+</ul>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li><strong>breaking</strong> NetBSD: Correct <code>ts</code> from <code>*const timespec</code> to <code>*mut timespec</code> in _lwp_park` (<a href="https://github.com/rust-lang/libc/pull/5169">#5169</a>)</li>
+<li><strong>breaking</strong> Linux GNU: Change overflowing <code>PTRACE_*ET_SYSCALL_USER_DISPATCH_CONFIG</code> constants from <code>u8</code> to <code>c_uint</code> (<a href="https://github.com/rust-lang/libc/pull/4936">#4936</a>)</li>
+<li>Fix the soundness bug in the representation of extern types (<a href="https://github.com/rust-lang/libc/pull/5021">#5021</a>)</li>
+<li>Cygwin: fix <code>cpuset_t</code> typo in <code>CPU_ZERO</code> (<a href="https://github.com/rust-lang/libc/pull/5098">#5098</a>)</li>
+<li>Dragonfly: ABI fixes including regex offsets, <code>ifaddrs</code>, pthread barriers, process sizing fields, and <code>mcontext</code> alignment (<a href="https://github.com/rust-lang/libc/pull/5116">#5116</a>)</li>
+<li>Dragonfly: Correct values of <code>CPUCTL_CPUID*</code>, <code>EV_HUP</code>, and <code>EV_SYSFLAGS</code> (<a href="https://github.com/rust-lang/libc/pull/5116">#5116</a>)</li>
+<li>Emscripten: fix pthread type sizes for wasm64 (MEMORY64) (<a href="https://github.com/rust-lang/libc/pull/5156">#5156</a>)</li>
+<li>Horizon: Fix the value of <code>POLLOUT</code> (<a href="https://github.com/rust-lang/libc/pull/5090">#5090</a>)</li>
+<li>Linux: Correct the value of <code>EPIOC[GS]PARAMS</code> with nonstandard _IOC (<a href="https://github.com/rust-lang/libc/pull/5188">#5188</a>)</li>
+<li>Make VxWorks shims <code>unsafe</code> (<a href="https://github.com/rust-lang/libc/pull/3727">#3727</a>)</li>
+<li>NetBSD: Correct getmntinfo to link <code>__getmntinfo13</code> (<a href="https://github.com/rust-lang/libc/pull/5251">#5251</a>)</li>
+<li>QNX: Fix the value of <code>PTHREAD_MUTEX_INITIALIZER</code> (<a href="https://github.com/rust-lang/libc/pull/5241">#5241</a>)</li>
+<li>QuRT: fix type and definition inaccuracies against SDK headers (<a href="https://github.com/rust-lang/libc/pull/5091">#5091</a>)</li>
+<li>Windows: Correctly link to 32-bit time routines on 32-bit platforms (<a href="https://github.com/rust-lang/libc/pull/5059">#5059</a>)</li>
+<li>uClibc: Fix constants accidentally removed (<a href="https://github.com/rust-lang/libc/pull/5141">#5141</a>)</li>
+<li>uclibc: Fix build issues (<a href="https://github.com/rust-lang/libc/pull/5046">#5046</a>)</li>
+<li>uclibc: Fix type of PRIO_PROCESS and friends (<a href="https://github.com/rust-lang/libc/pull/5046">#5046</a>)</li>
+</ul>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>AIX, TeeOS: Drop unneeded <code>-&gt; c_void</code> (<a href="https://github.com/rust-lang/libc/pull/5240">#5240</a>)</li>
+<li>Apple: Change <code>AIO_LISTIO_MAX</code> to account for changes in macOS 27 (<a href="https://github.com/rust-lang/libc/pull/5253">#5253</a>)</li>
+<li>Glibc: Update the value of <code>MS_NOUSER</code> (<a href="https://github.com/rust-lang/libc/pull/5215">#5215</a>)</li>
+<li>L4Re: Update definitions and test infra (<a href="https://github.com/rust-lang/libc/pull/5275">#5275</a>)</li>
+<li>Linux: Update the value of <code>SW_MAX</code> and <code>SW_CNT</code> (<a href="https://github.com/rust-lang/libc/pull/5215">#5215</a>)</li>
+<li>MacOS: Add <code>swapped_count</code> to <code>vm_statistics64</code> (<a href="https://github.com/rust-lang/libc/pull/4926">#4926</a>)</li>
+<li>Windows: Windows-GNU now respects <code>libc_unstable_gnu_time_bits</code> for 64-bit <code>time_t</code> config (<a href="https://github.com/rust-lang/libc/pull/5062">#5062</a>)</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Dragonfly: Remove FreeBSD-only <code>Elf32_Lword</code>, <code>ip_mreq_source</code>, and <code>IP_</code> constants (<a href="https://github.com/rust-lang/libc/pull/5116">#5116</a>)</li>
+<li>Dragonfly: Remove private VM type bindings (<a href="https://github.com/rust-lang/libc/pull/5116">#5116</a>)</li>
+<li>Linux: Remove <code>KERN_REALROOTDEV</code> and <code>VM_LAPTOP_MODE</code> (<a href="https://github.com/rust-lang/libc/pull/5177">#5177</a>)</li>
+<li>VxWorks: Remove non-user-facing (kernel) API (<a href="https://github.com/rust-lang/libc/pull/5129">#5129</a>)</li>
+</ul>
+<h3 id="other">Other</h3>
+<ul>
+<li>Print config information if <code>LIBC_BUILD_VERBOSE</code> is set (<a href="https://github.com/rust-lang/libc/pull/5272">#5272</a>)</li>
+<li>Annotate <code>*LAST</code> constants as potentially changing (<a href="https://github.com/rust-lang/libc/pull/5120">#5120</a>)</li>
+<li>Annotate <code>*MAX</code> constants as potentially changing (<a href="https://github.com/rust-lang/libc/pull/5122">#5122</a>)</li>
+<li>BSD: Annotate <code>ELAST</code> constants as potentially changing (<a href="https://github.com/rust-lang/libc/pull/5118">#5118</a>)</li>
+<li>FreeBSD: Annotate <code>RAND_MAX</code> as potentially changing (<a href="https://github.com/rust-lang/libc/pull/5119">#5119</a>)</li>
+<li>Linux, L4re: Annotate <code>*NUM</code> constants as potentially changing (<a href="https://github.com/rust-lang/libc/pull/5123">#5123</a>)</li>
+<li>QNX: Restructure to support new platforms (<a href="https://github.com/rust-lang/libc/pull/4984">#4984</a>)</li>
+<li>Unix: Annotate <code>*COUNT</code> constants as potentially changing (<a href="https://github.com/rust-lang/libc/pull/5121">#5121</a>)</li>
+<li>uClibc: Add unstable support of 64-bit <code>time_t</code> (<a href="https://github.com/rust-lang/libc/pull/5046">#5046</a>)</li>
+<li>(internal) FreeBSD: Replace unstable env to set version with an unstable cfg (<a href="https://github.com/rust-lang/libc/pull/5201">#5201</a>)</li>
+<li>(internal) Glibc: Remove public configuration for file offset bits (<a href="https://github.com/rust-lang/libc/pull/5268">#5268</a>)</li>
+<li>(internal) Linux: Delete config via <code>RUST_LIBC_UNSTABLE_LINUX_TIME_BITS64</code> (<a href="https://github.com/rust-lang/libc/pull/5197">#5197</a>)</li>
+<li>(internal) Replace <code>RUST_LIBC_UNSTABLE</code> env with <code>libc_unstable*</code> cfg (<a href="https://github.com/rust-lang/libc/pull/4977">#4977</a>)</li>
+</ul>
+<h2 id="02186---2026-04-24"><a href="https://github.com/rust-lang/libc/compare/0.2.185...0.2.186">0.2.186</a> - 2026-04-24</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Apple: Add <code>KEVENT_FLAG_*</code> constants (<a href="https://github.com/rust-lang/libc/pull/5070">#5070</a>)</li>
+<li>Linux: Add <code>PR_SET_MEMORY_MERGE</code> and <code>PR_GET_MEMORY_MERGE</code> (<a href="https://github.com/rust-lang/libc/pull/5060">#5060</a>)</li>
+</ul>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>CI: Migrate FreeBSD CI from Cirrus CI to GitHub Actions (<a href="https://github.com/rust-lang/libc/pull/5058">#5058</a>)</li>
+</ul>
+<h2 id="02185---2026-04-13"><a href="https://github.com/rust-lang/libc/compare/0.2.184...0.2.185">0.2.185</a> - 2026-04-13</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>EspIDF: Add <code>espidf_picolibc</code> cfg for picolibc <code>O_*</code> flag values (<a href="https://github.com/rust-lang/libc/pull/5035">#5035</a>)</li>
+<li>Hexagon: add missing constants and fix types for linux-musl (<a href="https://github.com/rust-lang/libc/pull/5042">#5042</a>)</li>
+<li>Redox: Add semaphore functions (<a href="https://github.com/rust-lang/libc/pull/5051">#5051</a>)</li>
+<li>Windows: Add <code>sprintf</code>, <code>snprintf</code>, and the <code>scanf</code> family (<a href="https://github.com/rust-lang/libc/pull/5024">#5024</a>)</li>
+</ul>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Hexagon: Decouple <code>time64</code> types from musl symbol redirects (<a href="https://github.com/rust-lang/libc/pull/5040">#5040</a>)</li>
+<li>Horizon: Change <code>POLL</code> constants from <code>c_short</code> to <code>c_int</code> (<a href="https://github.com/rust-lang/libc/pull/5045">#5045</a>)</li>
+</ul>
+<h2 id="02184---2026-04-01"><a href="https://github.com/rust-lang/libc/compare/0.2.183...0.2.184">0.2.184</a> - 2026-04-01</h2>
+<h3 id="msrv">MSRV</h3>
+<p>This release increases the MSRV of <code>libc</code> to 1.65. With this update, you can now always use the
+<code>core::ffi::c_*</code> types with <code>libc</code> definitions, since <code>libc</code> has been changed to reexport from
+<code>core</code> rather than redefining them. (This <em>usually</em> worked before but had edge cases.)
+(<a href="https://github.com/rust-lang/libc/pull/4972">#4972</a>)</p>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>BSD: Add <code>IP_MINTTL</code> to bsd (<a href="https://github.com/rust-lang/libc/pull/5026">#5026</a>)</li>
+<li>Cygwin: Add <code>TIOCM_DSR</code> (<a href="https://github.com/rust-lang/libc/pull/5031">#5031</a>)</li>
+<li>FreeBSD: Added <code>xfile</code> structe and file descriptor types (<a href="https://github.com/rust-lang/libc/pull/5002">#5002</a>)</li>
+<li>Linux: Add CAN netlink bindings (<a href="https://github.com/rust-lang/libc/pull/5011">#5011</a>)</li>
+<li>Linux: Add <code>struct ethhdr</code> (<a href="https://github.com/rust-lang/libc/pull/4239">#4239</a>)</li>
+<li>Linux: Add <code>struct ifinfomsg</code> (<a href="https://github.com/rust-lang/libc/pull/5012">#5012</a>)</li>
+<li>Linux: Define <code>max_align_t</code> for riscv64 (<a href="https://github.com/rust-lang/libc/pull/5029">#5029</a>)</li>
+<li>NetBSD: Add missing <code>CLOCK_</code> constants (<a href="https://github.com/rust-lang/libc/pull/5020">#5020</a>)</li>
+<li>NuttX: Add <code>_SC_HOST_NAME_MAX</code> (<a href="https://github.com/rust-lang/libc/pull/5004">#5004</a>)</li>
+<li>VxWorks: Add <code>flock</code> and <code>F_*LCK</code> constants (<a href="https://github.com/rust-lang/libc/pull/4043">#4043</a>)</li>
+<li>WASI: Add all <code>_SC_*</code> sysconf constants (<a href="https://github.com/rust-lang/libc/pull/5023">#5023</a>)</li>
+</ul>
+<h3 id="deprecated-2">Deprecated</h3>
+<p>The remaining fixed-width integer aliases, <code>__uint128_t</code>, <code>__uint128</code>, <code>__int128_t</code>, and <code>__int128</code>,
+have been deprecated. Use <code>i128</code> and <code>u128</code> instead. (<a href="https://github.com/rust-lang/libc/pull/4343">#4343</a>)</p>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li><strong>breaking</strong> Redox: Fix signal action constant types (<a href="https://github.com/rust-lang/libc/pull/5009">#5009</a>)</li>
+<li>EspIDF: Correct the value of <code>DT_*</code> constants (<a href="https://github.com/rust-lang/libc/pull/5034">#5034</a>)</li>
+<li>Redox: Fix locale values and add <code>RTLD_NOLOAD</code>, some TCP constants (<a href="https://github.com/rust-lang/libc/pull/5025">#5025</a>)</li>
+<li>Various: Use <code>Padding::new(&lt;zeroed&gt;)</code> rather than <code>Padding::uninit()</code> (<a href="https://github.com/rust-lang/libc/pull/5036">#5036</a>)</li>
+</ul>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li><strong>potentially breaking</strong> Linux: Add new fields to <code>struct ptrace_syscall_info</code> (<a href="https://github.com/rust-lang/libc/pull/4966">#4966</a>)</li>
+<li>Re-export <code>core::ffi</code> integer types rather than redefining (<a href="https://github.com/rust-lang/libc/pull/5015">#5015</a>)</li>
+<li>Redox: Update <code>F_DUPFD</code>, <code>IP</code>, and <code>TCP</code> constants to match relibc  (<a href="https://github.com/rust-lang/libc/pull/4990">#4990</a>)</li>
+</ul>
+<h2 id="02183---2026-03-08"><a href="https://github.com/rust-lang/libc/compare/0.2.182...0.2.183">0.2.183</a> - 2026-03-08</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>ESP-IDF: Add <code>SOMAXCONN</code> (<a href="https://github.com/rust-lang/libc/pull/4993">#4993</a>)</li>
+<li>Linux: Add <code>name_to_handle_at</code> and <code>open_by_handle_at</code> (<a href="https://github.com/rust-lang/libc/pull/4988">#4988</a>)</li>
+<li>NetBSD: Add <code>kinfo_file</code>, <code>kinfo_pcb</code>, and related constants (<a href="https://github.com/rust-lang/libc/pull/4985">#4985</a>)</li>
+<li>OpenBSD: Add <code>kinfo_file</code> and related constants (<a href="https://github.com/rust-lang/libc/pull/4991">#4991</a>)</li>
+<li>VxWorks: Add additional structs and defines (<a href="https://github.com/rust-lang/libc/pull/5003">#5003</a>)</li>
+<li>Various: Implement <code>Default</code> for <code>timeval</code> and <code>timespec</code> (<a href="https://github.com/rust-lang/libc/pull/4976">#4976</a>)</li>
+</ul>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Hexagon musl: Enable unstable 64-bit <code>time_t</code> support and <code>musl_v1_2_3</code> (<a href="https://github.com/rust-lang/libc/pull/4992">#4992</a>)</li>
+<li>Nintendo Switch: Fix target support (<a href="https://github.com/rust-lang/libc/pull/4982">#4982</a>)</li>
+<li>OpenBSD: Wrap an unused field in <code>Padding</code> (<a href="https://github.com/rust-lang/libc/pull/4997">#4997</a>)</li>
+<li>Redox: Change <code>sigaction.sa_flags</code> to <code>c_int</code> (<a href="https://github.com/rust-lang/libc/pull/4986">#4986</a>)</li>
+<li>Redox: Fix <code>blkcnt_t</code> type (<a href="https://github.com/rust-lang/libc/pull/4994">#4994</a>)</li>
+</ul>
+<h2 id="02182---2026-02-13"><a href="https://github.com/rust-lang/libc/compare/0.2.181...0.2.182">0.2.182</a> - 2026-02-13</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>Android, Linux: Add <code>tgkill</code> (<a href="https://github.com/rust-lang/libc/pull/4970">#4970</a>)</li>
+<li>Redox: Add <code>RENAME_NOREPLACE</code> (<a href="https://github.com/rust-lang/libc/pull/4968">#4968</a>)</li>
+<li>Redox: Add <code>renameat2</code> (<a href="https://github.com/rust-lang/libc/pull/4968">#4968</a>)</li>
+</ul>
+<h2 id="02181---2026-02-09"><a href="https://github.com/rust-lang/libc/compare/0.2.180...0.2.181">0.2.181</a> - 2026-02-09</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>Apple: Add <code>MADV_ZERO</code> (<a href="https://github.com/rust-lang/libc/pull/4924">#4924</a>)</li>
+<li>Redox: Add <code>makedev</code>, <code>major</code>, and <code>minor</code> (<a href="https://github.com/rust-lang/libc/pull/4928">#4928</a>)</li>
+<li>GLibc: Add <code>PTRACE_SET_SYSCALL_INFO</code> (<a href="https://github.com/rust-lang/libc/pull/4933">#4933</a>)</li>
+<li>OpenBSD: Add more kqueue related constants for (<a href="https://github.com/rust-lang/libc/pull/4945">#4945</a>)</li>
+<li>Linux: add CAN error types (<a href="https://github.com/rust-lang/libc/pull/4944">#4944</a>)</li>
+<li>OpenBSD: Add siginfo_t::si_status (<a href="https://github.com/rust-lang/libc/pull/4946">#4946</a>)</li>
+<li>QNX NTO: Add <code>max_align_t</code> (<a href="https://github.com/rust-lang/libc/pull/4927">#4927</a>)</li>
+<li>Illumos: Add <code>_CS_PATH</code> (<a href="https://github.com/rust-lang/libc/pull/4956">#4956</a>)</li>
+<li>OpenBSD: add <code>ppoll</code> (<a href="https://github.com/rust-lang/libc/pull/4957">#4957</a>)</li>
+</ul>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li><strong>breaking</strong>: Redox: Fix the type of dev_t (<a href="https://github.com/rust-lang/libc/pull/4928">#4928</a>)</li>
+<li>AIX: Change 'tv_nsec' of 'struct timespec' to type 'c_long' (<a href="https://github.com/rust-lang/libc/pull/4931">#4931</a>)</li>
+<li>AIX: Use 'struct st_timespec' in 'struct stat{,64}' (<a href="https://github.com/rust-lang/libc/pull/4931">#4931</a>)</li>
+<li>Glibc: Link old version of <code>tc{g,s}etattr</code> (<a href="https://github.com/rust-lang/libc/pull/4938">#4938</a>)</li>
+<li>Glibc: Link the correct version of <code>cf{g,s}et{i,o}speed</code> on mips{32,64}r6 (<a href="https://github.com/rust-lang/libc/pull/4938">#4938</a>)</li>
+<li>OpenBSD: Fix constness of tm.tm_zone (<a href="https://github.com/rust-lang/libc/pull/4948">#4948</a>)</li>
+<li>OpenBSD: Fix the definition of <code>ptrace_thread_state</code> (<a href="https://github.com/rust-lang/libc/pull/4947">#4947</a>)</li>
+<li>QuRT: Fix type visibility and defs (<a href="https://github.com/rust-lang/libc/pull/4932">#4932</a>)</li>
+<li>Redox: Fix values for <code>PTHREAD_MUTEX_{NORMAL, RECURSIVE}</code> (<a href="https://github.com/rust-lang/libc/pull/4943">#4943</a>)</li>
+<li>Various: Mark additional fields as private padding (<a href="https://github.com/rust-lang/libc/pull/4922">#4922</a>)</li>
+</ul>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>Fuchsia: Update <code>SO_*</code> constants (<a href="https://github.com/rust-lang/libc/pull/4937">#4937</a>)</li>
+<li>Revert "musl: convert inline timespecs to timespec" (resolves build issues on targets only supported by Musl 1.2.3+ ) (<a href="https://github.com/rust-lang/libc/pull/4958">#4958</a>)</li>
+</ul>
+<h2 id="02180---2026-01-08"><a href="https://github.com/rust-lang/libc/compare/0.2.179...0.2.180">0.2.180</a> - 2026-01-08</h2>
+<h3 id="added-8">Added</h3>
+<ul>
+<li>QNX: Add missing BPF and ifreq structures (<a href="https://github.com/rust-lang/libc/pull/4769">#4769</a>)</li>
+</ul>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Linux, L4Re: address soundness issues of <code>CMSG_NXTHDR</code> (<a href="https://github.com/rust-lang/libc/pull/4903">#4903</a>)</li>
+<li>Linux-like: Handle zero-sized payload differences in <code>CMSG_NXTHDR</code> (<a href="https://github.com/rust-lang/libc/pull/4903">#4903</a>)</li>
+<li>Musl: Fix incorrect definitions of struct stat on some 32-bit architectures (<a href="https://github.com/rust-lang/libc/pull/4914">#4914</a>)</li>
+<li>NetBSD: RISC-V 64: Correct <code>mcontext</code> type definitions (<a href="https://github.com/rust-lang/libc/pull/4886">#4886</a>)</li>
+<li>uClibc: Re-enable <code>__SIZEOF_PTHREAD_COND_T</code> on non-L4Re uclibc (<a href="https://github.com/rust-lang/libc/pull/4915">#4915</a>)</li>
+<li>uClibc: Restructure Linux <code>netlink</code> module to resolve build errors (<a href="https://github.com/rust-lang/libc/pull/4915">#4915</a>)</li>
+</ul>
+<h2 id="02179---2025-01-03"><a href="https://github.com/rust-lang/libc/compare/0.2.178...0.2.179">0.2.179</a> - 2025-01-03</h2>
+<p>With this release, we now have <em>unstable</em> support for 64-bit <code>time_t</code> on 32-bit
+platforms with both Musl and Glibc. Testing is appreciated!</p>
+<p>For now, these can be enabled by setting environment variables during build:</p>
+<pre><code class="language-text">RUST_LIBC_UNSTABLE_MUSL_V1_2_3=1
+RUST_LIBC_UNSTABLE_GNU_TIME_BITS=64
+</code></pre>
+<p>Note that the exact configuration will change in the future. Setting the
+<code>MUSL_V1_2_3</code> variable also enables some newer API unrelated to <code>time_t</code>.</p>
+<h3 id="added-9">Added</h3>
+<ul>
+<li>L4Re: Add uclibc aarch64 support (<a href="https://github.com/rust-lang/libc/pull/4479">#4479</a>)</li>
+<li>Linux, Android: Add a generic definition for <code>XCASE</code> (<a href="https://github.com/rust-lang/libc/pull/4847">#4847</a>)</li>
+<li>Linux-like: Add <code>NAME_MAX</code> (<a href="https://github.com/rust-lang/libc/pull/4888">#4888</a>)</li>
+<li>Linux: Add <code>AT_EXECVE_CHECK</code> (<a href="https://github.com/rust-lang/libc/pull/4422">#4422</a>)</li>
+<li>Linux: Add the <code>SUN_LEN</code> macro (<a href="https://github.com/rust-lang/libc/pull/4269">#4269</a>)</li>
+<li>Linux: add <code>getitimer</code> and <code>setitimer</code> (<a href="https://github.com/rust-lang/libc/pull/4890">#4890</a>)</li>
+<li>Linux: add <code>pthread_tryjoin_n</code> and <code>pthread_timedjoin_np</code> (<a href="https://github.com/rust-lang/libc/pull/4887">#4887</a>)</li>
+<li>Musl: Add unstable support for 64-bit <code>time_t</code> on 32-bit platforms (<a href="https://github.com/rust-lang/libc/pull/4463">#4463</a>)</li>
+<li>NetBSD, OpenBSD: Add interface <code>LINK_STATE_*</code> definitions from <code>sys/net/if.h</code> (<a href="https://github.com/rust-lang/libc/pull/4751">#4751</a>)</li>
+<li>QuRT: Add support for Qualcomm QuRT (<a href="https://github.com/rust-lang/libc/pull/4845">#4845</a>)</li>
+<li>Types: Add Padding<t>::uninit() (<a href="https://github.com/rust-lang/libc/pull/4862">#4862</a>)</t></li>
+</ul>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Glibc: Link old version of <code>cf{g,s}et{i,o}speed</code> (<a href="https://github.com/rust-lang/libc/pull/4882">#4882</a>)</li>
+<li>L4Re: Fixes for <code>pthread</code> (<a href="https://github.com/rust-lang/libc/pull/4479">#4479</a>)</li>
+<li>L4re: Fix a wide variety of incorrect definitions (<a href="https://github.com/rust-lang/libc/pull/4479">#4479</a>)</li>
+<li>Musl: Fix the value of <code>CPU_SETSIZE</code> on musl 1.2+ (<a href="https://github.com/rust-lang/libc/pull/4865">#4865</a>)</li>
+<li>Musl: RISC-V: fix public padding fields in <code>stat/stat64</code> (<a href="https://github.com/rust-lang/libc/pull/4463">#4463</a>)</li>
+<li>Musl: s390x: Fix definition of <code>SIGSTKSZ</code>/<code>MINSIGSTKSZ</code> (<a href="https://github.com/rust-lang/libc/pull/4884">#4884</a>)</li>
+<li>NetBSD: Arm: Fix <code>PT_{GET,SET}FPREGS</code>, <code>_REG_TIPDR</code>, and <code>_REG_{LR,SP}</code> (<a href="https://github.com/rust-lang/libc/pull/4899">#4899</a>)</li>
+<li>NetBSD: Fix <code>if_msghdr</code> alignment (<a href="https://github.com/rust-lang/libc/pull/4902">#4902</a>)</li>
+<li>NetBSD: Fix <code>siginfo_t</code> layout on 32-bit platforms (<a href="https://github.com/rust-lang/libc/pull/4904">#4904</a>)</li>
+<li>NetBSD: change definition of <code>pthread_spin_t</code> to allow arch redefinition. (<a href="https://github.com/rust-lang/libc/pull/4899">#4899</a>)</li>
+<li>Newlib: Fix ambiguous glob exports and other warnings for Vita and 3DS (<a href="https://github.com/rust-lang/libc/pull/4875">#4875</a>)</li>
+<li>QNX: Fix build error (<a href="https://github.com/rust-lang/libc/pull/4879">#4879</a>)</li>
+</ul>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>CI: Update CI images to FreeBSD 15.0-release (<a href="https://github.com/rust-lang/libc/pull/4857">#4857</a>)</li>
+<li>L4Re: Make <code>pthread</code> struct fields private (<a href="https://github.com/rust-lang/libc/pull/4876">#4876</a>)</li>
+<li>Linux, Fuchsia: Mark mq_attr padding area as such (<a href="https://github.com/rust-lang/libc/pull/4858">#4858</a>)</li>
+<li>Types: Wrap a number of private fields in the <code>Padding</code> type (<a href="https://github.com/rust-lang/libc/pull/4862">#4862</a>)</li>
+</ul>
+<h3 id="removed-1">Removed</h3>
+<ul>
+<li>Build: Remove <code>RUST_LIBC_UNSTABLE_LINUX_TIME_BITS64</code> (<a href="https://github.com/rust-lang/libc/pull/4865">#4865</a>)</li>
+<li>WASI: Remove nonexistent clocks (<a href="https://github.com/rust-lang/libc/pull/4880">#4880</a>)</li>
+</ul>
+<h2 id="02178---2025-12-01"><a href="https://github.com/rust-lang/libc/compare/0.2.177...0.2.178">0.2.178</a> - 2025-12-01</h2>
+<h3 id="added-10">Added</h3>
+<ul>
+<li>BSD: Add <code>issetugid</code> (<a href="https://github.com/rust-lang/libc/pull/4744">#4744</a>)</li>
+<li>Cygwin: Add missing utmp/x.h, grp.h, and stdio.h interfaces (<a href="https://github.com/rust-lang/libc/pull/4827">#4827</a>)</li>
+<li>Linux s390x musl: Add <code>__psw_t</code>/<code>fprefset_t</code>/<code>*context_t</code> (<a href="https://github.com/rust-lang/libc/pull/4726">#4726</a>)</li>
+<li>Linux, Android: Add definition for IUCLC (<a href="https://github.com/rust-lang/libc/pull/4846">#4846</a>)</li>
+<li>Linux, FreeBSD: Add <code>AT_HWCAP{3,4}</code> (<a href="https://github.com/rust-lang/libc/pull/4734">#4734</a>)</li>
+<li>Linux: Add definitions from linux/can/bcm.h (<a href="https://github.com/rust-lang/libc/pull/4683">#4683</a>)</li>
+<li>Linux: Add syscalls 451-469 for m68k (<a href="https://github.com/rust-lang/libc/pull/4850">#4850</a>)</li>
+<li>Linux: PowerPC: Add 'ucontext.h' definitions (<a href="https://github.com/rust-lang/libc/pull/4696">#4696</a>)</li>
+<li>NetBSD: Define <code>eventfd</code> (<a href="https://github.com/rust-lang/libc/pull/4830">#4830</a>)</li>
+<li>Newlib: Add missing constants from <code>unistd.h</code> (<a href="https://github.com/rust-lang/libc/pull/4811">#4811</a>)</li>
+<li>QNX NTO: Add <code>cfmakeraw</code> (<a href="https://github.com/rust-lang/libc/pull/4704">#4704</a>)</li>
+<li>QNX NTO: Add <code>cfsetspeed</code> (<a href="https://github.com/rust-lang/libc/pull/4704">#4704</a>)</li>
+<li>Redox: Add <code>getresgid</code> and <code>getresuid</code> (<a href="https://github.com/rust-lang/libc/pull/4752">#4752</a>)</li>
+<li>Redox: Add <code>setresgid</code> and <code>setresuid</code> (<a href="https://github.com/rust-lang/libc/pull/4752">#4752</a>)</li>
+<li>VxWorks: Add definitions from <code>select.h</code>, <code>stat.h</code>, <code>poll.h</code>, <code>ttycom.h</code>, <code>utsname.h</code>, <code>resource.h</code>, <code>mman.h</code>, <code>udp.h</code>, <code>in.h</code>, <code>in6.h</code>, <code>if.h</code>, <code>fnmatch.h</code>, and <code>sioLibCommon.h</code> (<a href="https://github.com/rust-lang/libc/pull/4781">#4781</a>)</li>
+<li>VxWorks: Add missing defines/functions needed by rust stdlib (<a href="https://github.com/rust-lang/libc/pull/4779">#4779</a>)</li>
+<li>WASI: Add more definitions for libstd (<a href="https://github.com/rust-lang/libc/pull/4747">#4747</a>)</li>
+</ul>
+<h3 id="deprecated-3">Deprecated</h3>
+<ul>
+<li>Apple: Deprecate <code>TIOCREMOTE</code> (<a href="https://github.com/rust-lang/libc/pull/4764">#4764</a>)</li>
+</ul>
+<h3 id="fixed-8">Fixed</h3>
+<p>Note that there were a large number of fixes on NetBSD for this <code>libc</code> release, some of which include minor breakage.</p>
+<ul>
+<li>AIX: Change errno <code>EWOULDBLOCK</code> to make it an alias of <code>EAGAIN</code> (<a href="https://github.com/rust-lang/libc/pull/4790">#4790</a>)</li>
+<li>AIX: Resolve function comparison and <code>unnecessary_transmutes</code> warnings (<a href="https://github.com/rust-lang/libc/pull/4780">#4780</a>)</li>
+<li>Apple: Correct the value of <code>SF_SETTABLE</code> (<a href="https://github.com/rust-lang/libc/pull/4764">#4764</a>)</li>
+<li>DragonflyBSD: Fix the type of <code>mcontext_t.mc_fpregs</code> (<a href="">#</a>)</li>
+<li>EspIDF: Fix the duplicate definition of <code>gethostname</code> (<a href="https://github.com/rust-lang/libc/pull/4773">#4773</a>)</li>
+<li>L4Re: Update available pthread API (<a href="https://github.com/rust-lang/libc/pull/4836">#4836</a>)</li>
+<li>Linux: Correct the value of <code>NFT_MSG_MAX</code> (<a href="https://github.com/rust-lang/libc/pull/4761">#4761</a>)</li>
+<li>Linux: Remove incorrect <code>repr(align(8))</code> for <code>canxl_frame</code> (<a href="https://github.com/rust-lang/libc/pull/4760">#4760</a>)</li>
+<li>Make <code>eventfd</code> argument names match OS docs/headers (<a href="https://github.com/rust-lang/libc/pull/4830">#4830</a>)</li>
+<li>NetBSD: Account for upstream changes to ptrace with LWP (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Correct <code>ipc_perm</code>, split from OpenBSD as <code>ipc.rs</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Correct a number of symbol link names (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Correct the type of <code>kinfo_vmentry.kve_path</code> (<a href="">#</a>)</li>
+<li>NetBSD: Fix <code>uucred.cr_ngroups</code> from <code>int</code> to <code>short</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Fix the type of <code>kevent.udata</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Fix the type of <code>mcontext_t.__fpregs</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Fix the value of <code>PT_SUSPEND</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Fix the values of FNM_* constants (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Increase the size of <code>sockaddr_dl.sdl_data</code> from 12 to 24 (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Introduce <code>if_.rs</code>, fix the definition of <code>ifreq</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Introduce <code>time.rs</code>, fix the values of <code>CLOCK_*_CPUTIME_ID</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Introduce <code>timex.rs</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Introduce <code>types.rs</code>, correct the definition of <code>lwpid_t</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Introduce <code>utmp_.rs</code>, correct the definition of <code>lastlog</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Introduce <code>utmpx_.rs</code>, correct utmpx definitions (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Make <code>_cpuset</code> an extern type (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: RISC-V 64: Fix the <code>mcontext</code> types (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>Nuttx: Resolve warnings (<a href="https://github.com/rust-lang/libc/pull/4773">#4773</a>)</li>
+<li>OHOS: Don't emit duplicate lfs64 definitions (<a href="https://github.com/rust-lang/libc/pull/4804">#4804</a>)</li>
+<li>Redox: Fix the type of <code>pid_t</code> (<a href="https://github.com/rust-lang/libc/pull/4825">#4825</a>)</li>
+<li>WASI: Gate <code>__wasilibc_register_preopened_fd</code>  (<a href="https://github.com/rust-lang/libc/pull/4837">#4837</a>)</li>
+<li>Wali: Fix unknown config (<a href="https://github.com/rust-lang/libc/pull/4773">#4773</a>)</li>
+</ul>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>AIX: Declare field 'tv_nsec' of structure 'timespec' as 'i32' in both 32-bit and 64-bit modes (<a href="https://github.com/rust-lang/libc/pull/4750">#4750</a>)</li>
+<li>DragonFly: Avoid usage of <code>thread_local</code> (<a href="https://github.com/rust-lang/libc/pull/3653">#3653</a>)</li>
+<li>Linux: Update the definition for <code>ucontext_t</code> and unskip its tests (<a href="https://github.com/rust-lang/libc/pull/4760">#4760</a>)</li>
+<li>MinGW: Set <code>L_tmpnam</code> and <code>TMP_MAX</code> to the UCRT value (<a href="https://github.com/rust-lang/libc/pull/4566">#4566</a>)</li>
+<li>WASI: More closely align pthread type reprs (<a href="https://github.com/rust-lang/libc/pull/4747">#4747</a>)</li>
+<li>Simplify rustc-check-cfg emission in build.rs (<a href="https://github.com/rust-lang/libc/pull/4724">#4724</a>)</li>
+<li>Transition a number of definitions to the new source structure (internal change)</li>
+</ul>
+<h3 id="removed-2">Removed</h3>
+<ul>
+<li>MIPS Musl: Remove rogue definition of <code>SIGSTKFLT</code> (<a href="https://github.com/rust-lang/libc/pull/4749">#4749</a>)</li>
+<li>NetBSD: Make <code>statvfs.f_spare</code> non-public (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Remove BPF constants (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Remove <code>*_MAXID</code> constants and <code>AT_SUN_LDPGSIZE</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Remove <code>IFF_NOTRAILERS</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Remove <code>vm_size_t</code> (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+<li>NetBSD: Replace REG_ENOSYS with REG_ILLSEQ (<a href="https://github.com/rust-lang/libc/pull/4782">#4782</a>)</li>
+</ul>
+<h2 id="02177---2025-10-09"><a href="https://github.com/rust-lang/libc/compare/0.2.176...0.2.177">0.2.177</a> - 2025-10-09</h2>
+<h3 id="added-11">Added</h3>
+<ul>
+<li>Apple: Add <code>TIOCGETA</code>, <code>TIOCSETA</code>, <code>TIOCSETAW</code>, <code>TIOCSETAF</code> constants (<a href="https://github.com/rust-lang/libc/pull/4736">#4736</a>)</li>
+<li>Apple: Add <code>pthread_cond_timedwait_relative_np</code> (<a href="https://github.com/rust-lang/libc/pull/4719">#4719</a>)</li>
+<li>BSDs: Add <code>_CS_PATH</code> constant (<a href="https://github.com/rust-lang/libc/pull/4738">#4738</a>)</li>
+<li>Linux-like: Add <code>SIGEMT</code> for mips* and sparc* architectures (<a href="https://github.com/rust-lang/libc/pull/4730">#4730</a>)</li>
+<li>OpenBSD: Add <code>elf_aux_info</code> (<a href="https://github.com/rust-lang/libc/pull/4729">#4729</a>)</li>
+<li>Redox: Add more sysconf constants (<a href="https://github.com/rust-lang/libc/pull/4728">#4728</a>)</li>
+<li>Windows: Add <code>wcsnlen</code> (<a href="https://github.com/rust-lang/libc/pull/4721">#4721</a>)</li>
+</ul>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>WASIP2: Invert conditional to include p2 APIs (<a href="https://github.com/rust-lang/libc/pull/4733">#4733</a>)</li>
+</ul>
+<h2 id="02176---2025-09-23"><a href="https://github.com/rust-lang/libc/compare/0.2.175...0.2.176">0.2.176</a> - 2025-09-23</h2>
+<h3 id="support-1">Support</h3>
+<ul>
+<li>The default FreeBSD version has been raised from 11 to 12. This matches <code>rustc</code> since 1.78. (<a href="https://github.com/rust-lang/libc/pull/2406">#2406</a>)</li>
+<li><code>Debug</code> is now always implemented, rather than being gated behind the <code>extra_traits</code> feature. (<a href="https://github.com/rust-lang/libc/pull/4624">#4624</a>)</li>
+</ul>
+<h3 id="added-12">Added</h3>
+<ul>
+<li>AIX: Restore some non-POSIX functions guarded by the <code>_KERNEL</code> macro. (<a href="https://github.com/rust-lang/libc/pull/4607">#4607</a>)</li>
+<li>FreeBSD 14: Add <code>st_fileref</code> to <code>struct stat</code> (<a href="https://github.com/rust-lang/libc/pull/4642">#4642</a>)</li>
+<li>Haiku: Add the <code>accept4</code> POSIX call (<a href="https://github.com/rust-lang/libc/pull/4586">#4586</a>)</li>
+<li>Introduce a wrapper for representing padding (<a href="https://github.com/rust-lang/libc/pull/4632">#4632</a>)</li>
+<li>Linux: Add <code>EM_RISCV</code> (<a href="https://github.com/rust-lang/libc/pull/4659">#4659</a>)</li>
+<li>Linux: Add <code>MS_NOSYMFOLLOW</code> (<a href="https://github.com/rust-lang/libc/pull/4389">#4389</a>)</li>
+<li>Linux: Add <code>backtrace_symbols(_fd)</code> (<a href="https://github.com/rust-lang/libc/pull/4668">#4668</a>)</li>
+<li>Linux: Add missing <code>SOL_PACKET</code> optnames (<a href="https://github.com/rust-lang/libc/pull/4669">#4669</a>)</li>
+<li>Musl s390x: Add <code>SYS_mseal</code> (<a href="https://github.com/rust-lang/libc/pull/4549">#4549</a>)</li>
+<li>NuttX: Add <code>__errno</code> (<a href="https://github.com/rust-lang/libc/pull/4687">#4687</a>)</li>
+<li>Redox: Add <code>dirfd</code>, <code>VDISABLE</code>, and resource consts (<a href="https://github.com/rust-lang/libc/pull/4660">#4660</a>)</li>
+<li>Redox: Add more <code>resource.h</code>, <code>fcntl.h</code> constants (<a href="https://github.com/rust-lang/libc/pull/4666">#4666</a>)</li>
+<li>Redox: Enable <code>strftime</code> and <code>mkostemp[s]</code> (<a href="https://github.com/rust-lang/libc/pull/4629">#4629</a>)</li>
+<li>Unix, Windows: Add <code>qsort_r</code> (Unix), and <code>qsort(_s)</code> (Windows) (<a href="https://github.com/rust-lang/libc/pull/4677">#4677</a>)</li>
+<li>Unix: Add <code>dlvsym</code> for Linux-gnu, FreeBSD, and NetBSD (<a href="https://github.com/rust-lang/libc/pull/4671">#4671</a>)</li>
+<li>Unix: Add <code>sigqueue</code> (<a href="https://github.com/rust-lang/libc/pull/4620">#4620</a>)</li>
+</ul>
+<h3 id="changed-8">Changed</h3>
+<ul>
+<li>FreeBSD 15: Mark <code>kinfo_proc</code> as non-exhaustive (<a href="https://github.com/rust-lang/libc/pull/4553">#4553</a>)</li>
+<li>FreeBSD: Set the ELF symbol version for <code>readdir_r</code> (<a href="https://github.com/rust-lang/libc/pull/4694">#4694</a>)</li>
+<li>Linux: Correct the config for whether or not <code>epoll_event</code> is packed (<a href="https://github.com/rust-lang/libc/pull/4639">#4639</a>)</li>
+<li>Tests: Replace the old <code>ctest</code> with the much more reliable new implementation (<a href="https://github.com/rust-lang/libc/pull/4655">#4655</a> and many related PRs)</li>
+</ul>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>AIX: Fix the type of the 4th arguement of <code>getgrnam_r</code> ([#4656](<a href="https://github.com/rust-lang/libc/pull/4656">https://github.com/rust-lang/libc/pull/4656</a></li>
+<li>FreeBSD: Limit <code>P_IDLEPROC</code> to FreeBSD 15 (<a href="https://github.com/rust-lang/libc/pull/4640">#4640</a>)</li>
+<li>FreeBSD: Limit <code>mcontext_t::mc_tlsbase</code> to FreeBSD 15 (<a href="https://github.com/rust-lang/libc/pull/464">#4640</a>)</li>
+<li>FreeBSD: Update gating of <code>mcontext_t.mc_tlsbase</code> (<a href="https://github.com/rust-lang/libc/pull/4703">#4703</a>)</li>
+<li>Musl s390x: Correct the definition of <code>statfs[64]</code> (<a href="https://github.com/rust-lang/libc/pull/4549">#4549</a>)</li>
+<li>Musl s390x: Make <code>fpreg_t</code> a union (<a href="https://github.com/rust-lang/libc/pull/4549">#4549</a>)</li>
+<li>Redox: Fix the types of <code>gid_t</code> and <code>uid_t</code> (<a href="https://github.com/rust-lang/libc/pull/4689">#4689</a>)</li>
+<li>Redox: Fix the value of <code>MAP_FIXED</code> (<a href="https://github.com/rust-lang/libc/pull/4684">#4684</a>)</li>
+</ul>
+<h3 id="deprecated-4">Deprecated</h3>
+<ul>
+<li>Apple: Correct the <code>deprecated</code> attribute for <code>iconv</code> (<a href="https://github.com/rust-lang/libc/commit/a97a0b53fb7faf5f99cd720ab12b1b8a5bf9f950"><code>a97a0b53</code></a>)</li>
+<li>FreeBSD: Deprecate <code>TIOCMGDTRWAIT</code> and <code>TIOCMSDTRWAIT</code> (<a href="https://github.com/rust-lang/libc/pull/4685">#4685</a>)</li>
+</ul>
+<h3 id="removed-3">Removed</h3>
+<ul>
+<li>FreeBSD: Remove <code>JAIL_{GET,SET}_MASK</code>, <code>_MC_FLAG_MASK</code> (<a href="https://github.com/rust-lang/libc/pull/4691">#4691</a>)</li>
+</ul>
+<h2 id="02175---2025-08-10"><a href="https://github.com/rust-lang/libc/compare/0.2.174...0.2.175">0.2.175</a> - 2025-08-10</h2>
+<h3 id="added-13">Added</h3>
+<ul>
+<li>AIX: Add <code>getpeereid</code> (<a href="https://github.com/rust-lang/libc/pull/4524">#4524</a>)</li>
+<li>AIX: Add <code>struct ld_info</code> and friends (<a href="https://github.com/rust-lang/libc/pull/4578">#4578</a>)</li>
+<li>AIX: Retore <code>struct winsize</code> (<a href="https://github.com/rust-lang/libc/pull/4577">#4577</a>)</li>
+<li>Android: Add UDP socket option constants (<a href="https://github.com/rust-lang/libc/pull/4619">#4619</a>)</li>
+<li>Android: Add <code>CLONE_CLEAR_SIGHAND</code> and <code>CLONE_INTO_CGROUP</code> (<a href="https://github.com/rust-lang/libc/pull/4502">#4502</a>)</li>
+<li>Android: Add more <code>prctl</code> constants (<a href="https://github.com/rust-lang/libc/pull/4531">#4531</a>)</li>
+<li>FreeBSD Add further TCP stack-related constants (<a href="https://github.com/rust-lang/libc/pull/4196">#4196</a>)</li>
+<li>FreeBSD x86-64: Add <code>mcontext_t.mc_tlsbase </code> (<a href="https://github.com/rust-lang/libc/pull/4503">#4503</a>)</li>
+<li>FreeBSD15: Add <code>kinfo_proc.ki_uerrmsg</code> (<a href="https://github.com/rust-lang/libc/pull/4552">#4552</a>)</li>
+<li>FreeBSD: Add <code>in_conninfo</code> (<a href="https://github.com/rust-lang/libc/pull/4482">#4482</a>)</li>
+<li>FreeBSD: Add <code>xinpgen</code> and related types (<a href="https://github.com/rust-lang/libc/pull/4482">#4482</a>)</li>
+<li>FreeBSD: Add <code>xktls_session</code> (<a href="https://github.com/rust-lang/libc/pull/4482">#4482</a>)</li>
+<li>Haiku: Add functionality from <code>libbsd</code> (<a href="https://github.com/rust-lang/libc/pull/4221">#4221</a>)</li>
+<li>Linux: Add <code>SECBIT_*</code> (<a href="https://github.com/rust-lang/libc/pull/4480">#4480</a>)</li>
+<li>NetBSD, OpenBSD: Export <code>ioctl</code> request generator macros (<a href="https://github.com/rust-lang/libc/pull/4460">#4460</a>)</li>
+<li>NetBSD: Add <code>ptsname_r</code> (<a href="https://github.com/rust-lang/libc/pull/4608">#4608</a>)</li>
+<li>RISCV32: Add time-related syscalls (<a href="https://github.com/rust-lang/libc/pull/4612">#4612</a>)</li>
+<li>Solarish: Add <code>strftime*</code> (<a href="https://github.com/rust-lang/libc/pull/4453">#4453</a>)</li>
+<li>linux: Add <code>EXEC_RESTRICT_*</code> and <code>EXEC_DENY_*</code> (<a href="https://github.com/rust-lang/libc/pull/4545">#4545</a>)</li>
+</ul>
+<h3 id="changed-9">Changed</h3>
+<ul>
+<li>AIX: Add <code>const</code> to signatures to be consistent with other platforms (<a href="https://github.com/rust-lang/libc/pull/4563">#4563</a>)</li>
+</ul>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>AIX: Fix the type of <code>struct statvfs.f_fsid</code> (<a href="https://github.com/rust-lang/libc/pull/4576">#4576</a>)</li>
+<li>AIX: Fix the type of constants for the <code>ioctl</code> <code>request</code> argument (<a href="https://github.com/rust-lang/libc/pull/4582">#4582</a>)</li>
+<li>AIX: Fix the types of <code>stat{,64}.st_*tim</code> (<a href="https://github.com/rust-lang/libc/pull/4597">#4597</a>)</li>
+<li>AIX: Use unique <code>errno</code> values (<a href="https://github.com/rust-lang/libc/pull/4507">#4507</a>)</li>
+<li>Build: Fix an incorrect <code>target_os</code> -&gt; <code>target_arch</code> check (<a href="https://github.com/rust-lang/libc/pull/4550">#4550</a>)</li>
+<li>FreeBSD: Fix the type of <code>xktls_session_onedir.ifnet</code> (<a href="https://github.com/rust-lang/libc/pull/4552">#4552</a>)</li>
+<li>Mips64 musl: Fix the type of <code>nlink_t</code> (<a href="https://github.com/rust-lang/libc/pull/4509">#4509</a>)</li>
+<li>Mips64 musl: Use a special MIPS definition of <code>stack_t</code> (<a href="https://github.com/rust-lang/libc/pull/4528">#4528</a>)</li>
+<li>Mips64: Fix <code>SI_TIMER</code>, <code>SI_MESGQ</code> and <code>SI_ASYNCIO</code> definitions (<a href="https://github.com/rust-lang/libc/pull/4529">#4529</a>)</li>
+<li>Musl Mips64: Swap the order of <code>si_errno</code> and <code>si_code</code> in <code>siginfo_t</code> (<a href="https://github.com/rust-lang/libc/pull/4530">#4530</a>)</li>
+<li>Musl Mips64: Use a special MIPS definition of <code>statfs</code> (<a href="https://github.com/rust-lang/libc/pull/4527">#4527</a>)</li>
+<li>Musl: Fix the definition of <code>fanotify_event_metadata</code> (<a href="https://github.com/rust-lang/libc/pull/4510">#4510</a>)</li>
+<li>NetBSD: Correct <code>enum fae_action</code> to be <code>#[repr(C)]</code> (<a href="https://github.com/rust-lang/libc/commit/60a8cfd564f83164d45b9533ff7a0d7371878f2a">#60a8cfd5</a>)</li>
+<li>PSP: Correct <code>char</code> -&gt; <code>c_char</code> (<a href="https://github.com/rust-lang/libc/commit/eaab4fc3f05dc646a953d4fd5ba46dfa1f8bd6f6">eaab4fc3</a>)</li>
+<li>PowerPC musl: Fix <code>termios</code> definitions (<a href="https://github.com/rust-lang/libc/pull/4518">#4518</a>)</li>
+<li>PowerPC musl: Fix the definition of <code>EDEADLK</code> (<a href="https://github.com/rust-lang/libc/pull/4517">#4517</a>)</li>
+<li>PowerPC musl: Fix the definition of <code>NCCS</code> (<a href="https://github.com/rust-lang/libc/pull/4513">#4513</a>)</li>
+<li>PowerPC musl: Fix the definitions of <code>MAP_LOCKED</code> and <code>MAP_NORESERVE</code> (<a href="https://github.com/rust-lang/libc/pull/4516">#4516</a>)</li>
+<li>PowerPC64 musl: Fix the definition of <code>shmid_ds</code> (<a href="https://github.com/rust-lang/libc/pull/4519">#4519</a>)</li>
+</ul>
+<h3 id="deprecated-5">Deprecated</h3>
+<ul>
+<li>Linux: <code>MAP_32BIT</code> is only defined on x86 on non-x86 architectures (<a href="https://github.com/rust-lang/libc/pull/4511">#4511</a>)</li>
+</ul>
+<h3 id="removed-4">Removed</h3>
+<ul>
+<li>AIX: Remove duplicate constant definitions <code>FIND</code> and <code>ENTER</code> (<a href="https://github.com/rust-lang/libc/pull/4588">#4588</a>)</li>
+<li>s390x musl: Remove <code>O_FSYNC</code> (<a href="https://github.com/rust-lang/libc/pull/4515">#4515</a>)</li>
+<li>s390x musl: Remove <code>RTLD_DEEPBIND</code> (<a href="https://github.com/rust-lang/libc/pull/4515">#4515</a>)</li>
+</ul>
+<h2 id="02174---2025-06-17"><a href="https://github.com/rust-lang/libc/compare/0.2.173...0.2.174">0.2.174</a> - 2025-06-17</h2>
+<h3 id="added-14">Added</h3>
+<ul>
+<li>Linux: Make <code>pidfd_info</code> fields pub (<a href="https://github.com/rust-lang/libc/pull/4487">#4487</a>)</li>
+</ul>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>Gnu x32: Add missing <code>timespec.tv_nsec</code> (<a href="https://github.com/rust-lang/libc/pull/4497">#4497</a>)</li>
+<li>NuttX: Use <code>nlink_t</code> type for <code>st_nlink</code> in <code>struct stat</code> definition (<a href="https://github.com/rust-lang/libc/pull/4483">#4483</a>)</li>
+</ul>
+<h3 id="other-1">Other</h3>
+<ul>
+<li>Allow new <code>unpredictable_function_pointer_comparisons</code> lints (<a href="https://github.com/rust-lang/libc/pull/4489">#4489</a>)</li>
+<li>OpenBSD: Fix some clippy warnings to use <code>pointer::cast</code>. (<a href="https://github.com/rust-lang/libc/pull/4490">#4490</a>)</li>
+<li>Remove unessecary semicolons from definitions of <code>CMSG_NXTHDR</code>. (<a href="https://github.com/rust-lang/libc/pull/4492">#4492</a>)</li>
+</ul>
+<h2 id="02173---2025-06-09"><a href="https://github.com/rust-lang/libc/compare/0.2.172...0.2.173">0.2.173</a> - 2025-06-09</h2>
+<h3 id="added-15">Added</h3>
+<ul>
+<li>AIX: Add an AIX triple to Cargo.toml for doc (<a href="https://github.com/rust-lang/libc/pull/4475">#4475</a>)</li>
+<li>FreeBSD: Add the <code>SO_SPLICE</code> socket option support for FreeBSD &gt;= 14.2 (<a href="https://github.com/rust-lang/libc/pull/4451">#4451</a>)</li>
+<li>Linux GNU: Prepare for supporting <code>_TIME_BITS=64</code> (<a href="https://github.com/rust-lang/libc/pull/4433">#4433</a>)</li>
+<li>Linux: Add constant PACKET_IGNORE_OUTGOING (<a href="https://github.com/rust-lang/libc/pull/4319">#4319</a>)</li>
+<li>Linux: Add constants and types for <code>nsfs</code> ioctls (<a href="https://github.com/rust-lang/libc/pull/4436">#4436</a>)</li>
+<li>Linux: Add constants for Memory-Deny-Write-Execute <code>prctls</code> (<a href="https://github.com/rust-lang/libc/pull/4400">#4400</a>)</li>
+<li>Linux: Add constants from <code>linux/cn_proc.h</code> and <code>linux/connector.h</code> (<a href="https://github.com/rust-lang/libc/pull/4434">#4434</a>)</li>
+<li>Linux: Add new flags for <code>pwritev2</code> and <code>preadv2</code> (<a href="https://github.com/rust-lang/libc/pull/4452">#4452</a>)</li>
+<li>Linux: Add pid_type enum values (<a href="https://github.com/rust-lang/libc/pull/4403">#4403</a>)</li>
+<li>Linux: Update pidfd constants and types (Linux 6.9-6.15) (<a href="https://github.com/rust-lang/libc/pull/4402">#4402</a>)</li>
+<li>Loongarch64 musl: Define the <code>MADV_SOFT_OFFLINE</code> constant (<a href="https://github.com/rust-lang/libc/pull/4448">#4448</a>)</li>
+<li>Musl: Add new fields since 1.2.0/1.2.2 to <code>struct tcp_info</code> (<a href="https://github.com/rust-lang/libc/pull/4443">#4443</a>)</li>
+<li>Musl: Prepare for supporting v1.2.3 (<a href="https://github.com/rust-lang/libc/pull/4443">#4443</a>)</li>
+<li>NuttX: Add <code>arc4random</code> and <code>arc4random_buf</code> (<a href="https://github.com/rust-lang/libc/pull/4464">#4464</a>)</li>
+<li>RISC-V Musl: Add <code>MADV_SOFT_OFFLINE</code> definition (<a href="https://github.com/rust-lang/libc/pull/4447">#4447</a>)</li>
+<li>Redox: Define SCM_RIGHTS (<a href="https://github.com/rust-lang/libc/pull/4440">#4440</a>)</li>
+<li>VxWorks: Add missing UTIME defines and TASK_RENAME_LENGTH (<a href="https://github.com/rust-lang/libc/pull/4407">#4407</a>)</li>
+<li>Windows: Add more <code>time.h</code> functions (<a href="https://github.com/rust-lang/libc/pull/4427">#4427</a>)</li>
+</ul>
+<h3 id="changed-10">Changed</h3>
+<ul>
+<li>Redox: Update <code>SA_</code> constants. (<a href="https://github.com/rust-lang/libc/pull/4426">#4426</a>)</li>
+<li>Redox: make <code>CMSG_ALIGN</code>, <code>CMSG_LEN</code>, and <code>CMSG_SPACE</code> const functions (<a href="https://github.com/rust-lang/libc/pull/4441">#4441</a>)</li>
+</ul>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>AIX: Enable libc-test and fix definitions/declarations. (<a href="https://github.com/rust-lang/libc/pull/4450">#4450</a>)</li>
+<li>Emscripten: Fix querying emcc on windows (use emcc.bat) (<a href="https://github.com/rust-lang/libc/pull/4248">#4248</a>)</li>
+<li>Hurd: Fix build from missing <code>fpos_t</code> (<a href="https://github.com/rust-lang/libc/pull/4472">#4472</a>)</li>
+<li>Loongarch64 Musl: Fix the <code>struct ipc_perm</code> bindings (<a href="https://github.com/rust-lang/libc/pull/4384">#4384</a>)</li>
+<li>Musl: Fix the <code>O_LARGEFILE</code> constant value. (<a href="https://github.com/rust-lang/libc/pull/4443">#4443</a>)</li>
+</ul>
+<h2 id="02172---2025-04-14"><a href="https://github.com/rust-lang/libc/compare/0.2.171...0.2.172">0.2.172</a> - 2025-04-14</h2>
+<h3 id="added-16">Added</h3>
+<ul>
+<li>Android: Add <code>getauxval</code> for 32-bit targets (<a href="https://github.com/rust-lang/libc/pull/4338">#4338</a>)</li>
+<li>Android: Add <code>if_tun.h</code> ioctls (<a href="https://github.com/rust-lang/libc/pull/4379">#4379</a>)</li>
+<li>Android: Define <code>SO_BINDTOIFINDEX</code> (<a href="https://github.com/rust-lang/libc/pull/4391">#4391</a>)</li>
+<li>Cygwin: Add <code>posix_spawn_file_actions_add[f]chdir[_np]</code> (<a href="https://github.com/rust-lang/libc/pull/4387">#4387</a>)</li>
+<li>Cygwin: Add new socket options (<a href="https://github.com/rust-lang/libc/pull/4350">#4350</a>)</li>
+<li>Cygwin: Add statfs &amp; fcntl (<a href="https://github.com/rust-lang/libc/pull/4321">#4321</a>)</li>
+<li>FreeBSD: Add <code>filedesc</code> and <code>fdescenttbl</code> (<a href="https://github.com/rust-lang/libc/pull/4327">#4327</a>)</li>
+<li>Glibc: Add unstable support for _FILE_OFFSET_BITS=64 (<a href="https://github.com/rust-lang/libc/pull/4345">#4345</a>)</li>
+<li>Hermit: Add <code>AF_UNSPEC</code> (<a href="https://github.com/rust-lang/libc/pull/4344">#4344</a>)</li>
+<li>Hermit: Add <code>AF_VSOCK</code> (<a href="https://github.com/rust-lang/libc/pull/4344">#4344</a>)</li>
+<li>Illumos, NetBSD: Add <code>timerfd</code> APIs (<a href="https://github.com/rust-lang/libc/pull/4333">#4333</a>)</li>
+<li>Linux: Add <code>_IO</code>, <code>_IOW</code>, <code>_IOR</code>, <code>_IOWR</code> to the exported API (<a href="https://github.com/rust-lang/libc/pull/4325">#4325</a>)</li>
+<li>Linux: Add <code>tcp_info</code> to uClibc bindings (<a href="https://github.com/rust-lang/libc/pull/4347">#4347</a>)</li>
+<li>Linux: Add further BPF program flags (<a href="https://github.com/rust-lang/libc/pull/4356">#4356</a>)</li>
+<li>Linux: Add missing INPUT_PROP_XXX flags from <code>input-event-codes.h</code> (<a href="https://github.com/rust-lang/libc/pull/4326">#4326</a>)</li>
+<li>Linux: Add missing TLS bindings (<a href="https://github.com/rust-lang/libc/pull/4296">#4296</a>)</li>
+<li>Linux: Add more constants from <code>seccomp.h</code> (<a href="https://github.com/rust-lang/libc/pull/4330">#4330</a>)</li>
+<li>Linux: Add more glibc <code>ptrace_sud_config</code> and related <code>PTRACE_*ET_SYSCALL_USER_DISPATCH_CONFIG</code>. (<a href="https://github.com/rust-lang/libc/pull/4386">#4386</a>)</li>
+<li>Linux: Add new netlink flags (<a href="https://github.com/rust-lang/libc/pull/4288">#4288</a>)</li>
+<li>Linux: Define ioctl codes on more architectures (<a href="https://github.com/rust-lang/libc/pull/4382">#4382</a>)</li>
+<li>Linux: Add missing <code>pthread_attr_setstack</code> (<a href="https://github.com/rust-lang/libc/pull/4349">#4349</a>)</li>
+<li>Musl: Add missing <code>utmpx</code> API (<a href="https://github.com/rust-lang/libc/pull/4332">#4332</a>)</li>
+<li>Musl: Enable <code>getrandom</code> on all platforms (<a href="https://github.com/rust-lang/libc/pull/4346">#4346</a>)</li>
+<li>NuttX: Add more signal constants (<a href="https://github.com/rust-lang/libc/pull/4353">#4353</a>)</li>
+<li>QNX: Add QNX 7.1-iosock and 8.0 to list of additional cfgs (<a href="https://github.com/rust-lang/libc/pull/4169">#4169</a>)</li>
+<li>QNX: Add support for alternative Neutrino network stack <code>io-sock</code> (<a href="https://github.com/rust-lang/libc/pull/4169">#4169</a>)</li>
+<li>Redox: Add more <code>sys/socket.h</code> and <code>sys/uio.h</code> definitions (<a href="https://github.com/rust-lang/libc/pull/4388">#4388</a>)</li>
+<li>Solaris: Temporarily define <code>O_DIRECT</code> and <code>SIGINFO</code> (<a href="https://github.com/rust-lang/libc/pull/4348">#4348</a>)</li>
+<li>Solarish: Add <code>secure_getenv</code> (<a href="https://github.com/rust-lang/libc/pull/4342">#4342</a>)</li>
+<li>VxWorks: Add missing <code>d_type</code> member to <code>dirent</code> (<a href="https://github.com/rust-lang/libc/pull/4352">#4352</a>)</li>
+<li>VxWorks: Add missing signal-related constsants (<a href="https://github.com/rust-lang/libc/pull/4352">#4352</a>)</li>
+<li>VxWorks: Add more error codes (<a href="https://github.com/rust-lang/libc/pull/4337">#4337</a>)</li>
+</ul>
+<h3 id="deprecated-6">Deprecated</h3>
+<ul>
+<li>FreeBSD: Deprecate <code>TCP_PCAP_OUT</code> and <code>TCP_PCAP_IN</code> (<a href="https://github.com/rust-lang/libc/pull/4381">#4381</a>)</li>
+</ul>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>Cygwin: Fix member types of <code>statfs</code> (<a href="https://github.com/rust-lang/libc/pull/4324">#4324</a>)</li>
+<li>Cygwin: Fix tests  (<a href="https://github.com/rust-lang/libc/pull/4357">#4357</a>)</li>
+<li>Hermit: Make <code>AF_INET = 3</code> (<a href="https://github.com/rust-lang/libc/pull/4344">#4344</a>)</li>
+<li>Musl: Fix the syscall table on RISC-V-32 (<a href="https://github.com/rust-lang/libc/pull/4335">#4335</a>)</li>
+<li>Musl: Fix the value of <code>SA_ONSTACK</code> on RISC-V-32 (<a href="https://github.com/rust-lang/libc/pull/4335">#4335</a>)</li>
+<li>VxWorks: Fix a typo in the <code>waitpid</code> parameter name (<a href="https://github.com/rust-lang/libc/pull/4334">#4334</a>)</li>
+</ul>
+<h3 id="removed-5">Removed</h3>
+<ul>
+<li>Musl: Remove <code>O_FSYNC</code> on RISC-V-32 (use <code>O_SYNC</code> instead) (<a href="https://github.com/rust-lang/libc/pull/4335">#4335</a>)</li>
+<li>Musl: Remove <code>RTLD_DEEPBIND</code> on RISC-V-32 (<a href="https://github.com/rust-lang/libc/pull/4335">#4335</a>)</li>
+</ul>
+<h3 id="other-2">Other</h3>
+<ul>
+<li>CI: Add matrix env variables to the environment (<a href="https://github.com/rust-lang/libc/pull/4345">#4345</a>)</li>
+<li>CI: Always deny warnings (<a href="https://github.com/rust-lang/libc/pull/4363">#4363</a>)</li>
+<li>CI: Always upload successfully created artifacts (<a href="https://github.com/rust-lang/libc/pull/4345">#4345</a>)</li>
+<li>CI: Install musl from source for loongarch64 (<a href="https://github.com/rust-lang/libc/pull/4320">#4320</a>)</li>
+<li>CI: Revert "Also skip <code>MFD_EXEC</code> and <code>MFD_NOEXEC_SEAL</code> on sparc64" (<a href="">#</a>)</li>
+<li>CI: Use <code>$PWD</code> instead of <code>$(pwd)</code> in run-docker (<a href="https://github.com/rust-lang/libc/pull/4345">#4345</a>)</li>
+<li>Solarish: Restrict <code>openpty</code> and <code>forkpty</code> polyfills to Illumos, replace Solaris implementation with bindings (<a href="https://github.com/rust-lang/libc/pull/4329">#4329</a>)</li>
+<li>Testing: Ensure the makedev test does not emit unused errors (<a href="https://github.com/rust-lang/libc/pull/4363">#4363</a>)</li>
+</ul>
+<h2 id="02171---2025-03-11"><a href="https://github.com/rust-lang/libc/compare/0.2.170...0.2.171">0.2.171</a> - 2025-03-11</h2>
+<h3 id="added-17">Added</h3>
+<ul>
+<li>Android: Add <code>if_nameindex</code>/<code>if_freenameindex</code> support (<a href="https://github.com/rust-lang/libc/pull/4247">#4247</a>)</li>
+<li>Apple: Add missing proc types and constants (<a href="https://github.com/rust-lang/libc/pull/4310">#4310</a>)</li>
+<li>BSD: Add <code>devname</code> (<a href="https://github.com/rust-lang/libc/pull/4285">#4285</a>)</li>
+<li>Cygwin: Add PTY and group API (<a href="https://github.com/rust-lang/libc/pull/4309">#4309</a>)</li>
+<li>Cygwin: Add support (<a href="https://github.com/rust-lang/libc/pull/4279">#4279</a>)</li>
+<li>FreeBSD: Make <code>spawn.h</code> interfaces available on all FreeBSD-like systems (<a href="https://github.com/rust-lang/libc/pull/4294">#4294</a>)</li>
+<li>Linux: Add <code>AF_XDP</code> structs for all Linux environments (<a href="https://github.com/rust-lang/libc/pull/4163">#4163</a>)</li>
+<li>Linux: Add SysV semaphore constants (<a href="https://github.com/rust-lang/libc/pull/4286">#4286</a>)</li>
+<li>Linux: Add <code>F_SEAL_EXEC</code> (<a href="https://github.com/rust-lang/libc/pull/4316">#4316</a>)</li>
+<li>Linux: Add <code>SO_PREFER_BUSY_POLL</code> and <code>SO_BUSY_POLL_BUDGET</code> (<a href="https://github.com/rust-lang/libc/pull/3917">#3917</a>)</li>
+<li>Linux: Add <code>devmem</code> structs (<a href="https://github.com/rust-lang/libc/pull/4299">#4299</a>)</li>
+<li>Linux: Add socket constants up to <code>SO_DEVMEM_DONTNEED</code> (<a href="https://github.com/rust-lang/libc/pull/4299">#4299</a>)</li>
+<li>NetBSD, OpenBSD, DragonflyBSD: Add <code>closefrom</code> (<a href="https://github.com/rust-lang/libc/pull/4290">#4290</a>)</li>
+<li>NuttX: Add <code>pw_passwd</code> field to <code>passwd</code> (<a href="https://github.com/rust-lang/libc/pull/4222">#4222</a>)</li>
+<li>Solarish: define <code>IP_BOUND_IF</code> and <code>IPV6_BOUND_IF</code> (<a href="https://github.com/rust-lang/libc/pull/4287">#4287</a>)</li>
+<li>Wali: Add bindings for <code>wasm32-wali-linux-musl</code> target (<a href="https://github.com/rust-lang/libc/pull/4244">#4244</a>)</li>
+</ul>
+<h3 id="changed-11">Changed</h3>
+<ul>
+<li>AIX: Use <code>sa_sigaction</code> instead of a union (<a href="https://github.com/rust-lang/libc/pull/4250">#4250</a>)</li>
+<li>Make <code>msqid_ds.__msg_cbytes</code> public (<a href="https://github.com/rust-lang/libc/pull/4301">#4301</a>)</li>
+<li>Unix: Make all <code>major</code>, <code>minor</code>, <code>makedev</code> into <code>const fn</code> (<a href="https://github.com/rust-lang/libc/pull/4208">#4208</a>)</li>
+</ul>
+<h3 id="deprecated-7">Deprecated</h3>
+<ul>
+<li>Linux: Deprecate obsolete packet filter interfaces (<a href="https://github.com/rust-lang/libc/pull/4267">#4267</a>)</li>
+</ul>
+<h3 id="fixed-14">Fixed</h3>
+<ul>
+<li>Cygwin: Fix strerror_r (<a href="https://github.com/rust-lang/libc/pull/4308">#4308</a>)</li>
+<li>Cygwin: Fix usage of f! (<a href="https://github.com/rust-lang/libc/pull/4308">#4308</a>)</li>
+<li>Hermit: Make <code>stat::st_size</code> signed (<a href="https://github.com/rust-lang/libc/pull/4298">#4298</a>)</li>
+<li>Linux: Correct values for <code>SI_TIMER</code>, <code>SI_MESGQ</code>, <code>SI_ASYNCIO</code> (<a href="https://github.com/rust-lang/libc/pull/4292">#4292</a>)</li>
+<li>NuttX: Update <code>tm_zone</code> and <code>d_name</code> fields to use <code>c_char</code> type (<a href="https://github.com/rust-lang/libc/pull/4222">#4222</a>)</li>
+<li>Xous: Include the prelude to define <code>c_int</code> (<a href="https://github.com/rust-lang/libc/pull/4304">#4304</a>)</li>
+</ul>
+<h3 id="other-3">Other</h3>
+<ul>
+<li>Add labels to FIXMEs (<a href="https://github.com/rust-lang/libc/pull/4231">#4231</a>, <a href="https://github.com/rust-lang/libc/pull/4232">#4232</a>, <a href="https://github.com/rust-lang/libc/pull/4234">#4234</a>, <a href="https://github.com/rust-lang/libc/pull/4235">#4235</a>, <a href="https://github.com/rust-lang/libc/pull/4236">#4236</a>)</li>
+<li>CI: Fix "cannot find libc" error on Sparc64 (<a href="https://github.com/rust-lang/libc/pull/4317">#4317</a>)</li>
+<li>CI: Fix "cannot find libc" error on s390x (<a href="https://github.com/rust-lang/libc/pull/4317">#4317</a>)</li>
+<li>CI: Pass <code>--no-self-update</code> to <code>rustup update</code> (<a href="https://github.com/rust-lang/libc/pull/4306">#4306</a>)</li>
+<li>CI: Remove tests for the <code>i586-pc-windows-msvc</code> target (<a href="https://github.com/rust-lang/libc/pull/4311">#4311</a>)</li>
+<li>CI: Remove the <code>check_cfg</code> job (<a href="https://github.com/rust-lang/libc/pull/4312">#4322</a>)</li>
+<li>Change the range syntax that is giving <code>ctest</code> problems (<a href="https://github.com/rust-lang/libc/pull/4311">#4311</a>)</li>
+<li>Linux: Split out the stat struct for gnu/b32/mips (<a href="https://github.com/rust-lang/libc/pull/4276">#4276</a>)</li>
+</ul>
+<h3 id="removed-6">Removed</h3>
+<ul>
+<li>NuttX: Remove <code>pthread_set_name_np</code> (<a href="https://github.com/rust-lang/libc/pull/4251">#4251</a>)</li>
+</ul>
+<h2 id="02170---2025-02-23"><a href="https://github.com/rust-lang/libc/compare/0.2.169...0.2.170">0.2.170</a> - 2025-02-23</h2>
+<h3 id="added-18">Added</h3>
+<ul>
+<li>Android: Declare <code>setdomainname</code> and <code>getdomainname</code> <a href="https://github.com/rust-lang/libc/pull/4212">https://github.com/rust-lang/libc/pull/4212</a></li>
+<li>FreeBSD: Add <code>evdev</code> structures <a href="https://github.com/rust-lang/libc/pull/3756">https://github.com/rust-lang/libc/pull/3756</a></li>
+<li>FreeBSD: Add the new <code>st_filerev</code> field to <code>stat32</code> (<a href="https://github.com/rust-lang/libc/pull/4254">#4254</a>)</li>
+<li>Linux: Add <code>SI_*`` and </code>TRAP_*`` signal codes <a href="https://github.com/rust-lang/libc/pull/4225">https://github.com/rust-lang/libc/pull/4225</a></li>
+<li>Linux: Add experimental configuration to enable 64-bit time in kernel APIs, set by <code>RUST_LIBC_UNSTABLE_LINUX_TIME_BITS64</code>. <a href="https://github.com/rust-lang/libc/pull/4148">https://github.com/rust-lang/libc/pull/4148</a></li>
+<li>Linux: Add recent socket timestamping flags <a href="https://github.com/rust-lang/libc/pull/4273">https://github.com/rust-lang/libc/pull/4273</a></li>
+<li>Linux: Added new CANFD_FDF flag for the flags field of canfd_frame <a href="https://github.com/rust-lang/libc/pull/4223">https://github.com/rust-lang/libc/pull/4223</a></li>
+<li>Musl: add CLONE_NEWTIME <a href="https://github.com/rust-lang/libc/pull/4226">https://github.com/rust-lang/libc/pull/4226</a></li>
+<li>Solarish: add the posix_spawn family of functions <a href="https://github.com/rust-lang/libc/pull/4259">https://github.com/rust-lang/libc/pull/4259</a></li>
+</ul>
+<h3 id="deprecated-8">Deprecated</h3>
+<ul>
+<li>Linux: deprecate kernel modules syscalls <a href="https://github.com/rust-lang/libc/pull/4228">https://github.com/rust-lang/libc/pull/4228</a></li>
+</ul>
+<h3 id="changed-12">Changed</h3>
+<ul>
+<li>Emscripten: Assume version is at least 3.1.42 <a href="https://github.com/rust-lang/libc/pull/4243">https://github.com/rust-lang/libc/pull/4243</a></li>
+</ul>
+<h3 id="fixed-15">Fixed</h3>
+<ul>
+<li>BSD: Correct the definition of <code>WEXITSTATUS</code> <a href="https://github.com/rust-lang/libc/pull/4213">https://github.com/rust-lang/libc/pull/4213</a></li>
+<li>Hurd: Fix CMSG_DATA on 64bit systems (<a href="https://github.com/rust-lang/libc/pull/424">#4240</a>)</li>
+<li>NetBSD: fix <code>getmntinfo</code> (<a href="https://github.com/rust-lang/libc/pull/4265">#4265</a></li>
+<li>VxWorks: Fix the size of <code>time_t</code> <a href="https://github.com/rust-lang/libc/pull/426">https://github.com/rust-lang/libc/pull/426</a></li>
+</ul>
+<h3 id="other-4">Other</h3>
+<ul>
+<li>Add labels to FIXMEs <a href="https://github.com/rust-lang/libc/pull/4230">https://github.com/rust-lang/libc/pull/4230</a>, <a href="https://github.com/rust-lang/libc/pull/4229">https://github.com/rust-lang/libc/pull/4229</a>, <a href="https://github.com/rust-lang/libc/pull/4237">https://github.com/rust-lang/libc/pull/4237</a></li>
+<li>CI: Bump FreeBSD CI to 13.4 and 14.2 <a href="https://github.com/rust-lang/libc/pull/4260">https://github.com/rust-lang/libc/pull/4260</a></li>
+<li>Copy definitions from core::ffi and centralize them <a href="https://github.com/rust-lang/libc/pull/4256">https://github.com/rust-lang/libc/pull/4256</a></li>
+<li>Define c_char at top-level and remove per-target c_char definitions <a href="https://github.com/rust-lang/libc/pull/4202">https://github.com/rust-lang/libc/pull/4202</a></li>
+<li>Port style.rs to syn and add tests for the style checker <a href="https://github.com/rust-lang/libc/pull/4220">https://github.com/rust-lang/libc/pull/4220</a></li>
+</ul>
+<h2 id="02169---2024-12-18"><a href="https://github.com/rust-lang/libc/compare/0.2.168...0.2.169">0.2.169</a> - 2024-12-18</h2>
+<h3 id="added-19">Added</h3>
+<ul>
+<li>FreeBSD: add more socket TCP stack constants <a href="https://github.com/rust-lang/libc/pull/4193">https://github.com/rust-lang/libc/pull/4193</a></li>
+<li>Fuchsia: add a <code>sockaddr_vm</code> definition <a href="https://github.com/rust-lang/libc/pull/4194">https://github.com/rust-lang/libc/pull/4194</a></li>
+</ul>
+<h3 id="fixed-16">Fixed</h3>
+<p><strong>Breaking</strong>: <a href="https://github.com/rust-lang/rust/pull/132975">rust-lang/rust#132975</a> corrected the signedness of <code>core::ffi::c_char</code> on various Tier 2 and Tier 3 platforms (mostly Arm and RISC-V) to match Clang. This release contains the corresponding changes to <code>libc</code>, including the following specific pull requests:</p>
+<ul>
+<li>ESP-IDF: Replace arch-conditional <code>c_char</code> with a reexport <a href="https://github.com/rust-lang/libc/pull/4195">https://github.com/rust-lang/libc/pull/4195</a></li>
+<li>Fix <code>c_char</code> on various targets <a href="https://github.com/rust-lang/libc/pull/4199">https://github.com/rust-lang/libc/pull/4199</a></li>
+<li>Mirror <code>c_char</code> configuration from <code>rust-lang/rust</code> <a href="https://github.com/rust-lang/libc/pull/4198">https://github.com/rust-lang/libc/pull/4198</a></li>
+</ul>
+<h3 id="cleanup">Cleanup</h3>
+<ul>
+<li>Do not re-export <code>c_void</code> in target-specific code <a href="https://github.com/rust-lang/libc/pull/4200">https://github.com/rust-lang/libc/pull/4200</a></li>
+</ul>
+<h2 id="02168---2024-12-09"><a href="https://github.com/rust-lang/libc/compare/0.2.167...0.2.168">0.2.168</a> - 2024-12-09</h2>
+<h3 id="added-20">Added</h3>
+<ul>
+<li>Linux: Add new process flags (<a href="https://github.com/rust-lang/libc/pull/4174">#4174</a>)</li>
+<li>Linux: Make <code>IFA_*</code> constants available on all Linux targets <a href="https://github.com/rust-lang/libc/pull/4185">https://github.com/rust-lang/libc/pull/4185</a></li>
+<li>Linux: add <code>MAP_DROPPABLE</code> <a href="https://github.com/rust-lang/libc/pull/4173">https://github.com/rust-lang/libc/pull/4173</a></li>
+<li>Solaris, Illumos: add <code>SIGRTMIN</code> and <code>SIGRTMAX</code> <a href="https://github.com/rust-lang/libc/pull/4171">https://github.com/rust-lang/libc/pull/4171</a></li>
+<li>Unix, Linux: adding POSIX <code>memccpy</code> and <code>mempcpy</code> GNU extension &lt;<a href="https://github.com/rust-lang/libc/pull/4186">https://github.com/rust-lang/libc/pull/4186</a>.</li>
+</ul>
+<h3 id="deprecated-9">Deprecated</h3>
+<ul>
+<li>FreeBSD: Deprecate the CAP_UNUSED* and CAP_ALL* constants (<a href="https://github.com/rust-lang/libc/pull/4183">#4183</a>)</li>
+</ul>
+<h3 id="fixed-17">Fixed</h3>
+<ul>
+<li>Make the <code>Debug</code> implementation for unions opaque (<a href="https://github.com/rust-lang/libc/pull/4176">#4176</a>)</li>
+</ul>
+<h3 id="other-5">Other</h3>
+<ul>
+<li>Allow the <code>unpredictable_function_pointer_comparisons</code> lint where needed <a href="https://github.com/rust-lang/libc/pull/4177">https://github.com/rust-lang/libc/pull/4177</a></li>
+<li>CI: Upload artifacts created by libc-test <a href="https://github.com/rust-lang/libc/pull/4180">https://github.com/rust-lang/libc/pull/4180</a></li>
+<li>CI: Use workflow commands to group output by target <a href="https://github.com/rust-lang/libc/pull/4179">https://github.com/rust-lang/libc/pull/4179</a></li>
+<li>CI: add caching <a href="https://github.com/rust-lang/libc/pull/4183">https://github.com/rust-lang/libc/pull/4183</a></li>
+</ul>
+<h2 id="02167---2024-11-28"><a href="https://github.com/rust-lang/libc/compare/0.2.166...0.2.167">0.2.167</a> - 2024-11-28</h2>
+<h3 id="added-21">Added</h3>
+<ul>
+<li>Solarish: add <code>st_fstype</code> to <code>stat</code> <a href="https://github.com/rust-lang/libc/pull/4145">https://github.com/rust-lang/libc/pull/4145</a></li>
+<li>Trusty: Add <code>intptr_t</code> and <code>uintptr_t</code> (<a href="https://github.com/rust-lang/libc/pull/4161">#4161</a>)</li>
+</ul>
+<h3 id="fixed-18">Fixed</h3>
+<ul>
+<li>Fix the build with <code>rustc-dep-of-std</code> <a href="https://github.com/rust-lang/libc/pull/4158">https://github.com/rust-lang/libc/pull/4158</a></li>
+<li>Wasi: Add back unsafe block for <code>clockid_t</code> static variables (<a href="https://github.com/rust-lang/libc/pull/4157">#4157</a>)</li>
+</ul>
+<h3 id="cleanup-1">Cleanup</h3>
+<ul>
+<li>Create an internal prelude <a href="https://github.com/rust-lang/libc/pull/4161">https://github.com/rust-lang/libc/pull/4161</a></li>
+<li>Fix <code>unused_qualifications</code><a href="https://github.com/rust-lang/libc/pull/4132">https://github.com/rust-lang/libc/pull/4132</a></li>
+</ul>
+<h3 id="other-6">Other</h3>
+<ul>
+<li>CI: Check various FreeBSD versions (<a href="https://github.com/rust-lang/libc/pull/4159">#4159</a>)</li>
+<li>CI: add a timeout for all jobs <a href="https://github.com/rust-lang/libc/pull/4164">https://github.com/rust-lang/libc/pull/4164</a></li>
+<li>CI: verify MSRV for <code>wasm32-wasi</code> <a href="https://github.com/rust-lang/libc/pull/4157">https://github.com/rust-lang/libc/pull/4157</a></li>
+<li>Migrate to the 2021 edition <a href="https://github.com/rust-lang/libc/pull/4132">https://github.com/rust-lang/libc/pull/4132</a></li>
+</ul>
+<h3 id="removed-7">Removed</h3>
+<ul>
+<li>Remove one unused import after the edition 2021 bump</li>
+</ul>
+<h2 id="02166---2024-11-26"><a href="https://github.com/rust-lang/libc/compare/0.2.165...0.2.166">0.2.166</a> - 2024-11-26</h2>
+<h3 id="fixed-19">Fixed</h3>
+<p>This release resolves two cases of unintentional breakage from the previous release:</p>
+<ul>
+<li>Revert removal of array size hacks <a href="https://github.com/rust-lang/libc/pull/4150">#4150</a></li>
+<li>Ensure <code>const extern</code> functions are always enabled <a href="https://github.com/rust-lang/libc/pull/4151">#4151</a></li>
+</ul>
+<h2 id="02165---2024-11-25"><a href="https://github.com/rust-lang/libc/compare/0.2.164...0.2.165">0.2.165</a> - 2024-11-25</h2>
+<h3 id="added-22">Added</h3>
+<ul>
+<li>Android: add <code>mkostemp</code>, <code>mkostemps</code> <a href="https://github.com/rust-lang/libc/pull/3601">https://github.com/rust-lang/libc/pull/3601</a></li>
+<li>Android: add a few API 30 calls <a href="https://github.com/rust-lang/libc/pull/3604">https://github.com/rust-lang/libc/pull/3604</a></li>
+<li>Android: add missing syscall constants <a href="https://github.com/rust-lang/libc/pull/3558">https://github.com/rust-lang/libc/pull/3558</a></li>
+<li>Apple: add <code>in6_ifreq</code> <a href="https://github.com/rust-lang/libc/pull/3617">https://github.com/rust-lang/libc/pull/3617</a></li>
+<li>Apple: add missing <code>sysctl</code> net types <a href="https://github.com/rust-lang/libc/pull/4022">https://github.com/rust-lang/libc/pull/4022</a> (before release: remove <code>if_family_id</code> (<a href="https://github.com/rust-lang/libc/pulls/4137">#4137</a>))</li>
+<li>Freebsd: add <code>kcmp</code> call support <a href="https://github.com/rust-lang/libc/pull/3746">https://github.com/rust-lang/libc/pull/3746</a></li>
+<li>Hurd: add <code>MAP_32BIT</code> and <code>MAP_EXCL</code> <a href="https://github.com/rust-lang/libc/pull/4127">https://github.com/rust-lang/libc/pull/4127</a></li>
+<li>Hurd: add <code>domainname</code> field to <code>utsname</code> (<a href="https://github.com/rust-lang/libc/pulls/4089">#4089</a>)</li>
+<li>Linux GNU: add <code>f_flags</code> to struct <code>statfs</code> for arm, mips, powerpc and x86 <a href="https://github.com/rust-lang/libc/pull/3663">https://github.com/rust-lang/libc/pull/3663</a></li>
+<li>Linux GNU: add <code>malloc_stats</code> <a href="https://github.com/rust-lang/libc/pull/3596">https://github.com/rust-lang/libc/pull/3596</a></li>
+<li>Linux: add ELF relocation-related structs <a href="https://github.com/rust-lang/libc/pull/3583">https://github.com/rust-lang/libc/pull/3583</a></li>
+<li>Linux: add <code>ptp_*</code> structs <a href="https://github.com/rust-lang/libc/pull/4113">https://github.com/rust-lang/libc/pull/4113</a></li>
+<li>Linux: add <code>ptp_clock_caps</code> <a href="https://github.com/rust-lang/libc/pull/4128">https://github.com/rust-lang/libc/pull/4128</a></li>
+<li>Linux: add <code>ptp_pin_function</code> and most <code>PTP_</code> constants <a href="https://github.com/rust-lang/libc/pull/4114">https://github.com/rust-lang/libc/pull/4114</a></li>
+<li>Linux: add missing AF_XDP structs &amp; constants <a href="https://github.com/rust-lang/libc/pull/3956">https://github.com/rust-lang/libc/pull/3956</a></li>
+<li>Linux: add missing netfilter consts (<a href="https://github.com/rust-lang/libc/pulls/3734">#3734</a>)</li>
+<li>Linux: add struct and constants for the <code>mount_setattr</code> syscall <a href="https://github.com/rust-lang/libc/pull/4046">https://github.com/rust-lang/libc/pull/4046</a></li>
+<li>Linux: add wireless API <a href="https://github.com/rust-lang/libc/pull/3441">https://github.com/rust-lang/libc/pull/3441</a></li>
+<li>Linux: expose the <code>len8_dlc</code> field of <code>can_frame</code> <a href="https://github.com/rust-lang/libc/pull/3357">https://github.com/rust-lang/libc/pull/3357</a></li>
+<li>Musl: add <code>utmpx</code> API <a href="https://github.com/rust-lang/libc/pull/3213">https://github.com/rust-lang/libc/pull/3213</a></li>
+<li>Musl: add missing syscall constants <a href="https://github.com/rust-lang/libc/pull/4028">https://github.com/rust-lang/libc/pull/4028</a></li>
+<li>NetBSD: add <code>mcontext</code>-related data for RISCV64 <a href="https://github.com/rust-lang/libc/pull/3468">https://github.com/rust-lang/libc/pull/3468</a></li>
+<li>Redox: add new <code>netinet</code> constants <a href="https://github.com/rust-lang/libc/pull/3586">https://github.com/rust-lang/libc/pull/3586</a>)</li>
+<li>Solarish: add <code>_POSIX_VDISABLE</code> (<a href="https://github.com/rust-lang/libc/pulls/4103">#4103</a>)</li>
+<li>Tests: Add a test that the <code>const extern fn</code> macro works <a href="https://github.com/rust-lang/libc/pull/4134">https://github.com/rust-lang/libc/pull/4134</a></li>
+<li>Tests: Add test of primitive types against <code>std</code> <a href="https://github.com/rust-lang/libc/pull/3616">https://github.com/rust-lang/libc/pull/3616</a></li>
+<li>Unix: Add <code>htonl</code>, <code>htons</code>, <code>ntohl</code>, <code>ntohs</code> <a href="https://github.com/rust-lang/libc/pull/3669">https://github.com/rust-lang/libc/pull/3669</a></li>
+<li>Unix: add <code>aligned_alloc</code> <a href="https://github.com/rust-lang/libc/pull/3843">https://github.com/rust-lang/libc/pull/3843</a></li>
+<li>Windows: add <code>aligned_realloc</code> <a href="https://github.com/rust-lang/libc/pull/3592">https://github.com/rust-lang/libc/pull/3592</a></li>
+</ul>
+<h3 id="fixed-20">Fixed</h3>
+<ul>
+<li><strong>breaking</strong> Hurd: fix <code>MAP_HASSEMAPHORE</code> name (<a href="https://github.com/rust-lang/libc/pulls/4127">#4127</a>)</li>
+<li><strong>breaking</strong> ulibc Mips: fix <code>SA_*</code> mismatched types (<a href="https://github.com/rust-lang/libc/pulls/3211">#3211</a>)</li>
+<li>Aix: fix an enum FFI safety warning <a href="https://github.com/rust-lang/libc/pull/3644">https://github.com/rust-lang/libc/pull/3644</a></li>
+<li>Haiku: fix some typos (<a href="https://github.com/rust-lang/libc/pulls/3664">#3664</a>)</li>
+<li>Tests: fix <code>Elf{32,64}_Relr</code>-related tests <a href="https://github.com/rust-lang/libc/pull/3647">https://github.com/rust-lang/libc/pull/3647</a></li>
+<li>Tests: fix libc-tests for <code>loongarch64-linux-musl</code></li>
+<li>Tests: fix some clippy warnings <a href="https://github.com/rust-lang/libc/pull/3855">https://github.com/rust-lang/libc/pull/3855</a></li>
+<li>Tests: fix tests on <code>riscv64gc-unknown-freebsd</code> <a href="https://github.com/rust-lang/libc/pull/4129">https://github.com/rust-lang/libc/pull/4129</a></li>
+</ul>
+<h3 id="deprecated-10">Deprecated</h3>
+<ul>
+<li>Apple: deprecate <code>iconv_open</code> <a href="https://github.com/rust-lang/libc/commit/25e022a22eca3634166ef472b748c297e60fcf7f">https://github.com/rust-lang/libc/commit/25e022a22eca3634166ef472b748c297e60fcf7f</a></li>
+<li>Apple: deprecate <code>mach_task_self</code> <a href="https://github.com/rust-lang/libc/pull/4095">https://github.com/rust-lang/libc/pull/4095</a></li>
+<li>Apple: update <code>mach</code> deprecation notices for things that were removed in <code>main</code> <a href="https://github.com/rust-lang/libc/pull/4097">https://github.com/rust-lang/libc/pull/4097</a></li>
+</ul>
+<h3 id="cleanup-2">Cleanup</h3>
+<ul>
+<li>Adjust the <code>f!</code> macro to be more flexible <a href="https://github.com/rust-lang/libc/pull/4107">https://github.com/rust-lang/libc/pull/4107</a></li>
+<li>Aix: remove duplicate constants <a href="https://github.com/rust-lang/libc/pull/3643">https://github.com/rust-lang/libc/pull/3643</a></li>
+<li>CI: make scripts more uniform <a href="https://github.com/rust-lang/libc/pull/4042">https://github.com/rust-lang/libc/pull/4042</a></li>
+<li>Drop the <code>libc_align</code> conditional <a href="https://github.com/rust-lang/libc/commit/b5b553d0ee7de0d4781432a9a9a0a6445dd7f34f">https://github.com/rust-lang/libc/commit/b5b553d0ee7de0d4781432a9a9a0a6445dd7f34f</a></li>
+<li>Drop the <code>libc_cfg_target_vendor</code> conditional <a href="https://github.com/rust-lang/libc/pull/4060">https://github.com/rust-lang/libc/pull/4060</a></li>
+<li>Drop the <code>libc_const_size_of</code> conditional <a href="https://github.com/rust-lang/libc/commit/5a43dd2754366f99b3a83881b30246ce0e51833c">https://github.com/rust-lang/libc/commit/5a43dd2754366f99b3a83881b30246ce0e51833c</a></li>
+<li>Drop the <code>libc_core_cvoid</code> conditional <a href="https://github.com/rust-lang/libc/pull/4060">https://github.com/rust-lang/libc/pull/4060</a></li>
+<li>Drop the <code>libc_int128</code> conditional <a href="https://github.com/rust-lang/libc/pull/4060">https://github.com/rust-lang/libc/pull/4060</a></li>
+<li>Drop the <code>libc_non_exhaustive</code> conditional <a href="https://github.com/rust-lang/libc/pull/4060">https://github.com/rust-lang/libc/pull/4060</a></li>
+<li>Drop the <code>libc_packedN</code> conditional <a href="https://github.com/rust-lang/libc/pull/4060">https://github.com/rust-lang/libc/pull/4060</a></li>
+<li>Drop the <code>libc_priv_mod_use</code> conditional <a href="https://github.com/rust-lang/libc/commit/19c59376d11b015009fb9b04f233a30a1bf50a91">https://github.com/rust-lang/libc/commit/19c59376d11b015009fb9b04f233a30a1bf50a91</a></li>
+<li>Drop the <code>libc_union</code> conditional <a href="https://github.com/rust-lang/libc/commit/b9e4d8012f612dfe24147da3e69522763f92b6e3">https://github.com/rust-lang/libc/commit/b9e4d8012f612dfe24147da3e69522763f92b6e3</a></li>
+<li>Drop the <code>long_array</code> conditional <a href="https://github.com/rust-lang/libc/pull/4096">https://github.com/rust-lang/libc/pull/4096</a></li>
+<li>Drop the <code>ptr_addr_of</code> conditional <a href="https://github.com/rust-lang/libc/pull/4065">https://github.com/rust-lang/libc/pull/4065</a></li>
+<li>Drop warnings about deprecated cargo features <a href="https://github.com/rust-lang/libc/pull/4060">https://github.com/rust-lang/libc/pull/4060</a></li>
+<li>Eliminate uses of <code>struct_formatter</code> <a href="https://github.com/rust-lang/libc/pull/4074">https://github.com/rust-lang/libc/pull/4074</a></li>
+<li>Fix a few other array size hacks <a href="https://github.com/rust-lang/libc/commit/d63be8b69b0736753213f5d933767866a5801ee7">https://github.com/rust-lang/libc/commit/d63be8b69b0736753213f5d933767866a5801ee7</a></li>
+<li>Glibc: remove redundant definitions (<a href="https://github.com/rust-lang/libc/pulls/3261">#3261</a>)</li>
+<li>Musl: remove redundant definitions (<a href="https://github.com/rust-lang/libc/pulls/3261">#3261</a>)</li>
+<li>Musl: unify definitions of <code>siginfo_t</code> (<a href="https://github.com/rust-lang/libc/pulls/3261">#3261</a>)</li>
+<li>Musl: unify definitions of statfs and statfs64 (<a href="https://github.com/rust-lang/libc/pulls/3261">#3261</a>)</li>
+<li>Musl: unify definitions of statvfs and statvfs64 (<a href="https://github.com/rust-lang/libc/pulls/3261">#3261</a>)</li>
+<li>Musl: unify statx definitions (<a href="https://github.com/rust-lang/libc/pulls/3978">#3978</a>)</li>
+<li>Remove array size hacks for Rust &lt; 1.47 <a href="https://github.com/rust-lang/libc/commit/27ee6fe02ca0848b2af3cd747536264e4c7b697d">https://github.com/rust-lang/libc/commit/27ee6fe02ca0848b2af3cd747536264e4c7b697d</a></li>
+<li>Remove repetitive words <a href="https://github.com/rust-lang/libc/commit/77de375891285e18a81616f7dceda6d52732eed6">https://github.com/rust-lang/libc/commit/77de375891285e18a81616f7dceda6d52732eed6</a></li>
+<li>Use #[derive] for Copy/Clone in s! and friends <a href="https://github.com/rust-lang/libc/pull/4038">https://github.com/rust-lang/libc/pull/4038</a></li>
+<li>Use some tricks to format macro bodies <a href="https://github.com/rust-lang/libc/pull/4107">https://github.com/rust-lang/libc/pull/4107</a></li>
+</ul>
+<h3 id="other-7">Other</h3>
+<ul>
+<li>Apply formatting to macro bodies <a href="https://github.com/rust-lang/libc/pull/4107">https://github.com/rust-lang/libc/pull/4107</a></li>
+<li>Bump libc-test to Rust 2021 Edition <a href="https://github.com/rust-lang/libc/pull/3905">https://github.com/rust-lang/libc/pull/3905</a></li>
+<li>CI: Add a check that semver files don't contain duplicate entries <a href="https://github.com/rust-lang/libc/pull/4087">https://github.com/rust-lang/libc/pull/4087</a></li>
+<li>CI: Add <code>fanotify_event_info_fid</code> to FAM-exempt types <a href="https://github.com/rust-lang/libc/pull/4038">https://github.com/rust-lang/libc/pull/4038</a></li>
+<li>CI: Allow rustfmt to organize imports (<a href="https://github.com/rust-lang/libc/pulls/4136">#4136</a>)</li>
+<li>CI: Always run rustfmt <a href="https://github.com/rust-lang/libc/pull/4120">https://github.com/rust-lang/libc/pull/4120</a></li>
+<li>CI: Change 32-bit Docker images to use EOL repos <a href="https://github.com/rust-lang/libc/pull/4120">https://github.com/rust-lang/libc/pull/4120</a></li>
+<li>CI: Change 64-bit Docker images to ubuntu:24.10 <a href="https://github.com/rust-lang/libc/pull/4120">https://github.com/rust-lang/libc/pull/4120</a></li>
+<li>CI: Disable the check for &gt;1 s! invocation <a href="https://github.com/rust-lang/libc/pull/4107">https://github.com/rust-lang/libc/pull/4107</a></li>
+<li>CI: Ensure build channels get run even if FILTER is unset <a href="https://github.com/rust-lang/libc/pull/4125">https://github.com/rust-lang/libc/pull/4125</a></li>
+<li>CI: Ensure there is a fallback for no_std <a href="https://github.com/rust-lang/libc/pull/4125">https://github.com/rust-lang/libc/pull/4125</a></li>
+<li>CI: Fix cases where unset variables cause errors <a href="https://github.com/rust-lang/libc/pull/4108">https://github.com/rust-lang/libc/pull/4108</a></li>
+<li>CI: Naming adjustments and cleanup <a href="https://github.com/rust-lang/libc/pull/4124">https://github.com/rust-lang/libc/pull/4124</a></li>
+<li>CI: Only invoke rustup if running in CI <a href="https://github.com/rust-lang/libc/pull/4107">https://github.com/rust-lang/libc/pull/4107</a></li>
+<li>CI: Remove the logic to handle old rust versions <a href="https://github.com/rust-lang/libc/pull/4068">https://github.com/rust-lang/libc/pull/4068</a></li>
+<li>CI: Set -u (error on unset) in all script files <a href="https://github.com/rust-lang/libc/pull/4108">https://github.com/rust-lang/libc/pull/4108</a></li>
+<li>CI: add support for <code>loongarch64-unknown-linux-musl</code> <a href="https://github.com/rust-lang/libc/pull/4092">https://github.com/rust-lang/libc/pull/4092</a></li>
+<li>CI: make <code>aarch64-apple-darwin</code> not a nightly-only target <a href="https://github.com/rust-lang/libc/pull/4068">https://github.com/rust-lang/libc/pull/4068</a></li>
+<li>CI: run shellcheck on all scripts <a href="https://github.com/rust-lang/libc/pull/4042">https://github.com/rust-lang/libc/pull/4042</a></li>
+<li>CI: update musl headers to Linux 6.6 <a href="https://github.com/rust-lang/libc/pull/3921">https://github.com/rust-lang/libc/pull/3921</a></li>
+<li>CI: use qemu-sparc64 to run sparc64 tests <a href="https://github.com/rust-lang/libc/pull/4133">https://github.com/rust-lang/libc/pull/4133</a></li>
+<li>Drop the <code>libc_const_extern_fn</code> conditional <a href="https://github.com/rust-lang/libc/commit/674cc1f47f605038ef1aa2cce8e8bc9dac128276">https://github.com/rust-lang/libc/commit/674cc1f47f605038ef1aa2cce8e8bc9dac128276</a></li>
+<li>Drop the <code>libc_underscore_const_names</code> conditional <a href="https://github.com/rust-lang/libc/commit/f0febd5e2e50b38e05259d3afad3c9783711bcf0">https://github.com/rust-lang/libc/commit/f0febd5e2e50b38e05259d3afad3c9783711bcf0</a></li>
+<li>Explicitly set the edition to 2015 <a href="https://github.com/rust-lang/libc/pull/4058">https://github.com/rust-lang/libc/pull/4058</a></li>
+<li>Introduce a <code>git-blame-ignore-revs</code> file <a href="https://github.com/rust-lang/libc/pull/4107">https://github.com/rust-lang/libc/pull/4107</a></li>
+<li>Tests: Ignore fields as required on Ubuntu 24.10 <a href="https://github.com/rust-lang/libc/pull/4120">https://github.com/rust-lang/libc/pull/4120</a></li>
+<li>Tests: skip <code>ATF_*</code> constants for OpenBSD <a href="https://github.com/rust-lang/libc/pull/4088">https://github.com/rust-lang/libc/pull/4088</a></li>
+<li>Triagebot: Add an autolabel for CI <a href="https://github.com/rust-lang/libc/pull/4052">https://github.com/rust-lang/libc/pull/4052</a></li>
+</ul>
+<h2 id="02164---2024-11-16"><a href="https://github.com/rust-lang/libc/compare/0.2.163...0.2.164">0.2.164</a> - 2024-11-16</h2>
+<h3 id="msrv-1">MSRV</h3>
+<p>This release increases the MSRV of <code>libc</code> to 1.63.</p>
+<h3 id="other-8">Other</h3>
+<ul>
+<li>CI: remove tests with rust &lt; 1.63 <a href="https://github.com/rust-lang/libc/pull/4051">https://github.com/rust-lang/libc/pull/4051</a></li>
+<li>MSRV: document the MSRV of the stable channel to be 1.63 <a href="https://github.com/rust-lang/libc/pull/4040">https://github.com/rust-lang/libc/pull/4040</a></li>
+<li>MacOS: move ifconf to s_no_extra_traits <a href="https://github.com/rust-lang/libc/pull/4051">https://github.com/rust-lang/libc/pull/4051</a></li>
+</ul>
+<h2 id="02163---2024-11-16"><a href="https://github.com/rust-lang/libc/compare/0.2.162...0.2.163">0.2.163</a> - 2024-11-16</h2>
+<h3 id="added-23">Added</h3>
+<ul>
+<li>Aix: add more <code>dlopen</code> flags <a href="https://github.com/rust-lang/libc/pull/4044">https://github.com/rust-lang/libc/pull/4044</a></li>
+<li>Android: add group calls <a href="https://github.com/rust-lang/libc/pull/3499">https://github.com/rust-lang/libc/pull/3499</a></li>
+<li>FreeBSD: add <code>TCP_FUNCTION_BLK</code> and <code>TCP_FUNCTION_ALIAS</code> <a href="https://github.com/rust-lang/libc/pull/4047">https://github.com/rust-lang/libc/pull/4047</a></li>
+<li>Linux: add <code>confstr</code> <a href="https://github.com/rust-lang/libc/pull/3612">https://github.com/rust-lang/libc/pull/3612</a></li>
+<li>Solarish: add <code>aio</code> <a href="https://github.com/rust-lang/libc/pull/4033">https://github.com/rust-lang/libc/pull/4033</a></li>
+<li>Solarish: add <code>arc4random*</code> <a href="https://github.com/rust-lang/libc/pull/3944">https://github.com/rust-lang/libc/pull/3944</a></li>
+</ul>
+<h3 id="changed-13">Changed</h3>
+<ul>
+<li>Emscripten: upgrade emsdk to 3.1.68 <a href="https://github.com/rust-lang/libc/pull/3962">https://github.com/rust-lang/libc/pull/3962</a></li>
+<li>Hurd: use more standard types <a href="https://github.com/rust-lang/libc/pull/3733">https://github.com/rust-lang/libc/pull/3733</a></li>
+<li>Hurd: use the standard <code>ssize_t = isize</code> <a href="https://github.com/rust-lang/libc/pull/4029">https://github.com/rust-lang/libc/pull/4029</a></li>
+<li>Solaris: fix <code>confstr</code> and <code>ucontext_t</code> <a href="https://github.com/rust-lang/libc/pull/4035">https://github.com/rust-lang/libc/pull/4035</a></li>
+</ul>
+<h3 id="other-9">Other</h3>
+<ul>
+<li>CI: add Solaris <a href="https://github.com/rust-lang/libc/pull/4035">https://github.com/rust-lang/libc/pull/4035</a></li>
+<li>CI: add <code>i686-unknown-freebsd</code> <a href="https://github.com/rust-lang/libc/pull/3997">https://github.com/rust-lang/libc/pull/3997</a></li>
+<li>CI: ensure that calls to <code>sort</code> do not depend on locale <a href="https://github.com/rust-lang/libc/pull/4026">https://github.com/rust-lang/libc/pull/4026</a></li>
+<li>Specify <code>rust-version</code> in <code>Cargo.toml</code> <a href="https://github.com/rust-lang/libc/pull/4041">https://github.com/rust-lang/libc/pull/4041</a></li>
+</ul>
+<h2 id="02162---2024-11-07"><a href="https://github.com/rust-lang/libc/compare/0.2.161...0.2.162">0.2.162</a> - 2024-11-07</h2>
+<h3 id="added-24">Added</h3>
+<ul>
+<li>Android: fix the alignment of <code>uc_mcontext</code> on arm64 <a href="https://github.com/rust-lang/libc/pull/3894">https://github.com/rust-lang/libc/pull/3894</a></li>
+<li>Apple: add <code>host_cpu_load_info</code> <a href="https://github.com/rust-lang/libc/pull/3916">https://github.com/rust-lang/libc/pull/3916</a></li>
+<li>ESP-IDF: add a time flag <a href="https://github.com/rust-lang/libc/pull/3993">https://github.com/rust-lang/libc/pull/3993</a></li>
+<li>FreeBSD: add the <code>CLOSE_RANGE_CLOEXEC</code> flag<a href="https://github.com/rust-lang/libc/pull/3996">https://github.com/rust-lang/libc/pull/3996</a></li>
+<li>FreeBSD: fix test errors regarding <code>__gregset_t</code> <a href="https://github.com/rust-lang/libc/pull/3995">https://github.com/rust-lang/libc/pull/3995</a></li>
+<li>FreeBSD: fix tests on x86 FreeBSD 15 <a href="https://github.com/rust-lang/libc/pull/3948">https://github.com/rust-lang/libc/pull/3948</a></li>
+<li>FreeBSD: make <code>ucontext_t</code> and <code>mcontext_t</code> available on all architectures  <a href="https://github.com/rust-lang/libc/pull/3848">https://github.com/rust-lang/libc/pull/3848</a></li>
+<li>Haiku: add <code>getentropy</code> <a href="https://github.com/rust-lang/libc/pull/3991">https://github.com/rust-lang/libc/pull/3991</a></li>
+<li>Illumos: add <code>syncfs</code> <a href="https://github.com/rust-lang/libc/pull/3990">https://github.com/rust-lang/libc/pull/3990</a></li>
+<li>Illumos: add some recently-added constants <a href="https://github.com/rust-lang/libc/pull/3999">https://github.com/rust-lang/libc/pull/3999</a></li>
+<li>Linux: add <code>ioctl</code> flags <a href="https://github.com/rust-lang/libc/pull/3960">https://github.com/rust-lang/libc/pull/3960</a></li>
+<li>Linux: add epoll busy polling parameters <a href="https://github.com/rust-lang/libc/pull/3922">https://github.com/rust-lang/libc/pull/3922</a></li>
+<li>NuttX: add <code>pthread_[get/set]name_np</code> <a href="https://github.com/rust-lang/libc/pull/4003">https://github.com/rust-lang/libc/pull/4003</a></li>
+<li>RTEMS: add <code>arc4random_buf</code> <a href="https://github.com/rust-lang/libc/pull/3989">https://github.com/rust-lang/libc/pull/3989</a></li>
+<li>Trusty OS: add initial support <a href="https://github.com/rust-lang/libc/pull/3942">https://github.com/rust-lang/libc/pull/3942</a></li>
+<li>WASIp2: expand socket support <a href="https://github.com/rust-lang/libc/pull/3981">https://github.com/rust-lang/libc/pull/3981</a></li>
+</ul>
+<h3 id="fixed-21">Fixed</h3>
+<ul>
+<li>Emscripten: don't pass <code>-lc</code> <a href="https://github.com/rust-lang/libc/pull/4002">https://github.com/rust-lang/libc/pull/4002</a></li>
+<li>Hurd: change <code>st_fsid</code> field to <code>st_dev</code> <a href="https://github.com/rust-lang/libc/pull/3785">https://github.com/rust-lang/libc/pull/3785</a></li>
+<li>Hurd: fix the definition of <code>utsname</code> <a href="https://github.com/rust-lang/libc/pull/3992">https://github.com/rust-lang/libc/pull/3992</a></li>
+<li>Illumos/Solaris: fix <code>FNM_CASEFOLD</code> definition <a href="https://github.com/rust-lang/libc/pull/4004">https://github.com/rust-lang/libc/pull/4004</a></li>
+<li>Solaris: fix all tests <a href="https://github.com/rust-lang/libc/pull/3864">https://github.com/rust-lang/libc/pull/3864</a></li>
+</ul>
+<h3 id="other-10">Other</h3>
+<ul>
+<li>CI: Add loongarch64 <a href="https://github.com/rust-lang/libc/pull/4000">https://github.com/rust-lang/libc/pull/4000</a></li>
+<li>CI: Check that semver files are sorted <a href="https://github.com/rust-lang/libc/pull/4018">https://github.com/rust-lang/libc/pull/4018</a></li>
+<li>CI: Re-enable the FreeBSD 15 job <a href="https://github.com/rust-lang/libc/pull/3988">https://github.com/rust-lang/libc/pull/3988</a></li>
+<li>Clean up imports and <code>extern crate</code> usage <a href="https://github.com/rust-lang/libc/pull/3897">https://github.com/rust-lang/libc/pull/3897</a></li>
+<li>Convert <code>mode_t</code> constants to octal <a href="https://github.com/rust-lang/libc/pull/3634">https://github.com/rust-lang/libc/pull/3634</a></li>
+<li>Remove the <code>wasm32-wasi</code> target that has been deleted upstream <a href="https://github.com/rust-lang/libc/pull/4013">https://github.com/rust-lang/libc/pull/4013</a></li>
+</ul>
+<h2 id="02161---2024-10-17"><a href="https://github.com/rust-lang/libc/compare/0.2.160...0.2.161">0.2.161</a> - 2024-10-17</h2>
+<h3 id="fixed-22">Fixed</h3>
+<ul>
+<li>OpenBSD: fix <code>FNM_PATHNAME</code> and <code>FNM_NOESCAPE</code> values <a href="https://github.com/rust-lang/libc/pull/3983">https://github.com/rust-lang/libc/pull/3983</a></li>
+</ul>
+<h2 id="02160---2024-10-17"><a href="https://github.com/rust-lang/libc/compare/0.2.159...0.2.160">0.2.160</a> - 2024-10-17</h2>
+<h3 id="added-25">Added</h3>
+<ul>
+<li>Android: add <code>PR_GET_NAME</code> and <code>PR_SET_NAME</code> <a href="https://github.com/rust-lang/libc/pull/3941">https://github.com/rust-lang/libc/pull/3941</a></li>
+<li>Apple: add <code>F_TRANSFEREXTENTS</code> <a href="https://github.com/rust-lang/libc/pull/3925">https://github.com/rust-lang/libc/pull/3925</a></li>
+<li>Apple: add <code>mach_error_string</code> <a href="https://github.com/rust-lang/libc/pull/3913">https://github.com/rust-lang/libc/pull/3913</a></li>
+<li>Apple: add additional <code>pthread</code> APIs <a href="https://github.com/rust-lang/libc/pull/3846">https://github.com/rust-lang/libc/pull/3846</a></li>
+<li>Apple: add the <code>LOCAL_PEERTOKEN</code> socket option <a href="https://github.com/rust-lang/libc/pull/3929">https://github.com/rust-lang/libc/pull/3929</a></li>
+<li>BSD: add <code>RTF_*</code>, <code>RTA_*</code>, <code>RTAX_*</code>, and <code>RTM_*</code> definitions <a href="https://github.com/rust-lang/libc/pull/3714">https://github.com/rust-lang/libc/pull/3714</a></li>
+<li>Emscripten: add <code>AT_EACCESS</code> <a href="https://github.com/rust-lang/libc/pull/3911">https://github.com/rust-lang/libc/pull/3911</a></li>
+<li>Emscripten: add <code>getgrgid</code>, <code>getgrnam</code>, <code>getgrnam_r</code> and <code>getgrgid_r</code> <a href="https://github.com/rust-lang/libc/pull/3912">https://github.com/rust-lang/libc/pull/3912</a></li>
+<li>Emscripten: add <code>getpwnam_r</code> and <code>getpwuid_r</code> <a href="https://github.com/rust-lang/libc/pull/3906">https://github.com/rust-lang/libc/pull/3906</a></li>
+<li>FreeBSD: add <code>POLLRDHUP</code> <a href="https://github.com/rust-lang/libc/pull/3936">https://github.com/rust-lang/libc/pull/3936</a></li>
+<li>Haiku: add <code>arc4random</code> <a href="https://github.com/rust-lang/libc/pull/3945">https://github.com/rust-lang/libc/pull/3945</a></li>
+<li>Illumos: add <code>ptsname_r</code> <a href="https://github.com/rust-lang/libc/pull/3867">https://github.com/rust-lang/libc/pull/3867</a></li>
+<li>Linux: add <code>fanotify</code> interfaces <a href="https://github.com/rust-lang/libc/pull/3695">https://github.com/rust-lang/libc/pull/3695</a></li>
+<li>Linux: add <code>tcp_info</code> <a href="https://github.com/rust-lang/libc/pull/3480">https://github.com/rust-lang/libc/pull/3480</a></li>
+<li>Linux: add additional AF_PACKET options <a href="https://github.com/rust-lang/libc/pull/3540">https://github.com/rust-lang/libc/pull/3540</a></li>
+<li>Linux: make Elf constants always available <a href="https://github.com/rust-lang/libc/pull/3938">https://github.com/rust-lang/libc/pull/3938</a></li>
+<li>Musl x86: add <code>iopl</code> and <code>ioperm</code> <a href="https://github.com/rust-lang/libc/pull/3720">https://github.com/rust-lang/libc/pull/3720</a></li>
+<li>Musl: add <code>posix_spawn</code> chdir functions <a href="https://github.com/rust-lang/libc/pull/3949">https://github.com/rust-lang/libc/pull/3949</a></li>
+<li>Musl: add <code>utmpx.h</code> constants <a href="https://github.com/rust-lang/libc/pull/3908">https://github.com/rust-lang/libc/pull/3908</a></li>
+<li>NetBSD: add <code>sysctlnametomib</code>, <code>CLOCK_THREAD_CPUTIME_ID</code> and <code>CLOCK_PROCESS_CPUTIME_ID</code> <a href="https://github.com/rust-lang/libc/pull/3927">https://github.com/rust-lang/libc/pull/3927</a></li>
+<li>Nuttx: initial support <a href="https://github.com/rust-lang/libc/pull/3909">https://github.com/rust-lang/libc/pull/3909</a></li>
+<li>RTEMS: add <code>getentropy</code> <a href="https://github.com/rust-lang/libc/pull/3973">https://github.com/rust-lang/libc/pull/3973</a></li>
+<li>RTEMS: initial support <a href="https://github.com/rust-lang/libc/pull/3866">https://github.com/rust-lang/libc/pull/3866</a></li>
+<li>Solarish: add <code>POLLRDHUP</code>, <code>POSIX_FADV_*</code>, <code>O_RSYNC</code>, and <code>posix_fallocate</code> <a href="https://github.com/rust-lang/libc/pull/3936">https://github.com/rust-lang/libc/pull/3936</a></li>
+<li>Unix: add <code>fnmatch.h</code> <a href="https://github.com/rust-lang/libc/pull/3937">https://github.com/rust-lang/libc/pull/3937</a></li>
+<li>VxWorks: add riscv64 support <a href="https://github.com/rust-lang/libc/pull/3935">https://github.com/rust-lang/libc/pull/3935</a></li>
+<li>VxWorks: update constants related to the scheduler  <a href="https://github.com/rust-lang/libc/pull/3963">https://github.com/rust-lang/libc/pull/3963</a></li>
+</ul>
+<h3 id="changed-14">Changed</h3>
+<ul>
+<li>Redox: change <code>ino_t</code> to be <code>c_ulonglong</code> <a href="https://github.com/rust-lang/libc/pull/3919">https://github.com/rust-lang/libc/pull/3919</a></li>
+</ul>
+<h3 id="fixed-23">Fixed</h3>
+<ul>
+<li>ESP-IDF: fix mismatched constants and structs <a href="https://github.com/rust-lang/libc/pull/3920">https://github.com/rust-lang/libc/pull/3920</a></li>
+<li>FreeBSD: fix <code>struct stat</code> on FreeBSD 12+ <a href="https://github.com/rust-lang/libc/pull/3946">https://github.com/rust-lang/libc/pull/3946</a></li>
+</ul>
+<h3 id="other-11">Other</h3>
+<ul>
+<li>CI: Fix CI for FreeBSD 15 <a href="https://github.com/rust-lang/libc/pull/3950">https://github.com/rust-lang/libc/pull/3950</a></li>
+<li>Docs: link to <code>windows-sys</code> <a href="https://github.com/rust-lang/libc/pull/3915">https://github.com/rust-lang/libc/pull/3915</a></li>
+</ul>
+<h2 id="02159---2024-09-24"><a href="https://github.com/rust-lang/libc/compare/0.2.158...0.2.159">0.2.159</a> - 2024-09-24</h2>
+<h3 id="added-26">Added</h3>
+<ul>
+<li>Android: add more <code>AT_*</code> constants in <a href="https://github.com/rust-lang/libc/pull/3779">https://github.com/rust-lang/libc/pull/3779</a></li>
+<li>Apple: add missing <code>NOTE_*</code> constants in <a href="https://github.com/rust-lang/libc/pull/3883">https://github.com/rust-lang/libc/pull/3883</a></li>
+<li>Hermit: add missing error numbers in <a href="https://github.com/rust-lang/libc/pull/3858">https://github.com/rust-lang/libc/pull/3858</a></li>
+<li>Hurd: add <code>__timeval</code> for 64-bit support in <a href="https://github.com/rust-lang/libc/pull/3786">https://github.com/rust-lang/libc/pull/3786</a></li>
+<li>Linux: add <code>epoll_pwait2</code> in <a href="https://github.com/rust-lang/libc/pull/3868">https://github.com/rust-lang/libc/pull/3868</a></li>
+<li>Linux: add <code>mq_notify</code> in <a href="https://github.com/rust-lang/libc/pull/3849">https://github.com/rust-lang/libc/pull/3849</a></li>
+<li>Linux: add missing <code>NFT_CT_*</code> constants in <a href="https://github.com/rust-lang/libc/pull/3844">https://github.com/rust-lang/libc/pull/3844</a></li>
+<li>Linux: add the <code>fchmodat2</code> syscall in <a href="https://github.com/rust-lang/libc/pull/3588">https://github.com/rust-lang/libc/pull/3588</a></li>
+<li>Linux: add the <code>mseal</code> syscall in <a href="https://github.com/rust-lang/libc/pull/3798">https://github.com/rust-lang/libc/pull/3798</a></li>
+<li>OpenBSD: add <code>sendmmsg</code> and <code>recvmmsg</code> in <a href="https://github.com/rust-lang/libc/pull/3831">https://github.com/rust-lang/libc/pull/3831</a></li>
+<li>Unix: add <code>IN6ADDR_ANY_INIT</code> and <code>IN6ADDR_LOOPBACK_INIT</code> in <a href="https://github.com/rust-lang/libc/pull/3693">https://github.com/rust-lang/libc/pull/3693</a></li>
+<li>VxWorks: add <code>S_ISVTX</code> in <a href="https://github.com/rust-lang/libc/pull/3768">https://github.com/rust-lang/libc/pull/3768</a></li>
+<li>VxWorks: add <code>vxCpuLib</code> and <code>taskLib</code> functions <a href="https://github.com/rust-lang/libc/pull/3861">https://github.com/rust-lang/libc/pull/3861</a></li>
+<li>WASIp2: add definitions for <code>std::net</code> support in <a href="https://github.com/rust-lang/libc/pull/3892">https://github.com/rust-lang/libc/pull/3892</a></li>
+</ul>
+<h3 id="fixed-24">Fixed</h3>
+<ul>
+<li>Correctly handle version checks when <code>clippy-driver</code> is used <a href="https://github.com/rust-lang/libc/pull/3893">https://github.com/rust-lang/libc/pull/3893</a></li>
+</ul>
+<h3 id="changed-15">Changed</h3>
+<ul>
+<li>EspIdf: change signal constants to c_int in <a href="https://github.com/rust-lang/libc/pull/3895">https://github.com/rust-lang/libc/pull/3895</a></li>
+<li>HorizonOS: update network definitions in <a href="https://github.com/rust-lang/libc/pull/3863">https://github.com/rust-lang/libc/pull/3863</a></li>
+<li>Linux: combine <code>ioctl</code> APIs in <a href="https://github.com/rust-lang/libc/pull/3722">https://github.com/rust-lang/libc/pull/3722</a></li>
+<li>WASI: enable CI testing in <a href="https://github.com/rust-lang/libc/pull/3869">https://github.com/rust-lang/libc/pull/3869</a></li>
+<li>WASIp2: enable CI testing in <a href="https://github.com/rust-lang/libc/pull/3870">https://github.com/rust-lang/libc/pull/3870</a></li>
+</ul>
+<h2 id="02158---2024-08-19"><a href="https://github.com/rust-lang/libc/compare/0.2.157...0.2.158">0.2.158</a> - 2024-08-19</h2>
+<h3 id="other-12">Other</h3>
+<ul>
+<li>WASI: fix missing <code>Iterator</code> with <code>rustc-dep-of-std</code> in <a href="https://github.com/rust-lang/libc/pull/3856#event-13924913068">https://github.com/rust-lang/libc/pull/3856#event-13924913068</a></li>
+</ul>
+<h2 id="02157---2024-08-17"><a href="https://github.com/rust-lang/libc/compare/0.2.156...0.2.157">0.2.157</a> - 2024-08-17</h2>
+<h3 id="added-27">Added</h3>
+<ul>
+<li>Apple: add <code>_NSGetArgv</code>, <code>_NSGetArgc</code> and <code>_NSGetProgname</code> in <a href="https://github.com/rust-lang/libc/pull/3702">https://github.com/rust-lang/libc/pull/3702</a></li>
+<li>Build: add <code>RUSTC_WRAPPER</code> support in <a href="https://github.com/rust-lang/libc/pull/3845">https://github.com/rust-lang/libc/pull/3845</a></li>
+<li>FreeBSD: add <code>execvpe</code> support from 14.1 release in <a href="https://github.com/rust-lang/libc/pull/3745">https://github.com/rust-lang/libc/pull/3745</a></li>
+<li>Fuchsia: add <code>SO_BINDTOIFINDEX</code></li>
+<li>Linux: add <code>klogctl</code> in <a href="https://github.com/rust-lang/libc/pull/3777">https://github.com/rust-lang/libc/pull/3777</a></li>
+<li>MacOS: add <code>fcntl</code> OFD commands in <a href="https://github.com/rust-lang/libc/pull/3563">https://github.com/rust-lang/libc/pull/3563</a></li>
+<li>NetBSD: add <code>_lwp_park</code> in <a href="https://github.com/rust-lang/libc/pull/3721">https://github.com/rust-lang/libc/pull/3721</a></li>
+<li>Solaris: add missing networking support in <a href="https://github.com/rust-lang/libc/pull/3717">https://github.com/rust-lang/libc/pull/3717</a></li>
+<li>Unix: add <code>pthread_equal</code> in <a href="https://github.com/rust-lang/libc/pull/3773">https://github.com/rust-lang/libc/pull/3773</a></li>
+<li>WASI: add <code>select</code>, <code>FD_SET</code>, <code>FD_ZERO</code>, <code>FD_ISSET </code> in <a href="https://github.com/rust-lang/libc/pull/3681">https://github.com/rust-lang/libc/pull/3681</a></li>
+</ul>
+<h3 id="fixed-25">Fixed</h3>
+<ul>
+<li>TEEOS: fix octal notation for <code>O_*</code> constants in <a href="https://github.com/rust-lang/libc/pull/3841">https://github.com/rust-lang/libc/pull/3841</a></li>
+</ul>
+<h3 id="changed-16">Changed</h3>
+<ul>
+<li>FreeBSD: always use freebsd12 when <code>rustc_dep_of_std</code> is set in <a href="https://github.com/rust-lang/libc/pull/3723">https://github.com/rust-lang/libc/pull/3723</a></li>
+</ul>
+<h2 id="02156---2024-08-15"><a href="https://github.com/rust-lang/libc/compare/v0.2.155...v0.2.156">0.2.156</a> - 2024-08-15</h2>
+<h3 id="added-28">Added</h3>
+<ul>
+<li>Apple: add <code>F_ALLOCATEPERSIST</code> in <a href="https://github.com/rust-lang/libc/pull/3712">https://github.com/rust-lang/libc/pull/3712</a></li>
+<li>Apple: add <code>os_sync_wait_on_address</code> and related definitions in <a href="https://github.com/rust-lang/libc/pull/3769">https://github.com/rust-lang/libc/pull/3769</a></li>
+<li>BSD: generalise <code>IPV6_DONTFRAG</code> to all BSD targets in <a href="https://github.com/rust-lang/libc/pull/3716">https://github.com/rust-lang/libc/pull/3716</a></li>
+<li>FreeBSD/DragonFly: add <code>IP_RECVTTL</code>/<code>IPV6_RECVHOPLIMIT</code> in <a href="https://github.com/rust-lang/libc/pull/3751">https://github.com/rust-lang/libc/pull/3751</a></li>
+<li>Hurd: add <code>XATTR_CREATE</code>, <code>XATTR_REPLACE</code> in <a href="https://github.com/rust-lang/libc/pull/3739">https://github.com/rust-lang/libc/pull/3739</a></li>
+<li>Linux GNU: <code>confstr</code> API and <code>_CS_*</code> in <a href="https://github.com/rust-lang/libc/pull/3771">https://github.com/rust-lang/libc/pull/3771</a></li>
+<li>Linux musl: add <code>preadv2</code> and <code>pwritev2</code> (1.2.5 min.) in <a href="https://github.com/rust-lang/libc/pull/3762">https://github.com/rust-lang/libc/pull/3762</a></li>
+<li>VxWorks: add the constant <code>SOMAXCONN</code> in <a href="https://github.com/rust-lang/libc/pull/3761">https://github.com/rust-lang/libc/pull/3761</a></li>
+<li>VxWorks: add a few errnoLib related constants in <a href="https://github.com/rust-lang/libc/pull/3780">https://github.com/rust-lang/libc/pull/3780</a></li>
+</ul>
+<h3 id="fixed-26">Fixed</h3>
+<ul>
+<li>Solaris/illumos: Change <code>ifa_flags</code> type to u64 in <a href="https://github.com/rust-lang/libc/pull/3729">https://github.com/rust-lang/libc/pull/3729</a></li>
+<li>QNX 7.0: Disable <code>libregex</code> in <a href="https://github.com/rust-lang/libc/pull/3775">https://github.com/rust-lang/libc/pull/3775</a></li>
+</ul>
+<h3 id="changed-17">Changed</h3>
+<ul>
+<li>QNX NTO: update platform support in <a href="https://github.com/rust-lang/libc/pull/3815">https://github.com/rust-lang/libc/pull/3815</a></li>
+<li><code>addr_of!(EXTERN_STATIC)</code> is now considered safe in <a href="https://github.com/rust-lang/libc/pull/3776">https://github.com/rust-lang/libc/pull/3776</a></li>
+</ul>
+<h3 id="removed-8">Removed</h3>
+<ul>
+<li>Apple: remove <code>rmx_state</code> in <a href="https://github.com/rust-lang/libc/pull/3776">https://github.com/rust-lang/libc/pull/3776</a></li>
+</ul>
+<h3 id="other-13">Other</h3>
+<ul>
+<li>Update or remove CI tests that have been failing</li>
+</ul>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

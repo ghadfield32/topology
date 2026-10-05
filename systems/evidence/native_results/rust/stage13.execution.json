@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/rust/shape-rust",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "stage13"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0014813999999887528,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage13\",\n  \"language\": \"rust\",\n  \"metrics\": {\n    \"chart_roundtrip_errors\": [\n      5.551115123125783e-17,\n      0.0,\n      0.0,\n      7.850462293418876e-17,\n      7.850462293418876e-17,\n      0.0,\n      0.0,\n      0.0,\n      0.0,\n      0.0,\n      2.220446049250313e-16,\n      2.2887833992611187e-16\n    ],\n    \"scope\": \"stereographic chart excludes north pole; camera projection is not such a chart\",\n    \"sphere_points\": [\n      [\n        0.0,\n        0.5504587155963302,\n        -0.8348623853211009\n      ],\n      [\n        0.18181818181818182,\n        0.5454545454545454,\n        -0.8181818181818181\n      ],\n      [\n        0.35398230088495575,\n        0.5309734513274336,\n        -0.7699115044247786\n      ],\n      [\n        0.5084745762711864,\n        0.5084745762711863,\n        -0.694915254237288\n      ],\n      [\n        0.6399999999999999,\n        0.47999999999999987,\n        -0.5999999999999999\n      ],\n      [\n        0.7462686567164178,\n        0.4477611940298507,\n        -0.4925373134328358\n      ],\n      [\n        0.8275862068965517,\n        0.4137931034482758,\n        -0.37931034482758613\n      ],\n      [\n        0.8860759493670886,\n        0.3797468354430379,\n        -0.2658227848101265\n      ],\n      [\n        0.9248554913294798,\n        0.34682080924855485,\n        -0.15606936416184963\n      ],\n      [\n        0.9473684210526315,\n        0.3157894736842105,\n        -0.052631578947368404\n      ],\n      [\n        0.9569377990430623,\n        0.28708133971291866,\n        0.04306220095693784\n      ],\n      [\n        0.9565217391304349,\n        0.2608695652173913,\n        0.1304347826086958\n      ]\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

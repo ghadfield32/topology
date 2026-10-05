@@ -11,14 +11,14 @@
 </code></pre>
 <p>Read the generated <code>resources.json</code> and <code>verification.json</code>. This checks project invariants, not the Kubernetes API schema. The static validator rejects privileged/root containers, host namespace/path access, missing restrictions, mixed namespaces, duplicate identities and changed retry policies. A static pass is reported as <code>static_only</code>, never <code>cluster_verified</code>.</p>
 <h2 id="step-2-prepare-an-explicitly-disposable-local-cluster">Step 2: prepare an explicitly disposable local cluster</h2>
-<p>Install Docker, kind, and a compatible kubectl. Record their actual versions. Follow <a href="DOCKER.md.html">Docker setup</a> to build <code>listening-to-shape:12</code> from a real lock first.</p>
+<p>Install Docker, kind, and a compatible kubectl. Record their actual versions. Follow <a href="DOCKER.md.html">Docker setup</a> to build <code>listening-to-shape:14</code> from a real lock first.</p>
 <pre><code class="language-bash">kind create cluster --name shape-learning
-kind load docker-image listening-to-shape:12 --name shape-learning
+kind load docker-image listening-to-shape:14 --name shape-learning
 kubectl config view --minify --context kind-shape-learning
 </code></pre>
 <p>Creating a kind cluster consumes local resources. Use a new approved name if this one exists. This course does not claim a Kubernetes version range was tested; CI's actual client/server/image versions must be saved with each deployment.</p>
 <h2 id="step-3-request-live-acceptance-explicitly">Step 3: request live acceptance explicitly</h2>
-<pre><code class="language-bash">uv run --no-sync python tools/k8s_verify.py --context kind-shape-learning --namespace shape-study01 --image listening-to-shape:12 --profile physics --apply --output my_work/k8s_live01
+<pre><code class="language-bash">uv run --no-sync python tools/k8s_verify.py --context kind-shape-learning --namespace shape-study01 --image listening-to-shape:14 --profile physics --apply --output my_work/k8s_live01
 </code></pre>
 <p>The tool checks runtime readiness and namespace absence. It creates only the requested Namespace before doing server-side dry-run for the full manifest, then applies and waits for the reader and Job. Failure preserves resources and diagnostics for inspection. There is no silent retry against another cluster or namespace.</p>
 <p>The Job uses <code>backoffLimit: 0</code> and an output directory based on its Pod UID. It runs the requested-profile tests and Stage 00 in fresh kernels, reads the child <code>tests.json</code> and <code>execution.json</code>, validates counts/scope/source continuity, and prints <code>SHAPE_ACCEPTANCE=</code> with structured evidence. The host verifier checks the child evidence again. A pair of zero exit codes alone is insufficient. Full profile rejects skipped comparisons. This Job is a bounded acceptance exercise, not an all-notebook distributed benchmark.</p>

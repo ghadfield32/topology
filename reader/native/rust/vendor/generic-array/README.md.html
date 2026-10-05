@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>generic-array · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/generic-array/README.md">native/rust/vendor/generic-array/README.md</a> · Readable source notation; no online math renderer.</p><p><a href="https://crates.io/crates/generic-array"><img alt="Crates.io" src="https://img.shields.io/crates/v/generic-array.svg"/></a>
+<a href="https://travis-ci.org/fizyk20/generic-array"><img alt="Build Status" src="https://travis-ci.org/fizyk20/generic-array.svg?branch=master"/></a></p>
+<h1 id="generic-array">generic-array</h1>
+<p>This crate implements generic array types for Rust.</p>
+<p><strong>Requires minumum Rust version of 1.36.0, or 1.41.0 for <code>From&lt;[T; N]&gt;</code> implementations</strong></p>
+<p><a href="http://fizyk20.github.io/generic-array/generic_array/">Documentation</a></p>
+<h2 id="usage">Usage</h2>
+<p>The Rust arrays <code>[T; N]</code> are problematic in that they can't be used generically with respect to <code>N</code>, so for example this won't work:</p>
+<pre><code class="language-rust">struct Foo&lt;N&gt; {
+	data: [i32; N]
+}
+</code></pre>
+<p><strong>generic-array</strong> defines a new trait <code>ArrayLength&lt;T&gt;</code> and a struct <code>GenericArray&lt;T, N: ArrayLength&lt;T&gt;&gt;</code>, which let the above be implemented as:</p>
+<pre><code class="language-rust">struct Foo&lt;N: ArrayLength&lt;i32&gt;&gt; {
+	data: GenericArray&lt;i32, N&gt;
+}
+</code></pre>
+<p>The <code>ArrayLength&lt;T&gt;</code> trait is implemented by default for <a href="http://fizyk20.github.io/generic-array/typenum/uint/index.html">unsigned integer types</a> from <a href="http://fizyk20.github.io/generic-array/typenum/index.html">typenum</a> crate:</p>
+<pre><code class="language-rust">use generic_array::typenum::U5;
+
+struct Foo&lt;N: ArrayLength&lt;i32&gt;&gt; {
+    data: GenericArray&lt;i32, N&gt;
+}
+
+fn main() {
+    let foo = Foo::&lt;U5&gt;{data: GenericArray::default()};
+}
+</code></pre>
+<p>For example, <code>GenericArray&lt;T, U5&gt;</code> would work almost like <code>[T; 5]</code>:</p>
+<pre><code class="language-rust">use generic_array::typenum::U5;
+
+struct Foo&lt;T, N: ArrayLength&lt;T&gt;&gt; {
+    data: GenericArray&lt;T, N&gt;
+}
+
+fn main() {
+    let foo = Foo::&lt;i32, U5&gt;{data: GenericArray::default()};
+}
+</code></pre>
+<p>In version 0.1.1 an <code>arr!</code> macro was introduced, allowing for creation of arrays as shown below:</p>
+<pre><code class="language-rust">let array = arr![u32; 1, 2, 3];
+assert_eq!(array[2], 3);
+</code></pre>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

@@ -1,0 +1,249 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Version 0.8.23 · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/crossbeam-utils/CHANGELOG.md">native/rust/vendor/crossbeam-utils/CHANGELOG.md</a> · Readable source notation; no online math renderer.</p><h1 id="version-0823">Version 0.8.23</h1>
+<ul>
+<li>Fix SB violation when <code>ShardedLockWriteGuard</code> is leaked. (#1294)</li>
+<li>Improve compatibility with ThreadSanitizer. (#1308)</li>
+<li>Update MSRV policy to support 1 year instead of 6 months to meet rayon's MSRV policy. (#1284)</li>
+</ul>
+<h1 id="version-0822">Version 0.8.22</h1>
+<ul>
+<li>Make <code>AtomicCell::{as_ptr,into_inner}</code> const. (#1237)</li>
+<li>Make <code>CachePadded</code> <code>repr(C)</code>. (#1270)</li>
+<li>Optimize <code>WaitGroup</code>. (#1195)</li>
+</ul>
+<h1 id="version-0821">Version 0.8.21</h1>
+<ul>
+<li>Improve implementation of <code>CachePadded</code>. (#1152)</li>
+</ul>
+<h1 id="version-0820">Version 0.8.20</h1>
+<ul>
+<li>Implement <code>Display</code> for <code>CachePadded</code>. (#1097)</li>
+</ul>
+<h1 id="version-0819">Version 0.8.19</h1>
+<ul>
+<li>Remove dependency on <code>cfg-if</code>. (#1072)</li>
+</ul>
+<h1 id="version-0818">Version 0.8.18</h1>
+<ul>
+<li>Relax the minimum supported Rust version to 1.60. (#1056)</li>
+<li>Improve scalability of <code>AtomicCell</code> fallback. (#1055)</li>
+</ul>
+<h1 id="version-0817">Version 0.8.17</h1>
+<ul>
+<li>Bump the minimum supported Rust version to 1.61. (#1037)</li>
+<li>Improve support for targets without atomic CAS or 64-bit atomic. (#1037)</li>
+<li>Always implement <code>UnwindSafe</code> and <code>RefUnwindSafe</code> for <code>AtomicCell</code>. (#1045)</li>
+<li>Improve compatibility with Miri, TSan, and loom. (#995, #1003)</li>
+<li>Improve compatibility with unstable <code>oom=panic</code>. (#1045)</li>
+<li>Improve implementation of <code>CachePadded</code>. (#1014, #1025)</li>
+<li>Update <code>loom</code> dependency to 0.7.</li>
+</ul>
+<h1 id="version-0816">Version 0.8.16</h1>
+<ul>
+<li>Improve implementation of <code>CachePadded</code>. (#967)</li>
+</ul>
+<h1 id="version-0815">Version 0.8.15</h1>
+<ul>
+<li>Add <code>#[clippy::has_significant_drop]</code> to <code>ShardedLock{Read,Write}Guard</code>. (#958)</li>
+<li>Improve handling of very large timeout. (#953)</li>
+<li>Soft-deprecate <code>thread::scope()</code> in favor of the more efficient <code>std::thread::scope</code> that stabilized in Rust 1.63. (#954)</li>
+</ul>
+<h1 id="version-0814">Version 0.8.14</h1>
+<ul>
+<li>Fix build script bug introduced in 0.8.13. (#932)</li>
+</ul>
+<h1 id="version-0813">Version 0.8.13</h1>
+<p><strong>Note:</strong> This release has been yanked due to regression fixed in 0.8.14.</p>
+<ul>
+<li>Improve support for custom targets. (#922)</li>
+</ul>
+<h1 id="version-0812">Version 0.8.12</h1>
+<ul>
+<li>Removes the dependency on the <code>once_cell</code> crate to restore the MSRV. (#913)</li>
+<li>Work around <a href="https://github.com/rust-lang/rust/issues/98302">rust-lang#98302</a>, which causes compile error on windows-gnu when LTO is enabled. (#913)</li>
+</ul>
+<h1 id="version-0811">Version 0.8.11</h1>
+<ul>
+<li>Bump the minimum supported Rust version to 1.38. (#877)</li>
+</ul>
+<h1 id="version-0810">Version 0.8.10</h1>
+<ul>
+<li>Fix unsoundness of <code>AtomicCell</code> on types containing niches. (#834)
+This fix contains breaking changes, but they are allowed because this is a soundness bug fix. See #834 for more.</li>
+</ul>
+<h1 id="version-089">Version 0.8.9</h1>
+<ul>
+<li>Replace lazy_static with once_cell. (#817)</li>
+</ul>
+<h1 id="version-088">Version 0.8.8</h1>
+<ul>
+<li>Fix a bug when unstable <code>loom</code> support is enabled. (#787)</li>
+</ul>
+<h1 id="version-087">Version 0.8.7</h1>
+<ul>
+<li>Add <code>AtomicCell&lt;{i*,u*}&gt;::{fetch_max,fetch_min}</code>. (#785)</li>
+<li>Add <code>AtomicCell&lt;{i*,u*,bool}&gt;::fetch_nand</code>. (#785)</li>
+<li>Fix unsoundness of <code>AtomicCell&lt;{i,u}64&gt;</code> arithmetics on 32-bit targets that support <code>Atomic{I,U}64</code> (#781)</li>
+</ul>
+<h1 id="version-086">Version 0.8.6</h1>
+<p><strong>Note:</strong> This release has been yanked. See <a href="https://github.com/crossbeam-rs/crossbeam/security/advisories/GHSA-qc84-gqf4-9926">GHSA-qc84-gqf4-9926</a> for details.</p>
+<ul>
+<li>Re-add <code>AtomicCell&lt;{i,u}64&gt;::{fetch_add,fetch_sub,fetch_and,fetch_or,fetch_xor}</code> that were accidentally removed in 0.8.0 on targets that do not support <code>Atomic{I,U}64</code>. (#767)</li>
+<li>Re-add <code>AtomicCell&lt;{i,u}128&gt;::{fetch_add,fetch_sub,fetch_and,fetch_or,fetch_xor}</code> that were accidentally removed in 0.8.0. (#767)</li>
+</ul>
+<h1 id="version-085">Version 0.8.5</h1>
+<p><strong>Note:</strong> This release has been yanked. See <a href="https://github.com/crossbeam-rs/crossbeam/security/advisories/GHSA-qc84-gqf4-9926">GHSA-qc84-gqf4-9926</a> for details.</p>
+<ul>
+<li>Add <code>AtomicCell::fetch_update</code>. (#704)</li>
+<li>Support targets that do not have atomic CAS on stable Rust. (#698)</li>
+</ul>
+<h1 id="version-084">Version 0.8.4</h1>
+<p><strong>Note:</strong> This release has been yanked. See <a href="https://github.com/crossbeam-rs/crossbeam/security/advisories/GHSA-qc84-gqf4-9926">GHSA-qc84-gqf4-9926</a> for details.</p>
+<ul>
+<li>Bump <code>loom</code> dependency to version 0.5. (#686)</li>
+</ul>
+<h1 id="version-083">Version 0.8.3</h1>
+<p><strong>Note:</strong> This release has been yanked. See <a href="https://github.com/crossbeam-rs/crossbeam/security/advisories/GHSA-qc84-gqf4-9926">GHSA-qc84-gqf4-9926</a> for details.</p>
+<ul>
+<li>Make <code>loom</code> dependency optional. (#666)</li>
+</ul>
+<h1 id="version-082">Version 0.8.2</h1>
+<p><strong>Note:</strong> This release has been yanked. See <a href="https://github.com/crossbeam-rs/crossbeam/security/advisories/GHSA-qc84-gqf4-9926">GHSA-qc84-gqf4-9926</a> for details.</p>
+<ul>
+<li>Deprecate <code>AtomicCell::compare_and_swap</code>. Use <code>AtomicCell::compare_exchange</code> instead. (#619)</li>
+<li>Add <code>Parker::park_deadline</code>. (#563)</li>
+<li>Improve implementation of <code>CachePadded</code>. (#636)</li>
+<li>Add unstable support for <code>loom</code>. (#487)</li>
+</ul>
+<h1 id="version-081">Version 0.8.1</h1>
+<p><strong>Note:</strong> This release has been yanked. See <a href="https://github.com/crossbeam-rs/crossbeam/security/advisories/GHSA-qc84-gqf4-9926">GHSA-qc84-gqf4-9926</a> for details.</p>
+<ul>
+<li>Make <code>AtomicCell::is_lock_free</code> always const fn. (#600)</li>
+<li>Fix a bug in <code>seq_lock_wide</code>. (#596)</li>
+<li>Remove <code>const_fn</code> dependency. (#600)</li>
+<li><code>crossbeam-utils</code> no longer fails to compile if unable to determine rustc version. Instead, it now displays a warning. (#604)</li>
+</ul>
+<h1 id="version-080">Version 0.8.0</h1>
+<p><strong>Note:</strong> This release has been yanked. See <a href="https://github.com/crossbeam-rs/crossbeam/security/advisories/GHSA-qc84-gqf4-9926">GHSA-qc84-gqf4-9926</a> for details.</p>
+<ul>
+<li>Bump the minimum supported Rust version to 1.36.</li>
+<li>Remove deprecated <code>AtomicCell::get_mut()</code> and <code>Backoff::is_complete()</code> methods.</li>
+<li>Remove <code>alloc</code> feature.</li>
+<li>Make <code>CachePadded::new()</code> const function.</li>
+<li>Make <code>AtomicCell::is_lock_free()</code> const function at 1.46+.</li>
+<li>Implement <code>From&lt;T&gt;</code> for <code>AtomicCell&lt;T&gt;</code>.</li>
+</ul>
+<h1 id="version-072">Version 0.7.2</h1>
+<ul>
+<li>Fix bug in release (yanking 0.7.1)</li>
+</ul>
+<h1 id="version-071">Version 0.7.1</h1>
+<ul>
+<li>Bump <code>autocfg</code> dependency to version 1.0. (#460)</li>
+<li>Make <code>AtomicCell</code> lockfree for u8, u16, u32, u64 sized values at 1.34+. (#454)</li>
+</ul>
+<h1 id="version-070">Version 0.7.0</h1>
+<ul>
+<li>Bump the minimum required version to 1.28.</li>
+<li>Fix breakage with nightly feature due to rust-lang/rust#65214.</li>
+<li>Apply <code>#[repr(transparent)]</code> to <code>AtomicCell</code>.</li>
+<li>Make <code>AtomicCell::new()</code> const function at 1.31+.</li>
+</ul>
+<h1 id="version-066">Version 0.6.6</h1>
+<ul>
+<li>Add <code>UnwindSafe</code> and <code>RefUnwindSafe</code> impls for <code>AtomicCell</code>.</li>
+<li>Add <code>AtomicCell::as_ptr()</code>.</li>
+<li>Add <code>AtomicCell::take()</code>.</li>
+<li>Fix a bug in <code>AtomicCell::compare_exchange()</code> and <code>AtomicCell::compare_and_swap()</code>.</li>
+<li>Various documentation improvements.</li>
+</ul>
+<h1 id="version-065">Version 0.6.5</h1>
+<ul>
+<li>Rename <code>Backoff::is_complete()</code> to <code>Backoff::is_completed()</code>.</li>
+</ul>
+<h1 id="version-064">Version 0.6.4</h1>
+<ul>
+<li>Add <code>WaitGroup</code>, <code>ShardedLock</code>, and <code>Backoff</code>.</li>
+<li>Add <code>fetch_*</code> methods for <code>AtomicCell&lt;i128&gt;</code> and <code>AtomicCell&lt;u128&gt;</code>.</li>
+<li>Expand documentation.</li>
+</ul>
+<h1 id="version-063">Version 0.6.3</h1>
+<ul>
+<li>Add <code>AtomicCell</code>.</li>
+<li>Improve documentation.</li>
+</ul>
+<h1 id="version-062">Version 0.6.2</h1>
+<ul>
+<li>Add <code>Parker</code>.</li>
+<li>Improve documentation.</li>
+</ul>
+<h1 id="version-061">Version 0.6.1</h1>
+<ul>
+<li>Fix a soundness bug in <code>Scope::spawn()</code>.</li>
+<li>Remove the <code>T: 'scope</code> bound on <code>ScopedJoinHandle</code>.</li>
+</ul>
+<h1 id="version-060">Version 0.6.0</h1>
+<ul>
+<li>Move <code>AtomicConsume</code> to <code>atomic</code> module.</li>
+<li><code>scope()</code> returns a <code>Result</code> of thread joins.</li>
+<li>Remove <code>spawn_unchecked</code>.</li>
+<li>Fix a soundness bug due to incorrect lifetimes.</li>
+<li>Improve documentation.</li>
+<li>Support nested scoped spawns.</li>
+<li>Implement <code>Copy</code>, <code>Hash</code>, <code>PartialEq</code>, and <code>Eq</code> for <code>CachePadded</code>.</li>
+<li>Add <code>CachePadded::into_inner()</code>.</li>
+</ul>
+<h1 id="version-050">Version 0.5.0</h1>
+<ul>
+<li>Reorganize sub-modules and rename functions.</li>
+</ul>
+<h1 id="version-041">Version 0.4.1</h1>
+<ul>
+<li>Fix a documentation link.</li>
+</ul>
+<h1 id="version-040">Version 0.4.0</h1>
+<ul>
+<li><code>CachePadded</code> supports types bigger than 64 bytes.</li>
+<li>Fix a bug in scoped threads where unitialized memory was being dropped.</li>
+<li>Minimum required Rust version is now 1.25.</li>
+</ul>
+<h1 id="version-032">Version 0.3.2</h1>
+<ul>
+<li>Mark <code>load_consume</code> with <code>#[inline]</code>.</li>
+</ul>
+<h1 id="version-031">Version 0.3.1</h1>
+<ul>
+<li><code>load_consume</code> on ARM and AArch64.</li>
+</ul>
+<h1 id="version-030">Version 0.3.0</h1>
+<ul>
+<li>Add <code>join</code> for scoped thread API.</li>
+<li>Add <code>load_consume</code> for atomic load-consume memory ordering.</li>
+<li>Remove <code>AtomicOption</code>.</li>
+</ul>
+<h1 id="version-022">Version 0.2.2</h1>
+<ul>
+<li>Support Rust 1.12.1.</li>
+<li>Call <code>T::clone</code> when cloning a <code>CachePadded&lt;T&gt;</code>.</li>
+</ul>
+<h1 id="version-021">Version 0.2.1</h1>
+<ul>
+<li>Add <code>use_std</code> feature.</li>
+</ul>
+<h1 id="version-020">Version 0.2.0</h1>
+<ul>
+<li>Add <code>nightly</code> feature.</li>
+<li>Use <code>repr(align(64))</code> on <code>CachePadded</code> with the <code>nightly</code> feature.</li>
+<li>Implement <code>Drop</code> for <code>CachePadded&lt;T&gt;</code>.</li>
+<li>Implement <code>Clone</code> for <code>CachePadded&lt;T&gt;</code>.</li>
+<li>Implement <code>From&lt;T&gt;</code> for <code>CachePadded&lt;T&gt;</code>.</li>
+<li>Implement better <code>Debug</code> for <code>CachePadded&lt;T&gt;</code>.</li>
+<li>Write more tests.</li>
+<li>Add this changelog.</li>
+<li>Change cache line length to 64 bytes.</li>
+<li>Remove <code>ZerosValid</code>.</li>
+</ul>
+<h1 id="version-010">Version 0.1.0</h1>
+<ul>
+<li>Old implementation of <code>CachePadded</code> from <code>crossbeam</code> version 0.3.0</li>
+</ul>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

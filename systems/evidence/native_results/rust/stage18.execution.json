@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/rust/shape-rust",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "stage18"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0012681380000003628,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    },\n    \"sports_v8/data/spl_selected_frames.json\": {\n      \"bytes\": 6528,\n      \"sha256\": \"4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc\"\n    }\n  },\n  \"lab\": \"stage18\",\n  \"language\": \"rust\",\n  \"metrics\": {\n    \"centroid_m\": [\n      4.031211893377345,\n      -7.6953969094303085,\n      2.76572456960666\n    ],\n    \"equal_chunk_centroid_m\": [\n      4.803531031080386,\n      -7.734473429528235,\n      1.9522066411894918\n    ],\n    \"equal_chunk_displacement_m\": 1.122414916482088,\n    \"order_reversal_error\": 1.3322676295501878e-15,\n    \"rows\": 12,\n    \"scope\": \"selected nonuniform rows, not time average, release point, or static LiDAR scan\",\n    \"weighted_centroid_m\": [\n      4.031211893377345,\n      -7.6953969094303085,\n      2.7657245696066592\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

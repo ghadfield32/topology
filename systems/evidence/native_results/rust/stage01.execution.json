@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/rust/shape-rust",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "stage01"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0016340419999778533,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"data/raw/iris.csv\": {\n      \"bytes\": 4676,\n      \"sha256\": \"160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f\"\n    },\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage01\",\n  \"language\": \"rust\",\n  \"metrics\": {\n    \"augmented_rank\": 4,\n    \"centered_scaled_rank\": 4,\n    \"f2_rank\": 2,\n    \"finite_preimage_of_square_1_to_9\": [\n      -3,\n      -2,\n      -1,\n      1,\n      2,\n      3\n    ],\n    \"iris_rank\": 4,\n    \"kernel_residual_max\": 0.0,\n    \"known_kernel\": [\n      -2.0,\n      3.0,\n      0.0,\n      0.0,\n      1.0\n    ],\n    \"real_rank\": 3\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

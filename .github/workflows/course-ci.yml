@@ -75,12 +75,12 @@ jobs:
           kind version
           kubectl version --client
           kind create cluster --name shape-learning
-          kind load docker-image listening-to-shape:12 --name shape-learning
+          kind load docker-image listening-to-shape:14 --name shape-learning
       - name: Kubernetes admission, storage, Job, and reader acceptance
         run: >-
           uv run --no-sync python tools/k8s_verify.py
           --context kind-shape-learning --namespace shape-course-ci
-          --image listening-to-shape:12 --profile full --apply
+          --image listening-to-shape:14 --profile full --apply
           --output my_work/k8s-live
       - name: Export kind diagnostics
         if: always()

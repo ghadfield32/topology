@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>v17 execution scope — evidence before completion claims · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/v17/VERIFICATION.md">docs/v17/VERIFICATION.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="v17-execution-scope--evidence-before-completion-claims">v17 execution scope — evidence before completion claims</h1>
+<p>This release preserves the supplied v16 course and adds the source-mapped systems layer. It does not relabel old results as new, equate notebook execution with learner mastery, or certify every source recommendation as implemented.</p>
+<h2 id="fresh-execution-in-this-build">Fresh execution in this build</h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Existing Python test suite</td>
+<td>821 passed, 2 skipped (Ripser/GUDHI absent), no failures.</td>
+</tr>
+<tr>
+<td>New isolated Python contract/navigation/project tests</td>
+<td>21 passed.</td>
+</tr>
+<tr>
+<td>Native16 Go/Rust acceptance</td>
+<td>All57labs in each language executed; all comparisons passed. Go34tests/subtests; Rust28tests.</td>
+</tr>
+<tr>
+<td>Native source decoding</td>
+<td>110comparisons for55registeredfiles, plus64reader fixtures and220selected independent scientific checks.</td>
+</tr>
+<tr>
+<td>New language workbook sweep</td>
+<td>171/171 passed in fresh kernels;513interfacecodecells.</td>
+</tr>
+<tr>
+<td>Actual original Python calculations behind those interfaces</td>
+<td>56unique original notebooks,74executions including prerequisite repeats. NOT all133original notebook files freshly rerun.</td>
+</tr>
+<tr>
+<td>Source-mapped project matrix</td>
+<td>Eight passed; C++OpenCV and PyO3 blocked. Status is not an all-ten pass.</td>
+</tr>
+<tr>
+<td>New Go service tests</td>
+<td>Seven tests passed under the race detector. Actual loopback HTTP→nativeGoStage01→JSON request passed; graceful termination returned0.</td>
+</tr>
+<tr>
+<td>New Rust validator</td>
+<td>Ten tests passed; actual source-byte decoding executed.</td>
+</tr>
+<tr>
+<td>New C and C++ projects</td>
+<td>CMake/CTest passed: two C tests, three C++ tests. Actual SPL reader and trajectory outputs independently checked.</td>
+</tr>
+<tr>
+<td>C/Rust portable format boundary checks</td>
+<td>28checks passed across valid and malformed files.</td>
+</tr>
+<tr>
+<td>pybind11</td>
+<td>Actual C++extension built/imported; trajectory and MST controls passed.</td>
+</tr>
+<tr>
+<td>TypeScript</td>
+<td>Strict compilation and ten Node runtime-contract tests passed.</td>
+</tr>
+<tr>
+<td>Private edited-source test</td>
+<td>Correct copy passed, deliberately wrong count failed, repaired copy passed; reference source unchanged.</td>
+</tr>
+<tr>
+<td>GPU profiling</td>
+<td>CPU profiler executed on repeated real-data buffers. CUDA/Triton/CUDA-C++ not run; explicit CUDA probe returned blocked.</td>
+</tr>
+<tr>
+<td>Controlled failure teaching</td>
+<td>Rust conflicting-borrow/moved-value compile failures and an ASan heap-use-after-free failure were observed. Correct C sanitizer build/tests also passed.</td>
+</tr>
+</tbody>
+</table>
+<p>The current portal check covered24HTMLpages and382localtargets, with none missing. Three public HTTP paths returned200 and three private/traversal/directory paths returned403. Browser rendering, filtering, realJSONloading, viewport sizing and clearing stale plots after an error passed. Actual file navigation was blocked by administrator policy.</p>
+<p>The final archive-extraction and browser checks are in <code>systems/evidence/release_checks.json</code> and the separately delivered archive-check record. Do not infer them from this table alone.</p>
+<h2 id="important-failures-retained">Important failures retained</h2>
+<p>The first workbook sweep leaked caller-owned KernelManager instances. This reached the process memory limit. The interrupted record is preserved. Explicit finally-block shutdown/cleanup fixed the resource ownership; the complete171-workbook sweep then passed. Partial pre-fix progress is not counted as a successful sweep.</p>
+<p>A unit test caught compiler errors being mislabeled as missing dependencies. The project checker now distinguishes an explicit dependency block from an actual build/assertion failure. Contract tests also found missing confidence/limitation validation and prediction-overflow checks; the fail-before-fix records remain included.</p>
+<h2 id="actual-measured-data-demonstration">Actual measured-data demonstration</h2>
+<p>The source is the existing selected SPL tracking excerpt:12frames, one participant, one trial. Coordinates are converted from feet to metres; time is an ideal frame/sample-rate clock. Confidence is not supplied and stays unknown. This is not new sensor acquisition or independently certified ground truth.</p>
+<p>Five selected points fit an initial state under fixed g=9.81m/s²; two later same-shot points evaluate it. C and Rust agree with Python's count and coordinate means. C++andPython trajectory predictions differ by at most8.8818e-16m in this run.</p>
+<ul>
+<li>Height fitting RMSE:0.0175369173m.</li>
+<li>Two-point later height MAE:0.0488124742m.</li>
+<li>Last observed fitting-height baseline MAE:0.0446230813m.</li>
+<li>Fitting-mean height baseline MAE:0.2501537654m.</li>
+</ul>
+<p>The last-height baseline outperforms this fitted model on these two selected points. The exercise must not present the weaker mean baseline as the only comparison. No statistical significance, release detection or out-of-athlete accuracy is established.</p>
+<h2 id="tested-environment">Tested environment</h2>
+<p>Linux x86_64; Python3.13.5; Go1.23.2; Rust/Cargo1.90.0; GCC/G++14.2; CMake3.31.6; Node22.16.0; TypeScript5.8.3; PyTorch2.10.0+cpu; NumPy2.3.5. These are observed tool versions, not claims to be the latest or production recommendations.</p>
+<p>The pybind11 build used explicit genuine headers present in the installed PyTorch include directory. A new online pybind11 installation was not tested. Rust's validator has a genuine Cargo.lock and reuses the base's vendored source dependencies. The optional PyO3 package has no invented lock or vendored dependency claim.</p>
+<h2 id="still-blocked-planned-or-outside-scope">Still blocked, planned, or outside scope</h2>
+<ul>
+<li>New Docker image build/run, new Kubernetes Deployment/Job execution, remote execution of the new manual CI workflow, Windows/WSL/macOS setup, fresh dependency resolution and GPU execution were not performed here.</li>
+<li>New C++OpenCV requires a development package not present here. PythonOpenCV's existing-image/memory/projection probe passed; that is not C++equivalence.</li>
+<li>PyO3/maturin are not installed. The actual extension source is present, but compilation, import and clean packaging await that dependency gate.</li>
+<li>CUDA/Triton kernels are supplied and labeled unexecuted; CPU performance is not GPU performance. Nsight, mixed-precision and torch.compile comparisons are further exercises.</li>
+<li>C++does not implement spin/drag/contact or a general surveyed scene pipeline. The TypeScript display is an offline orthographic projection of3Dcoordinates, not a full WebGLworld. The Go service is bounded/in-memory, not durable or authenticated for public deployment.</li>
+<li>The source's advanced capstone ideas, original-book audit, all original-model protocol equivalence, general alpha/Delaunay construction, trained VGGT/PointNet/semantic-scene pipelines, independent research validation and learner mastery remain explicit obligations.</li>
+</ul>
+<h2 id="where-to-inspect-evidence">Where to inspect evidence</h2>
+<p><code>systems/evidence/</code> contains development red/green logs, the final original pytestXML, nativeacceptance/data/scientificcomparisons, all171executed interface notebooks,56fresh original references, project-check logs, portable-reader cases, actual HTTPservice result, private-edit mutation evidence, and the integrated-demo data/results/viewer. Binary compiler outputs and toolchain executables are intentionally not distributed.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

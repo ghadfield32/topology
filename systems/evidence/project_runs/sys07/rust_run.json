@@ -1,0 +1,18 @@
+{
+  "command": [
+    "cargo",
+    "run",
+    "--offline",
+    "--locked",
+    "--bin",
+    "capture-validator",
+    "--",
+    "--binary",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/data/trajectory.bin"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/project/rust_validator",
+  "exit_code": 0,
+  "seconds": 0.02160146000005625,
+  "stdout": "{\"count\":12,\"known_confidence\":0,\"start\":0.0,\"end\":3.5,\"mean\":[4.031211893377345,-7.695396909430308,2.765724569606659]}\n",
+  "stderr": "    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.01s\n     Running `/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/check01/target/debug/capture-validator --binary /mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07/data/trajectory.bin`\n"
+}

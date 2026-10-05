@@ -1,0 +1,145 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Changelog · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/sha2/CHANGELOG.md">native/rust/vendor/sha2/CHANGELOG.md</a> · Readable source notation; no online math renderer.</p><h1 id="changelog">Changelog</h1>
+<p>All notable changes to this project will be documented in this file.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<h2 id="0109-2025-04-30">0.10.9 (2025-04-30)</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li><code>force-soft-compact</code> crate feature to enable compact software backend (backport of <a href="https://github.com/RustCrypto/hashes/pull/686">#686</a>) <a href="https://github.com/RustCrypto/hashes/pull/687">#687</a></li>
+</ul>
+<h2 id="0108-2023-09-26">0.10.8 (2023-09-26)</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li><code>asm!</code>-based backend for LoongArch64 targets gated behind <code>loongarch64_asm</code> feature <a href="https://github.com/RustCrypto/hashes/pull/507">#507</a></li>
+</ul>
+<h2 id="0107-2023-06-15">0.10.7 (2023-06-15)</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>AArch64 Neon-based backend (<a href="https://github.com/RustCrypto/hashes/pull/490">#490</a>)</li>
+</ul>
+<h2 id="0106-2022-09-16">0.10.6 (2022-09-16)</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>Feature-gated OID support (<a href="https://github.com/RustCrypto/hashes/pull/405">#405</a>)</li>
+</ul>
+<h2 id="0105-2022-09-02">0.10.5 (2022-09-02)</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>MSRV issue which was not resolved by v0.10.4 (<a href="https://github.com/RustCrypto/hashes/pull/401">#401</a>)</li>
+</ul>
+<h2 id="0104-2022-09-02">0.10.4 (2022-09-02)</h2>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>MSRV issue caused by publishing v0.10.3 using a buggy Nightly toolchain (<a href="https://github.com/RustCrypto/hashes/pull/399">#399</a>)</li>
+</ul>
+<h2 id="0103-2022-08-30">0.10.3 (2022-08-30)</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Ignore <code>asm</code> feature on unsupported targets (<a href="https://github.com/RustCrypto/hashes/pull/388">#388</a>)</li>
+</ul>
+<h2 id="0102-2022-02-17">0.10.2 (2022-02-17)</h2>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Minimal versions build (<a href="https://github.com/RustCrypto/hashes/pull/363">#363</a>)</li>
+</ul>
+<h2 id="0101-2022-01-06">0.10.1 (2022-01-06)</h2>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>Bug in the AVX2 backend (<a href="https://github.com/RustCrypto/hashes/pull/345">#345</a>)</li>
+</ul>
+<h2 id="0100-2021-12-07-yanked">0.10.0 (2021-12-07) [YANKED]</h2>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Update to <code>digest</code> v0.10 (<a href="https://github.com/RustCrypto/hashes/pull/217">#217</a>)</li>
+<li>Rename <code>Sha512Trunc224</code> and <code>Sha512Trunc256</code> to <code>Sha512_224</code> and <code>Sha512_256</code> respectively. (<a href="https://github.com/RustCrypto/hashes/pull/217">#217</a>)</li>
+</ul>
+<h2 id="099-2022-01-06">0.9.9 (2022-01-06)</h2>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Backport <a href="https://github.com/RustCrypto/hashes/pull/345">#345</a> bug fix for the AVX2 backend (<a href="https://github.com/RustCrypto/hashes/pull/346">#346</a>)</li>
+</ul>
+<h2 id="098-2021-09-09-yanked">0.9.8 (2021-09-09) [YANKED]</h2>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Bug in the AVX2 backend (<a href="https://github.com/RustCrypto/hashes/pull/314">#314</a>)</li>
+</ul>
+<h2 id="097-2021-09-08-yanked">0.9.7 (2021-09-08) [YANKED]</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>x86 intrinsics support for SHA-512 (<a href="https://github.com/RustCrypto/hashes/pull/312">#312</a>)</li>
+</ul>
+<h2 id="096-2021-08-27">0.9.6 (2021-08-27)</h2>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>Bump <code>cpufeatures</code> dependency to 0.2 (<a href="https://github.com/RustCrypto/hashes/pull/306">#306</a>)</li>
+</ul>
+<h2 id="095-2021-05-11">0.9.5 (2021-05-11)</h2>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>Use <code>cpufeatures</code> to detect intrinsics support on <code>aarch64</code> targets (<a href="https://github.com/RustCrypto/hashes/pull/267">#267</a>)</li>
+</ul>
+<h2 id="094-2021-05-05">0.9.4 (2021-05-05)</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Hardware accelerated SHA-256 for Apple M1 CPUs with <code>asm</code> feature (<a href="https://github.com/RustCrypto/hashes/pull/262">#262</a>)</li>
+</ul>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>Bump <code>sha2-asm</code> to v0.6.1 release (<a href="https://github.com/RustCrypto/hashes/pull/262">#262</a>)</li>
+<li>Switch from <code>cpuid-bool</code> to <code>cpufeatures</code> (<a href="https://github.com/RustCrypto/hashes/pull/263">#263</a>)</li>
+</ul>
+<h2 id="093-2021-01-30">0.9.3 (2021-01-30)</h2>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Use the SHA-NI extension backend with enabled <code>asm</code> feature. (<a href="https://github.com/RustCrypto/hashes/pull/224">#224</a>)</li>
+</ul>
+<h2 id="092-2020-11-04">0.9.2 (2020-11-04)</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li><code>force-soft</code> feature to enforce use of software implementation. (<a href="https://github.com/RustCrypto/hashes/pull/203">#203</a>)</li>
+</ul>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li><code>cfg-if</code> dependency updated to v1.0. (<a href="https://github.com/RustCrypto/hashes/pull/197">#197</a>)</li>
+</ul>
+<h2 id="091-2020-06-24">0.9.1 (2020-06-24)</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>x86 hardware acceleration of SHA-256 via SHA extension instrinsics. (<a href="https://github.com/RustCrypto/hashes/pull/167">#167</a>)</li>
+</ul>
+<h2 id="090-2020-06-09">0.9.0 (2020-06-09)</h2>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>Update to <code>digest</code> v0.9 release; MSRV 1.41+ (<a href="https://github.com/RustCrypto/hashes/pull/155">#155</a>)</li>
+<li>Use new <code>*Dirty</code> traits from the <code>digest</code> crate (<a href="https://github.com/RustCrypto/hashes/pull/153">#153</a>)</li>
+<li>Bump <code>block-buffer</code> to v0.8 release (<a href="https://github.com/RustCrypto/hashes/pull/151">#151</a>)</li>
+<li>Rename <code>*result*</code> to <code>finalize</code> (<a href="https://github.com/RustCrypto/hashes/pull/148">#148</a>)</li>
+<li>Upgrade to Rust 2018 edition (<a href="https://github.com/RustCrypto/hashes/pull/133">#133</a>)</li>
+</ul>
+<h2 id="082-2020-05-23">0.8.2 (2020-05-23)</h2>
+<h3 id="added-8">Added</h3>
+<ul>
+<li>Expose compression function under the <code>compress</code> feature flag (<a href="https://github.com/RustCrypto/hashes/pull/108">#108</a>)</li>
+</ul>
+<h3 id="changed-8">Changed</h3>
+<ul>
+<li>Use <code>libc</code> crate for <code>aarch64</code> consts (<a href="https://github.com/RustCrypto/hashes/pull/109">#109</a>)</li>
+<li>Minor code cleanups (<a href="https://github.com/RustCrypto/hashes/pull/94">#94</a>)</li>
+</ul>
+<h2 id="081-2020-01-05">0.8.1 (2020-01-05)</h2>
+<h2 id="080-2018-10-02">0.8.0 (2018-10-02)</h2>
+<h2 id="071-2018-04-27">0.7.1 (2018-04-27)</h2>
+<h2 id="060-2017-06-12">0.6.0 (2017-06-12)</h2>
+<h2 id="053-2017-06-03">0.5.3 (2017-06-03)</h2>
+<h2 id="052-2017-05-08">0.5.2 (2017-05-08)</h2>
+<h2 id="051-2017-05-01">0.5.1 (2017-05-01)</h2>
+<h2 id="050-2017-04-06">0.5.0 (2017-04-06)</h2>
+<h2 id="042-2017-01-23">0.4.2 (2017-01-23)</h2>
+<h2 id="041-2017-01-20">0.4.1 (2017-01-20)</h2>
+<h2 id="040-2016-12-24">0.4.0 (2016-12-24)</h2>
+<h2 id="030-2016-11-17">0.3.0 (2016-11-17)</h2>
+<h2 id="020-2016-10-26">0.2.0 (2016-10-26)</h2>
+<h2 id="012-2016-05-06">0.1.2 (2016-05-06)</h2>
+<h2 id="011-2016-05-06">0.1.1 (2016-05-06)</h2>
+<h2 id="010-2016-05-06">0.1.0 (2016-05-06)</h2>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

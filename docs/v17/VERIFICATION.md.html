@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><style>body{font:18px/1.65 system-ui;max-width:960px;padding:28px;margin:auto;color:#172733}h1{line-height:1.2}pre{overflow:auto;padding:18px;background:#f0f3f2}code{font-size:.88em}table{border-collapse:collapse;display:block;overflow:auto}td,th{border-bottom:1px solid #ddd;padding:9px}a{color:#175b75;overflow-wrap:anywhere}</style><p><a href="../../LEARN_TOPOLOGY.html">← Course home</a> · <a href="VERIFICATION.md">Markdown source</a></p><h1>v17 execution scope — evidence before completion claims</h1>
+<p>This release preserves the supplied v16 course and adds the source-mapped systems layer. It does not relabel old results as new, equate notebook execution with learner mastery, or certify every source recommendation as implemented.</p>
+<h2>Fresh execution in this build</h2>
+<table>
+<thead>
+<tr>
+  <th>Check</th>
+  <th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Existing Python test suite</td>
+  <td>821 passed, 2 skipped (Ripser/GUDHI absent), no failures.</td>
+</tr>
+<tr>
+  <td>New isolated Python contract/navigation/project tests</td>
+  <td>21 passed.</td>
+</tr>
+<tr>
+  <td>Native16 Go/Rust acceptance</td>
+  <td>All57labs in each language executed; all comparisons passed. Go34tests/subtests; Rust28tests.</td>
+</tr>
+<tr>
+  <td>Native source decoding</td>
+  <td>110comparisons for55registeredfiles, plus64reader fixtures and220selected independent scientific checks.</td>
+</tr>
+<tr>
+  <td>New language workbook sweep</td>
+  <td>171/171 passed in fresh kernels;513interfacecodecells.</td>
+</tr>
+<tr>
+  <td>Actual original Python calculations behind those interfaces</td>
+  <td>56unique original notebooks,74executions including prerequisite repeats. NOT all133original notebook files freshly rerun.</td>
+</tr>
+<tr>
+  <td>Source-mapped project matrix</td>
+  <td>Eight passed; C++OpenCV and PyO3 blocked. Status is not an all-ten pass.</td>
+</tr>
+<tr>
+  <td>New Go service tests</td>
+  <td>Seven tests passed under the race detector. Actual loopback HTTP→nativeGoStage01→JSON request passed; graceful termination returned0.</td>
+</tr>
+<tr>
+  <td>New Rust validator</td>
+  <td>Ten tests passed; actual source-byte decoding executed.</td>
+</tr>
+<tr>
+  <td>New C and C++ projects</td>
+  <td>CMake/CTest passed: two C tests, three C++ tests. Actual SPL reader and trajectory outputs independently checked.</td>
+</tr>
+<tr>
+  <td>C/Rust portable format boundary checks</td>
+  <td>28checks passed across valid and malformed files.</td>
+</tr>
+<tr>
+  <td>pybind11</td>
+  <td>Actual C++extension built/imported; trajectory and MST controls passed.</td>
+</tr>
+<tr>
+  <td>TypeScript</td>
+  <td>Strict compilation and ten Node runtime-contract tests passed.</td>
+</tr>
+<tr>
+  <td>Private edited-source test</td>
+  <td>Correct copy passed, deliberately wrong count failed, repaired copy passed; reference source unchanged.</td>
+</tr>
+<tr>
+  <td>GPU profiling</td>
+  <td>CPU profiler executed on repeated real-data buffers. CUDA/Triton/CUDA-C++ not run; explicit CUDA probe returned blocked.</td>
+</tr>
+<tr>
+  <td>Controlled failure teaching</td>
+  <td>Rust conflicting-borrow/moved-value compile failures and an ASan heap-use-after-free failure were observed. Correct C sanitizer build/tests also passed.</td>
+</tr>
+</tbody>
+</table>
+<p>The current portal check covered24HTMLpages and382localtargets, with none missing. Three public HTTP paths returned200 and three private/traversal/directory paths returned403. Browser rendering, filtering, realJSONloading, viewport sizing and clearing stale plots after an error passed. Actual file navigation was blocked by administrator policy.</p>
+<p>The final archive-extraction and browser checks are in <code>systems/evidence/release_checks.json</code> and the separately delivered archive-check record. Do not infer them from this table alone.</p>
+<h2>Important failures retained</h2>
+<p>The first workbook sweep leaked caller-owned KernelManager instances. This reached the process memory limit. The interrupted record is preserved. Explicit finally-block shutdown/cleanup fixed the resource ownership; the complete171-workbook sweep then passed. Partial pre-fix progress is not counted as a successful sweep.</p>
+<p>A unit test caught compiler errors being mislabeled as missing dependencies. The project checker now distinguishes an explicit dependency block from an actual build/assertion failure. Contract tests also found missing confidence/limitation validation and prediction-overflow checks; the fail-before-fix records remain included.</p>
+<h2>Actual measured-data demonstration</h2>
+<p>The source is the existing selected SPL tracking excerpt:12frames, one participant, one trial. Coordinates are converted from feet to metres; time is an ideal frame/sample-rate clock. Confidence is not supplied and stays unknown. This is not new sensor acquisition or independently certified ground truth.</p>
+<p>Five selected points fit an initial state under fixed g=9.81m/s²; two later same-shot points evaluate it. C and Rust agree with Python's count and coordinate means. C++andPython trajectory predictions differ by at most8.8818e-16m in this run.</p>
+<ul>
+<li>Height fitting RMSE:0.0175369173m.</li>
+<li>Two-point later height MAE:0.0488124742m.</li>
+<li>Last observed fitting-height baseline MAE:0.0446230813m.</li>
+<li>Fitting-mean height baseline MAE:0.2501537654m.</li>
+</ul>
+<p>The last-height baseline outperforms this fitted model on these two selected points. The exercise must not present the weaker mean baseline as the only comparison. No statistical significance, release detection or out-of-athlete accuracy is established.</p>
+<h2>Tested environment</h2>
+<p>Linux x86_64; Python3.13.5; Go1.23.2; Rust/Cargo1.90.0; GCC/G++14.2; CMake3.31.6; Node22.16.0; TypeScript5.8.3; PyTorch2.10.0+cpu; NumPy2.3.5. These are observed tool versions, not claims to be the latest or production recommendations.</p>
+<p>The pybind11 build used explicit genuine headers present in the installed PyTorch include directory. A new online pybind11 installation was not tested. Rust's validator has a genuine Cargo.lock and reuses the base's vendored source dependencies. The optional PyO3 package has no invented lock or vendored dependency claim.</p>
+<h2>Still blocked, planned, or outside scope</h2>
+<ul>
+<li>New Docker image build/run, new Kubernetes Deployment/Job execution, remote execution of the new manual CI workflow, Windows/WSL/macOS setup, fresh dependency resolution and GPU execution were not performed here.</li>
+<li>New C++OpenCV requires a development package not present here. PythonOpenCV's existing-image/memory/projection probe passed; that is not C++equivalence.</li>
+<li>PyO3/maturin are not installed. The actual extension source is present, but compilation, import and clean packaging await that dependency gate.</li>
+<li>CUDA/Triton kernels are supplied and labeled unexecuted; CPU performance is not GPU performance. Nsight, mixed-precision and torch.compile comparisons are further exercises.</li>
+<li>C++does not implement spin/drag/contact or a general surveyed scene pipeline. The TypeScript display is an offline orthographic projection of3Dcoordinates, not a full WebGLworld. The Go service is bounded/in-memory, not durable or authenticated for public deployment.</li>
+<li>The source's advanced capstone ideas, original-book audit, all original-model protocol equivalence, general alpha/Delaunay construction, trained VGGT/PointNet/semantic-scene pipelines, independent research validation and learner mastery remain explicit obligations.</li>
+</ul>
+<h2>Where to inspect evidence</h2>
+<p><code>systems/evidence/</code> contains development red/green logs, the final original pytestXML, nativeacceptance/data/scientificcomparisons, all171executed interface notebooks,56fresh original references, project-check logs, portable-reader cases, actual HTTPservice result, private-edit mutation evidence, and the integrated-demo data/results/viewer. Binary compiler outputs and toolchain executables are intentionally not distributed.</p>
+</html>

@@ -33,6 +33,13 @@ defines every path once.
 | `tools/native_deploy_verify.py` | real image/Job verification | tooling | no |
 | `docs/release/` | verification, checks, layout and import records | documentation | no |
 | `deploy/`, `compose.yaml`, `Dockerfile` | the Python course container and cluster assets | deployment | no |
+| `systems/catalog.json` | the **single** owner of the sys00–sys09 engineering-unit order | course | no |
+| `systems/` | real engineering projects: `c/`, `cpp/`, `rust_validator/`, `go_service/`, `typescript/`, `gpu/`, `pyo3/`, `python/`, `tools/`, `tests/`, `lessons/`, `evidence/` | course | your private copy under `my_work/` |
+| `learning/workbooks/` | generated reference interfaces (57 units × Python/Go/Rust plus project interfaces) | generated | no — regenerate with `systems/tools/generate_workbooks.py` |
+| `learn.py` | the engineering front door (sessions, projects, demo, project matrix) | tooling | no |
+| `LEARN_TOPOLOGY.html` | the combined navigation page for both layers | generated | no |
+| `docs/v17/` | the archive's first-run, source-map, migration and verification records | documentation | no |
+| `docs/release/START_TO_FINISH.md` | the ordered start-to-finish journey | documentation | no |
 | `my_work/` | **your** private attempts, runs and evidence (git-ignored) | **you** | **yes** |
 
 ## The four ownership rules
@@ -46,6 +53,9 @@ defines every path once.
    would fail it.
 4. **Your work goes in `my_work/`.** Never edit a reference answer or the shared
    `native/go/` / `native/rust/` source to complete an assignment.
+5. **Engineering-unit order** lives in `systems/catalog.json` and nowhere else.
+   A project check compiles **your private `my_work/` copy**, not the reference
+   source, so editing and breaking it is the exercise.
 
 ## The distinction people get wrong
 

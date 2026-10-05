@@ -1,0 +1,847 @@
+{
+  "unique_original_reference_notebooks": 56,
+  "executions_including_dependencies": 74,
+  "all133_original_references_replayed": false,
+  "records": [
+    {
+      "path": "notebooks/00_lab.ipynb",
+      "source_sha256": "9118b9971d4c92f21254165b9b8d990cc8371af8d1b41c30f085498791777dfc",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-11yi5lj7/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 2,
+      "seconds": 2.434
+    },
+    {
+      "path": "notebooks/01_lab.ipynb",
+      "source_sha256": "9a99ec769c753b69a911d699d8ddcbb2b0dc72f4e25763e811b8bc03088d408a",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4ahg2yst/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.191
+    },
+    {
+      "path": "notebooks/02_lab.ipynb",
+      "source_sha256": "a1653b1e5ce4c575e33e04dce8a7d3e1cd6f560b84f19cc6ea3eb474466acd08",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-szdybbvc/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.698
+    },
+    {
+      "path": "notebooks/03_lab.ipynb",
+      "source_sha256": "752e3372096b8aadb624f56e8b79694f82ccdeb43fa35ada529746b78de560ae",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-x2g_2twn/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 2.389
+    },
+    {
+      "path": "notebooks/04_lab.ipynb",
+      "source_sha256": "e2c864f567cf4aa3f81a524924565feb2e4f1c93037da9e59a2a5465b3892dd6",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-091emyf5/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 2.223
+    },
+    {
+      "path": "notebooks/05_lab.ipynb",
+      "source_sha256": "99f4b0aedf180211fbe54b03d1f3b59219fbfa10e3d42045d914230390e31b3f",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-lnyzjx51/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 2.41
+    },
+    {
+      "path": "notebooks/06_lab.ipynb",
+      "source_sha256": "2e199864bdd87c8a8244955d7cdfb21badee2b527af345af83503ca485ad4048",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-jc08yosl/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 2.304
+    },
+    {
+      "path": "notebooks/07_lab.ipynb",
+      "source_sha256": "1beb10d1fe2148404f038d0f5e7b4bc55274b0fc39055108923fd1de346fe66d",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4zkzc42_/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 2.384
+    },
+    {
+      "path": "notebooks/08_lab.ipynb",
+      "source_sha256": "d89b02b32891e7e243cee46c4e4d82a6b2680de4d89a56dce869614c01ebd883",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-nml056w5/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 3,
+      "seconds": 3.009
+    },
+    {
+      "path": "notebooks/09_lab.ipynb",
+      "source_sha256": "6771c7dcfb89e55966ef10e6e83c2aa13f3e3842bd639c22650b57439bfb7673",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-kxqvx805/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.304
+    },
+    {
+      "path": "notebooks/10_lab.ipynb",
+      "source_sha256": "e5edc07a7d2ac24115f2c57d51307365b17737c491782baf7c8ef35b5952b644",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-5o64uepu/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 2.374
+    },
+    {
+      "path": "notebooks/11_lab.ipynb",
+      "source_sha256": "57cc409f4a74c60b2e67d044efb87dad0e73282eafdd515307b60234f3247f18",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-27w4ky9z/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 3,
+      "seconds": 7.303
+    },
+    {
+      "path": "notebooks/12_lab.ipynb",
+      "source_sha256": "e01011601565c80d9d5233a819772a567a14234459cfc0c18f0433228d981d94",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-27w4ky9z/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 3,
+      "seconds": 4.531
+    },
+    {
+      "path": "notebooks/13_lab.ipynb",
+      "source_sha256": "43f5bd4a2c57bb46bcfda05b1acb87cd9cf117d114e7c9f434c2c62ebf42fd22",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m9s4n1q2/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 3,
+      "seconds": 2.8
+    },
+    {
+      "path": "notebooks/14_lab.ipynb",
+      "source_sha256": "0c543cd641b9debfd07ddae1aa802c155d757fb62d5fe233e888b80a0059b411",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m9s4n1q2/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.498
+    },
+    {
+      "path": "notebooks/15_lab.ipynb",
+      "source_sha256": "c0937ae555d5a0f5b303baaf9f5d7273602cd57d09d3a084d78d35c87c8c4177",
+      "source_code_cells": 6,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m9s4n1q2/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 5,
+      "seconds": 3.584
+    },
+    {
+      "path": "notebooks/16_lab.ipynb",
+      "source_sha256": "1b35ac239a50cdd4e4d794a71089277a2d973483c7ef5ff5c798ccf7adf70bc1",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m9s4n1q2/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 2.327
+    },
+    {
+      "path": "notebooks/17_lab.ipynb",
+      "source_sha256": "6df3d33dc3b336563c4b585e9425461e570bc8008b29093751960eb7d812ebde",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m9s4n1q2/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 2.647
+    },
+    {
+      "path": "notebooks/18_lab.ipynb",
+      "source_sha256": "0bcb7875bacc9d250529542d1fa94708c09fb3afcf443a6346f6ebcf7f3bfe81",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m9s4n1q2/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 2.463
+    },
+    {
+      "path": "notebooks/19_lab.ipynb",
+      "source_sha256": "731f3b61b3beeb4e44a0ca288d088434d6286e046c10fab2d143f41f2badd805",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m9s4n1q2/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.034
+    },
+    {
+      "path": "notebooks/20_lab.ipynb",
+      "source_sha256": "400da3ad519a2839d8212511b72ccf4fd0698f1a51b824d4278b5c8eb61047d7",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m9s4n1q2/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.03
+    },
+    {
+      "path": "physics/notebooks/21_lab.ipynb",
+      "source_sha256": "6065a328e371604c1dae1482877de18aa3652ae9cc43801f5787a62fdfe24b4e",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 2.644
+    },
+    {
+      "path": "physics/notebooks/22_lab.ipynb",
+      "source_sha256": "292beb504d7cabf753ab48c15e77cac962c3c578d317c1fd2ba2e96ce9ed3869",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 2.195
+    },
+    {
+      "path": "physics/notebooks/23_lab.ipynb",
+      "source_sha256": "29b73748fef415ed75a8b2f2d283ee2a75e22ee15bebe2629a2f8fc45ff92093",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 5.602
+    },
+    {
+      "path": "physics/notebooks/24_lab.ipynb",
+      "source_sha256": "c34c626a123f6f910673c57456e7bda2fca0224a3f3b2f51d5540f10cbf49cc9",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 2.75
+    },
+    {
+      "path": "physics/notebooks/25_lab.ipynb",
+      "source_sha256": "64829f2539a900cd29584f0c92abcad2b86d327f81968cbfd15b60337d81e73a",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 2.76
+    },
+    {
+      "path": "physics/notebooks/26_lab.ipynb",
+      "source_sha256": "b1d521ef1d7fe815cfa27eb73f6050334595ae8e4508db68760852c3025d8dca",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 6.02
+    },
+    {
+      "path": "physics/notebooks/27_lab.ipynb",
+      "source_sha256": "697c315125318608c53f2e899f34b1e5d7c028f4328999fb114e52240ef7db84",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.002
+    },
+    {
+      "path": "physics/notebooks/28_lab.ipynb",
+      "source_sha256": "13241d4ac12d3b9157e35ea4a9cd3316874ecc909de37d8bdb5d5e8611652444",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 2,
+      "seconds": 5.863
+    },
+    {
+      "path": "physics/notebooks/29_lab.ipynb",
+      "source_sha256": "5bda83107e2a2297201f99d0f1063c7db370181a0b59a252692c652438d56cd2",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 6.593
+    },
+    {
+      "path": "physics/notebooks/30_lab.ipynb",
+      "source_sha256": "086e945d3bc6202767d03221c816c087895de6b9029b64f55d089cc4a4252fa1",
+      "source_code_cells": 3,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-4o_vh18o/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 4,
+      "png_outputs": 1,
+      "seconds": 1.918
+    },
+    {
+      "path": "industry/notebooks/wdbc.ipynb",
+      "source_sha256": "8af3d2b153cc5db263e9bcad029159dcebe39b96e825366efff18768108e00af",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-ago7k8xa/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 3.109
+    },
+    {
+      "path": "industry/notebooks/wine.ipynb",
+      "source_sha256": "539aed15fdd414870f7de14de673f3293c9141489e5983a20c39424a55dd7fed",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-gxq81frx/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 1,
+      "seconds": 2.93
+    },
+    {
+      "path": "industry/notebooks/stackloss.ipynb",
+      "source_sha256": "c160f06f95c95dc945ef470ff7e7a55c2d401024f834dcbdc97f573236c6f11d",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-ynciyqs7/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 2.994
+    },
+    {
+      "path": "industry/notebooks/grunfeld.ipynb",
+      "source_sha256": "afdaba8c67598088b9edd689357b533e74f8178cd77bf8f4971b5799a75f21f7",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-c8zplpjx/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 3.372
+    },
+    {
+      "path": "industry/notebooks/co2.ipynb",
+      "source_sha256": "4f1b4fdcbc4e6372a7320cf41d411ac68ce76825455f8660fa23772ac0133de8",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-srgh4ggt/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 3.792
+    },
+    {
+      "path": "industry/notebooks/nile.ipynb",
+      "source_sha256": "97595015b99ea4690e9fce281ffadc56e7537876c0b9d78b93da1382240838d2",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-9je3i007/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 3.074
+    },
+    {
+      "path": "industry/notebooks/elnino.ipynb",
+      "source_sha256": "7d4761ae359587b43d75d3eadcaab018fb2fa2caeecfc2401624fbb292f8acff",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-l_vmrlyv/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 3.245
+    },
+    {
+      "path": "industry/notebooks/modechoice.ipynb",
+      "source_sha256": "5fd8881521986f9c92948af47db09cfb22605d24e4c93f3018728f8f58dc395b",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-izdye8zx/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 3.325
+    },
+    {
+      "path": "applications_v7/seeds/lab.ipynb",
+      "source_sha256": "00b9133e3098a17caa334e6d50a46dfe79e8c1087a432e7a62673ae237ad5c49",
+      "source_code_cells": 7,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-gymj1kfh/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 8,
+      "png_outputs": 1,
+      "seconds": 3.041
+    },
+    {
+      "path": "applications_v7/concrete_slump/lab.ipynb",
+      "source_sha256": "669853e8ba99a37fade3854c3ec2b4f8fc1a2cbc35073c0fc49a9746f6593c6d",
+      "source_code_cells": 6,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-1my7ntin/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 1,
+      "seconds": 2.884
+    },
+    {
+      "path": "methods_v7/leakage/lab.ipynb",
+      "source_sha256": "431648b16c1f5bce02d212f28a34f601ebad28cdd0e46b199e0241870ef714b8",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-tnbu9v_u/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 1,
+      "seconds": 2.717
+    },
+    {
+      "path": "methods_v7/claims/lab.ipynb",
+      "source_sha256": "22a9c4561dcbca9f987118f9f1c7a4bf6281917523cab58ec426f0bb6f636442",
+      "source_code_cells": 6,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-iiin9v3k/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 7,
+      "png_outputs": 1,
+      "seconds": 2.037
+    },
+    {
+      "path": "sports_v8/notebooks/S00.ipynb",
+      "source_sha256": "0d85c67f3febf4f1abb9b93c2f1ddfad579b0002e7a7f7e73061e5c1d0bfcd36",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-pqw4zyyl/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.046
+    },
+    {
+      "path": "sports_v8/notebooks/S01.ipynb",
+      "source_sha256": "f6f6806ed5781ea6ccf267c092873456e1c53a25e4772549155d7e2959345237",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-_jcxwqiq/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.181
+    },
+    {
+      "path": "sports_v8/notebooks/S02.ipynb",
+      "source_sha256": "1ef88a0a124b94b3903b8c3a11c89812e533f6810b86df87c9b9fdda97627bbf",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-vxnpmqv6/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 1,
+      "seconds": 2.279
+    },
+    {
+      "path": "sports_v8/notebooks/S03.ipynb",
+      "source_sha256": "b616e8944b1aa22a84ec2e46cc2aa8c74778abb3a821834a03f93dbcaa56e2f1",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-63myl862/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 2.331
+    },
+    {
+      "path": "sports_v8/notebooks/S04.ipynb",
+      "source_sha256": "7ce5148b86492d13b7b6bc06802268e29c19adef3ded67e53dc08268626bcadd",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-atpf012y/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 1,
+      "seconds": 2.568
+    },
+    {
+      "path": "sports_v8/notebooks/S05.ipynb",
+      "source_sha256": "c6263972c34919ef744c1167c52e4b27b64f87c65f8200e2faeb556199650c67",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-dfmt_sga/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 1.974
+    },
+    {
+      "path": "sports_v8/notebooks/S06.ipynb",
+      "source_sha256": "5e7ad23f335fcd58a9fe98aec5112c4d5762fd361e508c413685796b81a310a4",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-t_d0e7dz/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 0,
+      "seconds": 2.026
+    },
+    {
+      "path": "sports_v9/notebooks/acb_readiness.ipynb",
+      "source_sha256": "ec6c10702901063fa98bb6e4f3c4284442c662b31947c294d53587b964cf43a9",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-m96l_tcc/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 0,
+      "seconds": 1.515
+    },
+    {
+      "path": "representations/notebooks/r01.ipynb",
+      "source_sha256": "db3e9f7ae7e0bb6278d4271d45a76c3c2a04f2f21c5e16075059cca92cf35420",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-fo_fegsh/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 1,
+      "seconds": 2.085
+    },
+    {
+      "path": "representations/notebooks/r02.ipynb",
+      "source_sha256": "2ab49794b377bb7bfc8efac55909ea52ac7cf27226863aef29145adbe6843c74",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-nnkbpyws/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 2,
+      "seconds": 2.779
+    },
+    {
+      "path": "representations/notebooks/r03.ipynb",
+      "source_sha256": "d7e087399bba6990f2bca2fcf84215376eab2933e17a197344869d9c30fa22c8",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-neiajtyk/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 3.261
+    },
+    {
+      "path": "representations/notebooks/r04.ipynb",
+      "source_sha256": "ed84b7e361c0d2bf73ede7ada209c1a797adfa981350dbe47c69305da83f0b45",
+      "source_code_cells": 5,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-5yatoo87/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 6,
+      "png_outputs": 2,
+      "seconds": 8.344
+    },
+    {
+      "path": "representations/notebooks/r05.ipynb",
+      "source_sha256": "586f9e36b741d8e56e5d3e69625ae9d1c64beb73c123ed1a36fad780efd9a7b1",
+      "source_code_cells": 4,
+      "runtime_probe_cells": 1,
+      "kernel": {
+        "python_executable": "/opt/pyvenv/bin/python",
+        "python_version": "3.13.5",
+        "shape_lab_origin": "/tmp/shape-course-5yatoo87/course/src/shape_lab/__init__.py"
+      },
+      "status": "passed",
+      "code_cells": 5,
+      "png_outputs": 0,
+      "seconds": 2.756
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/typenum/README.md">native/rust/vendor/typenum/README.md</a> · Readable source notation; no online math renderer.</p><p><a href="https://crates.io/crates/typenum"><img alt="crates.io" src="https://img.shields.io/crates/v/typenum.svg"/></a>
+<a href="https://github.com/paholg/typenum/actions/workflows/check.yml"><img alt="Build Status" src="https://github.com/paholg/typenum/actions/workflows/check.yml/badge.svg"/></a></p>
+<h1 id="typenum">Typenum</h1>
+<p>Typenum is a Rust library for type-level numbers evaluated at compile time. It
+currently supports bits, unsigned integers, and signed integers.</p>
+<p>Typenum depends only on libcore, and so is suitable for use on any platform!</p>
+<p>For the full documentation, go <a href="https://docs.rs/typenum">here</a>.</p>
+<h3 id="importing">Importing</h3>
+<p>While <code>typenum</code> is divided into several modules, they are all re-exported
+through the crate root, so you can import anything contained herein with <code>use typenum::whatever;</code>, ignoring the crate structure.</p>
+<p>You may also find it useful to treat the <code>consts</code> module as a prelude,
+performing a glob import.</p>
+<h3 id="example">Example</h3>
+<p>Here is a trivial example of <code>typenum</code>'s use:</p>
+<pre><code class="language-rust">use typenum::{Sum, Exp, Integer, N2, P3, P4};
+
+type X = Sum&lt;P3, P4&gt;;
+assert_eq!(&lt;X as Integer&gt;::to_i32(), 7);
+
+type Y = Exp&lt;N2, P3&gt;;
+assert_eq!(&lt;Y as Integer&gt;::to_i32(), -8);
+</code></pre>
+<p>For a non-trivial example of its use, see one of the crates that depends on
+it. The full list is
+<a href="https://crates.io/crates/typenum/reverse_dependencies">here</a>. Of note are
+<a href="https://crates.io/crates/dimensioned/">dimensioned</a> which does compile-time
+type checking for arbitrary unit systems and
+<a href="https://crates.io/crates/generic-array/">generic-array</a> which provides arrays
+whose length you can generically refer to.</p>
+<h3 id="error-messages">Error messages</h3>
+<p>Typenum's error messages aren't great, and can be difficult to parse. The good
+news is that the fine folks at Auxon have written a tool to help with it. Please
+take a look at <a href="https://github.com/auxoncorp/tnfilt">tnfilt</a>.</p>
+<h3 id="license">License</h3>
+<p>Licensed under either of</p>
+<ul>
+<li>Apache License, Version 2.0 (<a href="../../../../../native/rust/vendor/typenum/LICENSE-APACHE">LICENSE-APACHE</a> or
+<a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a>)</li>
+<li>MIT license (<a href="../../../../../native/rust/vendor/typenum/LICENSE-MIT">LICENSE-MIT</a> or
+<a href="https://opensource.org/license/mit">https://opensource.org/license/mit</a>)</li>
+</ul>
+<p>at your option.</p>
+<h3 id="contribution">Contribution</h3>
+<p>Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
+dual licensed as above, without any additional terms or conditions.</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

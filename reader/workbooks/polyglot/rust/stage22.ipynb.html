@@ -1,0 +1,280 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>stage22 — Smooth flows, coordinate changes and invertible networks · Listening to Shape</title><link rel="stylesheet" href="../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../START_HERE.html">Course home</a><a href="../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../workbooks/polyglot/rust/stage22.ipynb">workbooks/polyglot/rust/stage22.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><h1 id="stage22--smooth-flows-coordinate-changes-and-invertible-networks">stage22 — Smooth flows, coordinate changes and invertible networks</h1>
+<p><strong>Rust route</strong> · lab <code>stage22</code> · stage</p>
+<p>This notebook compiles and runs the <strong>real Rust program</strong>. Python is only the
+driver: it builds the binary, launches it and compares results. The mathematics
+happens in Rust.</p>
+<p>Read the <a href="../../../physics/lessons/22.md.html">lesson</a> and this lab's
+<a href="../../../native/guides/labs/stage22.md.html">implementation guide</a> first.</p>
+<h2 id="the-native-experiment-for-this-lab">The native experiment for this lab</h2>
+<p>Evaluate and invert the exact local flow of x-prime=x-squared before its blow-up time.</p>
+<h2 id="boundary">Boundary</h2>
+<p>This is not a general ODE solver or trained normalizing-flow model.</p>
+<h2 id="where-every-path-points">Where every path points</h2>
+<p>This notebook is <code>workbooks/polyglot/rust/stage22.ipynb</code>. Paths below are
+defined once, here, so the same names mean the same thing in every lab.</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it is</th>
+<th>Who owns it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curriculum/catalog.json</code></td>
+<td>the single owner of the 31-stage lesson order</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>native/protocols/labs.json</code></td>
+<td>the single owner of the 57 native experiment definitions</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>lessons/</code></td>
+<td>canonical written explanations</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>notebooks/</code></td>
+<td>original worked Python labs (<strong>no</strong> Go or Rust here)</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>practice/</code></td>
+<td>original learner assignments</td>
+<td>course</td>
+</tr>
+<tr>
+<td><a href="../../../physics/notebooks/22_lab.ipynb.html"><code>physics/notebooks/22_lab.ipynb</code></a></td>
+<td>this lab's canonical reference</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>native/go/</code>, <code>native/rust/</code></td>
+<td>reference implementations the notebooks compile</td>
+<td>read-only</td>
+</tr>
+<tr>
+<td><code>native/python/</code></td>
+<td>independent data and scientific checks</td>
+<td>read-only</td>
+</tr>
+<tr>
+<td><code>native/guides/</code></td>
+<td>language and implementation guidance</td>
+<td>read-only</td>
+</tr>
+<tr>
+<td><a href="../../../native/guides/labs/stage22.md.html"><code>native/guides/labs/stage22.md</code></a></td>
+<td>this lab's implementation guide</td>
+<td>read-only</td>
+</tr>
+<tr>
+<td><code>tools/build_language_notebooks.py</code></td>
+<td>the generator that owns <code>workbooks/polyglot/</code></td>
+<td>tooling</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/</code></td>
+<td>these generated teaching notebooks</td>
+<td>generated</td>
+</tr>
+<tr>
+<td><code>my_work/</code></td>
+<td>your private attempts and evidence (git-ignored)</td>
+<td><strong>you</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-one-that-matters-most">The one that matters most</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>native/rust/</code></td>
+<td>the <strong>reference</strong>. Committed and shared. Do not edit.</td>
+</tr>
+<tr>
+<td><code>my_work/&lt;session&gt;/native/rust/</code></td>
+<td><strong>your copy</strong>, from <code>native_course.py prepare</code>. Edit here.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relative-to-this-notebook">Relative to this notebook</h3>
+<table>
+<thead>
+<tr>
+<th>From here</th>
+<th>Points at</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../go/stage22.ipynb.html"><code>../go/stage22.ipynb</code></a></td>
+<td>the Go version of this lab</td>
+</tr>
+<tr>
+<td><a href="../README.md.html"><code>../README.md</code></a></td>
+<td>the index of all 57 labs, three languages</td>
+</tr>
+<tr>
+<td><a href="../../../native/guides/LEARNING_PATHS.md.html"><code>../../native/guides/LEARNING_PATHS.md</code></a></td>
+<td>the language learning paths</td>
+</tr>
+<tr>
+<td><a href="../../../docs/release/LANGUAGE_NOTEBOOKS.md.html"><code>../../docs/release/LANGUAGE_NOTEBOOKS.md</code></a></td>
+<td>how these notebooks work</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-setup">1. Setup</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>&quot;&quot;&quot;Notebook setup. Run this first.
+
+You are in the Rust notebook for stage22. It compiles and runs
+the real Rust program, exactly as native_course.py does, so you can
+walk through the code and the evidence interactively.
+&quot;&quot;&quot;
+import importlib.util, json, subprocess, sys, os
+from pathlib import Path
+
+_here = Path.cwd().resolve()
+ROOT = next(p for p in [_here, *_here.parents] if (p / &quot;native_course.py&quot;).is_file())
+
+
+def load_runner():
+    spec = importlib.util.spec_from_file_location(&quot;shape_native_runner&quot;, ROOT / &quot;native_course.py&quot;)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+runner = load_runner()
+LANG = &#x27;rust&#x27;
+LAB_KEY = &#x27;stage22&#x27;
+LAB = next(r for r in runner.available_labs(ROOT) if r[&quot;key&quot;] == LAB_KEY)
+RUN_DIR = ROOT / &quot;my_work&quot; / &quot;notebook_stage22_rust&quot;
+RUN_DIR.mkdir(parents=True, exist_ok=True)
+
+print(&quot;course root :&quot;, ROOT)
+print(&quot;language    :&quot;, LANG)
+print(&quot;lab         :&quot;, LAB[&quot;key&quot;], &quot;-&quot;, LAB[&quot;title&quot;])
+print(&quot;output dir  :&quot;, RUN_DIR.relative_to(ROOT))</code></pre><div class="output"></div></section><h2 id="2-toolchain-check">2. Toolchain check</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Step 1: is the toolchain present? A missing compiler is an environment
+# problem, NOT a mathematics failure. Read native/guides/SETUP.md if it fails.
+# --------------------------------------------------------------------------
+import shutil
+
+tool = shutil.which(&#x27;cargo&#x27;)
+print(&#x27;cargo&#x27;, &quot;-&gt;&quot;, tool)
+if tool:
+    version = subprocess.run([tool, *[&#x27;--version&#x27;]], capture_output=True, text=True)
+    print(version.stdout.strip() or version.stderr.strip())
+    print(&#x27;note: native/rust pins its own toolchain in rust-toolchain.toml&#x27;)
+else:
+    print(&quot;Install the toolchain before continuing: native/guides/SETUP.md&quot;)</code></pre><div class="output"></div></section><h2 id="3-read-the-dispatch-arm-for-this-lab">3. Read the dispatch arm for this lab</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Step 2: read the dispatch arm for THIS lab.
+# The dispatch file is a map of lab key -&gt; algorithm. It is not the algorithm.
+# Follow the helper calls it makes.
+# --------------------------------------------------------------------------
+dispatch = ROOT / &#x27;native/rust/src/labs.rs&#x27;
+text = dispatch.read_text(encoding=&quot;utf-8&quot;)
+print(&quot;dispatch file:&quot;, dispatch.relative_to(ROOT))
+print(&quot;lines:&quot;, len(text.splitlines()))
+
+needle = &#x27;stage22&#x27;
+for i, line in enumerate(text.splitlines(), start=1):
+    if needle in line:
+        lo, hi = max(1, i - 3), i + 18
+        print(f&quot;--- context around line {i} ---&quot;)
+        for j in range(lo, hi + 1):
+            rows = text.splitlines()
+            if j &lt;= len(rows):
+                marker = &quot;&gt;&gt;&quot; if j == i else &quot;  &quot;
+                print(f&quot;{marker} {j:4d} {rows[j - 1]}&quot;)
+        break
+else:
+    print(&quot;No direct dispatch arm found for&quot;, needle, &quot;- inspect the file yourself.&quot;)</code></pre><div class="output"></div></section><h2 id="4-compile">4. Compile</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Step 3: compile the native program. This can take a few seconds the first
+# time and is cached afterwards under my_work/native_build/.
+# --------------------------------------------------------------------------
+exe = runner.build(LANG, RUN_DIR, root=ROOT)
+print(&quot;binary:&quot;, exe)
+print(&quot;sha256:&quot;, runner.digest(exe))</code></pre><div class="output"></div></section><h2 id="5-run-this-lab">5. Run this lab</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Step 4: run ONLY this lab and read the JSON it produced.
+# The runner validates the result schema and every consumed-file hash.
+# --------------------------------------------------------------------------
+result = runner.execute_lab(LANG, LAB_KEY, exe, RUN_DIR, root=ROOT)
+print(&quot;lab      :&quot;, result[&quot;lab&quot;])
+print(&quot;language :&quot;, result[&quot;language&quot;])
+print(&quot;status   :&quot;, result[&quot;status&quot;])
+print()
+print(&quot;metrics:&quot;)
+print(json.dumps(result[&quot;metrics&quot;], indent=2, sort_keys=True))</code></pre><div class="output"></div></section><h2 id="6-which-inputs-did-it-consume">6. Which inputs did it consume?</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Step 5: what did this program actually read? Every entry is hashed.
+# --------------------------------------------------------------------------
+for rel, info in sorted(result[&quot;inputs&quot;].items()):
+    on_disk = runner.digest(ROOT / rel)
+    verdict = &quot;MATCH&quot; if on_disk == info[&quot;sha256&quot;] else &quot;CHANGED&quot;
+    print(rel)
+    print(&quot;  recorded&quot;, info[&quot;sha256&quot;])
+    print(&quot;  on disk &quot;, on_disk, &quot; &quot;, verdict)</code></pre><div class="output"></div></section><h2 id="7-compare-against-the-other-language">7. Compare against the other language</h2>
+<p>Run step 5 in <code>../go/stage22.ipynb</code>, then run
+the cell below. You should see agreement within tolerance and identical input
+hashes. Agreement is software evidence, not a proof of meaning.</p>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Step 6: compare with the other language.
+# Open ../go/stage22.ipynb and run its Step 5 first, then come
+# back and run this cell.
+# --------------------------------------------------------------------------
+OTHER = &#x27;go&#x27;
+other = (ROOT / &quot;my_work&quot; / f&quot;notebook_{LAB_KEY}_{OTHER}&quot; / OTHER / f&quot;{LAB_KEY}.json&quot;)
+print(&quot;looking for:&quot;, other.relative_to(ROOT))
+if not other.is_file():
+    print(&quot;Not found yet - run Step 4 in the other language notebook first.&quot;)
+else:
+    mine = json.loads((RUN_DIR / LANG / f&quot;{LAB_KEY}.json&quot;).read_text(encoding=&quot;utf-8&quot;))
+    theirs = json.loads(other.read_text(encoding=&quot;utf-8&quot;))
+    comparison = runner.compare_values(mine[&quot;metrics&quot;], theirs[&quot;metrics&quot;])
+    comparison[&quot;input_hashes_identical&quot;] = mine[&quot;inputs&quot;] == theirs[&quot;inputs&quot;]
+    print(&quot;agreement within tolerance:&quot;, comparison[&quot;passed&quot;])
+    print(&quot;numeric values compared   :&quot;, comparison[&quot;numeric_values_compared&quot;])
+    print(&quot;max absolute difference   :&quot;, comparison[&quot;max_absolute_difference&quot;])
+    print(&quot;input hashes identical    :&quot;, comparison[&quot;input_hashes_identical&quot;])
+    if comparison[&quot;discrepancies&quot;]:
+        print(&quot;discrepancies:&quot;, comparison[&quot;discrepancies&quot;])</code></pre><div class="output"></div></section><h2 id="8-change-one-thing">8. Change one thing</h2>
+<p><code>native/guides/LEARNING_PATHS.md</code>, section E. Rust.</p>
+<p>Copy the Rust source to a private folder, change a single assumption, predict the
+effect before running it, then explain what the language made explicit. This
+notebook is <strong>unassessed</strong>.</p>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Step 7: explain, then change one thing.
+# --------------------------------------------------------------------------
+# Implementation guide : native/guides/labs/stage22.md
+# Language path        : native/guides/LEARNING_PATHS.md  (section E. Rust)
+# Original Python ref  : physics/notebooks/22_lab.ipynb
+#
+# Three independent challenges for THIS lab:
+# 1. Derive x(t)=x0/(1-t*x0).
+# 2. Explain the maximal time domain for positive x0.
+# 3. Compare exact-flow invertibility with an arbitrary numerical step.
+#
+# Rust: which function borrows the input and which one takes ownership? Try removing a `.clone()` and read the compiler diagnostic before restoring it.
+#
+# Boundary - what this lab does NOT establish:
+# This is not a general ODE solver or trained normalizing-flow model.
+#
+# Copy native/rust to a private folder, change ONE assumption, predict the
+# effect BEFORE running, then compare. A copied reference is guided practice.
+print(&quot;Rust notebook complete for&quot;, LAB_KEY)</code></pre><div class="output"></div></section><a class="back" href="../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

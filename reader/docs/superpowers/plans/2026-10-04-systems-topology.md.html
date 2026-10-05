@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Systems-topology integration implementation plan · Listening to Shape</title><link rel="stylesheet" href="../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../START_HERE.html">Course home</a><a href="../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../docs/superpowers/plans/2026-10-04-systems-topology.md">docs/superpowers/plans/2026-10-04-systems-topology.md</a> · Readable source notation; no online math renderer.</p><h1 id="systems-topology-integration-implementation-plan">Systems-topology integration implementation plan</h1>
+<blockquote>
+<p>Implement inline with isolated build workspace; evidence before completion.</p>
+</blockquote>
+<p><strong>Goal:</strong> An executable, source-mapped topology/engineering course rather than another pile of notebooks.
+<strong>Architecture:</strong> Preserve v16 and add systems/ plus a single study front door. Share real data by path and hashes. Projects use explicit artifacts rather than hidden state.
+<strong>Tech Stack:</strong> Existing Python/uv + Go + Rust, C11, C++20/CMake, TypeScript/Node; gated pybind11, OpenCV, PyO3, PyTorch/Triton/CUDA.
+<strong>Spec:</strong> docs/v17/DESIGN.md.</p>
+<h2 id="global-constraints">Global constraints</h2>
+<ul>
+<li>Preserve all 31 primary lessons and 57 native units, datasets and private progress.</li>
+<li>Native calculations remain native; generated workbooks do not claim new independent science.</li>
+<li>New output directories; source hashes recorded; unknown confidence is not zero certainty.</li>
+<li>No default external services, remote writes, production contexts or destructive import.</li>
+<li>Existing v16 tests/evidence stay distinct from new v17 tests/evidence.</li>
+</ul>
+<h2 id="review-focus">Review focus</h2>
+<ul>
+<li>Truncated, malformed, nonfinite and oversized binary inputs rejected before allocation.</li>
+<li>Native prediction evaluated on distinct selected later observations; no athlete generality claim.</li>
+<li>Private source edits drive private builds; no silently compiling reference while editing a copy.</li>
+<li>Notebook fresh-run paths never search for a convenient old run.</li>
+<li>GPU/optional bindings/cluster steps explicitly blocked without prerequisites.</li>
+</ul>
+<h2 id="tasks">Tasks</h2>
+<ul>
+<li>[ ] Write contract tests and observe failures before new implementations.</li>
+<li>[ ] Implement shared artifact contract, C/C++ cores and negative-input tests.</li>
+<li>[ ] Implement Rust validator, TypeScript viewer and bounded Go service tests.</li>
+<li>[ ] Add gated integration bindings, OpenCV and GPU projects.</li>
+<li>[ ] Run measured sports pipeline and independent numerical controls.</li>
+<li>[ ] Map complete supplied path to ten systems units and existing stages.</li>
+<li>[ ] Generate 171 honest workbook interfaces, plus systems experiments; test generator.</li>
+<li>[ ] Execute stage triad, core/native suite, added suites and available system experiments.</li>
+<li>[ ] Package preserved originals + additions; check extraction, paths, hashes and links.</li>
+</ul>
+<h2 id="execution-checkpoint">Execution checkpoint</h2>
+<p>The core was preserved. C/C++/Rust/Go/TS projects andpybind11 were executed; the eightavailable project checks passed, with OpenCV C++andPyO3 explicitlyblocked. All171referenceinterfaces passed a full fresh sweep after correcting caller-owned kernel cleanup. Native57×2acceptance,data/fixtures/scientificchecks passed. Final packaging/extracted-copy results are attached separately. GPU, live Docker/Kubernetes andremoteCIare not claimed as completed.</p>
+<a class="back" href="../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

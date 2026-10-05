@@ -1,0 +1,170 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CHANGELOG · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/generic-array/CHANGELOG.md">native/rust/vendor/generic-array/CHANGELOG.md</a> · Readable source notation; no online math renderer.</p><ul>
+<li><p><strong><code>0.14.7</code></strong></p>
+<ul>
+<li>Backport <a href="https://github.com/fizyk20/generic-array/pull/133">#133</a> and <a href="https://github.com/fizyk20/generic-array/pull/134">#134</a></li>
+</ul>
+</li>
+<li><p><strong><code>0.14.6</code></strong></p>
+<ul>
+<li>Add an optional <code>Zeroize</code> impl for <code>GenericArray</code> (<a href="https://github.com/fizyk20/generic-array/pull/126">#126</a> and <a href="https://github.com/fizyk20/generic-array/pull/112">#112</a>)</li>
+<li>Cleanup some unsafe (<a href="https://github.com/fizyk20/generic-array/pull/125">#125</a>) and typos (<a href="https://github.com/fizyk20/generic-array/pull/114">#114</a>)</li>
+<li>Use <code>include</code> in <code>Cargo.toml</code> to reduce package size</li>
+</ul>
+</li>
+<li><p><strong><code>0.14.5</code></strong></p>
+<ul>
+<li>Fix unsoundness behavior in <code>GenericArrayIter::clone</code> (<a href="https://github.com/fizyk20/generic-array/pull/120">#120</a>)</li>
+</ul>
+</li>
+<li><p><strong><code>0.14.4</code></strong></p>
+<ul>
+<li>Update <code>typenum</code> to <code>1.12.0</code></li>
+<li>Make <code>Drop</code> a no-op when the inner type does not require <code>Drop</code> (using <code>core::mem::needs_drop</code>)</li>
+</ul>
+</li>
+<li><p><strong><code>0.14.3</code></strong></p>
+<ul>
+<li>Improve behavior of <code>GenericArray::from_exact_iter</code> to assume <code>ExactIterator</code>s can lie.</li>
+<li>Fix alignment of zero-length <code>GenericArray</code>s</li>
+<li>Implement <code>From&lt;&amp;[T; N]&gt; for &amp;GenericArray&lt;T, N&gt;</code> and its mutable variant</li>
+</ul>
+</li>
+<li><p><strong><code>0.14.2</code></strong></p>
+<ul>
+<li>Lower MSRV to <code>1.36.0</code> without <code>From&lt;[T; N]&gt;</code> implementations.</li>
+</ul>
+</li>
+<li><p><strong><code>0.14.1</code></strong></p>
+<ul>
+<li>Fix element conversions in <code>arr!</code> macro.</li>
+</ul>
+</li>
+<li><p><strong><code>0.14.0</code></strong></p>
+<ul>
+<li>Replace <code>Into</code> implementations with the more general <code>From</code>.<ul>
+<li>Requires minumum Rust version of 1.41.0</li>
+</ul>
+</li>
+<li>Fix unsoundness in <code>arr!</code> macro.</li>
+<li>Fix meta variable misuse</li>
+<li>Fix Undefined Behavior across the crate by switching to <code>MaybeUninit</code></li>
+<li>Improve some documentation and doctests</li>
+<li>Add <code>AsRef&lt;[T; N]&gt;</code> and <code>AsMut&lt;[T; N]&gt;</code> impls to <code>GenericArray&lt;T, N&gt;</code></li>
+<li>Add <code>Split</code> impl for <code>&amp;GenericArray</code> and <code>&amp;mut GenericArray</code></li>
+</ul>
+</li>
+<li><p><strong><code>0.13.2</code></strong></p>
+<ul>
+<li>Add feature <code>more_lengths</code>, which adds more <code>From</code>/<code>Into</code> implementations for arrays of various lengths.</li>
+</ul>
+</li>
+<li><p><strong><code>0.13.1</code></strong></p>
+<ul>
+<li>Mark <code>GenericArray</code> as <code>#[repr(transparent)]</code></li>
+<li>Implement <code>Into&lt;[T; N]&gt;</code> for <code>GenericArray&lt;T, N&gt;</code> up to N=32</li>
+</ul>
+</li>
+<li><p><strong><code>0.13.0</code></strong></p>
+<ul>
+<li>Allow <code>arr!</code> to be imported with use syntax.<ul>
+<li>Requires minumum Rust version of 1.30.1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong><code>0.12.2</code></strong></p>
+<ul>
+<li>Implement <code>FusedIterator</code> for <code>GenericArrayIter</code></li>
+</ul>
+</li>
+<li><p><strong><code>0.12.1</code></strong></p>
+<ul>
+<li>Use internal iteration where possible and provide more efficient internal iteration methods.</li>
+</ul>
+</li>
+<li><p><strong><code>0.12.0</code></strong></p>
+<ul>
+<li>Allow trailing commas in <code>arr!</code> macro.</li>
+<li><strong>BREAKING</strong>: Serialize <code>GenericArray</code> using <code>serde</code> tuples, instead of variable-length sequences. This may not be compatible with old serialized data.</li>
+</ul>
+</li>
+<li><p><strong><code>0.11.0</code></strong></p>
+<ul>
+<li><strong>BREAKING</strong> Redesign <code>GenericSequence</code> with an emphasis on use in generic type parameters.</li>
+<li>Add <code>MappedGenericSequence</code> and <code>FunctionalSequence</code><ul>
+<li>Implements optimized <code>map</code>, <code>zip</code> and <code>fold</code> for <code>GenericArray</code>, <code>&amp;GenericArray</code> and <code>&amp;mut GenericArray</code></li>
+</ul>
+</li>
+<li><strong>BREAKING</strong> Remove <code>map_ref</code>, <code>zip_ref</code> and <code>map_slice</code><ul>
+<li><code>map_slice</code> is now equivalent to <code>GenericArray::from_iter(slice.iter().map(...))</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong><code>0.10.0</code></strong></p>
+<ul>
+<li>Add <code>GenericSequence</code>, <code>Lengthen</code>, <code>Shorten</code>, <code>Split</code> and <code>Concat</code> traits.</li>
+<li>Redefine <code>transmute</code> to avert errors.</li>
+</ul>
+</li>
+<li><p><strong><code>0.9.0</code></strong></p>
+<ul>
+<li>Rewrite construction methods to be well-defined in panic situations, correctly dropping elements.</li>
+<li><code>NoDrop</code> crate replaced by <code>ManuallyDrop</code> as it became stable in Rust core.</li>
+<li>Add optimized <code>map</code>/<code>map_ref</code> and <code>zip</code>/<code>zip_ref</code> methods to <code>GenericArray</code></li>
+</ul>
+</li>
+<li><p><strong><code>0.8.0</code></strong></p>
+<ul>
+<li>Implement <code>AsRef</code>, <code>AsMut</code>, <code>Borrow</code>, <code>BorrowMut</code>, <code>Hash</code> for <code>GenericArray</code></li>
+<li>Update <code>serde</code> to <code>1.0</code></li>
+<li>Update <code>typenum</code></li>
+<li>Make macro <code>arr!</code> non-cloning</li>
+<li>Implement <code>From&lt;[T; N]&gt;</code> up to <code>N=32</code></li>
+<li>Fix #45</li>
+</ul>
+</li>
+<li><p><strong><code>0.7.0</code></strong></p>
+<ul>
+<li>Upgrade <code>serde</code> to <code>0.9</code></li>
+<li>Make <code>serde</code> with <code>no_std</code></li>
+<li>Implement <code>PartialOrd</code>/<code>Ord</code> for <code>GenericArray</code></li>
+</ul>
+</li>
+<li><p><strong><code>0.6.0</code></strong></p>
+<ul>
+<li>Fixed #30</li>
+<li>Implement <code>Default</code> for <code>GenericArray</code></li>
+<li>Implement <code>LowerHex</code> and <code>UpperHex</code> for <code>GenericArray&lt;u8, N&gt;</code></li>
+<li>Use <code>precision</code> formatting field in hex representation</li>
+<li>Add <code>as_slice</code>, <code>as_mut_slice</code></li>
+<li>Remove <code>GenericArray::new</code> in favor of <code>Default</code> trait</li>
+<li>Add <code>from_slice</code> and <code>from_mut_slice</code></li>
+<li><code>no_std</code> and <code>core</code> for crate.</li>
+</ul>
+</li>
+<li><p><strong><code>0.5.0</code></strong></p>
+<ul>
+<li>Update <code>serde</code></li>
+<li>remove <code>no_std</code> feature, fixed #19</li>
+</ul>
+</li>
+<li><p><strong><code>0.4.0</code></strong></p>
+<ul>
+<li>Re-export <code>typenum</code></li>
+</ul>
+</li>
+<li><p><strong><code>0.3.0</code></strong></p>
+<ul>
+<li>Implement <code>IntoIter</code> for <code>GenericArray</code></li>
+<li>Add <code>map</code> method</li>
+<li>Add optional <code>serde</code> (de)serialization support feature.</li>
+</ul>
+</li>
+<li><p><strong><code>&lt; 0.3.0</code></strong></p>
+<ul>
+<li>Initial implementation in late 2015</li>
+</ul>
+</li>
+</ul>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

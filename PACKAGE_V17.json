@@ -1,0 +1,14 @@
+{
+  "edition": "17",
+  "created_utc": "2026-10-04T17:31:11.235301+00:00",
+  "base": "Listening_to_Shape_Learning_System_v16.zip",
+  "base_sha256": "9a9b76d2aca8b6b31b0fc80244c8fb47827b54908eb34e661d7086575d1b4123",
+  "new_source_name": "Pasted text(20261004-164420).txt",
+  "new_source_sha256": "0a2dbaf88522f6640a152e21f6a0e768d6994b7fd26f39adf5be143f48c38779",
+  "source_basis": "Supplied learning path and implementation transcript; own architecture decisions separately labeled in SOURCE_MAP.md",
+  "core_stages": 31,
+  "native_units": 57,
+  "systems_units": 10,
+  "private_work_assessed": false,
+  "full_original_native_parity": false
+}

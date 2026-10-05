@@ -1,0 +1,200 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Start to finish: how to work through this repository and show it works on real data · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/START_TO_FINISH.md">docs/release/START_TO_FINISH.md</a> · Readable source notation; no online math renderer.</p><h1 id="start-to-finish-how-to-work-through-this-repository-and-show-it-works-on-real-data">Start to finish: how to work through this repository and show it works on real data</h1>
+<p>Version 14 • 4 October 2026 • the single ordered route through both layers</p>
+<p>This page is the ordered journey. It tells you what to open first, what a
+complete pass looks like for one lesson and for the whole system, and how to
+produce and inspect evidence that the code ran on real (selected observed) data.
+It does not grade you, and it never claims mastery on your behalf.</p>
+<p>Two rules from the course hold everywhere:</p>
+<ol>
+<li><strong>Notebook → understand it. Project → prove you can engineer it.</strong></li>
+<li>Every lesson is <strong>Explain → Predict → Implement → Break → Apply</strong>.</li>
+</ol>
+<h2 id="0-one-time-setup">0. One-time setup</h2>
+<p>You need Python via uv. The engineering layer additionally wants a C/C++
+compiler + CMake, Go, Rust/Cargo, Node + <code>tsc</code>, and optionally CUDA/PyO3/OpenCV.</p>
+<p>On Windows, set UTF-8 mode first — the lessons contain non-ASCII text
+(superscripts and arrows) and several tools read it with the default code page:</p>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+</code></pre>
+<p>Install and check the environment:</p>
+<pre><code class="language-powershell">uv python install 3.13.5
+uv run --no-project --python 3.13.5 python tools/bootstrap.py --profile physics
+uv run --no-sync python course.py doctor --profile physics   # declared versions, not a full audit
+uv run --no-sync python learn.py doctor                      # which compilers/toolchains exist
+</code></pre>
+<p><code>learn.py doctor</code> printing a path is <strong>availability, not acceptance</strong>. A missing
+tool is reported honestly and blocks only the units that need it.</p>
+<p>TypeScript (only needed for the integrated demo and sys06) — the version the
+course was tested with:</p>
+<pre><code class="language-powershell">npm install --global typescript@5.8.3
+</code></pre>
+<h2 id="1-see-the-whole-map-read-no-execution">1. See the whole map (read, no execution)</h2>
+<p>Open <strong><a href="../../../docs/LEARN_TOPOLOGY.html">LEARN_TOPOLOGY.html</a></strong>. That is the new front
+door: it links the mathematical layer (31 stages, 5 representation units, 25
+cases, 133 references) and the engineering layer (sys00–sys09). The offline
+reader <strong><a href="../../../docs/START_HERE.html">START_HERE.html</a></strong> renders every lesson with its
+saved outputs and needs no installation.</p>
+<p>Confirm the two layers resolve:</p>
+<pre><code class="language-powershell">uv run --no-sync python learn.py list
+</code></pre>
+<p>You should see the existing application/native keys, then
+<code>SOURCE-MAPPED ENGINEERING PROJECTS</code> with <code>sys00</code>–<code>sys09</code>.</p>
+<h2 id="2-one-complete-core-lesson-the-mathematical-layer">2. One complete core lesson (the mathematical layer)</h2>
+<p>This is the smallest full loop, using Stage 01. Pick a <strong>fresh output
+directory</strong> for every attempt.</p>
+<pre><code class="language-powershell">uv run --no-sync python course.py study 1 --output my_work/study01_attempt01
+</code></pre>
+<p>Open <code>my_work/study01_attempt01/START.md</code>. It links the <em>same</em> canonical lesson
+and lists the exact run and report commands.</p>
+<ol>
+<li><p><strong>Explain/Predict.</strong> Write in <code>prediction.md</code> (and <code>reflection.json</code> later):
+one observation, one feature, the units, the smallest hand calculation you can
+do without the notebook, the expected result, and the assumption it rests on.</p>
+</li>
+<li><p><strong>Implement/run the reference.</strong></p>
+<pre><code class="language-powershell">uv run --no-sync python course.py run --stage 1 --output my_work/study01_attempt01/run01
+</code></pre>
+<p>The runner uses a fresh copied workspace and fresh kernels; <code>execution.json</code>
+records notebook identity, teaching-cell count, interpreter, input continuity
+and SHA-256 hashes.</p>
+</li>
+<li><p><strong>Apply.</strong> Solve <code>practice/learner.ipynb</code> and write <code>answer.md</code>. A
+<code>NotImplementedError</code> here is an assignment, not a failure.</p>
+</li>
+<li><p><strong>Break.</strong> Change exactly one condition in your private copy and predict the
+effect before running. Keep the result.</p>
+</li>
+<li><p><strong>Complete the reflection</strong> — six nonempty fields (<code>question</code>,
+<code>observation_unit</code>, <code>method</code>, <code>result_interpretation</code>, <code>limitation</code>,
+<code>next_experiment</code>) in <code>reflection.json</code>.</p>
+</li>
+<li><p><strong>Export your local evidence packet.</strong></p>
+<pre><code class="language-powershell">uv run --no-sync python course.py report --run my_work/study01_attempt01/run01 `
+  --reflection my_work/study01_attempt01/reflection.json `
+  --output my_work/study01_attempt01/report01
+</code></pre>
+<p>Open <code>report01/index.html</code>. <code>packet.json</code> has <code>published: false</code>. The exporter
+refuses changed/missing/added run files, unexecuted cells, saved error
+outputs, unsafe paths, or a missing output seal. Full detail:
+<a href="RESULTS_WORKFLOW.md.html">RESULTS_WORKFLOW.md</a>.</p>
+</li>
+</ol>
+<p><strong>A core lesson is "complete" when:</strong> the reference run passed with inputs
+unchanged, you wrote a prediction <em>before</em> running, you finished the private
+notebook, you produced the report packet, and you stated a limitation. It is
+still <strong>not</strong> an assessment of mastery — hashes show byte continuity, not
+understanding.</p>
+<p>The engineering counterpart of the same loop (native Go/Rust practice copies) is:</p>
+<pre><code class="language-powershell">uv run --no-sync python learn.py session --lab stage01 --output my_work/learning_stage01_99
+</code></pre>
+<h2 id="3-one-complete-engineering-project-the-project-layer">3. One complete engineering project (the project layer)</h2>
+<pre><code class="language-powershell">uv run --no-sync python learn.py project --unit sys01 --output my_work/c_reader01
+uv run --no-sync python learn.py check-project --workspace my_work/c_reader01 --output my_work/c_reader01/attempt01
+</code></pre>
+<p><code>project</code> copies the <strong>real</strong> source into <code>my_work/c_reader01/project/</code> plus the
+binary contract data. <code>check-project</code> builds and tests <strong>your private copy</strong> —
+not the reference — so your edits are what is tested.</p>
+<p>First engineering calculation: explain why the 12-record portable trajectory
+file is <strong>588 bytes</strong> (12-byte header + 12 × 48), name every field, then
+truncate a private copy and predict how Python, C and Rust respond before you
+run them. Exit codes: <code>0</code> passed, <code>3</code> blocked (a required optional dependency is
+absent), <code>1</code> failed (a real build/assertion error — not a missing-dependency
+excuse).</p>
+<p>Repeat <code>--unit sys00</code>…<code>sys09</code>. Read <a href="../v17/FIRST_RUN.md.html">docs/v17/FIRST_RUN.md</a>
+and <a href="../v17/SOURCE_MAP.md.html">docs/v17/SOURCE_MAP.md</a> for what each unit teaches and
+where work remains.</p>
+<h2 id="4-the-connected-real-data-demonstration">4. The connected real-data demonstration</h2>
+<p>Once C, C++ and TypeScript toolchains are present:</p>
+<pre><code class="language-powershell">uv run --no-sync python learn.py demo --output my_work/integrated_demo01
+</code></pre>
+<p>Open <code>my_work/integrated_demo01/index.html</code> and read <code>results.json</code>. The demo
+walks one selected SPL basketball excerpt through the portable binary contract,
+a C reader and Rust validator, a Python initial-state fit, a C++ trajectory
+prediction, an SQL error audit, and a TypeScript-validated viewer.</p>
+<p>Expected measured values (this repository, reproduced 4 October 2026 — see
+<a href="V17_INTEGRATION.md.html">V17_INTEGRATION.md</a>):</p>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Records / portable binary</td>
+<td>12 / 588 bytes</td>
+</tr>
+<tr>
+<td>C++ vs Python max difference</td>
+<td>8.881784197001252e-16 m</td>
+</tr>
+<tr>
+<td>Height fitting RMSE</td>
+<td>0.017536917337837687 m</td>
+</tr>
+<tr>
+<td>Two-point later height MAE</td>
+<td>0.04881247418842305 m</td>
+</tr>
+<tr>
+<td>Last-height baseline MAE (<strong>better</strong>)</td>
+<td>0.0446230812746351 m</td>
+</tr>
+<tr>
+<td>Fitting-mean baseline MAE</td>
+<td>0.25015376535622336 m</td>
+</tr>
+</tbody>
+</table>
+<p>The honest result is that the <strong>simple last-height baseline beats the fitted
+model on those two later points</strong>. Confidence was not supplied and stays unknown.
+This is a selected excerpt, not independent physical ground truth.</p>
+<h2 id="5-show-the-whole-system-is-complete-and-honest">5. Show the whole system is complete and honest</h2>
+<p>This is the acceptance pass. Run each in a fresh directory and inspect the exit
+code and the JSON it writes.</p>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+uv lock --check                                                    # lock matches the manifest
+uv run --no-sync python -m pytest -q -ra                           # full Python suite
+uv run --no-sync python -m unittest discover -s systems/tests -p 'test_*.py'
+uv run --no-sync python learn.py workbooks --check                 # 181 generated interfaces, no drift
+uv run --no-sync python learn.py verify-projects --output my_work/projects_acceptance01
+uv run --no-sync python tools/verify_v17_archive.py                # only against a freshly extracted archive
+</code></pre>
+<p>On this Windows host the reference pass produced <strong>876 passed, 6 skipped</strong>
+(Python suite) and <strong>24 passed</strong> (systems suite), and the ten-project matrix
+produced <strong>8 passed / 0 failed / 2 blocked</strong> (sys04 OpenCV headers, sys08 PyO3).
+<code>verify-projects</code> intentionally exits <code>3</code> when any requested unit is blocked —
+that is a truthful partial, not an all-pass.</p>
+<p><strong>"Complete" means, precisely:</strong></p>
+<ul>
+<li>every command above ran and its exit code and JSON were inspected;</li>
+<li>blocked items are labelled blocked, not relabelled passed;</li>
+<li>failures and interrupted attempts are retained, not deleted;</li>
+<li>the real-data numbers match, <strong>including the baseline that beats the model</strong>.</li>
+</ul>
+<p><strong>"Complete" does not mean:</strong> learner mastery, clean-install proof, deployment
+success, GPU/CUDA execution, PyO3 packaging, C++ OpenCV execution, original
+notebook parity for all 133 references, or publisher-book coverage. Those remain
+explicitly open and are listed in <a href="V17_INTEGRATION.md.html">V17_INTEGRATION.md</a> and
+<a href="VERIFICATION.md.html">VERIFICATION.md</a>.</p>
+<h2 id="6-optional-the-language-notebooks-and-the-full-native-track">6. Optional: the language notebooks and the full native track</h2>
+<pre><code class="language-powershell">uv run --no-sync python learn.py workbooks --check
+uv run --no-sync jupyter lab        # open learning/workbooks/index.html or workbooks/polyglot/index.html
+uv run --no-sync python native_course.py compare --lab stage01 --output my_work/native_stage01_99
+uv run --no-sync python native_course.py verify --science --output my_work/native_acceptance99
+</code></pre>
+<p>Python interfaces run the actual original scientific notebook; Go and Rust
+interfaces compile and run the real native programs. Never hand-edit generated
+notebooks — edit <code>systems/tools/generate_workbooks.py</code> (or
+<code>tools/build_language_notebooks.py</code>) and regenerate.</p>
+<h2 id="7-your-daily-loop-from-here">7. Your daily loop from here</h2>
+<p>Continue at <strong>topology Stage 01</strong> and never restart the whole course:</p>
+<pre><code class="language-powershell">uv run --no-sync python course.py next
+</code></pre>
+<p>Explain the idea. Predict one result. Implement it in a real project. Break one
+assumption deliberately in an isolated copy. Apply it to registered real data.
+Then record what surprised you, what failed, why, the Python comparison, and an
+unsupported conclusion. Use a <strong>new <code>my_work/</code> directory</strong> for each attempt and
+preserve every one.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

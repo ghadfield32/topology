@@ -1,18 +1,24 @@
 {
-  "release": "12.0.0",
-  "uv_diagnostic": "passed using explicitly inherited dependencies",
-  "fresh_uv_install": "blocked by package-index DNS failure",
-  "genuine_uv_lock_present": false,
-  "docker_runtime": "blocked: no Docker CLI/engine",
-  "kubernetes_static": "passed project policy; not server validation",
-  "kubernetes_live": "blocked: no docker/kubectl/kind",
-  "native_nonroot_readonly": "passed tests + Stage 00",
+  "release": "14.0.0",
+  "integrated": "v17 systems-learning layer + study/report workflow, 4 October 2026",
+  "v17_integration_record": "docs/release/V17_INTEGRATION.md",
+  "uv_diagnostic": "passed; uv lock re-resolved the root package to 14.0.0 against the configured package index",
+  "fresh_uv_install": "not re-attempted here; the existing genuine lock was checked with uv lock --check",
+  "genuine_uv_lock_present": true,
+  "docker_runtime": "blocked: no Docker daemon reached in this run",
+  "kubernetes_static": "passes project policy checks in tests; not server validation",
+  "kubernetes_live": "blocked: no kind cluster created",
+  "native_nonroot_readonly": "not re-run this cycle; see NATIVE16_IMPORT.md",
+  "local_test_totals": {
+    "python_suite": "876 passed, 6 skipped, 0 failed (Windows host)",
+    "systems_suite": "24 passed"
+  },
   "uv_lock": {
-    "status": "blocked",
-    "reason": "Actual uv resolver failed on package-index DNS; no uv.lock supplied."
+    "status": "passed",
+    "reason": "uv lock re-resolved the editable root package from 12.0.0 to 14.0.0; uv lock --check passes."
   },
   "docker_build": {
     "status": "blocked",
-    "reason": "Docker CLI/engine unavailable; no image build executed."
+    "reason": "Docker image build not executed in this cycle."
   }
 }

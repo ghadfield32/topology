@@ -1,0 +1,82 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/csv/README.md">native/rust/vendor/csv/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="csv">csv</h1>
+<p>A fast and flexible CSV reader and writer for Rust, with support for Serde.</p>
+<p><a href="https://github.com/BurntSushi/rust-csv/actions"><img alt="Build status" src="https://github.com/BurntSushi/rust-csv/workflows/ci/badge.svg"/></a>
+<a href="https://crates.io/crates/csv"><img alt="crates.io" src="https://img.shields.io/crates/v/csv.svg"/></a></p>
+<p>Dual-licensed under MIT or the <a href="http://unlicense.org">UNLICENSE</a>.</p>
+<h3 id="documentation">Documentation</h3>
+<p><a href="https://docs.rs/csv">https://docs.rs/csv</a></p>
+<p>If you're new to Rust, the
+<a href="https://docs.rs/csv/1.*/csv/tutorial/index.html">tutorial</a>
+is a good place to start.</p>
+<h3 id="usage">Usage</h3>
+<p>To bring this crate into your repository, either add <code>csv</code> to your
+<code>Cargo.toml</code>, or run <code>cargo add csv</code>.</p>
+<h3 id="example">Example</h3>
+<p>This example shows how to read CSV data from stdin and print each record to
+stdout.</p>
+<p>There are more examples in the
+<a href="https://docs.rs/csv/1.*/csv/cookbook/index.html">cookbook</a>.</p>
+<pre><code class="language-rust">use std::{error::Error, io, process};
+
+fn example() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
+    // Build the CSV reader and iterate over each record.
+    let mut rdr = csv::Reader::from_reader(io::stdin());
+    for result in rdr.records() {
+        // The iterator yields Result&lt;StringRecord, Error&gt;, so we check the
+        // error here.
+        let record = result?;
+        println!("{:?}", record);
+    }
+    Ok(())
+}
+
+fn main() {
+    if let Err(err) = example() {
+        println!("error running example: {}", err);
+        process::exit(1);
+    }
+}
+</code></pre>
+<p>The above example can be run like so:</p>
+<pre><code class="language-text">$ git clone git://github.com/BurntSushi/rust-csv
+$ cd rust-csv
+$ cargo run --example cookbook-read-basic &lt; examples/data/smallpop.csv
+</code></pre>
+<h3 id="example-with-serde">Example with Serde</h3>
+<p>This example shows how to read CSV data from stdin into your own custom struct.
+By default, the member names of the struct are matched with the values in the
+header record of your CSV data.</p>
+<pre><code class="language-rust">use std::{error::Error, io, process};
+
+#[derive(Debug, serde::Deserialize)]
+struct Record {
+    city: String,
+    region: String,
+    country: String,
+    population: Option&lt;u64&gt;,
+}
+
+fn example() -&gt; Result&lt;(), Box&lt;dyn Error&gt;&gt; {
+    let mut rdr = csv::Reader::from_reader(io::stdin());
+    for result in rdr.deserialize() {
+        // Notice that we need to provide a type hint for automatic
+        // deserialization.
+        let record: Record = result?;
+        println!("{:?}", record);
+    }
+    Ok(())
+}
+
+fn main() {
+    if let Err(err) = example() {
+        println!("error running example: {}", err);
+        process::exit(1);
+    }
+}
+</code></pre>
+<p>The above example can be run like so:</p>
+<pre><code>$ git clone git://github.com/BurntSushi/rust-csv
+$ cd rust-csv
+$ cargo run --example cookbook-read-serde &lt; examples/data/smallpop.csv
+</code></pre>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

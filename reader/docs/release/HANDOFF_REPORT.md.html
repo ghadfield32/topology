@@ -1,0 +1,505 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Handoff completion report · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/HANDOFF_REPORT.md">docs/release/HANDOFF_REPORT.md</a> · Readable source notation; no online math renderer.</p><h1 id="handoff-completion-report">Handoff completion report</h1>
+<p>Branch: <code>review/native16-notebooks</code>. Base revision: <code>52aa1b6</code>, which is also
+<code>origin/main</code>.</p>
+<p>The integration is committed on this branch as <strong><code>fe2542b</code></strong>. It has not been
+pushed or merged. A fresh export of that revision reproduces the generated
+inventory exactly (see <em>Fresh checkout</em> below).</p>
+<h2 id="second-handoff-premises-checked-against-the-actual-repo">Second handoff: premises checked against the actual repo</h2>
+<p>The follow-up plan was written from an <strong>earlier</strong> state (774 tests, "only the
+Stage 01 triad was executed"). Checked against the current checkout:</p>
+<table>
+<thead>
+<tr>
+<th>Plan premise</th>
+<th>Actual state</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>171 workbooks generated</td>
+<td>true</td>
+</tr>
+<tr>
+<td>Only the Stage 01 triad executed</td>
+<td><strong>outdated</strong> — the full sweep now runs: <strong>171/171 passed</strong></td>
+</tr>
+<tr>
+<td>Suite 774 passed / 3 skipped</td>
+<td><strong>outdated</strong> — now <strong>817 passed / 3 skipped</strong></td>
+</tr>
+<tr>
+<td>Python workbook only inspects an existing run</td>
+<td><strong>was true</strong> — now fixed, see below</td>
+</tr>
+<tr>
+<td>Python workbook relation to the scientific experiment unclear</td>
+<td><strong>was true</strong> — the notebook now runs the canonical reference</td>
+</tr>
+<tr>
+<td><code>native/</code> is the current route, <code>polyglot/</code> historical</td>
+<td>true, preserved</td>
+</tr>
+<tr>
+<td>31 stages, 57 native labs</td>
+<td>true, verified</td>
+</tr>
+<tr>
+<td>Local work untracked on <code>main</code></td>
+<td>true — <strong>all</strong> of it is untracked</td>
+</tr>
+<tr>
+<td><code>uv lock --check</code></td>
+<td><strong>passed</strong>, 130 packages, exit 0</td>
+</tr>
+</tbody>
+</table>
+<p>Four genuine gaps remained and were addressed. Several plan requests were already
+satisfied by the first handoff's work (<code>tools/verify_language_notebooks.py</code>,
+<code>tools/evidence_pointer.py</code>, the full sweep, explicit evidence modes).</p>
+<h3 id="what-this-round-changed">What this round changed</h3>
+<ol>
+<li><strong><code>--check</code> was a silent no-op.</strong> The plan's Phase B command
+<code>tools/build_language_notebooks.py --check</code> previously ignored the unknown
+flag, <strong>rewrote all 171 workbooks, and exited 0</strong>. There is now a real
+checker: it renders the expected tree in memory (a single <code>render()</code> source of
+truth), compares it, and exits 1 naming every missing, stale or unexpected
+artifact. Proven able to fail: editing <code>README.md</code> by hand returns 1;
+restoring it returns 0. Unknown flags are now a hard error.</li>
+<li><strong>Fresh vs review execution modes.</strong> The Python notebook's evidence cell now
+has <code>MODE = "fresh"</code> (default) or <code>MODE = "review"</code>, with <code>PINNED_RUN</code>
+required in review mode. Fresh mode <strong>creates</strong> the evidence by compiling and
+running the native labs into the notebook's own directory — verified by
+executing Stage 01, which produced a new run whose identity was recorded.
+Review mode opens a specific run and labels it as previous execution. Neither
+scans for "the newest plausible folder".</li>
+<li><strong>Learner mutation is now a full cycle.</strong> The test proves the private copy is
+what gets evaluated (via <code>go list -f {{.Dir}}</code>), then fail → repair → pass:
+the XOR→OR edit fails <code>TestRankField</code>, and restoring the source makes it pass
+again. Both languages verified.</li>
+<li><strong>An inaccurate aliasing claim was corrected.</strong> My earlier note called the Go
+<code>append</code> a "row-aliasing" case. It is not one: <code>clone</code> deep-copies each row
+(<code>b[i] = append([]float64(nil), a[i]...)</code>), so <code>x</code> cannot be reached. The
+walkthrough now says so explicitly and turns the correct fact into the
+exercise (delete <code>clone</code> and observe the difference).</li>
+</ol>
+<h2 id="scope-note-first">Scope note first</h2>
+<p>The handoff expected <code>Topology_Repository_Implementation_Plan.md</code> in the
+checkout. <strong>It is not present</strong>, and no copy was found under the user profile
+either. It is reported here rather than invented. The work below follows the
+handoff's own phase list, its stated constraints and <code>AGENTS.md</code>.</p>
+<h2 id="1-audit-and-checkpoint">1. Audit and checkpoint</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Branch</td>
+<td><code>review/native16-notebooks</code> (created from <code>main</code>)</td>
+</tr>
+<tr>
+<td>HEAD</td>
+<td><code>52aa1b6f0194db041904c820a8f4052cebf112ba</code></td>
+</tr>
+<tr>
+<td><code>origin/main</code></td>
+<td>identical to HEAD</td>
+</tr>
+<tr>
+<td>Dirty entries at start</td>
+<td>38</td>
+</tr>
+<tr>
+<td>Committed by this work</td>
+<td><strong>none</strong></td>
+</tr>
+</tbody>
+</table>
+<p>HEAD equals <code>origin/main</code>, so <strong>all native16, notebook and tooling work was
+local-only and uncommitted.</strong> That is why no commit was made automatically:
+committing would have decided for the user how to group a large body of work.</p>
+<p>Checkpoint evidence: <code>my_work/checkpoint01/checkpoint.json</code>, produced by
+<code>tools/checkpoint_current_state.py</code>. It records branch, HEAD, dirty count, tool
+paths and versions, and the inventory (31 stages, 57 labs, 55 registered data
+files, 171 notebooks).</p>
+<p>Deletions at the root (<code>COMPLETE_COURSE_V2..V7.md</code>) are the 536-byte retired
+<strong>stubs</strong>; their content also exists as <code>archive/COMPLETE_COURSE_V2..V7.md</code>.
+This was verified by comparing against <code>HEAD</code>, not assumed.</p>
+<h2 id="2-one-source-of-truth-generator-fixed-not-notebooks">2. One source of truth; generator fixed, not notebooks</h2>
+<p>Verified: <code>curriculum/catalog.json</code> is the only curriculum owner (31 stages),
+<code>native/protocols/labs.json</code> is the only native registry (57 keys, declared
+count matches actual), and <code>workbooks/polyglot</code> contains <strong>no</strong> JSON catalogue.
+<code>data/industries/catalog.json</code> is a data index, and <code>polyglot/specs/labs.json</code>
+is the historical v14 companion spec — neither claims the curriculum.</p>
+<p>Generator changes in <code>tools/build_language_notebooks.py</code>:</p>
+<ul>
+<li>The Python route now <strong>runs the canonical reference</strong> via
+<code>shape_lab.course.run_references(..., jobs=1, timeout=300)</code> — fresh kernel,
+isolated copied workspace, provenance probe, <code>allow_errors=False</code>.</li>
+<li>Sections are labelled by intent: "Run the canonical Python experiment",
+"input audit", "output audit". The audit sections no longer read as a
+re-implementation.</li>
+<li>Script references are handled separately. The Poux lab's reference is
+<code>curriculum/extensions/poux_spatial_ai/bridge.py</code>, so it is classified
+<code>script</code>, its companion <code>test_bridge.py</code> is run instead, and a test asserts it
+is never handed to <code>run_references</code>.</li>
+<li>The misleading <code>[lesson](reference)</code> link was corrected.</li>
+</ul>
+<h2 id="3-evidence-dependencies-are-explicit">3. Evidence dependencies are explicit</h2>
+<p>New <code>tools/evidence_pointer.py</code>. Resolution order: explicit <code>run_dir</code>, then
+<code>my_work/native_evidence.json</code>, then <strong>nothing</strong> in strict mode. A clean QA
+worktree returns nothing rather than picking someone's newest <code>my_work</code> run.
+Older evidence is usable only in labelled review mode, and the notebook prints
+that warning itself.</p>
+<p><code>native_course.py</code> now writes an <code>identity</code> block into <code>execution.json</code>:
+per-language <code>source_sha256</code> and <code>binary_sha256</code>, an
+<code>input_fingerprints_sha256</code>, and the protocol. The Python notebook compares the
+recorded source hash against the live source and prints <code>MATCH</code> or <code>DIFFERS</code>.
+Verified on a real run (<code>my_work/identity_check01</code>).</p>
+<h2 id="4-independent-practice-routes-through-real-prepare-copies">4. Independent practice routes through real <code>prepare</code> copies</h2>
+<p><code>tests/test_learner_mutation.py</code> proves the loop:</p>
+<ul>
+<li>Baseline: untouched <code>native/go</code> passes <code>go test -count=1 ./...</code> (exit 0).</li>
+<li>A private copy with F2 elimination changed from XOR to OR <strong>fails</strong>, exit 1,
+specifically in <code>TestRankField</code>.</li>
+<li>The canonical <code>native/go/engine/math.go</code> hash is unchanged afterwards.</li>
+</ul>
+<p>The Rust equivalent runs when <code>SHAPE_TEST_RUST_MUTATION=1</code>; it was executed and
+passes. <code>native_course.py prepare</code> already produces those private copies.</p>
+<h2 id="5-toolsverify_language_notebookspy">5. <code>tools/verify_language_notebooks.py</code></h2>
+<p>Derives the expected 171 entries from the registry; audits for missing,
+duplicate and unexpected notebooks; fresh kernel per entry via the repo's own
+kernel-spec and provenance validator; explicit output directory; compiles each
+native binary once per source identity; <strong>serial</strong>; <code>allow_errors=False</code>; no
+error-tolerance flag exists; hashes the whole tree before and after so a mid-run
+regeneration cannot produce a green mixed-source result; exits non-zero unless
+coverage is complete.</p>
+<p>Two real bugs were found and fixed during its development: an executed-cell
+count that summed <code>execution_count</code> integers, and a relative output path that
+broke <code>relative_to</code>.</p>
+<h2 id="6-separate-checks">6. Separate checks</h2>
+<p><code>tools/check_matrix.py</code> runs six independently labelled checks — <code>contracts</code>,
+<code>python</code>, <code>readers</code>, <code>native</code>, <code>science</code>, <code>notebooks</code> — and states in its own
+output what none of them establish. Observed here:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contracts</code></td>
+<td>passed, 3.2 s</td>
+</tr>
+<tr>
+<td><code>python</code></td>
+<td>passed, 824 passed / 4 skipped (825 / 3 with the opt-in Rust mutation)</td>
+</tr>
+<tr>
+<td><code>readers</code></td>
+<td>passed (110 decoder comparisons)</td>
+</tr>
+<tr>
+<td><code>native</code></td>
+<td>passed (Go 34, Rust 28, 0 failed)</td>
+</tr>
+<tr>
+<td><code>science</code></td>
+<td>passed (57+57 labs, 110 data, 64 fixture, 220 scientific)</td>
+</tr>
+<tr>
+<td><code>notebooks</code></td>
+<td><strong>passed: 171/171</strong>, coverage complete, 0 failed, tree unchanged</td>
+</tr>
+</tbody>
+</table>
+<p>Original 133-notebook parity remains <strong><code>not_certified</code></strong>; the
+<code>--require-original-parity</code> guard was left in place.</p>
+<h2 id="7-efficient-ci">7. Efficient CI</h2>
+<p>New <code>.github/workflows/language-notebooks.yml</code>:</p>
+<ul>
+<li><code>push</code> / <code>pull_request</code>: <strong>fast contracts only</strong> — no native build, no sweep.</li>
+<li><code>workflow_dispatch</code>: full sweep and native/science sweep, with a <code>scope</code>
+input choosing <code>fast</code> or <code>full</code>.</li>
+</ul>
+<p><code>tests/test_ci_workflows.py</code> asserts the heavy jobs stay gated behind manual
+dispatch, that no run step passes an error-tolerance flag, and that evidence is
+uploaded with <code>if: always()</code> and <code>if-no-files-found: error</code>.</p>
+<h2 id="8-native-deploy--actually-executed">8. Native deploy — actually executed</h2>
+<p><code>tools/native_deploy_verify.py</code>. Results on this machine:</p>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>static policy parse</td>
+<td>passed (<code>static_only</code>, explicitly not runtime)</td>
+</tr>
+<tr>
+<td>docker runtime</td>
+<td>passed, server 29.7.2</td>
+</tr>
+<tr>
+<td>image build (Go, Rust)</td>
+<td><strong>passed</strong>, both Dockerfiles including their in-build tests</td>
+</tr>
+<tr>
+<td>hardened <code>docker run</code></td>
+<td><strong>passed</strong>, exit 0 both; Go reported <code>real_rank 3</code>, <code>f2_rank 2</code></td>
+</tr>
+<tr>
+<td>Jobs in <code>kind-shape-learning</code></td>
+<td><strong>passed</strong>: both <code>condition met</code>; a verify Pod read the PVC; both <code>result.json</code> parsed with <code>lab stage01</code>, <code>status completed</code></td>
+</tr>
+</tbody>
+</table>
+<p>The verifier found a real defect: <code>kubectl apply</code> rejects Jobs using
+<code>generateName</code>. Fixed to <code>create</code>, matching <code>native/guides/DEPLOYMENT.md</code>.</p>
+<p>Safety: the cluster gate refuses a non-disposable context (<code>docker-desktop</code> was
+blocked and the run exited 2). Manifests are rewritten into the run's own fresh
+namespace. Cleanup targets only that namespace and never deletes PVCs. The
+learner namespace <code>shape-study01</code> and its <code>learner-work</code> PVC were left intact —
+verified by listing PVCs before and after.</p>
+<h2 id="9-stage-01-walkthrough">9. Stage 01 walkthrough</h2>
+<p><code>docs/release/STAGE01_WALKTHROUGH.md</code>. It gives the sequence, where to edit,
+how to test, where metrics live, what a result cannot establish, and the daily
+workflow. It does <strong>not</strong> derive the null vector. It uses the changed redundant
+column <code>5*x0 + 2*x1</code> and requires the learner to derive the null vector first.
+Its canonical command was executed to confirm it works.</p>
+<h2 id="organization-pass-paths-and-finding-things">Organization pass (paths and finding things)</h2>
+<p>Prompted by "these need to be organized better". An audit of every markdown link
+in the generated notebooks found a <strong>real bug</strong>: all 57 Python notebooks linked
+the lesson as <code>lessons/01_lesson.md</code>, which cannot resolve from
+<code>workbooks/polyglot/&lt;lang&gt;/</code> three levels down. <strong>Zero</strong> notebook links resolved;
+57 were broken.</p>
+<p>Fixed and hardened:</p>
+<ul>
+<li>Links are now root-anchored (<code>../../../lessons/...</code>), so <strong>1308 links resolve
+and 0 are broken</strong>.</li>
+<li>Every notebook opens with a <strong>"Where every path points"</strong> legend that defines
+the shared vocabulary once: the owner files, the course folders, the native
+folders, the tooling and generated paths, <code>my_work/</code> as yours, and the
+reference-vs-your-copy distinction.</li>
+<li><code>docs/release/REPOSITORY_LAYOUT.md</code> defines every path repo-wide, with the four
+ownership rules and a "which file do I change?" table.</li>
+<li><code>README.md</code> gained a repository map and a "where do I start?" table.</li>
+<li>Tests enforce that every notebook link resolves <strong>from that notebook's own
+directory</strong>, that every notebook carries the legend, that each language folder
+is self-guiding, and that the layout doc only asserts paths that exist.</li>
+</ul>
+<p>This pass changed the generated notebooks, so the earlier sweep was invalidated
+and re-run: <strong>sweep #6, 171/171, coverage complete.</strong></p>
+<h2 id="committed-revision-and-fresh-checkout-reproducibility">Committed revision and fresh-checkout reproducibility</h2>
+<p>Commit <strong><code>fe2542b</code></strong> on <code>review/native16-notebooks</code>, 2491 files. Not pushed.</p>
+<p>Staged by an explicit path list (<code>tools/stage_native16_commit.ps1</code>), never
+<code>git add -A</code> / <code>git add .</code>. Deliberately <strong>excluded</strong>:</p>
+<ul>
+<li><code>my_work/</code> (git-ignored private evidence),</li>
+<li><code>notebooks/00..02_lab.ipynb</code> — learner edits,</li>
+<li><code>reports/stage_00</code>, <code>reports/stage_02</code> — reference outputs,</li>
+<li>the root <code>COMPLETE_COURSE_V2..V7.md</code> deletions.</li>
+</ul>
+<p>Those four groups deserve separate, reasoned commits, so they were left out.
+Verified absent from the staged set: secrets, learner work, root deletions.</p>
+<p><code>tools/verify_fresh_checkout.ps1</code> exports <code>HEAD</code> with <code>git archive</code> and checks
+the result:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>notebooks in the fresh export</td>
+<td>171</td>
+</tr>
+<tr>
+<td><code>native/protocols/labs.json</code>, <code>curriculum/catalog.json</code>, <code>native_course.py</code>, generator, verifier, evidence pointer, <code>uv.lock</code></td>
+<td>all present</td>
+</tr>
+<tr>
+<td><code>generator --check</code> against the fresh export</td>
+<td><strong>exit 0</strong> — committed workbooks match the generator</td>
+</tr>
+</tbody>
+</table>
+<p>Note: piping a binary tar through PowerShell's text pipeline corrupts it; the
+script writes the archive to a file first.</p>
+<h3 id="test-identities-not-a-frozen-total">Test identities, not a frozen total</h3>
+<p>The two suite totals above differ by exactly one test, and the reason is
+identified rather than left as noise: <code>tests/test_learner_mutation.py</code> collects
+three tests, one of which is gated behind <code>SHAPE_TEST_RUST_MUTATION=1</code> because it
+builds the Rust workspace. Disabled → 816 passed / 4 skipped. Enabled → 3 passed
+in that file and no skip → 817 passed / 3 skipped. It was run enabled and passed.</p>
+<p>Do not carry a historical total (774, 821, …) across platforms. Compare the
+collected tests and justify each skip.</p>
+<h2 id="current-tested--not-tested">Current tested / not tested</h2>
+<table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python suite (default)</td>
+<td><strong>824 passed, 4 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td>Python suite with <code>SHAPE_TEST_RUST_MUTATION=1</code></td>
+<td><strong>825 passed, 3 skipped, 0 failed</strong></td>
+</tr>
+<tr>
+<td>Native Go/Rust tests</td>
+<td>34 / 28 passed, 0 failed</td>
+</tr>
+<tr>
+<td>Native data decoders</td>
+<td>110 comparisons passed</td>
+</tr>
+<tr>
+<td>Independent scientific oracles</td>
+<td>220 passed</td>
+</tr>
+<tr>
+<td>Language notebooks, full sweep</td>
+<td>see <code>my_work/nb_verify_full02/coverage.json</code></td>
+</tr>
+<tr>
+<td>Native images build + run</td>
+<td>passed</td>
+</tr>
+<tr>
+<td>Language notebooks, full sweep</td>
+<td><strong>171 / 171 passed</strong>, coverage complete, tree unchanged</td>
+</tr>
+<tr>
+<td>Markdown links inside notebooks</td>
+<td>1308 resolve from their own folder, <strong>0 broken</strong></td>
+</tr>
+<tr>
+<td>Native Jobs in disposable kind</td>
+<td>passed</td>
+</tr>
+<tr>
+<td>Docker/Compose Python image, full course</td>
+<td>not re-run in this session</td>
+</tr>
+<tr>
+<td>Live cluster of the <strong>Python</strong> course image</td>
+<td>not re-run; earlier evidence retained</td>
+</tr>
+<tr>
+<td>macOS / Windows-Linux parity / GPU</td>
+<td>not run</td>
+</tr>
+<tr>
+<td>Remote CI workflows</td>
+<td>not run</td>
+</tr>
+<tr>
+<td>Original 133-notebook native parity</td>
+<td><strong>not certified</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="skips-with-reasons">Skips, with reasons</h3>
+<ol>
+<li><code>tests/test_deploy_v11.py</code> — host disallows symlinks.</li>
+<li><code>tests/test_integration_v12.py</code> — POSIX directory mode-bit contract; not a
+Windows filesystem model.</li>
+<li><code>tests/test_learner_mutation.py</code> — the slower Rust mutation build; opt in with
+<code>SHAPE_TEST_RUST_MUTATION=1</code> (executed separately and passed).</li>
+<li><code>tests/test_repository_v10.py</code> — POSIX symlink creation control.</li>
+</ol>
+<p>These differ from the Linux reference host's skips (Ripser/GUDHI). A pass count
+is not frozen across platforms; compare test identities and justify each skip.</p>
+<h2 id="failures-preserved">Failures preserved</h2>
+<ul>
+<li>First Job attempt failed: <code>cannot use generate name with apply</code>. Kept in
+<code>my_work/native_deploy_jobs01/</code>.</li>
+<li>Second attempt failed because the success heuristic looked for the string
+<code>completed</code> in logs. Kept in <code>my_work/native_deploy_jobs02/</code>.</li>
+<li>The first full sweep was invalidated by a mid-run regeneration and stopped;
+the tree-change guard now detects exactly that.</li>
+<li>The second full sweep returned <strong>170 passed, 1 failed</strong> and a <code>compile_once</code>
+error. Both were real:<ul>
+<li><code>compile_once</code> called <code>runner.build</code> without creating its output
+directory, so <code>go_version.json</code> could not be written. Fixed and covered by
+a test.</li>
+<li><code>python/stage27</code> failed with <code>FileExistsError</code>, because an interrupted run
+from the killed sweep had left <code>my_work/notebook_stage27_reference/</code>
+holding only an <code>execution.json</code>. The notebook now detects that state and
+explains it, rather than letting <code>run_references</code> raise a bare error.
+Evidence was <strong>not</strong> erased to make the run green.</li>
+</ul>
+</li>
+</ul>
+<h2 id="protocol-gaps">Protocol gaps</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Applies to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>exact</td>
+<td>rank, counts, F2, IDs</td>
+</tr>
+<tr>
+<td>numerical (1e-8 abs / 1e-7 rel)</td>
+<td>native f64 metrics</td>
+</tr>
+<tr>
+<td>same-protocol optimization</td>
+<td>native16 small models</td>
+</tr>
+<tr>
+<td>related control</td>
+<td>several geometry and operator labs</td>
+</tr>
+<tr>
+<td>not implemented</td>
+<td>full FNO, VGGT inference, alpha/Delaunay</td>
+</tr>
+</tbody>
+</table>
+<p>A different Wine split or network architecture is a protocol difference, <strong>not</strong> a
+language performance comparison.</p>
+<h2 id="next-commands-for-stage-01">Next commands for Stage 01</h2>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+uv run --no-sync python course.py run --stage 1 --output my_work/stage01_ref01
+uv run --no-sync python native_course.py compare --lab stage01 --output my_work/stage01_native01
+uv run --no-sync python native_course.py prepare --lab stage01 --output my_work/stage01_practice01
+</code></pre>
+<h2 id="concise-daily-workflow">Concise daily workflow</h2>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+rtk uv run --no-sync python course.py next
+rtk uv run --no-sync python native_course.py show stageNN
+rtk uv run --no-sync python native_course.py compare --lab stageNN --output my_work/&lt;new_name&gt;01
+uv run --no-sync python tools/check_matrix.py --fast
+</code></pre>
+<p>Before a larger claim:</p>
+<pre><code class="language-powershell">uv run --no-sync python tools/check_matrix.py --only contracts,python,readers,native
+uv run --no-sync python tools/check_matrix.py --only science --output my_work/checks01
+uv run --no-sync python tools/verify_language_notebooks.py --output my_work/nb_verify01
+</code></pre>
+<h2 id="not-claimed">Not claimed</h2>
+<p>No complete native original-notebook parity. No full deployment (the Python
+course image and its live cluster were not re-run here). No learner mastery:
+every generated notebook remains <code>not_assessed</code>.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

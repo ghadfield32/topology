@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "errors_detected": [
+    "Changed or missing output: artifacts/reports/v6/industries/wine/results.json"
+  ],
+  "scope": "Deliberately altered private copy of a real run, not a changed reference."
+}

@@ -6,7 +6,7 @@
       "apiVersion": "v1",
       "kind": "Namespace",
       "metadata": {
-        "name": "shape-learning-v12",
+        "name": "shape-learning-v14",
         "labels": {
           "pod-security.kubernetes.io/enforce": "restricted",
           "pod-security.kubernetes.io/audit": "restricted",
@@ -19,7 +19,7 @@
       "kind": "PersistentVolumeClaim",
       "metadata": {
         "name": "learner-work",
-        "namespace": "shape-learning-v12"
+        "namespace": "shape-learning-v14"
       },
       "spec": {
         "accessModes": [
@@ -37,7 +37,7 @@
       "kind": "Deployment",
       "metadata": {
         "name": "course-reader",
-        "namespace": "shape-learning-v12",
+        "namespace": "shape-learning-v14",
         "labels": {
           "app.kubernetes.io/name": "shape-course",
           "app.kubernetes.io/part-of": "shape-learning"
@@ -72,7 +72,7 @@
             "containers": [
               {
                 "name": "course",
-                "image": "listening-to-shape:12",
+                "image": "listening-to-shape:14",
                 "imagePullPolicy": "IfNotPresent",
                 "workingDir": "/course",
                 "env": [
@@ -114,7 +114,7 @@
                   },
                   {
                     "name": "COURSE_PROFILE",
-                    "value": "physics"
+                    "value": "core"
                   },
                   {
                     "name": "PYTEST_ADDOPTS",
@@ -198,7 +198,7 @@
       "kind": "Service",
       "metadata": {
         "name": "course-reader",
-        "namespace": "shape-learning-v12"
+        "namespace": "shape-learning-v14"
       },
       "spec": {
         "type": "ClusterIP",
@@ -218,7 +218,7 @@
       "kind": "Job",
       "metadata": {
         "name": "course-acceptance",
-        "namespace": "shape-learning-v12",
+        "namespace": "shape-learning-v14",
         "labels": {
           "app.kubernetes.io/name": "shape-course",
           "app.kubernetes.io/part-of": "shape-learning"
@@ -249,7 +249,7 @@
             "containers": [
               {
                 "name": "course",
-                "image": "listening-to-shape:12",
+                "image": "listening-to-shape:14",
                 "imagePullPolicy": "IfNotPresent",
                 "workingDir": "/course",
                 "env": [
@@ -291,7 +291,7 @@
                   },
                   {
                     "name": "COURSE_PROFILE",
-                    "value": "physics"
+                    "value": "core"
                   },
                   {
                     "name": "PYTEST_ADDOPTS",
@@ -338,7 +338,7 @@
                 "command": [
                   "python",
                   "-c",
-                  "import os,subprocess,sys,json\nfrom pathlib import Path\nout=Path('/work')/('acceptance-'+os.environ['POD_UID']);out.mkdir(exist_ok=False)\ncommands=[[sys.executable,'course.py','test','--profile',os.environ['COURSE_PROFILE'],'--output',str(out/'tests')],\n [sys.executable,'course.py','run','--stage','0','--jobs','1','--output',str(out/'stage00')]]\nresults=[]\nfor cmd in commands:\n rc=subprocess.run(cmd,check=False).returncode;results.append({'command':cmd,'returncode':rc})\n if rc:break\nfrom shape_lab.acceptance import validate_native_evidence\nprofile=os.environ['COURSE_PROFILE']\ntests=json.loads((out/'tests/tests.json').read_text()) if (out/'tests/tests.json').is_file() else {}\nrefs=json.loads((out/'stage00/execution.json').read_text()) if (out/'stage00/execution.json').is_file() else {}\nerrors=validate_native_evidence(tests,refs,profile,['notebooks/00_lab.ipynb'])\nstatus={'status':'passed' if len(results)==2 and all(x['returncode']==0 for x in results) and not errors else 'failed',\n 'commands':results,'output':str(out),'profile':profile,'errors':errors,'tests':tests,\n 'reference_evidence':{k:refs.get(k) for k in ['order','records','passed','failed','source_inputs_unchanged','required_prior_reports_copied']}}\n\n(out/'acceptance.json').write_text(json.dumps(status,indent=2)+'\\n');print('SHAPE_ACCEPTANCE='+json.dumps(status),flush=True)\nsys.exit(0 if status['status']=='passed' else 1)\n"
+                  "import os,subprocess,sys,json\nfrom pathlib import Path\nout=Path('/work')/('acceptance-'+os.environ['POD_UID']);out.mkdir(exist_ok=False)\ncommands=[[sys.executable,'course.py','test','--profile',os.environ['COURSE_PROFILE'],'--output',str(out/'tests')],\n [sys.executable,'course.py','run','--stage','0','--jobs','1','--output',str(out/'stage00')]]\nresults=[]\nfor cmd in commands:\n rc=subprocess.run(cmd,check=False).returncode;results.append({'command':cmd,'returncode':rc})\n if rc:break\nfrom shape_lab.acceptance import validate_native_evidence\nprofile=os.environ['COURSE_PROFILE']\ntests=json.loads((out/'tests/tests.json').read_text()) if (out/'tests/tests.json').is_file() else {}\nrefs=json.loads((out/'stage00/execution.json').read_text()) if (out/'stage00/execution.json').is_file() else {}\nerrors=validate_native_evidence(tests,refs,profile,['notebooks/00_lab.ipynb'])\nfrom shape_lab.result_packet import validate_run\nerrors.extend(validate_run(out/'stage00'))\nstatus={'status':'passed' if len(results)==2 and all(x['returncode']==0 for x in results) and not errors else 'failed',\n 'commands':results,'output':str(out),'profile':profile,'errors':errors,'tests':tests,\n 'reference_evidence':{k:refs.get(k) for k in ['order','records','passed','failed','source_inputs_unchanged','required_prior_reports_copied']}}\n\n(out/'acceptance.json').write_text(json.dumps(status,indent=2)+'\\n');print('SHAPE_ACCEPTANCE='+json.dumps(status),flush=True)\nsys.exit(0 if status['status']=='passed' else 1)\n"
                 ]
               }
             ],

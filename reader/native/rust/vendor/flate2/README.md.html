@@ -1,0 +1,96 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>flate2 · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/flate2/README.md">native/rust/vendor/flate2/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="flate2">flate2</h1>
+<p><a href="https://crates.io/crates/flate2"><img alt="Crates.io" src="https://img.shields.io/crates/v/flate2.svg?maxAge=2592000"/></a>
+<a href="https://docs.rs/flate2"><img alt="Documentation" src="https://docs.rs/flate2/badge.svg"/></a></p>
+<p>A streaming compression/decompression library DEFLATE-based streams in Rust.</p>
+<p>This crate by default uses the <code>miniz_oxide</code> crate, a port of <code>miniz.c</code> to pure
+Rust. This crate also supports other <a href="#backends">backends</a>, such as the widely
+available zlib library or the high-performance zlib-ng library.</p>
+<p>Supported formats:</p>
+<ul>
+<li>deflate</li>
+<li>zlib</li>
+<li>gzip</li>
+</ul>
+<pre><code class="language-toml"># Cargo.toml
+[dependencies]
+flate2 = "1.0"
+</code></pre>
+<h2 id="msrv-minimum-supported-rust-version-policy">MSRV (Minimum Supported Rust Version) Policy</h2>
+<p>This crate supports the current and previous stable versions of the Rust compiler.
+For example, if the current stable is 1.80, this crate supports 1.80 and 1.79.</p>
+<p>Other compiler versions may work, but failures may not be treated as a <code>flate2</code> bug.</p>
+<p>The <code>Cargo.toml</code> file specifies a <code>rust-version</code> for which builds of the current version
+passed at some point. This value is indicative only, and may change at any time.</p>
+<p>The <code>rust-version</code> is a best-effort measured value and is different to the MSRV. The
+<code>rust-version</code> can be incremented by a PR in order to pass tests, as long as the MSRV
+continues to hold. When the <code>rust-version</code> increases, the next release should be a minor
+version, to allow any affected users to pin to a previous minor version.</p>
+<h2 id="compression">Compression</h2>
+<pre><code class="language-rust">use std::io::prelude::*;
+use flate2::Compression;
+use flate2::write::ZlibEncoder;
+
+fn main() {
+    let mut e = ZlibEncoder::new(Vec::new(), Compression::default());
+    e.write_all(b"foo");
+    e.write_all(b"bar");
+    let compressed_bytes = e.finish();
+}
+</code></pre>
+<h2 id="decompression">Decompression</h2>
+<pre><code class="language-rust,no_run">use std::io::prelude::*;
+use flate2::read::GzDecoder;
+
+fn main() {
+    let mut d = GzDecoder::new("...".as_bytes());
+    let mut s = String::new();
+    d.read_to_string(&amp;mut s).unwrap();
+    println!("{}", s);
+}
+</code></pre>
+<h2 id="backends">Backends</h2>
+<p>The default <code>miniz_oxide</code> backend has the advantage of only using safe Rust.</p>
+<p>If you want maximum performance while still benefiting from a Rust
+implementation at the cost of some <code>unsafe</code>, you can use <code>zlib-rs</code>:</p>
+<pre><code class="language-toml">[dependencies]
+flate2 = { version = "1.0.17", features = ["zlib-rs"], default-features = false }
+</code></pre>
+<h3 id="c-backends">C backends</h3>
+<p>While zlib-rs is <a href="https://trifectatech.org/blog/zlib-rs-is-faster-than-c/">the fastest overall</a>,
+the zlib-ng C library can be slightly faster in certain cases:</p>
+<pre><code class="language-toml">[dependencies]
+flate2 = { version = "1.0.17", features = ["zlib-ng"], default-features = false }
+</code></pre>
+<p>Note that the <code>"zlib-ng"</code> feature works even if some other part of your crate
+graph depends on zlib.</p>
+<p>However, if you're already using another C or Rust library that depends on
+zlib, and you want to avoid including both zlib and zlib-ng, you can use that
+for Rust code as well:</p>
+<pre><code class="language-toml">[dependencies]
+flate2 = { version = "1.0.17", features = ["zlib"], default-features = false }
+</code></pre>
+<p>Or, if you have C or Rust code that depends on zlib and you want to use zlib-ng
+via libz-sys in zlib-compat mode, use:</p>
+<pre><code class="language-toml">[dependencies]
+flate2 = { version = "1.0.17", features = ["zlib-ng-compat"], default-features = false }
+</code></pre>
+<p>Note that when using the <code>"zlib-ng-compat"</code> feature, if any crate in your
+dependency graph explicitly requests stock zlib, or uses libz-sys directly
+without <code>default-features = false</code>, you'll get stock zlib rather than zlib-ng.
+See <a href="https://github.com/rust-lang/libz-sys/blob/main/README.md">the libz-sys
+README</a> for details.
+To avoid that, use the <code>"zlib-ng"</code> feature instead.</p>
+<h1 id="license">License</h1>
+<p>This project is licensed under either of</p>
+<ul>
+<li>Apache License, Version 2.0, (<a href="../../../../../native/rust/vendor/flate2/LICENSE-APACHE">LICENSE-APACHE</a> or
+<a href="https://www.apache.org/licenses/LICENSE-2.0">https://www.apache.org/licenses/LICENSE-2.0</a>)</li>
+<li>MIT license (<a href="../../../../../native/rust/vendor/flate2/LICENSE-MIT">LICENSE-MIT</a> or
+<a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a>)</li>
+</ul>
+<p>at your option.</p>
+<h3 id="contribution">Contribution</h3>
+<p>Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this project by you, as defined in the Apache-2.0 license,
+shall be dual licensed as above, without any additional terms or conditions.</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

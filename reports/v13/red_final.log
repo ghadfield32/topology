@@ -1,0 +1,67 @@
+......................................FFF.F                              [100%]
+=================================== FAILURES ===================================
+__________________ test_boolean_not_numeric_evidence[change0] __________________
+
+run = PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide0/run')
+change = {'passed': True}
+
+    @pytest.mark.parametrize('change',[{'passed':True},{'failed':False},{'output_seal_schema':True}])
+    def test_boolean_not_numeric_evidence(run,change):
+        p=run/'execution.json';r=json.loads(p.read_text());r.update(change);p.write_text(json.dumps(r))
+>       assert packet.validate_run(run)
+E       AssertionError: assert []
+E        +  where [] = <function validate_run at 0x7f2c21749a80>(PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide0/run'))
+E        +    where <function validate_run at 0x7f2c21749a80> = packet.validate_run
+
+tests/test_results_v13.py:132: AssertionError
+__________________ test_boolean_not_numeric_evidence[change1] __________________
+
+run = PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide1/run')
+change = {'failed': False}
+
+    @pytest.mark.parametrize('change',[{'passed':True},{'failed':False},{'output_seal_schema':True}])
+    def test_boolean_not_numeric_evidence(run,change):
+        p=run/'execution.json';r=json.loads(p.read_text());r.update(change);p.write_text(json.dumps(r))
+>       assert packet.validate_run(run)
+E       AssertionError: assert []
+E        +  where [] = <function validate_run at 0x7f2c21749a80>(PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide1/run'))
+E        +    where <function validate_run at 0x7f2c21749a80> = packet.validate_run
+
+tests/test_results_v13.py:132: AssertionError
+__________________ test_boolean_not_numeric_evidence[change2] __________________
+
+run = PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide2/run')
+change = {'output_seal_schema': True}
+
+    @pytest.mark.parametrize('change',[{'passed':True},{'failed':False},{'output_seal_schema':True}])
+    def test_boolean_not_numeric_evidence(run,change):
+        p=run/'execution.json';r=json.loads(p.read_text());r.update(change);p.write_text(json.dumps(r))
+>       assert packet.validate_run(run)
+E       AssertionError: assert []
+E        +  where [] = <function validate_run at 0x7f2c21749a80>(PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide2/run'))
+E        +    where <function validate_run at 0x7f2c21749a80> = packet.validate_run
+
+tests/test_results_v13.py:132: AssertionError
+__________________ test_kubernetes_job_checks_actual_outputs ___________________
+
+    def test_kubernetes_job_checks_actual_outputs():
+        from shape_lab.deployment import resources
+        r=resources('course:13','shape-test','core')
+        job=next(x for x in r['items'] if x['kind']=='Job')
+        code=job['spec']['template']['spec']['containers'][0]['command'][-1]
+>       assert 'validate_run' in code
+E       assert 'validate_run' in "import os,subprocess,sys,json\nfrom pathlib import Path\nout=Path('/work')/('acceptance-'+os.environ['POD_UID']);out....2)+'\\n');print('SHAPE_ACCEPTANCE='+json.dumps(status),flush=True)\nsys.exit(0 if status['status']=='passed' else 1)\n"
+
+tests/test_results_v13.py:144: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_results_v13.py::test_boolean_not_numeric_evidence[change0] - AssertionError: assert []
+ +  where [] = <function validate_run at 0x7f2c21749a80>(PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide0/run'))
+ +    where <function validate_run at 0x7f2c21749a80> = packet.validate_run
+FAILED tests/test_results_v13.py::test_boolean_not_numeric_evidence[change1] - AssertionError: assert []
+ +  where [] = <function validate_run at 0x7f2c21749a80>(PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide1/run'))
+ +    where <function validate_run at 0x7f2c21749a80> = packet.validate_run
+FAILED tests/test_results_v13.py::test_boolean_not_numeric_evidence[change2] - AssertionError: assert []
+ +  where [] = <function validate_run at 0x7f2c21749a80>(PosixPath('/tmp/pytest-of-root/pytest-6/test_boolean_not_numeric_evide2/run'))
+ +    where <function validate_run at 0x7f2c21749a80> = packet.validate_run
+FAILED tests/test_results_v13.py::test_kubernetes_job_checks_actual_outputs - assert 'validate_run' in "import os,subprocess,sys,json\nfrom pathlib import Path\nout=Path('/work')/('acceptance-'+os.environ['POD_UID']);out....2)+'\\n');print('SHAPE_ACCEPTANCE='+json.dumps(status),flush=True)\nsys.exit(0 if status['status']=='passed' else 1)\n"
+4 failed, 39 passed in 1.20s

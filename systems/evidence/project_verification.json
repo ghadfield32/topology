@@ -1,0 +1,104 @@
+{
+  "status": "blocked",
+  "requested_units": [
+    "sys00",
+    "sys01",
+    "sys02",
+    "sys03",
+    "sys04",
+    "sys05",
+    "sys06",
+    "sys07",
+    "sys08",
+    "sys09"
+  ],
+  "counts": {
+    "passed": 8,
+    "failed": 0,
+    "blocked": 2
+  },
+  "records": [
+    {
+      "status": "passed",
+      "unit": "sys00",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys00",
+      "reason": null,
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "passed",
+      "unit": "sys01",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys01",
+      "reason": null,
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "passed",
+      "unit": "sys02",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys02",
+      "reason": null,
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "passed",
+      "unit": "sys03",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys03",
+      "reason": null,
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "blocked",
+      "unit": "sys04",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys04",
+      "reason": "C++ OpenCV development package not detected through pkg-config; see sys04 for explicit CMake OpenCV_DIR setup.",
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "passed",
+      "unit": "sys05",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys05",
+      "reason": null,
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "passed",
+      "unit": "sys06",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys06",
+      "reason": null,
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "passed",
+      "unit": "sys07",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys07",
+      "reason": null,
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "blocked",
+      "unit": "sys08",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys08",
+      "reason": "Resolve PyO3/maturin in a separate reviewed environment; no PyO3 lock or dependency download is fabricated. Follow systems/lessons/sys08.md.",
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    },
+    {
+      "status": "passed",
+      "unit": "sys09",
+      "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys09",
+      "reason": null,
+      "assessment": "not_assessed",
+      "scope": "copied-project build and declared checks; not every source exercise"
+    }
+  ],
+  "assessment": "not_assessed",
+  "scope": "actual copied project checks; not every advanced assignment or deployment"
+}

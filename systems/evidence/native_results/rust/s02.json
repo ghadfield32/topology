@@ -1,0 +1,58 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    },
+    "sports_v8/data/spl_selected_frames.json": {
+      "bytes": 6528,
+      "sha256": "4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc"
+    }
+  },
+  "lab": "s02",
+  "language": "rust",
+  "metrics": {
+    "coefficients": [
+      3.257689909227889,
+      4.3135863257643265,
+      -6.186927656262357
+    ],
+    "constant_mae_m": 0.25015376535622336,
+    "constant_predictions": [
+      3.718832311177679,
+      3.718832311177679
+    ],
+    "fit_rows": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "fitted_acceleration_m_s2": -12.373855312524714,
+    "fixed_gravity_mae_m": 0.04893460960509044,
+    "fixed_gravity_predictions": [
+      4.043295511541345,
+      3.992545860736641
+    ],
+    "later_same_trial_rows": [
+      8,
+      9
+    ],
+    "quadratic_mae_m": 0.044661417414043614,
+    "quadratic_predictions": [
+      3.9808981601952547,
+      3.867751158044463
+    ],
+    "scope": "selected frames, no release annotation and no independent athlete test",
+    "truth": [
+      4.005589648845731,
+      3.9323825042220735
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

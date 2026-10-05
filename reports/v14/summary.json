@@ -1,0 +1,43 @@
+{
+  "release": "14.0.0",
+  "date": "2026-10-04",
+  "core_stages": 31,
+  "unique_primary_lessons": 31,
+  "representation_units": 5,
+  "named_cases": 25,
+  "learner_notebooks": 56,
+  "references_passed": 133,
+  "references_failed": 0,
+  "teaching_code_cells": 766,
+  "runtime_probe_cells": 133,
+  "png_outputs": 80,
+  "source_input_hashes": 510,
+  "source_inputs_unchanged": true,
+  "output_validation_errors": [],
+  "new_observed_payloads": 0,
+  "learner_items_preassessed": 0,
+  "native_nonroot_readonly": "passed",
+  "docker_runtime": "blocked: no Docker CLI/engine",
+  "kubernetes_static": "passed project policy only",
+  "kubernetes_live": "blocked: no docker/kubectl/kind",
+  "browser_navigation": "blocked by Chromium administrator policy; not passed",
+  "reader_rendering": "passed",
+  "local_targets": 21976,
+  "html_fragments": 516,
+  "reachable_reader_pages": 546,
+  "http": "Two public paths 200; five private/traversal/directory paths 403",
+  "post_reference_changes": [
+    "Documentation, navigation metadata, saved outputs, and rendered pages only; teaching code unchanged."
+  ],
+  "source_release": "Imported from the v17 archive reports/v13 record; the repository package identifies as 14.0.0.",
+  "current_checkout_tests": "See docs/release/VERIFICATION.md.",
+  "native16_import": "See docs/release/NATIVE16_IMPORT.md.",
+  "tests": {
+    "total": 807,
+    "passed": 805,
+    "skipped": 2,
+    "failures": 0,
+    "errors": 0,
+    "note": "Archive v13-era execution record imported with the v17 package; NOT this checkout. See docs/release/VERIFICATION.md for current totals."
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "implementation": "native; no Python calls or reference-result reads",
+  "inputs": {
+    "data/raw/iris.csv": {
+      "bytes": 4676,
+      "sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f"
+    },
+    "native/protocols/labs.json": {
+      "bytes": 77988,
+      "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+    }
+  },
+  "lab": "stage09",
+  "language": "go",
+  "metrics": {
+    "coefficient_field": "F2",
+    "data_diagram": [
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.17523496019834994
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.23170509989256782
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.2578112218856778
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.26681123961900605
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.2668112396190068
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.27238567393568297
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.2748559319161794
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.2921524806630341
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.31087209527211235
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.3737223842874604
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.376182914637446
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.4133224104549256
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.44047406585393883
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.4820326971604574
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.5201808492991541
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.5293389565712556
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.5301071719284326
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.5301071719284334
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.541110733183001
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.5476313171809463
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.5824691619074666
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.587940639942548
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 0.9402607381412051
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": null
+      },
+      {
+        "dimension": 1,
+        "birth": 0.4301165532211046,
+        "death": 0.4820326971604579
+      },
+      {
+        "dimension": 1,
+        "birth": 0.5476313171809478,
+        "death": 0.5618382928289627
+      }
+    ],
+    "independent_H0_mst": [
+      0.17523496019834994,
+      0.23170509989256782,
+      0.2578112218856778,
+      0.26681123961900605,
+      0.2668112396190068,
+      0.27238567393568297,
+      0.2748559319161794,
+      0.2921524806630341,
+      0.31087209527211235,
+      0.3737223842874604,
+      0.376182914637446,
+      0.4133224104549256,
+      0.44047406585393883,
+      0.4820326971604574,
+      0.5201808492991541,
+      0.5293389565712556,
+      0.5301071719284326,
+      0.5301071719284334,
+      0.541110733183001,
+      0.5476313171809463,
+      0.5824691619074666,
+      0.587940639942548,
+      0.9402607381412051
+    ],
+    "maximum_simplex_dimension": 2,
+    "scope": "H0 and H1; unfilled top-dimensional classes not an H2 inference",
+    "square_diagram": [
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 1
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 1
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": 1
+      },
+      {
+        "dimension": 0,
+        "birth": 0,
+        "death": null
+      },
+      {
+        "dimension": 1,
+        "birth": 1,
+        "death": 1.4142135623730951
+      }
+    ]
+  },
+  "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+  "protocol": "native16 shared teaching adaptation",
+  "schema": "shape.native.v16",
+  "status": "completed"
+}

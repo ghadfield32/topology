@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/rust/shape-rust",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "stage17"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0015076610000051005,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage17\",\n  \"language\": \"rust\",\n  \"metrics\": {\n    \"fit_indices\": [\n      0,\n      1,\n      2,\n      3,\n      4,\n      5,\n      6,\n      7,\n      8,\n      9,\n      10,\n      11\n    ],\n    \"holdout_errors\": [\n      0.0,\n      0.0,\n      0.0,\n      0.0,\n      1.1102230246251565e-16,\n      0.0,\n      0.0,\n      0.0,\n      0.0,\n      2.220446049250313e-16,\n      0.0,\n      1.1102230246251565e-16\n    ],\n    \"holdout_indices\": [\n      12,\n      13,\n      14,\n      15,\n      16,\n      17,\n      18,\n      19,\n      20,\n      21,\n      22,\n      23\n    ],\n    \"max_holdout_error\": 2.220446049250313e-16,\n    \"origin\": \"manufactured paired nondegenerate cloud; not a learned reconstruction\",\n    \"rotation\": [\n      [\n        0.9210609940028851,\n        -0.3894183423086505,\n        0.0\n      ],\n      [\n        0.3894183423086505,\n        0.9210609940028851,\n        0.0\n      ],\n      [\n        0.0,\n        0.0,\n        1.0\n      ]\n    ],\n    \"scale\": 2.5,\n    \"translation\": [\n      3.0,\n      -2.0,\n      0.9999999999999999\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

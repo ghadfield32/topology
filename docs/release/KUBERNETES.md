@@ -24,11 +24,11 @@ Read the generated `resources.json` and `verification.json`. This checks project
 
 ## Step 2: prepare an explicitly disposable local cluster
 
-Install Docker, kind, and a compatible kubectl. Record their actual versions. Follow [Docker setup](DOCKER.md) to build `listening-to-shape:12` from a real lock first.
+Install Docker, kind, and a compatible kubectl. Record their actual versions. Follow [Docker setup](DOCKER.md) to build `listening-to-shape:14` from a real lock first.
 
 ```bash
 kind create cluster --name shape-learning
-kind load docker-image listening-to-shape:12 --name shape-learning
+kind load docker-image listening-to-shape:14 --name shape-learning
 kubectl config view --minify --context kind-shape-learning
 ```
 
@@ -37,7 +37,7 @@ Creating a kind cluster consumes local resources. Use a new approved name if thi
 ## Step 3: request live acceptance explicitly
 
 ```bash
-uv run --no-sync python tools/k8s_verify.py --context kind-shape-learning --namespace shape-study01 --image listening-to-shape:12 --profile physics --apply --output my_work/k8s_live01
+uv run --no-sync python tools/k8s_verify.py --context kind-shape-learning --namespace shape-study01 --image listening-to-shape:14 --profile physics --apply --output my_work/k8s_live01
 ```
 
 The tool checks runtime readiness and namespace absence. It creates only the requested Namespace before doing server-side dry-run for the full manifest, then applies and waits for the reader and Job. Failure preserves resources and diagnostics for inspection. There is no silent retry against another cluster or namespace.

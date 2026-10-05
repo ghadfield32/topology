@@ -1,0 +1,700 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Measured stereo, calibration, and uncertainty — rust · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../systems/evidence/workbooks/rust/stage15.ipynb">systems/evidence/workbooks/rust/stage15.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><h1 id="measured-stereo-calibration-and-uncertainty--rust">Measured stereo, calibration, and uncertainty — rust</h1>
+<p>One mathematical lesson: <code>lessons/15_lesson.md</code>. Read it once. This is a reference-execution interface, not a completed independent assignment.</p>
+<p><strong>Explain → Predict → Implement → Break → Apply.</strong> Write your prediction before executing. The kernel is Python; the compiled rust program does the computation.</p>
+<p><strong>Protocol boundary:</strong> This is an intentionally weak local matcher, not full-image reconstruction, calibration recovery, or uncertainty-certified depth.</p>
+<section class="cell"><p class="cell-label">Code · execution 1</p><pre><code>from pathlib import Path
+import sys, json
+ROOT = next((p for p in (Path.cwd(), *Path.cwd().parents) if (p / &#x27;systems/catalog.json&#x27;).exists() and (p / &#x27;native/protocols/labs.json&#x27;).exists()), None)
+if ROOT is None:
+    raise RuntimeError(&#x27;Open this workbook inside the extracted course repository.&#x27;)
+sys.path.insert(0, str(ROOT))
+print(&#x27;Course:&#x27;, ROOT)
+print(&#x27;Interpreter:&#x27;, sys.executable)
+</code></pre><div class="output"><pre>Course: /mnt/data/shape17_build/listening_to_shape_lab
+Interpreter: /opt/pyvenv/bin/python
+</pre></div></section><h2 id="fresh-execution">Fresh execution</h2>
+<p>This creates a new run and never searches for old results. It may take longer when the original experiment rebuilds prerequisites. The complete stdout and stderr remain in its command record.</p>
+<section class="cell"><p class="cell-label">Code · execution 2</p><pre><code>from systems.python.notebook_runner import run_reference, read_metrics
+summary = run_reference(&#x27;stage15&#x27;, &#x27;rust&#x27;)
+print(json.dumps(summary, indent=2))</code></pre><div class="output"><pre>{
+  &quot;lab&quot;: &quot;stage15&quot;,
+  &quot;language&quot;: &quot;rust&quot;,
+  &quot;exit_code&quot;: 0,
+  &quot;output&quot;: &quot;/mnt/data/shape17_build/listening_to_shape_lab/my_work/learning_references/stage15-rust-408694975f494804b43e1dc081745196&quot;,
+  &quot;command_log&quot;: &quot;/mnt/data/shape17_build/listening_to_shape_lab/my_work/learning_references/stage15-rust-408694975f494804b43e1dc081745196.command.json&quot;,
+  &quot;assessment&quot;: &quot;not_assessed&quot;,
+  &quot;json_artifacts&quot;: [
+    &quot;rust_build_reuse.json&quot;,
+    &quot;rust_version.json&quot;,
+    &quot;execution.json&quot;,
+    &quot;rust/stage15.execution.json&quot;,
+    &quot;rust/stage15.json&quot;
+  ],
+  &quot;scope&quot;: &quot;Python executes the original reference. Go/Rust execute native16 protocols; see coverage differences.&quot;
+}
+</pre></div></section><section class="cell"><p class="cell-label">Code · execution 3</p><pre><code>metrics = read_metrics(summary)
+print(json.dumps(metrics, indent=2)[:24000])
+print(&#x27;Full values are retained in the output files; printing is truncated only for readability.&#x27;)</code></pre><div class="output"><pre>{
+  &quot;metrics&quot;: {
+    &quot;bad_over_2px_fraction&quot;: 0.23376623376623376,
+    &quot;convention&quot;: &quot;Z=fB/(d+doffs); rectified positive optical-axis depth&quot;,
+    &quot;depth_mae_m&quot;: 0.17924328005106965,
+    &quot;disparity_mae_px&quot;: 3.312001438883992,
+    &quot;disparity_median_abs_px&quot;: 0.4267921447753906,
+    &quot;eligible_pixels&quot;: 77,
+    &quot;max_disparity_px&quot;: 90,
+    &quot;patch_width&quot;: 5,
+    &quot;predictions&quot;: [
+      {
+        &quot;predicted_depth_m&quot;: 4.562841538231241,
+        &quot;predicted_disparity_px&quot;: 11.0,
+        &quot;truth_depth_m&quot;: 4.6130724907737575,
+        &quot;truth_disparity_px&quot;: 10.541732788085938,
+        &quot;u&quot;: 110,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.562841538231241,
+        &quot;predicted_disparity_px&quot;: 11.0,
+        &quot;truth_depth_m&quot;: 4.524981103562678,
+        &quot;truth_disparity_px&quot;: 11.352132797241211,
+        &quot;u&quot;: 171,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 5.984907716075547,
+        &quot;predicted_disparity_px&quot;: 1.0,
+        &quot;truth_depth_m&quot;: 4.4131543561242035,
+        &quot;truth_disparity_px&quot;: 12.427490234375,
+        &quot;u&quot;: 232,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.259232333274187,
+        &quot;predicted_disparity_px&quot;: 14.0,
+        &quot;truth_depth_m&quot;: 4.333254890822845,
+        &quot;truth_disparity_px&quot;: 13.22982120513916,
+        &quot;u&quot;: 293,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.078319436308032,
+        &quot;predicted_disparity_px&quot;: 16.0,
+        &quot;truth_depth_m&quot;: 4.120404128227861,
+        &quot;truth_disparity_px&quot;: 15.519076347351074,
+        &quot;u&quot;: 354,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.259232333274187,
+        &quot;predicted_disparity_px&quot;: 14.0,
+        &quot;truth_depth_m&quot;: 4.2539348114578175,
+        &quot;truth_disparity_px&quot;: 14.056146621704102,
+        &quot;u&quot;: 415,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.5504890170839034,
+        &quot;predicted_disparity_px&quot;: 23.0,
+        &quot;truth_depth_m&quot;: 4.057101133878414,
+        &quot;truth_disparity_px&quot;: 16.24625587463379,
+        &quot;u&quot;: 476,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.7589897227811924,
+        &quot;predicted_disparity_px&quot;: 20.0,
+        &quot;truth_depth_m&quot;: 3.8780564896907608,
+        &quot;truth_disparity_px&quot;: 18.431522369384766,
+        &quot;u&quot;: 537,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.9935064047331865,
+        &quot;predicted_disparity_px&quot;: 17.0,
+        &quot;truth_depth_m&quot;: 4.022134959935749,
+        &quot;truth_disparity_px&quot;: 16.65773582458496,
+        &quot;u&quot;: 598,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.9121490644582977,
+        &quot;predicted_disparity_px&quot;: 18.0,
+        &quot;truth_depth_m&quot;: 3.8858650578051073,
+        &quot;truth_disparity_px&quot;: 18.33201789855957,
+        &quot;u&quot;: 659,
+        &quot;v&quot;: 30
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.673897409774619,
+        &quot;predicted_disparity_px&quot;: 10.0,
+        &quot;truth_depth_m&quot;: 4.7760657072890975,
+        &quot;truth_disparity_px&quot;: 9.121099472045898,
+        &quot;u&quot;: 110,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.562841538231241,
+        &quot;predicted_disparity_px&quot;: 11.0,
+        &quot;truth_depth_m&quot;: 4.601138159700977,
+        &quot;truth_disparity_px&quot;: 10.64970588684082,
+        &quot;u&quot;: 171,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 5.178011890686513,
+        &quot;predicted_disparity_px&quot;: 6.0,
+        &quot;truth_depth_m&quot;: 4.491040847935543,
+        &quot;truth_disparity_px&quot;: 11.6728515625,
+        &quot;u&quot;: 232,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.456940745903542,
+        &quot;predicted_disparity_px&quot;: 12.0,
+        &quot;truth_depth_m&quot;: 4.404833797279052,
+        &quot;truth_disparity_px&quot;: 12.509685516357422,
+        &quot;u&quot;: 293,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.9121490644582977,
+        &quot;predicted_disparity_px&quot;: 18.0,
+        &quot;truth_depth_m&quot;: 3.8995160039770353,
+        &quot;truth_disparity_px&quot;: 18.159021377563477,
+        &quot;u&quot;: 354,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.834040430020365,
+        &quot;predicted_disparity_px&quot;: 19.0,
+        &quot;truth_depth_m&quot;: 3.8414337980279294,
+        &quot;truth_disparity_px&quot;: 18.903602600097656,
+        &quot;u&quot;: 415,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.4238802727596904,
+        &quot;predicted_disparity_px&quot;: 25.0,
+        &quot;truth_depth_m&quot;: 3.661886708468819,
+        &quot;truth_disparity_px&quot;: 21.354658126831055,
+        &quot;u&quot;: 537,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.617370850657424,
+        &quot;predicted_disparity_px&quot;: 22.0,
+        &quot;truth_depth_m&quot;: 3.59029626811977,
+        &quot;truth_disparity_px&quot;: 22.40032386779785,
+        &quot;u&quot;: 598,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.5504890170839034,
+        &quot;predicted_disparity_px&quot;: 23.0,
+        &quot;truth_depth_m&quot;: 3.5327608288244177,
+        &quot;truth_disparity_px&quot;: 23.27141571044922,
+        &quot;u&quot;: 659,
+        &quot;v&quot;: 85
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.456940745903542,
+        &quot;predicted_disparity_px&quot;: 12.0,
+        &quot;truth_depth_m&quot;: 4.497741128030973,
+        &quot;truth_disparity_px&quot;: 11.609153747558594,
+        &quot;u&quot;: 110,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 4.790494162001696,
+        &quot;predicted_disparity_px&quot;: 9.0,
+        &quot;truth_depth_m&quot;: 4.679112534962096,
+        &quot;truth_disparity_px&quot;: 9.954207420349121,
+        &quot;u&quot;: 171,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.834040430020365,
+        &quot;predicted_disparity_px&quot;: 19.0,
+        &quot;truth_depth_m&quot;: 3.834375396829431,
+        &quot;truth_disparity_px&quot;: 18.995624542236328,
+        &quot;u&quot;: 232,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 1.9985403594488271,
+        &quot;predicted_disparity_px&quot;: 65.0,
+        &quot;truth_depth_m&quot;: 4.479473379827346,
+        &quot;truth_disparity_px&quot;: 11.783268928527832,
+        &quot;u&quot;: 293,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.2306966170805937,
+        &quot;predicted_disparity_px&quot;: 55.0,
+        &quot;truth_depth_m&quot;: 2.231544561217555,
+        &quot;truth_disparity_px&quot;: 54.967288970947266,
+        &quot;u&quot;: 415,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.180048463751334,
+        &quot;predicted_disparity_px&quot;: 57.0,
+        &quot;truth_depth_m&quot;: 2.1845268389821593,
+        &quot;truth_disparity_px&quot;: 56.819419860839844,
+        &quot;u&quot;: 476,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.2306966170805937,
+        &quot;predicted_disparity_px&quot;: 55.0,
+        &quot;truth_depth_m&quot;: 2.1443953349210143,
+        &quot;truth_disparity_px&quot;: 58.464534759521484,
+        &quot;u&quot;: 537,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.686820815151864,
+        &quot;predicted_disparity_px&quot;: 21.0,
+        &quot;truth_depth_m&quot;: 3.877452053003681,
+        &quot;truth_disparity_px&quot;: 18.439241409301758,
+        &quot;u&quot;: 598,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.4238802727596904,
+        &quot;predicted_disparity_px&quot;: 25.0,
+        &quot;truth_depth_m&quot;: 3.6320066130409026,
+        &quot;truth_disparity_px&quot;: 21.786081314086914,
+        &quot;u&quot;: 659,
+        &quot;v&quot;: 140
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.5574907303358816,
+        &quot;predicted_disparity_px&quot;: 44.0,
+        &quot;truth_depth_m&quot;: 2.6068498258400856,
+        &quot;truth_disparity_px&quot;: 42.57829284667969,
+        &quot;u&quot;: 110,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.428138342791392,
+        &quot;predicted_disparity_px&quot;: 48.0,
+        &quot;truth_depth_m&quot;: 2.426924992697267,
+        &quot;truth_disparity_px&quot;: 48.0395393371582,
+        &quot;u&quot;: 171,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.368247897022914,
+        &quot;predicted_disparity_px&quot;: 50.0,
+        &quot;truth_depth_m&quot;: 2.3830443541910338,
+        &quot;truth_disparity_px&quot;: 49.49653244018555,
+        &quot;u&quot;: 232,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.5238775724574825,
+        &quot;predicted_disparity_px&quot;: 45.0,
+        &quot;truth_depth_m&quot;: 2.491726899800132,
+        &quot;truth_disparity_px&quot;: 45.98173522949219,
+        &quot;u&quot;: 293,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.1555771835978716,
+        &quot;predicted_disparity_px&quot;: 58.0,
+        &quot;truth_depth_m&quot;: 2.412272343591371,
+        &quot;truth_disparity_px&quot;: 48.520164489746094,
+        &quot;u&quot;: 354,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.2837541205194682,
+        &quot;predicted_disparity_px&quot;: 53.0,
+        &quot;truth_depth_m&quot;: 2.275242800298358,
+        &quot;truth_disparity_px&quot;: 53.314552307128906,
+        &quot;u&quot;: 415,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.13164919052905,
+        &quot;predicted_disparity_px&quot;: 59.0,
+        &quot;truth_depth_m&quot;: 2.123955446547762,
+        &quot;truth_disparity_px&quot;: 59.326324462890625,
+        &quot;u&quot;: 476,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.2837541205194682,
+        &quot;predicted_disparity_px&quot;: 53.0,
+        &quot;truth_depth_m&quot;: 2.2782567790280694,
+        &quot;truth_disparity_px&quot;: 53.20289611816406,
+        &quot;u&quot;: 537,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.686820815151864,
+        &quot;predicted_disparity_px&quot;: 21.0,
+        &quot;truth_depth_m&quot;: 3.6936943327923184,
+        &quot;truth_disparity_px&quot;: 20.903074264526367,
+        &quot;u&quot;: 598,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.617370850657424,
+        &quot;predicted_disparity_px&quot;: 22.0,
+        &quot;truth_depth_m&quot;: 3.6099817143526622,
+        &quot;truth_disparity_px&quot;: 22.108659744262695,
+        &quot;u&quot;: 659,
+        &quot;v&quot;: 195
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.5574907303358816,
+        &quot;predicted_disparity_px&quot;: 44.0,
+        &quot;truth_depth_m&quot;: 2.61399984174298,
+        &quot;truth_disparity_px&quot;: 42.376800537109375,
+        &quot;u&quot;: 110,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.5238775724574825,
+        &quot;predicted_disparity_px&quot;: 45.0,
+        &quot;truth_depth_m&quot;: 2.5209412439078416,
+        &quot;truth_disparity_px&quot;: 45.088623046875,
+        &quot;u&quot;: 171,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.4911365095866955,
+        &quot;predicted_disparity_px&quot;: 46.0,
+        &quot;truth_depth_m&quot;: 2.5033808513225897,
+        &quot;truth_disparity_px&quot;: 45.622962951660156,
+        &quot;u&quot;: 232,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.3978192065779287,
+        &quot;predicted_disparity_px&quot;: 49.0,
+        &quot;truth_depth_m&quot;: 2.3782373806815613,
+        &quot;truth_disparity_px&quot;: 49.65940856933594,
+        &quot;u&quot;: 293,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.368247897022914,
+        &quot;predicted_disparity_px&quot;: 50.0,
+        &quot;truth_depth_m&quot;: 2.4001694081215783,
+        &quot;truth_disparity_px&quot;: 48.92158126831055,
+        &quot;u&quot;: 354,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.428138342791392,
+        &quot;predicted_disparity_px&quot;: 48.0,
+        &quot;truth_depth_m&quot;: 2.3332646381674125,
+        &quot;truth_disparity_px&quot;: 51.21574401855469,
+        &quot;u&quot;: 415,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.4592340365494456,
+        &quot;predicted_disparity_px&quot;: 47.0,
+        &quot;truth_depth_m&quot;: 3.8764701518565596,
+        &quot;truth_disparity_px&quot;: 18.451786041259766,
+        &quot;u&quot;: 476,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.950430952555081,
+        &quot;predicted_disparity_px&quot;: 34.0,
+        &quot;truth_depth_m&quot;: 3.890989413738988,
+        &quot;truth_disparity_px&quot;: 18.266935348510742,
+        &quot;u&quot;: 537,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.686820815151864,
+        &quot;predicted_disparity_px&quot;: 21.0,
+        &quot;truth_depth_m&quot;: 3.6775767977271876,
+        &quot;truth_disparity_px&quot;: 21.130924224853516,
+        &quot;u&quot;: 659,
+        &quot;v&quot;: 250
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.6639257134256304,
+        &quot;predicted_disparity_px&quot;: 41.0,
+        &quot;truth_depth_m&quot;: 3.513063030284075,
+        &quot;truth_disparity_px&quot;: 23.57619857788086,
+        &quot;u&quot;: 110,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.428138342791392,
+        &quot;predicted_disparity_px&quot;: 48.0,
+        &quot;truth_depth_m&quot;: 3.5197606961565593,
+        &quot;truth_disparity_px&quot;: 23.472183227539062,
+        &quot;u&quot;: 171,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.7014004020200884,
+        &quot;predicted_disparity_px&quot;: 40.0,
+        &quot;truth_depth_m&quot;: 2.6542368682085646,
+        &quot;truth_disparity_px&quot;: 41.26313781738281,
+        &quot;u&quot;: 232,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.4592340365494456,
+        &quot;predicted_disparity_px&quot;: 47.0,
+        &quot;truth_depth_m&quot;: 2.4303598117909053,
+        &quot;truth_disparity_px&quot;: 47.927711486816406,
+        &quot;u&quot;: 293,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.3978192065779287,
+        &quot;predicted_disparity_px&quot;: 49.0,
+        &quot;truth_depth_m&quot;: 2.3889273807754496,
+        &quot;truth_disparity_px&quot;: 49.29808807373047,
+        &quot;u&quot;: 354,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.368247897022914,
+        &quot;predicted_disparity_px&quot;: 50.0,
+        &quot;truth_depth_m&quot;: 2.3708375454275266,
+        &quot;truth_disparity_px&quot;: 49.91143035888672,
+        &quot;u&quot;: 415,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.4911365095866955,
+        &quot;predicted_disparity_px&quot;: 46.0,
+        &quot;truth_depth_m&quot;: 2.5003531412656277,
+        &quot;truth_disparity_px&quot;: 45.715850830078125,
+        &quot;u&quot;: 476,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.3112407502828396,
+        &quot;predicted_disparity_px&quot;: 52.0,
+        &quot;truth_depth_m&quot;: 2.302962750069978,
+        &quot;truth_disparity_px&quot;: 52.29865264892578,
+        &quot;u&quot;: 537,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.2050817465264223,
+        &quot;predicted_disparity_px&quot;: 56.0,
+        &quot;truth_depth_m&quot;: 2.203395882325319,
+        &quot;truth_disparity_px&quot;: 56.06663131713867,
+        &quot;u&quot;: 598,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.9935064047331865,
+        &quot;predicted_disparity_px&quot;: 17.0,
+        &quot;truth_depth_m&quot;: 3.5366807336111252,
+        &quot;truth_disparity_px&quot;: 23.21116828918457,
+        &quot;u&quot;: 659,
+        &quot;v&quot;: 305
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.950430952555081,
+        &quot;predicted_disparity_px&quot;: 34.0,
+        &quot;truth_depth_m&quot;: 2.994859633513364,
+        &quot;truth_disparity_px&quot;: 33.03445053100586,
+        &quot;u&quot;: 110,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.627476520510084,
+        &quot;predicted_disparity_px&quot;: 42.0,
+        &quot;truth_depth_m&quot;: 2.634312871599133,
+        &quot;truth_disparity_px&quot;: 41.810333251953125,
+        &quot;u&quot;: 171,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.592011297384121,
+        &quot;predicted_disparity_px&quot;: 43.0,
+        &quot;truth_depth_m&quot;: 2.61260032883546,
+        &quot;truth_disparity_px&quot;: 42.41615295410156,
+        &quot;u&quot;: 232,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.4592340365494456,
+        &quot;predicted_disparity_px&quot;: 47.0,
+        &quot;truth_depth_m&quot;: 2.435734357353645,
+        &quot;truth_disparity_px&quot;: 47.75336456298828,
+        &quot;u&quot;: 293,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.428138342791392,
+        &quot;predicted_disparity_px&quot;: 48.0,
+        &quot;truth_depth_m&quot;: 2.427260020651539,
+        &quot;truth_disparity_px&quot;: 48.02861785888672,
+        &quot;u&quot;: 354,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.3978192065779287,
+        &quot;predicted_disparity_px&quot;: 49.0,
+        &quot;truth_depth_m&quot;: 2.3928475152129574,
+        &quot;truth_disparity_px&quot;: 49.16639709472656,
+        &quot;u&quot;: 415,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.0929959890796637,
+        &quot;predicted_disparity_px&quot;: 31.0,
+        &quot;truth_depth_m&quot;: 3.015653891749087,
+        &quot;truth_disparity_px&quot;: 32.59231185913086,
+        &quot;u&quot;: 476,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.4911365095866955,
+        &quot;predicted_disparity_px&quot;: 46.0,
+        &quot;truth_depth_m&quot;: 2.5185363101195035,
+        &quot;truth_disparity_px&quot;: 45.16136169433594,
+        &quot;u&quot;: 537,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.2837541205194682,
+        &quot;predicted_disparity_px&quot;: 53.0,
+        &quot;truth_depth_m&quot;: 2.279622437816007,
+        &quot;truth_disparity_px&quot;: 53.152400970458984,
+        &quot;u&quot;: 598,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.1555771835978716,
+        &quot;predicted_disparity_px&quot;: 58.0,
+        &quot;truth_depth_m&quot;: 2.1493964640878755,
+        &quot;truth_disparity_px&quot;: 58.25617218017578,
+        &quot;u&quot;: 659,
+        &quot;v&quot;: 360
+      },
+      {
+        &quot;predicted_depth_m&quot;: 3.3639026902918405,
+        &quot;predicted_disparity_px&quot;: 26.0,
+        &quot;truth_depth_m&quot;: 2.6007919765253176,
+        &quot;truth_disparity_px&quot;: 42.749874114990234,
+        &quot;u&quot;: 110,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.2306966170805937,
+        &quot;predicted_disparity_px&quot;: 55.0,
+        &quot;truth_depth_m&quot;: 2.6121074105562614,
+        &quot;truth_disparity_px&quot;: 42.430023193359375,
+        &quot;u&quot;: 171,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.7796043913093826,
+        &quot;predicted_disparity_px&quot;: 38.0,
+        &quot;truth_depth_m&quot;: 2.619043223415459,
+        &quot;truth_disparity_px&quot;: 42.23533630371094,
+        &quot;u&quot;: 232,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.627476520510084,
+        &quot;predicted_disparity_px&quot;: 42.0,
+        &quot;truth_depth_m&quot;: 2.6265725292638122,
+        &quot;truth_disparity_px&quot;: 42.02515411376953,
+        &quot;u&quot;: 293,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.627476520510084,
+        &quot;predicted_disparity_px&quot;: 42.0,
+        &quot;truth_depth_m&quot;: 2.628858934823059,
+        &quot;truth_disparity_px&quot;: 41.96156692504883,
+        &quot;u&quot;: 354,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.627476520510084,
+        &quot;predicted_disparity_px&quot;: 42.0,
+        &quot;truth_depth_m&quot;: 2.632831628490053,
+        &quot;truth_disparity_px&quot;: 41.85134506225586,
+        &quot;u&quot;: 415,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.627476520510084,
+        &quot;predicted_disparity_px&quot;: 42.0,
+        &quot;truth_depth_m&quot;: 2.630499547211904,
+        &quot;truth_disparity_px&quot;: 41.91600799560547,
+        &quot;u&quot;: 476,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.627476520510084,
+        &quot;predicted_disparity_px&quot;: 42.0,
+        &quot;truth_depth_m&quot;: 2.6264726266512493,
+        &quot;truth_disparity_px&quot;: 42.02793502807617,
+        &quot;u&quot;: 537,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.4592340365494456,
+        &quot;predicted_disparity_px&quot;: 47.0,
+        &quot;truth_depth_m&quot;: 2.448995520275377,
+        &quot;truth_disparity_px&quot;: 47.326454162597656,
+        &quot;u&quot;: 598,
+        &quot;v&quot;: 415
+      },
+      {
+        &quot;predicted_depth_m&quot;: 2.2050817465264223,
+        &quot;predicted_disparity_px&quot;: 56.0,
+        &quot;truth_depth_m&quot;: 2.2159416607963207,
+        &quot;truth_disparity_px&quot;: 55.57320785522461,
+        &quot;u&quot;: 659,
+        &quot;v&quot;: 415
+      }
+    ],
+    &quot;requested_pixels&quot;: 80,
+    &quot;scope&quot;: &quot;fixed selected pixels, not full-image or camera-calibration validation&quot;
+  },
+  &quot;inputs&quot;: {
+    &quot;data/stereo/calibration.json&quot;: {
+      &quot;bytes&quot;: 1430,
+      &quot;sha256&quot;: &quot;a7a891043f15e04614a15712d158dc5727a80cc32951ff9d0610f30ac2bd55c5&quot;
+    },
+    &quot;data/stereo/left.png&quot;: {
+      &quot;bytes&quot;: 642528,
+      &quot;sha256&quot;: &quot;8d645c6ca405cc3cb9a991b0fb5a964571bf8183f88cd8ffcde59706a30a76c2&quot;
+    },
+    &quot;data/stereo/motorcycle.npz&quot;: {
+      &quot;bytes&quot;: 3042273,
+      &quot;sha256&quot;: &quot;2ec813e33f86bcb4d1eb1bd90245f438b0841fd5b1ab9136a0132f0b28dfe469&quot;
+    },
+    &quot;data/stereo/right.png&quot;: {
+      &quot;bytes&quot;: 638205,
+      &quot;sha256&quot;: &quot;009ee402204b3c54ebd714f739b6394e9455d9d33a9dcdab58ef4ec5bee4c43a&quot;
+    },
+    &quot;native/protocols/labs.json&quot;: {
+      &quot;bytes&quot;: 77988,
+      &quot;sha256&quot;: &quot;94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753&quot;
+    }
+  }
+}
+Full values are retained in the output files; printing is truncated only for readability.
+</pre></div></section><h2 id="independent-work">Independent work</h2>
+<p>Use <code>python learn.py session --lab stage15 --output my_work/stage15_attempt01</code> to obtain private projects. Native source edits must be compiled from the copied workspace, not the reference root.</p>
+<ol>
+<li>Compare requested, eligible, and successful measurement counts.</li>
+<li>Remove the principal-point correction only in a private control.</li>
+<li>Report mean, median and bad-pixel rate instead of one favorable summary.</li>
+</ol>
+<p>Record what required help; no automatic mastery credit. Compare protocols before comparing scores.</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

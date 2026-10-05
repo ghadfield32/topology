@@ -1,0 +1,14 @@
+{
+  "command": [
+    "cmake",
+    "--build",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys02/check01/build",
+    "--config",
+    "Debug"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys02",
+  "exit_code": 0,
+  "seconds": 2.5446084019999944,
+  "stdout": "[ 12%] Building CXX object CMakeFiles/shape_core.dir/src/shape.cpp.o\n[ 25%] Linking CXX static library libshape_core.a\n[ 25%] Built target shape_core\n[ 37%] Building CXX object CMakeFiles/trajectory_cpp.dir/src/main.cpp.o\n[ 50%] Linking CXX executable trajectory_cpp\n[ 50%] Built target trajectory_cpp\n[ 62%] Building CXX object CMakeFiles/test_shape.dir/tests/test_core.cpp.o\n[ 75%] Linking CXX executable test_shape\n[ 75%] Built target test_shape\n[ 87%] Building CXX object CMakeFiles/test_concepts.dir/tests/test_concepts.cpp.o\n[100%] Linking CXX executable test_concepts\n[100%] Built target test_concepts\n",
+  "stderr": ""
+}

@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "scope": "actual loopback HTTP/native integration, not deployed service",
+  "job": {
+    "id": "job-000001",
+    "lab": "stage01",
+    "status": "succeeded",
+    "submitted": "2026-10-04T17:18:56.637098483Z",
+    "started": "2026-10-04T17:18:56.637181298Z",
+    "finished": "2026-10-04T17:18:56.639865166Z",
+    "result": {
+      "implementation": "native; no Python calls or reference-result reads",
+      "inputs": {
+        "data/raw/iris.csv": {
+          "bytes": 4676,
+          "sha256": "160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f"
+        },
+        "native/protocols/labs.json": {
+          "bytes": 77988,
+          "sha256": "94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753"
+        }
+      },
+      "lab": "stage01",
+      "language": "go",
+      "metrics": {
+        "augmented_rank": 4,
+        "centered_scaled_rank": 4,
+        "f2_rank": 2,
+        "finite_preimage_of_square_1_to_9": [
+          -3,
+          -2,
+          -1,
+          1,
+          2,
+          3
+        ],
+        "iris_rank": 4,
+        "kernel_residual_max": 0,
+        "known_kernel": [
+          -2,
+          3,
+          0,
+          0,
+          1
+        ],
+        "real_rank": 3
+      },
+      "original_notebook_parity": "not_certified; see native/COVERAGE.md",
+      "protocol": "native16 shared teaching adaptation",
+      "schema": "shape.native.v16",
+      "status": "completed"
+    }
+  },
+  "health": {
+    "ok": true
+  },
+  "assessment": "not_assessed"
+}

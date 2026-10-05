@@ -1,0 +1,203 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>README · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/syn/README.md">native/rust/vendor/syn/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="parser-for-rust-source-code">Parser for Rust source code</h1>
+<p><a href="https://github.com/dtolnay/syn"><img alt="github" height="20" src="https://img.shields.io/badge/github-dtolnay/syn-8da0cb?style=for-the-badge&amp;labelColor=555555&amp;logo=github"/></a>
+<a href="https://crates.io/crates/syn"><img alt="crates.io" height="20" src="https://img.shields.io/crates/v/syn.svg?style=for-the-badge&amp;color=fc8d62&amp;logo=rust"/></a>
+<a href="https://docs.rs/syn"><img alt="docs.rs" height="20" src="https://img.shields.io/badge/docs.rs-syn-66c2a5?style=for-the-badge&amp;labelColor=555555&amp;logo=docs.rs"/></a>
+<a href="https://github.com/dtolnay/syn/actions?query=branch%3Amaster"><img alt="build status" height="20" src="https://img.shields.io/github/actions/workflow/status/dtolnay/syn/ci.yml?branch=master&amp;style=for-the-badge"/></a></p>
+<p>Syn is a parsing library for parsing a stream of Rust tokens into a syntax tree
+of Rust source code.</p>
+<p>Currently this library is geared toward use in Rust procedural macros, but
+contains some APIs that may be useful more generally.</p>
+<ul>
+<li><p><strong>Data structures</strong> — Syn provides a complete syntax tree that can represent
+any valid Rust source code. The syntax tree is rooted at <a href="https://docs.rs/syn/2.0/syn/struct.File.html"><code>syn::File</code></a> which
+represents a full source file, but there are other entry points that may be
+useful to procedural macros including <a href="https://docs.rs/syn/2.0/syn/enum.Item.html"><code>syn::Item</code></a>, <a href="https://docs.rs/syn/2.0/syn/enum.Expr.html"><code>syn::Expr</code></a> and
+<a href="https://docs.rs/syn/2.0/syn/enum.Type.html"><code>syn::Type</code></a>.</p>
+</li>
+<li><p><strong>Derives</strong> — Of particular interest to derive macros is <a href="https://docs.rs/syn/2.0/syn/struct.DeriveInput.html"><code>syn::DeriveInput</code></a>
+which is any of the three legal input items to a derive macro. An example
+below shows using this type in a library that can derive implementations of a
+user-defined trait.</p>
+</li>
+<li><p><strong>Parsing</strong> — Parsing in Syn is built around <a href="https://docs.rs/syn/2.0/syn/parse/index.html">parser functions</a> with the
+signature <code>fn(ParseStream) -&gt; Result&lt;T&gt;</code>. Every syntax tree node defined by
+Syn is individually parsable and may be used as a building block for custom
+syntaxes, or you may dream up your own brand new syntax without involving any
+of our syntax tree types.</p>
+</li>
+<li><p><strong>Location information</strong> — Every token parsed by Syn is associated with a
+<code>Span</code> that tracks line and column information back to the source of that
+token. These spans allow a procedural macro to display detailed error messages
+pointing to all the right places in the user's code. There is an example of
+this below.</p>
+</li>
+<li><p><strong>Feature flags</strong> — Functionality is aggressively feature gated so your
+procedural macros enable only what they need, and do not pay in compile time
+for all the rest.</p>
+</li>
+</ul>
+<p><a href="https://github.com/dtolnay/syn/releases"><em>Release notes</em></a></p>
+<br/>
+<h2 id="resources">Resources</h2>
+<p>The best way to learn about procedural macros is by writing some. Consider
+working through <a href="https://github.com/dtolnay/proc-macro-workshop">this procedural macro workshop</a> to get familiar with
+the different types of procedural macros. The workshop contains relevant links
+into the Syn documentation as you work through each project.</p>
+<br/>
+<h2 id="example-of-a-derive-macro">Example of a derive macro</h2>
+<p>The canonical derive macro using Syn looks like this. We write an ordinary Rust
+function tagged with a <code>proc_macro_derive</code> attribute and the name of the trait
+we are deriving. Any time that derive appears in the user's code, the Rust
+compiler passes their data structure as tokens into our macro. We get to execute
+arbitrary Rust code to figure out what to do with those tokens, then hand some
+tokens back to the compiler to compile into the user's crate.</p>
+<pre><code class="language-toml">[dependencies]
+syn = "2.0"
+quote = "1.0"
+
+[lib]
+proc-macro = true
+</code></pre>
+<pre><code class="language-rust">use proc_macro::TokenStream;
+use quote::quote;
+use syn::{parse_macro_input, DeriveInput};
+
+#[proc_macro_derive(MyMacro)]
+pub fn my_macro(input: TokenStream) -&gt; TokenStream {
+    // Parse the input tokens into a syntax tree
+    let input = parse_macro_input!(input as DeriveInput);
+
+    // Build the output, possibly using quasi-quotation
+    let expanded = quote! {
+        // ...
+    };
+
+    // Hand the output tokens back to the compiler
+    TokenStream::from(expanded)
+}
+</code></pre>
+<p>The <a href="../../../../../native/rust/vendor/syn/examples/heapsize"><code>heapsize</code></a> example directory shows a complete working implementation of a
+derive macro. The example derives a <code>HeapSize</code> trait which computes an estimate
+of the amount of heap memory owned by a value.</p>
+<pre><code class="language-rust">pub trait HeapSize {
+    /// Total number of bytes of heap memory owned by `self`.
+    fn heap_size_of_children(&amp;self) -&gt; usize;
+}
+</code></pre>
+<p>The derive macro allows users to write <code>#[derive(HeapSize)]</code> on data structures
+in their program.</p>
+<pre><code class="language-rust">#[derive(HeapSize)]
+struct Demo&lt;'a, T: ?Sized&gt; {
+    a: Box&lt;T&gt;,
+    b: u8,
+    c: &amp;'a str,
+    d: String,
+}
+</code></pre>
+<br/>
+<h2 id="spans-and-error-reporting">Spans and error reporting</h2>
+<p>The token-based procedural macro API provides great control over where the
+compiler's error messages are displayed in user code. Consider the error the
+user sees if one of their field types does not implement <code>HeapSize</code>.</p>
+<pre><code class="language-rust">#[derive(HeapSize)]
+struct Broken {
+    ok: String,
+    bad: std::thread::Thread,
+}
+</code></pre>
+<p>By tracking span information all the way through the expansion of a procedural
+macro as shown in the <code>heapsize</code> example, token-based macros in Syn are able to
+trigger errors that directly pinpoint the source of the problem.</p>
+<pre><code class="language-console">error[E0277]: the trait bound `std::thread::Thread: HeapSize` is not satisfied
+ --&gt; src/main.rs:7:5
+  |
+7 |     bad: std::thread::Thread,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^ the trait `HeapSize` is not implemented for `std::thread::Thread`
+</code></pre>
+<br/>
+<h2 id="parsing-a-custom-syntax">Parsing a custom syntax</h2>
+<p>The <a href="../../../../../native/rust/vendor/syn/examples/lazy-static"><code>lazy-static</code></a> example directory shows the implementation of a
+<code>functionlike!(...)</code> procedural macro in which the input tokens are parsed using
+Syn's parsing API.</p>
+<p>The example reimplements the popular <code>lazy_static</code> crate from crates.io as a
+procedural macro.</p>
+<pre><code class="language-rust">lazy_static! {
+    static ref USERNAME: Regex = Regex::new("^[a-z0-9_-]{3,16}$").unwrap();
+}
+</code></pre>
+<p>The implementation shows how to trigger custom warnings and error messages on
+the macro input.</p>
+<pre><code class="language-console">warning: come on, pick a more creative name
+  --&gt; src/main.rs:10:16
+   |
+10 |     static ref FOO: String = "lazy_static".to_owned();
+   |                ^^^
+</code></pre>
+<br/>
+<h2 id="testing">Testing</h2>
+<p>When testing macros, we often care not just that the macro can be used
+successfully but also that when the macro is provided with invalid input it
+produces maximally helpful error messages. Consider using the <a href="https://github.com/dtolnay/trybuild"><code>trybuild</code></a> crate
+to write tests for errors that are emitted by your macro or errors detected by
+the Rust compiler in the expanded code following misuse of the macro. Such tests
+help avoid regressions from later refactors that mistakenly make an error no
+longer trigger or be less helpful than it used to be.</p>
+<br/>
+<h2 id="debugging">Debugging</h2>
+<p>When developing a procedural macro it can be helpful to look at what the
+generated code looks like. Use <code>cargo rustc -- -Zunstable-options -Zunpretty=expanded</code> or the <a href="https://github.com/dtolnay/cargo-expand"><code>cargo expand</code></a> subcommand.</p>
+<p>To show the expanded code for some crate that uses your procedural macro, run
+<code>cargo expand</code> from that crate. To show the expanded code for one of your own
+test cases, run <code>cargo expand --test the_test_case</code> where the last argument is
+the name of the test file without the <code>.rs</code> extension.</p>
+<p>This write-up by Brandon W Maister discusses debugging in more detail:
+<a href="https://quodlibetor.github.io/posts/debugging-rusts-new-custom-derive-system/">Debugging Rust's new Custom Derive system</a>.</p>
+<br/>
+<h2 id="optional-features">Optional features</h2>
+<p>Syn puts a lot of functionality behind optional features in order to optimize
+compile time for the most common use cases. The following features are
+available.</p>
+<ul>
+<li><strong><code>derive</code></strong> <em>(enabled by default)</em> — Data structures for representing the
+possible input to a derive macro, including structs and enums and types.</li>
+<li><strong><code>full</code></strong> — Data structures for representing the syntax tree of all valid
+Rust source code, including items and expressions.</li>
+<li><strong><code>parsing</code></strong> <em>(enabled by default)</em> — Ability to parse input tokens into a
+syntax tree node of a chosen type.</li>
+<li><strong><code>printing</code></strong> <em>(enabled by default)</em> — Ability to print a syntax tree node as
+tokens of Rust source code.</li>
+<li><strong><code>visit</code></strong> — Trait for traversing a syntax tree.</li>
+<li><strong><code>visit-mut</code></strong> — Trait for traversing and mutating in place a syntax tree.</li>
+<li><strong><code>fold</code></strong> — Trait for transforming an owned syntax tree.</li>
+<li><strong><code>clone-impls</code></strong> <em>(enabled by default)</em> — Clone impls for all syntax tree
+types.</li>
+<li><strong><code>extra-traits</code></strong> — Debug, Eq, PartialEq, Hash impls for all syntax tree
+types.</li>
+<li><strong><code>proc-macro</code></strong> <em>(enabled by default)</em> — Runtime dependency on the dynamic
+library libproc_macro from rustc toolchain.</li>
+</ul>
+<br/>
+<h2 id="proc-macro-shim">Proc macro shim</h2>
+<p>Syn operates on the token representation provided by the <a href="https://docs.rs/proc-macro2/1.0/proc_macro2/">proc-macro2</a> crate
+from crates.io rather than using the compiler's built in proc-macro crate
+directly. This enables code using Syn to execute outside of the context of a
+procedural macro, such as in unit tests or build.rs, and we avoid needing
+incompatible ecosystems for proc macros vs non-macro use cases.</p>
+<p>In general all of your code should be written against proc-macro2 rather than
+proc-macro. The one exception is in the signatures of procedural macro entry
+points, which are required by the language to use <code>proc_macro::TokenStream</code>.</p>
+<p>The proc-macro2 crate will automatically detect and use the compiler's data
+structures when a procedural macro is active.</p>
+<br/>
+<h4 id="license">License</h4>
+<sup>
+Licensed under either of <a href="../../../../../native/rust/vendor/syn/LICENSE-APACHE">Apache License, Version
+2.0</a> or <a href="../../../../../native/rust/vendor/syn/LICENSE-MIT">MIT license</a> at your option.
+</sup>
+<br/>
+<sub>
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
+be dual licensed as above, without any additional terms or conditions.
+</sub>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

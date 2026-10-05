@@ -10,6 +10,8 @@ import shutil
 import subprocess
 import sys
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'src'))
+from shape_lab.acceptance import validate_acceptance_directory
 
 def main() -> int:
     p=argparse.ArgumentParser(description=__doc__)
@@ -22,7 +24,8 @@ def main() -> int:
     if output.exists():raise FileExistsError('Verification output already exists.')
     if output.is_relative_to(ROOT) and not output.is_relative_to(ROOT/'my_work'):raise ValueError('Use my_work or an external directory.')
     output.mkdir(parents=True)
-    result={'status':'running','profile':a.profile,'commands':[],'image_build':'not_run','container_tests':'not_run','notebook_run':'not_run'}
+    result={'status':'running','profile':a.profile,'commands':[],'image_build':'not_run','container_acceptance':'not_run'}
+    child_name=f'docker-acceptance-{stamp}'
     def save(): (output/'docker.json').write_text(json.dumps(result,indent=2)+'\n')
     def run(argv,timeout=None):
         logfile=output/f'{len(result["commands"]):02}_command.log'
@@ -43,13 +46,20 @@ def main() -> int:
     (ROOT/'my_work').mkdir(exist_ok=True)
     checks=[('compose_config',['docker','compose','config','--quiet']),
             ('image_build',['docker','compose','build','course']),
-            ('container_tests',['docker','compose','run','--rm','course','test','--profile',a.profile,'--output',f'/work/docker-tests-{stamp}']),
-            ('notebook_run',['docker','compose','run','--rm','course','run','--stage','0','--output',f'/work/docker-stage00-{stamp}'])]
+            ('container_acceptance',['docker','compose','run','--rm','course','acceptance',
+                                     '--profile',a.profile,'--references','first',
+                                     '--output',f'/work/{child_name}'])]
     for label,cmd in checks:
         code=run(cmd)
         result[label]='passed' if code==0 else 'failed';save()
         if code:result.update(status='failed',reason=label+' failed');save();return 2
-    result.update(status='passed',scope='Actual image build, selected profile tests and Stage 00 in containers; not all notebooks/platforms.');save();return 0
+    child=ROOT/'my_work'/child_name
+    issues=validate_acceptance_directory(child,a.profile,['notebooks/00_lab.ipynb'])
+    result['child_evidence']={'path':str(child),'status':'passed' if not issues else 'failed','errors':issues}
+    result['container_acceptance']='passed' if not issues else 'unverified'
+    if issues:
+        result.update(status='failed',reason='Container command exited zero but its child evidence was not accepted.');save();return 2
+    result.update(status='passed',scope='Actual image build and a container acceptance run whose child JUnit/notebook/output evidence was validated; not all notebooks or platforms.');save();return 0
 if __name__=='__main__':
     try:raise SystemExit(main())
     except (ValueError,FileExistsError) as e:print(f'NOT COMPLETED: {e}',file=sys.stderr);raise SystemExit(2)

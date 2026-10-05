@@ -1,0 +1,298 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Serde JSON &amp;emsp; [![Build Status]][actions] [![Latest Version]][crates.io] [![Rustc Version 1.36+]][rustc] · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/serde_json/README.md">native/rust/vendor/serde_json/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="serde-json">Serde JSON   <a href="https://github.com/serde-rs/json/actions?query=branch%3Amaster"><img alt="Build Status" src="https://img.shields.io/github/actions/workflow/status/serde-rs/json/ci.yml?branch=master"/></a> <a href="https://crates.io/crates/serde_json"><img alt="Latest Version" src="https://img.shields.io/crates/v/serde_json.svg"/></a> <a href="https://blog.rust-lang.org/2019/07/04/Rust-1.36.0.html"><img alt="Rustc Version 1.36+" src="https://img.shields.io/badge/rustc-1.36+-lightgray.svg"/></a></h1>
+<p><strong>Serde is a framework for <em>ser</em>ializing and <em>de</em>serializing Rust data structures efficiently and generically.</strong></p>
+<hr/>
+<pre><code class="language-toml">[dependencies]
+serde_json = "1.0"
+</code></pre>
+<p>You may be looking for:</p>
+<ul>
+<li><a href="https://docs.rs/serde_json">JSON API documentation</a></li>
+<li><a href="https://docs.rs/serde">Serde API documentation</a></li>
+<li><a href="https://serde.rs/">Detailed documentation about Serde</a></li>
+<li><a href="https://serde.rs/derive.html">Setting up <code>#[derive(Serialize, Deserialize)]</code></a></li>
+<li><a href="https://github.com/serde-rs/json/releases">Release notes</a></li>
+</ul>
+<p>JSON is a ubiquitous open-standard format that uses human-readable text to
+transmit data objects consisting of key-value pairs.</p>
+<pre><code class="language-json">{
+    "name": "John Doe",
+    "age": 43,
+    "address": {
+        "street": "10 Downing Street",
+        "city": "London"
+    },
+    "phones": [
+        "+44 1234567",
+        "+44 2345678"
+    ]
+}
+</code></pre>
+<p>There are three common ways that you might find yourself needing to work with
+JSON data in Rust.</p>
+<ul>
+<li><strong>As text data.</strong> An unprocessed string of JSON data that you receive on an
+HTTP endpoint, read from a file, or prepare to send to a remote server.</li>
+<li><strong>As an untyped or loosely typed representation.</strong> Maybe you want to check
+that some JSON data is valid before passing it on, but without knowing the
+structure of what it contains. Or you want to do very basic manipulations
+like insert a key in a particular spot.</li>
+<li><strong>As a strongly typed Rust data structure.</strong> When you expect all or most of
+your data to conform to a particular structure and want to get real work done
+without JSON's loosey-goosey nature tripping you up.</li>
+</ul>
+<p>Serde JSON provides efficient, flexible, safe ways of converting data between
+each of these representations.</p>
+<h2 id="operating-on-untyped-json-values">Operating on untyped JSON values</h2>
+<p>Any valid JSON data can be manipulated in the following recursive enum
+representation. This data structure is <a href="https://docs.rs/serde_json/1/serde_json/value/enum.Value.html"><code>serde_json::Value</code></a>.</p>
+<pre><code class="language-rust">enum Value {
+    Null,
+    Bool(bool),
+    Number(Number),
+    String(String),
+    Array(Vec&lt;Value&gt;),
+    Object(Map&lt;String, Value&gt;),
+}
+</code></pre>
+<p>A string of JSON data can be parsed into a <code>serde_json::Value</code> by the
+<a href="https://docs.rs/serde_json/1/serde_json/de/fn.from_str.html"><code>serde_json::from_str</code></a> function. There is also
+<a href="https://docs.rs/serde_json/1/serde_json/de/fn.from_slice.html"><code>from_slice</code></a> for parsing from a byte slice <code>&amp;[u8]</code> and
+<a href="https://docs.rs/serde_json/1/serde_json/de/fn.from_reader.html"><code>from_reader</code></a> for parsing from any <code>io::Read</code> like a File or a
+TCP stream.</p>
+<div align="right">
+<a href="https://play.rust-lang.org/?edition=2018&amp;gist=d69d8e3156d4bb81c4461b60b772ab72" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/serde-rs/serde-rs.github.io/master/img/runtab.png" width="85"/>
+</a>
+</div>
+<pre><code class="language-rust">use serde_json::{Result, Value};
+
+fn untyped_example() -&gt; Result&lt;()&gt; {
+    // Some JSON input data as a &amp;str. Maybe this comes from the user.
+    let data = r#"
+        {
+            "name": "John Doe",
+            "age": 43,
+            "phones": [
+                "+44 1234567",
+                "+44 2345678"
+            ]
+        }"#;
+
+    // Parse the string of data into serde_json::Value.
+    let v: Value = serde_json::from_str(data)?;
+
+    // Access parts of the data by indexing with square brackets.
+    println!("Please call {} at the number {}", v["name"], v["phones"][0]);
+
+    Ok(())
+}
+</code></pre>
+<p>The result of square bracket indexing like <code>v["name"]</code> is a borrow of the data
+at that index, so the type is <code>&amp;Value</code>. A JSON map can be indexed with string
+keys, while a JSON array can be indexed with integer keys. If the type of the
+data is not right for the type with which it is being indexed, or if a map does
+not contain the key being indexed, or if the index into a vector is out of
+bounds, the returned element is <code>Value::Null</code>.</p>
+<p>When a <code>Value</code> is printed, it is printed as a JSON string. So in the code above,
+the output looks like <code>Please call "John Doe" at the number "+44 1234567"</code>. The
+quotation marks appear because <code>v["name"]</code> is a <code>&amp;Value</code> containing a JSON
+string and its JSON representation is <code>"John Doe"</code>. Printing as a plain string
+without quotation marks involves converting from a JSON string to a Rust string
+with <a href="https://docs.rs/serde_json/1/serde_json/enum.Value.html#method.as_str"><code>as_str()</code></a> or avoiding the use of <code>Value</code> as described in the following
+section.</p>
+<p>The <code>Value</code> representation is sufficient for very basic tasks but can be tedious
+to work with for anything more significant. Error handling is verbose to
+implement correctly, for example imagine trying to detect the presence of
+unrecognized fields in the input data. The compiler is powerless to help you
+when you make a mistake, for example imagine typoing <code>v["name"]</code> as <code>v["nmae"]</code>
+in one of the dozens of places it is used in your code.</p>
+<h2 id="parsing-json-as-strongly-typed-data-structures">Parsing JSON as strongly typed data structures</h2>
+<p>Serde provides a powerful way of mapping JSON data into Rust data structures
+largely automatically.</p>
+<div align="right">
+<a href="https://play.rust-lang.org/?edition=2018&amp;gist=15cfab66d38ff8a15a9cf1d8d897ac68" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/serde-rs/serde-rs.github.io/master/img/runtab.png" width="85"/>
+</a>
+</div>
+<pre><code class="language-rust">use serde::{Deserialize, Serialize};
+use serde_json::Result;
+
+#[derive(Serialize, Deserialize)]
+struct Person {
+    name: String,
+    age: u8,
+    phones: Vec&lt;String&gt;,
+}
+
+fn typed_example() -&gt; Result&lt;()&gt; {
+    // Some JSON input data as a &amp;str. Maybe this comes from the user.
+    let data = r#"
+        {
+            "name": "John Doe",
+            "age": 43,
+            "phones": [
+                "+44 1234567",
+                "+44 2345678"
+            ]
+        }"#;
+
+    // Parse the string of data into a Person object. This is exactly the
+    // same function as the one that produced serde_json::Value above, but
+    // now we are asking it for a Person as output.
+    let p: Person = serde_json::from_str(data)?;
+
+    // Do things just like with any other Rust data structure.
+    println!("Please call {} at the number {}", p.name, p.phones[0]);
+
+    Ok(())
+}
+</code></pre>
+<p>This is the same <code>serde_json::from_str</code> function as before, but this time we
+assign the return value to a variable of type <code>Person</code> so Serde will
+automatically interpret the input data as a <code>Person</code> and produce informative
+error messages if the layout does not conform to what a <code>Person</code> is expected to
+look like.</p>
+<p>Any type that implements Serde's <code>Deserialize</code> trait can be deserialized this
+way. This includes built-in Rust standard library types like <code>Vec&lt;T&gt;</code> and
+<code>HashMap&lt;K, V&gt;</code>, as well as any structs or enums annotated with
+<code>#[derive(Deserialize)]</code>.</p>
+<p>Once we have <code>p</code> of type <code>Person</code>, our IDE and the Rust compiler can help us use
+it correctly like they do for any other Rust code. The IDE can autocomplete
+field names to prevent typos, which was impossible in the <code>serde_json::Value</code>
+representation. And the Rust compiler can check that when we write
+<code>p.phones[0]</code>, then <code>p.phones</code> is guaranteed to be a <code>Vec&lt;String&gt;</code> so indexing
+into it makes sense and produces a <code>String</code>.</p>
+<p>The necessary setup for using Serde's derive macros is explained on the <em><a href="https://serde.rs/derive.html">Using
+derive</a></em> page of the Serde site.</p>
+<h2 id="constructing-json-values">Constructing JSON values</h2>
+<p>Serde JSON provides a <a href="https://docs.rs/serde_json/1/serde_json/macro.json.html"><code>json!</code> macro</a> to build <code>serde_json::Value</code>
+objects with very natural JSON syntax.</p>
+<div align="right">
+<a href="https://play.rust-lang.org/?edition=2018&amp;gist=6ccafad431d72b62e77cc34c8e879b24" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/serde-rs/serde-rs.github.io/master/img/runtab.png" width="85"/>
+</a>
+</div>
+<pre><code class="language-rust">use serde_json::json;
+
+fn main() {
+    // The type of `john` is `serde_json::Value`
+    let john = json!({
+        "name": "John Doe",
+        "age": 43,
+        "phones": [
+            "+44 1234567",
+            "+44 2345678"
+        ]
+    });
+
+    println!("first phone number: {}", john["phones"][0]);
+
+    // Convert to a string of JSON and print it out
+    println!("{}", john.to_string());
+}
+</code></pre>
+<p>The <code>Value::to_string()</code> function converts a <code>serde_json::Value</code> into a <code>String</code>
+of JSON text.</p>
+<p>One neat thing about the <code>json!</code> macro is that variables and expressions can be
+interpolated directly into the JSON value as you are building it. Serde will
+check at compile time that the value you are interpolating is able to be
+represented as JSON.</p>
+<div align="right">
+<a href="https://play.rust-lang.org/?edition=2018&amp;gist=f9101a6e61dfc9e02c6a67f315ed24f2" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/serde-rs/serde-rs.github.io/master/img/runtab.png" width="85"/>
+</a>
+</div>
+<pre><code class="language-rust">let full_name = "John Doe";
+let age_last_year = 42;
+
+// The type of `john` is `serde_json::Value`
+let john = json!({
+    "name": full_name,
+    "age": age_last_year + 1,
+    "phones": [
+        format!("+44 {}", random_phone())
+    ]
+});
+</code></pre>
+<p>This is amazingly convenient, but we have the problem we had before with
+<code>Value</code>: the IDE and Rust compiler cannot help us if we get it wrong. Serde JSON
+provides a better way of serializing strongly-typed data structures into JSON
+text.</p>
+<h2 id="creating-json-by-serializing-data-structures">Creating JSON by serializing data structures</h2>
+<p>A data structure can be converted to a JSON string by
+<a href="https://docs.rs/serde_json/1/serde_json/ser/fn.to_string.html"><code>serde_json::to_string</code></a>. There is also
+<a href="https://docs.rs/serde_json/1/serde_json/ser/fn.to_vec.html"><code>serde_json::to_vec</code></a> which serializes to a <code>Vec&lt;u8&gt;</code> and
+<a href="https://docs.rs/serde_json/1/serde_json/ser/fn.to_writer.html"><code>serde_json::to_writer</code></a> which serializes to any <code>io::Write</code>
+such as a File or a TCP stream.</p>
+<div align="right">
+<a href="https://play.rust-lang.org/?edition=2018&amp;gist=3472242a08ed2ff88a944f2a2283b0ee" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/serde-rs/serde-rs.github.io/master/img/runtab.png" width="85"/>
+</a>
+</div>
+<pre><code class="language-rust">use serde::{Deserialize, Serialize};
+use serde_json::Result;
+
+#[derive(Serialize, Deserialize)]
+struct Address {
+    street: String,
+    city: String,
+}
+
+fn print_an_address() -&gt; Result&lt;()&gt; {
+    // Some data structure.
+    let address = Address {
+        street: "10 Downing Street".to_owned(),
+        city: "London".to_owned(),
+    };
+
+    // Serialize it to a JSON string.
+    let j = serde_json::to_string(&amp;address)?;
+
+    // Print, write to a file, or send to an HTTP server.
+    println!("{}", j);
+
+    Ok(())
+}
+</code></pre>
+<p>Any type that implements Serde's <code>Serialize</code> trait can be serialized this way.
+This includes built-in Rust standard library types like <code>Vec&lt;T&gt;</code> and <code>HashMap&lt;K, V&gt;</code>, as well as any structs or enums annotated with <code>#[derive(Serialize)]</code>.</p>
+<h2 id="performance">Performance</h2>
+<p>It is fast. You should expect in the ballpark of 500 to 1000 megabytes per
+second deserialization and 600 to 900 megabytes per second serialization,
+depending on the characteristics of your data. This is competitive with the
+fastest C and C++ JSON libraries or even 30% faster for many use cases.
+Benchmarks live in the <a href="https://github.com/serde-rs/json-benchmark">serde-rs/json-benchmark</a> repo.</p>
+<h2 id="getting-help">Getting help</h2>
+<p>Serde is one of the most widely used Rust libraries, so any place that
+Rustaceans congregate will be able to help you out. For chat, consider trying
+the <a href="https://discord.com/channels/273534239310479360/274215136414400513">#rust-questions</a> or <a href="https://discord.com/channels/273534239310479360/273541522815713281">#rust-beginners</a> channels of the unofficial community
+Discord (invite: <a href="https://discord.gg/rust-lang-community">https://discord.gg/rust-lang-community</a>), the <a href="https://discord.com/channels/442252698964721669/443150878111694848">#rust-usage</a> or
+<a href="https://discord.com/channels/442252698964721669/448238009733742612">#beginners</a> channels of the official Rust Project Discord (invite:
+<a href="https://discord.gg/rust-lang">https://discord.gg/rust-lang</a>), or the <a href="https://rust-lang.zulipchat.com/#narrow/stream/122651-general">#general</a> stream in Zulip. For
+asynchronous, consider the <a href="https://stackoverflow.com/questions/tagged/rust">[rust] tag on StackOverflow</a>, the
+<a href="https://www.reddit.com/r/rust">/r/rust</a> subreddit which has a pinned weekly easy questions post, or the Rust
+<a href="https://users.rust-lang.org">Discourse forum</a>. It's acceptable to file a support issue in this
+repo, but they tend not to get as many eyes as any of the above and may get
+closed without a response after some time.</p>
+<h2 id="no-std-support">No-std support</h2>
+<p>As long as there is a memory allocator, it is possible to use serde_json without
+the rest of the Rust standard library. Disable the default "std" feature and
+enable the "alloc" feature:</p>
+<pre><code class="language-toml">[dependencies]
+serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
+</code></pre>
+<p>For JSON support in Serde without a memory allocator, please see the
+<a href="https://github.com/rust-embedded-community/serde-json-core"><code>serde-json-core</code></a> crate.</p>
+<br/>
+<h4 id="license">License</h4>
+<sup>
+Licensed under either of <a href="../../../../../native/rust/vendor/serde_json/LICENSE-APACHE">Apache License, Version
+2.0</a> or <a href="../../../../../native/rust/vendor/serde_json/LICENSE-MIT">MIT license</a> at your option.
+</sup>
+<br/>
+<sub>
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this crate by you, as defined in the Apache-2.0 license, shall
+be dual licensed as above, without any additional terms or conditions.
+</sub>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

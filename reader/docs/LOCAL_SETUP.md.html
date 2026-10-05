@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Local setup and learning route · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../docs/LOCAL_SETUP.md">docs/LOCAL_SETUP.md</a> · Readable source notation; no online math renderer.</p><h1 id="local-setup-and-learning-route">Local setup and learning route</h1>
+<p>This repository is the complete Listening to Shape v12 course imported at the
+repository root. Start with <a href="../../START_HERE.html">START_HERE.html</a>, then follow the
+single 31-stage route through <code>course.py</code>. The five representation units and
+the named industry and sports cases extend that route; they are not a second
+required introduction.</p>
+<p>Local integration changes from the supplied archive are limited to this guide
+and its README link, Git/Docker ignores for downloaded tools and the ZIP,
+<code>PYTHONUTF8</code> in CI, and a platform-independent path assertion in
+<code>tests/test_repository_v10.py</code>. The teaching source, datasets, and lessons were
+not edited.</p>
+<h2 id="what-was-established-here">What was established here</h2>
+<p>On 23 September 2026, the 3,461 archive files were extracted into this
+repository. All 3,454 paths in <code>MANIFEST.sha256</code> matched after extraction.
+Python 3.13.5 was installed locally, and <code>tools/bootstrap.py</code> resolved a real
+<code>uv.lock</code> and synchronized the <code>physics</code> and then <code>full</code> profile. The local
+Windows first-reference acceptance passed in <code>my_work/acceptance04/</code>. Its
+earlier failed or interrupted attempts remain in separate evidence folders.
+The initial physics bootstrap records a fresh install in
+<code>my_work/setup-20260923T195619945116Z/setup.json</code>.</p>
+<p>Windows full-profile acceptance is recorded in <code>my_work/full_course01/</code> as a
+failure because three POSIX or symlink tests skipped. Its 750 passing tests
+had no assertion failures. The full Linux Docker image passed 753 tests with
+zero skips and ran Stage 00; see <code>my_work/docker01/docker.json</code>. Static cluster
+policy passed in <code>my_work/k8s_static01/</code>. Live acceptance passed in
+<code>my_work/k8s_live01/verification.json</code> on the disposable
+<code>kind-shape-learning</code> context in namespace <code>shape-study01</code>. The PVC is bound,
+the Job completed, and the reader is ready. A port-forward returned HTTP 200
+for the course home and Stage 00, and 403 for a private work path.
+The completed Job's child reports and executed notebook were copied from the
+PVC through a temporary read-only Pod into <code>my_work/k8s_export01/</code>; the copy
+contains a passing <code>acceptance.json</code>, 753 zero-skip JUnit results, and Stage 00
+with unchanged inputs. The temporary Pod was removed after export.
+The strict complete replay in <code>my_work/docker-full-course01/</code> passed all 753
+tests with zero skips and all 133 reference notebooks in fresh serial kernels;
+its source inputs remained unchanged and evidence consistency passed.</p>
+<p><code>my_work/</code> is local evidence and learner work, ignored by Git. Do not erase it
+to rerun a command; use a new output name. The cluster and its learner PVC are
+retained. Export and check any work on that PVC before any deliberate cleanup.</p>
+<h2 id="daily-native-commands-powershell-from-this-directory">Daily native commands (PowerShell, from this directory)</h2>
+<pre><code class="language-powershell">$env:PYTHONUTF8 = '1'
+$env:UV_CACHE_DIR = Join-Path $PWD.Path '.uv-cache'
+$env:UV_PYTHON_INSTALL_DIR = Join-Path $PWD.Path '.uv-python'
+rtk uv run --no-sync python course.py doctor --profile full
+rtk uv run --no-sync python course.py next
+rtk uv run --no-sync python course.py stage 0
+rtk uv run --no-sync python course.py check 0
+</code></pre>
+<p><code>PYTHONUTF8</code> makes Windows text reads use UTF-8, as the lessons expect. The uv
+settings keep downloaded tools and package caches in this workspace. Use
+<code>tools/bootstrap.py --profile full</code> when rebuilding the environment; the
+existing lock is checked and the environment is synced. Review the lock diff
+after intentional dependency changes.</p>
+<p>The private first exercises already exist in
+<code>my_work/practice00_attempt01/</code> and <code>my_work/wine_practice01/</code>. Open their
+<code>learner.ipynb</code> files and write your reasoning in the adjacent <code>answer.md</code>.
+The observed wine reference was rerun in <code>my_work/wine_reference01/</code>. You can
+start Jupyter with <code>rtk uv run --no-sync jupyter lab</code>. Keep reference outputs
+separate from your own answers.</p>
+<p>That wine replay used 178 measured samples. On its specified partition, the
+raw-feature, topology-only, and combined accuracies were 0.889, 0.639, and
+0.944 respectively. Reproduce the table, identify the held-out observation
+unit and split, and explain why one exposed partition cannot establish that
+the combined method wins on new collections. Cultivar is a category, not a
+quality score.</p>
+<p>For each stage, write the observation unit and expected result first. Make one
+hand calculation, execute the worked example, solve the private assignment,
+then explain a conclusion the evidence does not support. <code>course.py next</code>
+reads your progress record; code execution does not mark understanding.</p>
+<h2 id="real-data-route">Real-data route</h2>
+<p>After each relevant foundation, choose one case with a different observation
+unit. The <code>course.py cases</code> command lists all 25 cases and labels observed
+sources versus constructed controls. A compact cross-sector route is:</p>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Sector and observation unit</th>
+<th>Question to carry into the lesson</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wine</code></td>
+<td>Food chemistry; one measured sample</td>
+<td>Does a shape descriptor add value beyond ordinary features?</td>
+</tr>
+<tr>
+<td><code>wdbc</code></td>
+<td>Healthcare; one feature record</td>
+<td>What population and validation are missing for a clinical claim?</td>
+</tr>
+<tr>
+<td><code>stackloss</code></td>
+<td>Manufacturing; one plant day</td>
+<td>How sensitive is a result to only 21 days?</td>
+</tr>
+<tr>
+<td><code>grunfeld</code></td>
+<td>Business; one firm-year</td>
+<td>How do firm and time dependence affect the split?</td>
+</tr>
+<tr>
+<td><code>co2</code> and <code>nile</code></td>
+<td>Environment and water; time-indexed measurements</td>
+<td>Which apparent values are missing or uncertain, and what cannot establish cause?</td>
+</tr>
+<tr>
+<td><code>modechoice</code></td>
+<td>Transportation; alternatives grouped by traveler</td>
+<td>How would row-wise splitting leak traveler information?</td>
+</tr>
+<tr>
+<td><code>seeds</code> and <code>concrete_slump</code></td>
+<td>Agriculture and materials; measured samples</td>
+<td>What is feature-space geometry, and how is interval coverage checked?</td>
+</tr>
+<tr>
+<td><code>s00</code> through <code>s06</code></td>
+<td>Sports; selected observations and profiles</td>
+<td>What is a frame, trial, athlete, or independent group?</td>
+</tr>
+<tr>
+<td><code>r01</code> through <code>r05</code></td>
+<td>Representation learning; measured data and labeled controls</td>
+<td>What do covariance, projection scores, and frozen probes actually show?</td>
+</tr>
+</tbody>
+</table>
+<p>For a new reference attempt, run:</p>
+<pre><code class="language-powershell">rtk uv run --no-sync python course.py run --case wine --output my_work/wine_reference02
+</code></pre>
+<p>Use <code>practice wine</code> with another new output directory for an independent answer. Read each case's
+data card and source terms before extending it. Selected sports excerpts do
+not represent full tracking corpora; constructed controls are not observations.</p>
+<h2 id="kubernetes-route-and-current-cluster">Kubernetes route and current cluster</h2>
+<p>Read <a href="release/KUBERNETES.md.html">the Kubernetes lesson</a> alongside these steps.
+The <strong>context</strong> chooses the cluster, the <strong>namespace</strong> isolates this exercise,
+the reader <strong>Deployment</strong> stays available, and the acceptance <strong>Job</strong> ends with
+a success or failure. Its <strong>PVC</strong> retains Job output beyond the Pod. The
+<strong>Service</strong> has a stable internal address; port-forwarding gives temporary
+local access without publishing it externally.</p>
+<p>The local <code>kind</code> and matching Kubernetes 1.37 <code>kubectl</code> binaries are in
+<code>.local-bin/</code>, which is ignored by Git. The downloaded <code>kubectl.exe</code> matched
+its official SHA-256 file. To inspect the running exercise:</p>
+<pre><code class="language-powershell">$env:PATH = (Join-Path $PWD.Path '.local-bin') + ';' + $env:PATH
+rtk kubectl config view --minify --context kind-shape-learning
+rtk kubectl --context kind-shape-learning -n shape-study01 get pods,jobs,pvc,services
+rtk kubectl --context kind-shape-learning -n shape-study01 logs job/course-acceptance
+rtk kubectl --context kind-shape-learning -n shape-study01 port-forward service/course-reader 18000:8000
+</code></pre>
+<p>While port-forward runs, visit <code>http://127.0.0.1:18000/START_HERE.html</code>.
+Stop forwarding with Ctrl+C. For another deployment exercise, first run
+<code>tools/k8s_verify.py --static</code> with a new output folder. Live <code>--apply</code>
+requires a newly chosen namespace on this disposable <code>kind-</code> context; the
+existing <code>shape-study01</code> namespace is intentionally refused. The verifier does
+not delete a namespace, cluster, or learner PVC.</p>
+<h2 id="evidence-boundaries">Evidence boundaries</h2>
+<p>The imported <a href="release/VERIFICATION.md.html">release verification</a> describes tests
+performed by the archive creator on Linux. The paths above record this
+repository's Windows, Docker, and kind runs. A test pass establishes the
+specified checks; it does not certify mastery, scientific validity for a new
+population, or permission to redistribute a dataset. No learner stage has
+been marked assessed here.</p>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

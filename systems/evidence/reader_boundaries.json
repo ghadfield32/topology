@@ -1,0 +1,258 @@
+{
+  "status": "passed",
+  "count": 28,
+  "checks": [
+    {
+      "language": "c",
+      "case": "valid",
+      "expected_accept": true,
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "{\"count\":2,\"known_confidence\":1,\"start\":0,\"end\":0.10000000000000001,\"mean\":[1.5,3,4.5]}\n",
+      "stderr": ""
+    },
+    {
+      "language": "rust",
+      "case": "valid",
+      "expected_accept": true,
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "{\"count\":2,\"known_confidence\":1,\"start\":0.0,\"end\":0.1,\"mean\":[1.5,3.0,4.5]}\n",
+      "stderr": ""
+    },
+    {
+      "language": "c",
+      "case": "header_short",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: invalid/truncated header\n"
+    },
+    {
+      "language": "rust",
+      "case": "header_short",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid/truncated header\n"
+    },
+    {
+      "language": "c",
+      "case": "bad_magic",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: invalid/truncated header\n"
+    },
+    {
+      "language": "rust",
+      "case": "bad_magic",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid/truncated header\n"
+    },
+    {
+      "language": "c",
+      "case": "truncated",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: truncated record\n"
+    },
+    {
+      "language": "rust",
+      "case": "truncated",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "count/size mismatch\n"
+    },
+    {
+      "language": "c",
+      "case": "trailing",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: trailing bytes/read error\n"
+    },
+    {
+      "language": "rust",
+      "case": "trailing",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "count/size mismatch\n"
+    },
+    {
+      "language": "c",
+      "case": "empty",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: record count outside bounds\n"
+    },
+    {
+      "language": "rust",
+      "case": "empty",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "count/size mismatch\n"
+    },
+    {
+      "language": "c",
+      "case": "count_huge",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: record count outside bounds\n"
+    },
+    {
+      "language": "rust",
+      "case": "count_huge",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "count/size mismatch\n"
+    },
+    {
+      "language": "c",
+      "case": "bad_flag",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: invalid confidence\n"
+    },
+    {
+      "language": "rust",
+      "case": "bad_flag",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "record 0: invalid confidence\n"
+    },
+    {
+      "language": "c",
+      "case": "unknown_nonzero",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: invalid confidence\n"
+    },
+    {
+      "language": "rust",
+      "case": "unknown_nonzero",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "record 0: invalid confidence\n"
+    },
+    {
+      "language": "c",
+      "case": "known_overone",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: invalid confidence\n"
+    },
+    {
+      "language": "rust",
+      "case": "known_overone",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "record 1: invalid confidence\n"
+    },
+    {
+      "language": "c",
+      "case": "nan_x",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: nonfinite coordinate\n"
+    },
+    {
+      "language": "rust",
+      "case": "nan_x",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "record 0: nonfinite coordinate\n"
+    },
+    {
+      "language": "c",
+      "case": "negative_time",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: invalid observation order\n"
+    },
+    {
+      "language": "rust",
+      "case": "negative_time",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "record 0: invalid order\n"
+    },
+    {
+      "language": "c",
+      "case": "duplicate_time",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: invalid observation order\n"
+    },
+    {
+      "language": "rust",
+      "case": "duplicate_time",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "record 1: invalid order\n"
+    },
+    {
+      "language": "c",
+      "case": "duplicate_id",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "invalid: invalid observation order\n"
+    },
+    {
+      "language": "rust",
+      "case": "duplicate_id",
+      "expected_accept": false,
+      "exit_code": 2,
+      "passed": true,
+      "stdout": "",
+      "stderr": "record 1: invalid order\n"
+    }
+  ]
+}

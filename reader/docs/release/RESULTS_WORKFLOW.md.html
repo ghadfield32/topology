@@ -1,0 +1,137 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>One session, one explanation, one inspectable result · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../docs/release/RESULTS_WORKFLOW.md">docs/release/RESULTS_WORKFLOW.md</a> · Readable source notation; no online math renderer.</p><h1 id="one-session-one-explanation-one-inspectable-result">One session, one explanation, one inspectable result</h1>
+<p>Version 13 • 23 September 2026 • original workflow, not an additional theory course</p>
+<h2 id="the-distinction-that-makes-this-useful">The distinction that makes this useful</h2>
+<p>A <strong>lesson</strong> explains a concept. An <strong>assignment</strong> asks you to apply it. A <strong>reference run</strong> executes the supplied example. A <strong>reflection</strong> is your explanation. An <strong>evidence packet</strong> keeps that explanation next to the actual executed code and outputs. None of these alone certifies that you have mastered a subject.</p>
+<p>Use the existing primary lesson for theory. This guide adds only the steps that connect reading to your own results. It does not introduce another mandatory definition of topology, regularization, or a world model.</p>
+<h2 id="prepare-a-session">Prepare a session</h2>
+<p>After the environment acceptance in <a href="FIRST_RUN.md.html">FIRST_RUN.md</a>, run:</p>
+<pre><code class="language-bash">uv run --no-sync python course.py study 0 --output my_work/study00_attempt01
+</code></pre>
+<p>Replace <code>0</code> with any core stage 0–30 or a named case such as <code>wine</code>, <code>s00</code>, <code>acb</code>, or <code>r01</code>. The command checks the existing catalog before creating anything. An unknown item or an existing destination is refused. It does not install packages, download data, launch a notebook, contact a service, or update your mastery record.</p>
+<p>The new folder contains <code>START.md</code>, <code>prediction.md</code>, <code>reflection.json</code>, <code>study.json</code>, and a private <code>practice/</code> directory. <code>START.md</code> links to the same canonical lesson, lists the completion target and known prerequisites, and provides the exact run and report commands. The individual command arguments are also saved in <code>study.json</code>. Absolute paths refer to this checkout; after moving the repository, generate a new session and keep the old evidence.</p>
+<h2 id="predict-before-executing">Predict before executing</h2>
+<p>Write in <code>prediction.md</code> before opening the answers. Name one observation and one feature. State the units. Choose the smallest calculation that you can do without the notebook. Write an expected result and the assumption on which it depends.</p>
+<p>For example, a table with four athletes and three measurements is a 4-by-3 array, not twelve independent athletes. A three-dimensional position is not a velocity until a time interval is defined. A numerical distance is not meaningful until its inputs and units are specified.</p>
+<p>Wrong predictions are not wasted effort. After running, explain which assumption was wrong or which computation was misunderstood. Do not erase the original prediction to make the work appear effortless.</p>
+<h2 id="execute-the-reference-and-inspect-it">Execute the reference and inspect it</h2>
+<p>From the same prepared environment:</p>
+<pre><code class="language-bash">uv run --no-sync python course.py run --stage 0 --output my_work/study00_attempt01/run01
+</code></pre>
+<p>The runner uses a fresh copied workspace and fresh notebook kernels. Needed predecessor notebooks run first. Existing reports are not imported as hidden inputs. <code>execution.json</code> records the notebook identities, teaching-cell counts, runtime provenance, input continuity, and SHA-256 hashes of the produced notebook and artifact files.</p>
+<p>Open the executed notebook. For each cell, connect the output to its inputs. Change one condition only when you can predict its effect. Run changes in your private learner copy, not in the canonical reference. Keep each attempt in a new directory; <code>run02</code> is a different experiment record, not an overwrite of <code>run01</code>.</p>
+<p>The recorded hash proves byte continuity relative to the locally written ledger. It does not authenticate the author, certify sensor accuracy, make an exposed holdout independent, or prevent someone from manufacturing both a file and its hash.</p>
+<h2 id="solve-independently">Solve independently</h2>
+<p>Open <code>practice/learner.ipynb</code> in Jupyter and write your answers in <code>practice/answer.md</code>. A deliberate <code>NotImplementedError</code> is an assignment. A failing reference cell is an execution failure. Use the linked answers after a serious attempt, and record what help you used.</p>
+<p>Before moving on, explain a counterexample and a limitation. Return later for the existing delayed-recall questions. The <code>study</code> and <code>report</code> commands never change the core or case assessment logs.</p>
+<h2 id="fill-the-six-reflection-fields">Fill the six reflection fields</h2>
+<p>Edit <code>reflection.json</code> as valid JSON. Keep the double quotes around strings and put a comma between adjacent fields. The six fields serve different purposes:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What you write</th>
+<th>What to avoid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>question</code></td>
+<td>A question the actual experiment can answer.</td>
+<td>A universal question supported by one small example.</td>
+</tr>
+<tr>
+<td><code>observation_unit</code></td>
+<td>Person, image, trial, time window, sample, or another explicit unit; include important units.</td>
+<td>Treating repeated frames or copied rows as new people.</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>Data selection, baseline, transformations, model or calculation, and evaluation design.</td>
+<td>Omitting preprocessing or selection choices.</td>
+</tr>
+<tr>
+<td><code>result_interpretation</code></td>
+<td>The observed result and the conclusion it supports.</td>
+<td>Replacing a number with an unsupported claim of superiority.</td>
+</tr>
+<tr>
+<td><code>limitation</code></td>
+<td>The strongest reason the conclusion should not be generalized.</td>
+<td>“More data needed” without identifying what data and why.</td>
+</tr>
+<tr>
+<td><code>next_experiment</code></td>
+<td>One testable change with an expected comparison and preserved evaluation boundary.</td>
+<td>Tuning repeatedly on the exposed test set and calling it held out.</td>
+</tr>
+</tbody>
+</table>
+<p>The exporter checks that all six entries are nonempty strings. That is a completeness check, not grading. It does not judge whether your proof, terminology, or conclusion is correct. The included example reflection is explicitly assistant-authored, not your assessed work.</p>
+<h2 id="create-a-local-report">Create a local report</h2>
+<pre><code class="language-bash">uv run --no-sync python course.py report --run my_work/study00_attempt01/run01 --reflection my_work/study00_attempt01/reflection.json --output my_work/study00_attempt01/report01
+</code></pre>
+<p>Open <code>report01/index.html</code>. It contains your explanation, links to saved code/output pages, and the exact output files under <code>evidence/</code>. <code>packet.json</code> records file hashes, the source ledger hash, and <code>published: false</code>. It stays local; there is no upload or external sharing operation.</p>
+<p>The exporter refuses changed, missing, or added run-output files; inconsistent notebook identity/count claims; missing execution cells; saved error outputs; unsafe paths; or an absent output seal. Legacy runs without the new seal require a fresh replay. If a run was edited, preserve it and make a fresh attempt rather than manually rewriting hashes to obtain a pass.</p>
+<p>Only plain text, code and PNG notebook outputs are displayed. Arbitrary HTML, JavaScript and SVG outputs are not executed in the report. Markdown and equations remain visible as escaped source notation in this portable evidence view; the main course reader provides the fuller lesson rendering.</p>
+<h2 id="review-before-showing-another-person">Review before showing another person</h2>
+<p>The report is a draft, not an automatic public portfolio. Inspect every included file for personal paths, participant information, measurements you are not permitted to redistribute, and claims beyond the design. Locally generated hashes are not digital signatures. Check each source's data license separately from the course code license. Do not publish restricted sports excerpts under the assumption that public access means unrestricted commercial use.</p>
+<p>A useful portfolio entry contains the question, observation unit, baseline, evaluation protocol, result, error analysis, limits, and a reproducing command. A polished page cannot compensate for an invalid split or unsupported interpretation.</p>
+<h2 id="practice-in-different-situations-without-relearning-the-definition">Practice in different situations without relearning the definition</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Existing route</th>
+<th>Independent task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Measurement table</td>
+<td>Stage 00 → 02 → <code>wine</code></td>
+<td>Explain the row unit and compare raw with training-scaled distances.</td>
+</tr>
+<tr>
+<td>Image topology</td>
+<td>Stage 05 → 06 → 08 → 11</td>
+<td>State the pixel/complex convention and distinguish a cycle from a boundary.</td>
+</tr>
+<tr>
+<td>Environmental series</td>
+<td><code>co2</code> after basic array/time lessons</td>
+<td>Identify missing observations and information available at prediction time.</td>
+</tr>
+<tr>
+<td>Materials regression</td>
+<td><code>concrete_slump</code> after evaluation basics</td>
+<td>Separate fitting, calibration and testing; interpret interval coverage narrowly.</td>
+</tr>
+<tr>
+<td>Sports motion</td>
+<td><code>s00</code> → <code>s01</code> → <code>s02</code></td>
+<td>Convert units, identify elapsed time, and compare the proposed flight model with a simpler baseline.</td>
+</tr>
+<tr>
+<td>Sports metadata</td>
+<td><code>acb</code></td>
+<td>Keep entire games together and avoid identity aliases crossing partitions.</td>
+</tr>
+<tr>
+<td>Learned representations</td>
+<td><code>r01</code> → <code>r02</code> → <code>r03</code> → <code>r04</code> → <code>r05</code></td>
+<td>Distinguish covariance shape, Gaussianity, noncollapse and downstream information.</td>
+</tr>
+<tr>
+<td>Physical dynamics</td>
+<td>Stage 21 → 23 → 24 → 25</td>
+<td>Separate continuous conservation from discrete solver error and nonlinear-constraint residual.</td>
+</tr>
+</tbody>
+</table>
+<p>Do not skip prerequisite definitions to reach an impressive-looking model. Conversely, do not reread every optional primer after you can demonstrate the underlying skill.</p>
+<h2 id="distinct-acceptance-questions">Distinct acceptance questions</h2>
+<p>A source checksum asks whether bytes match. A test checks its assertions. A repeat run checks the specified computation. An independent evaluation addresses generalization under its design. Docker acceptance checks the image/runtime. Kubernetes adds admission, scheduling, storage and Job execution. Learner mastery requires independent explanation, calculation, transfer and delayed recall.</p>
+<p>No single green status answers all of these questions. Continue from your existing learning record; the original proof-depth requirements and actual-book audit remain in force.</p>
+<h2 id="open-the-completed-worked-example">Open the completed worked example</h2>
+<p><a href="../../../reports/v13/example_report/index.html">Wine experiment evidence</a> demonstrates the full workflow using real observed features. Its reflection is assistant-authored, not a learner attempt. All learner templates remain empty.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

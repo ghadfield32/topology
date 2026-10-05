@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>version\_check · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/version_check/README.md">native/rust/vendor/version_check/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="version_check">version_check</h1>
+<p><a href="https://github.com/SergioBenitez/version_check/actions"><img alt="Build Status" src="https://github.com/SergioBenitez/version_check/workflows/CI/badge.svg"/></a>
+<a href="https://crates.io/crates/version_check"><img alt="Current Crates.io Version" src="https://img.shields.io/crates/v/version_check.svg"/></a>
+<a href="https://docs.rs/version_check"><img alt="rustdocs on docs.rs" src="https://docs.rs/version_check/badge.svg"/></a></p>
+<p>This tiny crate checks that the running or installed <code>rustc</code> meets some version
+requirements. The version is queried by calling the Rust compiler with
+<code>--version</code>. The path to the compiler is determined first via the <code>RUSTC</code>
+environment variable. If it is not set, then <code>rustc</code> is used. If that fails, no
+determination is made, and calls return <code>None</code>.</p>
+<h2 id="usage">Usage</h2>
+<p>Add to your <code>Cargo.toml</code> file, typically as a build dependency:</p>
+<pre><code class="language-toml">[build-dependencies]
+version_check = "0.9"
+</code></pre>
+<p><code>version_check</code> is compatible and compiles with Rust 1.0.0 and beyond.</p>
+<h2 id="examples">Examples</h2>
+<p>Set a <code>cfg</code> flag in <code>build.rs</code> if the running compiler was determined to be
+at least version <code>1.13.0</code>:</p>
+<pre><code class="language-rust">extern crate version_check as rustc;
+
+if rustc::is_min_version("1.13.0").unwrap_or(false) {
+    println!("cargo:rustc-cfg=question_mark_operator");
+}
+</code></pre>
+<p>Check that the running compiler was released on or after <code>2018-12-18</code>:</p>
+<pre><code class="language-rust">extern crate version_check as rustc;
+
+match rustc::is_min_date("2018-12-18") {
+    Some(true) =&gt; "Yep! It's recent!",
+    Some(false) =&gt; "No, it's older.",
+    None =&gt; "Couldn't determine the rustc version."
+};
+</code></pre>
+<p>Check that the running compiler supports feature flags:</p>
+<pre><code class="language-rust">extern crate version_check as rustc;
+
+match rustc::is_feature_flaggable() {
+    Some(true) =&gt; "Yes! It's a dev or nightly release!",
+    Some(false) =&gt; "No, it's stable or beta.",
+    None =&gt; "Couldn't determine the rustc version."
+};
+</code></pre>
+<p>See the <a href="https://docs.rs/version_check">rustdocs</a> for more examples and complete
+documentation.</p>
+<h2 id="alternatives">Alternatives</h2>
+<p>This crate is dead simple with no dependencies. If you need something more and
+don't care about panicking if the version cannot be obtained, or if you don't
+mind adding dependencies, see <a href="https://crates.io/crates/rustc_version">rustc_version</a>. If you'd instead prefer a feature
+detection library that works by dynamically invoking <code>rustc</code> with a
+representative code sample, see <a href="https://crates.io/crates/autocfg">autocfg</a>.</p>
+<h2 id="license">License</h2>
+<p><code>version_check</code> is licensed under either of the following, at your option:</p>
+<ul>
+<li>Apache License, Version 2.0, (<a href="../../../../../native/rust/vendor/version_check/LICENSE-APACHE">LICENSE-APACHE</a> or <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>)</li>
+<li>MIT License (<a href="../../../../../native/rust/vendor/version_check/LICENSE-MIT">LICENSE-MIT</a> or <a href="http://opensource.org/licenses/MIT">http://opensource.org/licenses/MIT</a>)</li>
+</ul>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

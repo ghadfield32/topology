@@ -1,0 +1,400 @@
+{
+  "prepared": 56,
+  "stage_primary_lessons": 31,
+  "all_reflections_initially_empty": true,
+  "source_inputs_unchanged": true,
+  "records": [
+    {
+      "item": "00",
+      "lesson": "lessons/00_lesson.md",
+      "source_notebook": "notebooks/00_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "01",
+      "lesson": "lessons/01_lesson.md",
+      "source_notebook": "notebooks/01_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "02",
+      "lesson": "lessons/02_lesson.md",
+      "source_notebook": "notebooks/02_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "03",
+      "lesson": "lessons/03_lesson.md",
+      "source_notebook": "notebooks/03_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "04",
+      "lesson": "lessons/04_lesson.md",
+      "source_notebook": "notebooks/04_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "05",
+      "lesson": "lessons/05_lesson.md",
+      "source_notebook": "notebooks/05_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "06",
+      "lesson": "lessons/06_lesson.md",
+      "source_notebook": "notebooks/06_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "07",
+      "lesson": "lessons/07_lesson.md",
+      "source_notebook": "notebooks/07_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "08",
+      "lesson": "lessons/08_lesson.md",
+      "source_notebook": "notebooks/08_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "09",
+      "lesson": "lessons/09_lesson.md",
+      "source_notebook": "notebooks/09_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "10",
+      "lesson": "lessons/10_lesson.md",
+      "source_notebook": "notebooks/10_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "11",
+      "lesson": "lessons/11_lesson.md",
+      "source_notebook": "notebooks/11_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "12",
+      "lesson": "lessons/12_lesson.md",
+      "source_notebook": "notebooks/12_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "13",
+      "lesson": "lessons/13_lesson.md",
+      "source_notebook": "notebooks/13_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "14",
+      "lesson": "lessons/14_lesson.md",
+      "source_notebook": "notebooks/14_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "15",
+      "lesson": "lessons/15_lesson.md",
+      "source_notebook": "notebooks/15_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "16",
+      "lesson": "lessons/16_lesson.md",
+      "source_notebook": "notebooks/16_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "17",
+      "lesson": "lessons/17_lesson.md",
+      "source_notebook": "notebooks/17_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "18",
+      "lesson": "lessons/18_lesson.md",
+      "source_notebook": "notebooks/18_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "19",
+      "lesson": "lessons/19_lesson.md",
+      "source_notebook": "notebooks/19_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "20",
+      "lesson": "lessons/20_lesson.md",
+      "source_notebook": "notebooks/20_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "21",
+      "lesson": "physics/lessons/21.md",
+      "source_notebook": "physics/notebooks/21_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "22",
+      "lesson": "physics/lessons/22.md",
+      "source_notebook": "physics/notebooks/22_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "23",
+      "lesson": "physics/lessons/23.md",
+      "source_notebook": "physics/notebooks/23_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "24",
+      "lesson": "physics/lessons/24.md",
+      "source_notebook": "physics/notebooks/24_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "25",
+      "lesson": "physics/lessons/25.md",
+      "source_notebook": "physics/notebooks/25_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "26",
+      "lesson": "physics/lessons/26.md",
+      "source_notebook": "physics/notebooks/26_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "27",
+      "lesson": "physics/lessons/27.md",
+      "source_notebook": "physics/notebooks/27_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "28",
+      "lesson": "physics/lessons/28.md",
+      "source_notebook": "physics/notebooks/28_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "29",
+      "lesson": "physics/lessons/29.md",
+      "source_notebook": "physics/notebooks/29_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "30",
+      "lesson": "physics/lessons/30.md",
+      "source_notebook": "physics/notebooks/30_lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "wdbc",
+      "lesson": "industry/lessons/wdbc.md",
+      "source_notebook": "industry/notebooks/wdbc.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "wine",
+      "lesson": "industry/lessons/wine.md",
+      "source_notebook": "industry/notebooks/wine.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "stackloss",
+      "lesson": "industry/lessons/stackloss.md",
+      "source_notebook": "industry/notebooks/stackloss.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "grunfeld",
+      "lesson": "industry/lessons/grunfeld.md",
+      "source_notebook": "industry/notebooks/grunfeld.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "co2",
+      "lesson": "industry/lessons/co2.md",
+      "source_notebook": "industry/notebooks/co2.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "nile",
+      "lesson": "industry/lessons/nile.md",
+      "source_notebook": "industry/notebooks/nile.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "elnino",
+      "lesson": "industry/lessons/elnino.md",
+      "source_notebook": "industry/notebooks/elnino.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "modechoice",
+      "lesson": "industry/lessons/modechoice.md",
+      "source_notebook": "industry/notebooks/modechoice.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "seeds",
+      "lesson": "applications_v7/seeds/lesson.md",
+      "source_notebook": "applications_v7/seeds/lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "concrete_slump",
+      "lesson": "applications_v7/concrete_slump/lesson.md",
+      "source_notebook": "applications_v7/concrete_slump/lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "leakage",
+      "lesson": "methods_v7/leakage/lesson.md",
+      "source_notebook": "methods_v7/leakage/lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "claims",
+      "lesson": "methods_v7/claims/lesson.md",
+      "source_notebook": "methods_v7/claims/lab.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "s00",
+      "lesson": "sports_v8/lessons/S00.md",
+      "source_notebook": "sports_v8/notebooks/S00.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "s01",
+      "lesson": "sports_v8/lessons/S01.md",
+      "source_notebook": "sports_v8/notebooks/S01.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "s02",
+      "lesson": "sports_v8/lessons/S02.md",
+      "source_notebook": "sports_v8/notebooks/S02.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "s03",
+      "lesson": "sports_v8/lessons/S03.md",
+      "source_notebook": "sports_v8/notebooks/S03.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "s04",
+      "lesson": "sports_v8/lessons/S04.md",
+      "source_notebook": "sports_v8/notebooks/S04.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "s05",
+      "lesson": "sports_v8/lessons/S05.md",
+      "source_notebook": "sports_v8/notebooks/S05.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "s06",
+      "lesson": "sports_v8/lessons/S06.md",
+      "source_notebook": "sports_v8/notebooks/S06.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "acb",
+      "lesson": "sports_v9/lesson.md",
+      "source_notebook": "sports_v9/notebooks/acb_readiness.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "r01",
+      "lesson": "representations/lessons/R01.md",
+      "source_notebook": "representations/notebooks/r01.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "r02",
+      "lesson": "representations/lessons/R02.md",
+      "source_notebook": "representations/notebooks/r02.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "r03",
+      "lesson": "representations/lessons/R03.md",
+      "source_notebook": "representations/notebooks/r03.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "r04",
+      "lesson": "representations/lessons/R04.md",
+      "source_notebook": "representations/notebooks/r04.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    },
+    {
+      "item": "r05",
+      "lesson": "representations/lessons/R05.md",
+      "source_notebook": "representations/notebooks/r05.ipynb",
+      "assessment": "not_assessed",
+      "reference_executed": false
+    }
+  ]
+}

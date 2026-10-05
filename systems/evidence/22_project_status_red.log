@@ -1,0 +1,17 @@
+F...
+======================================================================
+FAIL: test_build_error_not_misclassified_as_missing_dependency (systems.tests.test_projects.Projects.test_build_error_not_misclassified_as_missing_dependency)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/shape17_build/listening_to_shape_lab/systems/tests/test_projects.py", line 19, in test_build_error_not_misclassified_as_missing_dependency
+    self.assertEqual(status,'failed')
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: 'blocked' != 'failed'
+- blocked
++ failed
+
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.036s
+
+FAILED (failures=1)

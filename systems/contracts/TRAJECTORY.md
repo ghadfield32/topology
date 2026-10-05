@@ -1,0 +1,7 @@
+# Portable trajectory and prediction contracts
+
+The `SHPTRJ01` format is an original teaching format, not an industry standard or the provider's file format. Header: ASCII magic `SHPTRJ01` (8 bytes) + little-endian unsigned 32-bit record count (4 bytes). Each 48-byte record: little-endian unsigned frame ID, unsigned confidence-presence flag, then five IEEE-754 binary64 values: time seconds, x/y/z metres, confidence. Read fields explicitly; do NOT fread a host struct because padding, endian order and ABI are not the wire format.
+
+Flags 0/1 only. If confidence is unknown, flag=0 and its stored scalar=0; no probability of zero is inferred. If flag=1, require finite [0,1]. All position/time values finite; time nonnegative and strictly increasing; source frame IDs strictly increasing; 1–1,000,000 rows. Reject extra bytes and truncation. The original SPL JSON and native source registry remain authoritative; this derived binary preserves a selected subset, not new measurements. Its clock is frame/sample-rate, not camera PTS.
+
+Prediction JSON `shape.systems.trajectory.v1` includes units=m, observed and predicted records with time/x/y/z, confidence (null when unknown), metadata with source hash, model assumptions and limitations. Renderer coordinates are a projection of these values; a plausible image is not calibration evidence. Use runtime checks as well as TypeScript types. Model fitting rows and later evaluation rows must be identified separately.

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_demo_packaged/build/rust_target/debug/capture-validator",
+    "--binary",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_demo_packaged/trajectory.bin"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0010180000003856549,
+  "stdout": "{\"count\":12,\"known_confidence\":0,\"start\":0.0,\"end\":3.5,\"mean\":[4.031211893377345,-7.695396909430308,2.765724569606659]}\n",
+  "stderr": ""
+}

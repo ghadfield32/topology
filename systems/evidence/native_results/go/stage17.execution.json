@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/go/shape-go",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "stage17"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0029084079999392998,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage17\",\n  \"language\": \"go\",\n  \"metrics\": {\n    \"fit_indices\": [\n      0,\n      1,\n      2,\n      3,\n      4,\n      5,\n      6,\n      7,\n      8,\n      9,\n      10,\n      11\n    ],\n    \"holdout_errors\": [\n      1.7763568394002505e-15,\n      1.831026719408895e-15,\n      1.2560739669470201e-15,\n      9.930136612989092e-16,\n      1.1157603309187458e-15,\n      8.005932084973442e-16,\n      9.930136612989092e-16,\n      2.8435583831733384e-15,\n      1.9860273225978185e-15,\n      6.280369834735101e-16,\n      1.831026719408895e-15,\n      1.3506446028928519e-15\n    ],\n    \"holdout_indices\": [\n      12,\n      13,\n      14,\n      15,\n      16,\n      17,\n      18,\n      19,\n      20,\n      21,\n      22,\n      23\n    ],\n    \"max_holdout_error\": 2.8435583831733384e-15,\n    \"origin\": \"manufactured paired nondegenerate cloud; not a learned reconstruction\",\n    \"rotation\": [\n      [\n        0.9210609940028849,\n        -0.3894183423086509,\n        0\n      ],\n      [\n        0.3894183423086509,\n        0.9210609940028849,\n        0\n      ],\n      [\n        0,\n        0,\n        1\n      ]\n    ],\n    \"scale\": 2.4999999999999996,\n    \"translation\": [\n      2.999999999999999,\n      -1.9999999999999996,\n      1\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

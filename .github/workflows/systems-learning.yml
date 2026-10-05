@@ -1,0 +1,44 @@
+name: Systems learning projects
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cpu-projects:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v7
+        with: {version: '0.10.0'}
+      - uses: actions/setup-go@v5
+        with: {go-version: '1.23.2', cache: false}
+      - uses: actions/setup-node@v4
+        with: {node-version: '22.16.0'}
+      - name: Explicit toolchain setup
+        run: |
+          rustup toolchain install 1.90.0 --profile minimal
+          rustup default 1.90.0
+          npm install --global typescript@5.8.3
+          uv python install 3.13.5
+          uv run --no-project --python 3.13.5 python tools/bootstrap.py --profile physics
+      - name: Project tests and real-data demonstration
+        run: |
+          uv run --no-sync python -m unittest discover -s systems/tests -p 'test_*.py'
+          uv run --no-sync python learn.py workbooks --check
+          uv run --no-sync python learn.py verify-projects --units sys00 sys01 sys02 sys03 sys05 sys06 sys07 sys09 --output my_work/ci_projects01
+          uv run --no-sync python learn.py demo --output my_work/ci_demo01
+          uv run --no-sync python systems/tools/service_probe.py --output my_work/ci_service01
+      - name: Preserve evidence including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: systems-learning-evidence
+          path: |
+            my_work/ci_projects01/**/project_check.json
+            my_work/ci_projects01/**/tests.json
+            my_work/ci_demo01/*.json
+            my_work/ci_service01/*.json
+          if-no-files-found: warn

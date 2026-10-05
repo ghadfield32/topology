@@ -1,0 +1,50 @@
+{
+  "release": "12.0.0",
+  "date": "2026-09-22",
+  "core_stages": 31,
+  "unique_primary_lessons": 31,
+  "representation_units": 5,
+  "named_cases": 25,
+  "learner_notebooks": 56,
+  "references_passed": 133,
+  "references_failed": 0,
+  "teaching_code_cells": 766,
+  "runtime_probe_cells": 133,
+  "png_outputs": 80,
+  "source_input_hashes": 504,
+  "source_inputs_unchanged": true,
+  "tests": {
+    "total": 753,
+    "skipped": 2,
+    "failed": 0,
+    "passed": 751
+  },
+  "native_nonroot_readonly": "passed tests + Stage 00",
+  "uv_diagnostic": "passed using explicitly inherited dependencies",
+  "fresh_uv_install": "blocked by package-index DNS failure",
+  "genuine_uv_lock_present": false,
+  "docker_runtime": "blocked: no Docker CLI/engine",
+  "kubernetes_static": "passed project policy; not server validation",
+  "kubernetes_live": "blocked: no docker/kubectl/kind",
+  "browser_navigation": "blocked by Chromium administrator policy; not claimed passed",
+  "new_observed_data_payloads": 0,
+  "learner_items_preassessed": 0,
+  "post_reference_changes": [
+    "Bootstrap bounded-timeout/error reporting and its unit test",
+    "Editable copied learner file permission and its unit test",
+    "Canonical stage command spelling, documentation, saved outputs and rendered pages"
+  ],
+  "scope": "All reference teaching source cells match the successful replay; later operational changes are separately unit/smoke tested.",
+  "reader_rendering": "passed via set_content; 31 cards, filter, answers, embedded images and mobile width",
+  "http_scope": "Two public routes 200; four private/traversal routes 403",
+  "local_file_targets": 29470,
+  "html_fragment_targets": 648,
+  "git_export": {
+    "status": "passed",
+    "tests_passed": 751,
+    "skipped": 2,
+    "private_work_tracked": false,
+    "templates_retained": true,
+    "remote_modified": false
+  }
+}

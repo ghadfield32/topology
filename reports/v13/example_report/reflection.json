@@ -1,0 +1,8 @@
+{
+  "question": "Assistant-authored worked example: on this fixed Wine cultivar partition, do topological descriptors add predictive information to the ordinary chemical features?",
+  "observation_unit": "One of 178 wine-sample feature rows; the displayed test partition has 36 rows. Cultivar labels are not wine-quality scores. These are not sports frames or repeated trials.",
+  "method": "Reproduce the existing Wine lesson using its fixed split, training-only transformations, reserved reference cloud and identical supervised fitting rows for raw, topology-only and combined representations. Keep the majority baseline. The saved protocol and preprocessing files provide the exact settings.",
+  "result_interpretation": "The raw-feature model classified 32/36 test rows correctly, topological summaries 23/36, combined features 34/36, and the majority baseline 14/36. Combined features classified two additional test rows correctly in this demonstration; topology alone performed worse than ordinary measurements.",
+  "limitation": "The small displayed partition is already exposed, and no independent source, multiple-partition evaluation or significance claim was established. This assistant-authored reflection is not a learner assessment. Topology summarizes a selected feature-space construction, not physical holes in a sample.",
+  "next_experiment": "Before another confirmatory claim, preregister a fresh evaluation design with suitable independent observations and fixed feature/parameter selection rules. Compare paired predictions against the same ordinary baseline and report uncertainty and failure cases without retuning on this exposed test partition."
+}

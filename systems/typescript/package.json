@@ -1,0 +1,1 @@
+{"name":"shape-evidence-viewer","version":"0.1.0","private":true,"scripts":{"build":"tsc -p .","test":"npm run build && node tests/test_viewer.cjs"},"devDependencies":{"typescript":"5.8.3"}}

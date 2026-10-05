@@ -1,0 +1,8 @@
+{
+ "version":"2.0.0",
+ "tasks":[
+  {"label":"Learning: environment inventory","type":"process","command":"uv","args":["run","--no-sync","python","learn.py","doctor"],"problemMatcher":[]},
+  {"label":"Learning: new systems tests","type":"process","command":"uv","args":["run","--no-sync","python","-m","unittest","discover","-s","systems/tests","-p","test_*.py"],"problemMatcher":[]},
+  {"label":"Learning: generated interfaces check","type":"process","command":"uv","args":["run","--no-sync","python","learn.py","workbooks","--check"],"problemMatcher":[]}
+ ]
+}

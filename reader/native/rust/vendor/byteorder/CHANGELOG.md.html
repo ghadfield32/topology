@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CHANGELOG · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/byteorder/CHANGELOG.md">native/rust/vendor/byteorder/CHANGELOG.md</a> · Readable source notation; no online math renderer.</p><p><strong>WARNING:</strong> This CHANGELOG is no longer updated. The activity for this project
+is sparse enough that you should refer to the commit log instead.</p>
+<h1 id="134">1.3.4</h1>
+<p>This patch release squashes deprecation warnings for the <code>try!</code> macro, in
+accordance with byteorder's minimum supported Rust version (currently at Rust
+1.12.0).</p>
+<h1 id="133">1.3.3</h1>
+<p>This patch release adds <code>ByteOrder::write_i8_into()</code> as a simple, safe interface
+for ordinarily unsafe or tedious code.</p>
+<h1 id="132">1.3.2</h1>
+<p>This patch release adds <code>ReadBytesExt::read_i8_into()</code> as a simple, safe interface
+for ordinarily unsafe or tedious code.</p>
+<h1 id="131">1.3.1</h1>
+<p>This minor release performs mostly small internal changes. Going forward, these
+are not going to be incorporated into the changelog.</p>
+<h1 id="130">1.3.0</h1>
+<p>This new minor release now enables <code>i128</code> support automatically on Rust
+compilers that support 128-bit integers. The <code>i128</code> feature is now a no-op, but
+continues to exist for backward compatibility purposes. The crate continues to
+maintain compatibility with Rust 1.12.0.</p>
+<p>This release also deprecates the <code>ByteOrder</code> trait methods
+<code>read_f32_into_unchecked</code> and <code>read_f64_into_unchecked</code> in favor of
+<code>read_f32_into</code> and <code>read_f64_into</code>. This was an oversight from the 1.2 release
+where the corresponding methods on <code>ReadBytesExt</code> were deprecated.</p>
+<p><code>quickcheck</code> and <code>rand</code> were bumped to <code>0.8</code> and <code>0.6</code>, respectively.</p>
+<p>A few small documentation related bugs have been fixed.</p>
+<h1 id="127">1.2.7</h1>
+<p>This patch release excludes some CI files from the crate release and updates
+the license field to use <code>OR</code> instead of <code>/</code>.</p>
+<h1 id="126">1.2.6</h1>
+<p>This patch release fixes some test compilation errors introduced by an
+over-eager release of 1.2.5.</p>
+<h1 id="125">1.2.5</h1>
+<p>This patch release fixes some typos in the docs, adds doc tests to methods on
+<code>WriteByteExt</code> and bumps the quickcheck dependency to <code>0.7</code>.</p>
+<h1 id="124">1.2.4</h1>
+<p>This patch release adds support for 48-bit integers by adding the following
+methods to the <code>ByteOrder</code> trait: <code>read_u48</code>, <code>read_i48</code>, <code>write_u48</code> and
+<code>write_i48</code>. Corresponding methods have been added to the <code>ReadBytesExt</code> and
+<code>WriteBytesExt</code> traits as well.</p>
+<h1 id="123">1.2.3</h1>
+<p>This patch release removes the use of <code>feature(i128_type)</code> from byteorder,
+since it has been stabilized. We leave byteorder's <code>i128</code> feature in place
+in order to continue supporting compilation on older versions of Rust.</p>
+<h1 id="122">1.2.2</h1>
+<p>This patch release only consists of internal improvements and refactorings.
+Notably, this removes all uses of <code>transmute</code> and instead uses pointer casts.</p>
+<h1 id="121">1.2.1</h1>
+<p>This patch release removes more unnecessary uses of <code>unsafe</code> that
+were overlooked in the prior <code>1.2.0</code> release. In particular, the
+<code>ReadBytesExt::read_{f32,f64}_into_checked</code> methods have been deprecated and
+replaced by more appropriately named <code>read_{f32,f64}_into</code> methods.</p>
+<h1 id="120">1.2.0</h1>
+<p>The most prominent change in this release of <code>byteorder</code> is the removal of
+unnecessary signaling NaN masking, and in turn, the <code>unsafe</code> annotations
+associated with methods that didn't do masking. See
+<a href="https://github.com/BurntSushi/byteorder/issues/103">#103</a>
+for more details.</p>
+<ul>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/102">BUG #102</a>:
+Fix big endian tests.</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/103">BUG #103</a>:
+Remove sNaN masking.</li>
+</ul>
+<h1 id="110">1.1.0</h1>
+<p>This release of <code>byteorder</code> features a number of fixes and improvements, mostly
+as a result of the
+<a href="https://public.etherpad-mozilla.org/p/rust-crate-eval-byteorder">Litz Blitz evaluation</a>.</p>
+<p>Feature enhancements:</p>
+<ul>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/63">FEATURE #63</a>:
+Add methods for reading/writing slices of numbers for a specific
+endianness.</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/65">FEATURE #65</a>:
+Add support for <code>u128</code>/<code>i128</code> types. (Behind the nightly only <code>i128</code>
+feature.)</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/72">FEATURE #72</a>:
+Add "panics" and "errors" sections for each relevant public API item.</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/74">FEATURE #74</a>:
+Add CI badges to Cargo.toml.</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/75">FEATURE #75</a>:
+Add more examples to public API items.</li>
+<li>Add 24-bit read/write methods.</li>
+<li>Add <code>BE</code> and <code>LE</code> type aliases for <code>BigEndian</code> and <code>LittleEndian</code>,
+respectively.</li>
+</ul>
+<p>Bug fixes:</p>
+<ul>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/68">BUG #68</a>:
+Panic in {BigEndian,LittleEndian}::default.</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/69">BUG #69</a>:
+Seal the <code>ByteOrder</code> trait to prevent out-of-crate implementations.</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/71">BUG #71</a>:
+Guarantee that the results of <code>read_f32</code>/<code>read_f64</code> are always defined.</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/73">BUG #73</a>:
+Add crates.io categories.</li>
+<li><a href="https://github.com/BurntSushi/byteorder/issues/77">BUG #77</a>:
+Add <code>html_root</code> doc attribute.</li>
+</ul>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

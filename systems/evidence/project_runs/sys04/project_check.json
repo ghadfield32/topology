@@ -1,0 +1,8 @@
+{
+  "status": "blocked",
+  "unit": "sys04",
+  "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys04",
+  "reason": "C++ OpenCV development package not detected through pkg-config; see sys04 for explicit CMake OpenCV_DIR setup.",
+  "assessment": "not_assessed",
+  "scope": "copied-project build and declared checks; not every source exercise"
+}

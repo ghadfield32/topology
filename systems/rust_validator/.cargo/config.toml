@@ -1,0 +1,4 @@
+[source.crates-io]
+replace-with = "course-vendor"
+[source.course-vendor]
+directory = "../../native/rust/vendor"

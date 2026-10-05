@@ -1,0 +1,8 @@
+{
+  "status": "blocked",
+  "unit": "sys08",
+  "workspace": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys08",
+  "reason": "Resolve PyO3/maturin in a separate reviewed environment; no PyO3 lock or dependency download is fabricated. Follow systems/lessons/sys08.md.",
+  "assessment": "not_assessed",
+  "scope": "copied-project build and declared checks; not every source exercise"
+}

@@ -1,0 +1,11 @@
+{
+  "commit": "0e59728cd84e40e823c44c8e9e21f8994be651a9",
+  "tracked_files": 3516,
+  "private_work_tracked": [],
+  "templates_retained": true,
+  "remote_modified": false,
+  "tests": "passed",
+  "passed": 805,
+  "skipped": 2,
+  "failed": 0
+}

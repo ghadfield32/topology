@@ -1,0 +1,57 @@
+     Locking 21 packages to latest compatible versions
+   Compiling version_check v0.9.5
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling typenum v1.20.1
+   Compiling unicode-ident v1.0.26
+   Compiling serde_core v1.0.228
+   Compiling generic-array v0.14.7
+   Compiling serde v1.0.228
+   Compiling serde_json v1.0.145
+   Compiling cpufeatures v0.2.17
+   Compiling ryu v1.0.23
+   Compiling syn v2.0.119
+   Compiling itoa v1.0.18
+   Compiling cfg-if v1.0.5
+   Compiling memchr v2.8.3
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling digest v0.10.7
+   Compiling sha2 v0.10.9
+   Compiling serde_derive v1.0.228
+   Compiling capture-validator v0.1.0 (/mnt/data/shape17_build/listening_to_shape_lab/systems/rust_validator)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.24s
+     Running unittests src/lib.rs (/mnt/data/shape17_rust_target/debug/deps/capture_validator-320e13ac21cd5ef8)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/mnt/data/shape17_rust_target/debug/deps/capture_validator-9127524c92b56b8d)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/contracts.rs (/mnt/data/shape17_rust_target/debug/deps/contracts-63ad9241028ce3e4)
+
+running 10 tests
+test bad_count ... ok
+test bad_flags ... ok
+test manifest_invalid_schema ... ok
+test manifest_duplicate_frames ... ok
+test manifest_path_escape ... ok
+test nan ... ok
+test manifest_unknown_camera ... ok
+test trailing ... ok
+test truncation ... ok
+test valid ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests capture_validator
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

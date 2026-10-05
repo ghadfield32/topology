@@ -1,0 +1,411 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>acb — ACB 2025–26 source and identity readiness · Listening to Shape</title><link rel="stylesheet" href="../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../START_HERE.html">Course home</a><a href="../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../workbooks/polyglot/python/acb.ipynb">workbooks/polyglot/python/acb.ipynb</a> · Readable source notation; no online math renderer.</p><p class="notice">Worked reference: saved outputs are included. Use the course runner for a fresh isolated execution.</p><h1 id="acb--acb-202526-source-and-identity-readiness">acb — ACB 2025–26 source and identity readiness</h1>
+<p><strong>Python route</strong> · lab <code>acb</code> · case</p>
+<p>Make your hand prediction first, then open the canonical worked notebook
+(<code>sports_v9/notebooks/acb_readiness.ipynb</code>) and the <a href="../../../sports_v9/lesson.md.html">lesson</a>.
+The canonical course is <code>lessons/</code> + references; this notebook adds an
+interactive route through the native16 evidence, not a second curriculum.</p>
+<h2 id="the-native-experiment-for-this-lab">The native experiment for this lab</h2>
+<p>Read the ten-game source catalog, retain chronology and explicit competition identifiers.</p>
+<h2 id="boundary">Boundary</h2>
+<p>Metadata is not full tracking/events/season aggregates; no hidden acquisition occurs.</p>
+<h2 id="where-every-path-points">Where every path points</h2>
+<p>This notebook is <code>workbooks/polyglot/python/acb.ipynb</code>. Paths below are
+defined once, here, so the same names mean the same thing in every lab.</p>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>What it is</th>
+<th>Who owns it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curriculum/catalog.json</code></td>
+<td>the single owner of the 31-stage lesson order</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>native/protocols/labs.json</code></td>
+<td>the single owner of the 57 native experiment definitions</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>lessons/</code></td>
+<td>canonical written explanations</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>notebooks/</code></td>
+<td>original worked Python labs (<strong>no</strong> Go or Rust here)</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>practice/</code></td>
+<td>original learner assignments</td>
+<td>course</td>
+</tr>
+<tr>
+<td><a href="../../../sports_v9/notebooks/acb_readiness.ipynb.html"><code>sports_v9/notebooks/acb_readiness.ipynb</code></a></td>
+<td>this lab's canonical reference</td>
+<td>course</td>
+</tr>
+<tr>
+<td><code>native/go/</code>, <code>native/rust/</code></td>
+<td>reference implementations the notebooks compile</td>
+<td>read-only</td>
+</tr>
+<tr>
+<td><code>native/python/</code></td>
+<td>independent data and scientific checks</td>
+<td>read-only</td>
+</tr>
+<tr>
+<td><code>native/guides/</code></td>
+<td>language and implementation guidance</td>
+<td>read-only</td>
+</tr>
+<tr>
+<td><a href="../../../native/guides/labs/acb.md.html"><code>native/guides/labs/acb.md</code></a></td>
+<td>this lab's implementation guide</td>
+<td>read-only</td>
+</tr>
+<tr>
+<td><code>tools/build_language_notebooks.py</code></td>
+<td>the generator that owns <code>workbooks/polyglot/</code></td>
+<td>tooling</td>
+</tr>
+<tr>
+<td><code>workbooks/polyglot/</code></td>
+<td>these generated teaching notebooks</td>
+<td>generated</td>
+</tr>
+<tr>
+<td><code>my_work/</code></td>
+<td>your private attempts and evidence (git-ignored)</td>
+<td><strong>you</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-one-that-matters-most">The one that matters most</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>native/python/</code></td>
+<td>the <strong>reference</strong>. Committed and shared. Do not edit.</td>
+</tr>
+<tr>
+<td><code>my_work/&lt;session&gt;/native/python/</code></td>
+<td><strong>your copy</strong>, from <code>native_course.py prepare</code>. Edit here.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relative-to-this-notebook">Relative to this notebook</h3>
+<table>
+<thead>
+<tr>
+<th>From here</th>
+<th>Points at</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../go/acb.ipynb.html"><code>../go/acb.ipynb</code></a></td>
+<td>the Go version of this lab</td>
+</tr>
+<tr>
+<td><a href="../README.md.html"><code>../README.md</code></a></td>
+<td>the index of all 57 labs, three languages</td>
+</tr>
+<tr>
+<td><a href="../../../native/guides/LEARNING_PATHS.md.html"><code>../../native/guides/LEARNING_PATHS.md</code></a></td>
+<td>the language learning paths</td>
+</tr>
+<tr>
+<td><a href="../../../docs/release/LANGUAGE_NOTEBOOKS.md.html"><code>../../docs/release/LANGUAGE_NOTEBOOKS.md</code></a></td>
+<td>how these notebooks work</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-setup">1. Setup</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code>&quot;&quot;&quot;Notebook setup. Run this first.
+
+This reads the course catalogue and prepares a fresh output directory for this
+lab. Nothing is written into the course tree and nothing is graded.
+&quot;&quot;&quot;
+import importlib.util, json, subprocess, sys
+from pathlib import Path
+
+# Locate the course root by walking up until native_course.py is found.
+_here = Path.cwd().resolve()
+ROOT = next(p for p in [_here, *_here.parents] if (p / &quot;native_course.py&quot;).is_file())
+sys.path.insert(0, str(ROOT / &quot;src&quot;))
+
+
+def load_runner():
+    spec = importlib.util.spec_from_file_location(&quot;shape_native_runner&quot;, ROOT / &quot;native_course.py&quot;)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+runner = load_runner()
+LAB_KEY = &#x27;acb&#x27;
+LAB_ID = &#x27;acb&#x27;
+REFERENCE = &#x27;sports_v9/notebooks/acb_readiness.ipynb&#x27;
+LAB = next(r for r in runner.available_labs(ROOT) if r[&quot;key&quot;] == LAB_KEY)
+print(&quot;course root :&quot;, ROOT)
+print(&quot;lab         :&quot;, LAB[&quot;key&quot;], &quot;-&quot;, LAB[&quot;title&quot;])
+print(&quot;kind        :&quot;, LAB[&quot;kind&quot;])
+print(&quot;reference   :&quot;, REFERENCE)
+print(&quot;native goal :&quot;, LAB[&quot;native_goal&quot;])
+print(&quot;challenges  :&quot;, len(LAB[&quot;challenges&quot;]))</code></pre><div class="output"></div></section><h2 id="2-run-the-canonical-python-experiment">2. Run the canonical Python experiment</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Run the CANONICAL Python experiment for this lab.
+# --------------------------------------------------------------------------
+# Reference: sports_v9/notebooks/acb_readiness.ipynb
+# Kind     : notebook — the canonical worked notebook
+#
+# This is the original course material. It is deliberately separate from the
+# native16 Go/Rust labs: those are matching teaching protocols, NOT
+# operation-for-operation ports of this reference.
+
+REF_OUT = ROOT / &quot;my_work&quot; / f&quot;notebook_{LAB_KEY}_reference&quot;
+already = REF_OUT / &quot;executed&quot; / REFERENCE
+if already.is_file():
+    print(&quot;already executed :&quot;, already.relative_to(ROOT))
+    print(&quot;delete that output directory to rerun from scratch.&quot;)
+elif REF_OUT.exists():
+    # A previous attempt left the directory without a finished run. Say so plainly
+    # instead of letting run_references raise a bare FileExistsError.
+    print(&quot;This lab&#x27;s output directory already exists but holds no executed copy:&quot;)
+    print(&quot; &quot;, REF_OUT.relative_to(ROOT))
+    print()
+    print(&quot;That is a leftover from an earlier attempt (possibly interrupted).&quot;)
+    print(&quot;Evidence is never erased for you. Choose ONE of these:&quot;)
+    print(&quot;  - keep the old attempt and run the reference somewhere new:&quot;)
+    print(f&quot;      uv run --no-sync python course.py run --stage {LAB_ID} --output my_work/stage{LAB_ID}_ref02&quot;)
+    print(&quot;  - or, after inspecting it, move the old folder aside yourself.&quot;)
+else:
+    print(&quot;Running the canonical reference with a fresh kernel in an isolated&quot;)
+    print(&quot;copied workspace. This is the REAL original experiment, not a&quot;)
+    print(&quot;native16 re-implementation. It may take a minute.&quot;)
+    sys.path.insert(0, str(ROOT / &quot;src&quot;))
+    from shape_lab.course import run_references
+
+    manifest = run_references(ROOT, [REFERENCE], REF_OUT, jobs=1, timeout=300)
+    for record in manifest[&quot;records&quot;]:
+        print(f&quot;{record.get(&#x27;path&#x27;)} -&gt; {record.get(&#x27;status&#x27;)} {record.get(&#x27;error&#x27;, &#x27;&#x27;)}&quot;)
+    print()
+    print(&quot;executed copy :&quot;, (REF_OUT / &quot;executed&quot; / REFERENCE).relative_to(ROOT))
+    print(&quot;If it failed, read the error above and fix the cause. Do NOT replace&quot;)
+    print(&quot;the canonical reference with a Python re-implementation of the lab.&quot;)</code></pre><div class="output"></div></section><h2 id="3-which-registered-inputs-does-this-lab-consume-input-audit">3. Which registered inputs does this lab consume? (input audit)</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Is an existing native run still valid? Source hashes must be unchanged.
+# --------------------------------------------------------------------------
+RUN_DIR = ROOT / &quot;my_work&quot; / &quot;notebook_acb_python&quot;
+RUN_DIR.mkdir(parents=True, exist_ok=True)
+
+REGISTERED = [
+    &quot;sports_v9/data/matches.json&quot;
+]
+declared = {p: (ROOT / p).stat().st_size for p in REGISTERED if (ROOT / p).is_file()}
+missing = [p for p in REGISTERED if p not in declared]
+print(&quot;declared source files:&quot;, len(REGISTERED))
+print(&quot;present             :&quot;, len(declared))
+print(&quot;missing             :&quot;, missing)
+declared</code></pre><div class="output"></div></section><h2 id="4-inspect-the-real-input-data-input-audit">4. Inspect the real input data (input audit)</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Inspect the ACTUAL registered input this lab consumes, through the existing
+# course decoder. This is the same file the native programs read.
+# --------------------------------------------------------------------------
+from shape_lab import data as course_data
+
+for rel in REGISTERED:
+    path = ROOT / rel
+    if not path.is_file():
+        print(f&quot;{rel}: MISSING&quot;)
+        continue
+    print(f&quot;{rel}  ({path.stat().st_size} bytes)&quot;)
+    if path.suffix == &quot;.csv&quot;:
+        rows = course_data.read_csv(path) if hasattr(course_data, &quot;read_csv&quot;) else None
+        if rows is None:
+            import csv
+            with path.open(newline=&quot;&quot;, encoding=&quot;utf-8-sig&quot;) as fh:
+                rows = list(csv.reader(fh))
+        print(&quot;  header :&quot;, rows[0][:8])
+        print(&quot;  data rows:&quot;, len(rows) - 1)
+    elif path.suffix == &quot;.json&quot;:
+        payload = json.loads(path.read_text(encoding=&quot;utf-8&quot;))
+        kind = type(payload).__name__
+        size = len(payload) if hasattr(payload, &quot;__len__&quot;) else &quot;-&quot;
+        print(f&quot;  json {kind} with {size} top-level entries&quot;)
+    else:
+        print(&quot;  (binary or image; the native readers decode it in Go and Rust)&quot;)</code></pre><div class="output"></div></section><h2 id="5-resolve-the-native-evidence-to-inspect-output-audit">5. Resolve the native evidence to inspect (output audit)</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Resolve the native evidence this notebook will inspect.
+#
+# TWO EXPLICIT MODES (Phase C):
+#   MODE = &quot;fresh&quot;  -&gt; create the evidence NOW, in this notebook&#x27;s own run
+#                      directory, and verify its identity. Nothing older is used.
+#   MODE = &quot;review&quot; -&gt; open a specific previous result and label it as such.
+#                      It is never silently &quot;the newest folder that looks right&quot;.
+# --------------------------------------------------------------------------
+MODE = &quot;fresh&quot;          # &quot;fresh&quot; or &quot;review&quot;
+PINNED_RUN = None       # for MODE=&quot;review&quot;: an explicit path, e.g. ROOT / &quot;my_work/native_stage01_01&quot;
+
+if MODE not in (&quot;fresh&quot;, &quot;review&quot;):
+    raise ValueError(&#x27;MODE must be &quot;fresh&quot; or &quot;review&quot;&#x27;)
+
+import importlib.util as _ilu
+_spec = _ilu.spec_from_file_location(&quot;shape_evidence&quot;, ROOT / &quot;tools/evidence_pointer.py&quot;)
+evidence = _ilu.module_from_spec(_spec)
+_spec.loader.exec_module(evidence)
+
+NATIVE_RUN = RUN_DIR / &quot;native&quot;
+
+if MODE == &quot;fresh&quot;:
+    if NATIVE_RUN.exists() and any(NATIVE_RUN.rglob(&quot;execution.json&quot;)):
+        print(&quot;This notebook&#x27;s own run already exists and is reused:&quot;)
+        print(&quot; &quot;, NATIVE_RUN.relative_to(ROOT))
+        print(&quot;Delete that directory to force a fresh execution.&quot;)
+    else:
+        print(&quot;FRESH EXECUTION: compiling and running the native Go and Rust labs now.&quot;)
+        print(&quot;This creates evidence bound to the CURRENT source and inputs.&quot;)
+        import shutil
+        built = {}
+        for _lang in (&quot;go&quot;, &quot;rust&quot;):
+            _tool = shutil.which(&quot;go&quot; if _lang == &quot;go&quot; else &quot;cargo&quot;)
+            print(f&quot;  {_lang:4s} toolchain:&quot;, _tool or &quot;MISSING (see native/guides/SETUP.md)&quot;)
+        if all(shutil.which(t) for t in (&quot;go&quot;, &quot;cargo&quot;)):
+            # run_labs writes its command logs into this directory, so it must
+            # exist first (native_course.py&#x27;s own CLI does this via new_directory).
+            NATIVE_RUN.mkdir(parents=True, exist_ok=True)
+            _result = runner.run_labs((&quot;go&quot;, &quot;rust&quot;), [LAB_KEY], NATIVE_RUN, root=ROOT)
+            print(&quot;  run status:&quot;, _result[&quot;status&quot;])
+            print(&quot;  identity  :&quot;, &quot;recorded&quot; if _result.get(&quot;identity&quot;) else &quot;MISSING&quot;)
+        else:
+            print(&quot;  Cannot execute fresh: install both toolchains, then re-run this cell.&quot;)
+
+# In review mode an explicit path is required. Never scan for &quot;something plausible&quot;.
+if MODE == &quot;review&quot;:
+    if PINNED_RUN is None:
+        print(&quot;REVIEW MODE selected but PINNED_RUN is None.&quot;)
+        print(&#x27;Set PINNED_RUN = ROOT / &quot;my_work/&lt;the exact run you mean&gt;&quot;.&#x27;)
+        found = None
+    else:
+        found = evidence.resolve(ROOT, LAB_KEY, run_dir=PINNED_RUN, allow_review=False)
+        if found is None:
+            print(&quot;REVIEW MODE: no readable run at&quot;, PINNED_RUN)
+        else:
+            print(&quot;REVIEW MODE: opening a PREVIOUS result, not a fresh execution.&quot;)
+            print(&quot;  path:&quot;, PINNED_RUN)
+            if not found[&quot;has_identity&quot;]:
+                print(&quot;  WARNING: this evidence has no bound identity; it cannot be&quot;)
+                print(&quot;  matched to the current source, binary or inputs.&quot;)
+else:
+    found = evidence.resolve(ROOT, LAB_KEY, run_dir=NATIVE_RUN, allow_review=False)
+
+results = {}
+if found is None:
+    print()
+    print(&quot;No usable native evidence for&quot;, LAB_KEY)
+else:
+    results = found[&quot;results&quot;]
+    run_dir = found[&quot;run_dir&quot;]
+    print()
+    print(&quot;run dir      :&quot;, run_dir.relative_to(ROOT) if ROOT in run_dir.parents else run_dir)
+    print(&quot;resolved via :&quot;, found[&quot;source&quot;])
+    print(&quot;run status   :&quot;, found[&quot;status&quot;])
+    print(&quot;created_at   :&quot;, found[&quot;created_at&quot;])
+    print(&quot;languages    :&quot;, sorted(results))
+    print(&quot;has identity :&quot;, found[&quot;has_identity&quot;])</code></pre><div class="output"></div></section><h2 id="6-compare-go-against-rust-and-re-check-the-input-hashes-output-audit">6. Compare Go against Rust, and re-check the input hashes (output audit)</h2>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Compare the two languages with the runner&#x27;s own tolerance rules, verify the
+# run identity, and check the inputs the native programs consumed.
+# --------------------------------------------------------------------------
+if not results:
+    print(&quot;Nothing to compare yet. Create a run and re-run the cell above.&quot;)
+else:
+    if {&quot;go&quot;, &quot;rust&quot;} &lt;= set(results):
+        comparison = runner.compare_values(results[&quot;go&quot;][&quot;metrics&quot;], results[&quot;rust&quot;][&quot;metrics&quot;])
+        comparison[&quot;input_hashes_identical&quot;] = results[&quot;go&quot;][&quot;inputs&quot;] == results[&quot;rust&quot;][&quot;inputs&quot;]
+        print(&quot;go == rust (within tolerance):&quot;, comparison[&quot;passed&quot;])
+        print(&quot;numeric values compared      :&quot;, comparison[&quot;numeric_values_compared&quot;])
+        print(&quot;max absolute difference      :&quot;, comparison[&quot;max_absolute_difference&quot;])
+        print(&quot;input hashes identical       :&quot;, comparison[&quot;input_hashes_identical&quot;])
+        if comparison[&quot;discrepancies&quot;]:
+            print(&quot;discrepancies:&quot;, comparison[&quot;discrepancies&quot;])
+        print()
+        print(&quot;Is this evidence CURRENT source, or stale?&quot;)
+        for lang in (&quot;go&quot;, &quot;rust&quot;):
+            recorded = (found[&quot;execution&quot;].get(&quot;identity&quot;) or {}).get(&quot;languages&quot;, {}).get(lang, {})
+            live = runner.source_id(lang, ROOT)
+            if not recorded:
+                print(f&quot;  {lang}: no identity recorded (legacy evidence) -&gt; cannot confirm&quot;)
+            else:
+                same_src = recorded.get(&quot;source_sha256&quot;) == live
+                print(f&quot;  {lang}: source {&#x27;MATCH&#x27; if same_src else &#x27;DIFFERS&#x27;}; recorded {str(recorded.get(&#x27;source_sha256&#x27;))[:12]} live {live[:12]}&quot;)
+    else:
+        print(&quot;Only one language result present:&quot;, sorted(results))
+
+    # The native result records the hash of every file it consumed.
+    audit = results.get(&quot;go&quot;, results.get(&quot;rust&quot;, {})).get(&quot;inputs&quot;, {})
+    for rel in sorted(audit):
+        info = audit[rel]
+        actual = runner.digest(ROOT / rel)
+        flag = &quot;OK &quot; if actual == info[&quot;sha256&quot;] else &quot;CHANGED&quot;
+        print(f&quot;{flag} {rel}&quot;)</code></pre><div class="output"></div></section><h2 id="7-continue-in-go-and-rust">7. Continue in Go and Rust</h2>
+<p>Steps 3–6 above audit the <strong>inputs and an existing native run's outputs</strong>; they do
+not recompute the lab. The native experiment itself runs in Go and Rust.</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>Notebook</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>../go/acb.ipynb</code></td>
+<td>slice copying, row storage, explicit errors</td>
+</tr>
+<tr>
+<td>Rust</td>
+<td><code>../rust/acb.ipynb</code></td>
+<td>ownership, borrowing, <code>Result</code>, owned working copies</td>
+</tr>
+</tbody>
+</table>
+<p>This notebook is <strong>unassessed</strong>.</p>
+<section class="cell"><p class="cell-label">Code · execution not executed</p><pre><code># --------------------------------------------------------------------------
+# Now switch language. The SAME lab, the same inputs, the same comparison.
+# --------------------------------------------------------------------------
+# Read next:
+#   native/guides/labs/acb.md              (the implementation guide)
+#   native/guides/LEARNING_PATHS.md                 (the C. Python path)
+#   sports_v9/lesson.md
+#
+# Then open, in this order:
+#   ../go/acb.ipynb
+#   ../rust/acb.ipynb
+#
+# Three independent challenges for THIS lab:
+# 1. Define the independent observation unit for basketball metadata and identify repeated groups.
+# 2. Change one declared parameter in read the ten-game source catalog, retain chronology and explicit competition identifiers. and predict its effect before running.
+# 3. Design a comparison that could reject the claimed benefit; explain this limitation: Metadata is not full tracking/events/season aggregates; no hidden acquisition occurs.
+#
+# Boundary to remember:
+# Metadata is not full tracking/events/season aggregates; no hidden acquisition occurs.
+#
+# Unassessed. Record your prediction, hand calculation, change, output and one
+# limitation in your own notes before moving on.
+print(&quot;python notebook complete for&quot;, LAB_KEY)</code></pre><div class="output"></div></section><a class="back" href="../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

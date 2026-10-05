@@ -75,7 +75,7 @@ def run_acceptance(root: Path, output: Path, profile: str='core', scope: str='fi
     if scope=='all' and profile=='core':raise ValueError('All references need the physics or full profile.')
     out=prepare_destination(root,output)
     env=environment_status(root,profile)
-    result={'release':'12.0.0','status':'running','scope':f'{profile}: tests + {scope} references',
+    result={'release':'14.0.0','status':'running','scope':f'{profile}: tests + {scope} references',
             'profile':profile,'environment':env,'gates':{},'errors':[],
             'learner_assessment':'not_assessed',
             'deployment':{'docker':'not_run','kubernetes':'not_run'},
@@ -88,7 +88,7 @@ def run_acceptance(root: Path, output: Path, profile: str='core', scope: str='fi
     save()
     try:
         result['gates']['direct_dependency_compatibility']='passed' if env['compatible'] else 'blocked'
-        manifest=resources('listening-to-shape:12','shape-acceptance-check',profile)
+        manifest=resources('listening-to-shape:14','shape-acceptance-check',profile)
         (out/'deploy_static.json').write_text(json.dumps(manifest,indent=2)+'\n')
         issues=validate_resources(manifest)
         result['gates']['kubernetes_project_policy']='passed' if not issues else 'failed'
@@ -109,6 +109,8 @@ def run_acceptance(root: Path, output: Path, profile: str='core', scope: str='fi
         references=run_references(root,targets,out/'references',jobs,timeout)
         result['gates']['references']='passed' if references['failed']==0 else 'failed'
         issues=validate_native_evidence(tests,references,profile,expected)
+        from .result_packet import validate_run
+        issues.extend(validate_run(out/'references'))
         result['errors'].extend(issues)
         result['gates']['evidence_consistency']='passed' if not issues else 'failed'
         result['status']='passed' if not result['errors'] else 'failed'
@@ -116,3 +118,41 @@ def run_acceptance(root: Path, output: Path, profile: str='core', scope: str='fi
         result['status']='failed';result['errors'].append(f'{type(exc).__name__}: {exc}')
         save();raise
     save();return result
+
+
+def validate_acceptance_directory(directory: Path, profile: str,
+                                  expected_paths: Sequence[str]) -> list[str]:
+    """Check actual child files after native/container execution.
+
+    A command exit code does not substitute for JUnit, notebooks and their
+    inventory. This detects inconsistent/local altered evidence; it is not an
+    authentication protocol for adversarial third-party results.
+    """
+    import xml.etree.ElementTree as ET
+    from .result_packet import validate_run, _file
+    errors: list[str] = []
+    directory=Path(directory).resolve()
+    try:
+        receipt=json.loads(_file(directory,'acceptance.json').read_text())
+        tests=json.loads(_file(directory,'tests/tests.json').read_text())
+        refs=json.loads(_file(directory,'references/execution.json').read_text())
+        if not all(isinstance(x,dict) for x in (receipt,tests,refs)):
+            return ['Child reports must be JSON objects.']
+        if receipt.get('status')!='passed' or receipt.get('profile')!=profile:
+            errors.append('Child acceptance did not pass the requested profile.')
+        if receipt.get('expected_reference_paths')!=list(expected_paths):
+            errors.append('Child acceptance declared a different notebook scope.')
+        errors.extend(validate_native_evidence(tests,refs,profile,expected_paths))
+        tree=ET.parse(_file(directory,'tests/junit.xml'))
+        cases=list(tree.iter('testcase'))
+        observed={'total':len(cases),
+                  'skipped':sum(c.find('skipped') is not None for c in cases),
+                  'failures':sum(c.find('failure') is not None for c in cases),
+                  'errors':sum(c.find('error') is not None for c in cases)}
+        observed['passed']=observed['total']-sum(observed[k] for k in ('skipped','failures','errors'))
+        if observed!=tests.get('counts'):
+            errors.append('Actual JUnit outcomes disagree with reported test counts.')
+        errors.extend(validate_run(directory/'references'))
+    except (OSError,ValueError,TypeError,KeyError,AttributeError,ET.ParseError) as exc:
+        errors.append(f'Incomplete or invalid child evidence: {type(exc).__name__}: {exc}')
+    return errors

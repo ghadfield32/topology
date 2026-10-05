@@ -1,0 +1,41 @@
+{
+  "http": [
+    {
+      "path": "/START_HERE.html",
+      "status": 200
+    },
+    {
+      "path": "/reports/v13/example_report/index.html",
+      "status": 200
+    },
+    {
+      "path": "/my_work/",
+      "status": 403
+    },
+    {
+      "path": "/.git/config",
+      "status": 403
+    },
+    {
+      "path": "/%2e%2e/etc/passwd",
+      "status": 403
+    },
+    {
+      "path": "/progress/learning_log_v5.json",
+      "status": 403
+    },
+    {
+      "path": "/src/",
+      "status": 403
+    }
+  ],
+  "navigation": "blocked_or_failed",
+  "rendering": "passed",
+  "navigation_error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:34847/START_HERE.html\nCall log:\n  - navigating to \"http://127.0.0.1:34847/START_HERE.html\", waiting until \"load\"\n",
+  "stage_cards": 31,
+  "search_visible": 2,
+  "mobile_overflow": false,
+  "example_reflections": 7,
+  "example_images_loaded": true,
+  "method": "set_content with generated HTML and its exact local stylesheet inlined; PNGs embedded for visual check. Independent from blocked navigation; original files unchanged."
+}

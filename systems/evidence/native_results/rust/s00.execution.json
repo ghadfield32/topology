@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/rust/shape-rust",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "s00"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.0015110649999314774,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    },\n    \"sports_v8/data/spl_selected_frames.json\": {\n      \"bytes\": 6528,\n      \"sha256\": \"4ddf9c2bd6688634b1f622b7c3f8ddf6a6e5f162bf9e35bfb51e7e65c5bafdcc\"\n    }\n  },\n  \"lab\": \"s00\",\n  \"language\": \"rust\",\n  \"metrics\": {\n    \"centroid_m\": [\n      4.031211893377345,\n      -7.6953969094303085,\n      2.76572456960666\n    ],\n    \"independent_trials\": 1,\n    \"landing_offset_m\": [\n      -0.064516,\n      0.26542999999999994\n    ],\n    \"scope\": \"mixed units converted, selected observations remain one trial\",\n    \"selected_frames\": 12,\n    \"time_seconds\": [\n      0.0,\n      0.016666666666666666,\n      1.5,\n      1.8333333333333333,\n      1.9166666666666667,\n      2.0,\n      2.0833333333333335,\n      2.1666666666666665,\n      2.25,\n      2.3333333333333335,\n      3.0,\n      3.5\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

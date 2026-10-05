@@ -1,0 +1,25 @@
+test_bool_rejected (__main__.BridgeTests.test_bool_rejected) ... ok
+test_empty_chunks_do_not_change_mean (__main__.BridgeTests.test_empty_chunks_do_not_change_mean) ... ok
+test_empty_stream_rejected (__main__.BridgeTests.test_empty_stream_rejected) ... ok
+test_fixture_units_and_count (__main__.BridgeTests.test_fixture_units_and_count) ... ok
+test_generators_supported (__main__.BridgeTests.test_generators_supported) ... ok
+test_hash_mismatch_is_failure (__main__.BridgeTests.test_hash_mismatch_is_failure) ... ok
+test_infinity_rejected (__main__.BridgeTests.test_infinity_rejected) ... ok
+test_invalid_count_rejected (__main__.BridgeTests.test_invalid_count_rejected) ... ok
+test_invalid_dimension_rejected (__main__.BridgeTests.test_invalid_dimension_rejected) ... ok
+test_merge_has_correct_denominator (__main__.BridgeTests.test_merge_has_correct_denominator) ... ok
+test_nan_rejected (__main__.BridgeTests.test_nan_rejected) ... ok
+test_output_cannot_escape_my_work (__main__.BridgeTests.test_output_cannot_escape_my_work) ... ok
+test_output_refuses_overwrite (__main__.BridgeTests.test_output_refuses_overwrite) ... ok
+test_reordered_records_preserve_centroid (__main__.BridgeTests.test_reordered_records_preserve_centroid) ... ok
+test_single_point (__main__.BridgeTests.test_single_point) ... ok
+test_source_unchanged (__main__.BridgeTests.test_source_unchanged) ... ok
+test_string_rejected (__main__.BridgeTests.test_string_rejected) ... ok
+test_translation_changes_mean_by_translation (__main__.BridgeTests.test_translation_changes_mean_by_translation) ... ok
+test_unequal_chunks_are_weighted (__main__.BridgeTests.test_unequal_chunks_are_weighted) ... ok
+test_unknown_units_fail_after_valid_hash (__main__.BridgeTests.test_unknown_units_fail_after_valid_hash) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.005s
+
+OK

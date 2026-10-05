@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/native_build/go/shape-go",
+    "--repo",
+    "/mnt/data/shape17_build/listening_to_shape_lab",
+    "--lab",
+    "stage02"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab",
+  "exit_code": 0,
+  "seconds": 0.002249182000014116,
+  "stdout": "{\n  \"implementation\": \"native; no Python calls or reference-result reads\",\n  \"inputs\": {\n    \"data/raw/iris.csv\": {\n      \"bytes\": 4676,\n      \"sha256\": \"160191b2e9c845b2478a7e6722acdb8ad6eb54c82a5353972fb71b931772fe4f\"\n    },\n    \"native/protocols/labs.json\": {\n      \"bytes\": 77988,\n      \"sha256\": \"94b06623b6036abbb825bc376cf6eb0662e3946a683f7bd51e34af6cd582a753\"\n    }\n  },\n  \"lab\": \"stage02\",\n  \"language\": \"go\",\n  \"metrics\": {\n    \"component_counts\": [\n      23,\n      10,\n      1,\n      1\n    ],\n    \"distances_L1_L2_Linf\": [\n      [\n        1.3458556790672125,\n        1.0858574724170784,\n        1.0426728164875012\n      ],\n      [\n        1.3006833980309684,\n        0.8739456395635085,\n        0.6256036898925004\n      ],\n      [\n        1.6608093926183263,\n        1.1291622061973157,\n        0.8341382531900008\n      ],\n      [\n        0.36012599458735595,\n        0.2578112218856778,\n        0.20853456329750042\n      ],\n      [\n        1.8455244163934053,\n        1.0334069634049796,\n        0.8341382531900009\n      ],\n      [\n        1.1417266799451309,\n        0.8054148039228454,\n        0.7579571564492805\n      ],\n      [\n        0.4288399775664009,\n        0.26681123961900605,\n        0.20853456329750042\n      ]\n    ],\n    \"radii\": [\n      0.2,\n      0.5,\n      1,\n      2\n    ],\n    \"scope\": \"scaled sample geometry, not biological topology proof\",\n    \"squared_distance_counterexample\": [\n      4,\n      2\n    ]\n  },\n  \"original_notebook_parity\": \"not_certified; see native/COVERAGE.md\",\n  \"protocol\": \"native16 shared teaching adaptation\",\n  \"schema\": \"shape.native.v16\",\n  \"status\": \"completed\"\n}\n",
+  "stderr": ""
+}

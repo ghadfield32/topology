@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>[RustCrypto]: CPU Feature Detection · Listening to Shape</title><link rel="stylesheet" href="../../../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../../../START_HERE.html">Course home</a><a href="../../../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../../../native/rust/vendor/cpufeatures/README.md">native/rust/vendor/cpufeatures/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="rustcrypto-cpu-feature-detection"><a href="https://github.com/rustcrypto">RustCrypto</a>: CPU Feature Detection</h1>
+<p><a href="https://crates.io/crates/cpufeatures"><img alt="crate" src="https://img.shields.io/crates/v/cpufeatures.svg?logo=rust"/></a>
+<a href="https://docs.rs/cpufeatures/"><img alt="Docs" src="https://docs.rs/cpufeatures/badge.svg"/></a>
+<a href="https://github.com/RustCrypto/utils/actions/workflows/cpufeatures.yml"><img alt="Build Status" src="https://github.com/RustCrypto/utils/actions/workflows/cpufeatures.yml/badge.svg"/></a>
+<img alt="Apache2/MIT licensed" src="https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg"/>
+<img alt="Rust Version" src="https://img.shields.io/badge/rustc-1.40+-blue.svg"/>
+<a href="https://rustcrypto.zulipchat.com/#narrow/stream/260052-utils"><img alt="Project Chat" src="https://img.shields.io/badge/zulip-join_chat-blue.svg"/></a></p>
+<p>Lightweight and efficient runtime CPU feature detection for <code>aarch64</code>, <code>loongarch64</code>, and
+<code>x86</code>/<code>x86_64</code> targets.</p>
+<p>Supports <code>no_std</code> as well as mobile targets including iOS and Android,
+providing an alternative to the <code>std</code>-dependent <code>is_x86_feature_detected!</code>
+macro.</p>
+<p><a href="https://docs.rs/cpufeatures/">Documentation</a></p>
+<h1 id="supported-target-architectures">Supported target architectures</h1>
+<p>*NOTE: target features with an asterisk are unstable (nightly-only) and subject
+to change to match upstream name changes in the Rust standard library.</p>
+<h2 id="aarch64"><code>aarch64</code></h2>
+<p>Linux, iOS, and macOS/ARM only (ARM64 does not support OS-independent feature detection)</p>
+<p>Target features:</p>
+<ul>
+<li><code>aes</code>*</li>
+<li><code>sha2</code>*</li>
+<li><code>sha3</code>*</li>
+</ul>
+<h2 id="loongarch64"><code>loongarch64</code></h2>
+<p>Linux only (LoongArch64 does not support OS-independent feature detection)</p>
+<p>Target features:</p>
+<ul>
+<li><code>lam</code>*</li>
+<li><code>ual</code>*</li>
+<li><code>fpu</code>*</li>
+<li><code>lsx</code>*</li>
+<li><code>lasx</code>*</li>
+<li><code>crc32</code>*</li>
+<li><code>complex</code>*</li>
+<li><code>crypto</code>*</li>
+<li><code>lvz</code>*</li>
+<li><code>lbt.x86</code>*</li>
+<li><code>lbt.arm</code>*</li>
+<li><code>lbt.mips</code>*</li>
+<li><code>ptw</code>*</li>
+</ul>
+<h2 id="x86x86_64"><code>x86</code>/<code>x86_64</code></h2>
+<p>OS independent and <code>no_std</code>-friendly</p>
+<p>Target features:</p>
+<ul>
+<li><code>adx</code></li>
+<li><code>aes</code></li>
+<li><code>avx</code></li>
+<li><code>avx2</code></li>
+<li><code>avx512bw</code>*</li>
+<li><code>avx512cd</code>*</li>
+<li><code>avx512dq</code>*</li>
+<li><code>avx512er</code>*</li>
+<li><code>avx512f</code>*</li>
+<li><code>avx512ifma</code>*</li>
+<li><code>avx512pf</code>*</li>
+<li><code>avx512vl</code>*</li>
+<li><code>avx512vbmi</code>*</li>
+<li><code>avx512vbmi2</code>*</li>
+<li><code>bmi1</code></li>
+<li><code>bmi2</code></li>
+<li><code>fma</code>,</li>
+<li><code>mmx</code></li>
+<li><code>pclmulqdq</code></li>
+<li><code>popcnt</code></li>
+<li><code>rdrand</code></li>
+<li><code>rdseed</code></li>
+<li><code>sgx</code></li>
+<li><code>sha</code></li>
+<li><code>sse</code></li>
+<li><code>sse2</code></li>
+<li><code>sse3</code></li>
+<li><code>sse4.1</code></li>
+<li><code>sse4.2</code></li>
+<li><code>ssse3</code></li>
+</ul>
+<p>If you would like detection support for a target feature which is not on
+this list, please <a href="https://github.com/RustCrypto/utils/issues/new?title=cpufeatures:%20requesting%20support%20for%20CHANGEME%20target%20feature">open a GitHub issue</a>.</p>
+<h2 id="license">License</h2>
+<p>Licensed under either of:</p>
+<ul>
+<li><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></li>
+<li><a href="http://opensource.org/licenses/MIT">MIT license</a></li>
+</ul>
+<p>at your option.</p>
+<h3 id="contribution">Contribution</h3>
+<p>Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
+dual licensed as above, without any additional terms or conditions.</p>
+<p>[//]: # (badges)</p>
+<p>[//]: # (general links)</p>
+<a class="back" href="../../../../../START_HERE.html">Back to the course home</a></main></div></body></html>

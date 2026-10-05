@@ -23,6 +23,8 @@ def main(root: Path, argv: list[str]|None=None) -> int:
     a.add_argument('--output',type=Path,required=True);a.add_argument('--jobs',type=int,default=1,choices=range(1,5))
     a.add_argument('--timeout',type=int,default=300)
     a=sub.add_parser('acceptance');a.add_argument('--profile',choices=['core','physics','full'],default='core');a.add_argument('--references',choices=['first','all'],default='first');a.add_argument('--jobs',type=int,choices=range(1,5),default=1);a.add_argument('--timeout',type=int,default=300);a.add_argument('--output',type=Path,required=True)
+    a=sub.add_parser('study');a.add_argument('item');a.add_argument('--output',type=Path,required=True)
+    a=sub.add_parser('report');a.add_argument('--run',type=Path,required=True);a.add_argument('--reflection',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
     a=sub.add_parser('practice');a.add_argument('item');a.add_argument('--output',type=Path,required=True)
     a=sub.add_parser('serve');a.add_argument('--port',type=int,default=8000)
     a=sub.add_parser('setup');a.add_argument('--profile',choices=['core','physics','full'],default='core')
@@ -31,6 +33,15 @@ def main(root: Path, argv: list[str]|None=None) -> int:
     if args.command=='acceptance':
         from .acceptance import run_acceptance
         d=run_acceptance(root,args.output,args.profile,args.references,args.jobs,args.timeout);show(d);return int(d['status']!='passed')
+    elif args.command=='study':
+        from .study_session import prepare_study
+        show(prepare_study(root,args.item,args.output))
+    elif args.command=='report':
+        from .result_packet import export_packet
+        resolved=args.output.resolve()
+        if resolved.is_relative_to(root.resolve()) and not resolved.is_relative_to(root.resolve()/'my_work'):
+            raise ValueError('Put reports under my_work or outside the course.')
+        show(export_packet(args.run,args.output,json.loads(args.reflection.read_text(encoding='utf-8'))))
     elif args.command=='practice':
         from .practice_workspace import prepare_practice
         show(prepare_practice(root,args.item,args.output))

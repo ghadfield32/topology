@@ -64,6 +64,55 @@ The 130 other notebook differences in the archive are saved-output refreshes
 only; comparing stripped notebook source confirmed the teaching cells are
 identical, so nothing was overwritten.
 
+## Completed later: the coordinated v14 reconciliation + v17 systems layer
+
+Everything the section above deferred has since been imported and reconciled,
+together with the new v17 engineering layer, from
+`Listening_to_Shape_Learning_System_v17.zip` (edition 17, base v16). This is the
+change the paragraph above called "a separate, reviewable change"; it is now
+done.
+
+| Path | What it adds |
+|---|---|
+| `systems/`, `learning/`, `learn.py`, `LEARN_TOPOLOGY.html` | source-mapped engineering projects (sys00–sys09), generated language interfaces and the new front door |
+| `docs/v17/` | the archive's own first-run, source-map, migration, design, verification and agent-handoff records |
+| `src/shape_lab/result_packet.py`, `study_session.py` | output sealing and the `study`/`report` learning-to-results route |
+| v13 edits to `acceptance.py`, `cli.py`, `course.py`, `deployment.py` | `validate_acceptance_directory`, on-disk child-evidence checks, `study`/`report` CLI commands |
+| `tests/test_results_v13.py`, `tests/test_deployment_receipts_v13.py` | the ten deferred tests |
+| `docs/release/RESULTS_WORKFLOW.md`, `IMPLEMENTATION_V13.md` | the results-and-reflection workflow |
+| `reports/v13/` | archived v13 evidence used by the reader and results workflow |
+| `tools/verify_v17_archive.py`, `MANIFEST_V17.sha256`, `PACKAGE_V17.json` | archive verification for the separately extracted package |
+| `.github/workflows/systems-learning.yml`, `.vscode/tasks.v17.example.json`, `.devcontainer/README.v17.md` | optional systems CI and editor/container examples |
+
+Version reconciliation: `pyproject.toml`, `src/shape_lab/__init__.py`,
+`tests/test_release_version_v3.py`, `curriculum/catalog.json`,
+`RELEASE_MANIFEST.json` and `docs/release/ENVIRONMENT_STATUS.json` identify
+**14.0.0**; container/Kubernetes image tags are `listening-to-shape:14` with
+namespace `shape-learning-v14`. The genuine `uv.lock` was re-resolved so its
+root package agrees with the manifest (normal `uv lock` resolution, not a
+hand-written lock).
+
+Deliberately preserved, not overwritten: the local `uv.lock`, the
+`workbooks/polyglot/` notebooks and `tools/build_language_notebooks.py`,
+`native_course.py`'s newer `run_identity` evidence binding (which the archive
+lacked), the local `docs/release/NATIVE16_IMPORT.md` record, and the working-tree
+notebook edits. The archive's `reports/v12` evidence is replaced by its
+`reports/v13` counterpart for the reader only; `reports/v12/*` historical
+records are untouched.
+
+## Test-count reconciliation (why 811, not the archive's 821)
+
+The archive reports **821 passed, 2 skipped** on its v13/v14 tree. This
+repository ran the v12 tree plus the additive native/polyglot, notebook,
+verification-tooling and CI/deploy tests, which was **811 passed, 4 skipped**
+*before* the reconciliation above. The deferred ten v13 test files are now
+imported; see the current totals in
+[docs/release/VERIFICATION.md](VERIFICATION.md), which is the authoritative
+record for this checkout. The skip difference was environmental: this host
+skips one symlink test and one POSIX mode-bit test that the Linux reference host
+ran, and the archive's Ripser/GUDHI skips are not among this run's skips.
+Neither number is a measure of mathematical completeness.
+
 ## What executed on this machine
 
 Environment: Windows x86-64, Python 3.13.5, Go 1.27.1, Rust/Cargo 1.97.1
@@ -124,13 +173,13 @@ cross-language agreement at max absolute difference `0.0` over 17 compared
 values. These notebooks compute nothing scientific in Python, are unassessed,
 and are not a second curriculum.
 
-## Test-count reconciliation (why 811, not the archive's 821)
+## Test-count reconciliation (why not the archive's 821)
 
 The archive reports **821 passed, 2 skipped** on its v13/v14 tree. This
-repository runs the v12 tree plus the additive native/polyglot, notebook,
-verification-tooling and CI/deploy tests, which is **811 passed, 4 skipped**.
-The 10-test gap is the deferred v13 test files above.
-The skip difference is also environmental and unrelated: this host skips one
-symlink test and one POSIX mode-bit test that the Linux reference host ran.
-Neither number is a measure of mathematical completeness, and the archive's
-Ripser/GUDHI skips are not among this run's skips.
+repository runs its own tree plus the additive native/polyglot, notebook,
+verification-tooling, systems and CI/deploy tests. Its exact current totals are
+recorded in [VERIFICATION.md](VERIFICATION.md) rather than restated here, so the
+count cannot drift. The historical skip difference was environmental: this host
+skips one symlink test and one POSIX mode-bit test the Linux reference host ran,
+and the archive's Ripser/GUDHI skips were not among this run's skips. Neither
+number is a measure of mathematical completeness.

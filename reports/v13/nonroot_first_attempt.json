@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "reason": "Harness used execution-input copy that intentionally excludes saved report fixtures required by several test assertions; full distribution copy is the appropriate read-only installation harness. No tests were skipped or altered to resolve this.",
+  "passed": 797,
+  "failed": 8,
+  "skipped": 2
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/opt/pyvenv/bin/python",
+    "-c",
+    "import sys,math;sys.path.insert(0,sys.argv[1]);import shape_cpp; p=shape_cpp.predict([1.,2.,3.],[2.,0.,1.],0.5,9.81);assert max(abs(a-b) for a,b in zip(p,[2.,2.,2.27375]))<1e-12;d=shape_cpp.mst_deaths([[0.,0.,0.],[1.,0.,0.],[1.,1.,0.],[0.,1.,0.]]);assert d==[1.,1.,1.];print('pybind11 actual import, trajectory and topology checks passed')",
+    "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys03/check01/build"
+  ],
+  "cwd": "/mnt/data/shape17_build/listening_to_shape_lab/my_work/v17_projects_final/sys03",
+  "exit_code": 0,
+  "seconds": 0.6047236999997949,
+  "stdout": "pybind11 actual import, trajectory and topology checks passed\n",
+  "stderr": ""
+}

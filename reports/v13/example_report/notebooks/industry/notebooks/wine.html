@@ -1,0 +1,173 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>wine.ipynb</title><style>
+body{font:17px/1.65 system-ui,sans-serif;max-width:1080px;margin:3rem auto;padding:0 1.3rem;color:#17333b;background:#f8faf8}
+a{color:#086865}h1{font-size:2.3rem;line-height:1.15}h2{margin-top:2rem}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:1rem;background:#e9f0ed;border-radius:8px;font-size:.91rem}
+article{background:white;border:1px solid #d6e0db;border-radius:10px;padding:1.2rem;margin:1.2rem 0}
+.notice{border-left:4px solid #aa6814;padding:.7rem 1rem;background:#fff3de}
+img{max-width:100%;height:auto}li{margin:.45rem 0}code{overflow-wrap:anywhere}
+</style></head><body><h1>wine.ipynb</h1><p class="notice">Saved executed evidence. HTML/JavaScript/SVG notebook outputs are not executed or embedded here.</p><article><h2>Code · 1</h2><pre># Runtime evidence: this cell checks the environment actually used by the kernel.
+import sys as _shape_sys, json as _shape_json, importlib.util as _shape_util
+print(&quot;SHAPE_RUNTIME_PROVENANCE=&quot; + _shape_json.dumps({
+    &quot;python_executable&quot;: _shape_sys.executable,
+    &quot;python_version&quot;: _shape_sys.version.split()[0],
+    &quot;shape_lab_origin&quot;: _shape_util.find_spec(&quot;shape_lab&quot;).origin
+}))
+del _shape_sys, _shape_json, _shape_util
+</pre><h3>Observed output</h3><pre>SHAPE_RUNTIME_PROVENANCE={&quot;python_executable&quot;: &quot;/mnt/data/v13_uv_check/.venv/bin/python3&quot;, &quot;python_version&quot;: &quot;3.13.5&quot;, &quot;shape_lab_origin&quot;: &quot;/tmp/shape-course-bii8dscv/course/src/shape_lab/__init__.py&quot;}
+</pre></article><article><h2>Explanation · 2</h2><pre># Food chemistry: do topological descriptors add information?
+
+**Beginner route:** read the [case lesson](../lessons/wine.md) and [dataset card](../cards/wine.md). Predict each result before executing.
+
+Source: [Aeberhard and Forina (1992), Wine, UCI Machine Learning Repository.](https://archive.ics.uci.edu/dataset/109/wine). Snapshot obtained by offline export from sklearn 1.8.0. Numerical results below are our computations, not source claims.
+
+This fixed test partition is a teaching demonstration, not an untouched future benchmark.</pre></article><article><h2>Code · 3</h2><pre>from IPython import get_ipython
+if get_ipython() is not None:
+    get_ipython().run_line_magic(&#x27;matplotlib&#x27;,&#x27;inline&#x27;)
+from pathlib import Path
+import sys, json, hashlib
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression, Ridge, LinearRegression
+from sklearn.metrics import accuracy_score, balanced_accuracy_score, log_loss, mean_absolute_error, mean_squared_error, roc_auc_score, confusion_matrix
+ROOT = next(p for p in (Path.cwd(), *Path.cwd().parents) if (p / &quot;src/shape_lab&quot;).is_dir())
+sys.path.insert(0, str(ROOT / &quot;src&quot;))
+from shape_lab.industries import *
+from shape_lab.persistence import rips_filtration, persistent_homology, diagram
+CASE = &quot;wine&quot;
+OUT = ROOT / &quot;reports/v6/industries&quot; / CASE
+OUT.mkdir(parents=True, exist_ok=True)
+SEED = 20260920
+
+def write_json(name, value):
+    def convert(x):
+        if isinstance(x, np.ndarray): return x.tolist()
+        if isinstance(x, np.generic): return x.item()
+        raise TypeError(type(x).__name__)
+    (OUT / name).write_text(json.dumps(value, indent=2, default=convert, allow_nan=False))
+
+def plot_done(name):
+    plt.tight_layout()
+    plt.savefig(OUT / (name + &quot;.png&quot;), dpi=125)
+    plt.show()
+
+def regression_metrics(y, pred):
+    return {&quot;mae&quot;:float(mean_absolute_error(y,pred)),&quot;rmse&quot;:float(mean_squared_error(y,pred)**.5)}
+
+def class_metrics(y, pred):
+    return {&quot;accuracy&quot;:float(accuracy_score(y,pred)),&quot;balanced_accuracy&quot;:float(balanced_accuracy_score(y,pred))}
+
+def stratified_split(y):
+    index=np.arange(len(y))
+    train, other=train_test_split(index,test_size=.4,random_state=SEED,stratify=y)
+    val,test=train_test_split(other,test_size=.5,random_state=SEED,stratify=y[other])
+    return {&quot;train&quot;:np.sort(train),&quot;validation&quot;:np.sort(val),&quot;test&quot;:np.sort(test)}
+
+def save_split(split, ids):
+    frames=[pd.DataFrame({&quot;example_index&quot;:v,&quot;source_id&quot;:np.asarray(ids)[v],&quot;partition&quot;:k}) for k,v in split.items()]
+    pd.concat(frames,ignore_index=True).to_csv(OUT / &quot;split.csv&quot;,index=False)
+
+def topology_report(points, name):
+    bars=persistent_homology(rips_filtration(points,max_homology=1),max_dim=1)
+    finite=[{&quot;dimension&quot;:b.dim,&quot;birth&quot;:b.birth,&quot;death&quot;:b.death} for b in bars if np.isfinite(b.death)]
+    write_json(name+&quot;.json&quot;,{&quot;points&quot;:len(points),&quot;coefficient_field&quot;:2,&quot;edge_convention&quot;:&quot;distance &lt;= epsilon&quot;,&quot;finite_bars&quot;:finite,&quot;essential_h0&quot;:1,&quot;role&quot;:&quot;exploratory descriptor, not significance&quot;})
+    plt.figure(figsize=(7,4))
+    for dim in (0,1):
+        a=diagram(bars,dim,finite_only=True)
+        if len(a): plt.scatter(a[:,0],a[:,1],label=&quot;H&quot;+str(dim),s=22)
+    plt.xlabel(&quot;Birth (declared metric units)&quot;);plt.ylabel(&quot;Death (same units)&quot;);plt.title(name.replace(&#x27;_&#x27;,&#x27; &#x27;));plt.legend()
+    plot_done(name)
+    return finite
+
+df, meta = load_dataset(CASE)
+print(meta[&quot;title&quot;])
+print(&quot;Shape:&quot;,df.shape,&quot;; snapshot SHA-256:&quot;,meta[&quot;data_sha256&quot;])
+print(&quot;Observation unit:&quot;,meta[&quot;observation_unit&quot;])
+display(df.head())
+write_json(&quot;protocol.json&quot;,{&quot;dataset&quot;:CASE,&quot;seed&quot;:SEED,&quot;data_sha256&quot;:meta[&quot;data_sha256&quot;],&quot;code_sha256&quot;:hashlib.sha256((ROOT/&quot;src/shape_lab/industries.py&quot;).read_bytes()).hexdigest(),&quot;data_kind&quot;:&quot;observed&quot;,&quot;evaluation&quot;:&quot;fixed teaching experiment; displayed test outcomes are now exposed&quot;,&quot;external_validation&quot;:False})
+</pre><h3>Observed output</h3><pre>Chemistry, scale and out-of-sample topological descriptors
+Shape: (178, 15) ; snapshot SHA-256: 2f6d6d39c2ba1898b9d254feb78ae575383fac1f9ed735c9aaa9308293568aac
+Observation unit: One wine sample; cultivar is a category, not a quality score.
+</pre><pre>   row_id  alcohol  malic_acid   ash  alcalinity_of_ash  magnesium  \
+0       0    14.23        1.71  2.43               15.6        127   
+1       1    13.20        1.78  2.14               11.2        100   
+2       2    13.16        2.36  2.67               18.6        101   
+3       3    14.37        1.95  2.50               16.8        113   
+4       4    13.24        2.59  2.87               21.0        118   
+
+   total_phenols  flavanoids  nonflavanoid_phenols  proanthocyanins  \
+0           2.80        3.06                  0.28             2.29   
+1           2.65        2.76                  0.26             1.28   
+2           2.80        3.24                  0.30             2.81   
+3           3.85        3.49                  0.24             2.18   
+4           2.80        2.69                  0.39             1.82   
+
+   color_intensity   hue  od280_od315_of_diluted_wines  proline  label  
+0             5.64  1.04                          3.92     1065      0  
+1             4.38  1.05                          3.40     1050      0  
+2             5.68  1.03                          3.17     1185      0  
+3             7.80  0.86                          3.45     1480      0  
+4             4.32  1.04                          2.93      735      0  </pre></article><article><h2>Explanation · 4</h2><pre>## 1. Distinguish measurement, cultivar and quality
+
+The target identifies three cultivars, not consumer quality or safety. A change from grams to milligrams can alter raw Euclidean distances. Standardization is therefore an explicit modeling choice, fitted on training data only.
+
+Our comparison gives every model the **same supervised fitting rows**. A separate subset of training rows is reserved as a fixed reference cloud.</pre></article><article><h2>Code · 5</h2><pre>features=[c for c in df if c not in (&quot;row_id&quot;,&quot;label&quot;)];x=df[features].to_numpy(float);y=df.label.to_numpy(int)
+split=stratified_split(y);save_split(split,df.row_id)
+scaler=TrainScaler.fit(x[split[&quot;train&quot;]]);z=scaler.transform(x)
+order=np.random.default_rng(SEED).permutation(split[&quot;train&quot;])
+anchors=order[:30];fit_rows=np.sort(order[30:])
+assert not(set(anchors)&amp;set(fit_rows))
+assert not(set(anchors)&amp;set(split[&quot;test&quot;]))
+write_json(&quot;preprocessing.json&quot;,{&quot;feature_names&quot;:features,&quot;mean&quot;:scaler.mean,&quot;scale&quot;:scaler.scale,&quot;anchor_rows&quot;:anchors,&quot;supervised_rows&quot;:fit_rows,&quot;neighbors&quot;:8})
+print(&quot;Reference rows:&quot;,len(anchors),&quot;supervised rows:&quot;,len(fit_rows))</pre><h3>Observed output</h3><pre>Reference rows: 30 supervised rows: 76
+</pre></article><article><h2>Explanation · 6</h2><pre>## 2. Define a descriptor that can be applied to an unseen row
+
+For one query, choose its eight nearest training reference points. Form the nine-point Rips complex through dimension two. Summarize finite H0 merge lengths and H1 lifetimes. The reference set is frozen; test observations never become reference points.
+
+The six numbers are engineered local summaries. They are not a magical recovery of the topology of one vector. Small complete complexes keep the computation inspectable.</pre></article><article><h2>Code · 7</h2><pre>descriptor_names=[&quot;h0_mean&quot;,&quot;h0_std&quot;,&quot;h0_max&quot;,&quot;h1_count&quot;,&quot;h1_max_lifetime&quot;,&quot;h1_total_lifetime&quot;]
+needed=np.r_[fit_rows,split[&quot;validation&quot;],split[&quot;test&quot;]]
+top=np.full((len(df),6),np.nan)
+top[needed]=local_topology(z[needed],z[anchors],k=8)
+assert np.isfinite(top[needed]).all()
+top_scaler=TrainScaler.fit(top[fit_rows]);ts=np.full_like(top,np.nan);ts[needed]=top_scaler.transform(top[needed])
+pd.DataFrame(top[needed],columns=descriptor_names,index=needed).rename_axis(&quot;row_id&quot;).to_csv(OUT/&quot;topological_features.csv&quot;)
+write_json(&quot;topology_preprocessing.json&quot;,{&quot;names&quot;:descriptor_names,&quot;mean&quot;:top_scaler.mean,&quot;scale&quot;:top_scaler.scale,&quot;fit_rows&quot;:fit_rows})
+print(pd.DataFrame(top[fit_rows],columns=descriptor_names).describe().round(3))</pre><h3>Observed output</h3><pre>       h0_mean  h0_std  h0_max  h1_count  h1_max_lifetime  h1_total_lifetime
+count   76.000  76.000  76.000    76.000           76.000             76.000
+mean     2.404   0.405   3.093     0.776            0.102              0.114
+std      0.251   0.172   0.494     0.810            0.144              0.164
+min      1.932   0.131   2.267     0.000            0.000              0.000
+25%      2.196   0.268   2.731     0.000            0.000              0.000
+50%      2.421   0.389   2.994     1.000            0.047              0.047
+75%      2.563   0.517   3.279     1.000            0.169              0.198
+max      3.156   0.941   5.025     3.000            0.622              0.722
+</pre></article><article><h2>Explanation · 8</h2><pre>## 3. Compare raw, topological, and combined representations
+
+C=1, eight neighbors and thirty anchors are fixed teaching choices—not the outcome of a hidden test-set search. We show validation and test scores separately. A win here would be a result for this one protocol, not evidence that topology is generally superior.</pre></article><article><h2>Code · 9</h2><pre>representations={&quot;raw&quot;:z,&quot;topology&quot;:ts,&quot;combined&quot;:np.column_stack((z,ts))}
+results={};predictions={}
+for name,a in representations.items():
+    model=LogisticRegression(C=1,max_iter=3000,random_state=SEED).fit(a[fit_rows],y[fit_rows])
+    results[name]={}
+    for key in (&quot;validation&quot;,&quot;test&quot;):
+        ix=split[key];pred=model.predict(a[ix]);results[name][key]=class_metrics(y[ix],pred)
+        if key==&quot;test&quot;: predictions[name]=pred
+majority=int(np.bincount(y[fit_rows]).argmax());results[&quot;majority&quot;]={k:class_metrics(y[ix],np.full(len(ix),majority)) for k,ix in split.items() if k!=&quot;train&quot;}
+write_json(&quot;results.json&quot;,results)
+pd.DataFrame({&quot;row_id&quot;:split[&quot;test&quot;],&quot;cultivar&quot;:y[split[&quot;test&quot;]],**predictions}).to_csv(OUT/&quot;test_predictions.csv&quot;,index=False)
+display(pd.DataFrame({name:r[&quot;test&quot;] for name,r in results.items()}))
+plt.figure(figsize=(7,4));plt.bar(list(results),[r[&quot;test&quot;][&quot;accuracy&quot;] for r in results.values()]);plt.ylim(0,1)
+plt.ylabel(&quot;Test accuracy&quot;);plt.title(&quot;Same fitting rows; fixed representations&quot;)
+plot_done(&quot;comparison&quot;)</pre><pre>                        raw  topology  combined  majority
+accuracy           0.888889  0.638889  0.944444  0.388889
+balanced_accuracy  0.895238  0.669048  0.942857  0.333333</pre><pre>&lt;Figure size 700x400 with 1 Axes&gt;</pre><img alt="Saved experiment figure" src="wine-8-1.png"></article><article><h2>Explanation · 10</h2><pre>## 4. Check a property, not just a score
+
+Multiplying all standardized coordinates by two should multiply Rips birth/death distances by two. Counts need not be reinterpreted as physical units. The assertion below tests the descriptor contract independently of cultivar prediction. Then explain why arbitrary feature-wise scaling is a different operation.</pre></article><article><h2>Code · 11</h2><pre>q=z[split[&quot;validation&quot;][:2]];a=z[anchors]
+one=local_topology(q,a,k=8);two=local_topology(2*q,2*a,k=8)
+np.testing.assert_allclose(two[:,[0,1,2,4,5]],2*one[:,[0,1,2,4,5]],atol=1e-10)
+np.testing.assert_allclose(two[:,3],one[:,3]);print(&quot;Uniform-scale contract passed&quot;)</pre><h3>Observed output</h3><pre>Uniform-scale contract passed
+</pre></article><article><h2>Explanation · 12</h2><pre>## Save your evidence
+
+Create `my_work/industries/wine.md` with your prediction, actual result, explanation, one failed assumption and one claim the evidence does not justify. Use the separate learner notebook only after you understand the worked code. No notebook execution automatically marks your learning complete.</pre></article></body></html>
