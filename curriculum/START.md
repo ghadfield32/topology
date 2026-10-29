@@ -72,3 +72,8 @@ The record distinguishes reading, guided practice, declared independent demonstr
 ## Optional continuations without a restart
 
 The five [representation units](../representations/lessons/R01.md) reuse the core and build through SIGReg/JEPA concepts to a measured small-encoder experiment. They do not change the existing stage numbers or mark earlier work complete. The [deployment lesson](../docs/release/KUBERNETES.md) explains Kubernetes from the beginning and distinguishes project-policy tests from real cluster acceptance. Native Python is sufficient to begin learning.
+
+
+### Optional: Poux’s six-hub spatial AI map
+
+The [Poux spatial AI extension](extensions/poux_spatial_ai/README.md) registers all 37 tutorial links explicitly listed in the supplied map and maps them to existing stages. Its six hub plans add processing, segmentation, point-set learning, semantics and delivery without repeating the 31 primary lessons. The small Stage 01 bridge is runnable now; the advanced plans are not claimed as implemented. Existing progress and dependencies are unchanged.
