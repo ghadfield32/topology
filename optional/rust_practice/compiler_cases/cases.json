@@ -1,0 +1,47 @@
+{
+  "schema": "shape.rust_practice.compiler_cases.v1",
+  "edition": "2021",
+  "scope": "Compiler behaviour on this host's pinned toolchain. A successful check shows the borrow checker did what the note predicts; it says nothing about learner mastery.",
+  "cases": [
+    {
+      "file": "compiler_cases/accept/borrows_end_at_last_use.rs",
+      "expect": "accept",
+      "teaches": "A shared or mutable borrow ends at its last use, not at the end of the block. Two mutable borrows that do not overlap are allowed.",
+      "observe": "Reusing the same mutable borrow after a read would break this case."
+    },
+    {
+      "file": "compiler_cases/accept/returned_reference_lives_as_long_as_input.rs",
+      "expect": "accept",
+      "teaches": "A returned reference may live as long as the caller-owned input it borrows.",
+      "observe": "Lifetime annotations describe a relationship; they do not extend storage."
+    },
+    {
+      "file": "compiler_cases/reject/overlapping_mutable_borrows.rs",
+      "expect": "reject",
+      "error_code": "E0499",
+      "teaches": "Two exclusive borrows are rejected when both are still needed at one point.",
+      "observe": "Writing two unused mutable references is not itself the error; the overlap is."
+    },
+    {
+      "file": "compiler_cases/reject/use_after_move.rs",
+      "expect": "reject",
+      "error_code": "E0382",
+      "teaches": "Assigning a String moves ownership; the previous binding can no longer be read.",
+      "observe": "Cloning would compile, but the question is which binding is supposed to own the data."
+    },
+    {
+      "file": "compiler_cases/reject/return_reference_to_local.rs",
+      "expect": "reject",
+      "error_code": "E0106",
+      "teaches": "A returned reference cannot outlive the local value that owns the storage.",
+      "observe": "No lifetime annotation can keep a dropped local alive."
+    },
+    {
+      "file": "compiler_cases/reject/mutate_while_borrowed.rs",
+      "expect": "reject",
+      "error_code": "E0502",
+      "teaches": "A shared borrow of an element conflicts with an exclusive borrow of the whole vector.",
+      "observe": "Disjoint-field or split-slice access can resolve this; an unexplained clone only hides it."
+    }
+  ]
+}

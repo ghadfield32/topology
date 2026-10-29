@@ -1,0 +1,353 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Verification: what ran here, and what did not · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../optional/world_model/VERIFICATION.md">optional/world_model/VERIFICATION.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="verification-what-ran-here-and-what-did-not">Verification: what ran here, and what did not</h1>
+<p>Recorded on this Windows host, 29 October 2026. Every number below came from a command run
+in this checkout. Nothing is copied from the article, and nothing is claimed beyond the
+command that produced it.</p>
+<h2 id="environment">Environment</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python (<code>.venv</code>)</td>
+<td>3.13.5</td>
+</tr>
+<tr>
+<td>PyTorch</td>
+<td>2.10.0+cpu</td>
+</tr>
+<tr>
+<td>NumPy</td>
+<td>2.3.5</td>
+</tr>
+<tr>
+<td>Platform</td>
+<td>Windows-11-10.0.26300-SP0</td>
+</tr>
+<tr>
+<td><code>rustc</code> / <code>cargo</code></td>
+<td>1.97.1 on <code>PATH</code>; the crate pins 1.90.0 via <code>rust-toolchain.toml</code></td>
+</tr>
+<tr>
+<td>Go</td>
+<td>not used by this area</td>
+</tr>
+</tbody>
+</table>
+<p>PyTorch is an <strong>optional</strong> dependency of the course (<code>physics</code> extra). It was already
+present in this interpreter. A blocked path exists for the case where it is not, and it
+was not exercised by a real missing-PyTorch run — the code path is asserted by inspection
+in <code>tests/test_world_model_optional.py</code>, not by uninstalling PyTorch.</p>
+<h2 id="commands-and-observed-results">Commands and observed results</h2>
+<h3 id="rust-companion">Rust companion</h3>
+<pre><code class="language-powershell">Push-Location optional/world_model/rust
+cargo generate-lockfile --offline
+cargo test --offline --locked
+Pop-Location
+</code></pre>
+<p>Observed: <strong>34 unit tests passed, 0 failed</strong>, plus 0 binary tests and 0 doc-tests. The
+crate has no dependencies, so no vendor directory is needed and no network access occurs.
+Two of those tests exist only to demonstrate the article's averaging bug: they assert that
+<code>score_park_average</code> prefers hovering while <code>score_park</code> prefers the journey that arrives,
+so the lesson cannot decay into a comment that nothing checks.</p>
+<pre><code class="language-powershell">cargo fmt --all -- --check
+cargo clippy --offline --all-targets -- -D warnings
+</code></pre>
+<p>Observed: <code>fmt</code> made no further changes after <code>cargo fmt --all</code>, and <code>clippy</code> exited 0 with
+<code>-D warnings</code>. Clippy initially rejected six real style problems in this crate — four
+negated comparisons on <code>f64</code> and two index-based loops — which were fixed rather than
+suppressed with <code>#[allow]</code>.</p>
+<pre><code class="language-powershell">cargo run --quiet --offline --bin world-model-rust -- --check-topology ..\fixtures\points.json --output &lt;new dir&gt;
+</code></pre>
+<p>Observed on the committed fixture: <code>h0_finite = 23</code>, <code>h1_finite = 2</code>,
+<code>h1_essential = 0</code>, <code>h1_total_persistence = 0.5555447016192441</code>,
+<code>max_persistence = 0.4576295099615885</code>, <code>simplex_count = 785</code>, <code>max_edge = 1.0</code>.</p>
+<h3 id="fixture-reproducibility">Fixture reproducibility</h3>
+<pre><code class="language-powershell">uv run --no-sync python optional/world_model/python/make_fixture.py --check
+</code></pre>
+<p>Observed: <code>.../fixtures/points.json matches</code>. The generator uses integer arithmetic in a
+fixed recurrence, so the bytes do not depend on the NumPy version or platform. The fixture
+is a <strong>manufactured</strong> cloud and is labelled as such in the file itself.</p>
+<h3 id="python-cross-check-against-the-courses-own-persistence-pipeline">Python: cross-check against the course's own persistence pipeline</h3>
+<p><code>tests/test_world_model_optional.py::test_summary_reuses_the_course_persistence_pipeline</code>
+computes the H1 diagram of the fixture with <code>shape_lab.persistence</code> directly and compares
+count and total persistence with <code>optional/world_model/python/topology.py</code>. Observed:
+identical. <code>test_rust_topology_matches_the_python_pipeline_on_the_same_fixture</code> compares
+the Rust reduction against the Python one on the same fixture. Observed: identical to
+within <code>1e-9</code>.</p>
+<h3 id="python-the-small-end-to-end-run">Python: the small end-to-end run</h3>
+<pre><code class="language-powershell">uv run --no-sync python optional/world_model/python/world_model.py --output my_work/world_model_tiny01 `
+  --episodes 6 --epochs 1 --train-steps 6 --eval-episodes 2 --planning-episodes 2 `
+  --points 12 --horizon 8 --planning-horizon 3 --sequences 8 --warmup 2
+</code></pre>
+<p>Observed: <code>status = completed</code>, <code>assessment = not_assessed</code>. This run is what the test
+suite executes; it is a smoke check that the whole pipeline connects, not a measurement.</p>
+<h3 id="python-the-recorded-reference-run">Python: the recorded reference run</h3>
+<pre><code class="language-powershell">uv run --no-sync python optional/world_model/python/world_model.py --output my_work/world_model_ref06 `
+  --episodes 200 --epochs 20 --train-steps 200 --eval-episodes 20 --planning-episodes 20 `
+  --horizon 30 --planning-horizon 15 --sequences 200 --points 60 --warmup 8
+</code></pre>
+<p>Observed, from <code>my_work/world_model_ref06/results.json</code> (not committed; this workspace's
+<code>my_work/</code> is private):</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Observed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model parameters</td>
+<td>14,547</td>
+</tr>
+<tr>
+<td>Collected transitions</td>
+<td>37,352</td>
+</tr>
+<tr>
+<td>Episodes</td>
+<td>200 (187 ended by falling, 13 by the timer)</td>
+</tr>
+<tr>
+<td>Mean episode length</td>
+<td>186.8 steps</td>
+</tr>
+<tr>
+<td>Action 0 fraction</td>
+<td>0.5007</td>
+</tr>
+<tr>
+<td>Best validation epoch / restored</td>
+<td>16 of 20, and restored</td>
+</tr>
+<tr>
+<td>Teacher-forced validation error</td>
+<td>0.00639 m cart, 0.00235 rad pole</td>
+</tr>
+<tr>
+<td>Crash recall / false alarms</td>
+<td>0.945 / 100.9 per episode (155 TP, 9 FN)</td>
+</tr>
+<tr>
+<td>Free-rollout trust horizon at 0.02 rad</td>
+<td><strong>7 steps</strong></td>
+</tr>
+<tr>
+<td>Deepest depth beating the frozen baseline</td>
+<td><strong>29</strong></td>
+</tr>
+<tr>
+<td>Coin-flip agent (20 episodes)</td>
+<td>21.85 ± 13.23 steps</td>
+</tr>
+<tr>
+<td>Hand controller (20 episodes)</td>
+<td>500.0 steps</td>
+</tr>
+<tr>
+<td>Planner, balance goal, memory carried</td>
+<td><strong>176.0 steps</strong>, 0.01034 s per decision</td>
+</tr>
+<tr>
+<td>Planner, park goal, memory carried</td>
+<td>52.0 steps, 0.868 m from the target</td>
+</tr>
+<tr>
+<td>Planner, balance goal, memory reset each step</td>
+<td>51.0 steps</td>
+</tr>
+<tr>
+<td>Topology, 60 evenly spaced observations, <code>max_edge = 1.5</code></td>
+<td>H0 59, H1 10, 0 essential, total persistence 0.1227</td>
+</tr>
+</tbody>
+</table>
+<p>Free-rollout pole-angle error <strong>at each depth</strong>, after an 8-transition warm-up:</p>
+<table>
+<thead>
+<tr>
+<th>Depth</th>
+<th>1</th>
+<th>4</th>
+<th>7</th>
+<th>8</th>
+<th>15</th>
+<th>20</th>
+<th>29</th>
+<th>30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model (rad)</td>
+<td>0.00175</td>
+<td>0.00918</td>
+<td>0.01826</td>
+<td>0.02101</td>
+<td>0.03360</td>
+<td>0.03814</td>
+<td>0.05307</td>
+<td>0.05694</td>
+</tr>
+<tr>
+<td>Frozen (rad)</td>
+<td>0.00372</td>
+<td>0.01463</td>
+<td>0.02207</td>
+<td>0.02514</td>
+<td>0.03577</td>
+<td>0.04391</td>
+<td>0.05354</td>
+<td>0.05351</td>
+</tr>
+</tbody>
+</table>
+<p>The model crosses the 0.02 tolerance at depth 8 (so the trust horizon is 7) but keeps
+beating the frozen baseline until depth 29. <strong>Those two numbers disagree, and that is the
+article's methodological point reproduced as a measurement rather than quoted.</strong></p>
+<h3 id="three-defects-this-run-exposed-and-their-fixes">Three defects this run exposed, and their fixes</h3>
+<p>These are the reason the numbers above are trustworthy; the earlier <code>ref01</code>–<code>ref05</code>
+directories were discarded rather than reinterpreted.</p>
+<ol>
+<li><strong>Blank memory in the planner.</strong> Every candidate plan forked from a zeroed GRU state.
+Because the observation hides the velocities, a blank memory cannot know the cart is
+moving, so planning degenerated. Fixed with <code>advance_memory</code>: fold each <em>real</em>
+observation and shove forward, then fork. Measured effect: 176 steps versus 51 for the
+retained broken policy.</li>
+<li><strong>Blank memory in the drift measurement.</strong> The same mistake in <code>free_rollout_errors</code>
+made the first predicted step a pure guess, so the model lost to the frozen baseline at
+depth 1 for reasons that were not drift. Fixed by warming the memory with the same
+number of real transitions (<code>memory_warmup_steps</code>, recorded).</li>
+<li><strong>Zero crash positives in training.</strong> <code>valid_window_starts</code> used <code>end - sequence - 1</code>,
+which drops the final transition of every episode — the only transition that can carry
+a <code>terminated</code> label. Measured: 0 positives in 7,906 windows. Fixed to
+<code>end - sequence</code>, and the dataset now records <code>next_observations</code> explicitly so the
+labelled transition always has a prediction target. A test asserts a positive is present.</li>
+</ol>
+<h3 id="four-more-defects-found-by-auditing-the-finished-code-against-its-own-claims">Four more defects, found by auditing the finished code against its own claims</h3>
+<p>These were not caught by a test failure. They were caught by asking the six questions in
+<a href="../../docs/release/VERIFICATION.md.html">docs/release/VERIFICATION.md</a> about the code that already
+passed its suite. That is the honest order: a green suite is a statement about the tests, not
+about the experiment.</p>
+<ol start="4">
+<li><strong>Goals were scored in normalized units against a metric target.</strong> <code>PARK_TARGET</code> is
+<code>1.0</code> <strong>metres</strong>, but <code>score_park</code> compared it against a normalized observation, where
+<code>1.0</code> means <code>2.4 m</code>. The planner was asked for the rail limit while the constant said one
+metre. Fixed by converting to metres first, with a test asserting that a dream ending
+exactly at the target scores <code>1.0</code> and one metre off scores <code>0.0</code>.</li>
+<li><strong>Predicted failure was not absorbing.</strong> <code>survival_mask</code> applied a per-step threshold, so
+a dream could crash at step 3 and be scored alive at step 4 — making a doomed plan look
+survivable. Fixed with a running logical AND, plus a test on a <code>[-1, +5, -1, -1]</code> dream.</li>
+<li><strong>Rollout error was averaged over depths.</strong> <code>free_rollout_errors</code> averaged steps <code>1..h</code>,
+which answers "how wrong on average" and hides the depth where the model falls apart.
+Fixed to report error at depth <code>h</code>, which is what changed the headline result from "9
+within tolerance, 8 beating frozen" to the article's actual finding: <strong>7 within tolerance,
+29 beating frozen.</strong></li>
+<li><strong>The best checkpoint was logged but not restored.</strong> <code>train()</code> recorded the best
+validation epoch and then left the final-epoch weights in the model, so every later
+measurement described a different model from the one the reported loss belonged to.
+Fixed with <code>load_state_dict</code> on a saved copy; the restore is now recorded as
+<code>restored_best_epoch</code>.</li>
+</ol>
+<p>Question 6 in the audit list — "does evaluation use the selected model checkpoint?" — is
+exactly defect 7. The answers are now asserted rather than intended:
+<code>test_goal_is_scored_in_physical_units_not_normalized_ones</code>,
+<code>test_predicted_failure_is_absorbing</code>,
+<code>test_rollout_error_is_reported_at_depth_not_averaged_over_depths</code>, and
+<code>test_training_restores_the_best_validation_checkpoint</code>.</p>
+<h3 id="a-correction-to-the-loss-not-just-the-code">A correction to the loss, not just the code</h3>
+<p>The article's "count each crash 380 times over" was first implemented as
+<code>380 * BCE(...)</code>. That scales the loss and its gradient but leaves the optimum at the 99.4%
+base rate, so the head still answered "always alive" with confidence. The correct form is
+<code>pos_weight=380</code> inside the BCE, which moves the optimum. The two heads also differ in
+natural scale by about four orders of magnitude, so <code>TERMINATION_LOSS_SCALE</code> is declared
+and recorded. Measured on a smaller 60-episode run: scale 0.01 gave 0.38 recall, 0.02 gave
+0.93 with the delta error unchanged, 0.10 gave 0.81. The default is 0.02.</p>
+<h3 id="python-test-suite">Python test suite</h3>
+<pre><code class="language-powershell">uv run --no-sync python -m pytest -q -ra
+</code></pre>
+<p>Observed for the whole repository: <strong>930 passed, 3 skipped, 0 failed</strong> in about 9 minutes.
+The 3 skips are the pre-existing host-dependent ones (POSIX directory mode bits, the
+opt-in Rust mutation build, POSIX symlink creation) and are unrelated to this area.</p>
+<pre><code class="language-powershell">uv run --no-sync python -m pytest -q -ra tests/test_world_model_optional.py
+</code></pre>
+<p>Observed: 38 tests, all passing. The end-to-end smoke run is the slow one; everything else
+finishes in seconds.</p>
+<h3 id="rust-the-beginner-ladder-rust_ladder">Rust: the beginner ladder (<code>rust_ladder/</code>)</h3>
+<p>A separate crate: nine modules, nine runnable examples, and a Python mirror for each rung.</p>
+<pre><code class="language-powershell">Push-Location optional/world_model/rust_ladder
+cargo test --offline --locked
+cargo fmt --all -- --check
+cargo clippy --offline --all-targets -- -D warnings
+Pop-Location
+</code></pre>
+<p>Observed: <strong>53 unit tests passed</strong>, <code>fmt</code> clean, <code>clippy -D warnings</code> clean. All nine examples
+were run; <code>09_experiment</code> was invoked twice and the second invocation refused to reuse the
+directory.</p>
+<p>Hand-checked output from <code>03_step</code>, which matches the guide's stated numbers exactly:</p>
+<pre><code class="language-text">from step zero, push right -&gt; x +0.000000  v +0.195122  theta +0.000000  omega -0.292683
+hand controller survived 500 of 500 steps
+</code></pre>
+<h3 id="the-cross-language-parity-check">The cross-language parity check</h3>
+<pre><code class="language-powershell">uv run --no-sync python -m pytest -q tests/test_world_model_ladder.py
+</code></pre>
+<p>Observed: <strong>16 passed.</strong> The important one runs both ladders on the same configuration and
+compares their saved records: exact equality for counts and coefficients, <code>1e-9</code> for
+floating-point results.</p>
+<p>It found two real bugs, which is the entire argument for writing the second implementation:</p>
+<table>
+<thead>
+<tr>
+<th>Bug</th>
+<th>Symptom</th>
+<th>Why only a second implementation found it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x ** 2</code> in Python vs <code>x * x</code> in Rust</td>
+<td>1 ULP differs for ~0.06% of doubles</td>
+<td>chaos amplifies it into a visibly different trajectory within a long episode</td>
+</tr>
+<tr>
+<td>signed <code>theta</code> in Python's score vs <code>theta.abs()</code> in Rust</td>
+<td>Python's best "balance" plan scored 1.048; Rust's 0.993</td>
+<td>Python rewarded a pole leaning one way, so its best plan was to <strong>fall over</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Both are fixed, and both now carry a comment saying why the code is written that way.</p>
+<h2 id="what-was-not-executed-here">What was <strong>not</strong> executed here</h2>
+<ul>
+<li><strong>No GPU run.</strong> No CUDA path, no mixed precision, no timing comparison with the article.</li>
+<li><strong>No DQN baseline.</strong> The comparison agents are coin flips, the hand-written controller,
+and the frozen-state model.</li>
+<li><strong>No reproduction of the article's figures or numbers.</strong> See
+<a href="SOURCE_AUDIT.md.html">SOURCE_AUDIT.md</a> for the exact list of the author's measurements that
+are quoted rather than re-measured. In particular the article's "H = 29", "37 steps" in
+front of the frozen baseline, "500.0 ± 0.0", "2.94 ms" and "one step in 380" are <strong>the
+author's</strong> numbers under the author's configuration. Ours are 7, 29, 176.0, 10.3 ms and
+about 1 in 187 (from collected episodes).</li>
+<li><strong>No <code>ruff</code>/<code>black</code>/<code>pylint</code> run.</strong> Those are the Python equivalents of <code>fmt</code> and <code>clippy</code>
+and they are not installed in this environment. Their absence is <code>blocked</code>, not passed; the
+repository's Python suite is the gate that actually ran.</li>
+<li><strong>No <code>--release</code> build for either Rust crate.</strong> Only <code>cargo test --offline --locked</code>,
+<code>cargo run --offline</code>, <code>cargo fmt --check</code> and
+<code>cargo clippy --all-targets -- -D warnings</code>.</li>
+<li><strong>No Go implementation.</strong> Not every companion needs three languages; this one is Python
+and Rust because the point is a scientific reference plus a checkable core.</li>
+<li><strong>No learner assessment.</strong> <code>assessment</code> is <code>not_assessed</code> in every record, and
+<a href="EXERCISES.md.html">EXERCISES.md</a> and <a href="LADDER.md.html">LADDER.md</a> leave the independent work to the
+learner.</li>
+</ul>
+<h2 id="scope-of-these-results">Scope of these results</h2>
+<p>These are numbers from <strong>one configuration and one seed</strong> on one machine under
+simultaneous external load. They show this pipeline runs, that the two persistence
+implementations agree, and that the disclosed bug is real and measurable. They do not show
+that a world model is a good idea for any real robot, that the planner is competitive with
+a tuned policy, or anything about a learner.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

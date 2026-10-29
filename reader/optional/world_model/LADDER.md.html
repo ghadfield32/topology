@@ -1,0 +1,611 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build it yourself: WM01 → WM09, Rust beside Python · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../optional/world_model/LADDER.md">optional/world_model/LADDER.md</a> · Readable source notation; no online math renderer.</p><h1 id="build-it-yourself-wm01--wm09-rust-beside-python">Build it yourself: WM01 → WM09, Rust beside Python</h1>
+<p><strong>Status: worked reference. <code>not_assessed</code>.</strong> This page is the ladder. It is not a second
+curriculum, it owns no stage number, and it does not grade you.</p>
+<p>The <a href="README.md.html">main page</a> shows the finished idea. This page is the order a person actually
+builds it in, one small program at a time, with a Python sibling for each rung so the
+comparison is about the <strong>languages</strong> rather than about two different experiments.</p>
+<pre><code>WM01 state        →  WM02 action   →  WM03 simulator  →  WM04 dataset
+                                                              ↓
+WM09 experiment   ←  WM08 topology ←  WM07 planner    ←  WM06 rollout  ←  WM05 model
+</code></pre>
+<p>Start here. Do <strong>not</strong> read all nine rungs before typing the first one.</p>
+<hr/>
+<h2 id="0-before-you-start-where-your-code-goes">0. Before you start: where your code goes</h2>
+<p>Your <code>src/main.rs</code> at the repository root is a <code>Hello, world!</code> sitting inside the Python
+package tree. It has no <code>Cargo.toml</code> beside it, so <code>cargo</code> cannot build it there, and it does
+not belong next to <code>src/shape_lab/</code>.</p>
+<p><strong>Keep your hello-world, move it into a real crate.</strong> A crate is just a directory with a
+<code>Cargo.toml</code> and a <code>src/</code>.</p>
+<pre><code class="language-powershell"># from the repository root
+$Practice = "my_work/world_model_practice01"
+New-Item -ItemType Directory -Force "$Practice/src" | Out-Null
+</code></pre>
+<p>Then in <code>my_work/world_model_practice01/</code> create three files. Type them; do not paste.</p>
+<p><code>Cargo.toml</code>:</p>
+<pre><code class="language-toml">[package]
+name = "world-model-practice"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.83"
+
+[dependencies]
+</code></pre>
+<p><code>rust-toolchain.toml</code>:</p>
+<pre><code class="language-toml">[toolchain]
+channel = "1.90.0"
+profile = "minimal"
+components = ["rustfmt", "clippy"]
+</code></pre>
+<p><code>src/main.rs</code> — your program, unchanged in meaning:</p>
+<pre><code class="language-rust">fn main() {
+    println!("Hello, world!");
+}
+</code></pre>
+<p>Check it:</p>
+<pre><code class="language-powershell">Push-Location my_work/world_model_practice01
+cargo locate-project          # which manifest did cargo find?
+rustup show active-toolchain  # did the pin apply?
+cargo run --offline --locked
+Pop-Location
+</code></pre>
+<h3 id="the-six-things-that-go-wrong-at-this-exact-step">The six things that go wrong at this exact step</h3>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>could not find Cargo.toml</code></td>
+<td>you are in <code>src/</code>, not the crate root</td>
+<td><code>cd</code> up one level, or <code>cargo locate-project</code></td>
+</tr>
+<tr>
+<td><code>no such command: +1.90.0</code></td>
+<td>the toolchain is not installed</td>
+<td><code>rustup toolchain install 1.90.0 --profile minimal</code></td>
+</tr>
+<tr>
+<td><code>the lock file ... needs to be updated</code> with <code>--locked</code></td>
+<td>no <code>Cargo.lock</code> yet</td>
+<td>run once <strong>without</strong> <code>--locked</code>, then commit the lock</td>
+</tr>
+<tr>
+<td><code>error: linker not found</code></td>
+<td>MSVC build tools missing</td>
+<td>install "Desktop development with C++" in the Visual Studio installer</td>
+</tr>
+<tr>
+<td><code>Println!</code> / <code>printIn</code></td>
+<td>capital <code>I</code> for lowercase <code>l</code></td>
+<td>it is <code>println!</code>, all lowercase</td>
+</tr>
+<tr>
+<td><code>expected ;</code> after <code>println!(...)</code></td>
+<td>statements are not expressions</td>
+<td>a bare <code>println!</code> line does not end in <code>;</code> inside a block is fine, but keep one style</td>
+</tr>
+</tbody>
+</table>
+<p>That last one is worth understanding rather than memorising: <code>println!(...)</code> returns <code>()</code>, so
+<code>println!("x")</code> and <code>println!("x");</code> both work as a statement. What does <strong>not</strong> work is
+<code>let x = println!("x");</code> followed by using <code>x</code> as a number.</p>
+<h3 id="python-beside-it">Python beside it</h3>
+<pre><code class="language-python"># my_work/world_model_practice01/hello.py
+print("Hello, world!")
+</code></pre>
+<pre><code class="language-powershell">&amp; .\.venv\Scripts\python.exe my_work/world_model_practice01/hello.py
+</code></pre>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Rust</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>What runs</td>
+<td>a compiled binary</td>
+<td>the source, by an interpreter</td>
+</tr>
+<tr>
+<td>Where the type checking happens</td>
+<td>before the program exists</td>
+<td>at the moment a line runs</td>
+</tr>
+<tr>
+<td>What "no build step" costs you</td>
+<td>—</td>
+<td>an error in line 40 after line 39 printed</td>
+</tr>
+<tr>
+<td>What the build step costs you</td>
+<td>seconds per change</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="1-the-five-checks-you-run-on-every-rung">1. The five checks you run on every rung</h2>
+<p>Do these in this order, every time. They are the whole workflow.</p>
+<pre><code class="language-powershell">Push-Location optional/world_model/rust_ladder
+
+cargo test --offline --locked                      # does the logic hold?
+cargo fmt --all -- --check                         # is it formatted the one agreed way?
+cargo clippy --offline --all-targets -- -D warnings # is it wrong in a way that compiles?
+cargo run --quiet --offline --locked --example 03_step   # what does it actually print?
+Pop-Location
+</code></pre>
+<p>Why <code>clippy -D warnings</code> and not just <code>cargo check</code>:</p>
+<pre><code>cargo check            → exit 0, warning: unused `Result` that must be used
+cargo clippy ... -D warnings → exit 101, error: unused `Result` that must be used
+</code></pre>
+<p><code>cargo check</code> is not a correctness gate. A silently discarded error passes it.</p>
+<p>And the Python side, which has no equivalent of any of those four commands:</p>
+<pre><code class="language-powershell">$env:PYTHONUTF8='1'
+&amp; .\.venv\Scripts\python.exe -m pytest -q tests/test_world_model_ladder.py
+&amp; .\.venv\Scripts\python.exe -m ladder.wm03_simulator    # from optional/world_model/python
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Rust gate</th>
+<th>What Python has instead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cargo test</code></td>
+<td><code>pytest</code>, plus the same idea</td>
+</tr>
+<tr>
+<td><code>cargo fmt --check</code></td>
+<td><code>ruff format --check</code> / <code>black --check</code> — <strong>not installed here</strong>, so not run</td>
+</tr>
+<tr>
+<td><code>cargo clippy -D warnings</code></td>
+<td><code>ruff check</code> / <code>pylint</code> — also not installed here</td>
+</tr>
+<tr>
+<td>compile</td>
+<td>nothing: a syntax error at import, a type error only if a checker runs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Say that plainly in your notes.</strong> Python's tooling can do all of this; this environment does
+not have it installed, and a missing tool is <code>blocked</code>, not passed.</p>
+<hr/>
+<h2 id="2-wm01--represent-a-state">2. WM01 — represent a state</h2>
+<p>Read <a href="../../../optional/world_model/rust_ladder/src/state.rs">rust_ladder/src/state.rs</a>, then
+<a href="../../../optional/world_model/python/ladder/wm01_state.py">python/ladder/wm01_state.py</a>.</p>
+<pre><code class="language-powershell">Push-Location optional/world_model/rust_ladder
+cargo run --quiet --offline --locked --example 01_state
+</code></pre>
+<pre><code class="language-python"># from optional/world_model/python
+python -m ladder.wm01_state
+</code></pre>
+<h3 id="predict-before-you-run">Predict before you run</h3>
+<ol>
+<li><code>State::upright()</code> then change <code>theta</code> to <code>-0.02</code>. Does <code>v</code> change?</li>
+<li><code>visible()</code> returns a <em>tuple</em> of two numbers. Which two fields are missing?</li>
+<li>Two states with the same <code>visible()</code> pair: can they differ?</li>
+</ol>
+<p>Answers: no; <code>v</code> and <code>omega</code>; yes, and that is the entire reason the article needs memory.</p>
+<h3 id="what-each-language-makes-you-write-down">What each language makes you write down</h3>
+<pre><code class="language-rust">#[derive(Debug, Clone, Copy, PartialEq)]
+pub struct State {
+    pub x: f64,
+    pub v: f64,
+    pub theta: f64,
+    pub omega: f64,
+}
+</code></pre>
+<pre><code class="language-python">@dataclass(frozen=True)
+class State:
+    x: float
+    v: float
+    theta: float
+    omega: float
+</code></pre>
+<p>Both give you named fields. The differences are real:</p>
+<ul>
+<li><strong><code>f64</code> is a decision.</strong> Rust has <code>f32</code> and <code>f64</code>; picking one is part of the code. Python's
+<code>float</code> is a <code>f64</code> and you never say so.</li>
+<li><strong><code>Copy</code> is a claim.</strong> Four <code>f64</code> are trivially copyable, so passing a <code>State</code> does not move
+it. Python always passes references to objects, which is why the dataclass is <code>frozen</code>:
+it recovers the "a state is a value" guarantee by refusing mutation.</li>
+<li><strong><code>new</code> returns <code>Result</code>.</strong> Rust cannot add a runtime type check to a struct literal, so
+validation is a function. Python can put it in <code>__post_init__</code>, which is closer, but it
+only runs if you use the constructor.</li>
+<li><strong><code>frozen=True</code> is checked by the runtime</strong>, not the compiler. <code>state.x = 1.0</code> raises
+<code>FrozenInstanceError</code> in Python; Rust simply has no <code>&amp;mut</code> because the value is not <code>mut</code>.</li>
+</ul>
+<p><strong>The trap:</strong> Python annotations are not enforced. <code>State(x="zero", ...)</code> fails only at
+<code>__post_init__</code> (or later, if you removed it). In Rust <code>State { x: "zero", .. }</code> does not
+compile.</p>
+<hr/>
+<h2 id="3-wm02--represent-an-action">3. WM02 — represent an action</h2>
+<pre><code class="language-powershell">cargo run --quiet --offline --locked --example 02_action
+</code></pre>
+<p>Expected:</p>
+<pre><code class="language-text">left     -10 N  (index 0)
+right     10 N  (index 1)
+</code></pre>
+<h3 id="predict">Predict</h3>
+<p>Add <code>Idle</code> to the Rust <code>enum Action</code>, then run <code>cargo build</code>. What error do you get, and at
+which line?</p>
+<p>You get <code>error[E0004]: non-exhaustive patterns: 'Action::Idle' not covered</code> pointing at
+<code>force()</code>. <strong>The compiler found every place that must change.</strong> Now do the same in Python: add
+<code>IDLE = 2</code> to the <code>IntEnum</code> and run the example. It prints a <code>KeyError</code> from <code>_FORCES</code> at
+<strong>run time</strong>, after the program started.</p>
+<p>Then undo both. The point is the comparison, not the variant.</p>
+<h3 id="why-an-enum-instead-of-0-and-1">Why an enum instead of <code>0</code> and <code>1</code></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Rust <code>enum Action</code></th>
+<th>Python <code>IntEnum</code></th>
+<th>Python bare <code>int</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A third value is possible</td>
+<td>only if you edit the type</td>
+<td>only if you edit the enum</td>
+<td>always</td>
+</tr>
+<tr>
+<td>Forgetting a case</td>
+<td>compile error</td>
+<td><code>KeyError</code> at run time</td>
+<td>wrong branch silently</td>
+</tr>
+<tr>
+<td>Printing</td>
+<td><code>Left</code></td>
+<td><code>Action.LEFT</code></td>
+<td><code>0</code></td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="4-wm03--calculate-one-step">4. WM03 — calculate one step</h2>
+<pre><code class="language-powershell">cargo run --quiet --offline --locked --example 03_step
+</code></pre>
+<h3 id="do-this-on-paper-first">Do this on paper first</h3>
+<p>From rest and upright, push right. Before running:</p>
+<ul>
+<li>does the cart move this step?</li>
+<li>does the pole tilt this step?</li>
+</ul>
+<p>Neither does, and the reason is the integration scheme, not the physics: explicit Euler
+advances position and angle using the <strong>old</strong> velocities, which are zero. The force changes the
+velocities that the <em>next</em> step uses.</p>
+<p>Observed:</p>
+<pre><code class="language-text">from rest, push right -&gt; x +0.000000  v +0.195122  theta +0.000000  omega -0.292683
+</code></pre>
+<h3 id="the-rust-decision-that-python-cannot-express">The Rust decision that Python cannot express</h3>
+<pre><code class="language-rust">pub fn step(state: State, action: Action) -&gt; Result&lt;State, String&gt;
+</code></pre>
+<p>Three things in one signature:</p>
+<ol>
+<li><code>State</code> by value — four <code>f64</code>, so nothing is moved away from the caller.</li>
+<li><code>Result&lt;State, String&gt;</code> — a bad step is a value, not a panic.</li>
+<li>The <code>String</code> is intentionally boring. A real project would use an error type.</li>
+</ol>
+<p>Python raises instead:</p>
+<pre><code class="language-python">def step(state: State, action: Action) -&gt; State:
+    if not math.isfinite(...):
+        raise ValueError(...)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Failure mode</th>
+<th>Rust</th>
+<th>Python</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-finite result</td>
+<td><code>Err(String)</code>, must be handled</td>
+<td><code>ValueError</code>, must be handled</td>
+</tr>
+<tr>
+<td>Ignoring it</td>
+<td><code>#[must_use]</code> warning; <code>clippy -D warnings</code> fails</td>
+<td>nothing; the exception propagates or crashes</td>
+</tr>
+<tr>
+<td>Partial write before failure</td>
+<td>impossible: the value is only built at the end</td>
+<td>possible if you mutate before validating</td>
+</tr>
+</tbody>
+</table>
+<h3 id="one-parity-bug-this-rung-really-had">One parity bug this rung really had</h3>
+<p>The Python mirror originally wrote <code>state.omega ** 2</code>. The Rust wrote <code>state.omega * state.omega</code>. For about <strong>0.06%</strong> of doubles those differ by one unit in the last place,
+because <code>**</code> rounds differently from a multiply. In a chaotic system that difference grows
+into a visibly different trajectory within a few hundred steps, and the cross-language test
+failed on the 455-step episode.</p>
+<p>Both now use the multiply, and the reason is written in <code>wm03_simulator.py</code>. This is the kind
+of thing a second implementation catches and a single-language project never sees.</p>
+<hr/>
+<h2 id="5-wm04--collect-and-keep-the-successor">5. WM04 — collect, and keep the successor</h2>
+<pre><code class="language-powershell">cargo run --quiet --offline --locked --example 04_collect
+</code></pre>
+<h3 id="predict-1">Predict</h3>
+<p>With <code>exploration = 0.0</code> and <code>bias_scale = 0.0</code>, would any episode end by <em>falling</em>? No: the
+controller balances. If you collected only that, your crash data would be empty and any crash
+detector trained on it would be confidently wrong. That is why <code>exploration</code> and <code>bias_scale</code>
+exist, and it is not a detail — the sibling reference lost 143 steps of planner performance to
+a related bug.</p>
+<h3 id="the-record-that-matters">The record that matters</h3>
+<pre><code>episode  tick  state  action  successor  terminated  truncated
+</code></pre>
+<p>The <code>successor</code> field on the <strong>final</strong> transition is the one people drop, and dropping it is
+how a crash label loses its prediction target. In the sibling reference this exact omission
+removed <em>every</em> positive example from training while the loss still went down.</p>
+<p>Python has the same seven fields (<code>wm04_dataset.py</code>), and the same <code>episode_bounds</code> arithmetic
+so a window can never span two games.</p>
+<h3 id="splitting">Splitting</h3>
+<pre><code>by row:      |--- train ---|-- test --|     ← the same episode is in both. Wrong.
+by episode:  |--- ep 1..6 ---|- ep 7..8 -|  ← honest.
+</code></pre>
+<p>The test <code>test_split_by_episode_never_shares_an_episode</code> is the guard.</p>
+<hr/>
+<h2 id="6-wm05--fit-a-model-instead-of-calling-the-simulator">6. WM05 — fit a model instead of calling the simulator</h2>
+<pre><code class="language-powershell">cargo run --quiet --offline --locked --example 05_fit
+</code></pre>
+<p>The five features, in this order: normalized position, normalized angle, action one-hot
+(right, left), bias.</p>
+<pre><code>ŝₜ₊₁ = sₜ + Δ̂(sₜ, aₜ)
+</code></pre>
+<p>Predict the <strong>change</strong>, not the next value. Consecutive states are nearly identical, so a
+model asked for the next value scores beautifully by copying its input.</p>
+<h3 id="the-ownership-lesson-in-one-line">The ownership lesson in one line</h3>
+<pre><code class="language-rust">let model = DeltaModel::fit(&amp;training, 1e-6)?;
+</code></pre>
+<ul>
+<li><code>&amp;training</code> <strong>borrows</strong>. The fit reads the transitions and gives them back.</li>
+<li>The model <strong>owns</strong> only its ten coefficients.</li>
+<li><code>?</code> propagates a rejected fit instead of suppressing it.</li>
+</ul>
+<p>Python has no <code>&amp;</code>, so the equivalent is simply <code>DeltaModel.fit(training, 1e-6)</code>. The
+<em>difference</em> is that in Rust the compiler proves nothing was moved; in Python you rely on
+<code>fit</code> not reassigning your list.</p>
+<p>Test it: <code>test_fitting_borrows_the_training_data</code> asserts the slice still has the same length
+afterwards.</p>
+<h3 id="two-more-cross-language-traps-both-caught-by-the-parity-test">Two more cross-language traps, both caught by the parity test</h3>
+<table>
+<thead>
+<tr>
+<th>Trap</th>
+<th>What went wrong</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>x ** 2</code> vs <code>x * x</code></td>
+<td>1-ULP difference in ~0.06% of doubles</td>
+<td>chaos amplifies it into a different trajectory</td>
+</tr>
+<tr>
+<td>signed vs <code>abs()</code> angle</td>
+<td>a pole leaning <em>left</em> scored as <strong>good</strong></td>
+<td>the planner learns to topple the pole</td>
+</tr>
+</tbody>
+</table>
+<p>The second one is the most instructive bug in this whole ladder. The Rust score used
+<code>theta.abs()</code>; the Python used <code>theta</code>. Python scored a leftward topple at 1.048 while Rust
+scored it 0.993 — the "better" plan in Python was to fall over. Neither language helped; only
+running both on the same data exposed it.</p>
+<hr/>
+<h2 id="7-wm06--one-step-is-not-a-rollout">7. WM06 — one step is not a rollout</h2>
+<pre><code class="language-powershell">cargo run --quiet --offline --locked --example 06_rollout
+</code></pre>
+<p>Two experiments:</p>
+<pre><code>one-step:     sₜ (real) → ŝₜ₊₁          start again from reality each time
+free rollout: s₀ → ŝ₁ → ŝ₂ → …          feed the model its own output
+</code></pre>
+<h3 id="the-measurement-detail-that-changes-the-conclusion">The measurement detail that changes the conclusion</h3>
+<p>Report error <strong>at depth h</strong>, not the mean over <code>1..h</code>.</p>
+<pre><code>mean over depths:  "how wrong on average"     → hides the depth where it breaks
+error at depth h:  "how wrong at step h"      → what a planner actually needs
+</code></pre>
+<h3 id="predict-2">Predict</h3>
+<p>Will the model beat the frozen baseline ("nothing ever changes") at depth 1? At depth 20?</p>
+<p>Look at the printed table. In the reference run the answer is depth 1 yes, depth 29 no — and
+the <em>accurate</em> horizon (inside a 0.02 rad tolerance) is only 7. <strong>Two different numbers, and
+the article's point is that they are different.</strong> Neither specifies a good planning horizon.</p>
+<p>Python: <code>wm06_rollout.py</code>, same eligible episodes, same frozen baseline.</p>
+<hr/>
+<h2 id="8-wm07--plan-and-change-the-goal-without-refitting">8. WM07 — plan, and change the goal without refitting</h2>
+<pre><code class="language-powershell">cargo run --quiet --offline --locked --example 07_plan
+</code></pre>
+<p>Watch the coefficients printed at the top and the bottom. They are identical. That is the
+payload: the goal is not in the weights.</p>
+<pre><code class="language-rust">pub fn plan(
+    model: &amp;DeltaModel,      // borrowed: read only
+    start: State,            // copied: four f64
+    goal: Goal,              // a value chosen at run time
+    horizon: usize,
+    sequences: usize,
+    rng: &amp;mut Rng,           // the only thing that mutates
+) -&gt; Result&lt;Plan, String&gt;
+</code></pre>
+<p>Three ownership facts in one signature:</p>
+<ul>
+<li><code>&amp;DeltaModel</code> — the planner cannot train, because it has no <code>&amp;mut</code>.</li>
+<li><code>&amp;mut Rng</code> — the generator must be mutable, and two <code>&amp;mut</code> to it cannot exist at once.</li>
+<li><code>Result&lt;Plan, String&gt;</code> — the failure path is part of the API.</li>
+</ul>
+<h3 id="the-objective-bug-reproduced">The objective bug, reproduced</h3>
+<p>Score a dream by its <strong>average</strong> distance to the target and the planner rejects the only
+manoeuvre that works. Moving a cart-pole right requires pushing left first, so the correct
+opening move looks worse under an average.</p>
+<p>Both languages have the corrected rule (<code>last_reachable</code> / <code>terminal_mean</code>) and both keep a
+test proving the wrong rule ranks the dreams the other way round:</p>
+<pre><code>Rust:  fn average_scoring_rejects_the_journey_that_arrives
+Python: test_parking_is_scored_in_metres
+</code></pre>
+<h3 id="units-once-more">Units, once more</h3>
+<p>The park target is <strong>metres</strong>. The model's observation is <strong>normalized</strong>. A normalized <code>1.0</code> is
+<code>2.4 m</code>. Comparing them directly is the bug the sibling reference had, and the test that
+catches it is:</p>
+<pre><code class="language-python">assert score(2.0) == pytest.approx(0.0, abs=1e-5)   # 1 m away costs exactly 1.0
+</code></pre>
+<hr/>
+<h2 id="9-wm08--geometry-not-dynamics">9. WM08 — geometry, not dynamics</h2>
+<pre><code class="language-powershell">cargo run --quiet --offline --locked --example 08_topology
+</code></pre>
+<p>The example prints component counts at three radii, then <strong>reverses the trajectory</strong> and
+prints them again. Same numbers.</p>
+<p>That is the lesson:</p>
+<blockquote>
+<p>Point-cloud topology describes the sampled geometry of a trajectory and discards temporal
+direction. It cannot certify that the model predicts the next state.</p>
+</blockquote>
+<p>This rung is deliberately H0 only — connected components — because you can check it by hand.
+The sibling crate does full H1 persistence with an independent reduction; read that <strong>after</strong>
+this, and read it knowing a diagram is a description of a cloud, not of behaviour.</p>
+<h3 id="what-the-radius-does">What the radius does</h3>
+<pre><code>radius 0.05 → 8 components
+radius 0.15 → 1 component
+</code></pre>
+<p>Neither is "the answer". A number without its radius is not reproducible. The same applies to
+the H1 bars in the sibling crate: a bar that survives only because the truncation cut off its
+death is an artefact of the scale.</p>
+<hr/>
+<h2 id="10-wm09--save-a-run-nothing-can-overwrite">10. WM09 — save a run nothing can overwrite</h2>
+<pre><code class="language-powershell">cargo run --quiet --offline --locked --example 09_experiment -- my_work/ladder01
+cargo run --quiet --offline --locked --example 09_experiment -- my_work/ladder01   # refused
+</code></pre>
+<p>The refusal is the feature. Read <code>my_work/ladder01/results.json</code>: every number has the
+configuration that produced it beside it, and <code>"assessment": "not_assessed"</code> is in the file.</p>
+<h3 id="a-bug-this-rung-had">A bug this rung had</h3>
+<p>The first version created the output directory in <strong>both</strong> <code>prepare</code> and <code>save</code>, so every real
+run failed against its own work, and no <code>results.json</code> was ever written. The fix is the two
+functions that now exist:</p>
+<pre><code class="language-rust">let prepared = ensure_new_output(&amp;output)?;   // once, before the work
+// ... compute ...
+let file = write_into(&amp;prepared, &amp;config, &amp;sections)?;   // refuses an existing record
+</code></pre>
+<p>Two tests lock it: <code>preparing_once_and_writing_once_is_the_supported_sequence</code> and
+<code>saving_writes_the_file_it_names</code>.</p>
+<hr/>
+<h2 id="11-the-cross-language-check-that-makes-the-pair-worth-having">11. The cross-language check that makes the pair worth having</h2>
+<pre><code class="language-powershell">&amp; .\.venv\Scripts\python.exe -m pytest -q tests/test_world_model_ladder.py
+</code></pre>
+<p>16 tests. The important one runs <strong>both</strong> ladders on the same configuration and compares the
+saved records:</p>
+<pre><code class="language-python">for section in ("data", "model"):
+    for key, value in python["sections"][section].items():
+        assert rust["sections"][section][key] == value        # exact
+...
+assert rust["sections"]["one_step"]["angle_error_rad"] == \
+    pytest.approx(python["sections"]["one_step"]["angle_error_rad"], abs=1e-9)
+</code></pre>
+<p>Exact for anything derived from integers and seeding; <code>1e-9</code> for anything that solves the
+same 5×5 system in a different order.</p>
+<p>If you only build one language, you cannot run this, and the two bugs above stay hidden.</p>
+<hr/>
+<h2 id="12-what-to-do-with-this-in-order">12. What to do with this, in order</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Do this</th>
+<th>Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Move your hello-world into <code>my_work/world_model_practice01</code> and get <code>cargo run</code> working</td>
+<td>10 min</td>
+</tr>
+<tr>
+<td>2</td>
+<td>WM01 + WM02: type both examples, predict, run, then break the enum on purpose</td>
+<td>30 min</td>
+</tr>
+<tr>
+<td>3</td>
+<td>WM03: do the hand calculation before running</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>4</td>
+<td>WM04: collect with <code>exploration = 0.0</code> and again with <code>0.25</code>; compare the crash counts</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>5</td>
+<td>WM05: delete the <code>simulator::step</code> call from a copy and confirm <code>predict</code> still works</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>6</td>
+<td>WM06: predict the depth at which the model loses to the frozen baseline, then check</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>7</td>
+<td>WM07: add <code>Goal::Park(0.5)</code> and explain the score change in one sentence</td>
+<td>20 min</td>
+</tr>
+<tr>
+<td>8</td>
+<td>WM08: explain why reversing time cannot change the component count</td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>9</td>
+<td>WM09: run twice; read the refusal; read <code>results.json</code></td>
+<td>15 min</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Write <code>comparison.md</code>: the seven questions from <a href="../../polyglot/LEARNING_WORKFLOW.md.html">polyglot/LEARNING_WORKFLOW.md</a></td>
+<td>30 min</td>
+</tr>
+</tbody>
+</table>
+<p>Then, and only then, read the sibling reference
+(<a href="../../../optional/world_model/rust/src/lib.rs"><code>rust/</code></a>) for the GRU version: hidden velocities, a recurrent memory, and a
+planner that replans after every real step.</p>
+<hr/>
+<h2 id="13-honest-boundaries">13. Honest boundaries</h2>
+<ul>
+<li><strong>The linear model is not the article's GRU.</strong> It is fully observed and linear. Its numbers
+must not be compared with the GRU's as though only the language changed.</li>
+<li><strong>The planner here is open loop</strong> — it commits to a sequence. The sibling reference replans
+after every real step. Different problem, stated rather than blurred.</li>
+<li><strong>Simulated observations, not measured data.</strong> Nothing here is a sports measurement.</li>
+<li><strong>One seed, one configuration.</strong> Every record states both.</li>
+<li><strong>A shape summary is not evidence about dynamics.</strong> See WM08.</li>
+<li><strong>No learner assessment.</strong> <code>assessment</code> is <code>not_assessed</code> in every file, and your
+<code>comparison.md</code> is yours.</li>
+</ul>
+<hr/>
+<h2 id="course-links">Course links</h2>
+<ul>
+<li><a href="README.md.html">Main world-model page</a> — the finished idea, in six parts</li>
+<li><a href="SOURCE_AUDIT.md.html">Source audit</a> — attribution and what is not claimed</li>
+<li><a href="EXERCISES.md.html">Exercises</a> — the independent work</li>
+<li><a href="VERIFICATION.md.html">Verification</a> — exactly what ran, and what did not</li>
+<li><a href="../../polyglot/LEARNING_WORKFLOW.md.html">polyglot/LEARNING_WORKFLOW.md</a> — the seven comparison questions</li>
+<li><a href="../../polyglot/PARITY_MATRIX.md.html">Polyglot parity matrix</a> — how companions are scoped</li>
+</ul>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

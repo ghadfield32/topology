@@ -36,10 +36,14 @@ defines every path once.
 | `systems/catalog.json` | the **single** owner of the sys00–sys09 engineering-unit order | course | no |
 | `systems/` | real engineering projects: `c/`, `cpp/`, `rust_validator/`, `go_service/`, `typescript/`, `gpu/`, `pyo3/`, `python/`, `tools/`, `tests/`, `lessons/`, `evidence/` | course | your private copy under `my_work/` |
 | `learning/workbooks/` | generated reference interfaces (57 units × Python/Go/Rust plus project interfaces) | generated | no — regenerate with `systems/tools/generate_workbooks.py` |
+| `learning/rust_from_python.md` | hand-maintained worked guide: project setup, daily commands, Python comparison. Owns no stage order | optional | **yes if you keep your own notes** |
 | `learn.py` | the engineering front door (sessions, projects, demo, project matrix) | tooling | no |
 | `LEARN_TOPOLOGY.html` | the combined navigation page for both layers | generated | no |
 | `docs/v17/` | the archive's first-run, source-map, migration and verification records | documentation | no |
 | `docs/release/START_TO_FINISH.md` | the ordered start-to-finish journey | documentation | no |
+| `optional/rust_practice/` | optional, additive Rust practice crate (ownership, typed errors, compiler cases). Owns no lesson order and no lab key | optional | **yes, your private `my_work/` copy** |
+| `optional/world_model/` | optional, additive worked reference: a CartPole *world model* in Python (PyTorch, optional) and dependency-free Rust, plus an independent Rust persistence reduction. Owns no lesson order and no lab key | optional | **yes, your private `my_work/` copy** |
+| `optional/world_model/rust_ladder/` | optional, additive beginner crate: one runnable example per rung (WM01–WM09), with a Python mirror in `optional/world_model/python/ladder/`. Owns no lesson order and no lab key | optional | **yes, your private `my_work/` copy** |
 | `my_work/` | **your** private attempts, runs and evidence (git-ignored) | **you** | **yes** |
 
 ## The four ownership rules
@@ -75,6 +79,9 @@ defines every path once.
 | change what a native lab computes | `native/protocols/labs.json` and the dispatch in `native/go/engine/labs.go` / `native/rust/src/labs.rs` | run `native_course.py verify --science` |
 | fix wording in a generated notebook | `tools/build_language_notebooks.py` | regenerate, then `--check` |
 | do an assignment | `my_work/` | run the lab yourself |
+| practise Rust ownership without touching the reference | a copy of `optional/rust_practice/` | `cargo test --offline --locked` in the copy |
+| learn how a world model works, in both languages | a copy of `optional/world_model/` | `cargo test --offline --locked`, then the Python run in `my_work/` |
+| build one from `Hello, world!` upwards | a copy of `optional/world_model/rust_ladder/` | `cargo run --example 01_state`, then WM02 … WM09 |
 | add a check | `tools/check_matrix.py` | add a test for it |
 | record what actually ran | `docs/release/` | keep failures in the record |
 

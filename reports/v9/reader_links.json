@@ -1,7 +1,182 @@
 {
-  "pages": 1986,
-  "local_links_checked": 30728,
-  "external_or_embedded_not_fetched": 314,
-  "missing_files": [],
+  "pages": 2826,
+  "local_links_checked": 65618,
+  "external_or_embedded_not_fetched": 2029,
+  "missing_files": [
+    {
+      "page": "reader\\workbooks\\polyglot\\go\\README.md.html",
+      "href": "../../../../workbooks/native/go",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\workbooks\\native\\go",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\workbooks\\polyglot\\go\\README.md.html",
+      "href": "../../../../workbooks/docs/release/REPOSITORY_LAYOUT.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\workbooks\\docs\\release\\REPOSITORY_LAYOUT.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\workbooks\\polyglot\\python\\README.md.html",
+      "href": "../../../../workbooks/native/python",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\workbooks\\native\\python",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\workbooks\\polyglot\\python\\README.md.html",
+      "href": "../../../../workbooks/docs/release/REPOSITORY_LAYOUT.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\workbooks\\docs\\release\\REPOSITORY_LAYOUT.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\workbooks\\polyglot\\rust\\README.md.html",
+      "href": "../../../../workbooks/native/rust",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\workbooks\\native\\rust",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\workbooks\\polyglot\\rust\\README.md.html",
+      "href": "../../../../workbooks/docs/release/REPOSITORY_LAYOUT.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\workbooks\\docs\\release\\REPOSITORY_LAYOUT.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\co2.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/lessons/co2.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\lessons\\co2.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\co2.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/cards/co2.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\cards\\co2.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\elnino.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/lessons/elnino.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\lessons\\elnino.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\elnino.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/cards/elnino.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\cards\\elnino.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\grunfeld.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/lessons/grunfeld.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\lessons\\grunfeld.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\grunfeld.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/cards/grunfeld.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\cards\\grunfeld.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\modechoice.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/lessons/modechoice.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\lessons\\modechoice.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\modechoice.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/cards/modechoice.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\cards\\modechoice.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\nile.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/lessons/nile.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\lessons\\nile.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\nile.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/cards/nile.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\cards\\nile.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\stackloss.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/lessons/stackloss.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\lessons\\stackloss.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\stackloss.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/cards/stackloss.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\cards\\stackloss.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\wdbc.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/lessons/wdbc.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\lessons\\wdbc.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\wdbc.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/cards/wdbc.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\cards\\wdbc.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\wine.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/lessons/wine.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\lessons\\wine.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\systems\\evidence\\original_notebooks\\industry\\notebooks\\wine.ipynb.html",
+      "href": "../../../../../../systems/evidence/original_notebooks/industry/cards/wine.md",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\systems\\evidence\\original_notebooks\\industry\\cards\\wine.md",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\native\\rust\\vendor\\libc\\CONTRIBUTING.md.html",
+      "href": "../../../../../native/rust/vendor/libc/test-before-you-commit",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\native\\rust\\vendor\\libc\\test-before-you-commit",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\native\\rust\\vendor\\simd-adler32\\README.md.html",
+      "href": "../../../../../../../../../../bench",
+      "target": "C:\\bench",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\native\\rust\\vendor\\simd-adler32\\README.md.html",
+      "href": "../../../../../../../../../../fuzz",
+      "target": "C:\\fuzz",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\native\\rust\\vendor\\syn\\README.md.html",
+      "href": "../../../../../native/rust/vendor/syn/examples/heapsize",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\native\\rust\\vendor\\syn\\examples\\heapsize",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\native\\rust\\vendor\\syn\\README.md.html",
+      "href": "../../../../../native/rust/vendor/syn/examples/lazy-static",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\native\\rust\\vendor\\syn\\examples\\lazy-static",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\docs\\release\\START_TO_FINISH.md.html",
+      "href": "../../../docs/LEARN_TOPOLOGY.html",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\docs\\LEARN_TOPOLOGY.html",
+      "reason": "missing file"
+    },
+    {
+      "page": "reader\\docs\\release\\START_TO_FINISH.md.html",
+      "href": "../../../docs/START_HERE.html",
+      "target": "C:\\Users\\ghadf\\vscode_projects\\docker_projects\\topology\\docs\\START_HERE.html",
+      "reason": "missing file"
+    }
+  ],
   "missing_fragments": []
 }

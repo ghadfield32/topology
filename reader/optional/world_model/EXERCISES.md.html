@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Independent work: `not_assessed` · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../optional/world_model/EXERCISES.md">optional/world_model/EXERCISES.md</a> · Readable source notation; no online math renderer.</p><h1 id="independent-work-not_assessed">Independent work: <code>not_assessed</code></h1>
+<p>The worked reference above is not the assignment. Nothing in this repository scores you,
+and a run that finishes is not a demonstrated understanding. These exercises are the ones
+worth doing by hand, in order of increasing difficulty. Keep them in
+<code>my_work/world_model_*/</code>, never in <code>optional/world_model/</code>.</p>
+<h2 id="1-predict-before-you-run-do-this-first">1. Predict before you run (do this first)</h2>
+<p>Write the answer in <code>my_work/world_model_ex01/prediction.md</code> <strong>before</strong> running anything.</p>
+<ol>
+<li><code>--tolerance 0.02</code> and a model that beats the frozen baseline for 37 steps. If you set
+the tolerance to <code>0.005</code>, does the trust horizon go up, down, or stay the same? Why?</li>
+<li>The planner draws 200 random plans of length 15. How many distinct 15-step plans exist?
+Compute the fraction of the space being sampled.</li>
+<li>The balance goal and the park goal share one trained model. Name the <em>one</em> thing that
+differs between them, precisely enough to write in a diff.</li>
+</ol>
+<p>Then run the tiny configuration and check each prediction. A wrong prediction is the most
+useful outcome; write down which assumption it falsified.</p>
+<h2 id="2-break-the-objective-on-purpose">2. Break the objective on purpose</h2>
+<p>This is the article's central bug, and reproducing it is the single best exercise here.</p>
+<p>Add a third goal <code>score_park_average</code> that scores by the <strong>mean</strong> distance from the
+target across the whole dream instead of the terminal distance. Compare it with
+<code>score_park</code> on the same model, the same seeds, and the same number of planning episodes.</p>
+<p>Your <code>comparison.md</code> must answer:</p>
+<ul>
+<li>Which goal parks the cart closer?</li>
+<li>Is the difference reproducible across at least three seeds?</li>
+<li>Does the <em>average</em> goal lose because it discards the correct plan (as the article
+claims), or for a different reason you can actually observe in the planned action
+sequences?</li>
+<li>What would you have to measure to distinguish those two explanations?</li>
+</ul>
+<p>Do not report "the terminal score is better" without the observation that explains it.</p>
+<h2 id="3-remove-the-disclosure-and-measure-the-damage">3. Remove the disclosure and measure the damage</h2>
+<p><code>play_episode</code> uses the hand controller for the first <code>warmup</code> decisions and records how
+many decisions were planned. Run with <code>--warmup 8</code>, then <code>--warmup 0</code>, on a model trained
+with the default settings.</p>
+<p>Report: the survival steps in both conditions, how many decisions were actually planned,
+and whether the difference survives more than one seed. A result that changes only the
+warm-up is a statement about a blank memory, not about the model.</p>
+<h2 id="4-replace-the-random-search-with-a-better-one">4. Replace the random search with a better one</h2>
+<p>The planner samples uniformly at random, which is why the useful horizon is far below the
+accurate horizon. Implement one alternative in your own copy — beam search over actions,
+or a shooting method that refines the best sampled plan — and compare:</p>
+<ul>
+<li>steps survived at planning horizons 1, 3, 5, 10, 20;</li>
+<li>decisions per second;</li>
+<li>whether the improvement appears at long horizons, where random search is starved, or
+also at short ones, where it is not.</li>
+</ul>
+<p>This is the exercise that separates "the model is bad" from "the search is bad".</p>
+<h2 id="5-write-the-rust-test-that-would-have-caught-a-bug">5. Write the Rust test that would have caught a bug</h2>
+<p>In your own copy of <code>rust/</code>, add a test that fails on a plausible mistake in the
+persistence reduction — for example, ordering simplices by value alone rather than by
+<code>(value, dimension, vertices)</code>, or dropping the essential-bar bookkeeping. Then delete the
+fix and confirm the test fails.</p>
+<p>Deliver: the test, the mistaken output it produces, and one sentence on why the mistake is
+plausible enough to be worth a test.</p>
+<h2 id="6-extend-the-topology-honestly-hardest">6. Extend the topology honestly (hardest)</h2>
+<p>The current summary describes one cloud at one scale. Choose <strong>one</strong> extension and state
+its limits before you run it:</p>
+<ul>
+<li>a stability check: perturb the collected cloud by a declared amount and report the
+bottleneck distance against the perturbation size;</li>
+<li>a comparison between two <em>collectors</em> (different <code>exploration</code> or <code>bias_scale</code>) at a
+fixed scale;</li>
+<li>a scale sweep, reporting how the essential-bar count changes with <code>max_edge</code>.</li>
+</ul>
+<p>Whatever you choose, the write-up must contain a sentence of the form "this does <strong>not</strong>
+show …". A shape summary that only says what it shows is not finished.</p>
+<h2 id="deliverable-contract">Deliverable contract</h2>
+<p>For each exercise, a private directory containing:</p>
+<pre><code>my_work/world_model_exNN/
+  prediction.md     # written before the run
+  results/          # the actual output directory from the run
+  comparison.md     # what happened, in the repository's seven-question form
+  reflection.md     # your own words; nobody else fills this in
+</code></pre>
+<p>The seven questions in <code>comparison.md</code> are the ones from
+<a href="../../polyglot/LEARNING_WORKFLOW.md.html">polyglot/LEARNING_WORKFLOW.md</a>, applied to this area:</p>
+<ol>
+<li>What is one observation?</li>
+<li>What types did I choose in Python and Rust?</li>
+<li>What errors can each language represent or prevent?</li>
+<li>What numerical invariant should match?</li>
+<li>Which differences are formatting or floating-point effects rather than science?</li>
+<li>Which specialised library functionality did I <em>not</em> reproduce?</li>
+<li>What does the experiment support, and what does it not support?</li>
+</ol>
+<p>Your reflection is yours. Do not paste an answer from this page into it and call it your
+independent work.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

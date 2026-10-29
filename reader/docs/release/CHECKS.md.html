@@ -50,6 +50,22 @@ uv run --no-sync python tools/check_matrix.py --only notebooks --output my_work/
 </table>
 <p>Each run writes <code>check_matrix.json</code> listing every check's scope, argv, exit code,
 timing, output tail and (for <code>python</code>) the skip reasons.</p>
+<h2 id="new-in-v14-the-systems-layer-has-its-own-separated-checks">New in v14: the systems layer has its own separated checks</h2>
+<p>The engineering layer is checked separately from the mathematical reference
+sweep, so a pass in one cannot be read as a pass in the other:</p>
+<pre><code class="language-powershell">uv run --no-sync python -m unittest discover -s systems/tests -p 'test_*.py'   # contracts, projects, navigation, workflow
+uv run --no-sync python learn.py workbooks --check                            # 181 generated interfaces, no drift
+uv run --no-sync python learn.py project --unit sys01 --output my_work/c_reader01
+uv run --no-sync python learn.py check-project --workspace my_work/c_reader01 --output my_work/c_reader01/attempt01
+uv run --no-sync python learn.py demo --output my_work/integrated_demo01
+uv run --no-sync python learn.py verify-projects --output my_work/projects_acceptance01
+</code></pre>
+<p>Exit codes follow the same convention: <code>0</code> passed, <code>3</code> blocked by an absent
+optional dependency, <code>1</code> a real build or assertion failure. <code>verify-projects</code>
+returns <code>3</code> when any requested unit is blocked — that is a truthful partial, not
+an all-pass. The systems sweep that actually executes the generated interfaces is
+<code>systems/tools/sweep_workbooks.py</code>; it is a reference sweep, not learner
+assessment, and each fresh kernel is shut down explicitly even after failure.</p>
 <h2 id="what-no-check-establishes">What no check establishes</h2>
 <p>Stated in the tool's own output, and repeated here so it cannot be missed:</p>
 <ul>
@@ -59,7 +75,8 @@ records each unit's difference, and
 Do not remove that guard to make a screen green.</li>
 <li>Docker/OCI image build and runtime acceptance.</li>
 <li>Live Kubernetes admission, scheduling or a completed Job.</li>
-<li>macOS, GPU or remote CI execution.</li>
+<li>macOS, GPU/Triton/CUDA execution, PyO3/maturin packaging, or the remote
+systems CI workflow.</li>
 <li>Learner mastery. Every generated notebook is <code>not_assessed</code>.</li>
 </ul>
 <h2 id="protocol-parity-say-which-kind-it-is">Protocol parity: say which kind it is</h2>

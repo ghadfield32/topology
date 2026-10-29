@@ -1,0 +1,107 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Optional Rust practice (worked reference) · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../optional/rust_practice/README.md">optional/rust_practice/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="optional-rust-practice-worked-reference">Optional Rust practice (worked reference)</h1>
+<p>A small, dependency-free crate for <strong>ownership, API contracts and typed errors</strong>, kept beside
+the course. It is <strong>not a second curriculum</strong>: it owns no stage order, no lab key and no
+learner assessment. The 31-stage course in <code>curriculum/catalog.json</code> remains the single route,
+and the Go/Rust reference implementations in <code>native/</code> remain the scientific reference.</p>
+<p>This is a <strong>worked reference</strong>, not the assignment. The independent change is described in
+<a href="EXERCISES.md.html">EXERCISES.md</a> and stays <code>not_assessed</code> until you demonstrate it.</p>
+<h2 id="why-this-crate-exists">Why this crate exists</h2>
+<p>The course asks you to explain <em>what each language made explicit about memory, types, errors
+and algorithm choice</em>. This crate isolates four of those decisions so each one is visible in
+a signature rather than buried in a numerical pipeline:</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>The decision it exposes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../../optional/rust_practice/src/error.rs">src/error.rs</a></td>
+<td>A rejected record is a value the caller must handle, not a panic.</td>
+</tr>
+<tr>
+<td><a href="../../../optional/rust_practice/src/table.rs">src/table.rs</a></td>
+<td>Borrow to inspect, own to produce. Validation completes before output exists.</td>
+</tr>
+<tr>
+<td><a href="../../../optional/rust_practice/src/translate.rs">src/translate.rs</a></td>
+<td>A mutating function documents what happens to the caller's data on error.</td>
+</tr>
+<tr>
+<td><a href="../../../optional/rust_practice/src/rank.rs">src/rank.rs</a></td>
+<td>A numerical rank is meaningless without the tolerance that produced it.</td>
+</tr>
+</tbody>
+</table>
+<p>Two consequences are tested, not asserted:</p>
+<ul>
+<li>A failed call that would have partially changed data leaves <strong>every</strong> element untouched.</li>
+<li>Appending a column that is a linear combination of existing columns <strong>cannot</strong> increase
+rank. <code>dependent_feature_kernel</code> gives the kernel vector that makes this checkable.</li>
+</ul>
+<h2 id="setup">Setup</h2>
+<p>The crate pins its own toolchain and has no dependencies, so it needs no <code>vendor/</code> directory
+and no network access:</p>
+<pre><code>cd optional/rust_practice
+rustup toolchain install 1.90.0
+</code></pre>
+<p><code>rust-toolchain.toml</code> requests <code>1.90.0</code> and the same <code>rust-version = "1.83"</code> floor as the
+course. <strong>A bare <code>rustc</code> on <code>PATH</code> may be a different release</strong> — <code>rust-toolchain.toml</code> is
+honoured by <code>cargo</code> and by <code>rustup run</code>, not by invoking <code>rustc</code> directly. The compiler-case
+checker resolves the pin for exactly this reason and fails if the selected compiler does not
+match the declaration.</p>
+<h2 id="run-it">Run it</h2>
+<p>Every run goes in a new <code>my_work/</code> directory. Nothing here rewrites a previous record.</p>
+<pre><code>cargo check --offline --locked
+cargo test --offline --locked
+cargo run --offline --release --example iris_rank -- ../../data/raw/iris.csv
+python check_compiler_cases.py --output ../../my_work/compiler01
+</code></pre>
+<p><code>check_compiler_cases.py</code> refuses an existing output directory, and treats a missing
+compiler as <code>blocked</code> (exit 2) and a wrong diagnostic as <code>failed</code> (exit 1). Only matching
+predictions exit 0.</p>
+<h2 id="observed-on-this-windows-host">Observed on this Windows host</h2>
+<p>Recorded from real runs on 28 October 2026 with <code>rustc 1.90.0 (1159e78c4 2025-09-14)</code>
+selected through the pin. See <a href="VERIFICATION.md.html">VERIFICATION.md</a> for the exact commands and
+what each record does <strong>not</strong> establish.</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Observed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cargo test --offline --locked</code></td>
+<td>13 integration tests passed, 3 doc-tests passed</td>
+</tr>
+<tr>
+<td><code>check_compiler_cases.py</code></td>
+<td>6/6 matched: 2 compiled, 4 rejected as E0499, E0382, E0106, E0502</td>
+</tr>
+<tr>
+<td><code>iris_rank</code> on <code>data/raw/iris.csv</code></td>
+<td>150 rows; rank 4 before and after; <code>max abs(row . kernel) = 0</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="boundaries">Boundaries</h2>
+<ul>
+<li>The Iris rows are one <strong>measured</strong> table. A rank result says nothing about the biology,
+the sampling design or the predictive value of the four measurements.</li>
+<li>Passing tests show one program satisfied its assertions under one tolerance. They do not
+show the algorithm is the right one for your question.</li>
+<li>Agreeing with the course's Go/Rust reference implementations would be software evidence, not
+independent data collection.</li>
+<li>Nothing here assesses learner mastery. Delayed recall and independent reasoning stay open.</li>
+</ul>
+<h2 id="course-links">Course links</h2>
+<ul>
+<li><a href="../../native/guides/LEARNING_PATHS.md.html">Rust learning path</a> (sections R0–R6)</li>
+<li><a href="../../native/guides/labs/stage01.md.html">Stage 01 guide</a> — the current learning position</li>
+<li><a href="../../docs/release/REPOSITORY_LAYOUT.md.html">Repository layout</a></li>
+</ul>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

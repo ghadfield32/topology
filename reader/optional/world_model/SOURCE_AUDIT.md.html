@@ -1,0 +1,144 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source audit: the world-model article · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../optional/world_model/SOURCE_AUDIT.md">optional/world_model/SOURCE_AUDIT.md</a> · Readable source notation; no online math renderer.</p><h1 id="source-audit-the-world-model-article">Source audit: the world-model article</h1>
+<h2 id="what-the-source-is">What the source is</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Author</td>
+<td>Anubhab Banerjee (PhD, TUM; senior AI researcher)</td>
+</tr>
+<tr>
+<td>Title</td>
+<td><em>How to Make Your First World Model from Scratch</em></td>
+</tr>
+<tr>
+<td>Venue</td>
+<td>Towards Data Science, 23 September 2026, 27-minute read</td>
+</tr>
+<tr>
+<td>Subtitle</td>
+<td>"A beginner-friendly guide to building a world model in Python, letting it daydream its way through CartPole, and accurately measuring when the illusion collapses."</td>
+</tr>
+<tr>
+<td>Author's code</td>
+<td><a href="https://github.com/AnubhabBanerjee/CartPole-Daydream">https://github.com/AnubhabBanerjee/CartPole-Daydream</a></td>
+</tr>
+<tr>
+<td>Supplied form</td>
+<td>A reader-mode paste of the article, supplied by the repository owner on 29 October 2026</td>
+</tr>
+</tbody>
+</table>
+<p>The paste contains the article's prose, its illustrative Python fragments, and its
+measured tables. It does <strong>not</strong> contain the author's notebooks, their checkpoints, or
+their figures as data. Nothing in this directory is a copy of that repository.</p>
+<h2 id="what-belongs-to-the-author">What belongs to the author</h2>
+<p>Every number in the article's figures and tables is the author's measurement under the
+author's configuration. <strong>None of it is reproduced here as ours.</strong> In particular:</p>
+<ul>
+<li>"350 ± 184 out of 500" for DQN on standard CartPole;</li>
+<li>"156,967 transitions" from 500 episodes, mean length 313.9;</li>
+<li>"one step in 380" failure rate;</li>
+<li>"3.8 millimetres" cart error and "0.00026 radians" angle error at one step;</li>
+<li>"H = 29" from a 0.02-radian tolerance, and "37 steps" for the frozen baseline;</li>
+<li>"500.0 ± 0.0" for the planner, "2.94 ms" per decision, "0.16 ms" for the DQN;</li>
+<li>the horizon sweep (25.0 → 500.0 → 493.0 → 477.1 → 450.1 → 245.9 → 158.8).</li>
+</ul>
+<p>Where this directory quotes one of those, it says "the article reports". Our own
+<code>results.json</code> files contain only numbers we produced on this machine, and each carries
+the interpreter, PyTorch version and full configuration beside them.</p>
+<h2 id="what-is-ours">What is ours</h2>
+<ul>
+<li>The CartPole integrator, collector, normalisation and trust-horizon function, written
+from the standard published CartPole equations (Barto, Sutton and Anderson 1983) and
+the task description in the article, not copied from any repository.</li>
+<li>The GRU world model, teacher-forced trainer, batched free rollout and planner.</li>
+<li>The two goal functions, including the terminal-position scoring that the article says
+took a bug to discover.</li>
+<li>The independent Rust F2 persistence reduction, the linear delta model, and the
+comparison harness that checks Rust against Python on one committed fixture.</li>
+<li>The deterministic fixture generator and the fixture it produces (a <strong>manufactured</strong>
+cloud, explicitly not observed CartPole episodes).</li>
+</ul>
+<h2 id="deliberate-departures-from-the-article">Deliberate departures from the article</h2>
+<table>
+<thead>
+<tr>
+<th>Article</th>
+<th>Here</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trains a GRU with PyTorch, ~13,635 parameters</td>
+<td>Same, with a smaller hidden size</td>
+<td>A smaller model trains in minutes on a CPU and its parameter count is recorded rather than asserted</td>
+</tr>
+<tr>
+<td>Predicts the next observation</td>
+<td>Predicts the <strong>change</strong>, in normalized units</td>
+<td>Stated by the article as the reason the model learns physics instead of copying its input; made explicit in code</td>
+</tr>
+<tr>
+<td>"Count each crash 380 times over"</td>
+<td><code>pos_weight=380</code> inside the BCE, plus a declared <code>TERMINATION_LOSS_SCALE</code></td>
+<td>A literal <code>380 * BCE</code> scales the gradient but leaves the optimum at the base rate, so it still predicts "always alive". The two heads also differ in natural scale, so the coefficient has to be stated</td>
+</tr>
+<tr>
+<td>Uses 500 collection episodes</td>
+<td>Defaults to 200, configurable</td>
+<td>Documented as a smaller run, never presented as the article's numbers</td>
+</tr>
+<tr>
+<td>Reports a planner result with an 8-step warm-up</td>
+<td>Same warm-up, and the same warm-up applied to the drift measurement</td>
+<td>The article discloses the planner warm-up; the drift sweep had the same blank-memory problem, so it is warmed too and the count is recorded</td>
+</tr>
+<tr>
+<td>Reports free-rollout error to depth 100</td>
+<td>Depths up to <code>--horizon</code>, default 30</td>
+<td>Long rollouts of a small model are dominated by the truncation artefacts we already measure</td>
+</tr>
+<tr>
+<td>Uses a DQN baseline</td>
+<td>Uses a coin-flip agent, the hand controller and the frozen-state model</td>
+<td>A DQN is a second training problem; the point being measured is whether the planner beats doing nothing</td>
+</tr>
+<tr>
+<td>Reports a policy that ties the hand controller</td>
+<td>Our planner beats coin flips by ~8× and loses to the hand controller</td>
+<td>Different model size, fewer episodes, one seed. The ordering, not the values, is what we can support</td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-this-directory-does-not-claim">What this directory does not claim</h2>
+<ul>
+<li>It does not reproduce the article's figures, and no figure comparison is asserted.</li>
+<li>It does not run on a GPU, and no timing comparison with the article is made. Decision
+time here is measured on this CPU and is only comparable with our own other agents.</li>
+<li>It does not establish that a world model is a good idea for any real robot. CartPole is
+four numbers with no friction, no contact and no sensor noise.</li>
+<li>The topology summary describes the collector, not the physics. See
+<code>../README.md#what-the-shape-does-not-say</code>.</li>
+<li>Nothing here assesses a learner. <code>assessment</code> is <code>not_assessed</code> in every record.</li>
+</ul>
+<h2 id="licensing-and-redistribution">Licensing and redistribution</h2>
+<p>The article and its code are third-party work. This directory links to both and does not
+redistribute either. The author's repository has its own licence; check it before copying
+anything from it. The CartPole equations are standard published physics and are restated
+here from the task description.</p>
+<h2 id="related-course-sources">Related course sources</h2>
+<ul>
+<li><code>sources/v5_sources.json</code> — the primary-source ledger for the physics and representation
+tracks (<code>HNN</code>, <code>LNN</code>, <code>PCGRAD</code>, <code>CONFIG</code>), which is where the physics-loss material
+already lives.</li>
+<li><code>docs/sources.json</code> — the topology reference ledger (<code>R1</code>–<code>R10</code>, <code>D1</code>–<code>D3</code>, <code>L1</code>–<code>L3</code>).</li>
+<li><code>docs/release/VERIFICATION.md</code> — what has actually been executed in this checkout.</li>
+</ul>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

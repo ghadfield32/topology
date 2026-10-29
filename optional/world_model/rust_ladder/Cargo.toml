@@ -1,0 +1,50 @@
+[package]
+name = "world-model-ladder"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.83"
+description = "Beginner ladder from a Hello, world! program to a full-state world model, planner and H0 topology. Dependency-free and offline."
+license = "MIT"
+
+[lib]
+name = "world_model_ladder"
+path = "src/lib.rs"
+
+# Examples are the actual lessons. Each one is small enough to type by hand.
+[[example]]
+name = "01_state"
+path = "examples/01_state.rs"
+
+[[example]]
+name = "02_action"
+path = "examples/02_action.rs"
+
+[[example]]
+name = "03_step"
+path = "examples/03_step.rs"
+
+[[example]]
+name = "04_collect"
+path = "examples/04_collect.rs"
+
+[[example]]
+name = "05_fit"
+path = "examples/05_fit.rs"
+
+[[example]]
+name = "06_rollout"
+path = "examples/06_rollout.rs"
+
+[[example]]
+name = "07_plan"
+path = "examples/07_plan.rs"
+
+[[example]]
+name = "08_topology"
+path = "examples/08_topology.rs"
+
+[[example]]
+name = "09_experiment"
+path = "examples/09_experiment.rs"
+
+[dependencies]

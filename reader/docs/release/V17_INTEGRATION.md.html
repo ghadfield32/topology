@@ -114,9 +114,8 @@ and updated, not replaced by the archive's thinner generic versions.</li>
 Kubernetes references use <code>listening-to-shape:14</code> and namespace
 <code>shape-learning-v14</code>. <code>deploy/kubernetes/resources.json</code> keeps the archive's
 <code>core</code> profile default.</p>
-<h2 id="a-real-portability-fix-our-change-not-the-archives">A real portability fix (our change, not the archive's)</h2>
-<p>The archive's <code>systems/python/workflow.py:command()</code> ran <code>tsc</code> by bare name.
-On Windows a package-manager install is a <code>.cmd</code> shim that <code>CreateProcess</code>
+<h2 id="a-real-portability-fix-our-change-not-the-archivesthe-archives-systemspythonworkflowpycommand-ran-tsc-by-bare-name">A real portability fix (our change, not the archive's)The archive's <code>systems/python/workflow.py:command()</code> ran <code>tsc</code> by bare name.</h2>
+<p>On Windows a package-manager install is a <code>.cmd</code> shim that <code>CreateProcess</code>
 cannot locate, so the integrated demonstration failed with
 <code>[WinError 2] The system cannot find the file specified</code>. <code>command()</code> now
 resolves the executable (including a <code>.cmd</code>/<code>.bat</code> shim through <code>%COMSPEC%</code>) to

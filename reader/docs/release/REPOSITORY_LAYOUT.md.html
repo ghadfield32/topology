@@ -182,6 +182,12 @@ defines every path once.</p>
 <td>no — regenerate with <code>systems/tools/generate_workbooks.py</code></td>
 </tr>
 <tr>
+<td><code>learning/rust_from_python.md</code></td>
+<td>hand-maintained worked guide: project setup, daily commands, Python comparison. Owns no stage order</td>
+<td>optional</td>
+<td><strong>yes if you keep your own notes</strong></td>
+</tr>
+<tr>
 <td><code>learn.py</code></td>
 <td>the engineering front door (sessions, projects, demo, project matrix)</td>
 <td>tooling</td>
@@ -204,6 +210,24 @@ defines every path once.</p>
 <td>the ordered start-to-finish journey</td>
 <td>documentation</td>
 <td>no</td>
+</tr>
+<tr>
+<td><code>optional/rust_practice/</code></td>
+<td>optional, additive Rust practice crate (ownership, typed errors, compiler cases). Owns no lesson order and no lab key</td>
+<td>optional</td>
+<td><strong>yes, your private <code>my_work/</code> copy</strong></td>
+</tr>
+<tr>
+<td><code>optional/world_model/</code></td>
+<td>optional, additive worked reference: a CartPole <em>world model</em> in Python (PyTorch, optional) and dependency-free Rust, plus an independent Rust persistence reduction. Owns no lesson order and no lab key</td>
+<td>optional</td>
+<td><strong>yes, your private <code>my_work/</code> copy</strong></td>
+</tr>
+<tr>
+<td><code>optional/world_model/rust_ladder/</code></td>
+<td>optional, additive beginner crate: one runnable example per rung (WM01–WM09), with a Python mirror in <code>optional/world_model/python/ladder/</code>. Owns no lesson order and no lab key</td>
+<td>optional</td>
+<td><strong>yes, your private <code>my_work/</code> copy</strong></td>
 </tr>
 <tr>
 <td><code>my_work/</code></td>
@@ -278,6 +302,21 @@ source, so editing and breaking it is the exercise.</li>
 <td>do an assignment</td>
 <td><code>my_work/</code></td>
 <td>run the lab yourself</td>
+</tr>
+<tr>
+<td>practise Rust ownership without touching the reference</td>
+<td>a copy of <code>optional/rust_practice/</code></td>
+<td><code>cargo test --offline --locked</code> in the copy</td>
+</tr>
+<tr>
+<td>learn how a world model works, in both languages</td>
+<td>a copy of <code>optional/world_model/</code></td>
+<td><code>cargo test --offline --locked</code>, then the Python run in <code>my_work/</code></td>
+</tr>
+<tr>
+<td>build one from <code>Hello, world!</code> upwards</td>
+<td>a copy of <code>optional/world_model/rust_ladder/</code></td>
+<td><code>cargo run --example 01_state</code>, then WM02 … WM09</td>
 </tr>
 <tr>
 <td>add a check</td>

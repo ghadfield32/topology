@@ -65,7 +65,7 @@
     "site/v7/my_work/templates/05_response.html",
     "site/progress.html"
   ],
-  "canonical_source_pages": 1476,
+  "canonical_source_pages": 1486,
   "required_primary_lessons": 31,
   "alias_records": [
     {
@@ -8077,6 +8077,7 @@
     "foundations/07_physics_from_zero.md": "reader/foundations/07_physics_from_zero.md.html",
     "foundations/08_structure_is_not_truth.md": "reader/foundations/08_structure_is_not_truth.md.html",
     "learning/README.md": "reader/learning/README.md.html",
+    "learning/rust_from_python.md": "reader/learning/rust_from_python.md.html",
     "lessons/00_lesson.md": "reader/lessons/00_lesson.md.html",
     "lessons/01_lesson.md": "reader/lessons/01_lesson.md.html",
     "lessons/02_lesson.md": "reader/lessons/02_lesson.md.html",
@@ -8873,6 +8874,15 @@
     "physics/practice/learner/28_practice.ipynb": "reader/physics/practice/learner/28_practice.ipynb.html",
     "physics/practice/learner/29_practice.ipynb": "reader/physics/practice/learner/29_practice.ipynb.html",
     "physics/practice/learner/30_practice.ipynb": "reader/physics/practice/learner/30_practice.ipynb.html",
+    "optional/rust_practice/EXERCISES.md": "reader/optional/rust_practice/EXERCISES.md.html",
+    "optional/rust_practice/README.md": "reader/optional/rust_practice/README.md.html",
+    "optional/rust_practice/VERIFICATION.md": "reader/optional/rust_practice/VERIFICATION.md.html",
+    "optional/world_model/EXERCISES.md": "reader/optional/world_model/EXERCISES.md.html",
+    "optional/world_model/LADDER.md": "reader/optional/world_model/LADDER.md.html",
+    "optional/world_model/README.md": "reader/optional/world_model/README.md.html",
+    "optional/world_model/SOURCE_AUDIT.md": "reader/optional/world_model/SOURCE_AUDIT.md.html",
+    "optional/world_model/VERIFICATION.md": "reader/optional/world_model/VERIFICATION.md.html",
+    "optional/rust_practice/target/doc/static.files/SourceSerif4-LICENSE-a2cfd9d5.md": "reader/optional/rust_practice/target/doc/static.files/SourceSerif4-LICENSE-a2cfd9d5.md.html",
     "native/guides/DEPLOYMENT.md": "reader/native/guides/DEPLOYMENT.md.html",
     "native/guides/LEARNING_PATHS.md": "reader/native/guides/LEARNING_PATHS.md.html",
     "native/guides/SETUP.md": "reader/native/guides/SETUP.md.html",

@@ -4,10 +4,14 @@ on:
   pull_request:
     paths:
       - 'polyglot/**'
+      - 'optional/world_model/**'
+      - 'tests/test_polyglot_v14.py'
+      - 'tests/test_world_model_optional.py'
       - '.github/workflows/polyglot.yml'
   push:
     paths:
       - 'polyglot/**'
+      - 'optional/world_model/**'
       - '.github/workflows/polyglot.yml'
 
 jobs:
@@ -47,3 +51,49 @@ jobs:
           cargo run --quiet --bin shape-rust -- --list | while read -r id; do
             cargo run --quiet --bin shape-rust -- --repo ../.. --lab "$id" >/dev/null
           done
+  world-model:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: '1.90.0'
+          components: rustfmt, clippy
+      - name: Test the world-model Rust companion (dependency-free, offline)
+        working-directory: optional/world_model/rust
+        run: cargo test --offline --locked
+      - name: Formatting gate
+        working-directory: optional/world_model/rust
+        run: cargo fmt --all -- --check
+      - name: Lint gate (unused Result must not pass)
+        working-directory: optional/world_model/rust
+        run: cargo clippy --offline --all-targets -- -D warnings
+      - name: Reduce the committed fixture
+        working-directory: optional/world_model/rust
+        run: >-
+          cargo run --quiet --offline --bin world-model-rust --
+          --check-topology ../fixtures/points.json
+          --output "$RUNNER_TEMP/world_model_topology"
+      - name: Test the beginner ladder
+        working-directory: optional/world_model/rust_ladder
+        run: cargo test --offline --locked
+      - name: Ladder formatting gate
+        working-directory: optional/world_model/rust_ladder
+        run: cargo fmt --all -- --check
+      - name: Ladder lint gate
+        working-directory: optional/world_model/rust_ladder
+        run: cargo clippy --offline --all-targets -- -D warnings
+      - name: Run every ladder rung
+        working-directory: optional/world_model/rust_ladder
+        shell: bash
+        run: |
+          set -euo pipefail
+          for rung in 01_state 02_action 03_step 04_collect 05_fit 06_rollout 07_plan 08_topology; do
+            cargo run --quiet --offline --locked --example "$rung" >/dev/null
+          done
+          cargo run --quiet --offline --locked --example 09_experiment -- "$RUNNER_TEMP/ladder01" >/dev/null
+          # A second run must refuse to reuse the directory.
+          if cargo run --quiet --offline --locked --example 09_experiment -- "$RUNNER_TEMP/ladder01"; then
+            echo "the experiment accepted an existing output directory" >&2
+            exit 1
+          fi

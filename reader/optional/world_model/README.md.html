@@ -1,0 +1,477 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build a world model: one idea, in Python and in Rust · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../optional/world_model/README.md">optional/world_model/README.md</a> · Readable source notation; no online math renderer.</p><h1 id="build-a-world-model-one-idea-in-python-and-in-rust">Build a world model: one idea, in Python and in Rust</h1>
+<p><strong>Status: worked reference. <code>not_assessed</code>.</strong> This directory is additive. It is not a second curriculum: it owns no stage number, no lab key, and no place in the lesson order.</p>
+<p>The 31-stage route in <a href="../../../curriculum/catalog.json">curriculum/catalog.json</a> remains the
+single mandatory curriculum, and Go/Rust in <a href="../../../native"><code>native/</code></a> remain the
+scientific reference implementations.</p>
+<p>It exists because one public article — Anubhab Banerjee's
+<em>How to Make Your First World Model from Scratch</em> (Towards Data Science, 23 September
+2026) — teaches a pivot this course did not yet have a worked example for: <strong>stop training
+a network to know what to do; train one to know what happens next.</strong> Its author's code is
+at <a href="https://github.com/AnubhabBanerjee/CartPole-Daydream">https://github.com/AnubhabBanerjee/CartPole-Daydream</a>. <a href="SOURCE_AUDIT.md.html">SOURCE_AUDIT.md</a>
+records exactly what belongs to the author, what is ours, and what is not claimed.</p>
+<hr/>
+<h2 id="the-pivot-in-the-articles-own-shape">The pivot, in the article's own shape</h2>
+<p>Ordinary reinforcement learning bakes the goal into the weights. Train a DQN with "one
+point per step survived" and the goal is <em>spent</em>: there is no argument, no flag and no
+field to change afterwards. The article demonstrates the consequence memorably. A
+perfectly competent balancing agent, politely asked to park the cart at x = +1.0, hovers
+at x ≈ −0.1. It is not refusing. There is no ear.</p>
+<p>A <strong>world model</strong> is trained on a different question. Hand it a situation and a shove; it
+returns the next situation. It knows how carts behave and has no opinion about what you
+should do with them. Physics is indifferent to your goals, which is exactly why the goal
+has nowhere to hide: it becomes a plain function that reads an imagined future and says
+how much it likes it.</p>
+<p>Then deciding is almost embarrassingly simple:</p>
+<ol>
+<li>Invent a few hundred random sequences of shoves.</li>
+<li>Daydream every one inside the model. <strong>The real world is not consulted.</strong></li>
+<li>Score each daydream with whatever function you feel like today.</li>
+<li>Take the first shove of whichever scored best.</li>
+<li>Play that one shove for real. Bin the plan. Think again.</li>
+</ol>
+<p>That is it. The rest of this page is the part that makes it honest: measuring when the
+daydream stops resembling anything.</p>
+<hr/>
+<h2 id="run-it">Run it</h2>
+<p>Python is the full reference. Rust reproduces the algorithmic core so the arithmetic is
+checkable. Each language writes to a <strong>new</strong> directory and refuses to reuse one.</p>
+<pre><code class="language-powershell"># Python — full reference (PyTorch, optional dependency)
+uv run --no-sync python optional/world_model/python/world_model.py --output my_work/world_model01
+
+# Python — a run small enough to finish in a minute
+uv run --no-sync python optional/world_model/python/world_model.py --output my_work/world_model_tiny01 `
+    --episodes 6 --epochs 1 --train-steps 6 --planning-episodes 2 --points 12 --sequences 8
+
+# Rust — independent topology + the linear delta model
+Push-Location optional/world_model/rust
+cargo test --offline --locked
+cargo run --quiet --offline --bin world-model-rust -- --output ..\..\..\my_work\world_model_rust01
+Pop-Location
+
+# Rust — the beginner ladder, one example per rung (see LADDER.md)
+Push-Location optional/world_model/rust_ladder
+cargo test --offline --locked
+cargo run --quiet --offline --locked --example 03_step
+Pop-Location
+
+# Verify the committed fixture still matches its generator (never overwritten)
+uv run --no-sync python optional/world_model/python/make_fixture.py --check
+</code></pre>
+<p>If PyTorch is absent, the Python command writes <code>"status": "blocked"</code> with the reason and
+exits 3. A blocked run is <strong>not</strong> a pass and must never be reported as passed, and no
+number is invented to fill the gap. This is the same rule the rest of the repository
+follows: an optional dependency that is missing produces <code>blocked</code>, never a relabelled
+pass.</p>
+<hr/>
+<h2 id="part-1--the-game-written-out">Part 1 — the game, written out</h2>
+<p>CartPole is four numbers and two buttons:</p>
+<table>
+<thead>
+<tr>
+<th>Number</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cart position</td>
+<td>where the cart is along the rail; ends the game beyond ±2.4 m</td>
+</tr>
+<tr>
+<td>cart velocity</td>
+<td>how fast it slides</td>
+</tr>
+<tr>
+<td>pole angle</td>
+<td>tilt from upright; ends the game beyond 12° (0.20944 rad)</td>
+</tr>
+<tr>
+<td>pole angular velocity</td>
+<td>how fast it is tipping</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../../../optional/world_model/python/cartpole.py">python/cartpole.py</a>. Three decisions there are load-bearing:</p>
+<p><strong>Two endings, kept apart.</strong> <code>terminated</code> means the pole fell or the cart left the rail.
+<code>truncated</code> means the 500-step timer expired and nothing failed. Collapsing them into one
+<code>done</code> flag teaches the model that step 500 of a beautiful game is a catastrophe — it
+teaches a hallucination. In Rust the same distinction is an <code>enum Ending</code>, so it cannot be
+forgotten:</p>
+<pre><code class="language-rust">pub enum Ending { Terminated, Truncated }
+</code></pre>
+<p><strong>The collector must cover the actions, not just the situations.</strong> A perfect balancer
+keeps the pole so vertical that the model never sees anything go wrong; pure random
+flailing sees nothing but falling over and learns nothing about balancing. The article
+spikes the drink: 25% random shoves, and a small per-episode bias so some games travel
+along the rail instead of all hovering in place. Without that bias a planner that wants
+to <em>go somewhere</em> asks about journeys the model has never watched.</p>
+<p><strong>The model is deliberately handicapped.</strong> It sees only position and angle. The
+velocities are hidden, because a camera reports where things are, never how fast. To
+recover a speed you must compare now against a moment ago, which requires memory — hence
+the GRU. <code>states_are_complete()</code> in <a href="../../../optional/world_model/python/cartpole.py">python/cartpole.py</a> says so in
+code: four numbers determine the next state, two do not.</p>
+<hr/>
+<h2 id="part-2--the-network-that-predicts-the-world">Part 2 — the network that predicts the world</h2>
+<p><a href="../../../optional/world_model/python/world_model.py">python/world_model.py</a> implements a small GRU world model. Two
+choices matter more than the architecture:</p>
+<p><strong>Predict the change, not the position.</strong> Consecutive moments are nearly identical. A
+network asked for the next position scores magnificently by copying its input: a student
+who answers every question with "same as last time" and passes. Ask for the delta and the
+trick evaporates.</p>
+<pre><code class="language-python">return obs_norm + delta, termination_logit, hidden
+</code></pre>
+<p><strong>Put both numbers on one scale.</strong> Cart position roams over about 2.4; pole angle over
+about 0.21. Unnormalised, the network concludes position errors matter ten times more.
+They do not; the angle is what ends the game.</p>
+<p><strong>Crashes need a thumb on the scale — the right kind of thumb.</strong> About one step in 380 is
+a failure. A detector answering "we're fine" every time scores 99.7% and is useless — a
+smoke alarm with the battery out. Multiplying the <em>whole</em> loss by 380 does not fix that: it
+changes the optimizer's step size and leaves the optimum at "always alive". The fix is a
+positive-class weight inside the BCE, which actually moves the optimum, plus a declared
+coefficient (<code>TERMINATION_LOSS_SCALE = 0.02</code>) because a normalized-delta MSE of about
+1e-4 and a 380-weighted BCE of about 1 cannot share one unscaled sum. Both numbers are in
+every results file.</p>
+<p>The reported numbers are <strong>recall and false alarms per episode</strong>, never accuracy. At
+0.02 the crash head reached 0.93 recall with about 117 false alarms per episode; at 0.01 it
+reached 0.38. A detector that flinches too often wastes planning on safe dreams, and one
+that never fires strolls into futures where the pole already fell. Which failure you prefer
+is a decision, not a measurement.</p>
+<h3 id="the-lie-the-whole-method-rests-on">The lie the whole method rests on</h3>
+<p>During training, every step is handed the <strong>real</strong> observation, even when the previous
+guess was nonsense. That is teacher forcing: a driving instructor who grabs the wheel
+after every mistake. It makes training fast and stable, and it means the model never once
+experiences the consequences of its own error.</p>
+<p>Hold on to that. Part 3 is where the bill arrives.</p>
+<hr/>
+<h2 id="part-3--take-the-instructors-hand-off">Part 3 — take the instructor's hand off</h2>
+<p>Give the model one real starting situation and a list of shoves. Then make it predict each
+moment from its <strong>own</strong> previous prediction:</p>
+<pre><code class="language-python">for index in range(plans.shape[1]):
+    observed, logit, hidden = model.step(observed, torch.tensor(plans[:, index]), hidden)
+</code></pre>
+<p>One variable changed. That line is the difference between a predictor and a world model,
+and it is where errors stop being erased and start compounding.</p>
+<p>Measure it against the laziest possible baseline: <strong>assume nothing ever changes</strong>. A
+sophisticated network that loses to that potato has not learned physics. The depth at
+which our model stops beating it is the deepest honest statement in this directory about
+how far the daydream can be trusted.</p>
+<p>One measurement detail decides whether that number means anything: error is reported at each depth, never averaged over steps <code>1..h</code>. Averaging answers "how wrong is the dream on average" and hides the depth where it falls apart, which is the only depth a planner cares about.</p>
+<p><code>trust_horizon()</code> is that measurement, and it returns <strong>a ceiling, not a recommendation.</strong></p>
+<hr/>
+<h2 id="part-4--changing-the-goal-without-touching-the-model">Part 4 — changing the goal without touching the model</h2>
+<p>This is the payload. One trained model, two functions, no retraining:</p>
+<pre><code class="language-python">GOALS = {GOAL_BALANCE: score_balance, GOAL_PARK: score_park}
+</code></pre>
+<p><code>score_balance</code> reads "did the dream stay alive, and how upright was it".
+<code>score_park</code> reads "where did the dream <em>end up</em>".</p>
+<p>That last phrase is the article's hardest-won correction, and it is worth a paragraph
+because it is a bug that looks exactly like a weak model. Scoring each dream by its
+<em>average</em> distance from the target across the whole dream feels unimpeachable. But to move
+a cart-pole right you must first push left — tip it the way you want to go, then chase it.
+The opening move of the only manoeuvre that works takes the cart <em>further away</em>. Every
+dream containing the correct answer scored badly, and the planner correctly discarded it.
+It was not failing to find the solution; it was finding it, evaluating it exactly as
+instructed, and binning it.</p>
+<blockquote>
+<p>When a planner underperforms, suspect the objective before the model. A broken model is
+obvious, because predictions are visibly wrong. A broken objective fails quietly, in a
+plausible direction.</p>
+</blockquote>
+<hr/>
+<h2 id="part-5--planning-is-a-ceiling-and-a-search-and-they-are-different">Part 5 — planning is a ceiling and a search, and they are different</h2>
+<p>The article's three lessons, each of which this directory makes measurable:</p>
+<p><strong>Your definition of "good" can silently forbid the solution.</strong> → <code>terminal_mean()</code> exists
+only because of the paragraph above.</p>
+<p><strong>Cover the actions you will ask about.</strong> → the collector's <code>bias_scale</code>; without it the
+model has never watched a journey.</p>
+<p><strong>The trustworthy horizon is a ceiling, not a recommendation.</strong> → two separate numbers
+limit how far ahead you can usefully plan. How long the model stays accurate (Part 3), and
+how well your random search covers the space. There are 8 possible 3-step plans and 200
+samples find the best one every time; there are about half a billion 29-step plans and 200
+samples are indistinguishable from none. The second limit usually bites first.</p>
+<h3 id="one-bug-this-directory-found-by-measuring-not-assuming">One bug this directory found by measuring, not assuming</h3>
+<p>The first version of the planner forked every dream from a <strong>zeroed</strong> memory. That looks
+harmless and is wrong: the visible observation has no velocities, so a blank memory cannot
+know the cart is already moving. Planning then degenerates into guessing, and the goal
+function is blamed for a memory bug.</p>
+<p>The fix is three lines — fold the real observation and shove into the memory, then fork:</p>
+<pre><code class="language-python">if carry_memory:
+    hidden = advance_memory(model, torch, state, action, hidden)
+</code></pre>
+<p><code>play_episode(..., carry_memory=False)</code> keeps the broken policy available on purpose, and
+<code>results.json</code> reports both under <code>goal_balance</code> and
+<code>goal_balance_without_carried_memory</code>, so the difference is a recorded number rather than
+a claim. This is also what the article's eight-step warm-up is quietly working around, and
+why it discloses the warm-up count.</p>
+<h3 id="two-more-bugs-the-same-measurement-exposed">Two more bugs the same measurement exposed</h3>
+<p>Both were found by looking at numbers that could not be right, not by reading the code.</p>
+<p><strong>The crash head had zero positives to learn from.</strong> An off-by-one in the training-window
+bounds (<code>end - sequence - 1</code> instead of <code>end - sequence</code>) dropped the final transition of
+every episode — and the final transition is the only one that can carry a <code>terminated</code>
+label. Training therefore contained 0 crash examples in 7,906 windows. The head learned
+"always alive" with perfect confidence, the planner threw away every dream that ended in a
+fall, and the result looked like a model that simply was not good enough. A test now
+asserts that at least one labelled crash appears inside the training windows.</p>
+<p><strong>The rare-class weight was applied to the wrong quantity.</strong> <code>380 * BCE(...)</code> scales the
+loss and its gradient; it does <strong>not</strong> move the optimum, which stays at the 99.4% base
+rate. <code>pos_weight=380</code> reweights only the positive examples and does move it. Separately,
+the two heads have natural scales about four orders of magnitude apart, so they need an
+explicit <code>TERMINATION_LOSS_SCALE</code>; without it whichever term is larger owns the gradient
+and the other head degrades.</p>
+<hr/>
+<h2 id="part-6--where-the-topology-comes-in">Part 6 — where the topology comes in</h2>
+<p>This is the part of the page that is ours rather than the article's.</p>
+<p>The course's own <code>shape_lab.persistence</code> pipeline can describe the collected
+observations: project each transition to <code>(cart position, pole angle)</code>, normalise both by
+their limits, and read a Rips diagram. <a href="../../../optional/world_model/python/topology.py">python/topology.py</a> does that
+with the <strong>same metric and scale as the model's input</strong>, so the cloud and the network are
+looking at the same space.</p>
+<p>Two things follow, and the second matters more:</p>
+<ol>
+<li>The same filtration is reduced <strong>independently in Rust</strong>
+(<a href="../../../optional/world_model/rust/src/persistence.rs">rust/src/persistence.rs</a>) from the definition rather than
+translated line by line. Agreement is then evidence about the algorithm; translation
+would only be evidence about a copy.</li>
+<li><strong>A Rips diagram of a 2-D cloud is a description, not a meaning.</strong></li>
+</ol>
+<h3 id="what-the-shape-does-not-say">What the shape does <em>not</em> say</h3>
+<ul>
+<li>White covariance, finite projection scores, or a finite self-supervised loss are not
+semantics, and neither is a homology bar. A loop in this cloud is a feature of where the
+collector drove the cart.</li>
+<li>The diagram depends on <code>max_edge</code>. A bar that only survives because the truncation cut
+off its death is a scale artefact. Both the scale and the essential-bar count are
+reported beside the numbers so that nobody can read a loop out of a truncation.</li>
+<li>Changing the collector changes the shape. That is a fact about our collection policy,
+not about CartPole.</li>
+<li>Nothing here is evidence about the learner.</li>
+</ul>
+<p>One measured surprise worth keeping: a three-point triangle reports <strong>no</strong> H1 bar. The
+third edge arrives at the hypotenuse length and the 2-simplex that fills the loop arrives
+at the <em>same</em> length, so the bar has zero persistence and the default reporting policy
+excludes it. Both implementations agree on this, and both have a test saying so.</p>
+<hr/>
+<h2 id="what-we-actually-observed-on-this-windows-host">What we actually observed on this Windows host</h2>
+<p>One run, one seed, recorded in full in <a href="VERIFICATION.md.html">VERIFICATION.md</a>. It is <strong>one
+configuration</strong>, not a benchmark, and it is deliberately smaller than the article's. Every
+number below is copied from <code>my_work/world_model_ref06/results.json</code>; the table is not
+reconciled by hand.</p>
+<table>
+<thead>
+<tr>
+<th>Measured</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model size</td>
+<td>14,547 parameters (article: 13,635)</td>
+</tr>
+<tr>
+<td>Collected transitions</td>
+<td>37,352 from 200 episodes; 187 ended by falling, 13 by the timer</td>
+</tr>
+<tr>
+<td>Best validation epoch</td>
+<td>16 of 20 — and those weights are <strong>restored</strong>, not just logged</td>
+</tr>
+<tr>
+<td>One-step error (teacher forced)</td>
+<td>0.0064 m cart, 0.0024 rad pole</td>
+</tr>
+<tr>
+<td>Crash head</td>
+<td>0.945 recall, 101 false alarms per episode</td>
+</tr>
+<tr>
+<td>Free-rollout trust horizon at 0.02 rad</td>
+<td><strong>7 steps</strong></td>
+</tr>
+<tr>
+<td>Deepest depth still beating the frozen baseline</td>
+<td><strong>29</strong></td>
+</tr>
+<tr>
+<td>Coin-flip agent</td>
+<td>21.9 ± 13.2 steps</td>
+</tr>
+<tr>
+<td>Hand controller</td>
+<td>500.0 steps</td>
+</tr>
+<tr>
+<td>Planner, balance goal, memory carried</td>
+<td><strong>176.0 steps</strong>, 0.0103 s per decision</td>
+</tr>
+<tr>
+<td>Planner, park goal, memory carried</td>
+<td>52.0 steps, 0.868 m from the target</td>
+</tr>
+<tr>
+<td>Planner, balance goal, <strong>memory reset each step</strong></td>
+<td>51.0 steps</td>
+</tr>
+</tbody>
+</table>
+<p>Free-rollout pole-angle error, after an 8-transition warm-up, at each depth:</p>
+<table>
+<thead>
+<tr>
+<th>Depth</th>
+<th>1</th>
+<th>4</th>
+<th>7</th>
+<th>8</th>
+<th>20</th>
+<th>29</th>
+<th>30</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model (rad)</td>
+<td>0.0018</td>
+<td>0.0092</td>
+<td>0.0183</td>
+<td>0.0210</td>
+<td>0.0381</td>
+<td>0.0531</td>
+<td>0.0569</td>
+</tr>
+<tr>
+<td>Frozen (rad)</td>
+<td>0.0037</td>
+<td>0.0146</td>
+<td>0.0221</td>
+<td>0.0251</td>
+<td>0.0439</td>
+<td>0.0535</td>
+<td>0.0535</td>
+</tr>
+</tbody>
+</table>
+<p>Read that table the way the article tells you to read it.</p>
+<ul>
+<li><strong>The two horizons really are different.</strong> The model stays inside a 0.02 rad tolerance for
+<strong>7</strong> steps but beats the frozen baseline for <strong>29</strong>. The article's central methodological
+point reproduces: how long the dream is <em>accurate</em> and how long it is <em>better than doing
+nothing</em> are separate questions, and neither chooses your planning horizon.</li>
+<li>The planner beats coin flips by about <strong>8×</strong>, using a model that was never told what "good"
+means. The goal was written after training finished.</li>
+<li>It still <strong>loses to a three-line hand-written controller</strong>. If balancing a pole is all you
+want, the napkin wins and you should use it.</li>
+<li>The park goal survives shorter and ends further out, because nothing in this small model
+reliably plans the two-phase manoeuvre. A goal you can change is not a goal you can always
+achieve.</li>
+<li>The memory row is the largest single effect on the page: resetting the memory costs
+<strong>125 steps</strong> (176 → 51). A blank GRU state cannot infer velocity, so the planner forfeits
+most of what the world model knows.</li>
+<li>The crash head fires often (101 false alarms per episode). That is a stated tradeoff, not an
+accident: at a lower weight it missed 62% of real crashes instead.</li>
+</ul>
+<hr/>
+<h2 id="learning-it-from-the-beginning">Learning it from the beginning</h2>
+<p><a href="LADDER.md.html">LADDER.md</a> is the build order: nine small rungs from <code>Hello, world!</code> to a working
+planner, in <strong>both</strong> languages, with a Python mirror for every Rust module. Its
+<code>rust_ladder/</code> crate is separate from the reference <code>rust/</code> crate on purpose — one is for
+learning the steps, the other is the finished companion.</p>
+<p>The cross-language test in that crate found two bugs that neither language could have found
+alone: <code>x ** 2</code> versus <code>x * x</code> (a 1-ULP difference that chaos amplifies), and a scoring
+function that used a signed angle, so the Python planner's best plan was to <strong>fall over</strong>.</p>
+<hr/>
+<h2 id="what-each-language-made-explicit">What each language made explicit</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Python</th>
+<th>Rust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Two endings</td>
+<td>two booleans that can disagree</td>
+<td>one <code>enum</code>, exhaustive <code>match</code></td>
+</tr>
+<tr>
+<td>A bad action</td>
+<td><code>int</code> coerced silently</td>
+<td><code>Result&lt;State, String&gt;</code> at the boundary</td>
+</tr>
+<tr>
+<td>The state</td>
+<td>a NumPy array of unknown length</td>
+<td>a fixed <code>struct</code> of four <code>f64</code></td>
+</tr>
+<tr>
+<td>Bounds inside a window</td>
+<td>a slice that may silently be short</td>
+<td><code>episode_bounds()</code> + explicit indexing</td>
+</tr>
+<tr>
+<td>Numerical fragility</td>
+<td>a <code>nan</code> that propagates quietly</td>
+<td><code>f64::INFINITY</code> for essential bars, checked finiteness</td>
+</tr>
+<tr>
+<td>The goal</td>
+<td>a dict of closures chosen at runtime</td>
+<td>an <code>enum Goal</code> matched at runtime</td>
+</tr>
+<tr>
+<td>The averaging bug</td>
+<td><code>terminal_mean</code> beside an averaging mean</td>
+<td><code>score_park</code> beside <code>score_park_average</code>, with a test that fails if they agree</td>
+</tr>
+<tr>
+<td>The fit</td>
+<td><code>torch.optim.Adam</code></td>
+<td>partial-pivoted Gaussian elimination you can read</td>
+</tr>
+<tr>
+<td>The reduction</td>
+<td><code>dict</code> of pivots</td>
+<td><code>BTreeMap</code> of pivots, deterministic order</td>
+</tr>
+<tr>
+<td>Speed of writing it</td>
+<td>minutes</td>
+<td>much longer, and the types found two of my own bugs</td>
+</tr>
+</tbody>
+</table>
+<p>The last row is the honest one. <code>cargo test</code> caught a mutable-capture mistake and a moved
+value that Python would have accepted silently. Neither was a scientific error — but
+<code>clippy -D warnings</code> also caught a real one: an index-based loop bound (<code>end - sequence - 1</code>)
+that silently excluded every crash example in Python, and whose Rust equivalent the type
+system did not catch either. That one had to be found by measuring the label count.</p>
+<hr/>
+<h2 id="boundaries-and-honest-limits">Boundaries and honest limits</h2>
+<ul>
+<li><strong>PyTorch is optional.</strong> Without it the Python path is <code>blocked</code>, with a reason and no
+numbers. <code>optional</code> in this repository never means "assumed installed".</li>
+<li><strong>This is a worked reference, not an assignment.</strong> The independent change is described in
+<a href="EXERCISES.md.html">EXERCISES.md</a> and stays <code>not_assessed</code>.</li>
+<li><strong>One seed is not a result.</strong> Every record states its seed, episode count and model size
+next to its numbers.</li>
+<li><strong>No reproduction of the article.</strong> Different sizes, different defaults, no GPU. See
+<a href="SOURCE_AUDIT.md.html">SOURCE_AUDIT.md</a>.</li>
+<li><strong>Runs belong in <code>my_work/</code>.</strong> No reference file here is edited to make an experiment
+work.</li>
+<li>The Rust crate is dependency-free and builds offline; <code>--locked</code> refuses a stale or
+missing lockfile rather than regenerating one.</li>
+</ul>
+<hr/>
+<h2 id="course-links">Course links</h2>
+<ul>
+<li><a href="../../../curriculum/catalog.json">The 31-stage route</a> — the single lesson order</li>
+<li><a href="LADDER.md.html">LADDER.md</a> — build it yourself, WM01 → WM09, in both languages</li>
+<li><a href="SOURCE_AUDIT.md.html">Source audit</a> — attribution, departures, and what is not claimed</li>
+<li><a href="EXERCISES.md.html">Exercises</a> — the independent work, <code>not_assessed</code></li>
+<li><a href="VERIFICATION.md.html">Verification</a> — the exact commands run here and their output</li>
+<li><a href="../../docs/release/REPOSITORY_LAYOUT.md.html">Repository layout</a> — who owns what</li>
+<li><a href="../rust_practice/README.md.html">Optional Rust practice</a> — the sibling additive crate</li>
+</ul>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

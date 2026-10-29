@@ -1,0 +1,96 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Exercises: the worked reference is not the assignment · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../optional/rust_practice/EXERCISES.md">optional/rust_practice/EXERCISES.md</a> · Readable source notation; no online math renderer.</p><h1 id="exercises-the-worked-reference-is-not-the-assignment">Exercises: the worked reference is not the assignment</h1>
+<p>The library in <code>src/</code> is worked material. Reading it establishes that the code compiles; it
+does not establish that you can design the same contract yourself.</p>
+<p>Status of everything on this page: <strong>not_assessed</strong>.</p>
+<h2 id="1-change-the-mutation-contract-rs02rs03-rs04">1. Change the mutation contract (RS02–RS03, RS04)</h2>
+<p><code>translate_in_place</code> currently validates the whole batch, then writes. That is a deliberate
+all-or-nothing choice. Implement the alternative and defend it:</p>
+<pre><code>pub fn translate_prefix(points: &amp;mut [[f64; 3]], offset: [f64; 3]) -&gt; Result&lt;usize, InputError&gt;
+</code></pre>
+<p>Requirements:</p>
+<ol>
+<li>Write your own test <strong>first</strong>, and run it to observe the failure before implementing.</li>
+<li>Decide whether a failure after row <em>k</em> leaves rows <code>0..k</code> moved or untouched. Whichever you
+choose, the doc comment must state it and the test must prove it.</li>
+<li>Return how many rows were committed, so the caller can see the partial effect instead of
+guessing.</li>
+<li>Explain which caller would prefer this to <code>translated</code>, and which would be made worse.</li>
+</ol>
+<p>Rejected alternative to explain: adding <code>.clone()</code> inside the failing branch to avoid the
+question. What does that hide?</p>
+<h2 id="2-the-independent-append_feature-contract">2. The independent <code>append_feature</code> contract</h2>
+<p>The central exercise (RS01, RS05, RS06). Before writing code, answer in your own notes:</p>
+<ul>
+<li>Why is the input <code>&amp;[[f64; 4]]</code> and the output <code>Vec&lt;[f64; 5]&gt;</code>?</li>
+<li>Which errors are possible, and which of them can be detected without touching any row?</li>
+<li>Can your function change the caller's data? Prove the answer with a test.</li>
+<li>What does the added column say about <strong>rank</strong>, and what does it not say?</li>
+</ul>
+<p>Then implement this stricter variant:</p>
+<pre><code>pub fn append_feature_checked(
+    rows: &amp;[[f64; 4]],
+    a: f64,
+    b: f64,
+    tolerance: f64,
+) -&gt; Result&lt;Vec&lt;[f64; 5]&gt;, InputError&gt;
+</code></pre>
+<p>It must additionally reject a <code>tolerance</code> that is not finite and strictly positive, and it
+must reject coefficients whose product with the largest input would leave <code>f64</code> range. Predict
+each rejection before you run it. Include at least one case where your first version returned
+<code>Ok</code> and the stricter version returns <code>Err</code>.</p>
+<h2 id="3-extend-the-compiler-cases-rs03">3. Extend the compiler cases (RS03)</h2>
+<p>Add one accepted and one rejected example of your own to <code>compiler_cases/</code>, with an entry in
+<code>cases.json</code>.</p>
+<ul>
+<li>The rejected case must name the diagnostic code you actually observe, not the one you
+expected. Capture it with the real compiler before editing the JSON.</li>
+<li>Write the explanation in terms of <em>resource, owner, required access, and where that access
+is still needed</em> — not in terms of memorising an error number.</li>
+</ul>
+<p>Then run <code>python check_compiler_cases.py --output ../../my_work/compiler02</code>.</p>
+<h2 id="4-apply-it-to-real-data-not-a-fixture">4. Apply it to real data, not a fixture</h2>
+<p>Use the crate's functions on a route the course already ships. Choose one and record the
+assumption you had to state explicitly:</p>
+<table>
+<thead>
+<tr>
+<th>Route</th>
+<th>What you must decide before computing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data/raw/iris.csv</code></td>
+<td>One flower per row; the four measurements are the only numeric columns.</td>
+</tr>
+<tr>
+<td><code>poux_bridge</code> inputs</td>
+<td>Whether a sum and a count belong to the same grouping as the average.</td>
+</tr>
+<tr>
+<td><code>data/raw/digits.npz</code></td>
+<td>Pixel convention, shape order and coefficient field.</td>
+</tr>
+</tbody>
+</table>
+<p>Your note must separate: decoding, structural validity, domain validity, and the scientific
+claim. A valid file is not a valid measurement model.</p>
+<h2 id="5-performance-only-with-a-matched-workload">5. Performance, only with a matched workload</h2>
+<p>If you compare two implementations, hold the workload fixed and report: data identity, build
+profile, initialisation, decode, calculation, serialisation, peak memory, repetitions, and
+numerical error. A faster wrong answer is still wrong, and one run is not a measurement.</p>
+<p>Record the profile you used. <code>cargo run</code> and <code>cargo run --release</code> answer different questions.</p>
+<h2 id="what-independent-means-here">What "independent" means here</h2>
+<p>You may read this crate, the Rust Book and the compiler's own output. You may not mark the
+exercise complete because a worked answer was explained to you. The distinction the course
+already keeps:</p>
+<blockquote>
+<p>"I understood the explanation."</p>
+</blockquote>
+<p>versus:</p>
+<blockquote>
+<p>"I reconstructed the argument and implemented a changed version myself."</p>
+</blockquote>
+<p>Record which one happened, plus the assistance you used. Then revisit a changed instance after
+a delay; that is the only evidence of retention this crate cannot produce for you.</p>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>

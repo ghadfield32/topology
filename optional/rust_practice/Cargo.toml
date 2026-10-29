@@ -1,0 +1,17 @@
+[package]
+name = "rust-practice"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.83"
+description = "Optional Rust ownership and API-contract practice beside the topology course"
+publish = false
+
+[lib]
+name = "rust_practice"
+path = "src/lib.rs"
+
+[dependencies]
+
+[[example]]
+name = "iris_rank"
+path = "examples/iris_rank.rs"

@@ -1,0 +1,17 @@
+[package]
+name = "world-model-companion"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.83"
+description = "Dependency-free Rust companion to optional/world_model: CartPole data, a linear one-step delta model, free-rollout error growth, and an independent F2 persistence reduction."
+license = "MIT"
+
+[lib]
+name = "world_model_companion"
+path = "src/lib.rs"
+
+[[bin]]
+name = "world-model-rust"
+path = "src/main.rs"
+
+[dependencies]

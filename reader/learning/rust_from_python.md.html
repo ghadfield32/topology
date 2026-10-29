@@ -1,0 +1,698 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rust from Python: one continuous walkthrough · Listening to Shape</title><link rel="stylesheet" href="../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../START_HERE.html">Course home</a><a href="../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../learning/rust_from_python.md">learning/rust_from_python.md</a> · Readable source notation; no online math renderer.</p><h1 id="rust-from-python-one-continuous-walkthrough">Rust from Python: one continuous walkthrough</h1>
+<p><strong>Status: worked reference. Not assessed.</strong> This page teaches <em>tooling and workflow</em>, not a
+second curriculum. The 31-stage route in <a href="../../curriculum/catalog.json">curriculum/catalog.json</a>
+remains the single mandatory order, and <a href="../native/guides/LEARNING_PATHS.md.html">native/guides/LEARNING_PATHS.md</a>
+(sections R0–R6) remains the course's Rust path. Nothing here owns a stage number or a lab key.</p>
+<p>Everything below was executed on this Windows host. Where a command was <em>not</em> run, it says so.</p>
+<hr/>
+<h2 id="0-six-corrections-to-earlier-advice">0. Six corrections to earlier advice</h2>
+<p>An earlier version of this walkthrough contained errors. Each was tested here before being
+written down. The first one matters most.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Wrong advice</th>
+<th>Verified correct rule</th>
+<th>How it was checked</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>"<code>cargo test --locked</code> regenerates a missing lockfile"</td>
+<td><strong>It refuses.</strong> <code>--locked</code> rejects a missing <em>or</em> stale lockfile.</td>
+<td>Deleted <code>Cargo.lock</code>; <code>cargo test --offline --locked</code> exited <strong>101</strong> and did not create it</td>
+</tr>
+<tr>
+<td>2</td>
+<td>"Never copy <code>Cargo.lock</code> when recreating a project"</td>
+<td><strong>Keep it</strong> when reproducing the same project. It records resolved versions.</td>
+<td><code>cargo generate-lockfile --offline</code> then <code>--locked</code> passed</td>
+</tr>
+<tr>
+<td>3</td>
+<td>"A bare <code>rustc</code> ignores the toolchain file"</td>
+<td>The <strong>rustup proxy honours it</strong>. Only the real binary under <code>.rustup/toolchains/...</code> bypasses it.</td>
+<td><code>rustc -V</code> in a pinned dir → 1.90.0; real binary → 1.97.1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>"<code>cargo fmt -- --check</code> changes source"</td>
+<td><code>--check</code> <strong>reports only</strong>. Plain <code>cargo fmt</code> applies.</td>
+<td>SHA-256 of <code>stats.rs</code> identical before/after <code>--check</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td>"<code>Result</code> forces you to use <code>match</code>"</td>
+<td>It forces <em>acknowledgement</em>: ignoring one is a <strong>warning</strong>, not an error.</td>
+<td><code>cargo check</code> exited <strong>0</strong> with <code>warning: unused Result that must be used</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td>"<code>values[0]</code> copies nothing"</td>
+<td>It copies <strong>one <code>f64</code></strong> (it is <code>Copy</code>), not the vector.</td>
+<td>Test asserting the vector still has 3 elements passed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-consequence-of-1-and-5-together">The consequence of #1 and #5 together</h3>
+<p><code>cargo check</code> is not a correctness gate.</p>
+<pre><code>cargo check --offline            → exit 0, warning: unused `Result` that must be used
+cargo clippy ... -- -D warnings  → exit 101, error: unused `Result` that must be used
+</code></pre>
+<p>If you only run <code>cargo check</code>, a silently discarded error will pass. That is why the daily
+routine below ends with a <code>-D warnings</code> gate rather than <code>check</code>.</p>
+<hr/>
+<h2 id="1-the-tool-map">1. The tool map</h2>
+<table>
+<thead>
+<tr>
+<th>Purpose</th>
+<th>Python with <code>uv</code></th>
+<th>Rust</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Manage language installs</td>
+<td><code>uv python …</code></td>
+<td><code>rustup …</code></td>
+</tr>
+<tr>
+<td>Create a project</td>
+<td><code>uv init …</code></td>
+<td><code>cargo new …</code></td>
+</tr>
+<tr>
+<td>Describe the package</td>
+<td><code>pyproject.toml</code></td>
+<td><code>Cargo.toml</code></td>
+</tr>
+<tr>
+<td>Record resolved versions</td>
+<td><code>uv.lock</code></td>
+<td><code>Cargo.lock</code></td>
+</tr>
+<tr>
+<td>Select the version</td>
+<td><code>.python-version</code> (read by uv/pyenv)</td>
+<td><code>rust-toolchain.toml</code> (read by rustup)</td>
+</tr>
+<tr>
+<td>Run the program</td>
+<td>interpreter executes source</td>
+<td>compiled binary executes</td>
+</tr>
+<tr>
+<td>Reusable logic</td>
+<td>module / package</td>
+<td>library crate (<code>src/lib.rs</code>)</td>
+</tr>
+<tr>
+<td>CLI entry point</td>
+<td><code>__main__.py</code></td>
+<td><code>src/main.rs</code></td>
+</tr>
+<tr>
+<td>Build outputs</td>
+<td><code>__pycache__/</code>, <code>dist/</code></td>
+<td><code>target/</code></td>
+</tr>
+<tr>
+<td>Isolated environment</td>
+<td><code>.venv</code></td>
+<td><em>no direct equivalent</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The workflow difference:</strong></p>
+<pre><code>Python:  source → selected interpreter + packages → computation
+Rust:    source + dependencies → compiler/linker → executable → computation
+</code></pre>
+<p>Python also runs compiled extensions, and most scientific work already executes native code.
+<strong>Do not read that diagram as "rewriting in Rust is faster."</strong> That is a measurement, not a
+consequence of the language.</p>
+<p><strong>A distinction that trips people up:</strong> importing a Python module <em>executes code</em>. <code>cargo check</code>
+does <strong>not</strong> execute your program — it type-checks it. They are not the same kind of check.</p>
+<hr/>
+<h2 id="2-inspect-the-installation-do-not-reinstall-it">2. Inspect the installation, do not reinstall it</h2>
+<pre><code class="language-powershell">Set-Location "C:\Users\ghadf\vscode_projects\docker_projects\topology"
+Get-Command rustup,cargo,rustc | Select-Object Name,Source
+rustup toolchain list
+</code></pre>
+<p><strong>Observed here:</strong> <code>rustup</code> 1.29.0; toolchains <code>stable</code> (default → rustc <strong>1.97.1</strong>) and
+<code>1.90.0</code>. Both now have <code>rustfmt</code> and <code>clippy</code>.</p>
+<p>Inspect an existing project:</p>
+<pre><code class="language-powershell">Push-Location my_work/rust201
+try {
+    rustup show active-toolchain   # which toolchain, and why
+    rustc -Vv                      # compiler + host triple
+    cargo -V                       # cargo version
+    cargo locate-project           # which manifest was found
+    Get-Content rust-toolchain.toml
+}
+finally { Pop-Location }
+</code></pre>
+<p><code>rustup show active-toolchain</code> reporting <code>overridden by '...\rust-toolchain.toml'</code> is the
+sentence you want to see. If it says <code>(default)</code>, the pin is not active.</p>
+<p>Only install when missing — these can download:</p>
+<pre><code class="language-powershell">rustup toolchain install 1.90.0 --profile minimal
+rustup component add --toolchain 1.90.0 rustfmt clippy
+</code></pre>
+<p>On a genuinely new Windows machine, <code>rustup</code> and the <strong>MSVC linker</strong> are separate concerns. A
+missing linker is a build-tools problem, not a Rust problem.</p>
+<hr/>
+<h2 id="3-create-one-new-project-safely">3. Create one new project safely</h2>
+<p>Never run <code>cargo new</code> over an existing project.</p>
+<pre><code class="language-powershell">$Repo = "C:\Users\ghadf\vscode_projects\docker_projects\topology"
+$Project = Join-Path $Repo ("my_work\rust_from_python_" + (Get-Date -Format 'yyyyMMdd-HHmmssfff'))
+if (Test-Path $Project) { throw "Choose a new project directory." }
+
+cargo +1.90.0 new --bin --edition 2021 --name rust_from_python --vcs none $Project
+if ($LASTEXITCODE -ne 0) { throw "Project creation failed." }
+Set-Location $Project
+</code></pre>
+<p>Reading the flags: <code>+1.90.0</code> selects the toolchain for this one command, <code>--bin</code> makes an
+executable template, <code>--edition 2021</code> fixes the language edition, <code>--name</code> sets the package
+name, <code>--vcs none</code> avoids a nested repository.</p>
+<p><strong>Verified:</strong> this exact command produced a working project and <code>cargo run --offline --locked</code>
+printed <code>Hello, world!</code>.</p>
+<p><code>--vcs none</code> also means <strong>no <code>.gitignore</code> is written</strong>. Add one containing <code>/target</code>.</p>
+<h3 id="pin-the-compiler">Pin the compiler</h3>
+<p><code>rust-toolchain.toml</code>:</p>
+<pre><code class="language-toml">[toolchain]
+channel = "1.90.0"
+profile = "minimal"
+components = ["rustfmt", "clippy"]
+</code></pre>
+<p>Measured effect: active toolchain changed from <code>stable (default)</code> to
+<code>1.90.0 (overridden by '...\rust-toolchain.toml')</code>, and <code>cargo -V</code> went from 1.97.1 to 1.90.0.
+The <code>components</code> key <strong>auto-installs</strong> what it names.</p>
+<h3 id="manifest-with-three-different-version-concepts">Manifest with three different version concepts</h3>
+<pre><code class="language-toml">[package]
+name = "rust_from_python"
+version = "0.1.0"        # your package's version
+edition = "2021"         # language compatibility edition
+rust-version = "1.83"    # minimum supported compiler
+publish = false
+
+[dependencies]
+</code></pre>
+<p><code>rust-version</code> is <strong>enforced</strong>. Setting it to <code>1.99</code> produced:</p>
+<pre><code>error: rustc 1.90.0 is not supported by the following package:
+  rust_from_python@0.1.0 requires rustc 1.99
+</code></pre>
+<p>Edition 2024 is <strong>supported by 1.90</strong> (it stabilised in 1.85). 2021 is used here for continuity
+with the course, not because 2024 fails.</p>
+<p><strong>TOML trap, hit live:</strong> appending a second <code>[dependencies]</code> heading gives
+<code>error: duplicate key --&gt; Cargo.toml:10:2</code>. Add entries <em>under</em> the existing table.</p>
+<h3 id="create-the-lockfile-deliberately">Create the lockfile deliberately</h3>
+<pre><code class="language-powershell">if (-not (Test-Path Cargo.lock)) { cargo generate-lockfile --offline }
+cargo check --offline --locked
+cargo run --offline --locked
+</code></pre>
+<p><code>cargo generate-lockfile --offline</code> succeeded and created the file; only then did the <code>--locked</code>
+commands pass. This is correction #1 in practice.</p>
+<p><strong>Checkpoint:</strong> before continuing, explain what <code>fn main</code>, the braces, the semicolon and
+<code>println!</code> do.</p>
+<hr/>
+<h2 id="4-syntax-translated-from-python">4. Syntax, translated from Python</h2>
+<h3 id="variables-and-mutability">Variables and mutability</h3>
+<pre><code class="language-python">count = 2
+count += 1
+</code></pre>
+<pre><code class="language-rust">let mut count: usize = 2;
+count += 1;
+</code></pre>
+<p><code>let</code> binds, <code>mut</code> permits reassignment. Without <code>mut</code>, <code>count = 3;</code> is a compile error. Most
+local types are inferred, but a binding's type does not change; a second <code>let</code> creates a new
+binding through <strong>shadowing</strong>:</p>
+<pre><code class="language-rust">let count = "3";
+let count: usize = count.parse().expect("fixed valid example");
+</code></pre>
+<p>Do not copy that <code>expect</code> policy into user-input handling — see §6.</p>
+<h3 id="functions-and-the-semicolon-rule">Functions and the semicolon rule</h3>
+<pre><code class="language-rust">fn square(x: f64) -&gt; f64 {
+    x * x        // final expression: this is the returned value
+}
+</code></pre>
+<p><code>return x * x;</code> also works. But this does <strong>not</strong> return a float:</p>
+<pre><code class="language-rust">fn square(x: f64) -&gt; f64 {
+    x * x;       // semicolon discards the value -&gt; returns ()
+}
+</code></pre>
+<p>Rust distinguishes <em>statements</em> from value-producing <em>expressions</em>.</p>
+<h3 id="arrays-vectors-slices">Arrays, vectors, slices</h3>
+<pre><code class="language-rust">let fixed: [f64; 3] = [1.0, 2.0, 3.0];
+let mut owned: Vec&lt;f64&gt; = vec![1.0, 2.0, 3.0];
+owned.push(4.0);
+let borrowed: &amp;[f64] = &amp;owned;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Form</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[f64; 3]</code></td>
+<td>fixed-size array of three floats</td>
+</tr>
+<tr>
+<td><code>Vec&lt;f64&gt;</code></td>
+<td>owned, growable</td>
+</tr>
+<tr>
+<td><code>&amp;[f64]</code></td>
+<td>borrowed view, read-only</td>
+</tr>
+<tr>
+<td><code>&amp;mut [f64]</code></td>
+<td>borrowed view, elements mutable</td>
+</tr>
+</tbody>
+</table>
+<p>A Rust slice is a <strong>view</strong>, not a copy. Python's <code>values[0:2]</code> creates a new list; Rust's
+<code>&amp;values[0..2]</code> does not.</p>
+<h3 id="strings">Strings</h3>
+<pre><code class="language-rust">let label: &amp;str = "basketball";        // borrowed UTF-8
+let mut d = String::from(label);       // owned, growable
+d.push_str(" observations");
+</code></pre>
+<p>Rust strings are not integer-indexable like Python's. Bytes, Unicode scalar values and
+displayed characters are three different things.</p>
+<h3 id="loops-and-if-expressions">Loops and if-expressions</h3>
+<pre><code class="language-rust">for (index, value) in values.iter().enumerate() {
+    println!("{index}: {value}");
+}
+
+let status = if values.is_empty() { "empty" } else { "nonempty" };
+</code></pre>
+<hr/>
+<h2 id="5-ownership-the-part-python-cannot-teach-you">5. Ownership: the part Python cannot teach you</h2>
+<pre><code class="language-python">a = [1.0, 2.0]
+b = a
+b.append(3.0)     # both names refer to the same list
+</code></pre>
+<pre><code class="language-rust">let a = vec![1.0, 2.0];
+let b = a;              // ownership MOVED into b
+println!("{b:?}");
+// println!("{a:?}");   // use-after-move: would not compile
+</code></pre>
+<p>For a <code>Vec</code>, assignment transfers ownership. <code>a.clone()</code> asks for an independent copy. Scalars
+like <code>f64</code> are <code>Copy</code>, so copying one number is not cloning a vector — correction #6.</p>
+<h3 id="borrow-to-inspect-mut-to-change">Borrow to inspect, <code>&amp;mut</code> to change</h3>
+<pre><code class="language-rust">fn count(values: &amp;[f64]) -&gt; usize { values.len() }        // borrows, cannot mutate
+
+fn increment(values: &amp;mut [f64]) {                         // explicit mutation
+    for value in values { *value += 1.0; }                 // * dereferences
+}
+</code></pre>
+<p>At the call site the intent is visible: <code>increment(&amp;mut values);</code></p>
+<p><strong>Predict this failure:</strong></p>
+<pre><code class="language-rust">let mut values = vec![1.0, 2.0];
+let first = &amp;values[0];
+values.push(3.0);
+println!("{first}");
+</code></pre>
+<p>Observed diagnostic (<code>error[E0502]</code>): the shared borrow at <code>&amp;values[0]</code> is still needed by
+<code>println!</code>, while <code>push</code> needs exclusive access.</p>
+<p>Two repairs, different meanings:</p>
+<pre><code class="language-rust">let first = values[0];       // copies ONE f64; vector untouched
+</code></pre>
+<pre><code class="language-rust">let first = values[0];
+values.push(3.0);
+println!("{first}");          // equivalent here, no borrow held
+</code></pre>
+<p>Choose the repair that matches your intent, not the one that silences the message.</p>
+<p>Python's equivalent hazard is real and silent — a function that calls <code>values.sort()</code> reorders
+the caller's list with no warning at all. Rust's version requires <code>&amp;mut</code> in the signature <em>and</em>
+<code>&amp;mut</code> at the call site.</p>
+<hr/>
+<h2 id="6-build-a-useful-library-function">6. Build a useful library function</h2>
+<pre><code>src/
+├── lib.rs     pub mod stats;      reusable logic
+├── stats.rs   the functions
+└── main.rs    command line only
+</code></pre>
+<p>Compare signatures:</p>
+<pre><code class="language-python">def mean(values: list[float]) -&gt; float: ...
+</code></pre>
+<pre><code class="language-rust">pub fn mean(values: &amp;[f64]) -&gt; Result&lt;f64, StatsError&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pub</code></td>
+<td>part of the public API</td>
+</tr>
+<tr>
+<td><code>values: &amp;[f64]</code></td>
+<td>borrows a slice of floats</td>
+</tr>
+<tr>
+<td><code>Result&lt;f64, StatsError&gt;</code></td>
+<td>either a float or a named error — failure is in the type</td>
+</tr>
+</tbody>
+</table>
+<p>Worked implementation:</p>
+<pre><code class="language-rust">#[derive(Debug, PartialEq)]
+pub enum StatsError {
+    Empty,
+    NonFinite { index: usize },
+    Overflow,
+}
+
+pub fn mean(values: &amp;[f64]) -&gt; Result&lt;f64, StatsError&gt; {
+    if values.is_empty() {
+        return Err(StatsError::Empty);
+    }
+    let mut total = 0.0;
+    for (index, &amp;value) in values.iter().enumerate() {
+        if !value.is_finite() {
+            return Err(StatsError::NonFinite { index });
+        }
+        total += value;
+        if !total.is_finite() {
+            return Err(StatsError::Overflow);
+        }
+    }
+    Ok(total / values.len() as f64)
+}
+</code></pre>
+<p>Unfamiliar parts: <code>enum</code> names alternatives; <code>#[derive(Debug, PartialEq)]</code> generates
+formatting and equality used by tests; <code>(index, &amp;value)</code> is a pattern that copies the referenced
+<code>f64</code>; <code>as f64</code> converts the count for floating-point division.</p>
+<p><strong>Documented limitation, not a compiler concern:</strong> sequential summation can lose precision, and
+this rejects a nonfinite <em>intermediate</em> sum even when a better algorithm would find a finite
+mean. That is a numerical choice you must state.</p>
+<hr/>
+<h2 id="7-match-option-and-">7. <code>match</code>, <code>Option</code>, and <code>?</code></h2>
+<pre><code class="language-rust">match mean(&amp;values) {
+    Ok(average) =&gt; println!("mean: {average:.6}"),
+    Err(error) =&gt; eprintln!("invalid data: {error:?}"),
+}
+</code></pre>
+<p><code>Option</code> is absent vs present — not the same as failed:</p>
+<pre><code class="language-rust">match values.first() {
+    Some(value) =&gt; println!("first: {value}"),
+    None =&gt; println!("there is no first observation"),
+}
+</code></pre>
+<p><code>?</code> propagates, and only inside a function returning a compatible <code>Result</code>:</p>
+<pre><code class="language-rust">let values = parse_numbers(&amp;text)?;
+// conceptually:
+// let values = match parse_numbers(&amp;text) {
+//     Ok(values) =&gt; values,
+//     Err(error) =&gt; return Err(error),
+// };
+</code></pre>
+<p><code>?</code> is not "ignore errors", and it does not catch panics or undo earlier mutation.</p>
+<p><strong>Correction #5:</strong> the type encourages handling but does not force <code>match</code>. Discarding is
+possible — it merely warns. That is why the <code>-D warnings</code> gate exists.</p>
+<hr/>
+<h2 id="8-connect-the-library-to-a-command-line">8. Connect the library to a command line</h2>
+<p>The parser accepts <strong>numeric tokens separated by commas or newlines</strong>. It is not a general CSV
+reader: no quoted fields, no headers, no comment syntax.</p>
+<pre><code class="language-rust">fn run(path: &amp;Path) -&gt; Result&lt;(), String&gt; {
+    let text = fs::read_to_string(path)
+        .map_err(|error| format!("cannot read {}: {error}", path.display()))?;
+    let values = parse_numbers(&amp;text)?;
+    let average = mean(&amp;values).map_err(|error| format!("invalid data: {error:?}"))?;
+    println!("observations {}", values.len());
+    println!("mean {average:.6}");
+    Ok(())
+}
+</code></pre>
+<p>Data flow:</p>
+<pre><code>Path → String → Vec&lt;f64&gt; → Result&lt;f64, StatsError&gt; → printed output + exit status
+</code></pre>
+<p><code>map_err</code> transforms the error, keeping the success path. <code>Result&lt;(), String&gt;</code> means success
+carries no value — unit <code>()</code>.</p>
+<p>Exit conventions chosen by this program: <code>0</code> success, <code>1</code> file/data/computation failure,
+<code>2</code> wrong usage.</p>
+<p><code>data/sample.txt</code> — <strong>synthetic, hand-checkable, not measured observations:</strong></p>
+<pre><code>2,4,4,4
+5,5,7,9
+</code></pre>
+<pre><code>cargo run --offline --locked -- data/sample.txt
+# observations 8
+# mean 5.000000
+</code></pre>
+<p>The <code>--</code> separates Cargo's own options from your program's arguments. Mean:
+(2+4+4+4+5+5+7+9)/8 = <strong>5</strong>.</p>
+<p>Malformed input is <em>correct behaviour</em>, not a defect: a program that rejects bad data is
+working to specification.</p>
+<hr/>
+<h2 id="9-test-before-declaring-it-correct">9. Test before declaring it correct</h2>
+<pre><code class="language-rust">use rust_from_python::stats::{mean, StatsError};
+
+#[test]
+fn mean_matches_a_hand_calculation() {
+    assert_eq!(mean(&amp;[2.0, 4.0, 6.0]), Ok(4.0));
+}
+
+#[test]
+fn empty_input_is_not_zero() {
+    assert_eq!(mean(&amp;[]), Err(StatsError::Empty));
+}
+
+#[test]
+fn caller_order_is_preserved() {
+    let values = vec![3.0, 1.0, 2.0];
+    let before = values.clone();
+    assert_eq!(mean(&amp;values), Ok(2.0));
+    assert_eq!(values, before);
+}
+</code></pre>
+<p>Files under <code>tests/</code> use only the public API. Module-local tests can reach private helpers.
+Documentation comments are executed as tests too.</p>
+<p><strong>The lesson worth keeping:</strong> an unfinished function written as <code>todo!()</code> compiles, and a suite
+passes until some test actually calls it. A green suite establishes exactly what its tests
+cover — nothing more.</p>
+<hr/>
+<h2 id="10-run-the-same-calculation-in-python">10. Run the same calculation in Python</h2>
+<pre><code class="language-powershell">&amp; "$Repo\.venv\Scripts\python.exe" python_reference.py data/sample.txt
+&amp; "$Repo\.venv\Scripts\python.exe" -m unittest -v test_python_reference
+</code></pre>
+<p>Both print <code>observations 8</code> / <code>mean 5.000000</code>. That is an agreement check <strong>for this fixture</strong>,
+not proof that both parsers accept the same strings in general.</p>
+<h3 id="real-data">Real data</h3>
+<p>The Rust token parser above is deliberately simple. Use Python's CSV parser to export a column,
+recording source and output hashes, then let Rust read the plain numbers:</p>
+<pre><code class="language-powershell">&amp; "$Repo\.venv\Scripts\python.exe" export_column.py `
+  --source "$Repo\data\raw\iris.csv" `
+  --column sepal_length_cm `
+  --output data/iris_sepal_length_cm.txt
+
+cargo run --offline --locked -- data/iris_sepal_length_cm.txt
+</code></pre>
+<p><strong>Verified on this host</strong> by an independent Python read of <code>data/raw/iris.csv</code>:</p>
+<pre><code>observations 150
+mean 5.843333
+</code></pre>
+<p>The rank exercise in <a href="../../optional/rust_practice">optional/rust_practice</a> is a separate,
+larger route: 150 rows, rank 4 before and after adding a dependent feature, zero kernel
+residual — recorded in that crate's own <a href="../optional/rust_practice/VERIFICATION.md.html">VERIFICATION.md</a>.</p>
+<hr/>
+<h2 id="11-the-daily-routine">11. The daily routine</h2>
+<p>You do not run all of these after every keystroke.</p>
+<table>
+<thead>
+<tr>
+<th>When</th>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>While editing</td>
+<td><code>cargo check --offline --locked</code></td>
+<td>fast compiler feedback</td>
+</tr>
+<tr>
+<td>After a behaviour change</td>
+<td><code>cargo test --offline --locked</code></td>
+<td>run the declared tests</td>
+</tr>
+<tr>
+<td>To inspect behaviour</td>
+<td><code>cargo run --offline --locked -- data/sample.txt</code></td>
+<td>execute</td>
+</tr>
+<tr>
+<td>Before checkpointing</td>
+<td><code>cargo fmt --all</code></td>
+<td>apply formatting</td>
+</tr>
+<tr>
+<td>Formatting gate</td>
+<td><code>cargo fmt --all -- --check</code></td>
+<td>confirm no differences (reports only)</td>
+</tr>
+<tr>
+<td><strong>Lint gate</strong></td>
+<td><code>cargo clippy --offline --locked --all-targets -- -D warnings</code></td>
+<td>reject warnings</td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><code>cargo doc --offline --locked --no-deps</code></td>
+<td>build API docs</td>
+</tr>
+<tr>
+<td>Optimized artifact</td>
+<td><code>cargo build --release --offline --locked</code></td>
+<td>release executable</td>
+</tr>
+</tbody>
+</table>
+<p>Formatting, compilation, linting, testing and optimized builds answer different questions.
+<code>cargo check</code> can also miss errors exposed only during code generation, so a full build is a
+separate check.</p>
+<p>Run one command at a time while learning, and read the whole diagnostic instead of piping it
+away. (When capturing <code>$LASTEXITCODE</code> in PowerShell, do not pipe into a cmdlet — check it on its
+own line. A pipeline can report the cmdlet's status, not the tool's.)</p>
+<p>Approximate Python equivalents:</p>
+<pre><code>cargo test          ↔ unittest / pytest
+cargo fmt           ↔ a Python formatter
+cargo clippy        ↔ lint / static analysis
+cargo run           ↔ running the Python entry point
+cargo build release ↔ a native artifact, not merely a wheel
+</code></pre>
+<hr/>
+<h2 id="12-running-without-cargo">12. Running without Cargo</h2>
+<pre><code class="language-powershell">cargo build --release --offline --locked
+if ($LASTEXITCODE -ne 0) { throw "The release build did not succeed." }
+.\target\release\rust_from_python.exe data\sample.txt
+</code></pre>
+<p>On Linux/WSL the path is <code>./target/release/rust_from_python data/sample.txt</code>.</p>
+<p>Build for the intended platform; portability also depends on target and native libraries. When
+measuring performance, build first and time the executable separately. Timing an eight-value
+file measures startup and I/O, not language performance.</p>
+<hr/>
+<h2 id="13-dependencies-reopening-and-copying">13. Dependencies, reopening, and copying</h2>
+<h3 id="adding-a-dependency">Adding a dependency</h3>
+<pre><code class="language-powershell">cargo add csv@1.3.1
+cargo check
+cargo test --locked
+cargo fetch --locked
+</code></pre>
+<p><code>cargo add</code> edits the manifest and changes the lock; resolution may need network access. Review
+those changes.</p>
+<p><strong>Flag names are not portable between tools.</strong> In Cargo <code>--frozen</code> combines locked and offline.
+In <code>uv</code>, <code>--locked</code>, <code>--frozen</code> and <code>--no-sync</code> each mean something different. Do not assume a
+shared name implies shared semantics.</p>
+<h3 id="reopening-a-project">Reopening a project</h3>
+<p>Enter the directory, inspect the selected toolchain, run its focused tests. <strong>Do not <code>cargo new</code>
+again.</strong></p>
+<h3 id="repairing">Repairing</h3>
+<p>Read the first meaningful error, repair the smallest identified problem. A duplicate TOML table
+is not a reason to rebuild the repository.</p>
+<h3 id="copying-the-same-project-reproducibly">Copying the same project reproducibly</h3>
+<p>Preserve:</p>
+<pre><code>Cargo.toml
+Cargo.lock              &lt;-- keep: it records resolved versions
+rust-toolchain.toml
+src/
+tests/
+examples/
+required input fixtures
+required .cargo configuration and dependency sources
+</code></pre>
+<p>Exclude <code>target/</code> — it is rebuildable output. Creating a <em>different</em> package or deliberately
+updating dependencies is a separate operation with its own reviewed resolution.</p>
+<p><strong>Your practice lives under <code>my_work/</code>, which is git-ignored.</strong> A successful commit will not back
+it up. Save learner source deliberately; do not force-add environments, caches or private data.</p>
+<hr/>
+<h2 id="14-what-to-learn-next-and-how-to-prove-it">14. What to learn next, and how to prove it</h2>
+<table>
+<thead>
+<tr>
+<th>Next topic</th>
+<th>Evidence to produce</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Structs and <code>impl</code></td>
+<td>represent an observation; explain which methods borrow or mutate</td>
+</tr>
+<tr>
+<td>Enums and typed errors</td>
+<td>distinguish missing, malformed, estimated and measured</td>
+</tr>
+<tr>
+<td>Iterators and closures</td>
+<td>rewrite a loop without changing behaviour or allocation assumptions</td>
+</tr>
+<tr>
+<td>Traits and generics</td>
+<td>extract one genuinely useful shared interface</td>
+</tr>
+<tr>
+<td>Lifetimes</td>
+<td>explain the owner and validity of a returned reference</td>
+</tr>
+<tr>
+<td>Data readers</td>
+<td>preserve schema, units, identity, missingness and failure context</td>
+</tr>
+<tr>
+<td>Performance and concurrency</td>
+<td>measure first; add bounded parallelism only for a justified workload</td>
+</tr>
+<tr>
+<td>Python bindings</td>
+<td>package the reviewed core and test the imported artifact</td>
+</tr>
+</tbody>
+</table>
+<p>Do not jump to <code>async</code> or <code>unsafe</code> because they sound advanced. The immediate goal is to explain
+ordinary code completely.</p>
+<h3 id="your-next-independent-exercise">Your next independent exercise</h3>
+<pre><code class="language-rust">pub fn span(values: &amp;[f64]) -&gt; Result&lt;f64, StatsError&gt;
+</code></pre>
+<p>Maximum minus minimum, <strong>without changing the caller's data.</strong> Before implementing, specify and
+test:</p>
+<ul>
+<li><code>[2.0, 4.0, 9.0]</code></li>
+<li>a single observation</li>
+<li>empty or nonfinite input</li>
+<li>an extreme finite-input difference that overflows</li>
+<li>preservation of input order</li>
+</ul>
+<p>Then explain <strong>why it borrows its input, why it returns <code>Result</code>, and why compiling successfully
+does not establish that the numeric result is correct.</strong></p>
+<p>That is the point at which this becomes your Rust skill rather than a sequence you followed.</p>
+<hr/>
+<h2 id="what-this-page-does-not-establish">What this page does not establish</h2>
+<ul>
+<li>It was not run on Linux, macOS or WSL. Only <code>x86_64-pc-windows-msvc</code> was exercised here.</li>
+<li>No learner assessment, retention or mastery claim is made. Every item is <code>not_assessed</code>.</li>
+<li>The Python and Rust agreement is for the stated fixtures only, not parser equivalence.</li>
+<li>Docker, Kubernetes and deployment were not touched by this walkthrough.</li>
+<li><code>rustfmt</code> and <code>clippy</code> were exercised on <strong>1.90.0</strong> via the pin; lint behaviour differs
+between compiler versions.</li>
+<li>A passing test suite says what its tests cover, not that the analysis is appropriate.</li>
+</ul>
+<h2 id="see-also">See also</h2>
+<ul>
+<li><a href="../native/guides/LEARNING_PATHS.md.html">Rust learning path R0–R6</a> — the course's own progression</li>
+<li><a href="../../optional/rust_practice">Optional Rust practice crate</a> — worked reference + compiler cases</li>
+<li><a href="../native/guides/labs/stage01.md.html">Stage 01 guide</a> — current learning position</li>
+<li><a href="../docs/release/REPOSITORY_LAYOUT.md.html">Repository layout</a> — who owns what</li>
+<li><a href="README.md.html">Learning area index</a></li>
+</ul>
+<a class="back" href="../../START_HERE.html">Back to the course home</a></main></div></body></html>

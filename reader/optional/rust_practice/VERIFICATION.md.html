@@ -1,0 +1,212 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Verification record: optional Rust practice crate · Listening to Shape</title><link rel="stylesheet" href="../../assets/course.css"></head><body><a class="skip" href="#content">Skip to lesson</a><header class="top"><strong>Listening to Shape</strong><a href="../../../START_HERE.html">Course home</a><a href="../../curriculum/SITUATIONS.md.html">Choose a situation</a><a href="../../curriculum/APPLICATIONS.md.html">Datasets & cases</a><a href="../../docs/release/VERIFICATION.md.html">Verification</a></header><div class="layout"><aside class="side"><h3>One required route</h3><p class="muted">31 stages · progress is not auto-assessed</p><nav aria-label="Stages"><a href="../../curriculum/stages/00.md.html">00 · Start here: how to learn, run, and question the results</a><a href="../../curriculum/stages/01.md.html">01 · Mathematical language, proofs, and linear algebra</a><a href="../../curriculum/stages/02.md.html">02 · Closeness, metrics, neighborhoods, and topologies</a><a href="../../curriculum/stages/03.md.html">03 · Continuity, homeomorphisms, connectedness, and compactness</a><a href="../../curriculum/stages/04.md.html">04 · Groups, symmetries, paths, loops, and homotopy</a><a href="../../curriculum/stages/05.md.html">05 · Surfaces, simplices, triangulations, and pixel geometry</a><a href="../../curriculum/stages/06.md.html">06 · Chains, boundaries, homology, and Betti numbers</a><a href="../../curriculum/stages/07.md.html">07 · From data to shape: Rips, Čech, alpha, and filtrations</a><a href="../../curriculum/stages/08.md.html">08 · Persistent homology, persistence modules, and reading diagrams</a><a href="../../curriculum/stages/09.md.html">09 · Implement persistence, trace the algorithm, and test it independently</a><a href="../../curriculum/stages/10.md.html">10 · Stability, diagram distances, noise, and scientific uncertainty</a><a href="../../curriculum/stages/11.md.html">11 · Useful representations, Mapper, time windows, and honest machine learning</a><a href="../../curriculum/stages/12.md.html">12 · Capstone: reproduce, defend, transfer, and audit the book</a><a href="../../curriculum/stages/13.md.html">13 · From topology to smooth manifolds</a><a href="../../curriculum/stages/14.md.html">14 · Rotations, rigid transforms, and the camera model</a><a href="../../curriculum/stages/15.md.html">15 · Measured stereo, calibration, and uncertainty</a><a href="../../curriculum/stages/16.md.html">16 · Attention and VGGT, from pixels to proposed geometry</a><a href="../../curriculum/stages/17.md.html">17 · Register, validate, and ask topology the right question</a><a href="../../curriculum/stages/18.md.html">18 · Make the pipeline efficient without changing the evidence</a><a href="../../curriculum/stages/19.md.html">19 · From geometry to cautious interaction hypotheses</a><a href="../../curriculum/stages/20.md.html">20 · Independent spatial capstone and continuing mastery</a><a href="../../curriculum/stages/21.md.html">21 · Rates, equations, units and what data can identify</a><a href="../../curriculum/stages/22.md.html">22 · Smooth flows, coordinate changes and invertible networks</a><a href="../../curriculum/stages/23.md.html">23 · Mechanics, Hamiltonian networks and Lagrangian networks</a><a href="../../curriculum/stages/24.md.html">24 · Symplectic integration, energy, phase and long rollouts</a><a href="../../curriculum/stages/25.md.html">25 · Constraints, projections, retractions and rank failure</a><a href="../../curriculum/stages/26.md.html">26 · Physics-informed learning and inverse problems</a><a href="../../curriculum/stages/27.md.html">27 · Conflicting gradients, interfaces, separability and PIKANs</a><a href="../../curriculum/stages/28.md.html">28 · Functions to functions: DeepONet, Fourier operators and baselines</a><a href="../../curriculum/stages/29.md.html">29 · Differentiable simulation, graph physics and attention constraints</a><a href="../../curriculum/stages/30.md.html">30 · An independent world-model study: evidence before adoption</a></nav></aside><main id="content"><p class="source">Source: <a href="../../../optional/rust_practice/VERIFICATION.md">optional/rust_practice/VERIFICATION.md</a> · Readable source notation; no online math renderer.</p><p class="historical">Historical record or optional reference. Use the release verification report for current execution results.</p><h1 id="verification-record-optional-rust-practice-crate">Verification record: optional Rust practice crate</h1>
+<p>Prepared 28 October 2026 on the Windows development host (<code>x86_64-pc-windows-msvc</code>).</p>
+<p>This records what actually ran for <a href="../../../optional/rust_practice">optional/rust_practice</a>. It is not a course release
+record and it is not an assessment of learner mastery. The authoritative course release
+status remains <a href="../../docs/release/VERIFICATION.md.html">docs/release/VERIFICATION.md</a>.</p>
+<h2 id="toolchain-actually-used">Toolchain actually used</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Observed on this host</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rust-toolchain.toml</code> pin</td>
+<td><code>channel = "1.90.0"</code>, <code>profile = "minimal"</code></td>
+</tr>
+<tr>
+<td>Compiler honoured by <code>cargo</code> in the crate</td>
+<td><code>rustc 1.90.0 (1159e78c4 2025-09-14)</code></td>
+</tr>
+<tr>
+<td>Compiler selected by the case checker</td>
+<td><code>rustc 1.90.0 (1159e78c4 2025-09-14)</code></td>
+</tr>
+<tr>
+<td>Bare <code>rustc</code>/<code>cargo</code> on <code>PATH</code></td>
+<td><code>rustc 1.97.1 (8bab26f4f 2026-07-14)</code> — <strong>different release</strong></td>
+</tr>
+<tr>
+<td>Installed components for 1.90.0</td>
+<td><code>cargo</code>, <code>rust-std</code>, <code>rustc</code> only</td>
+</tr>
+</tbody>
+</table>
+<p>The distinction matters. <code>rust-toolchain.toml</code> is honoured by <code>cargo</code> and by <code>rustup run</code>; an
+invocation of <code>rustc</code> directly ignores it. The first run of <code>check_compiler_cases.py</code> silently
+used the 1.97.1 default and was <strong>discarded</strong>, not reported. The script now resolves the pin
+through <code>rustup run</code> and fails if the selected compiler does not match the declaration.</p>
+<p><code>rustfmt</code> and <code>clippy</code> are <strong>not installed for 1.90.0</strong>. The formatting and lint checks below
+were therefore run with the machine's <code>stable</code> toolchain (1.97.1) and are labelled that way.
+They are not evidence about 1.90.0's lint set.</p>
+<h2 id="commands-and-observed-results">Commands and observed results</h2>
+<p>All commands run from <code>optional/rust_practice</code> with <code>CARGO_NET_OFFLINE=true</code>, in new output
+directories under <code>my_work/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Observed result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cargo test --offline --locked</code></td>
+<td>13 integration tests passed, 0 failed; 3 doc-tests passed</td>
+</tr>
+<tr>
+<td><code>cargo test --offline --locked --release</code></td>
+<td>same 13 + 3 passed in the release profile</td>
+</tr>
+<tr>
+<td><code>cargo doc --offline --locked --no-deps</code></td>
+<td>built; 0 warnings after fixing one ambiguous intra-doc link</td>
+</tr>
+<tr>
+<td><code>cargo run --offline --release --example iris_rank -- ../../data/raw/iris.csv</code></td>
+<td>completed, exit 0</td>
+</tr>
+<tr>
+<td><code>python check_compiler_cases.py --output my_work/rp_compiler_…</code></td>
+<td>6/6 matched predictions, exit 0</td>
+</tr>
+<tr>
+<td><code>uv run --no-sync python -m pytest tests/test_rust_practice_optional.py -q</code></td>
+<td>9 passed</td>
+</tr>
+<tr>
+<td><code>cargo fmt --all -- --check</code> (<strong>1.97.1</strong>)</td>
+<td>clean after formatting the new crate only</td>
+</tr>
+<tr>
+<td><code>cargo clippy --offline --all-targets</code> (<strong>1.97.1</strong>)</td>
+<td>0 warnings after replacing a range-index loop</td>
+</tr>
+<tr>
+<td><code>check_compiler_cases.py</code> with <code>rustc</code> removed from <code>PATH</code></td>
+<td><code>status: blocked</code>, exit 2 — not a pass</td>
+</tr>
+<tr>
+<td>fresh copy of the crate outside the repository</td>
+<td>13 integration + 3 doc-tests passed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="compiler-cases">Compiler cases</h3>
+<table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Prediction</th>
+<th>Observed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accept/borrows_end_at_last_use.rs</code></td>
+<td>compiles</td>
+<td>exit 0</td>
+</tr>
+<tr>
+<td><code>accept/returned_reference_lives_as_long_as_input.rs</code></td>
+<td>compiles</td>
+<td>exit 0</td>
+</tr>
+<tr>
+<td><code>reject/overlapping_mutable_borrows.rs</code></td>
+<td><code>E0499</code></td>
+<td><code>error[E0499]</code></td>
+</tr>
+<tr>
+<td><code>reject/use_after_move.rs</code></td>
+<td><code>E0382</code></td>
+<td><code>error[E0382]</code></td>
+</tr>
+<tr>
+<td><code>reject/return_reference_to_local.rs</code></td>
+<td><code>E0106</code></td>
+<td><code>error[E0106]</code></td>
+</tr>
+<tr>
+<td><code>reject/mutate_while_borrowed.rs</code></td>
+<td><code>E0502</code></td>
+<td><code>error[E0502]</code></td>
+</tr>
+</tbody>
+</table>
+<p>Every diagnostic code above was <strong>captured from the compiler before</strong> <code>cases.json</code> was
+written. The four rejections are the ones the practice material specifies.</p>
+<h3 id="real-data-route">Real-data route</h3>
+<p><code>examples/iris_rank.rs</code> run on the course's own <code>data/raw/iris.csv</code>:</p>
+<pre><code>rows                  150
+columns before/after  4/5
+appended column       2*x0 + -3*x1
+tolerance             1e-9
+rank before           4
+rank after            4
+max |row . kernel|    0e0
+dependent column      did not increase rank, as the algebra requires
+</code></pre>
+<p>The exact zero is expected: the kernel vector <code>[-2, 3, 0, 0, 1]</code> makes every row product
+vanish identically, not approximately. It is a property of the construction, not a lucky
+tolerance.</p>
+<h2 id="what-was-not-run-and-is-not-claimed">What was not run, and is not claimed</h2>
+<table>
+<thead>
+<tr>
+<th>Not run</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rustfmt</code> / <code>clippy</code> on <strong>1.90.0</strong></td>
+<td>those components are not installed for the pin; lint claims belong to 1.97.1</td>
+</tr>
+<tr>
+<td>Clippy with <code>-D warnings</code></td>
+<td>the crate is warning-free today, but no strict gate is configured</td>
+</tr>
+<tr>
+<td>Linux, macOS or WSL</td>
+<td>only <code>x86_64-pc-windows-msvc</code> was exercised</td>
+</tr>
+<tr>
+<td>Docker, Kubernetes, kind</td>
+<td>untouched by this crate and unrelated to it</td>
+</tr>
+<tr>
+<td><code>uv.lock</code> re-resolution</td>
+<td>the crate has no Python dependencies and adds none</td>
+</tr>
+<tr>
+<td>Any learner assessment</td>
+<td>nothing here measures mastery or retention</td>
+</tr>
+</tbody>
+</table>
+<h2 id="repository-suite-result-for-this-change">Repository-suite result for this change</h2>
+<p><code>uv run --no-sync python -m pytest -q -ra</code> on this host:</p>
+<pre><code>888 passed, 3 skipped in 127.32s
+</code></pre>
+<p>The three skips are pre-existing and unrelated: two POSIX filesystem contracts on a Windows
+host, and one opt-in Rust mutation test. Running that opt-in test separately
+(<code>SHAPE_TEST_RUST_MUTATION=1 pytest tests/test_learner_mutation.py</code>) gave <strong>3 passed</strong>, which
+confirms the existing <code>native/rust</code> reference still builds and still fails on a deliberately
+wrong edit.</p>
+<p>The baseline before this change was 876 passed / 6 skipped in the release record; the count
+here is higher and the skip count lower because this host has Go and Cargo available. The
+comparison of interest is that <strong>no existing test regressed</strong> and 9 new tests were added.</p>
+<p>The layout document was updated, and <code>tests/test_repository_layout.py</code> still passes.</p>
+<h2 id="honest-limitations">Honest limitations</h2>
+<ul>
+<li>Controlled fixtures and one measured flower table are not a broad benchmarking set.</li>
+<li>Passing assertions show one program matched its own expectations. They do not show the
+algorithm is appropriate for a different question.</li>
+<li>The practice crate agrees with nothing in <code>native/rust</code> by construction; it deliberately
+uses a different, smaller contract. Do not describe it as a third reference implementation.</li>
+<li>The independent exercise in <a href="EXERCISES.md.html">EXERCISES.md</a> remains <code>not_assessed</code>.</li>
+</ul>
+<a class="back" href="../../../START_HERE.html">Back to the course home</a></main></div></body></html>
